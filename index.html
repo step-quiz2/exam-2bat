@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banc de preguntes · Matemàtiques II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Banc de preguntes</h1>
+    <div class="hd-sub">Matemàtiques II · CT</div>
+  </div>
+  <div class="site-label" id="segell"></div>
+</header>
+
+<main>
+  <section id="columna-temes">
+    <h2>Temes</h2>
+    <p class="ajuda">Cada clic hi afegeix una pregunta. Per defecte, l'examen és com el de la PAU: 1, 2, 3 i, a triar, 4a o 4b.</p>
+    <ul id="temes"></ul>
+
+    <div class="entorn">
+      <h2>Entorn</h2>
+      <p class="ajuda">Els fitxers de la carpeta d'exàmens. Es baixen un sol cop, i es
+        refresquen quan LaTeX avisa que són d'una altra versió.</p>
+      <div class="botons-entorn">
+        <button type="button" class="secundari" data-entorn="main">main.tex</button>
+        <button type="button" class="secundari" data-entorn="headers">headers.tex</button>
+        <button type="button" class="secundari" data-entorn="defs">defs.tex</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="columna-seleccio">
+    <div class="capcal-examen">
+      <h2>Examen</h2>
+      <div class="durada" role="group" aria-label="Durada de l'examen">
+        <button type="button" class="secundari" data-durada="llarg" aria-pressed="true">1 h 30</button>
+        <button type="button" class="secundari" data-durada="curt" aria-pressed="false">50 min</button>
+      </div>
+    </div>
+    <div id="seleccio"></div>
+  </section>
+</main>
+
+<footer id="barra">
+  <div id="recompte">Cap pregunta triada</div>
+  <div class="botons">
+    <label for="numprova">Prova núm.</label>
+    <input type="number" id="numprova" min="1" max="99" value="1">
+    <button id="baixa-prova" disabled>prova-1.tex</button>
+    <button id="baixa-tex" class="secundari" disabled>tot en un</button>
+    <button id="baixa-sol" class="secundari" disabled>amb solucions</button>
+  </div>
+</footer>
+
+<script src="cataleg.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

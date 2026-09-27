@@ -1,0 +1,204 @@
+{
+  "unitats": {
+    "u7": {
+      "nom": "Unitat 7",
+      "subtitol": "Límits i continuïtat"
+    },
+    "u8": {
+      "nom": "Unitat 8",
+      "subtitol": "Derivades"
+    },
+    "u9": {
+      "nom": "Unitat 9",
+      "subtitol": "Aplicacions de les derivades"
+    },
+    "u10": {
+      "nom": "Unitat 10",
+      "subtitol": "Representació de funcions"
+    },
+    "u11": {
+      "nom": "Unitat 11",
+      "subtitol": "Integrals"
+    },
+    "u12": {
+      "nom": "Unitat 12",
+      "subtitol": "La integral definida"
+    },
+    "u13": {
+      "nom": "Unitat 13",
+      "subtitol": "Probabilitat"
+    },
+    "u14": {
+      "nom": "Unitat 14",
+      "subtitol": "Distribucions de probabilitat"
+    },
+    "pau": {
+      "nom": "PAU",
+      "subtitol": "Preguntes reals de les proves d'accés"
+    }
+  },
+  "temes": [
+    {
+      "slug": "limits-grafica",
+      "unitat": "u7",
+      "nom": "Límits a partir d'una gràfica",
+      "descripcio": "Llegir límits laterals, límits a l'infinit i continuïtat sobre una gràfica donada."
+    },
+    {
+      "slug": "limits-infinit",
+      "unitat": "u7",
+      "nom": "Límits en l'infinit",
+      "descripcio": "Racionals, potències, radicals i exponencials quan x tendeix a ±∞."
+    },
+    {
+      "slug": "limits-punt",
+      "unitat": "u7",
+      "nom": "Límits en un punt",
+      "descripcio": "Indeterminació 0/0, factorització i límits laterals."
+    },
+    {
+      "slug": "limits-trossos",
+      "unitat": "u7",
+      "nom": "Límits de funcions a trossos",
+      "descripcio": "Límits en els punts d'enganxament i en l'infinit."
+    },
+    {
+      "slug": "continuitat-trossos",
+      "unitat": "u7",
+      "nom": "Continuïtat de funcions a trossos",
+      "descripcio": "Estudi i classificació de discontinuïtats en funcions definides per trossos."
+    },
+    {
+      "slug": "parametres-ab",
+      "unitat": "u7",
+      "nom": "Paràmetres per a la continuïtat",
+      "descripcio": "Determinar a i b perquè una funció a trossos sigui contínua."
+    },
+    {
+      "slug": "domini-discontinuitats",
+      "unitat": "u7",
+      "nom": "Domini i discontinuïtats",
+      "descripcio": "Domini de radicals i logaritmes, i classificació de discontinuïtats de racionals."
+    },
+    {
+      "slug": "bolzano-biseccio",
+      "unitat": "u7",
+      "nom": "Bolzano i bisecció",
+      "descripcio": "Teorema de Bolzano, acotació d'arrels per bisecció i punts de tall de corbes."
+    },
+    {
+      "slug": "tvm-derivada-punt",
+      "unitat": "u8",
+      "nom": "TVM i derivada en un punt",
+      "descripcio": "Taxa de variació mitjana en un interval i derivada en un punt per definició."
+    },
+    {
+      "slug": "derivada-definicio",
+      "unitat": "u8",
+      "nom": "Funció derivada per definició",
+      "descripcio": "La funció derivada com a límit del quocient incremental: polinomis, arrels i racionals."
+    },
+    {
+      "slug": "regles-derivacio",
+      "unitat": "u8",
+      "nom": "Regles de derivació",
+      "descripcio": "Derivades de funcions elementals, sumes, productes i quocients."
+    },
+    {
+      "slug": "regla-cadena",
+      "unitat": "u8",
+      "nom": "Regla de la cadena",
+      "descripcio": "Derivades de funcions compostes: potències, exponencials, logaritmes i trigonomètriques."
+    },
+    {
+      "slug": "recta-tangent",
+      "unitat": "u8",
+      "nom": "Recta tangent i normal",
+      "descripcio": "Equacions de les rectes tangent i normal a la gràfica d'una funció en un punt."
+    },
+    {
+      "slug": "tangent-condicions",
+      "unitat": "u8",
+      "nom": "Tangents amb condicions",
+      "descripcio": "Tangents paral·leles a una recta, tangents horitzontals i triangles amb els eixos."
+    },
+    {
+      "slug": "monotonia-extrems",
+      "unitat": "u9",
+      "nom": "Monotonia i extrems relatius",
+      "descripcio": "Creixement i decreixement, màxims i mínims relatius, amb la primera i la segona derivada."
+    },
+    {
+      "slug": "extrems-parametres",
+      "unitat": "u9",
+      "nom": "Extrems amb paràmetres i gràfiques",
+      "descripcio": "Paràmetres a partir d'un extrem, extrems llegits a la gràfica de la derivada i nombre màxim d'extrems."
+    },
+    {
+      "slug": "curvatura-inflexio",
+      "unitat": "u9",
+      "nom": "Curvatura i punts d'inflexió",
+      "descripcio": "Concavitat, convexitat, punts d'inflexió i coeficients a partir de condicions."
+    },
+    {
+      "slug": "optimitzacio",
+      "unitat": "u9",
+      "nom": "Optimització",
+      "descripcio": "Problemes de màxim i mínim: plantejar la funció, derivar-la i justificar l'extrem."
+    },
+    {
+      "slug": "domini-talls",
+      "unitat": "u10",
+      "nom": "Domini i punts de tall",
+      "descripcio": "Domini de funcions racionals, amb radicals, logarítmiques i exponencials, i talls amb els eixos."
+    },
+    {
+      "slug": "asimptotes",
+      "unitat": "u10",
+      "nom": "Asímptotes i branques infinites",
+      "descripcio": "Asímptotes verticals, horitzontals i obliqües, i gràfiques a partir d'unes asímptotes donades."
+    },
+    {
+      "slug": "estudi-racional",
+      "unitat": "u10",
+      "nom": "Estudi i gràfica d'una funció racional",
+      "descripcio": "Domini, talls, asímptotes, monotonia, curvatura i representació d'una funció racional."
+    },
+    {
+      "slug": "estudi-polinomica",
+      "unitat": "u10",
+      "nom": "Estudi i gràfica d'una funció polinòmica",
+      "descripcio": "Talls, monotonia, extrems, curvatura i representació d'una funció polinòmica."
+    },
+    {
+      "slug": "estudi-trossos",
+      "unitat": "u10",
+      "nom": "Estudi i gràfica d'una funció a trossos",
+      "descripcio": "Continuïtat, asímptotes, monotonia i representació d'una funció definida a trossos."
+    },
+    {
+      "slug": "algebra",
+      "unitat": "pau",
+      "nom": "Àlgebra",
+      "descripcio": "Matrius, determinants i sistemes lineals amb paràmetre."
+    },
+    {
+      "slug": "geometria",
+      "unitat": "pau",
+      "nom": "Geometria",
+      "descripcio": "Rectes i plans a l'espai, distàncies, àrees i volums."
+    },
+    {
+      "slug": "analisi",
+      "unitat": "pau",
+      "nom": "Anàlisi",
+      "descripcio": "Continuïtat, derivades, optimització, representació i integrals."
+    },
+    {
+      "slug": "probabilitat",
+      "unitat": "pau",
+      "nom": "Probabilitat",
+      "descripcio": "Probabilitat total, Bayes i distribucions."
+    }
+  ]
+}
