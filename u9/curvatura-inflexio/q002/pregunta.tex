@@ -1,0 +1,30 @@
+\begin{apartats}
+
+\apartat[2,5]{1,5}
+Determina $a$, $b$ i $c$ perquè la funció
+\[
+f(x)=x^3+ax^2+bx+c
+\]
+passi pel punt $(0,2)$, tingui un punt d'inflexió en $x=1$ i un extrem relatiu en $x=3$.
+
+\begin{solucio}
+Derivades: $f'(x)=3x^2+2ax+b$ i $f''(x)=6x+2a$.\\
+\textbf{Passa per $(0,2)$}: $f(0)=c=2$, d'on $\boxed{c=2}$.\\
+\textbf{Inflexió en $x=1$}: $f''(1)=6+2a=0$, d'on $\boxed{a=-3}$.\\
+\textbf{Extrem en $x=3$}: $f'(3)=27+2(-3)(3)+b=27-18+b=0$, d'on $\boxed{b=-9}$.\\
+La funció és $f(x)=x^3-3x^2-9x+2$. Comprovació: $f''(1)=0$ i $f'(3)=27-18-9=0$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{1}
+Amb aquests valors, digues si l'extrem de $x=3$ és un màxim o un mínim, i estudia la curvatura
+de $f$.
+
+\begin{solucio}
+$f''(x)=6x-6$, i $f''(3)=12>0$: en $x=3$ hi ha un \textbf{mínim relatiu}.\\
+$f''<0$ a $(-\infty,1)$: \textbf{còncava}. \quad $f''>0$ a $(1,+\infty)$: \textbf{convexa}.\\
+La curvatura canvia en $x=1$, que és el punt d'inflexió demanat.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

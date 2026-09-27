@@ -1,0 +1,41 @@
+Considera la funció
+\[
+f(x)=x^4-4x^3 .
+\]
+
+\begin{apartats}
+
+\apartat[1,25]{1}
+Estudia la monotonia de $f$ i troba'n els extrems relatius.
+
+\begin{solucio}
+$f'(x)=4x^3-12x^2=4x^2(x-3)$, que s'anul·la en $x=0$ i en $x=3$.\\
+Com que $4x^2\ge0$, el signe de $f'$ és el de $x-3$: negatiu a $(-\infty,3)$ i positiu a
+$(3,+\infty)$.\\
+Per tant, $f$ \textbf{decreix} a $(-\infty,3)$ i \textbf{creix} a $(3,+\infty)$.\\
+En $x=3$ passa de decréixer a créixer: \textbf{mínim relatiu} $(3,-27)$.\\
+En $x=0$ la derivada s'anul·la però \textbf{no canvia de signe}: no hi ha extrem. Que
+$f'(a)=0$ no vol dir que en $a$ hi hagi un màxim o un mínim.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Aplica el criteri de la derivada segona als dos punts on s'anul·la $f'$. Què hi passa?
+
+\begin{solucio}
+$f''(x)=12x^2-24x=12x(x-2)$.\\
+$f''(3)=36>0$: confirma el \textbf{mínim} en $x=3$.\\
+$f''(0)=0$: el criteri \textbf{no decideix}. Cal tornar al signe de $f'$, que no canvia en
+$x=0$, i per tant allà no hi ha extrem.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{0,75}
+Demostra que la funció $h(x)=2x+\sin x$ és creixent a tot $\mathbb{R}$.
+
+\begin{solucio}
+$h'(x)=2+\cos x$. Com que $-1\le\cos x\le1$, es compleix $h'(x)\ge2-1=1>0$ per a tot $x$.\\
+La derivada és sempre positiva, i per tant $h$ \textbf{creix a tot $\mathbb{R}$}.
+\end{solucio}
+
+\end{apartats}

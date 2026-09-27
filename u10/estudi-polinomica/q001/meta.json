@@ -1,0 +1,20 @@
+{
+  "titol": "Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió",
+  "temes_secundaris": [
+    "estudi-racional"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    75,
+    78,
+    84,
+    88
+  ],
+  "minuts": 20,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "polinòmiques",
+    "representació",
+    "punt d'inflexió"
+  ]
+}

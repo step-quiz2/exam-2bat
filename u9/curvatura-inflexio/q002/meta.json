@@ -1,0 +1,17 @@
+{
+  "titol": "Coeficients d'una cúbica a partir d'un punt, una inflexió i un extrem",
+  "temes_secundaris": [
+    "extrems-parametres"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    70
+  ],
+  "minuts": 20,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "paràmetres",
+    "punts d'inflexió",
+    "extrems"
+  ]
+}

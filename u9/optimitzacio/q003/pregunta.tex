@@ -1,0 +1,39 @@
+Es vol tancar un prat rectangular al costat d'un riu, de manera que el costat del riu no
+necessita tanca. Es disposa de $400$ metres de tanca per als altres tres costats. Anomenem $y$
+la longitud de cadascun dels dos costats perpendiculars al riu.
+
+\begin{apartats}
+
+\apartat[1,25]{1}
+Comprova que l'àrea del prat és $A(y)=400y-2y^2$ i digues entre quins valors pot variar $y$.
+
+\begin{solucio}
+Si els dos costats perpendiculars al riu fan $y$ cadascun, el costat paral·lel al riu fa
+$400-2y$. Per tant,
+\[
+A(y)=y\,(400-2y)=400y-2y^2 .
+\]
+Perquè el prat existeixi cal $y>0$ i $400-2y>0$: $y\in(0,200)$.
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Troba les dimensions del prat de més àrea i calcula aquesta àrea.
+
+\begin{solucio}
+$A'(y)=400-4y=0\iff y=100$.\\
+Aleshores el costat paral·lel al riu fa $400-200=200$ metres: el prat fa
+$\boxed{100\times200}$ metres i l'àrea màxima és $\boxed{20\,000}$ m$^2$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Justifica que el valor trobat dona un màxim i no un mínim.
+
+\begin{solucio}
+$A''(y)=-4<0$ per a tot $y$: la funció és còncava i, per tant, en $y=100$ hi ha un
+\textbf{màxim}.\\
+També es veu pel signe de $A'$: positiva a $(0,100)$ i negativa a $(100,200)$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

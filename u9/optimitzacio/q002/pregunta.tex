@@ -1,0 +1,43 @@
+D'un cartró quadrat de $12$ cm de costat es retallen quatre quadrats iguals, de costat $x$, a
+les cantonades. Després es dobleguen les vores cap amunt per fer una capsa sense tapa.
+
+\begin{apartats}
+
+\apartat[1,25]{1}
+Comprova que el volum de la capsa és $V(x)=x(12-2x)^2$ i digues entre quins valors pot variar
+$x$.
+
+\begin{solucio}
+La base de la capsa és un quadrat de costat $12-2x$ i l'alçada és $x$. Per tant,
+\[
+V(x)=x(12-2x)^2 .
+\]
+Cal que el costat retallat sigui positiu i que en quedi base: $x>0$ i $12-2x>0$, és a dir
+$x\in(0,6)$.
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Troba el valor de $x$ que fa màxim el volum i calcula aquest volum.
+
+\begin{solucio}
+$V(x)=4x(6-x)^2$, i derivant el producte:
+\[
+V'(x)=4(6-x)^2+4x\cdot2(6-x)(-1)=4(6-x)\left[(6-x)-2x\right]=4(6-x)(6-3x).
+\]
+S'anul·la en $x=6$ (fora del domini) i en $x=2$.\\
+$V(2)=2\cdot8^2=128$: cal retallar quadrats de $\boxed{2}$ cm i el volum màxim és
+$\boxed{128}$ cm$^3$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Justifica que el valor trobat dona un màxim.
+
+\begin{solucio}
+A $(0,2)$, $V'>0$ (els dos factors són positius) i a $(2,6)$, $V'<0$ (perquè $6-3x<0$): la
+funció creix i després decreix, i per tant en $x=2$ hi ha un \textbf{màxim}.\\
+També es pot comprovar amb la derivada segona: $V''(x)=24x-96$ i $V''(2)=-48<0$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

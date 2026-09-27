@@ -1,0 +1,19 @@
+{
+  "titol": "Paràmetre a partir d'un extrem, una funció inventada i el nombre màxim d'extrems",
+  "temes_secundaris": [
+    "monotonia-extrems"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    39,
+    44,
+    58
+  ],
+  "minuts": 18,
+  "minuts_curt": 11,
+  "etiquetes": [
+    "paràmetre",
+    "extrems",
+    "inventa"
+  ]
+}

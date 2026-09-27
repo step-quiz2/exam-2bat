@@ -1,0 +1,46 @@
+\begin{apartats}
+
+\apartat[1,25]{1}
+La funció
+\[
+f(x)=ax^3+bx^2
+\]
+té un extrem relatiu en el punt $(2,4)$. Troba $a$ i $b$, digues de quin tipus d'extrem es
+tracta i troba l'altre extrem relatiu de $f$.
+
+\begin{solucio}
+\textbf{Passa per $(2,4)$}: $8a+4b=4$. \quad \textbf{Extrem en $x=2$}: $f'(x)=3ax^2+2bx$ i
+$f'(2)=12a+4b=0$.\\
+Restant les dues equacions: $4a=-4$, d'on $\boxed{a=-1}$, i llavors $-8+4b=4$, és a dir
+$\boxed{b=3}$.\\
+Amb $f(x)=-x^3+3x^2$: $f'(x)=-3x^2+6x=-3x(x-2)$, que s'anul·la en $x=0$ i $x=2$.\\
+$f$ decreix a $(-\infty,0)$, creix a $(0,2)$ i decreix a $(2,+\infty)$: en $(2,4)$ hi ha un
+\textbf{màxim relatiu} i en $(0,0)$, un \textbf{mínim relatiu}.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+\textbf{Inventa.} Escriu una funció polinòmica que tingui exactament dos extrems relatius: un
+màxim en $x=0$ i un mínim en $x=4$. Justifica-ho.
+
+\begin{solucio}
+Cal que $f'$ s'anul·li en $0$ i en $4$, i que hi canviï de positiva a negativa i de negativa a
+positiva, respectivament. La paràbola $f'(x)=3x(x-4)$ ho compleix: és positiva abans
+de $0$, negativa entre $0$ i $4$ i positiva després.\\
+Integrant: $f(x)=x^3-6x^2$.\\
+Comprovació: $f'(x)=3x^2-12x=3x(x-4)$, amb màxim en $x=0$ i mínim en $x=4$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{0,75}
+Pot una funció polinòmica de grau $3$ tenir exactament \textbf{un} extrem relatiu? Raona-ho.
+
+\begin{solucio}
+Si $f$ té grau $3$, $f'$ és de grau $2$ i pot tenir dues arrels diferents, una de doble o cap.\\
+Amb dues arrels diferents, $f'$ canvia de signe dues vegades: \textbf{dos extrems}.\\
+Amb una arrel doble, $f'$ no canvia de signe: \textbf{cap extrem} (per exemple, $f(x)=x^3$).\\
+Sense arrels reals, $f'$ tampoc no canvia de signe: \textbf{cap extrem}.\\
+Per tant, \textbf{no és possible} tenir-ne exactament un.
+\end{solucio}
+
+\end{apartats}
