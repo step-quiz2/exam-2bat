@@ -1,0 +1,86 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Compila el banc — s'executa sol quan un push canvia una font. Després
+#  d'una pujada per _uploads cal llançar-lo a mà (Actions → Run workflow):
+#  GitHub no encadena workflows, i el commit del bot d'extracció no el
+#  dispara.
+#  ─────────────────────────────────────────────────────────────────────
+#  Ordre:  proves del validador → prova de sortida del build → build
+#  (valida + compila) → prova de paritat web/build → desa PDF i catàleg.
+#  Si QUALSEVOL pas falla, no es desa res: el banc publicat sempre és
+#  l'últim banc correcte.
+# ═══════════════════════════════════════════════════════════════════════
+name: Compila el banc
+
+on:
+  push:
+    branches: [main]
+    # Només les FONTS disparen el build. El commit del bot (PDF i
+    # catàleg) no hi és, i per tant no pot provocar un bucle.
+    paths:
+      - 'u*/*/q*/pregunta.tex'
+      - 'u*/*/q*/meta.json'
+      - 'pau/*/*/pregunta.tex'
+      - 'pau/*/*/meta.json'
+      - 'pau/convocatories.json'
+      - 'build/**'
+      - 'temes.json'
+      - 'assets/app.js'
+      - '.github/workflows/compila.yml'
+  workflow_dispatch:        # botó «Run workflow» per forçar-lo a mà
+
+permissions:
+  contents: write           # cal per desar els PDF generats
+
+concurrency:                # dos push seguits: només compta l'últim
+  group: compila-banc
+  cancel-in-progress: true
+
+jobs:
+  compila:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Instal·la TeX Live
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends \
+            texlive-latex-recommended texlive-latex-extra \
+            texlive-pictures texlive-fonts-recommended \
+            texlive-lang-spanish lmodern
+
+      - name: Les regles del validador funcionen
+        run: python3 build/prova_validacio.py
+
+      - name: Un build que falla no escriu res
+        run: python3 build/prova_sortida.py
+
+      - name: Valida i compila totes les preguntes
+        run: python3 build/build.py
+
+      - name: El lloc web i el build munten el mateix .tex
+        run: python3 build/prova_paritat.py
+
+      - name: Desa els PDF i el catàleg
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cataleg.js $(find . -path './*/*/*/out/*.pdf' -not -path './.git/*')
+          if git diff --cached --quiet; then
+            echo "Cap canvi als fitxers generats."
+            exit 0
+          fi
+          git commit -m "build: PDF i catàleg [skip ci]"
+          # Si mentre es compilava algú ha fet push a la branca (un canvi al
+          # README, per exemple, que no dispara l'Action), aquest push seria
+          # rebutjat. S'incorporen aquells commits i es torna a provar. El rebase
+          # només pot xocar si aquells commits toquen fitxers generats: llavors
+          # el pas falla, no es desa res i n'hi ha prou de rellançar l'Action.
+          for intent in 1 2 3; do
+            git push origin "HEAD:$GITHUB_REF_NAME" && exit 0
+            echo "La branca ha avançat durant el build; ho torno a provar ($intent/3)."
+            git pull --rebase origin "$GITHUB_REF_NAME"
+          done
+          echo "No s'ha pogut desar després de 3 intents." >&2
+          exit 1
