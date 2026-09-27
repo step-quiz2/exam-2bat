@@ -32,6 +32,16 @@
    fa servir la seva versió de 50 min (punts, minuts i PDF propis) si en
    té; si no, hi va sencera. materialitza() deixa cada pregunta neta per a
    la modalitat: el .tex que es baixa diu exactament el que surt al PDF.
+
+   LES TRIES
+   Un apartat pot oferir més d'un ítem («tria»): 1 límit o 4, amb reflexió
+   o sense, classificar la discontinuïtat o llegir imatges. build.py ja
+   n'ha triat un per defecte per a cada modalitat —el .tex sense tocar res
+   és idèntic al d'abans que existissin les tries—, i cada plaça de
+   l'examen (`examen[k].seleccio`) hi pot dir un altre ítem, per tria de la
+   pregunta, no de la pregunta i la tria d'una altra. materialitza() hi fa
+   EXACTAMENT el mateix que build.py: un id que no existeix es descarta i
+   es queda amb el defecte (regla 5).
    ═══════════════════════════════════════════════════════════════════════ */
 
 // Sense prototip: així #__proto__ o #constructor no hi troben res. Amb {},
@@ -41,7 +51,10 @@ BANC.temes.forEach(t => { PER_TEMA[t.slug] = []; });
 BANC.preguntes.forEach(p => { (PER_TEMA[p.tema] ||= []).push(p); });
 Object.values(PER_TEMA).forEach(l => l.sort((a, b) => a.codi.localeCompare(b.codi)));
 
-let examen = [];          // preguntes en ordre: { slug, i }; i és l'índex dins PER_TEMA[slug]
+let examen = [];          // preguntes en ordre: { slug, i, seleccio }; i és
+                           // l'índex dins PER_TEMA[slug]; seleccio (id de
+                           // tria → id d'ítem) només hi porta les tries que
+                           // el professor ha canviat del seu defecte
 const visor = {};         // id de pregunta → 'enunciat' | 'solucio' | undefined
 
 // estructura[k]: la plaça k és una opció de l'anterior? Per defecte, la de la
@@ -55,6 +68,33 @@ const apartatsDe = q => (curt ? q.apartats_curt : q.apartats);
 const minutsDe = q => (curt ? q.minuts_curt : q.minuts);
 const pdfDe = (q, solucio) => (curt ? (solucio ? q.pdf_solucio_curt : q.pdf_curt)
                                     : (solucio ? q.pdf_solucio : q.pdf));
+
+/** L'ítem triat d'una tria: el de `seleccio` si en diu un i encara és un dels
+ *  seus, si no el defecte de la modalitat actual. Mai en torna cap altra
+ *  cosa (regla 5): una tria sense ítems no hauria d'existir (build.py ho
+ *  rebutjaria), però es protegeix igualment. */
+function itemTriat(t, seleccio) {
+  const defecte = t.items.find(it => it.id === (curt ? t.defecte_curt : t.defecte_llarg)) || t.items[0];
+  if (!seleccio || !Object.prototype.hasOwnProperty.call(seleccio, t.id)) return defecte;
+  return t.items.find(it => it.id === seleccio[t.id]) || defecte;
+}
+
+/** Punts de cada apartat de `q`, després d'aplicar `seleccio`. Sense cap
+ *  tria —la immensa majoria de preguntes— és exactament apartatsDe(q), sense
+ *  cap càlcul de més. build.py construeix apartatsDe(q) posant primer els
+ *  apartats normals i després les tries, en l'ordre en què hi apareixen: per
+ *  això les últimes q.tries.length posicions són sempre les de les tries. */
+function puntsSeleccio(q, seleccio) {
+  const base = apartatsDe(q);
+  const tries = q.tries || [];
+  if (!tries.length) return base;
+  const normals = base.length - tries.length;
+  const deTries = tries.map(t => {
+    const it = itemTriat(t, seleccio);
+    return (curt ? it.curt : it.llarg) ?? 0;
+  });
+  return [...base.slice(0, normals), ...deTries];
+}
 
 // ── utilitats ────────────────────────────────────────────────────────
 const $ = s => document.querySelector(s);
@@ -78,10 +118,40 @@ function munta(cossos, solucions) {
     .replace('%%COS%%', () => cossos.join('\n\n'));
 }
 
+/** Igual que a build.py: l'identificador d'una tria o d'un ítem és permanent,
+ *  com q001 — minúscules, xifres i guions, començant per una lletra. */
+const RE_TRIA = /\\begin\{tria\}\{([a-z][a-z0-9-]*)\}(?:\[defecte-curt=([a-z][a-z0-9-]*)\])?(.*?)\\end\{tria\}/gs;
+const RE_ITEMTRIA = /\\itemtria\{([a-z][a-z0-9-]*)\}\{([^{}]*)\}(?:\{([^{}]*)\})?/g;
+
 /** Idèntic a materialitza() de build.py: la versió d'una pregunta per a una
- *  modalitat, neta. A 50 min, fora els blocs nomesllarg i \\apartat[x]{y} →
- *  \\apartat{x}; a 1 h 30, fora només les línies del bloc i → \\apartat{y}. */
-function materialitza(tex, esCurt) {
+ *  modalitat i una selecció de tries, neta. Primer, cada tria es converteix
+ *  en un \apartat{punts} normal amb el cos de l'ítem triat —el de `seleccio`
+ *  per al seu identificador si n'hi ha i és un dels seus ítems, si no el
+ *  defecte de la modalitat. Després, exactament com abans: a 50 min, fora
+ *  els blocs nomesllarg i \apartat[x]{y} → \apartat{x}; a 1 h 30, fora només
+ *  les línies del bloc i \apartat[x]{y} → \apartat{y}. */
+function materialitza(tex, esCurt, seleccio) {
+  seleccio = seleccio || Object.create(null);
+  tex = tex.replace(RE_TRIA, (_, idTria, defecteCurt, cos) => {
+    // Els punts es guarden tal com els ha escrit l'autor (la cadena bruta,
+    // «0,5»): com amb \apartat[x]{y}, mai es recalculen, es reprodueixen.
+    const posicions = [...cos.matchAll(RE_ITEMTRIA)];
+    const ordre = posicions.map(p => p[1]);
+    const bruts = Object.create(null);
+    posicions.forEach(p => { bruts[p[1]] = [p[2], p[3]]; });   // id → [llarg, curt|undefined]
+    if (!ordre.length) return '';
+    const teDefecteCurt = defecteCurt !== undefined
+      && Object.prototype.hasOwnProperty.call(bruts, defecteCurt);
+    const defecte = (esCurt && teDefecteCurt) ? defecteCurt : ordre[0];
+    let triat = seleccio[idTria];
+    if (!Object.prototype.hasOwnProperty.call(bruts, triat)) triat = defecte;   // regla 5: mai trenca
+    const [pLlarg, pCurt] = bruts[triat];
+    const puntsBrut = esCurt ? (pCurt !== undefined ? pCurt : pLlarg) : pLlarg;
+    const i = ordre.indexOf(triat);
+    const inici = posicions[i].index + posicions[i][0].length;
+    const final = i + 1 < posicions.length ? posicions[i + 1].index : cos.length;
+    return `\\apartat{${puntsBrut.trim()}}` + cos.slice(inici, final);
+  });
   const sortida = [];
   let dins = false;
   for (const linia of tex.split('\n')) {
@@ -97,12 +167,12 @@ function materialitza(tex, esCurt) {
 }
 
 /** Idèntic a cos_amb_capcalera() de build.py: capçalera, procedència PAU
- *  (si n'hi ha) i cos, ja net per a la modalitat de l'examen. La procedència
- *  surt del catàleg, mai del .tex. */
-const ambCapcalera = (q, etiqueta) =>
+ *  (si n'hi ha) i cos, ja net per a la modalitat de l'examen i la selecció
+ *  de tries de la seva plaça. La procedència surt del catàleg, mai del .tex. */
+const ambCapcalera = (q, etiqueta, seleccio) =>
   `\\encapcalament{${etiqueta}}\n`
   + (q.procedencia ? `\\procedencia{${q.procedencia}}\n` : '')
-  + materialitza(q.tex, curt).trim();
+  + materialitza(q.tex, curt, seleccio).trim();
 
 // ── l'examen ─────────────────────────────────────────────────────────
 const preguntaDe = p => PER_TEMA[p.slug][p.i];
@@ -140,9 +210,12 @@ function etiquetes() {
 // ── estat a l'adreça ─────────────────────────────────────────────────
 //   #analisi:ana-26j-q1,algebra:alg-26j-q2,analisi:ana-26j-q4a|geometria:geo-26j-q4b
 //   #50min/limits-punt:q001,…   (examen de 50 min)
+//   #limits-infinit:q002~limits-infinit-tipus=quatre-tipus;determina-a=sense-reflexio,…
 // La coma separa preguntes; la barra uneix les opcions d'una mateixa
-// pregunta (4a|4b). Les adreces antigues, sense barres ni prefix, continuen
-// valent: són exàmens d'1 h 30.
+// pregunta (4a|4b); el ~ separa el codi de la selecció de tries, si n'hi ha
+// alguna que no sigui la del defecte, i el ; hi separa cada tria=ítem. Les
+// adreces antigues, sense cap d'aquests símbols, continuen valent tal qual:
+// són exàmens d'1 h 30 sense cap tria personalitzada.
 function llegeixHash() {
   let cru = location.hash.replace(/^#/, '');
   // Un % solt o una adreça retallada fan petar decodeURIComponent. Els slugs
@@ -152,23 +225,34 @@ function llegeixHash() {
   cru.split(',').forEach(grup => {
     let primera = true;
     grup.split('|').forEach(tros => {
-      const [slug, codi] = tros.split(':');
+      const [slug, codiSeleccio] = tros.split(':');
+      const [codi, seleccioTxt] = (codiSeleccio || '').split('~');
       const llista = PER_TEMA[slug];
       if (!llista) return;
       let i = llista.findIndex(q => q.codi === codi);
       if (i >= 0 && usades(slug).has(i)) return;      // regla 6
       if (i < 0) i = primeraLliure(slug);              // codi desaparegut → la primera lliure
       if (i < 0) return;                               // tema buit o sense variants lliures
+      // Un id de tria o d'ítem que ja no existeixi es descarta en pintar
+      // (regla 5): aquí només cal separar-los, no validar-los.
+      const seleccio = Object.create(null);
+      (seleccioTxt || '').split(';').forEach(parell => {
+        const [idTria, idItem] = parell.split('=');
+        if (idTria && idItem) seleccio[idTria] = idItem;
+      });
       estructura[examen.length] = !primera;            // la plaça que ocuparà
-      examen.push({ slug, i });
+      examen.push({ slug, i, seleccio });
       primera = false;
     });
   });
 }
 
 function escriuHash() {
-  const s = examen.map((p, k) =>
-    (k ? (esOpcio(k) ? '|' : ',') : '') + `${p.slug}:${preguntaDe(p).codi}`).join('');
+  const s = examen.map((p, k) => {
+    const parells = Object.entries(p.seleccio || {});
+    const sufix = parells.length ? '~' + parells.map(([t, id]) => `${t}=${id}`).join(';') : '';
+    return (k ? (esOpcio(k) ? '|' : ',') : '') + `${p.slug}:${preguntaDe(p).codi}${sufix}`;
+  }).join('');
   const h = (curt ? '50min/' : '') + s;
   history.replaceState(null, '', h ? '#' + h : location.pathname + location.search);
 }
@@ -178,7 +262,7 @@ function escriuHash() {
 function afegeix(slug) {
   const i = primeraLliure(slug);
   if (i < 0) return;
-  examen.push({ slug, i });
+  examen.push({ slug, i, seleccio: Object.create(null) });
   pinta();
 }
 
@@ -206,8 +290,17 @@ function commutaOpcio(k) {
   pinta();
 }
 
+/** Canvia, per a la pregunta de la plaça k, quin ítem s'usa a la tria
+ *  `idTria`. Un id que no existeixi es descarta en pintar (regla 5): mai cal
+ *  validar-lo aquí. */
+function triaCanvia(k, idTria, idItem) {
+  examen[k].seleccio[idTria] = idItem;
+  pinta();
+}
+
 /** Passa a la variant següent (o anterior) del mateix tema que no sigui ja
- *  a l'examen (regla 6). */
+ *  a l'examen (regla 6). Canvia de pregunta, i per tant la seva seleccio de
+ *  tries es reinicia: la d'una variant no vol dir res per a una altra. */
 function rota(k, pas) {
   const p = examen[k], n = PER_TEMA[p.slug].length, altres = usades(p.slug, k);
   for (let s = 1; s < n; s++) {
@@ -216,6 +309,7 @@ function rota(k, pas) {
     const obert = visor[preguntaDe(p).id];
     delete visor[preguntaDe(p).id];
     p.i = i;
+    p.seleccio = Object.create(null);
     if (obert) visor[preguntaDe(p).id] = 'enunciat';
     pinta();
     return;
@@ -270,8 +364,25 @@ function pintaCarta(k, etiqueta) {
   const unitatsTxt = q.unitats.length
     ? q.unitats.map(u => `<abbr title="${esc(BANC.unitats[u]?.subtitol || '')}">${esc(u)}</abbr>`).join(' · ')
     : 'per definir';
+  const punts = puntsSeleccio(q, p.seleccio);
   const div = document.createElement('div');
   div.className = 'carta' + (esPau ? ' pau' : '') + (esOpcio(k) ? ' opcio' : '');
+
+  // Una tria per apartat: un <select> amb cada ítem i els seus punts a la
+  // modalitat actual. Sense cap tria (la immensa majoria de preguntes), això
+  // no pinta res i la targeta queda exactament com abans.
+  const tries = q.tries || [];
+  let personalitzada = false;
+  const triesHtml = tries.map(t => {
+    const actual = itemTriat(t, p.seleccio);
+    if (actual.id !== (curt ? t.defecte_curt : t.defecte_llarg)) personalitzada = true;
+    const opcions = t.items.map(it =>
+      `<option value="${esc(it.id)}"${it.id === actual.id ? ' selected' : ''}>`
+      + `${esc(it.id.replace(/-/g, ' '))} (${num(curt ? it.curt : it.llarg)} punts)</option>`).join('');
+    return `<label class="tria-apartat"><span>${esc(t.id.replace(/-/g, ' '))}:</span>
+      <select data-tria="${esc(t.id)}">${opcions}</select></label>`;
+  }).join('');
+
   div.innerHTML = `
     <div class="carta-dalt">
       <span class="num">Pregunta ${esc(etiqueta)}</span>
@@ -285,8 +396,11 @@ function pintaCarta(k, etiqueta) {
       </span>
     </div>
     <div class="carta-titol">${esc(q.titol)}</div>
+    ${tries.length ? `<div class="tries">${triesHtml}
+      ${personalitzada ? '<div class="tria-nota">L\u2019Enunciat i la Solució de sota mostren la versió per defecte; el .tex que en baixis ja reflectirà aquesta selecció.</div>' : ''}
+      </div>` : ''}
     <div class="meta">
-      <span>${apartatsDe(q).map(num).join(' + ')} = ${num(apartatsDe(q).reduce((s, a) => s + a, 0))} punts</span>
+      <span>${punts.map(num).join(' + ')} = ${num(punts.reduce((s, a) => s + a, 0))} punts</span>
       <span>${esc(q.dificultat)}</span>
       <span>~${minutsDe(q)} min</span>
       ${esPau ? `<span>cal haver fet: ${unitatsTxt}</span>` : `<span>llibre: ${q.origen.map(esc).join(', ')}</span>`}
@@ -319,7 +433,7 @@ function pintaCarta(k, etiqueta) {
     enunciat: () => mostra(q.id, 'enunciat'),
     solucio:  () => mostra(q.id, 'solucio'),
     tex:      () => baixa(`${q.id.replace(/\//g, '-')}.tex`,
-                          munta([ambCapcalera(q, `Q${etiqueta}`)], false)),
+                          munta([ambCapcalera(q, `Q${etiqueta}`, p.seleccio)], false)),
     prev:     () => rota(k, -1),
     next:     () => rota(k, +1),
     amunt:    () => mou(k, -1),
@@ -328,6 +442,9 @@ function pintaCarta(k, etiqueta) {
     opcio:    () => commutaOpcio(k),
   };
   div.querySelectorAll('button[data-fer]').forEach(b => { b.onclick = fer[b.dataset.fer]; });
+  div.querySelectorAll('select[data-tria]').forEach(s => {
+    s.onchange = () => triaCanvia(k, s.dataset.tria, s.value);
+  });
   return div;
 }
 
@@ -346,8 +463,8 @@ function pinta() {
   // Les opcions d'una mateixa pregunta compten una sola vegada: l'alumne en
   // respon una. Dels minuts, es compta la més llarga.
   const qs = triades(), gs = grups();
-  const centDe = q => Math.round(apartatsDe(q).reduce((s, a) => s + a, 0) * 100);
-  const cent = gs.reduce((s, g) => s + Math.max(...g.map(k => centDe(qs[k]))), 0);
+  const centDe = k => Math.round(puntsSeleccio(qs[k], examen[k].seleccio).reduce((s, a) => s + a, 0) * 100);
+  const cent = gs.reduce((s, g) => s + Math.max(...g.map(centDe)), 0);
   const minuts = gs.reduce((s, g) => s + Math.max(...g.map(k => minutsDe(qs[k]))), 0);
   $('#recompte').innerHTML = qs.length
     ? `<span class="seg">${qs.length} ${qs.length === 1 ? 'pregunta' : 'preguntes'}</span>`
@@ -369,7 +486,7 @@ function pinta() {
 // ── arrencada ────────────────────────────────────────────────────────
 const cossosTriats = () => {
   const et = etiquetes();
-  return triades().map((q, k) => ambCapcalera(q, `Q${et[k]}`));
+  return triades().map((q, k) => ambCapcalera(q, `Q${et[k]}`, examen[k].seleccio));
 };
 
 /** Les peces d'un examen, en ordre: el segell de versió del format, la

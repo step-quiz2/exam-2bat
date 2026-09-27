@@ -10,6 +10,7 @@
 # ═══════════════════════════════════════════════════════════════════════
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -42,6 +43,7 @@ def edita_meta(canvi):
 
 QP = "pau/analisi/ana-26j-q1"
 QM = "u7/limits-punt/q001"      # té versió de 50 min
+QT = "u7/limits-infinit/q002"   # té dues tries
 
 
 def mou(de, a):
@@ -64,6 +66,30 @@ def edita_json(ruta, canvi):
         d = json.loads((r / ruta).read_text(encoding="utf-8"))
         canvi(d)
         (r / ruta).write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
+    return f
+
+
+def buida_tria(ruta, id_tria):
+    """Treu tots els \\itemtria d'una tria (però no la tria mateixa): «\\begin
+    {tria}{id_tria} … \\end{tria}» es queda sense res entremig."""
+    def f(r):
+        t = (r / ruta).read_text(encoding="utf-8")
+        patro = r"(\\begin\{tria\}\{" + re.escape(id_tria) + r"\}).*?(\\end\{tria\})"
+        nou, n = re.subn(patro, r"\1\2", t, count=1, flags=re.S)
+        assert n == 1, f"la prova no troba la tria «{id_tria}» a {ruta}"
+        (r / ruta).write_text(nou, encoding="utf-8")
+    return f
+
+
+def dins_de_nomesllarg(ruta, id_tria):
+    """Embolcalla una tria sencera amb \\begin{nomesllarg}…\\end{nomesllarg},
+    per provar que la combinació encara no s'admet."""
+    def f(r):
+        t = (r / ruta).read_text(encoding="utf-8")
+        patro = r"(\\begin\{tria\}\{" + re.escape(id_tria) + r"\}.*?\\end\{tria\})"
+        nou, n = re.subn(patro, r"\\begin{nomesllarg}\n\1\n\\end{nomesllarg}", t, count=1, flags=re.S)
+        assert n == 1, f"la prova no troba la tria «{id_tria}» a {ruta}"
+        (r / ruta).write_text(nou, encoding="utf-8")
     return f
 
 
@@ -135,6 +161,35 @@ AVARIES = [
     ("\\begin{nomesllarg} amb text a la mateixa línia",
      edita_text(f"{QM}/pregunta.tex", "\\begin{nomesllarg}\n", "\\begin{nomesllarg} Opcional.\n"),
      "\\begin{nomesllarg} ha d'anar sol"),
+    # ── tries: la pregunta pilot és la primera amb un apartat de tria ──
+    ("\\itemtria amb un identificador mal format",
+     edita_text(f"{QT}/pregunta.tex", r"\itemtria{un-limit}{0,75}{1,25}", r"\itemtria{4un-limit}{0,75}{1,25}"),
+     "identificador o uns punts mal formats"),
+    ("\\begin{tria} amb un identificador mal format",
+     edita_text(f"{QT}/pregunta.tex", r"\begin{tria}{limits-infinit-tipus}",
+                r"\begin{tria}{Limits-Infinit-Tipus}"),
+     "identificador o un defecte-curt mal format"),
+    ("defecte-curt que no és cap ítem de la tria",
+     edita_text(f"{QT}/pregunta.tex", r"\begin{tria}{determina-a}",
+                r"\begin{tria}{determina-a}[defecte-curt=no-existeix]"),
+     "no és cap dels seus ítems"),
+    ("identificador d'ítem repetit dins d'una tria",
+     edita_text(f"{QT}/pregunta.tex", r"\itemtria{sense-reflexio}{0,5}", r"\itemtria{amb-reflexio}{0,5}"),
+     "identificador d'ítem repetit"),
+    ("una tria sense cap \\itemtria",
+     buida_tria(f"{QT}/pregunta.tex", "determina-a"), "no té cap \\itemtria"),
+    ("punts d'un ítem que no són múltiple de 0,25",
+     edita_text(f"{QT}/pregunta.tex", r"\itemtria{sense-reflexio}{0,5}", r"\itemtria{sense-reflexio}{0,6}"),
+     "no és múltiple de 0,25"),
+    ("identificador de tria repetit",
+     edita_text(f"{QT}/pregunta.tex", r"\begin{tria}{determina-a}", r"\begin{tria}{limits-infinit-tipus}"),
+     "identificador de tria repetit"),
+    ("\\begin{tria} i \\end{tria} desaparellats",
+     edita_text(f"{QT}/pregunta.tex", "\\end{tria}\n\n\\end{apartats}", "\\end{apartats}"),
+     "\\begin{tria} i 1 \\end{tria}"),
+    ("una tria dins d'un nomesllarg",
+     dins_de_nomesllarg(f"{QT}/pregunta.tex", "determina-a"),
+     "no pot ser dins d'un nomesllarg"),
 ]
 
 
