@@ -1,0 +1,19 @@
+{
+  "titol": "Paràmetres de continuïtat: un sistema de dues equacions i un cas amb dues solucions",
+  "temes_secundaris": [
+    "continuitat-trossos"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    40,
+    102,
+    106
+  ],
+  "minuts": 20,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "paràmetres",
+    "a trossos",
+    "sistema"
+  ]
+}

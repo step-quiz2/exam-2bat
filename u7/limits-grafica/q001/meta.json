@@ -1,0 +1,21 @@
+{
+  "titol": "Límits i continuïtat llegits sobre una gràfica",
+  "temes_secundaris": [
+    "limits-punt",
+    "continuitat-trossos"
+  ],
+  "dificultat": "●○○",
+  "origen": [
+    44,
+    66,
+    68,
+    92
+  ],
+  "minuts": 16,
+  "etiquetes": [
+    "lectura de gràfica",
+    "límits laterals",
+    "classificació"
+  ],
+  "minuts_curt": 10
+}

@@ -1,0 +1,47 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Demostra que la funció
+\[
+f(x)=3^{x-1}+x
+\]
+pren el valor $4$ en algun punt de l'interval $(1,2)$.
+
+\begin{solucio}
+Considerem $g(x)=f(x)-4=3^{x-1}+x-4$. Demostrar que $f$ pren el valor $4$ equival a
+demostrar que $g$ s'anul·la.\\
+$g$ és contínua a $\mathbb{R}$ (suma d'una exponencial i un polinomi), en particular a
+$[1,2]$, i $g(1)=1+1-4=-2<0$, $g(2)=3+2-4=1>0$.\\
+Pel teorema de Bolzano, existeix $c\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=4$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{1}
+Demostra que l'equació
+\[
+x^3+2x-5=0
+\]
+té almenys una solució a l'interval $[1,2]$ i troba un interval de longitud $0{,}1$ que la
+contingui.
+
+\begin{solucio}
+$p(x)=x^3+2x-5$ és polinòmica i, per tant, contínua. $p(1)=-2<0$ i $p(2)=7>0$: per
+Bolzano hi ha una arrel a $(1,2)$.\\
+$p(1{,}5)=1{,}375>0$: l'arrel és a $(1;\,1{,}5)$.\\
+$p(1{,}3)=-0{,}203<0$ i $p(1{,}4)=0{,}544>0$: l'arrel és a $(1{,}3;\,1{,}4)$, de
+longitud $0{,}1$. Qualsevol nombre d'aquest interval n'és una aproximació amb un error
+menor que una dècima.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{0,75}
+Demostra que les gràfiques de $y=2^{x}$ i $y=3x$ es tallen en algun punt d'abscissa
+$x\in(0,1)$.
+
+\begin{solucio}
+Es tallen on $2^x=3x$, és a dir on s'anul·la $k(x)=2^x-3x$, que és contínua a
+$\mathbb{R}$. $k(0)=1>0$ i $k(1)=2-3=-1<0$. Per Bolzano, existeix $c\in(0,1)$ amb
+$k(c)=0$.
+\end{solucio}
+
+\end{apartats}

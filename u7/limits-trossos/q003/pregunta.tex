@@ -1,0 +1,48 @@
+Considera la funció
+\[
+g(x)=\begin{cases}
+  \dfrac{x^2-4}{x-2} & \si{x<3},\\[8pt]
+  kx-1 & \si{x\ge 3},
+\end{cases}
+\]
+on $k$ és un nombre real.
+
+\begin{apartats}
+
+\apartat[1]{0,75}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to2}g(x) & \sa \lim_{x\to0}g(x)
+\end{graella}
+
+\begin{solucio}
+Tots dos punts són a la branca $x<3$.\\
+En $x=2$ hi ha una indeterminació $0/0$:
+$\dfrac{(x-2)(x+2)}{x-2}=x+2\to4$. El límit val $4$, tot i que $g(2)$ no existeix.\\
+En $x=0$ se substitueix directament: $\dfrac{-4}{-2}=2$.
+\end{solucio}
+
+\apartat[1,5]{1,25}
+Calcula, en funció de $k$, els límits laterals de $g$ en $x=3$. Per a quin valor de $k$
+existeix $\lim_{x\to3}g(x)$? Quant val aquest límit?
+
+\begin{solucio}
+$\lim_{x\to3^-}g(x)=\dfrac{9-4}{3-2}=5$ \quad i \quad $\lim_{x\to3^+}g(x)=3k-1$.\\
+El límit existeix si i només si els dos laterals coincideixen: $3k-1=5$, és a dir
+$\boxed{k=2}$. Aleshores $\lim_{x\to3}g(x)=5$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,5}
+Per a $k=2$, calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-\infty}g(x) & \sa \lim_{x\to+\infty}g(x)
+\end{graella}
+
+\begin{solucio}
+Quan $x\to-\infty$ actua la primera branca, que per a $x\ne2$ és $x+2\to-\infty$.\\
+Quan $x\to+\infty$ actua la segona: $2x-1\to+\infty$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

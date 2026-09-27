@@ -1,0 +1,44 @@
+\begin{apartats}
+
+\apartat[1,25]{1}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to3}\frac{x^2-9}{x^2-5x+6} &
+  \sa \lim_{x\to-1}\frac{x^3+1}{x^2-1}
+\end{graella}
+
+\begin{solucio}
+Tots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\
+i) $\dfrac{(x-3)(x+3)}{(x-3)(x-2)}=\dfrac{x+3}{x-2}\to\dfrac{6}{1}=6$.\\
+ii) Per Ruffini, $x^3+1=(x+1)(x^2-x+1)$:
+$\dfrac{(x+1)(x^2-x+1)}{(x+1)(x-1)}=\dfrac{x^2-x+1}{x-1}\to\dfrac{3}{-2}=-\dfrac32$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula el límit següent:
+\[
+\lim_{x\to2}\frac{x^2-4x+4}{x^2-3x+2}
+\]
+
+\begin{solucio}
+És una indeterminació $0/0$:
+$\dfrac{(x-2)^2}{(x-2)(x-1)}=\dfrac{x-2}{x-1}\to\dfrac{0}{1}=0$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{0,75}
+Calcula, si existeixen, els límits següents. Justifica-ho amb els límits laterals.
+\begin{graella}{2}
+  \sa \lim_{x\to1}\frac{x+2}{(x-1)^2} & \sa \lim_{x\to1}\frac{x+2}{x-1}
+\end{graella}
+
+\begin{solucio}
+En tots dos casos el numerador tendeix a $3$ i el denominador a $0$.\\
+i) $(x-1)^2>0$ als dos costats de $1$: els dos laterals valen $+\infty$ i, per tant,
+el límit és $+\infty$.\\
+ii) $x-1$ canvia de signe: el lateral esquerre val $-\infty$ i el dret $+\infty$.
+El límit \textbf{no existeix}.
+\end{solucio}
+
+\end{apartats}

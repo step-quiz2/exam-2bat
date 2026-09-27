@@ -1,0 +1,51 @@
+\begin{apartats}
+
+\apartat[1,25]{1}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+f(x)=3x^2+x .
+\]
+
+\begin{solucio}
+\[
+f'(x)=\lim_{h\to0}\frac{3(x+h)^2+(x+h)-\left(3x^2+x\right)}{h}
+=\lim_{h\to0}\frac{6xh+3h^2+h}{h}=\lim_{h\to0}(6x+3h+1)=6x+1 .
+\]
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+g(x)=\sqrt{5-x} .
+\]
+
+\begin{solucio}
+Multipliquem i dividim pel conjugat:
+\[
+\begin{aligned}
+g'(x)&=\lim_{h\to0}\frac{\sqrt{5-x-h}-\sqrt{5-x}}{h}
+=\lim_{h\to0}\frac{(5-x-h)-(5-x)}{h\left(\sqrt{5-x-h}+\sqrt{5-x}\right)}\\
+&=\lim_{h\to0}\frac{-1}{\sqrt{5-x-h}+\sqrt{5-x}}=-\frac{1}{2\sqrt{5-x}} ,
+\end{aligned}
+\]
+per a $x<5$. La derivada és negativa: la funció decreix a tot el domini.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+k(x)=\frac{1}{x+2} .
+\]
+
+\begin{solucio}
+\[
+k'(x)=\lim_{h\to0}\frac{\frac{1}{x+h+2}-\frac{1}{x+2}}{h}
+=\lim_{h\to0}\frac{(x+2)-(x+h+2)}{h(x+h+2)(x+2)}
+=\lim_{h\to0}\frac{-1}{(x+h+2)(x+2)}=-\frac{1}{(x+2)^2} ,
+\]
+per a $x\neq-2$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

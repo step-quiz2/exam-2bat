@@ -1,0 +1,22 @@
+{
+  "titol": "Límits i continuïtat sobre una gràfica amb un angle, un forat i una asímptota",
+  "temes_secundaris": [
+    "limits-punt",
+    "continuitat-trossos"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    44,
+    66,
+    68,
+    92
+  ],
+  "minuts": 18,
+  "etiquetes": [
+    "lectura de gràfica",
+    "límits laterals",
+    "punt angulós",
+    "classificació"
+  ],
+  "minuts_curt": 11
+}

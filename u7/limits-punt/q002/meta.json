@@ -1,0 +1,17 @@
+{
+  "titol": "Límits en un punt: 0/0 amb Ruffini i límits infinits amb laterals",
+  "temes_secundaris": [],
+  "dificultat": "●●○",
+  "origen": [
+    70,
+    76
+  ],
+  "minuts": 18,
+  "etiquetes": [
+    "0/0",
+    "Ruffini",
+    "radical",
+    "k/0"
+  ],
+  "minuts_curt": 11
+}

@@ -1,0 +1,49 @@
+Considera la funció
+\[
+g(x)=\begin{cases}
+  \dfrac{x^2-4}{x+2} & \si{x<1},\\[8pt]
+  x^2+k & \si{x\ge 1},
+\end{cases}
+\]
+on $k$ és un nombre real.
+
+\begin{apartats}
+
+\apartat[1]{0,75}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-2}g(x) & \sa \lim_{x\to0}g(x)
+\end{graella}
+
+\begin{solucio}
+Tots dos punts són a la branca $x<1$.\\
+En $x=-2$ hi ha una indeterminació $\tfrac00$:
+$\dfrac{x^2-4}{x+2}=\dfrac{(x+2)(x-2)}{x+2}=x-2\to-4$.
+El límit val $-4$, tot i que $g(-2)$ no existeix.\\
+En $x=0$ se substitueix directament: $\dfrac{-4}{2}=-2$.
+\end{solucio}
+
+\apartat[1,5]{1,25}
+Calcula, en funció de $k$, els límits laterals de $g$ en $x=1$. Per a quin valor de $k$
+existeix $\lim_{x\to1}g(x)$? Quant val aquest límit?
+
+\begin{solucio}
+$\lim_{x\to1^-}g(x)=\dfrac{1-4}{1+2}=-1$ \quad i \quad $\lim_{x\to1^+}g(x)=1+k$.\\
+El límit existeix si i només si els dos laterals coincideixen: $1+k=-1$, és a dir
+$\boxed{k=-2}$. Aleshores $\lim_{x\to1}g(x)=-1$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,5}
+Per a $k=-2$, calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-\infty}g(x) & \sa \lim_{x\to+\infty}g(x)
+\end{graella}
+
+\begin{solucio}
+Quan $x\to-\infty$ actua la primera branca, que per a $x\ne-2$ és $x-2\to-\infty$.\\
+Quan $x\to+\infty$ actua la segona: $x^2-2\to+\infty$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

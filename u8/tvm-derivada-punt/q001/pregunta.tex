@@ -1,0 +1,45 @@
+Considera la funció
+\[
+f(x)=x^2-4x+1 .
+\]
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula la taxa de variació mitjana de $f$ als intervals $[1,3]$ i $[3,5]$, i interpreta'n el
+resultat.
+
+\begin{solucio}
+$f(1)=-2$, $f(3)=-2$ i $f(5)=6$.\\
+$\mathrm{TVM}[1,3]=\dfrac{f(3)-f(1)}{3-1}=\dfrac{-2-(-2)}{2}=0$: entre $x=1$ i $x=3$ la
+funció acaba on havia començat, i en mitjana no creix ni decreix.\\
+$\mathrm{TVM}[3,5]=\dfrac{f(5)-f(3)}{5-3}=\dfrac{6-(-2)}{2}=4$: en aquest interval la funció
+creix, en mitjana, $4$ unitats per cada unitat de $x$.
+\end{solucio}
+
+\apartat[1,25]{1}
+Calcula $f'(3)$ aplicant la definició de derivada.
+
+\begin{solucio}
+\[
+f'(3)=\lim_{h\to0}\frac{f(3+h)-f(3)}{h}
+=\lim_{h\to0}\frac{(3+h)^2-4(3+h)+1-(-2)}{h}
+=\lim_{h\to0}\frac{h^2+2h}{h}=\lim_{h\to0}(h+2)=2 .
+\]
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula la taxa de variació mitjana de $f$ a l'interval $[3;\,3{,}1]$ i compara-la amb
+$f'(3)$. Com s'explica el resultat?
+
+\begin{solucio}
+$f(3{,}1)=9{,}61-12{,}4+1=-1{,}79$, i
+$\mathrm{TVM}[3;\,3{,}1]=\dfrac{-1{,}79-(-2)}{0{,}1}=\dfrac{0{,}21}{0{,}1}=2{,}1$.\\
+És molt a prop de $f'(3)=2$: la derivada és el límit de les taxes de variació mitjanes als
+intervals $[3,3+h]$ quan $h\to0$. Aquí, $\mathrm{TVM}[3,3+h]=h+2$, que per a $h=0{,}1$ val
+$2{,}1$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

@@ -1,0 +1,51 @@
+\begin{apartats}
+
+\apartat[1,25]{1}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+f(x)=x^3 .
+\]
+
+\begin{solucio}
+Com que $(x+h)^3=x^3+3x^2h+3xh^2+h^3$,
+\[
+f'(x)=\lim_{h\to0}\frac{(x+h)^3-x^3}{h}
+=\lim_{h\to0}\frac{3x^2h+3xh^2+h^3}{h}
+=\lim_{h\to0}\left(3x^2+3xh+h^2\right)=3x^2 .
+\]
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+g(x)=-\frac{3}{x} .
+\]
+
+\begin{solucio}
+\[
+g'(x)=\lim_{h\to0}\frac{-\frac{3}{x+h}+\frac{3}{x}}{h}
+=\lim_{h\to0}\frac{-3x+3(x+h)}{h\,x(x+h)}
+=\lim_{h\to0}\frac{3}{x(x+h)}=\frac{3}{x^2} ,
+\]
+per a $x\neq0$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+k(x)=2\sqrt{x} .
+\]
+
+\begin{solucio}
+Amb el conjugat:
+\[
+k'(x)=\lim_{h\to0}\frac{2\sqrt{x+h}-2\sqrt{x}}{h}
+=\lim_{h\to0}\frac{2\left((x+h)-x\right)}{h\left(\sqrt{x+h}+\sqrt{x}\right)}
+=\lim_{h\to0}\frac{2}{\sqrt{x+h}+\sqrt{x}}=\frac{1}{\sqrt{x}} ,
+\]
+per a $x>0$.
+\end{solucio}
+
+\end{apartats}

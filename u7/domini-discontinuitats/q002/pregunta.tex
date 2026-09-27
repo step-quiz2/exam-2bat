@@ -1,0 +1,48 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Determina el domini i estudia la continuïtat de les funcions següents:
+\begin{graella}{2}
+  \sa y=\sqrt{x^2-2x-3} & \sa y=\ln|x-2|
+\end{graella}
+
+\begin{solucio}
+i) Cal $x^2-2x-3=(x-3)(x+1)\ge0$: $\mathrm{Dom}=(-\infty,-1]\cup[3,+\infty)$.
+És contínua a tot el domini.\\
+ii) Cal $|x-2|>0$, és a dir $x\ne2$: $\mathrm{Dom}=\mathbb{R}\setminus\{2\}$.
+És contínua a tot el domini. En $x=2$ els dos laterals valen $-\infty$:
+\textbf{salt infinit} (asímptota vertical $x=2$).
+\end{solucio}
+
+\apartat[1,25]{1}
+Troba els punts de discontinuïtat de la funció
+\[
+f(x)=\frac{x-1}{x^3+3x^2-4}
+\]
+i classifica'ls.
+
+\begin{solucio}
+$x=1$ anul·la el denominador. Per Ruffini, $x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2$.
+El domini és $\mathbb{R}\setminus\{-2,1\}$ i, per a $x\neq1$, $f(x)=\dfrac{1}{(x+2)^2}$.\\
+$x=1$: $\lim_{x\to1}f(x)=\dfrac19$, però $f(1)$ no existeix: \textbf{evitable}.\\
+$x=-2$: $(x+2)^2>0$ als dos costats, així que els dos laterals valen $+\infty$:
+\textbf{salt infinit}, amb $\lim_{x\to-2}f(x)=+\infty$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+\textbf{Inventa.} Escriu una funció definida a trossos que sigui contínua a tot
+$\mathbb{R}$ excepte en $x=0$, on ha de tenir una discontinuïtat evitable, i en $x=3$, on
+ha de tenir una discontinuïtat de salt finit.
+
+\begin{solucio}
+Per exemple:
+\[
+f(x)=\begin{cases} x & \si{x<3,\ x\ne0},\\ 1 & \si{x=0},\\ x+1 & \si{x\ge3}.\end{cases}
+\]
+En $x=0$: $\lim_{x\to0}f(x)=0\ne f(0)=1$, evitable. En $x=3$: laterals $3$ i $4$, salt
+finit. A la resta de punts, les branques són polinòmiques. (La resposta no és única.)
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

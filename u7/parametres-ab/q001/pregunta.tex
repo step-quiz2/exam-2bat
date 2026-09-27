@@ -1,0 +1,41 @@
+\begin{apartats}
+
+\apartat[2,5]{1,5}
+Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
+\[
+f(x)=\begin{cases}
+  e^{x}+a & \si{x\le 0},\\[3pt]
+  ax+b & \si{0<x<2},\\[3pt]
+  4+\ln(x-1) & \si{x\ge 2}.
+\end{cases}
+\]
+
+\begin{solucio}
+Cada branca és contínua al seu interval: $e^x+a$ i $ax+b$ ho són a tot $\mathbb{R}$, i
+$4+\ln(x-1)$ ho és per a $x>1$, en particular a $[2,+\infty)$. Només cal estudiar els
+enganxaments.\\
+En $x=0$: $f(0)=e^0+a=1+a$ i $\lim_{x\to0^+}f(x)=b$. Cal $b=1+a$.\\
+En $x=2$: $\lim_{x\to2^-}f(x)=2a+b$ i $f(2)=4+\ln1=4$. Cal $2a+b=4$.\\
+Substituint: $2a+1+a=4$, d'on $\boxed{a=1}$ i $\boxed{b=2}$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{1}
+Troba \textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot
+$\mathbb{R}$.
+\[
+h(x)=\begin{cases}
+  x+m^2 & \si{x<1},\\[3pt]
+  x^2+3m & \si{x\ge 1}.
+\end{cases}
+\]
+
+\begin{solucio}
+Les dues branques són polinòmiques, i per tant contínues: només cal estudiar $x=1$.\\
+$\lim_{x\to1^-}h(x)=1+m^2$ i $h(1)=1+3m$.\\
+Cal $1+m^2=1+3m$, és a dir $m^2-3m=m(m-3)=0$: $\boxed{m=0}$ o $\boxed{m=3}$.
+Hi ha \textbf{dos} valors. (Comprovació amb $m=3$: $1+9=10$ i $1+9=10$.)
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

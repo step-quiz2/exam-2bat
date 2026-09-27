@@ -1,0 +1,40 @@
+Considera la funció
+\[
+h(x)=\begin{cases}
+  \dfrac{x^2-1}{x-1} & \si{x<1},\\[8pt]
+  2^{x} & \si{1\le x\le 3},\\[4pt]
+  \dfrac{x-3}{x^2-8x+15} & \si{x>3}.
+\end{cases}
+\]
+
+\begin{apartats}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Estudia la continuïtat de $h$ en $x=1$.
+
+\begin{solucio}
+Per a $x<1$, $\dfrac{(x-1)(x+1)}{x-1}=x+1$, i per tant $\lim_{x\to1^-}h(x)=2$.\\
+A més, $h(1)=2^1=2$ i $\lim_{x\to1^+}h(x)=2$. \textbf{És contínua} en $x=1$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{1}
+Estudia la continuïtat de $h$ en $x=3$ i classifica la discontinuïtat, si n'hi ha.
+
+\begin{solucio}
+Per a $x>3$, $\dfrac{x-3}{(x-3)(x-5)}=\dfrac{1}{x-5}$.\\
+$h(3)=2^3=8$ i $\lim_{x\to3^-}h(x)=8$, però $\lim_{x\to3^+}h(x)=\dfrac{1}{3-5}=-\dfrac12$.
+Laterals finits i diferents: \textbf{salt finit}.
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Estudia la continuïtat de $h$ en $x=5$ i classifica la discontinuïtat, si n'hi ha.
+
+\begin{solucio}
+$h(5)$ no existeix. Com que per a $x>3$ és $h(x)=\dfrac{1}{x-5}$, els laterals valen
+$-\infty$ (per l'esquerra) i $+\infty$ (per la dreta): \textbf{salt infinit} (asímptota
+vertical $x=5$).
+\end{solucio}
+
+\end{apartats}

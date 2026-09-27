@@ -1,0 +1,49 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to+\infty}\frac{5x-2}{3x^2+x+1} &
+  \sa \lim_{x\to-\infty}\frac{2x^3-x}{1-x^2}
+\end{graella}
+
+\begin{solucio}
+i) El grau del denominador és més gran que el del numerador: el límit val $0$.\\
+ii) El grau del numerador és més gran. El quocient dels termes de grau més alt és
+$\dfrac{2x^3}{-x^2}=-2x$, que tendeix a $+\infty$ quan $x\to-\infty$: el límit és $+\infty$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to+\infty}\left(\frac34\right)^{x} &
+  \sa \lim_{x\to-\infty}2^{-x}
+\end{graella}
+
+\begin{solucio}
+i) La base és més petita que $1$: $\left(\tfrac34\right)^{x}\to0$.\\
+ii) Si $x\to-\infty$, aleshores $-x\to+\infty$ i $2^{-x}\to+\infty$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{1}
+Considera la funció
+\[
+f(x)=\frac{kx^2-3x}{2x^2+5},
+\]
+on $k$ és un nombre real. Determina $k$ perquè
+\[
+\lim_{x\to+\infty}f(x)=3 .
+\]
+Existeix algun valor de $k$ per al qual aquest límit sigui $+\infty$? Justifica-ho.
+
+\begin{solucio}
+Si $k\neq0$, numerador i denominador tenen grau $2$ i el límit val $\dfrac{k}{2}$.
+Imposant $\dfrac{k}{2}=3$ s'obté $\boxed{k=6}$.\\
+Si $k=0$, el numerador té grau $1$ i el límit val $0$. Per tant, el límit és sempre finit
+($\tfrac k2$ o $0$) i \textbf{no hi ha cap valor} de $k$ que el faci $+\infty$: el grau del
+numerador no pot superar mai el del denominador.
+\end{solucio}
+
+\end{apartats}

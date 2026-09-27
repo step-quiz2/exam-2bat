@@ -1,0 +1,9 @@
+{
+  "titol": "Límits en un punt: indeterminació 0/0, límits laterals i funció a trossos",
+  "temes_secundaris": ["limits-trossos"],
+  "dificultat": "●●○",
+  "origen": [76, 88, 90],
+  "minuts": 20,
+  "minuts_curt": 11,
+  "etiquetes": ["racionals", "0/0", "límits laterals", "a trossos"]
+}

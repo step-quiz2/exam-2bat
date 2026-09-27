@@ -1,0 +1,40 @@
+\begin{apartats}
+
+\apartat[2,5]{1,5}
+Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
+\[
+f(x)=\begin{cases}
+  ax+1 & \si{x<0},\\[3pt]
+  x^2+b & \si{0\le x\le 2},\\[3pt]
+  bx-a & \si{x>2}.
+\end{cases}
+\]
+
+\begin{solucio}
+Cada branca és contínua al seu tros: només cal mirar $x=0$ i $x=2$.\\
+En $x=0$: $\lim_{x\to0^-}f(x)=1$ i $f(0)=b$, d'on $\boxed{b=1}$.\\
+En $x=2$: $f(2)=4+b=5$ i $\lim_{x\to2^+}f(x)=2b-a=2-a$. Cal $2-a=5$, és a dir
+$\boxed{a=-3}$.\\
+Comprovació: amb $a=-3$ i $b=1$, en $x=0$ totes dues branques valen $1$, i en $x=2$ valen $5$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{1}
+Troba \textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot
+$\mathbb{R}$.
+\[
+g(x)=\begin{cases}
+  x+m^2 & \si{x\le 2},\\[3pt]
+  5m-x  & \si{x>2}.
+\end{cases}
+\]
+
+\begin{solucio}
+Les dues branques són contínues: només cal estudiar $x=2$.\\
+$g(2)=2+m^2$ i $\lim_{x\to2^+}g(x)=5m-2$. Cal $2+m^2=5m-2$, és a dir $m^2-5m+4=0$, que dona
+$\boxed{m=1}$ i $\boxed{m=4}$.\\
+Comprovació: amb $m=1$, totes dues branques valen $3$ en $x=2$; amb $m=4$, valen $18$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

@@ -1,0 +1,49 @@
+Considera la funció
+\[
+g(x)=\begin{cases}
+  \dfrac{x^2-1}{x+1} & \si{x<2},\\[8pt]
+  3x+k & \si{x\ge 2},
+\end{cases}
+\]
+on $k$ és un nombre real.
+
+\begin{apartats}
+
+\apartat[1]{0,75}
+Calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-1}g(x) & \sa \lim_{x\to0}g(x)
+\end{graella}
+
+\begin{solucio}
+Tots dos punts són a la branca $x<2$.\\
+En $x=-1$ hi ha una indeterminació $0/0$:
+$\dfrac{x^2-1}{x+1}=\dfrac{(x+1)(x-1)}{x+1}=x-1\to-2$.
+El límit val $-2$, tot i que $g(-1)$ no existeix.\\
+En $x=0$ se substitueix directament: $\dfrac{-1}{1}=-1$.
+\end{solucio}
+
+\apartat[1,5]{1,25}
+Calcula, en funció de $k$, els límits laterals de $g$ en $x=2$. Per a quin valor de $k$
+existeix $\lim_{x\to2}g(x)$? Quant val aquest límit?
+
+\begin{solucio}
+$\lim_{x\to2^-}g(x)=\dfrac{4-1}{2+1}=1$ \quad i \quad $\lim_{x\to2^+}g(x)=6+k$.\\
+El límit existeix si i només si els dos laterals coincideixen: $6+k=1$, és a dir
+$\boxed{k=-5}$. Aleshores $\lim_{x\to2}g(x)=1$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,5}
+Per a $k=-5$, calcula els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-\infty}g(x) & \sa \lim_{x\to+\infty}g(x)
+\end{graella}
+
+\begin{solucio}
+Quan $x\to-\infty$ actua la primera branca, que per a $x\ne-1$ és $x-1\to-\infty$.\\
+Quan $x\to+\infty$ actua la segona: $3x-5\to+\infty$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

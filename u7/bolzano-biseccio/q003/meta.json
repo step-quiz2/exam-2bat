@@ -1,0 +1,18 @@
+{
+  "titol": "Bolzano i bisecció en una cúbica, i tall entre un logaritme i una recta",
+  "temes_secundaris": [],
+  "dificultat": "●●○",
+  "origen": [
+    112,
+    113,
+    114,
+    120
+  ],
+  "minuts": 18,
+  "minuts_curt": 11,
+  "etiquetes": [
+    "Bolzano",
+    "bisecció",
+    "punt de tall"
+  ]
+}

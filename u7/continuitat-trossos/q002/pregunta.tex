@@ -1,0 +1,44 @@
+\begin{apartats}
+
+\apartat[2,5]{1,25}
+Estudia la continuïtat de la funció següent i classifica'n les discontinuïtats.
+\[
+f(x)=\begin{cases}
+  x+2 & \si{x<-1},\\[3pt]
+  x^2 & \si{-1\le x\le 2},\\[3pt]
+  3+\ln(x-1) & \si{x>2}.
+\end{cases}
+\]
+
+\begin{solucio}
+Les dues primeres branques són polinòmiques. La tercera és contínua per a $x>1$, i per
+tant a $(2,+\infty)$. Cal estudiar els enganxaments.\\
+$x=-1$: $\lim_{x\to-1^-}f(x)=1$, $f(-1)=1$ i $\lim_{x\to-1^+}f(x)=1$. \textbf{És contínua.}\\
+$x=2$: $f(2)=4=\lim_{x\to2^-}f(x)$, però $\lim_{x\to2^+}f(x)=3+\ln1=3$.
+Laterals finits i diferents: \textbf{salt finit} (de salt $1$).\\
+Per tant, $f$ és contínua a $\mathbb{R}\setminus\{2\}$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{1,25}
+Escriu la funció
+\[
+h(x)=\frac{x^2-1}{|x-1|}
+\]
+com una funció definida a trossos, sense valor absolut. Estudia'n la continuïtat i
+classifica les discontinuïtats que presenti.
+
+\begin{solucio}
+$h$ no està definida en $x=1$.\\
+Si $x>1$: $|x-1|=x-1$ i $h(x)=\dfrac{(x-1)(x+1)}{x-1}=x+1$.\\
+Si $x<1$: $|x-1|=-(x-1)$ i $h(x)=\dfrac{(x-1)(x+1)}{-(x-1)}=-x-1$.
+\[
+h(x)=\begin{cases} -x-1 & \si{x<1},\\ x+1 & \si{x>1}.\end{cases}
+\]
+Cada branca és polinòmica, i per tant $h$ és contínua a $\mathbb{R}\setminus\{1\}$.
+En $x=1$: $\lim_{x\to1^-}h(x)=-2$ i $\lim_{x\to1^+}h(x)=2$. Laterals finits i
+diferents: \textbf{salt finit}.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

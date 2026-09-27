@@ -1,0 +1,45 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula el límit següent:
+\[
+\lim_{x\to+\infty}\frac{3x^2+1}{x-4}
+\]
+
+\begin{solucio}
+El grau del numerador ($2$) és més gran que el del denominador ($1$). El quocient dels termes de
+grau màxim, $\dfrac{3x^2}{x}=3x$, tendeix a $+\infty$: el límit és $+\infty$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula el límit següent:
+\[
+\lim_{x\to-\infty}\frac{1-x^4}{2x^4-x^2+5}
+\]
+
+\begin{solucio}
+Numerador i denominador tenen el mateix grau ($4$): el límit és el quocient dels coeficients
+principals, $\dfrac{-1}{2}=-\dfrac12$.
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{1}
+Considera la funció
+\[
+f(x)=\frac{ax^2-2x}{4x^2+1},
+\]
+on $a$ és un nombre real. Determina $a$ perquè
+\[
+\lim_{x\to+\infty}f(x)=\frac12 .
+\]
+Existeix algun valor de $a$ per al qual aquest límit valgui $0$? Justifica-ho.
+
+\begin{solucio}
+Si $a\neq0$, numerador i denominador tenen grau $2$ i el límit val $\dfrac{a}{4}$.
+Imposant $\dfrac{a}{4}=\dfrac12$ s'obté $\boxed{a=2}$.\\
+Si $a=0$, el numerador és $-2x$, de grau $1$, i el límit val $0$. Per tant, \textbf{sí}: el
+límit val $0$ quan $a=0$, i només en aquest cas, perquè si $a\neq0$ val $\dfrac a4\neq0$.
+\end{solucio}
+
+\end{apartats}

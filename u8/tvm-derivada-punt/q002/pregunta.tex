@@ -1,0 +1,46 @@
+Considera la funció
+\[
+f(x)=\frac{6}{x+1} .
+\]
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula la taxa de variació mitjana de $f$ als intervals $[0,2]$ i $[1,5]$, i interpreta'n el
+resultat.
+
+\begin{solucio}
+$f(0)=6$, $f(1)=3$, $f(2)=2$ i $f(5)=1$.\\
+$\mathrm{TVM}[0,2]=\dfrac{2-6}{2}=-2$ \quad i \quad $\mathrm{TVM}[1,5]=\dfrac{1-3}{4}=-0{,}5$.\\
+Les dues són negatives: la funció decreix als dos intervals. A més, decreix molt més de pressa
+a prop de $x=0$ que no pas entre $x=1$ i $x=5$.
+\end{solucio}
+
+\apartat[1,25]{1}
+Calcula $f'(1)$ aplicant la definició de derivada.
+
+\begin{solucio}
+\[
+f'(1)=\lim_{h\to0}\frac{\frac{6}{2+h}-3}{h}
+=\lim_{h\to0}\frac{6-3(2+h)}{h(2+h)}
+=\lim_{h\to0}\frac{-3h}{h(2+h)}
+=\lim_{h\to0}\frac{-3}{2+h}=-\frac32 .
+\]
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula $f'(4)$ aplicant la definició i compara'l amb $f'(1)$. Què indica sobre la gràfica?
+
+\begin{solucio}
+\[
+f'(4)=\lim_{h\to0}\frac{\frac{6}{5+h}-\frac65}{h}
+=\lim_{h\to0}\frac{30-6(5+h)}{5h(5+h)}
+=\lim_{h\to0}\frac{-6}{5(5+h)}=-\frac{6}{25} .
+\]
+Totes dues derivades són negatives, però $|f'(1)|=1{,}5$ és molt més gran que
+$|f'(4)|=0{,}24$: la gràfica baixa molt més inclinada en $x=1$ que en $x=4$, on ja s'aplana.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

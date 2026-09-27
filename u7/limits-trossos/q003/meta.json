@@ -1,0 +1,20 @@
+{
+  "titol": "Límits d'una funció a trossos amb paràmetre: 0/0, laterals en el tall i infinit",
+  "temes_secundaris": [
+    "limits-punt"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    76,
+    88,
+    90
+  ],
+  "minuts": 18,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "a trossos",
+    "paràmetre",
+    "0/0",
+    "límits laterals"
+  ]
+}

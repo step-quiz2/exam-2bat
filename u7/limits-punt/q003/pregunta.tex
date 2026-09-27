@@ -1,0 +1,47 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula el límit següent:
+\[
+\lim_{x\to4}\frac{x^2-16}{x^2-6x+8}
+\]
+
+\begin{solucio}
+És una indeterminació $0/0$. Factoritzem i simplifiquem:
+\[
+\frac{(x-4)(x+4)}{(x-4)(x-2)}=\frac{x+4}{x-2}\;\xrightarrow[x\to4]{}\;\frac{8}{2}=4 .
+\]
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula el límit següent:
+\[
+\lim_{x\to-2}\frac{x^3+8}{x+2}
+\]
+
+\begin{solucio}
+També és $0/0$. Per Ruffini, $x^3+8=(x+2)\left(x^2-2x+4\right)$, i per tant
+\[
+\frac{(x+2)\left(x^2-2x+4\right)}{x+2}=x^2-2x+4\;\xrightarrow[x\to-2]{}\;4+4+4=12 .
+\]
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{1}
+Donada la funció
+\[
+h(x)=\begin{cases} 2x+1 & \si{x<1},\\[4pt] 3-x^2 & \si{x\ge 1},\end{cases}
+\]
+calcula, si existeixen, els límits següents:
+\begin{graella}{2}
+  \sa \lim_{x\to-1}h(x) & \sa \lim_{x\to1}h(x)
+\end{graella}
+
+\begin{solucio}
+i) Com que $-1<1$, hi actua la branca $2x+1$: el límit val $-1$.\\
+ii) Per l'esquerra, $2x+1\to3$; per la dreta, $3-x^2\to2$. Els laterals són diferents, i per
+tant el límit \textbf{no existeix}.
+\end{solucio}
+
+\end{apartats}

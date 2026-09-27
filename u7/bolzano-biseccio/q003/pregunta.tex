@@ -1,0 +1,42 @@
+Considera la funció
+\[
+f(x)=x^3+2x^2-1 .
+\]
+
+\begin{apartats}
+
+\apartat[1,25]{1}
+Enuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució a
+l'interval $[0,1]$.
+
+\begin{solucio}
+\textbf{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes
+diferents, aleshores existeix almenys un $c\in(a,b)$ amb $f(c)=0$.\\
+$f$ és polinòmica i, per tant, contínua a $[0,1]$. A més, $f(0)=-1<0$ i $f(1)=1+2-1=2>0$.
+Com que canvia de signe, hi ha almenys una solució a $(0,1)$.
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Aplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui una
+solució de l'equació. Justifica cada pas.
+
+\begin{solucio}
+$f(0{,}5)=0{,}125+0{,}5-1=-0{,}375<0$: com que $f(1)>0$, l'arrel és a
+$\left(0{,}5;\,1\right)$.\\
+$f(0{,}75)=0{,}421875+1{,}125-1=0{,}546875>0$: com que $f(0{,}5)<0$, l'arrel és a
+$\left(0{,}5;\,0{,}75\right)$, de longitud $0{,}25$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Demostra que les gràfiques de les funcions $y=\ln x$ i $y=2-x$ es tallen en algun punt
+d'abscissa $x\in(1,2)$.
+
+\begin{solucio}
+Es tallen on $\ln x=2-x$, és a dir on s'anul·la $k(x)=\ln x+x-2$, que és contínua a $(0,+\infty)$
+i, per tant, a $[1,2]$.\\
+$k(1)=0+1-2=-1<0$ i $k(2)=\ln2+0\approx0{,}69>0$. Per Bolzano, hi ha un punt de tall a $(1,2)$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

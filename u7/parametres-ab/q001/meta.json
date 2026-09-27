@@ -1,0 +1,20 @@
+{
+  "titol": "Paràmetres de continuïtat amb exponencial i logaritme, i un paràmetre amb dues solucions",
+  "temes_secundaris": [
+    "continuitat-trossos"
+  ],
+  "dificultat": "●●○",
+  "origen": [
+    40,
+    102,
+    106
+  ],
+  "minuts": 20,
+  "etiquetes": [
+    "sistema d'equacions",
+    "logaritme",
+    "exponencial",
+    "equació de segon grau"
+  ],
+  "minuts_curt": 12
+}

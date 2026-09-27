@@ -1,0 +1,19 @@
+{
+  "titol": "Bolzano per assolir un valor, arrel amb error menor que una dècima i punt de tall",
+  "temes_secundaris": [],
+  "dificultat": "●●○",
+  "origen": [
+    43,
+    113,
+    114,
+    120
+  ],
+  "minuts": 20,
+  "etiquetes": [
+    "Bolzano",
+    "aproximació d'arrels",
+    "punt de tall",
+    "exponencial"
+  ],
+  "minuts_curt": 10
+}

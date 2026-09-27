@@ -1,0 +1,44 @@
+Un objecte es mou en línia recta i la posició, en metres, ve donada per
+\[
+s(t)=t^2+2t ,
+\]
+on $t$ és el temps en segons.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula la velocitat mitjana entre $t=1$ i $t=4$, i entre $t=1$ i $t=2$.
+
+\begin{solucio}
+$s(1)=3$, $s(2)=8$ i $s(4)=24$.\\
+Entre $t=1$ i $t=4$: $\dfrac{24-3}{3}=7$ m/s. \quad Entre $t=1$ i $t=2$:
+$\dfrac{8-3}{1}=5$ m/s.\\
+La velocitat mitjana és la taxa de variació mitjana de la posició.
+\end{solucio}
+
+\apartat[1,25]{1}
+Calcula la velocitat instantània en $t=1$ aplicant la definició de derivada.
+
+\begin{solucio}
+\[
+s'(1)=\lim_{h\to0}\frac{s(1+h)-s(1)}{h}
+=\lim_{h\to0}\frac{(1+h)^2+2(1+h)-3}{h}
+=\lim_{h\to0}\frac{h^2+4h}{h}=\lim_{h\to0}(h+4)=4 \ \text{m/s}.
+\]
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula la velocitat instantània en $t=4$ i compara-la amb la velocitat mitjana entre $t=1$ i
+$t=4$.
+
+\begin{solucio}
+\[
+s'(4)=\lim_{h\to0}\frac{(4+h)^2+2(4+h)-24}{h}=\lim_{h\to0}\frac{h^2+10h}{h}=10 \ \text{m/s}.
+\]
+La velocitat mitjana entre $t=1$ i $t=4$ era de $7$ m/s, just entre els $4$ m/s de l'inici i
+els $10$ m/s del final: l'objecte va accelerant.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

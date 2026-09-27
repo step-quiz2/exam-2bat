@@ -1,0 +1,51 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Determina el domini i estudia la continuïtat de les funcions següents:
+\begin{graella}{2}
+  \sa y=\sqrt{4-x^2} & \sa y=\ln\left(x^2-1\right)
+\end{graella}
+
+\begin{solucio}
+i) Cal $4-x^2\ge0$, és a dir $x^2\le4$: el domini és $[-2,2]$. Hi és contínua, perquè ho són
+l'arrel i el polinomi de dins.\\
+ii) Cal $x^2-1>0$: el domini és $(-\infty,-1)\cup(1,+\infty)$. Hi és contínua, perquè ho són
+el logaritme i el polinomi de dins.
+\end{solucio}
+
+\apartat[1,25]{1}
+Troba els punts en què la funció
+\[
+f(x)=\frac{x^2-4}{x^2+x-6}
+\]
+és discontínua i classifica'n la discontinuïtat.
+
+\begin{solucio}
+$f(x)=\dfrac{(x-2)(x+2)}{(x-2)(x+3)}$: el denominador s'anul·la en $x=2$ i en $x=-3$.\\
+En $x=2$ el factor $(x-2)$ es cancel·la i queda $\dfrac{x+2}{x+3}\to\dfrac45$: el límit
+existeix i la funció no hi està definida, per tant la \textbf{discontinuïtat és evitable}.\\
+En $x=-3$ el denominador s'anul·la i el numerador no ($f$ tendeix a $\pm\infty$ segons el
+costat): \textbf{salt infinit}, amb asímptota vertical $x=-3$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+\textbf{Inventa.} Escriu una funció racional $g$ tal que
+\[
+\lim_{x\to+\infty}g(x)=-2
+\]
+i que tingui una discontinuïtat evitable en $x=1$ i una discontinuïtat de salt infinit en
+$x=-4$.
+
+\begin{solucio}
+El límit a l'infinit demana que numerador i denominador tinguin el mateix grau i que el
+quocient dels coeficients principals sigui $-2$. L'evitable en $x=1$ demana el factor $(x-1)$
+a tots dos; el salt infinit en $x=-4$, el factor $(x+4)$ només al denominador. Per exemple:
+\[
+g(x)=\frac{-2(x-1)(x-5)}{(x-1)(x+4)} .
+\]
+Qualsevol altra amb aquests factors també val.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

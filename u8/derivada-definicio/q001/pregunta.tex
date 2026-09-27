@@ -1,0 +1,51 @@
+\begin{apartats}
+
+\apartat[1,25]{1}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+f(x)=2x^2-3x .
+\]
+
+\begin{solucio}
+\[
+f'(x)=\lim_{h\to0}\frac{2(x+h)^2-3(x+h)-\left(2x^2-3x\right)}{h}
+=\lim_{h\to0}\frac{4xh+2h^2-3h}{h}=\lim_{h\to0}(4x+2h-3)=4x-3 .
+\]
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+g(x)=\sqrt{x+3} .
+\]
+
+\begin{solucio}
+Multipliquem i dividim pel conjugat:
+\[
+\begin{aligned}
+g'(x)&=\lim_{h\to0}\frac{\sqrt{x+h+3}-\sqrt{x+3}}{h}
+=\lim_{h\to0}\frac{(x+h+3)-(x+3)}{h\left(\sqrt{x+h+3}+\sqrt{x+3}\right)}\\
+&=\lim_{h\to0}\frac{1}{\sqrt{x+h+3}+\sqrt{x+3}}=\frac{1}{2\sqrt{x+3}} ,
+\end{aligned}
+\]
+per a $x>-3$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Aplicant la definició de derivada, calcula la funció derivada de
+\[
+k(x)=\frac{4}{x} .
+\]
+
+\begin{solucio}
+\[
+k'(x)=\lim_{h\to0}\frac{\frac{4}{x+h}-\frac{4}{x}}{h}
+=\lim_{h\to0}\frac{4x-4(x+h)}{h\,x(x+h)}
+=\lim_{h\to0}\frac{-4}{x(x+h)}=-\frac{4}{x^2} ,
+\]
+per a $x\neq0$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

@@ -1,0 +1,39 @@
+Considera la funció
+\[
+h(x)=\begin{cases}
+  2x+1 & \si{x<0},\\[3pt]
+  e^{x} & \si{0\le x\le 2},\\[3pt]
+  \dfrac{x-2}{x^2-5x+6} & \si{x>2}.
+\end{cases}
+\]
+
+\begin{apartats}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Estudia la continuïtat de $h$ en $x=0$.
+
+\begin{solucio}
+$\lim_{x\to0^-}h(x)=1$, $\lim_{x\to0^+}h(x)=e^0=1$ i $h(0)=1$. \textbf{És contínua.}
+\end{solucio}
+\end{nomesllarg}
+
+\apartat[1,25]{1}
+Estudia la continuïtat de $h$ en $x=2$ i classifica la discontinuïtat, si n'hi ha.
+
+\begin{solucio}
+Per a $x>2$, $\dfrac{x-2}{(x-2)(x-3)}=\dfrac{1}{x-3}$.\\
+$h(2)=e^2$ i $\lim_{x\to2^-}h(x)=e^2$, però $\lim_{x\to2^+}h(x)=\dfrac{1}{2-3}=-1$.
+Laterals finits i diferents: \textbf{salt finit}.
+\end{solucio}
+
+\apartat[1,25]{0,75}
+Estudia la continuïtat de $h$ en $x=3$ i classifica la discontinuïtat, si n'hi ha.
+
+\begin{solucio}
+$h(3)$ no existeix. Per a $x>2$, $h(x)=\dfrac{1}{x-3}$, i els laterals valen
+$-\infty$ (per l'esquerra) i $+\infty$ (per la dreta): \textbf{salt infinit} (asímptota
+vertical $x=3$).
+\end{solucio}
+
+\end{apartats}
