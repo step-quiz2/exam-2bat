@@ -1,0 +1,81 @@
+Considereu els punts de l'espai $P=(1,0,-1)$, $Q=(3,-2,0)$ i $R=(1,1,1)$.
+
+\begin{apartats}
+
+\apartat{0,75}
+Calculeu l'equació del pla que conté els punts $P$, $Q$ i $R$.
+
+\begin{solucio}
+Comencem trobant els vectors $\overrightarrow{PQ}=(2,-2,1)$ i $\overrightarrow{PR}=(0,1,2)$.
+El vector normal al pla buscat és
+\[
+\vec n=\overrightarrow{PQ}\times\overrightarrow{PR}
+=\begin{vmatrix}\vec\imath&\vec\jmath&\vec k\\2&-2&1\\0&1&2\end{vmatrix}
+=-4\vec\imath+2\vec k-\vec\imath-4\vec\jmath=(-5,-4,2).
+\]
+Així doncs, el pla buscat té equació de la forma $5x+4y-2z+D=0$. Substituint les coordenades
+del punt $R$ en aquesta equació deduïm $D=-7$ i, per tant, l'equació buscada és
+$\pi\colon\ 5x+4y-2z-7=0$.
+
+\textit{Pauta oficial:} 0,75 pel càlcul de l'equació correcta del pla.
+\end{solucio}
+
+\apartat{0,75}
+Comproveu que l'àrea del triangle $\Delta PQR$ és $\dfrac{3\sqrt5}{2}\,\text{u}^2$.
+
+\begin{solucio}
+Si prenem el triangle $\Delta PQR$ amb base $PQ$, aquesta mesura
+\[
+d(P,Q)=\sqrt{(3-1)^2+(-2-0)^2+(0+1)^2}=\sqrt9=3.
+\]
+D'altra banda, la recta $PQ$ té equació
+\[
+(x,y,z)=(1,0,-1)+\lambda(2,-2,1)=(1+2\lambda,\,-2\lambda,\,-1+\lambda),
+\]
+amb vector director $(2,-2,1)$. El pla perpendicular a aquesta recta que passa per $R$ té
+equació de la forma $2x-2y+z+D=0$, amb $2-2+1+D=0\Rightarrow D=-1$. La projecció de $R$
+sobre la recta $PQ$ és la intersecció d'aquest pla amb la recta:
+\[
+2(1+2\lambda)-2(-2\lambda)+(-1+\lambda)-1=0\ \Rightarrow\ 9\lambda=0\ \Rightarrow\ \lambda=0,
+\]
+és a dir, el punt $(1,0,-1)$. És casualitat que sigui $P$: això vol dir que l'angle
+$\widehat{RPQ}$ és recte. Així, l'àrea del triangle és
+\[
+\text{Àrea}(PQR)=\frac{\text{base}\cdot\text{alçada}}{2}=\frac{d(P,Q)\cdot d(P,R)}{2}
+=\frac{3\cdot\sqrt{(1-1)^2+(1-0)^2+(1+1)^2}}{2}=\frac{3\sqrt5}{2}\ \text{u}^2.
+\]
+Alternativament, aprofitant el producte vectorial de l'apartat anterior:
+\[
+\tfrac12\big|\overrightarrow{PQ}\times\overrightarrow{PR}\big|=\tfrac12\sqrt{(-5)^2+(-4)^2+2^2}
+=\tfrac12\sqrt{45}=\tfrac32\sqrt5\ \text{u}^2.
+\]
+
+\textit{Pauta oficial:} 0,5 pel càlcul de la base i l'alçada del triangle, i 0,25 per l'àrea.
+\end{solucio}
+
+\apartat{1}
+Determineu les condicions que han de complir les coordenades d'un quart punt $S=(x,y,z)$
+per tal que $P$, $Q$, $R$ i $S$ formin un tetraedre de volum 1. (El volum del tetraedre
+format pels punts $P$, $Q$, $R$ i $S$ és:
+$\text{volum}(PQRS)=\dfrac{\text{àrea}(\Delta PQR)\cdot\text{altura}}{3}$.)
+
+\begin{solucio}
+El volum del tetraedre determinat pels punts $P$, $Q$, $R$, $S$ és
+\[
+\text{Volum}(PQRS)=\frac{\text{Àrea}(PQR)\cdot\text{alçada}}{3}=\frac{\frac{3\sqrt5}{2}\cdot d(S,\pi)}{3}.
+\]
+Com que la distància del punt $S=(x,y,z)$ al pla $\pi\colon 5x+4y-2z-7=0$ és
+$d(S,\pi)=\dfrac{|5x+4y-2z-7|}{\sqrt{5^2+4^2+(-2)^2}}=\dfrac{|5x+4y-2z-7|}{\sqrt{45}}$,
+el lloc geomètric dels punts $S$ tals que el tetraedre $PQRS$ tingui volum 1 ve donat per
+\[
+\frac{\frac{3\sqrt5}{2}\cdot\frac{|5x+4y-2z-7|}{3\sqrt5}}{3}=1
+\ \Longrightarrow\ 5x+4y-2z-7=\pm6,
+\]
+és a dir, són \textbf{dos plans paral·lels} al pla $\pi$, d'equacions
+$5x+4y-2z-1=0$ \ i \ $5x+4y-2z-13=0$.
+
+\textit{Pauta oficial:} 0,5 pel plantejament i el desenvolupament del problema; 0,25 per
+tractar correctament el valor absolut, i 0,25 per les equacions dels dos plans finals.
+\end{solucio}
+
+\end{apartats}

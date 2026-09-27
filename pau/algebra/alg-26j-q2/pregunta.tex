@@ -1,0 +1,94 @@
+Considereu el sistema d'equacions lineals següent, que està format per tres plans a l'espai
+i depèn del paràmetre real $m$:
+\[
+\left.\begin{aligned}
+x+my+z&=4\\
+x+3y+z&=5\\
+mx+y+z&=4
+\end{aligned}\ \right\}.
+\]
+
+\begin{apartats}
+
+\apartat{1}
+Discutiu el sistema per als diferents valors del paràmetre $m$.
+
+\begin{solucio}
+La matriu de coeficients i la matriu ampliada del sistema són
+\[
+A=\begin{pmatrix}1&m&1\\1&3&1\\m&1&1\end{pmatrix}
+\quad\text{i}\quad
+\bar A=\left(\begin{array}{ccc|c}1&m&1&4\\1&3&1&5\\m&1&1&4\end{array}\right).
+\]
+Calculant el determinant de la matriu $A$, tenim
+$\begin{vmatrix}1&m&1\\1&3&1\\m&1&1\end{vmatrix}=3+m^2+1-3m-1-m=m^2-4m+3$.
+Per obtenir els valors crítics fem
+$|A|=0\iff m^2-4m+3=0\iff m=\frac{4\pm\sqrt{16-12}}{2}=3,\ 1$.\\
+En el cas $m\neq1,3$, tenim $|A|\neq0$ i $\operatorname{rang}(A)=\operatorname{rang}(\bar A)=3$;
+com que hi ha tres incògnites, el sistema és \textbf{compatible determinat}.\\
+En el cas $m=3$, tenim $|A|=0$ i $\begin{vmatrix}1&3\\3&1\end{vmatrix}\neq0$, per tant
+$\operatorname{rang}(A)=2$. D'altra banda,
+$\begin{vmatrix}1&3&4\\1&3&5\\3&1&4\end{vmatrix}=\begin{vmatrix}1&3&4\\0&0&1\\3&1&4\end{vmatrix}
+=-\begin{vmatrix}1&3\\3&1\end{vmatrix}=8\neq0$,
+i deduïm que $\operatorname{rang}(\bar A)=3$ i que el sistema és \textbf{incompatible}.\\
+Finalment, en el cas $m=1$, tenim $|A|=0$, $\begin{vmatrix}1&1\\1&3\end{vmatrix}\neq0$,
+$\operatorname{rang}(A)=2$, i també $\operatorname{rang}(\bar A)=2$ per tenir la primera i
+la tercera files iguals. El sistema és \textbf{compatible indeterminat} amb un grau de
+llibertat.
+
+\textit{Pauta oficial:} 0,25 per calcular el determinant i trobar els dos valors crítics, i
+0,25 per la discussió de cadascun dels tres casos.
+\end{solucio}
+
+\apartat{1}
+Interpreteu geomètricament aquest sistema per a tots els valors del paràmetre $m$ i
+resoleu-lo, si és possible, per al cas $m=1$.
+
+\begin{solucio}
+Es tracta de tres plans a l'espai, que estan en diverses posicions relatives segons el valor
+del paràmetre. Si $m\neq1,3$, el sistema és compatible determinat: els tres plans es tallen
+en un \textbf{únic punt} comú. Si $m=3$, és incompatible: no tenen cap punt en comú, cosa que
+es veu directament perquè el primer pla, $x+3y+z=4$, i el segon, $x+3y+z=5$, són
+\textbf{paral·lels i no coincidents}. Si $m=1$, el sistema és compatible indeterminat amb un
+grau de llibertat: els tres plans es tallen en una \textbf{recta} comuna, que trobem resolent
+el sistema:
+\[
+\left.\begin{aligned}x+y+z&=4\\x+3y+z&=5\\x+y+z&=4\end{aligned}\right\}
+\overset{F_1=F_3}{\iff}
+\left.\begin{aligned}x+y+z&=4\\x+3y+z&=5\end{aligned}\right\}
+\overset{z=\lambda}{\implies}
+\left.\begin{aligned}x+y&=4-\lambda\\x+3y&=5-\lambda\end{aligned}\right\}
+\]
+\[
+x=\frac{\begin{vmatrix}4-\lambda&1\\5-\lambda&3\end{vmatrix}}{\begin{vmatrix}1&1\\1&3\end{vmatrix}}
+ =\frac{12-3\lambda-5+\lambda}{2}=\frac{7-2\lambda}{2},\qquad
+y=\frac{\begin{vmatrix}1&4-\lambda\\1&5-\lambda\end{vmatrix}}{\begin{vmatrix}1&1\\1&3\end{vmatrix}}
+ =\frac{5-\lambda-4+\lambda}{2}=\frac12.
+\]
+Les solucions són tots els punts $\left(\frac{7-2\lambda}{2},\frac12,\lambda\right)$ amb
+$\lambda\in\mathbb{R}$: la intersecció dels tres plans és la recta
+$(x,y,z)=\left(\frac72,\frac12,0\right)+\lambda(-1,0,1)$.
+
+\textit{Pauta oficial:} 0,25 per cadascuna de les tres interpretacions geomètriques i 0,25
+per la resolució del sistema en el cas $m=1$.
+\end{solucio}
+
+\apartat{0,5}
+Per a $m=1$, és possible afegir una quarta equació de manera que el sistema resultant sigui
+compatible determinat i tingui com a solució $(x,y,z)=\left(3,\frac12,\frac12\right)$?
+Raoneu la resposta.
+
+\begin{solucio}
+Per a $m=1$, el sistema té infinites solucions, una de les quals és
+$(x,y,z)=\left(3,\frac12,\frac12\right)$: precisament la que correspon a $\lambda=\frac12$.
+Per tant, qualsevol nova equació que també tingui aquest punt com a solució (per exemple,
+$x=3$) i que doni una matriu de coeficients de rang 3, convertirà el sistema en compatible
+determinat amb el punt desitjat com a única solució. L'equació proposada ho compleix:
+\[
+\operatorname{rang}\begin{pmatrix}1&1&1\\1&3&1\\1&1&1\\1&0&0\end{pmatrix}
+=\operatorname{rang}\begin{pmatrix}1&1&1\\1&3&1\\1&0&0\end{pmatrix}=3.
+\]
+\textit{Pauta oficial:} 0,5 per donar l'equació demanada i raonar que és vàlida.
+\end{solucio}
+
+\end{apartats}

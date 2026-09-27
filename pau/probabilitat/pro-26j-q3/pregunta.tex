@@ -1,0 +1,81 @@
+L'Ajuntament de Canet de Mar ha aconseguit 24 entrades gratuïtes per a un concert d'un grup
+de rock català, i ha decidit sortejar-les entre els veïns interessats a assistir-hi. Tots els
+veïns del poble seguidors d'aquest grup s'apunten al sorteig, i només al 16\,\% els toca una
+entrada. De la resta de seguidors del grup, sis setenes parts intenten comprar una entrada
+per la web, on la probabilitat d'aconseguir-ne és del 25\,\%.
+
+\begin{apartats}
+
+\apartat{0,75}
+Quantes persones d'aquest municipi tenen entrada per al concert?
+
+\begin{solucio}
+Calculem primer la probabilitat que un seguidor del grup aconsegueixi comprar una entrada al
+web. Considerem els successos $ES$ = «obtenir entrada al sorteig», $W$ = «intentar
+comprar-la al web» i $EW$ = «aconseguir entrada al web». A partir de les dades de
+l'enunciat, $P(ES)=0{,}16$, \ $P(W)=(1-0{,}16)\cdot\frac67=0{,}72$ \ i
+$P(EW)=P(W)\cdot0{,}25=0{,}18$.\\
+Per tant, en total, el $16+18=34\,\%$ dels seguidors del grup al municipi aconsegueixen una
+entrada per al concert. Si el 16\,\% dels seguidors correspon a 24 persones, el 34\,\%
+correspondrà a
+$\dfrac{24}{16}=\dfrac{x}{34}\Rightarrow\dfrac32=\dfrac{x}{34}\Rightarrow x=17\cdot3=51$
+\textbf{persones}.
+
+\textit{Pauta oficial:} 0,5 per calcular el percentatge de seguidors que obtenen entrada, i
+0,25 pel nombre de persones que això representa.
+\end{solucio}
+
+\apartat{0,75}
+Si escollim a l'atzar un veí de Canet seguidor d'aquest grup de rock i no té entrada per al
+concert, quina és la probabilitat que hagués intentat aconseguir-la via web?
+
+\begin{solucio}
+Sigui $noE$ el succés «no tenir entrada per al concert». Ens demanen $P(W\mid noE)$. Per la
+llei de Bayes,
+$P(W\mid noE)=\dfrac{P(noE\mid W)\,P(W)}{P(noE)}$.
+De l'apartat anterior sabem que la probabilitat de no tenir entrada és
+$P(noE)=1-0{,}34=0{,}66$, i també que $P(W)=0{,}72$ i
+$P(noE\mid W)=1-0{,}25=0{,}75$. Per tant,
+$P(W\mid noE)=\dfrac{0{,}75\cdot0{,}72}{0{,}66}\approx\mathbf{0{,}82}$.
+
+\textit{Pauta oficial:} 0,25 pel plantejament del problema i 0,5 pel càlcul de la
+probabilitat demanada.
+\end{solucio}
+
+\apartat{1}
+El dia del concert, l'equip de so mesura el nivell de decibels generat pels crits entusiastes
+del públic durant els 5 minuts de durada de la cançó més famosa del grup; es pot aproximar
+per la funció següent:
+\[
+S(t)=-t^3+12t^2-30t+90,\qquad t\in[0,5],
+\]
+on $t$ és el temps en minuts i $S(t)$ els decibels. Quan se superen els 100 decibels es
+considera que el públic està molt entregat i s'activen automàticament uns efectes lumínics
+especials. S'activaran en algun moment durant aquests cinc minuts? Si la resposta és
+afirmativa, calculeu en quin minut s'activen, aproximat a les dècimes.
+
+\begin{solucio}
+$S(t)$ és una funció polinòmica i, per tant, contínua. L'enunciat ens demana si en algun
+moment $S(t)$ valdrà 100, és a dir, si $-t^3+12t^2-30t+90=100$. Si considerem la funció
+$D(t)=S(t)-100$, el problema es transforma en saber si $D(t)=0$ en algun moment
+$t\in[0,5]$. Com que $D$ també és contínua i $D(0)=-10<0$ i $D(5)=15>0$, es compleixen les
+hipòtesis del teorema de Bolzano: existeix $c\in(0,5)$ tal que $D(c)=0$. L'aproximem amb una
+dècima de precisió:
+\begin{align*}
+D(2)&=-30<0 &&\Rightarrow\ \exists\,c\in(2,5)\ \text{tal que}\ D(c)=0,\\
+D(4)&=-2<0 &&\Rightarrow\ \exists\,c\in(4,5),\\
+D(4{,}5)&=6{,}875>0 &&\Rightarrow\ \exists\,c\in(4;\,4{,}5),\\
+D(4{,}2)&=1{,}592>0 &&\Rightarrow\ \exists\,c\in(4;\,4{,}2),\\
+D(4{,}1)&=-0{,}201<0 &&\Rightarrow\ \exists\,c\in(4{,}1;\,4{,}2).
+\end{align*}
+Així doncs, els efectes lumínics s'activaran aproximadament al cap de \textbf{4,1 minuts}
+d'haver començat a sonar la cançó.\\
+\textit{Nota del banc:} el criteri oficial hi escriu $D(4{,}5)=6{,}85$; el valor exacte és
+$6{,}875$. No afecta la conclusió, perquè només compta el signe.
+
+\textit{Pauta oficial:} 0,25 pel plantejament del problema i per comentar la continuïtat de
+la funció; 0,5 per la primera aplicació del teorema de Bolzano correctament raonada, i 0,25
+per l'aproximació fins a una dècima.
+\end{solucio}
+
+\end{apartats}

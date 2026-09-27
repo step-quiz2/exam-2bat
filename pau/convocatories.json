@@ -1,0 +1,14 @@
+{
+  "_nota": "Registre de convocatòries PAU. D'aquí surt la línia «PAU <mes> <any>, sèrie <N>» de cada pregunta. Cada dada porta la seva font; una dada sense font fiable no hi entra.",
+  "23j":  { "any": 2023, "mes": "juny",     "serie": 1, "font": "Confirmat pel professor: el juny de 2023 es van publicar les sèries 1 i 5, per aquest ordre." },
+  "23j2": { "any": 2023, "mes": "juny",     "serie": 5, "font": "Confirmat pel professor; coincideix amb el catàleg del repositori pau." },
+  "23s":  { "any": 2023, "mes": "setembre", "serie": 2, "font": "examenselectivitat.cat (Matemàtiques 2023, setembre, sèrie 2). El tall del criteri oficial no conserva la capçalera." },
+  "24i":  { "any": 2024, "mes": "juny",     "serie": 5, "font": "Capçalera del criteri oficial: ana-24i-q1-s.pdf." },
+  "24j":  { "any": 2024, "mes": "juny",     "serie": 1, "font": "examenselectivitat.cat: juny 2024 = sèries 1 i 5; la 5 és la 24i. El tall del criteri oficial no conserva la capçalera." },
+  "24s":  { "any": 2024, "mes": "setembre", "serie": 3, "font": "Capçalera del criteri oficial: ana-24s-q1-s.pdf." },
+  "25i":  { "any": 2025, "mes": "juny",     "serie": 4, "font": "Capçalera del criteri oficial: ana-25i-q1-s.pdf." },
+  "25j":  { "any": 2025, "mes": "juny",     "serie": 1, "font": "Capçalera del criteri oficial: ana-25j-q1-s.pdf." },
+  "25s":  { "any": 2025, "mes": "setembre", "serie": 3, "font": "Capçalera del criteri oficial: ana-25s-q1-s.pdf." },
+  "26j":  { "any": 2026, "mes": "juny",     "serie": 1, "font": "Capçalera del criteri oficial: ana-26j-q1-s.pdf." },
+  "26j2": { "any": 2026, "mes": "juny",     "serie": 5, "font": "Capçalera del criteri oficial: ana-26j2-q1-s.pdf." }
+}

@@ -1,0 +1,104 @@
+% ═══════════════════════════════════════════════════════════════════════
+%  PREÀMBUL COMPARTIT DEL BANC DE PREGUNTES
+%  ─────────────────────────────────────────────────────────────────────
+%  CONTRACTE (llegeix-ho abans de tocar res):
+%
+%  · Aquest fitxer NO es compila sol. És un fragment.
+%  · Qui el fa servir (build.py o el lloc web) SEMPRE emet, per aquest
+%    ordre:  \documentclass → \newif\ifsolucions + \solucions(true|false)
+%            → aquest fitxer → \begin{document} → cossos → \end{document}
+%  · Les preguntes hi arriben ja netes per a una modalitat (1 h 30 o 50 min):
+%    build.py i el lloc les passen per materialitza(). Aquest preàmbul no
+%    sap res de modalitats.
+%  · Tota pregunta del banc compila amb AQUEST preàmbul i cap altre.
+%    Si una pregunta necessita un paquet nou, s'afegeix aquí i es torna
+%    a compilar TOT el banc. Mai un \usepackage dins d'una pregunta.
+% ═══════════════════════════════════════════════════════════════════════
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[catalan]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{needspace}
+\usepackage[a4paper,top=1.8cm,bottom=1.8cm,left=2cm,right=2cm]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% ── 1. Capçalera de pregunta ──────────────────────────────────────────
+% El filet va A SOBRE de cada pregunta i el \Needspace el manté enganxat
+% al seu text: així el filet mai queda orfe al capdamunt d'una pàgina.
+\newcommand{\encapcalament}[1]{%
+  \par\Needspace{8\baselineskip}%
+  \bigskip\hrule\medskip
+  \noindent\textbf{#1}\par\smallskip}
+
+% ── 1b. Ela geminada (l·l) ───────────────────────────────────────────
+% El punt volat es compon com un símbol solt i queda massa separat de les
+% eles: «paral · lela». Amb una mica de kerning, «paral·lela».
+\DeclareUnicodeCharacter{00B7}{\kern-0.1em\textperiodcentered\kern-0.1em}
+
+% ── 2. Apartats a) b) c) amb la seva puntuació ────────────────────────
+% \apartat{0,75} escriu "(0,75 punts)".  build.py llegeix aquests valors
+% del .tex: la puntuació viu AQUÍ i enlloc més. A les fonts, \apartat[1,25]{0,75}
+% porta també la puntuació de 50 min, però materialitza() el deixa com a
+% \apartat{0,75} o \apartat{1,25} abans d'arribar aquí.
+\makeatletter
+\newcommand{\bp@ptsmot}[1]{\def\bp@a{#1}\def\bp@u{1}%
+  \ifx\bp@a\bp@u 1~punt\else #1~punts\fi}
+\newcommand{\apartat}[1]{\item \textit{(\bp@ptsmot{#1})}\enspace\ignorespaces}
+\makeatother
+\newenvironment{apartats}
+  {\begin{enumerate}[label=\textbf{\alph*)},leftmargin=*,itemsep=\bigskipamount,
+                     topsep=\medskipamount,parsep=\smallskipamount]}
+  {\end{enumerate}}
+
+% ── 3. Graella de subapartats i) ii) iii) en mode display ─────────────
+% \begin{graella}{4} \sa ... & \sa ... \\ \sa ... \end{graella}
+% La columna força \displaystyle: els \lim hi surten amb el subíndex A
+% SOTA, igual que en una fórmula destacada. Mai fem servir array pelat.
+\newcounter{bpsa}
+\newcommand{\sa}{\stepcounter{bpsa}\textup{\roman{bpsa})}~}
+\newenvironment{graella}[1]
+  {\setcounter{bpsa}{0}\setlength{\arraycolsep}{1.2em}%
+   \[\begin{array}{*{#1}{>{\displaystyle}l}}}
+  {\end{array}\]}
+
+% ── 3b. Fórmules destacades: sempre el mateix aire ───────────────────
+% Si la línia d'abans és curta («determina:»), TeX fa servir un espai
+% «curt», gairebé zero, i la fórmula queda enganxada al text. L'igualem
+% a l'espai normal.
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayshortskip{\abovedisplayskip}%
+  \setlength\belowdisplayshortskip{\belowdisplayskip}}
+\makeatother
+\AtBeginDocument{\normalsize}
+
+% ── 4. Condicions dins de \begin{cases} ───────────────────────────────
+% \si{-1\le x\le 2}  →  el signe menys surt unari i ben espaiat.
+% Escriure \text{si } -1\le x\le 2 a pèl produeix "si − 1 ≤ x ≤ 2". Bug.
+\newcommand{\si}[1]{\text{si }{#1}}
+
+% ── 5. Solucions ──────────────────────────────────────────────────────
+% REGLA: \end{solucio} ha d'anar SOL a la seva línia (ho exigeix el
+% paquet comment quan la solució s'exclou). build.py ho comprova.
+\ifsolucions
+  \newenvironment{solucio}
+    {\par\nopagebreak\medskip\begingroup\color{blue!55!black}\small
+     \textbf{Solució.}\enspace\ignorespaces}
+    {\par\endgroup\smallskip}
+\else
+  \excludecomment{solucio}
+\fi
+
+% ── 6. Procedència de les preguntes PAU ───────────────────────────────
+% La línia «PAU juny 2026, sèrie 1» la injecta el build (i el lloc) just
+% després de la capçalera, a partir del codi de la pregunta i de
+% pau/convocatories.json. No s'escriu mai a mà: build.py ho rebutja.
+\newcommand{\procedencia}[1]{\noindent{\small\itshape #1}\par\vspace{3pt}}

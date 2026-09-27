@@ -1,0 +1,25 @@
+% =====================================================================
+%  main.tex — Carpeta d'exàmens
+%  Compila amb:  pdflatex main.tex
+% =====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% Interruptor: comenta una línia i descomenta l'altra.
+%   \solucionsfalse → examen de l'alumnat
+%   \solucionstrue  → full del professorat, amb les solucions
+\newif\ifsolucions \solucionsfalse
+%\newif\ifsolucions \solucionstrue
+
+\input{headers.tex}
+\input{defs.tex}
+
+% La capçalera del centre (logo, curs, departament, casella de nota) NO és al
+% banc: viu aquí, a la teva carpeta. Si hi tens un capsalera.tex, s'incorpora;
+% si no, els exàmens surten sense capçalera.
+\IfFileExists{capsalera.tex}{\input{capsalera.tex}}{}
+
+\begin{document}
+\input{prova-1.tex}
+%\input{prova-2.tex}
+\end{document}

@@ -1,0 +1,167 @@
+/* Banc de preguntes — full d'estil.
+   Comparteix la paleta i les tipografies del lloc de l'alumnat, però amb
+   un accent diferent (verd fosc) perquè es vegi d'un cop d'ull que això
+   és l'eina del professor i no la dels alumnes. */
+
+:root{
+  --bg:#f8fafc; --surface:#ffffff; --border:#cbd5e1;
+  --txt:#1e293b; --muted:#64748b; --hd-bg:#1e293b;
+  --acc:#0f766e; --acc-tint:rgba(15,118,110,.07);
+  --alerta:#b45309; --ok:#15803d;
+  --barra:64px; --sobre-acc:#ffffff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  font-family:'Libre Baskerville',Georgia,serif;
+  background:var(--bg);color:var(--txt);line-height:1.55;
+  padding-bottom:calc(var(--barra) + env(safe-area-inset-bottom,0px));
+}
+
+/* ── capçalera ─────────────────────────────────────────────────────── */
+header{
+  background:var(--hd-bg);color:#fff;display:flex;gap:14px;
+  align-items:center;justify-content:space-between;
+  padding:10px 20px;padding-top:calc(10px + env(safe-area-inset-top,0px));
+}
+header h1{font-size:1rem;font-weight:700;}
+.hd-sub{font-family:'Source Code Pro',monospace;font-size:.65rem;color:rgba(255,255,255,.65);}
+.site-label{font-family:'Source Code Pro',monospace;font-size:.62rem;
+  color:rgba(255,255,255,.55);text-align:right;line-height:1.5;}
+
+/* ── graella principal ─────────────────────────────────────────────── */
+main{max-width:1180px;margin:0 auto;padding:22px 18px;
+  display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start;}
+@media(max-width:860px){main{grid-template-columns:1fr;gap:20px;}}
+
+h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--muted);margin-bottom:6px;}
+.ajuda{font-size:.72rem;color:var(--muted);margin-bottom:12px;}
+
+/* ── llista de temes ───────────────────────────────────────────────── */
+#temes{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.tema{
+  width:100%;text-align:left;font:inherit;color:inherit;
+  display:flex;align-items:center;gap:10px;padding:10px 12px;min-height:46px;
+  background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  cursor:pointer;box-shadow:inset 4px 0 0 transparent;
+  transition:box-shadow .12s,background .12s,border-color .12s;
+}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;}
+.tema:hover{background:var(--acc-tint);box-shadow:inset 4px 0 0 var(--acc);filter:none;}
+.tema.tria{background:var(--acc-tint);box-shadow:inset 4px 0 0 var(--acc);
+  border-color:color-mix(in srgb,var(--acc) 40%,var(--border));}
+.tema.buit{opacity:.5;}
+.tema.tria:disabled{opacity:.7;}
+.tema-nom{flex:1;font-size:.83rem;}
+.tema-n{font-family:'Source Code Pro',monospace;font-size:.66rem;color:var(--muted);}
+.marca{width:17px;height:17px;border:1.5px solid var(--border);border-radius:4px;
+  flex-shrink:0;display:grid;place-items:center;font-size:.7rem;}
+.tema.tria .marca{background:var(--acc);border-color:var(--acc);}
+
+/* ── targetes de pregunta ──────────────────────────────────────────── */
+#seleccio{display:flex;flex-direction:column;gap:14px;}
+.cap{font-size:.8rem;color:var(--muted);padding:26px 18px;text-align:center;
+  border:1px dashed var(--border);border-radius:8px;background:var(--surface);}
+
+.carta{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:14px 16px;box-shadow:inset 4px 0 0 var(--acc);}
+.carta-dalt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:5px;}
+.num{font-family:'Source Code Pro',monospace;font-weight:600;font-size:.72rem;
+  background:var(--acc);padding:2px 8px;border-radius:3px;}
+.carta-tema{font-size:.72rem;color:var(--acc);font-weight:700;}
+.carta-titol{font-size:.88rem;margin:2px 0 7px;}
+.meta{font-family:'Source Code Pro',monospace;font-size:.66rem;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:4px 14px;margin-bottom:10px;}
+
+.accions{display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+button{
+  font-family:'Source Code Pro',monospace;font-size:.71rem;
+  padding:7px 13px;min-height:38px;border-radius:5px;cursor:pointer;
+  border:1px solid var(--acc);background:var(--acc);
+}
+button:hover{filter:brightness(1.12);}
+button.secundari{background:none;color:var(--acc);}
+button.secundari:hover{background:var(--acc);}
+button:disabled{opacity:.4;cursor:not-allowed;filter:none;}
+.variant{display:flex;align-items:center;gap:4px;margin-left:auto;}
+.variant span{font-family:'Source Code Pro',monospace;font-size:.66rem;color:var(--muted);}
+.variant button{padding:5px 9px;min-height:32px;}
+
+.visor{margin-top:11px;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.visor iframe{display:block;width:100%;height:min(74vh,880px);border:0;background:#fff;}
+.visor .peu{font-family:'Source Code Pro',monospace;font-size:.64rem;color:var(--muted);
+  padding:6px 10px;border-top:1px solid var(--border);background:var(--bg);}
+.visor .peu a{color:var(--acc);}
+
+/* ── barra inferior ────────────────────────────────────────────────── */
+#barra{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;
+  background:var(--surface);border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 18px;padding-bottom:calc(11px + env(safe-area-inset-bottom,0px));
+}
+#recompte{font-family:'Source Code Pro',monospace;font-size:.72rem;color:var(--muted);}
+#recompte .just{color:var(--ok);font-weight:600;}
+#recompte .fora{color:var(--alerta);font-weight:600;}
+.botons{display:flex;gap:8px;flex-shrink:0;}
+.seg,#barra button{white-space:nowrap;}
+@media(max-width:520px){
+  #barra{padding-left:12px;padding-right:12px;gap:8px;}
+  #recompte{font-size:.66rem;line-height:1.5;}
+  #barra button{padding:7px 10px;}
+}
+
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f172a; --surface:#1e293b; --border:#334155;
+    --txt:#e2e8f0; --muted:#94a3b8; --hd-bg:#020617;
+    --acc:#2dd4bf; --acc-tint:rgba(45,212,191,.10);
+    --sobre-acc:#042f2e;
+  }
+}
+/* Text damunt de l'accent: blanc en clar, verd molt fosc en fosc. */
+button:not(.secundari):not(.tema),
+button.secundari:hover,
+.num,
+.tema.tria .marca,
+.opcio-btn[aria-pressed="true"]{color:var(--sobre-acc);}
+
+/* ── grups d'unitat a la llista de temes ───────────────────────────── */
+#temes .grup{list-style:none;margin:12px 0 2px;font-family:'Source Code Pro',monospace;
+  font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+#temes .grup:first-child{margin-top:0;}
+#temes .grup span{font-weight:600;color:var(--txt);}
+#temes .grup-pau span{color:var(--pau);}
+
+/* ── preguntes PAU: accent propi i procedència visible ─────────────── */
+:root{--pau:#b45309;}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pau:#fbbf24;}}
+.carta.pau{box-shadow:inset 4px 0 0 var(--pau);}
+.carta.pau .num{background:var(--pau);}
+.pau-badge{font-family:'Source Code Pro',monospace;font-size:.64rem;font-weight:600;
+  color:var(--pau);border:1px solid var(--pau);border-radius:3px;padding:1px 6px;}
+.meta abbr{text-decoration:none;border-bottom:1px dotted var(--muted);cursor:help;}
+
+/* ── ordre de l'examen i opcions (4a, 4b) ──────────────────────────── */
+.ordre{display:flex;gap:4px;margin-left:auto;}
+.ordre button{padding:3px 9px;min-height:30px;}
+.opcio-btn[aria-pressed="true"]{background:var(--acc);}
+.carta.opcio{border-style:dashed;}
+
+/* ── durada de l'examen: 1 h 30 o 50 min ──────────────────────────── */
+.capcal-examen{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.durada{display:inline-flex;gap:4px;}
+.durada button{padding:4px 12px;min-height:32px;}
+.durada button[aria-pressed="true"]{background:var(--acc);color:var(--sobre-acc);}
+.sencera{font-family:'Source Code Pro',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);border:1px dashed var(--border);border-radius:4px;padding:1px 6px;}
+
+/* ── entorn de la carpeta d'exàmens i número de prova ──────────────── */
+.entorn{margin-top:22px;border-top:1px solid var(--border);padding-top:14px;}
+.botons-entorn{display:flex;gap:6px;flex-wrap:wrap;}
+.botons-entorn button{padding:4px 10px;min-height:30px;}
+#barra label[for="numprova"]{font-family:'Source Code Pro',monospace;font-size:.7rem;color:var(--muted);}
+#numprova{width:3.4rem;padding:5px 6px;border:1px solid var(--border);border-radius:6px;
+  background:var(--surface);color:var(--txt);font:inherit;font-size:.78rem;}
