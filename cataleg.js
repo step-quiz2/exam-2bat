@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-27 11:50 UTC",
+ "generat": "2026-09-27 14:24 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -1020,12 +1020,20 @@ const BANC = {
       {
        "id": "classifica-discontinuitat",
        "llarg": 1.0,
-       "curt": 1.25
+       "curt": 1.25,
+       "pdf": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/classifica-discontinuitat/enunciat.pdf",
+       "pdf_solucio": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/classifica-discontinuitat/solucio.pdf",
+       "pdf_curt": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/classifica-discontinuitat/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/classifica-discontinuitat/solucio-curt.pdf"
       },
       {
        "id": "avalua-imatges",
        "llarg": 1.0,
-       "curt": 1.25
+       "curt": 1.25,
+       "pdf": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/avalua-imatges/enunciat.pdf",
+       "pdf_solucio": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/avalua-imatges/solucio.pdf",
+       "pdf_curt": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/avalua-imatges/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-grafica/q001/out/tries/grafica-tasca-b/avalua-imatges/solucio-curt.pdf"
       }
      ]
     }
@@ -1203,17 +1211,29 @@ const BANC = {
       {
        "id": "un-limit",
        "llarg": 0.75,
-       "curt": 1.25
+       "curt": 1.25,
+       "pdf": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/un-limit/enunciat.pdf",
+       "pdf_solucio": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/un-limit/solucio.pdf",
+       "pdf_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/un-limit/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/un-limit/solucio-curt.pdf"
       },
       {
        "id": "dos-tipus",
        "llarg": 1.25,
-       "curt": 1.25
+       "curt": 1.25,
+       "pdf": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/dos-tipus/enunciat.pdf",
+       "pdf_solucio": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/dos-tipus/solucio.pdf",
+       "pdf_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/dos-tipus/enunciat.pdf",
+       "pdf_solucio_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/dos-tipus/solucio.pdf"
       },
       {
        "id": "quatre-tipus",
        "llarg": 2.0,
-       "curt": 2.0
+       "curt": 2.0,
+       "pdf": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/quatre-tipus/enunciat.pdf",
+       "pdf_solucio": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/quatre-tipus/solucio.pdf",
+       "pdf_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/quatre-tipus/enunciat.pdf",
+       "pdf_solucio_curt": "u7/limits-infinit/q002/out/tries/limits-infinit-tipus/quatre-tipus/solucio.pdf"
       }
      ]
     },
@@ -1225,12 +1245,20 @@ const BANC = {
       {
        "id": "amb-reflexio",
        "llarg": 1.0,
-       "curt": 1.25
+       "curt": 1.25,
+       "pdf": "u7/limits-infinit/q002/out/tries/determina-a/amb-reflexio/enunciat.pdf",
+       "pdf_solucio": "u7/limits-infinit/q002/out/tries/determina-a/amb-reflexio/solucio.pdf",
+       "pdf_curt": "u7/limits-infinit/q002/out/tries/determina-a/amb-reflexio/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-infinit/q002/out/tries/determina-a/amb-reflexio/solucio-curt.pdf"
       },
       {
        "id": "sense-reflexio",
        "llarg": 0.5,
-       "curt": 0.5
+       "curt": 0.5,
+       "pdf": "u7/limits-infinit/q002/out/tries/determina-a/sense-reflexio/enunciat.pdf",
+       "pdf_solucio": "u7/limits-infinit/q002/out/tries/determina-a/sense-reflexio/solucio.pdf",
+       "pdf_curt": "u7/limits-infinit/q002/out/tries/determina-a/sense-reflexio/enunciat.pdf",
+       "pdf_solucio_curt": "u7/limits-infinit/q002/out/tries/determina-a/sense-reflexio/solucio.pdf"
       }
      ]
     }
