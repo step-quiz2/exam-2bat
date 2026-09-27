@@ -107,6 +107,29 @@ def cos_amb_capcalera(tex: str, etiqueta: str, procedencia: str | None = None) -
     return cap + tex.strip()
 
 
+def cos_dun_item(tex: str, id_tria: str, id_item: str, curt: bool) -> tuple[str, str] | None:
+    """El cos i la puntuació (bruta, tal com l'ha escrit l'autor) d'un ítem
+    concret d'una tria concreta, per a una modalitat: el mateix que en
+    materialitzaria escriu_tria() si es triés aquest ítem, però sense
+    dependre de cap selecció ni de la resta de la pregunta. None si la tria
+    o l'ítem no hi són (no hauria de passar amb un .tex ja validat)."""
+    for m in RE_TRIA.finditer(tex):
+        if m.group(1) != id_tria:
+            continue
+        cos = m.group(3)
+        posicions = list(RE_ITEMTRIA.finditer(cos))
+        for i, p in enumerate(posicions):
+            if p.group(1) != id_item:
+                continue
+            p_llarg, p_curt = p.group(2), p.group(3)
+            punts_brut = p_curt if (curt and p_curt is not None) else p_llarg
+            inici = p.end()
+            final = posicions[i + 1].start() if i + 1 < len(posicions) else len(cos)
+            return punts_brut.strip(), cos[inici:final].strip()
+        return None
+    return None
+
+
 # ── validació ──────────────────────────────────────────────────────────
 RE_APARTAT = re.compile(r"\\apartat(?:\[([^\]]*)\])?\{([^}]*)\}")
 RE_NOMESLLARG = re.compile(r"\\(begin|end)\{nomesllarg\}")
@@ -551,6 +574,19 @@ def construeix(provisional: Path) -> int:
                 and meta["minuts_curt"] > meta["minuts"]:
             error(on, "«minuts_curt» no pot ser més gran que «minuts»")
 
+        # Per a cada ítem de cada tria, si el seu cos difereix entre
+        # modalitats (només passa si porta el seu propi 2n argument de punts:
+        # cap ítem d'ara fa servir nomesllarg ni claudàtors a dins seu) cal un
+        # PDF de 50 min a part, com te_curt ho decideix per a tota la
+        # pregunta. Es calcula sempre, tant si es compila com si no, perquè
+        # el catàleg necessita les rutes igualment.
+        previews_curt: dict[tuple[str, str], bool] = {}
+        for t in tries:
+            for iid in t.ordre:
+                rl = cos_dun_item(tex, t.id, iid, False)
+                rc = cos_dun_item(tex, t.id, iid, True)
+                previews_curt[(t.id, iid)] = rc is not None and rc != rl
+
         compilar = not args.nomes_cataleg and (args.pregunta is None or args.pregunta in ident)
         if compilar:
             # Els PDF van a la carpeta provisional, amb la mateixa estructura que
@@ -570,6 +606,31 @@ def construeix(provisional: Path) -> int:
                         provisional / ident / "out" / "solucio-curt.pdf", on)
                 if pagines_curt and pagines_curt > 1:
                     avis(on, f"l'enunciat de 50 min ocupa {pagines_curt} pàgines")
+            # Una previsualització per ítem: el mateix cos que tindria la
+            # pregunta si es triés, tot sol, perquè el professor el pugui
+            # llegir abans de decidir-se, no només veure'n l'identificador i
+            # els punts.
+            for t in tries:
+                for iid in t.ordre:
+                    resultat = cos_dun_item(tex, t.id, iid, False)
+                    if resultat is None:
+                        continue      # ja hauria fallat la validació abans
+                    punts_ll, cos_ll = resultat
+                    cos_prev = cos_amb_capcalera(
+                        f"\\begin{{apartats}}\n\\apartat{{{punts_ll}}}\n{cos_ll}\n\\end{{apartats}}",
+                        "Alternativa")
+                    desti = provisional / ident / "out" / "tries" / t.id / iid
+                    compila(munta(plantilla, preambul_compila, [cos_prev], False), desti / "enunciat.pdf", on)
+                    compila(munta(plantilla, preambul_compila, [cos_prev], True), desti / "solucio.pdf", on)
+                    if previews_curt[(t.id, iid)]:
+                        punts_c, cos_c = cos_dun_item(tex, t.id, iid, True)
+                        cos_prev_curt = cos_amb_capcalera(
+                            f"\\begin{{apartats}}\n\\apartat{{{punts_c}}}\n{cos_c}\n\\end{{apartats}}",
+                            "Alternativa")
+                        compila(munta(plantilla, preambul_compila, [cos_prev_curt], False),
+                                desti / "enunciat-curt.pdf", on)
+                        compila(munta(plantilla, preambul_compila, [cos_prev_curt], True),
+                                desti / "solucio-curt.pdf", on)
             estat = "✓" if not any(e.startswith(on + ":") for e in errors) else "✗"
             print(f"  {estat} {ident:<40} {' + '.join(f'{a/100:.2f}' for a in apartats):<22}"
                   f" {pagines or '?'} pàg."
@@ -605,6 +666,15 @@ def construeix(provisional: Path) -> int:
                     "id": iid,
                     "llarg": (it.llarg / 100) if it.llarg is not None else None,
                     "curt": (it.curt / 100) if it.curt is not None else None,
+                    "pdf": f"{ident}/out/tries/{t.id}/{iid}/enunciat.pdf",
+                    "pdf_solucio": f"{ident}/out/tries/{t.id}/{iid}/solucio.pdf",
+                    # Sense cos propi de 50 min, la previsualització de 50 min
+                    # és la mateixa que la d'1 h 30 (com pdf_curt a la pregunta
+                    # sencera quan no té versió de 50 min).
+                    "pdf_curt": f"{ident}/out/tries/{t.id}/{iid}/"
+                                f"{'enunciat-curt' if previews_curt[(t.id, iid)] else 'enunciat'}.pdf",
+                    "pdf_solucio_curt": f"{ident}/out/tries/{t.id}/{iid}/"
+                                        f"{'solucio-curt' if previews_curt[(t.id, iid)] else 'solucio'}.pdf",
                 } for iid, it in t.items.items()],
             } for t in tries if t.ordre],
             "tex": tex,

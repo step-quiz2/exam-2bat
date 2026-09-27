@@ -34,8 +34,10 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
    alternativa sencera per al mateix apartat (classificar una discontinuïtat o llegir imatges
    d'una gràfica). Sense tocar-hi res, l'examen surt exactament igual que si la tria no
    existís. Canviar-la pot fer que la pregunta ja no sumi 2,50: el comptador de la targeta i el
-   de baix de tot ho avisen en viu. L'**Enunciat** i la **Solució** en PDF mostren sempre la
-   versió per defecte; el `.tex` que en baixis, en canvi, ja reflecteix la tria feta.
+   de baix de tot ho avisen en viu. Cada tria té el seu propi **Enunciat** i **Solució**, de
+   només l'alternativa triada: mai cal triar a cegues. Si els tens oberts i canvies l'ítem,
+   s'actualitzen sols. L'Enunciat i la Solució de la pregunta sencera, més avall, mostren
+   sempre el defecte; el `.tex` que en baixis, en canvi, ja reflecteix la tria feta.
 6. **Per defecte, l'examen té l'estructura de la PAU.** Les cinc primeres preguntes queden
    numerades com a 1, 2, 3, 4a i 4b: l'alumne fa la 1, la 2 i la 3, i tria entre la 4a i la 4b.
    Val igual per a preguntes dels temes, de la PAU o barrejades en qualsevol ordre.
@@ -272,6 +274,10 @@ primer ítem declarat —el `.tex` és idèntic al d'abans que existissin les tr
 plaça de l'examen pot triar-ne un altre des de la seva carta. Com `nomesllarg`, `tria` i
 `itemtria` només són a les fonts: `materialitza()` els resol abans que `defs.tex` en vegi
 cap, i el `.tex` que es baixa ja porta un `\apartat{…}` normal amb el cos triat.
+
+El build compila, a més, l'enunciat i la solució de **cada ítem, tot sol**, a
+`out/tries/<id-tria>/<id-item>/`: al lloc, cada tria té el seu propi Enunciat i Solució, de
+només l'alternativa triada, perquè no cal triar-la a cegues.
 
 
 

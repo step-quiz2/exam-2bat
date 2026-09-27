@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
 **Data:** 27 de setembre de 2026 · **Estat:** 64 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), dues amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 10 de sortida del build i 77 de
+8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), dues amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 11 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -27,7 +27,10 @@ amb una tercera variant de cada tema, i la desena va fer el mateix amb la u8. L'
 amb quatre temes i tres variants de cadascun, i la tretzena va obrir la u10. La catorzena, a
 partir d'un exemple concret d'edició a mà en un projecte Overleaf, va introduir les **tries**:
 un apartat pot oferir més d'una alternativa, triable des de la carta, sense deixar de ser el
-mateix apartat de sempre quan no se'n toca res. La màquina
+mateix apartat de sempre quan no se'n toca res. La quinzena, arran d'una captura de pantalla
+del professor, va tancar el forat més gros que havien deixat les tries: es triava una
+alternativa sense poder-la llegir. Ara cada ítem té el seu propi Enunciat i Solució
+compilats, com qualsevol pregunta. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a més preguntes del banc.
@@ -396,6 +399,49 @@ l'identificador mal format desapareixia en silenci en lloc de fer fallar el buil
 sense cap ítem feia petar la construcció del catàleg amb un `IndexError`, també abans d'arribar
 al missatge d'error que ja s'havia registrat correctament.
 
+### 2.15 Sessió 15 · Cap tria a cegues: una previsualització per ítem
+
+El professor va provar les tries al lloc real (amb els PDF de la sessió 14, ja amb els
+paquets oficials) i va enviar una captura: la carta de `limits-grafica/q001` amb «avalua
+imatges» triat, i cap manera de veure'n l'enunciat ni la solució —l'Enunciat i la Solució de
+la carta seguien mostrant sempre el defecte, tal com deia la nota de sota del selector. Amb
+paraules seves, triar així «és horrible»: en un examen real, triar una alternativa que no es
+pot llegir ni verificar no és acceptable.
+
+**Per què no s'havia resolt a la sessió 14.** Es va deixar apuntat com a limitació coneguda
+(secció 5, «No verificat») en lloc de resoldre's, perquè la solució que s'hi va descartar
+—compilar LaTeX en directe al navegador— hauria trencat el principi 4 del projecte («lloc
+sense dependències… funciona obert com a fitxer local»): calia un motor LaTeX en JavaScript,
+una dependència nova i grossa, o un servidor que compilés a petició, que el lloc no ha tingut
+mai. Cap de les dues coses és necessària: cada ítem d'una tria és, com qualsevol pregunta, un
+cos que **build.py ja sap compilar sol**.
+
+**Disseny i implementació.** `cos_dun_item()` (build.py) n'aïlla el cos i els punts, amb el
+mateix mètode de retall per posicions que ja feia servir `materialitza()` per triar-lo.
+`construeix()` el compila com una miniatura d'una sola pregunta —`\begin{apartats}
+\apartat{punts} …cos… \end{apartats}`, amb la capçalera «Alternativa»— a
+`out/tries/<id-tria>/<id-item>/`, i el catàleg hi porta les rutes de cada ítem (`pdf`,
+`pdf_solucio`, i les de 50 min, deduplicades quan el cos no hi difereix, exactament com ja fa
+`pdf_curt` a la pregunta sencera). Al lloc, cada tria té ara els seus propis botons
+**Enunciat**/**Solució** —reaprofitant `mostra()` amb una clau composta
+`pregunta:tria`, sense cap funció nova—, que mostren l'ítem **triat**, no el defecte; si el
+visor ja és obert i es canvia l'ítem, s'actualitza sol, sense haver de tornar a clicar.
+
+**Verificació.** Compilades i revisades visualment totes dues previsualitzacions de
+`limits-grafica/q001` amb el preàmbul reduït d'aquest entorn —«avalua imatges» hi surt
+exactament com la captura del professor l'hauria de tenir, amb l'enunciat i la solució
+completa, en blau—. Quatre casos nous a la prova d'integració amb jsdom, incloent-hi que
+canviar d'ítem amb el visor obert l'actualitza sol i que la tria que no s'ha tocat no obre res.
+Tot el banc (268 PDF, catorze més que abans per a les dues preguntes migrades) recompilat
+sense cap regressió.
+
+En revisar els efectes secundaris, es va trobar que `prova_sortida.py` comptava «246 PDF» amb
+un patró (`*/*/*/out/*.pdf`) que no arribava mai a `out/tries/…`: no fallava —perquè no
+comprovava res d'allò que no veia—, però deixava de provar una part real del que ara escriu el
+build. Corregit als dos llocs on hi apareixia el patró, i afegit un cas nou, paral·lel al de
+`--pregunta` que ja hi havia, que demostra que també escriu les previsualitzacions de cada
+ítem.
+
 ---
 
 ## 3. Decisions preses
@@ -448,6 +494,7 @@ al missatge d'error que ja s'havia registrat correctament.
 | Les tries són només per a preguntes del banc, mai per a PAU | Professor, seguint una regla ja existent | L'enunciat PAU ha de ser literal |
 | Els ítems d'una tria es preparen i es verifiquen sempre pel build, com qualsevol pregunta | Professor | El lloc només ofereix triar-los, no escriure'n cap al vol sense passar-hi |
 | Una tria no pot ser dins d'un `nomesllarg` | Disseny | Encara no es controla bé com afecta el recompte de punts d'`app.js`; es fa fallar el build en lloc de deixar-ho a mig fer |
+| Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 
 ---
 
@@ -477,6 +524,7 @@ al missatge d'error que ja s'havia registrat correctament.
 | Un `defecte-curt` que apuntés a un ítem inexistent ja registrava l'error, però després petava amb un `KeyError` en lloc de continuar net | `build.py` | Es descarta i cau al primer ítem, un cop registrat l'error |
 | Un `\itemtria` amb l'identificador mal format no feia `match` i el seu contingut desapareixia en silenci, en lloc de fer fallar el build | `build.py` | Comptatge laxa (`\itemtria\b`) contra el comptatge estricte: si no coincideixen, error |
 | Una tria sense cap `\itemtria` ja registrava l'error, però petava amb un `IndexError` en construir el catàleg (`t.ordre[0]` d'una llista buida) | `build.py` | Es descarten del catàleg les tries sense ítems; l'error ja enviat atura el build igualment |
+| `prova_sortida.py` comptava els PDF amb un patró de quatre nivells fixos (`*/*/*/out/*.pdf`): no veia mai els de `out/tries/…`, i per tant no en provava res | `prova_sortida.py` | Patró recursiu (`*/*/*/out/**/*.pdf`) als dos llocs on apareixia |
 
 ---
 
@@ -489,10 +537,11 @@ al missatge d'error que ja s'havia registrat correctament.
 - 32 resultats dels criteris oficials de juny de 2026, per un mètode independent.
 - `prova_validacio.py`: 38 avaries provocades, cadascuna rebutjada pel build. Les 8 de la
   sessió 6 són de les modalitats, i les 9 de la sessió 14 són de les tries.
-- `prova_sortida.py`: 10 comprovacions, sense TeX (un `pdflatex` fals al PATH). Un build que
-  falla, per validació o per compilació, no toca cap fitxer. Un de correcte els escriu tots,
-  `--pregunta` només escriu els de la pregunta indicada i `--preambul` no arriba al catàleg.
-  També s'ha confirmat amb el `pdflatex` real.
+- `prova_sortida.py`: 11 comprovacions, sense TeX (un `pdflatex` fals al PATH). Un build que
+  falla, per validació o per compilació, no toca cap fitxer. Un de correcte els escriu tots
+  (268, comptats amb un patró recursiu que ara arriba a `out/tries/…`),
+  `--pregunta` només escriu els de la pregunta indicada —també les previsualitzacions de tria,
+  quan n'hi ha— i `--preambul` no arriba al catàleg. També s'ha confirmat amb el `pdflatex` real.
 - `prova_paritat.py`: 77 comprovacions. El lloc (executant l'`app.js` real) i el build
   munten el mateix `.tex`, byte a byte, també amb preguntes PAU, amb la procedència al lloc
   exacte, amb opcions (1, 2, 3, 4a, 4b) i amb tries triades amb `triaCanvia`. Tres adreces mal
@@ -506,11 +555,19 @@ al missatge d'error que ja s'havia registrat correctament.
   a 390 px d'amplada. El seu `main.tex` compila en 2 pàgines, i el de solucions en 5, sense cap
   *Overfull*. També un examen combinat (Límits en un punt, Anàlisi, Bolzano, Probabilitat i
   Geometria), amb ✕ i ▲ entremig: 2 pàgines i 4 amb solucions, sense cap *Overfull*.
+- Sessió 15: les previsualitzacions de `limits-grafica/q001` i `limits-infinit/q002`
+  compilades amb el preàmbul reduït i revisades visualment («avalua imatges» hi surt amb
+  l'enunciat i la solució senceres, en blau). Quatre casos nous a la prova d'integració amb
+  jsdom (12 en total): els botons Enunciat/Solució de cada tria mostren l'ítem triat, no el
+  defecte; canviar d'ítem amb el visor obert l'actualitza sol; l'altra tria de la mateixa
+  pregunta no s'hi veu afectada. Tot el banc (268 PDF, 22 de nous) recompilat sense cap
+  regressió.
 - Sessió 14: les dues preguntes migrades (`limits-infinit/q002`, `limits-grafica/q001`)
   compilen amb un preàmbul reduït (aquest entorn no té `lmodern` ni `babel`-català) amb el
   defecte de cada modalitat i amb quatre combinacions més, cadascuna a una pàgina i sense cap
   error — inclosa exactament la selecció que el professor havia fet a mà. Comprovat, també amb
-  aquest preàmbul reduït, que les 64 preguntes recompilen sense cap regressió (246 PDF). Una
+  aquest preàmbul reduït, que les 64 preguntes recompilen sense cap regressió (246 PDF, abans
+  de la sessió 15). Una
   prova d'integració amb jsdom (clics reals sobre el DOM, no formal al repositori), 8 casos, hi
   va detectar un error de càlcul de la pròpia prova (l'apartat `nomesllarg` de
   `limits-infinit/q002` segueix comptant a 1 h 30 en triar `quatre-tipus`); corregit, tots vuit
@@ -553,11 +610,14 @@ al missatge d'error que ja s'havia registrat correctament.
 
 - El visor de PDF incrustat, perquè el navegador sense pantalla no en té. Si un navegador no
   el mostra, cada targeta té un enllaç per obrir el PDF en una pestanya.
-- **Limitació coneguda, no un buit de prova:** l'Enunciat i la Solució en PDF d'una carta amb
-  tries sempre mostren la versió per defecte, mai la selecció feta. Generar-ne un PDF al vol
-  per a cada combinació exigiria compilar LaTeX en directe, molt més feina que el que demanava
-  aquest lliurament; la carta ho avisa amb una nota quan la selecció no és la del defecte
-  (vegeu 7.5).
+- **Limitació de la sessió 14, resolta a la 15:** l'Enunciat i la Solució d'una carta amb
+  tries mostraven sempre el defecte, mai la selecció feta —es triava a cegues—. Des de la
+  sessió 15, cada tria té el seu propi Enunciat i Solució, de només l'ítem triat (2.15). El que
+  en queda: l'Enunciat i la Solució **de la pregunta sencera**, més avall a la mateixa carta,
+  continuen mostrant el defecte, perquè generar-ne un PDF a mida de cada combinació possible
+  d'una pregunta amb més d'una tria (com `limits-infinit/q002`) creixeria amb el producte
+  d'ítems de totes les seves tries, no només amb la suma. Amb els ítems previsualitzats un a
+  un, per ara no calia.
 
 ---
 
@@ -875,9 +935,12 @@ l'ordre numèric.
   `limits-grafica/q001`. El «material reservat» de la sessió 6 (7.4) —les lectures de límits a
   l'infinit i en $x=4$ de `limits-grafica/q001` i `q002`— és exactament la mena de contingut que
   hi encaixaria com a ítem nou, sense haver-lo de reescriure de zero.
-- **PDF al vol per a una selecció personalitzada.** Ara l'Enunciat i la Solució sempre mostren
-  el defecte (5.); una carta amb la selecció canviada ho avisa, però no hi ha manera de veure'n
-  el PDF sense baixar el `.tex` i compilar-lo a part.
+- **PDF de la pregunta sencera amb una combinació concreta.** Des de la sessió 15, cada ítem
+  ja té el seu propi PDF (2.15); el que encara falta és un PDF de tota la pregunta muntada amb
+  una combinació concreta de totes les seves tries alhora, útil per a preguntes amb més d'una
+  (com `limits-infinit/q002`). Creixeria amb el producte d'ítems de cada tria, no amb la suma:
+  cal decidir si val la pena abans d'implementar-ho, o si previsualitzar-les una a una ja és
+  suficient.
 - **Ampliar `tria` a «triar-ne uns quants d'una llista»**, no només «triar-ne exactament un».
   Es va descartar a la sessió 14 (2.14) perquè cap exemple real ho demanava encara; si mai en
   calgués un, val la pena revisar primer si «un cos sencer diferent» ho continua resolent abans
@@ -999,27 +1062,28 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 14. Parteix del de la sessió 13, que ja és al repositori.
+És el lliurament de la sessió 15. Parteix del de la sessió 14, que ja és al repositori (i ja
+compilat amb els paquets oficials: vegeu la confirmació a l'apartat anterior). Aquesta vegada
+**no torna a incloure** `u7/limits-infinit/q002/pregunta.tex`, `u7/limits-grafica/q001/pregunta.tex`,
+`build/prova_paritat.py` ni `build/prova_validacio.py`: cap dels quatre canvia en aquesta
+sessió, i ja tens la versió correcta de la 14.
 
 | Fitxer | Canvi |
 |---|---|
-| `build/build.py` | **Nou mecanisme**: `\begin{tria}{id}…\end{tria}` amb `\itemtria{id}{punts}` (o `{punts-1h30}{punts-50min}`), com a substitut sencer d'un apartat. `analitza_tries()`, `punts_del_tex()` i `materialitza()` ampliats (aquesta, amb un 3r paràmetre `seleccio`); nou camp `tries` al catàleg de cada pregunta |
-| `assets/app.js` | Mirall exacte del mecanisme (`materialitza()`, `RE_TRIA`/`RE_ITEMTRIA`); `examen[k].seleccio`; selector de tria a la carta, amb avís quan la selecció no és la del defecte; `escriuHash`/`llegeixHash` amb el sufix `~id-tria=id-ítem` (compatible amb les adreces d'ara); `triaCanvia()` |
-| `assets/style.css` | Estil del selector de tria i de l'avís de selecció personalitzada |
-| `u7/limits-infinit/q002/pregunta.tex` | **Migrada** a tries: dues (`limits-infinit-tipus`, amb els ítems `un-limit`, `dos-tipus` i `quatre-tipus`; `determina-a`, amb `amb-reflexio` i `sense-reflexio`). El defecte és idèntic, byte a byte, al d'abans de la migració |
-| `u7/limits-grafica/q001/pregunta.tex` | **Migrada** a tries: una (`grafica-tasca-b`, amb `classifica-discontinuitat` i `avalua-imatges`). Mateixa garantia de defecte idèntic |
-| `build/prova_validacio.py` | 9 avaries noves (identificadors mal formats, `defecte-curt` inexistent, ítem repetit, tria buida, punts no múltiples de 0,25, tria repetida, `begin`/`end` desaparellats, tria dins d'un `nomesllarg`); 38 en total |
-| `build/prova_paritat.py` | Secció 1k: paritat de `materialitza()` amb una tria triada a mà (`triaCanvia`), a totes dues modalitats, amb ids inexistents i amb `rota`; 77 comprovacions en total |
-| `README.md` | Regles 12–15, apartat «Tries: quan un apartat ofereix més d'un ítem», punt nou a «Ús», nota a «Afegir una pregunta del banc», estat |
-| `handout.md` | Aquest mateix lliurament: secció 2.14, els tres errors trobats i corregits, decisions preses, comptatges de les tres bateries, i les millores pendents de 7.5 |
+| `build/build.py` | **Nou**: `cos_dun_item()` n'aïlla el cos i els punts d'un ítem concret; `construeix()` el compila com una pregunta d'un sol apartat a `out/tries/<id-tria>/<id-item>/` (enunciat i solució, amb la versió de 50 min deduplicada quan no hi difereix); el catàleg hi porta les rutes de cada ítem |
+| `assets/app.js` | `pdfDeItem()`; cada tria de la carta té ara els seus propis botons Enunciat/Solució, de l'ítem **triat**, reaprofitant `mostra()` amb la clau composta `pregunta:tria`; si el visor és obert i es canvia l'ítem, s'actualitza sol |
+| `assets/style.css` | `.tria-apartat` reestructurat en columna (selector, botons, visor); `.tria-visor-botons`; `.visor-tria` |
+| `build/prova_sortida.py` | **Corregit**: el patró de comptatge de PDF (`*/*/*/out/*.pdf` → `*/*/*/out/**/*.pdf`, als dos llocs) no arribava a `out/tries/…`; afegit un cas nou (`--pregunta` amb tries); 11 comprovacions en total |
+| `README.md` | Punt 5 de «Ús» i apartat de tries actualitzats: cada tria ja té el seu Enunciat/Solució, no només el defecte |
+| `handout.md` | Aquest mateix lliurament: secció 2.15, l'entrada nova a «Errors trobats i corregits», la decisió presa, els comptatges actualitzats, i 7.5 i 5 posades al dia |
 
 No porta cap PDF ni `cataleg.js`, i no toca cap workflow. Després de pujar-lo a `_uploads`,
-cal fer **Run workflow**: recompilarà les 64 preguntes (incloent-hi les dues migrades, amb el
-seu defecte intacte) i passarà totes tres bateries de proves, ara amb els casos de tries.
+cal fer **Run workflow**: recompilarà les 64 preguntes —ara amb 268 PDF, 22 més que abans,
+per les previsualitzacions noves— i passarà totes tres bateries, amb `prova_sortida.py` ja
+comptant-los tots.
 
-Aquest entorn no té `lmodern` ni `babel`-català instal·lats, i per això tota la compilació real
-d'aquesta sessió s'ha fet amb un preàmbul reduït (`--headers`): els PDF que se'n van generar no
-són definitius, exactament com el mateix `build.py` avisa en aquest cas. Val la pena que el
-primer **Run workflow** després de pujar aquest lliurament es miri amb atenció, encara que
-totes les proves d'aquí ja hagin passat, perquè serà la primera compilació amb els paquets
-oficials.
+Com a la sessió 14, tota la compilació real d'aquesta sessió s'ha fet amb el preàmbul reduït
+d'aquest entorn (sense `lmodern` ni `babel`-català), així que els PDF que se'n van generar no
+són definitius. La sessió 14 ja va confirmar que aquest contingut compila net amb els paquets
+oficials; val la pena mirar igualment aquest primer **Run workflow**, perquè és la primera
+vegada que compilen les previsualitzacions de cada ítem amb aquests paquets.

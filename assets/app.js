@@ -69,6 +69,12 @@ const minutsDe = q => (curt ? q.minuts_curt : q.minuts);
 const pdfDe = (q, solucio) => (curt ? (solucio ? q.pdf_solucio_curt : q.pdf_curt)
                                     : (solucio ? q.pdf_solucio : q.pdf));
 
+/** Idèntic a pdfDe(), però per a un ítem concret d'una tria: l'enunciat o la
+ *  solució de NOMÉS aquesta alternativa, no de la pregunta sencera. Existeix
+ *  perquè triar-la no sigui a cegues. */
+const pdfDeItem = (it, solucio) => (curt ? (solucio ? it.pdf_solucio_curt : it.pdf_curt)
+                                         : (solucio ? it.pdf_solucio : it.pdf));
+
 /** L'ítem triat d'una tria: el de `seleccio` si en diu un i encara és un dels
  *  seus, si no el defecte de la modalitat actual. Mai en torna cap altra
  *  cosa (regla 5): una tria sense ítems no hauria d'existir (build.py ho
@@ -369,8 +375,10 @@ function pintaCarta(k, etiqueta) {
   div.className = 'carta' + (esPau ? ' pau' : '') + (esOpcio(k) ? ' opcio' : '');
 
   // Una tria per apartat: un <select> amb cada ítem i els seus punts a la
-  // modalitat actual. Sense cap tria (la immensa majoria de preguntes), això
-  // no pinta res i la targeta queda exactament com abans.
+  // modalitat actual, i els seus propis Enunciat/Solució —de només aquella
+  // alternativa, no de la pregunta sencera— perquè triar-la no sigui a
+  // cegues. Sense cap tria (la immensa majoria de preguntes), això no pinta
+  // res i la targeta queda exactament com abans.
   const tries = q.tries || [];
   let personalitzada = false;
   const triesHtml = tries.map(t => {
@@ -379,8 +387,27 @@ function pintaCarta(k, etiqueta) {
     const opcions = t.items.map(it =>
       `<option value="${esc(it.id)}"${it.id === actual.id ? ' selected' : ''}>`
       + `${esc(it.id.replace(/-/g, ' '))} (${num(curt ? it.curt : it.llarg)} punts)</option>`).join('');
-    return `<label class="tria-apartat"><span>${esc(t.id.replace(/-/g, ' '))}:</span>
-      <select data-tria="${esc(t.id)}">${opcions}</select></label>`;
+    const clauVisor = `${q.id}:${t.id}`;
+    const quinObert = visor[clauVisor];
+    const visorHtml = quinObert ? (() => {
+      const src = pdfDeItem(actual, quinObert === 'solucio');
+      return `<div class="visor visor-tria">
+        <iframe src="${esc(src)}#toolbar=0&amp;navpanes=0" title="${esc(t.id)}: ${esc(actual.id)}"></iframe>
+        <div class="peu">Si el PDF no es veu incrustat,
+          <a href="${esc(src)}" target="_blank" rel="noopener">obre'l en una pestanya</a>.</div>
+      </div>`;
+    })() : '';
+    return `<div class="tria-apartat">
+      <label><span>${esc(t.id.replace(/-/g, ' '))}:</span>
+        <select data-tria="${esc(t.id)}">${opcions}</select></label>
+      <span class="tria-visor-botons">
+        <button type="button" class="secundari mini" data-tria-visor="${esc(clauVisor)}" data-quin="enunciat"
+          aria-pressed="${quinObert === 'enunciat'}">Enunciat</button>
+        <button type="button" class="secundari mini" data-tria-visor="${esc(clauVisor)}" data-quin="solucio"
+          aria-pressed="${quinObert === 'solucio'}">Solució</button>
+      </span>
+      ${visorHtml}
+    </div>`;
   }).join('');
 
   div.innerHTML = `
@@ -397,7 +424,7 @@ function pintaCarta(k, etiqueta) {
     </div>
     <div class="carta-titol">${esc(q.titol)}</div>
     ${tries.length ? `<div class="tries">${triesHtml}
-      ${personalitzada ? '<div class="tria-nota">L\u2019Enunciat i la Solució de sota mostren la versió per defecte; el .tex que en baixis ja reflectirà aquesta selecció.</div>' : ''}
+      ${personalitzada ? '<div class="tria-nota">L\u2019Enunciat i la Solució d\u2019aquí sota (a «Alternativa») ja mostren la selecció feta. Els de la pregunta sencera, més avall, continuen mostrant el defecte; el .tex que en baixis reflecteix aquesta selecció.</div>' : ''}
       </div>` : ''}
     <div class="meta">
       <span>${punts.map(num).join(' + ')} = ${num(punts.reduce((s, a) => s + a, 0))} punts</span>
@@ -444,6 +471,9 @@ function pintaCarta(k, etiqueta) {
   div.querySelectorAll('button[data-fer]').forEach(b => { b.onclick = fer[b.dataset.fer]; });
   div.querySelectorAll('select[data-tria]').forEach(s => {
     s.onchange = () => triaCanvia(k, s.dataset.tria, s.value);
+  });
+  div.querySelectorAll('button[data-tria-visor]').forEach(b => {
+    b.onclick = () => mostra(b.dataset.triaVisor, b.dataset.quin);
   });
   return div;
 }

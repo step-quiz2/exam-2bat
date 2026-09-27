@@ -53,8 +53,9 @@ def edita(fitxer: Path, vell: str, nou: str) -> None:
 
 
 def empremta(banc: Path) -> dict[str, str]:
-    """Hash de cada fitxer que el build pot escriure: els PDF i el catàleg."""
-    fitxers = sorted(banc.glob("*/*/*/out/*.pdf")) + [banc / "cataleg.js"]
+    """Hash de cada fitxer que el build pot escriure: els PDF (també les
+    previsualitzacions de tria, dins de out/tries/) i el catàleg."""
+    fitxers = sorted(banc.glob("*/*/*/out/**/*.pdf")) + [banc / "cataleg.js"]
     return {f.relative_to(banc).as_posix(): hashlib.sha256(f.read_bytes()).hexdigest()
             for f in fitxers if f.exists()}
 
@@ -114,7 +115,7 @@ def main() -> int:
         with tempfile.TemporaryDirectory() as t3:
             banc = copia_banc(Path(t3))
             r = build(banc, fals)
-            pdfs = sorted(banc.glob("*/*/*/out/*.pdf"))
+            pdfs = sorted(banc.glob("*/*/*/out/**/*.pdf"))
             escrits = [p for p in pdfs if p.read_text(encoding="utf-8", errors="replace").startswith("%PDF-fals")]
             comprova(f"un build correcte escriu els {len(pdfs)} PDF",
                      r.returncode == 0 and pdfs and len(escrits) == len(pdfs),
@@ -132,6 +133,30 @@ def main() -> int:
                               for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt"))
             comprova("--pregunta només escriu els PDF d'aquella pregunta, també els de 50 min",
                      r.returncode == 0 and tocats == esperats, f"codi {r.returncode}; tocats {tocats}")
+
+        # 4b. --pregunta amb una pregunta amb tries escriu també la
+        #     previsualització de cada ítem, amb la versió de 50 min només on
+        #     el seu cos hi difereix (aquí, un-limit i amb-reflexio).
+        with tempfile.TemporaryDirectory() as t4b:
+            banc = copia_banc(Path(t4b))
+            abans = empremta(banc)
+            r = build(banc, fals, "--pregunta", "u7/limits-infinit/q002")
+            tocats = sorted(k for k, v in empremta(banc).items()
+                            if abans.get(k) != v and k.endswith(".pdf"))
+            base = "u7/limits-infinit/q002/out"
+            esperats = sorted([
+                *(f"{base}/{nom}.pdf" for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt")),
+                *(f"{base}/tries/limits-infinit-tipus/un-limit/{nom}.pdf"
+                  for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt")),
+                *(f"{base}/tries/limits-infinit-tipus/{iid}/{nom}.pdf"
+                  for iid in ("dos-tipus", "quatre-tipus") for nom in ("enunciat", "solucio")),
+                *(f"{base}/tries/determina-a/amb-reflexio/{nom}.pdf"
+                  for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt")),
+                *(f"{base}/tries/determina-a/sense-reflexio/{nom}.pdf" for nom in ("enunciat", "solucio")),
+            ])
+            comprova("--pregunta amb tries escriu també la previsualització de cada ítem (18 PDF)",
+                     r.returncode == 0 and tocats == esperats,
+                     f"codi {r.returncode}; {len(tocats)} tocats, n'esperava {len(esperats)}")
 
         # 5. --headers: els PDF es compilen amb uns altres paquets; el catàleg
         #    porta sempre els oficials, amb el segell de versió del format.
