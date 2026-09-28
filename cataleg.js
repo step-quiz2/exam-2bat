@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 19:18 UTC",
+ "generat": "2026-09-28 19:31 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -284,6 +284,43 @@ const BANC = {
    "pdf_solucio_curt": "pau/algebra/alg-25j-q2/out/solucio.pdf"
   },
   {
+   "id": "pau/algebra/alg-25s-q2",
+   "unitat": "pau",
+   "tema": "algebra",
+   "codi": "alg-25s-q2",
+   "titol": "Sistema lineal amb paràmetre m: discussió, un cas determinat i el cas indeterminat",
+   "punts": 2.5,
+   "apartats": [
+    1.25,
+    0.5,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    0.5,
+    0.75
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "Rouché-Frobenius",
+    "paràmetre",
+    "sistema indeterminat"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU setembre 2025, sèrie 3",
+   "unitats": [],
+   "tries": [],
+   "tex": "Considereu el sistema d'equacions lineals següent:\n\\[\n\\left.\\begin{aligned}\nx+3y+z&=5\\\\\nmx+2z&=0\\\\\nmy-z&=m\n\\end{aligned}\\right\\}\n\\]\n\n\\begin{apartats}\n\n\\apartat{1,25}\nDiscutiu el sistema per als diferents valors del paràmetre $m$.\n\n\\begin{solucio}\nCalculem el determinant de la matriu de coeficients:\n\\[\n|A|=\\begin{vmatrix}1&3&1\\\\m&0&2\\\\0&m&-1\\end{vmatrix}=m^2-(2m-3m)=m^2+m=m(m+1),\n\\]\ni observem que s'anul·la quan $m=0$ i $m=-1$. Per tant:\\\\\nSi $m\\neq0$ i $m\\neq-1$, el rang de la matriu de coeficients és $\\operatorname{rang}(A)=3$, el rang de la\nmatriu ampliada també i, com que també coincideix amb el nombre d'incògnites, 3, el sistema és compatible\ndeterminat; té, per tant, solució única.\\\\\nSi $m=0$, la matriu de coeficients té determinant zero i rang 2 (per exemple, gràcies al menor\n$\\begin{vmatrix}3&1\\\\0&2\\end{vmatrix}=6\\neq0$). Com que la matriu ampliada\n\\[\n\\begin{pmatrix}1&3&1&5\\\\0&0&2&0\\\\0&0&-1&0\\end{pmatrix}\n\\]\ntambé té rang 2, el sistema és compatible indeterminat i té infinites solucions, que dependran d'un\nparàmetre.\\\\\nSi $m=-1$, la matriu de coeficients també té rang 2, mentre que el rang de l'ampliada\n\\[\n\\begin{pmatrix}1&3&1&5\\\\-1&0&2&0\\\\0&-1&-1&-1\\end{pmatrix}\n\\]\nés 3 (desenvolupant, per exemple, el determinant de les tres darreres columnes per la segona fila). Per tant,\nel sistema és incompatible i no té solució.\n\n\\textit{Pauta oficial:} 0,25 pel càlcul del determinant; 0,25 per la determinació dels valors crítics de $m$, i\n0,25 per l'anàlisi de cadascun dels tres casos.\n\\end{solucio}\n\n\\apartat{0,5}\nResoleu el sistema per a $m=1$.\n\n\\begin{solucio}\nSi $m=1$, el sistema queda\n\\[\n\\left.\\begin{aligned}x+3y+z&=5\\\\x+2z&=0\\\\y-z&=1\\end{aligned}\\right\\}\n\\]\ni sabem que és compatible determinat. Substituint $x=-2z$ i $y=1+z$ a la primera equació, obtenim\n$-2z+3(1+z)+z=5$, d'on resulta $2z=2$ i $z=1$. Per tant, la solució és $(x,y,z)=(-2,2,1)$.\n\n\\textit{Pauta oficial:} 0,5 per la resolució del sistema.\n\\end{solucio}\n\n\\apartat{0,75}\nResoleu el sistema quan aquest tingui infinites solucions.\n\n\\begin{solucio}\nEl sistema té infinites solucions quan és compatible indeterminat, és a dir, quan $m=0$. En aquest cas, de les\ndues últimes equacions en resulta $z=0$, i la primera ens diu $x+3y=5$. Per tant, les solucions del sistema\nsón les de la forma\n\\[\n\\left.\\begin{aligned}x&=5-3k\\\\y&=k\\in\\mathbb{R}\\\\z&=0\\end{aligned}\\right\\}\n\\]\n\n\\textit{Pauta oficial:} 0,25 per reconèixer el valor de $m$ a què es refereix l'enunciat, i 0,5 pel càlcul de\nl'expressió paramètrica de la solució.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/algebra/alg-25s-q2/out/enunciat.pdf",
+   "pdf_solucio": "pau/algebra/alg-25s-q2/out/solucio.pdf",
+   "pdf_curt": "pau/algebra/alg-25s-q2/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/algebra/alg-25s-q2/out/solucio.pdf"
+  },
+  {
    "id": "pau/algebra/alg-26j-q2",
    "unitat": "pau",
    "tema": "algebra",
@@ -431,6 +468,80 @@ const BANC = {
    "pdf_solucio": "pau/analisi/ana-25j-q4a/out/solucio.pdf",
    "pdf_curt": "pau/analisi/ana-25j-q4a/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/analisi/ana-25j-q4a/out/solucio.pdf"
+  },
+  {
+   "id": "pau/analisi/ana-25s-q1",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-25s-q1",
+   "titol": "Optimització: el terreny triangular d'àrea mínima entre dues rectes i una recta per P",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    1.5
+   ],
+   "apartats_curt": [
+    1.0,
+    1.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●●",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "optimització",
+    "feix de rectes",
+    "àrea d'un triangle"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU setembre 2025, sèrie 3",
+   "unitats": [
+    "u9"
+   ],
+   "tries": [],
+   "tex": "Una família vol comprar un terreny per a fer-s'hi una casa envoltada de penya-segats amb vistes al mar. En\naquella zona de la costa, els penya-segats segueixen les rectes $y=0$ i $y=3x$. A més, la família vol que el\nterreny sigui triangular i que el tercer costat del triangle passi pel punt $P=(1,1)$, tal com es pot veure en\nla figura.\n\\begin{center}\n\\begin{tikzpicture}[scale=1.4]\n  \\fill[gray!15] (0,0) -- (0.9,2.7) -- (2.3,2.7) -- (2.3,0) -- cycle;\n  \\begin{scope}\n    \\clip (0,0) -- (0.6364,1.9091) -- (1.4,0) -- cycle;\n    \\foreach \\t in {-2,-1.94,...,1.5} \\draw[very thin] (\\t,0) -- ++(2.2,2.2);\n  \\end{scope}\n  \\draw[thin] (-0.75,0) -- (2.3,0);\n  \\draw[thin] (0,-0.3) -- (0,2.75);\n  \\draw[thick] (0,0) -- (0.9,2.7);\n  \\draw[thick,dashed] (0.3,2.75) -- (1.5,-0.25);\n  \\fill (0,0) circle (1.1pt);\n  \\node[above left,font=\\scriptsize] at (0,0) {$O$};\n  \\draw[fill=gray!50] (1,1) circle (1.4pt);\n  \\node[right,font=\\scriptsize] at (1.03,1.05) {$P=(1,1)$};\n  \\node[font=\\scriptsize] at (1.33,0.62) {$r$};\n  \\foreach \\p in {(-0.4,0.45),(-0.4,1.05),(-0.4,1.65),(-0.4,2.25),(0.14,0.95),(0.14,1.55),(0.14,2.15),\n                  (-0.4,-0.17),(0.25,-0.17),(0.75,-0.17),(1.2,-0.17)}\n    \\node[font=\\scriptsize] at \\p {$\\sim\\!\\sim$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{apartats}\n\n\\apartat{1}\nPlantegeu l'equació de la recta $r$ que defineix el tercer costat del triangle en funció del seu pendent $m$,\ni comproveu que l'àrea del terreny ve donada per $A(m)=\\dfrac32\\cdot\\dfrac{m^2-2m+1}{m^2-3m}$.\n\n\\begin{solucio}\nTenint en compte que la recta $r$ ha de passar pel punt $P=(1,1)$ i que $m$ és el seu pendent, la recta $r$ té\nper equació $y-1=m(x-1)$. La mida de la base del triangle és l'abscissa del punt d'intersecció de la recta $r$\namb l'eix $OX$:\n\\[\n\\left.\\begin{aligned}y-1&=m(x-1)\\\\y&=0\\end{aligned}\\right\\}\\;\\rightarrow\\;0-1=m(x-1)\\;\\rightarrow\\;x=\\frac{m-1}{m}.\n\\]\nI l'alçada del triangle és l'ordenada del punt d'intersecció de la recta $r$ amb $y=3x$:\n\\[\n\\left.\\begin{aligned}y-1&=m(x-1)\\\\y&=3x\\end{aligned}\\right\\}\\;\\rightarrow\\;3x-1=m(x-1)\\;\\rightarrow\\;\nx=\\frac{m-1}{m-3},\\quad y=3\\cdot\\frac{m-1}{m-3}.\n\\]\nLa funció a minimitzar és la que calcula l'àrea del triangle:\n\\[\nA(m)=\\frac12\\cdot\\frac{m-1}{m}\\cdot3\\cdot\\frac{m-1}{m-3}=\\frac32\\cdot\\frac{m^2-2m+1}{m^2-3m}.\n\\]\nParlant estrictament, el valor de l'àrea és $A(m)=\\left|\\frac32\\cdot\\frac{m^2-2m+1}{m^2-3m}\\right|$, perquè hi\nha valors de $m$ per als quals aquesta expressió és negativa. No ho tingueu en compte si s'ignora aquest\ndetall.\n\n\\textit{Pauta oficial:} 0,25 per l'equació del feix de rectes; 0,25 per la mida de la base del triangle; 0,25\nper l'alçada, i 0,25 pel càlcul final de l'àrea (tot en funció de $m$).\n\\end{solucio}\n\n\\apartat{1,5}\nCalculeu el valor de $m$ que fa que l'àrea d'aquest terreny (i, per tant, el seu preu) sigui mínima. Quin és el\nvalor d'aquesta àrea?\n\n\\begin{solucio}\nDerivem la funció àrea i igualem a zero per trobar els possibles extrems relatius:\n\\[\nA'(m)=\\frac32\\cdot\\frac{(2m-2)\\left(m^2-3m\\right)-\\left(m^2-2m+1\\right)(2m-3)}{\\left(m^2-3m\\right)^2}\n=\\frac32\\cdot\\frac{-m^2-2m+3}{\\left(m^2-3m\\right)^2}=0,\n\\]\n\\[\n-m^2-2m+3=0\\;\\rightarrow\\;m=\\frac{2\\pm\\sqrt{4-4(-1)3}}{-2}=\\frac{2\\pm4}{-2}=1,\\ -3 .\n\\]\nPer comprovar si són màxims o mínims, fem la segona derivada:\n\\[\nA''(m)=\\frac32\\cdot\\frac{(-2m-2)\\left(m^2-3m\\right)^2-\\left(-m^2-2m+3\\right)2\\left(m^2-3m\\right)(2m-3)}{\\left(m^2-3m\\right)^4},\n\\]\ni, com que $A''(-3)=\\frac1{54}>0$ i $A''(1)=-\\frac32<0$, el mínim correspon a $m=-3$ (segons l'esbós, el\npendent ja ha de ser negatiu).\\\\\nAlternativament, podem estudiar el creixement i decreixement de la funció $A(m)$. Aquests venen donats pel\nsigne de la primera derivada, però, com que aquesta té un quadrat al denominador, dependrà només del signe\ndel numerador, $-m^2-2m+3$. Això és una paràbola oberta cap avall que talla l'eix $OX$ en els punts\n$(-3,0)$ i $(1,0)$; així doncs, per a $m<-3$ la derivada és negativa i la funció decreix, i per a $-3<m<1$\nla derivada és positiva i la funció creix, per la qual cosa en $m=-3$ l'àrea és mínima. El valor d'aquesta\nàrea és\n\\[\nA(-3)=\\frac32\\cdot\\frac{(-3)^2-2(-3)+1}{(-3)^2-3(-3)}=\\frac32\\cdot\\frac{16}{18}=\\frac43\\ \\text{u}^2 .\n\\]\n\n\\textit{Pauta oficial:} 0,5 per la derivada; 0,25 per calcular els punts crítics; 0,5 per justificar el mínim,\ni 0,25 per calcular el valor de l'àrea.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-25s-q1/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-25s-q1/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-25s-q1/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-25s-q1/out/solucio.pdf"
+  },
+  {
+   "id": "pau/analisi/ana-25s-q4a",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-25s-q4a",
+   "titol": "Vitrall de la Sagrada Família: sinus i cosinus, punt de tall i àrea",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    1.5
+   ],
+   "apartats_curt": [
+    1.0,
+    1.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "funcions trigonomètriques",
+    "àrea entre corbes",
+    "problema en context"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU setembre 2025, sèrie 3",
+   "unitats": [
+    "u12"
+   ],
+   "tries": [],
+   "tex": "Un vidrier està reparant un dels vitralls de la Sagrada Família, la forma del qual és la de la part ombrejada\nde la figura adjunta. S'ha adonat que Gaudí el va dissenyar de manera que un dels costats segueix la funció\n$y=3\\sin(x/4)$ i un altre segueix la funció $y=3\\cos(x/4)$, on $x$ i $y$ estan expressades en metres.\n\\begin{center}\n\\begin{tikzpicture}[x=0.62cm,y=0.62cm]\n  \\fill[gray!25] plot[domain=0:3.14159,samples=40,smooth] (\\x,{3*sin(\\x/4 r)})\n    -- plot[domain=3.14159:0,samples=40,smooth] (\\x,{3*cos(\\x/4 r)}) -- cycle;\n  \\draw (0,-0.3) -- (0,3.5);\n  \\draw[\\colorgrafica,thick] plot[domain=0:5.6,samples=60,smooth] (\\x,{3*sin(\\x/4 r)});\n  \\draw[\\colorgrafica,thick] plot[domain=0:5.6,samples=60,smooth] (\\x,{3*cos(\\x/4 r)});\n  \\node[font=\\small] at (0.35,3.4) {$B$};\n  \\node[font=\\small] at (0.35,0.4) {$A$};\n  \\node[above,font=\\small] at (3.14159,2.2) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{apartats}\n\n\\apartat{1}\nRaoneu a quina funció correspon cada gràfica i calculeu les coordenades dels punts $B$ i $C$ assenyalats a la\nfigura (tenint en compte que $A$ és l'origen de coordenades).\n\n\\begin{solucio}\nCom que $3\\sin\\left(\\frac04\\right)=0$ i $3\\cos\\left(\\frac04\\right)=3$, la gràfica inferior (la que passa pels\npunts $A$ i $C$) és la del sinus, i la superior (la que passa per $B$ i $C$) és la del cosinus. El punt $B$\ncorrespon al valor $3\\cos\\left(\\frac04\\right)=3$; per tant, és el punt $B=(0,3)$. Finalment, el punt $C$ és el\npunt de tall entre el sinus i el cosinus, $3\\sin\\left(\\frac x4\\right)=3\\cos\\left(\\frac x4\\right)$:\n\\[\n\\frac{3\\sin\\left(\\frac x4\\right)}{3\\cos\\left(\\frac x4\\right)}=1\\;\\rightarrow\\;\\tan\\left(\\frac x4\\right)=1\n\\;\\rightarrow\\;\\frac x4=\\frac\\pi4\\;\\rightarrow\\;x=\\pi .\n\\]\nCom que $3\\sin\\left(\\frac\\pi4\\right)=3\\cos\\left(\\frac\\pi4\\right)=\\frac{3\\sqrt2}{2}$, el punt de tall és\n$C=\\left(\\pi,\\frac{3\\sqrt2}{2}\\right)$.\n\n\\textit{Pauta oficial:} 0,5 per raonar quina gràfica és cadascuna; 0,25 per les coordenades del punt $B$, i\n0,25 per les de $C$.\n\\end{solucio}\n\n\\apartat{1,5}\nCalculeu el preu del vitrall sabent que costa $750\\ \\text{€}/\\text{m}^2$.\n\n\\begin{solucio}\nPer a calcular el preu del vitrall, necessitem trobar la seva àrea:\n\\begin{align*}\nA&=\\int_0^\\pi\\left(3\\cos\\left(\\frac x4\\right)-3\\sin\\left(\\frac x4\\right)\\right)dx\n=\\left[12\\sin\\left(\\frac x4\\right)+12\\cos\\left(\\frac x4\\right)\\right]_0^\\pi\\\\\n&=12\\left(\\sin\\left(\\frac\\pi4\\right)+\\cos\\left(\\frac\\pi4\\right)-\\sin(0)-\\cos(0)\\right)\n=12\\left(\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}-0-1\\right)=12\\left(\\sqrt2-1\\right)\\simeq4{,}97\\ \\text{m}^2 .\n\\end{align*}\nPer tant, el preu del vitrall serà de $4{,}97\\ \\text{m}^2\\cdot750\\ \\text{€}/\\text{m}^2=3\\,727{,}5$ €.\n\n\\textit{Pauta oficial:} 0,25 per plantejar la integral correctament; 0,5 per la primitiva; 0,5 per trobar\nl'àrea, i 0,25 pel preu final. Compteu 0 de la part de la primitiva si no tracten adequadament el coeficient\ndel sinus i del cosinus.\n\n\\textit{Nota del banc:} el criteri oficial hi escriu $4{,}97\\cdot750=3\\,725{,}5$ €, però\n$4{,}97\\cdot750=3\\,727{,}5$. El valor exacte és $12\\left(\\sqrt2-1\\right)\\cdot750=9\\,000\\left(\\sqrt2-1\\right)\\approx3\\,727{,}92$ €.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-25s-q4a/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-25s-q4a/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-25s-q4a/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-25s-q4a/out/solucio.pdf"
   },
   {
    "id": "pau/analisi/ana-26j-q1",
@@ -623,6 +734,43 @@ const BANC = {
    "pdf_solucio_curt": "pau/geometria/geo-25j-q4b/out/solucio.pdf"
   },
   {
+   "id": "pau/geometria/geo-25s-q4b",
+   "unitat": "pau",
+   "tema": "geometria",
+   "codi": "geo-25s-q4b",
+   "titol": "Plans paral·lels a 2x − y + z = 5: distàncies i punt simètric",
+   "punts": 2.5,
+   "apartats": [
+    0.5,
+    0.75,
+    1.25
+   ],
+   "apartats_curt": [
+    0.5,
+    0.75,
+    1.25
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "distància punt-pla",
+    "plans paral·lels",
+    "punt simètric"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU setembre 2025, sèrie 3",
+   "unitats": [],
+   "tries": [],
+   "tex": "Considereu el pla $\\pi\\colon2x-y+z=5$ i el punt $P=(0,1,3)$.\n\n\\begin{apartats}\n\n\\apartat{0,5}\nComproveu que la distància del punt $P$ al pla $\\pi$ és $\\dfrac{\\sqrt6}{2}$.\n\n\\begin{solucio}\nNomés cal aplicar la fórmula de la distància punt-pla per comprovar que\n\\[\nd(P,\\pi)=\\frac{|2\\cdot0-1+3-5|}{\\sqrt{2^2+(-1)^2+1^2}}=\\frac{3}{\\sqrt6}=\\frac{3\\sqrt6}{6}=\\frac{\\sqrt6}{2}.\n\\]\n\n\\textit{Pauta oficial:} 0,5 per la comprovació que la distància és la que diu l'enunciat (inclosa la\nsimplificació de la fracció amb arrels).\n\\end{solucio}\n\n\\apartat{0,75}\nTrobeu l'equació general d'un pla $\\pi_1$ paral·lel a $\\pi$ i que passi pel punt $P$. Quina és la distància entre\n$\\pi_1$ i $\\pi$?\n\n\\begin{solucio}\nTot pla paral·lel a $\\pi$ és de la forma $2x-y+z=D$ per a algun $D$ real. Com que volem que passi pel punt $P$,\ntenim $2\\cdot0-1+3=D$ i, per tant, $D=2$. El pla buscat és $\\pi_1\\colon2x-y+z=2$. Clarament, la distància entre\n$\\pi_1$ i $\\pi$ és $d(\\pi_1,\\pi)=d(P,\\pi)=\\dfrac{\\sqrt6}{2}$.\n\n\\textit{Pauta oficial:} 0,5 per l'equació del pla paral·lel i 0,25 per argumentar que la distància és la\nmateixa.\n\\end{solucio}\n\n\\apartat{1,25}\nTrobeu l'equació general d'un segon pla $\\pi_2$, diferent de $\\pi_1$, que sigui paral·lel a $\\pi$ i que estigui a\nuna distància $\\dfrac{\\sqrt6}{2}$ de $\\pi$.\n\n\\begin{solucio}\nPer trobar un segon pla $\\pi_2$, també paral·lel a $\\pi$ i també a distància $\\frac{\\sqrt6}{2}$ de $\\pi$,\nbuscarem el punt simètric, $P'$, de $P$ respecte del pla $\\pi$. Busquem la recta perpendicular a $\\pi$ que passa\npel punt $P$. L'equació paramètrica d'aquesta recta és\n\\[\nr\\colon(x,y,z)=(0,1,3)+\\lambda\\cdot(2,-1,1)=(2\\lambda,\\,1-\\lambda,\\,3+\\lambda).\n\\]\nBusquem el punt d'intersecció $M$ de la recta $r$ amb el pla $\\pi$: $2\\cdot(2\\lambda)-(1-\\lambda)+3+\\lambda=5$,\nd'on $6\\lambda=3$ i $\\lambda=\\frac12$. Per tant, $M=\\left(1,\\frac12,\\frac72\\right)$. Ara ens cal trobar el punt\nsimètric $P'$ de $P$ respecte de $\\pi$, fent, per exemple,\n$P'=P+2\\overrightarrow{PM}=(0,1,3)+2\\cdot\\left(1,-\\frac12,\\frac12\\right)=(2,0,4)$.\\\\\nFinalment, el pla buscat és de la forma $2x-y+z=E$ per a algun $E$ real i passa per $P'$; així doncs,\n$2\\cdot2-0+4=E$, i $E=8$. Tenim, doncs, que $\\pi_2$ és el pla d'equació $2x-y+z=8$.\n\n\\textit{Pauta oficial:} 0,5 pel càlcul de la projecció, 0,5 pel càlcul del punt simètric, i 0,25 per l'equació\nfinal del pla. Alternativament, també poden plantejar l'equació de la distància d'un pla paral·lel genèric a un\npunt qualsevol de $\\pi$ i demanar que sigui $\\frac{\\sqrt6}{2}$: una solució serà $\\pi_1$, i l'altra, el pla\nbuscat, $\\pi_2$. Compteu bé aquesta manera alternativa si està ben justificada i calculada.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/geometria/geo-25s-q4b/out/enunciat.pdf",
+   "pdf_solucio": "pau/geometria/geo-25s-q4b/out/solucio.pdf",
+   "pdf_curt": "pau/geometria/geo-25s-q4b/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/geometria/geo-25s-q4b/out/solucio.pdf"
+  },
+  {
    "id": "pau/geometria/geo-26j-q4b",
    "unitat": "pau",
    "tema": "geometria",
@@ -736,6 +884,46 @@ const BANC = {
    "pdf_solucio": "pau/probabilitat/pro-25j-q3/out/solucio.pdf",
    "pdf_curt": "pau/probabilitat/pro-25j-q3/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/probabilitat/pro-25j-q3/out/solucio.pdf"
+  },
+  {
+   "id": "pau/probabilitat/pro-25s-q3",
+   "unitat": "pau",
+   "tema": "probabilitat",
+   "codi": "pro-25s-q3",
+   "titol": "Sesamoïditis: probabilitat total, Bayes i una cúbica de beneficis per condicions",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "probabilitat total",
+    "Bayes",
+    "coeficients per condicions"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU setembre 2025, sèrie 3",
+   "unitats": [
+    "u9",
+    "u13"
+   ],
+   "tries": [],
+   "tex": "La lesió per sesamoïditis (inflamació de l'os sesamoide del peu) és relativament habitual entre la població que\npractica esports d'impacte (atletisme, bàsquet, tennis\\ldots). En una població d'esportistes, s'ha fet un estudi\ndiferenciant entre els que practiquen esports d'impacte i els que practiquen esports sense impacte brusc (com\nara natació, pilates, senderisme\\ldots). S'ha pogut determinar que el 45\\,\\% practiquen esports d'impacte. Entre\naquests, un 10\\,\\% pateixen lesions per sesamoïditis, mentre que entre els que no practiquen esports d'impacte\nnomés un 3\\,\\% presenten aquesta lesió. Escollim un esportista a l'atzar.\n\n\\begin{apartats}\n\n\\apartat{0,75}\nQuina és la probabilitat que pateixi sesamoïditis?\n\n\\begin{solucio}\nConsiderem els esdeveniments aleatoris $I$ = «practicar un esport d'impacte» i $S$ = «patir sesamoïditis». De\nles dades de l'enunciat sabem que $P(I)=0{,}45$, $P\\bigl(\\overline{I}\\bigr)=1-0{,}45=0{,}55$, $P(S\\mid I)=0{,}1$ i\n$P\\bigl(S\\mid\\overline{I}\\bigr)=0{,}03$. Per la llei de les probabilitats totals, tenim\n\\[\nP(S)=P(S\\mid I)\\,P(I)+P\\bigl(S\\mid\\overline{I}\\bigr)\\,P\\bigl(\\overline{I}\\bigr)=0{,}1\\cdot0{,}45+0{,}03\\cdot0{,}55=0{,}0615 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 per plantejar la llei de la probabilitat total (o fer un arbre de decisió o\nsimilar); 0,25 per identificar correctament les dades del problema, i 0,25 pel càlcul.\n\\end{solucio}\n\n\\apartat{0,75}\nSi l'esportista escollit té una lesió per sesamoïditis, quina és la probabilitat que practiqui esports\nd'impacte?\n\n\\begin{solucio}\nPer la fórmula de Bayes,\n\\[\nP(I\\mid S)=\\frac{P(S\\mid I)\\,P(I)}{P(S)}=\\frac{0{,}1\\cdot0{,}45}{0{,}0615}\\approx0{,}7317\\ldots\n\\]\n\n\\textit{Pauta oficial:} 0,25 per plantejar correctament la fórmula de Bayes (o la fórmula de la probabilitat\ncondicionada) i 0,5 pel càlcul.\n\\end{solucio}\n\n\\apartat{1}\nUna empresa de calçat esportiu ha creat una sabatilla amb amortiment per a minimitzar les lesions per\nsesamoïditis. Els beneficis generats per la venda d'aquest producte, en milers d'euros, segueixen una funció\nde la forma $f(x)=ax^3+bx^2+cx$, on $x$ són els anys transcorreguts des que la sabatilla va sortir a la venda i\n$a$, $b$ i $c$ són constants reals.\n\nCalculeu els valors de $a$, $b$ i $c$ sabent que el primer any es va obtenir el màxim de beneficis, amb un\nvalor de 8\\,000 euros, i que el segon any va haver-hi un punt d'inflexió en els beneficis.\n\n\\begin{solucio}\nEl primer any s'obté el màxim de beneficis; per tant, $x=1$ és un màxim de la funció i $f'(1)=0$. Aquests\nbeneficis són de 8\\,000 €; per tant, $f(1)=8$. També ens diuen que el segon any hi va haver un punt d'inflexió\nen els beneficis; per tant, $f''(2)=0$. Calculem la primera i la segona derivades de $f(x)=ax^3+bx^2+cx$,\n$f'(x)=3ax^2+2bx+c$ i $f''(x)=6ax+2b$, i imposem aquestes tres condicions:\n\\[\n\\left.\\begin{aligned}f'(1)=0&\\Rightarrow3a+2b+c=0\\\\f(1)=8&\\Rightarrow a+b+c=8\\\\f''(2)=0&\\Rightarrow12a+2b=0\\end{aligned}\\right\\}\n\\]\nRestant les dues primeres equacions, obtenim $2a+b=-8$ i, combinant-ho amb la tercera,\n\\[\n\\left.\\begin{aligned}12a+2b&=0\\\\2a+b&=-8\\end{aligned}\\right\\}\\;\\Rightarrow\\;\n\\left.\\begin{aligned}12a+2b&=0\\\\-4a-2b&=16\\end{aligned}\\right\\}\\;\\Rightarrow\\;8a=16\\;\\Rightarrow\\;a=\\frac{16}{8}=2 .\n\\]\nPer tant, $2\\cdot2+b=-8$, d'on $b=-12$. Finalment, $a+b+c=8\\Rightarrow c=8-a-b=8-2+12=18$. La funció que\ncompta els beneficis d'aquesta empresa és, doncs, $f(x)=2x^3-12x^2+18x$.\n\n\\textit{Pauta oficial:} 0,25 per imposar $f'(1)=0$, 0,25 per imposar $f(1)=8$, 0,25 per imposar $f''(2)=0$ i\n0,25 pel càlcul final.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/probabilitat/pro-25s-q3/out/enunciat.pdf",
+   "pdf_solucio": "pau/probabilitat/pro-25s-q3/out/solucio.pdf",
+   "pdf_curt": "pau/probabilitat/pro-25s-q3/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/probabilitat/pro-25s-q3/out/solucio.pdf"
   },
   {
    "id": "pau/probabilitat/pro-26j-q3",
