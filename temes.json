@@ -201,6 +201,18 @@
       "descripcio": "Diagrames d'arbre, probabilitat total i teorema de Bayes en contextos d'urnes, màquines i proves."
     },
     {
+      "slug": "binomial-identificar",
+      "unitat": "u14",
+      "nom": "Identificar una binomial: paràmetres, mitjana i moda",
+      "descripcio": "Decidir si una variable segueix una distribució binomial i trobar-ne els paràmetres, la mitjana, la desviació típica i el valor més probable."
+    },
+    {
+      "slug": "binomial-probabilitats",
+      "unitat": "u14",
+      "nom": "Probabilitats amb la binomial",
+      "descripcio": "Probabilitats d'una binomial: exactament, «almenys», «com a molt» i el contrari, en abstracte i en context."
+    },
+    {
       "slug": "algebra",
       "unitat": "pau",
       "nom": "Àlgebra",

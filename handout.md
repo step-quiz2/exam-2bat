@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 86 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13 i 5 de la PAU), 81 amb tries · 1.628 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 92 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 5 de la PAU), 87 amb tries · 1.736 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -44,7 +44,8 @@ funcions a trossos fins que s'hagi fet la setmana 17. La vint-i-dosena va acabar
 racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La vint-i-tresena va fer que el Run workflow deixés de
 trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La vint-i-quatrena, a petició del professor, va completar el
 tema de funcions a trossos, i amb ell la u10. La vint-i-cinquena va fer la u13, Probabilitat: quatre
-temes, amb tres variants cadascun i una tria a cada pregunta. La màquina
+temes, amb tres variants cadascun i una tria a cada pregunta. La vint-i-sisena va fer la
+u14, de la qual els alumnes practiquen la distribució binomial. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -888,6 +889,47 @@ les de les alternatives. Les dotze preguntes tenen el defecte idèntic i 2,50 pu
 compilen de debò a una pàgina. Les taules es van revisar a ull. Les bateries (38/19/77) i la
 integració amb jsdom passen, i el banc complet escriu 1.008 PDF.
 
+### 2.26 Sessió 26 · La unitat 14: la distribució binomial
+
+**El material.** El professor va passar el solucionari de la unitat 14 (pàgines 571–603), que la
+cobreix sencera: variables aleatòries discretes, la binomial, variables contínues, la normal i
+l'aproximació de la binomial per la normal. Però els 8 exercicis que els alumnes practiquen (el 43, el
+44, el 46 i el 50; el 21, el 53, el 100 i el 101) són tots de la binomial. Com que el banc no surt dels
+exercicis practicats, la u14 del banc és, de moment, la distribució binomial; la normal en queda fora.
+
+**La PAU.** Hi surt sempre combinada: amb una $p$ que surt d'una probabilitat total («almenys 4 de 5»,
+24i), amb extraccions amb reemplaçament (24j), amb «almenys una» (24s) o com a funció de $p$ que s'ha
+d'optimitzar (25j).
+
+**Dos temes**, amb tres variants cadascun:
+
+| Tema | Exercicis |
+|---|---|
+| `binomial-identificar` · Identificar una binomial: paràmetres, mitjana i moda | 43, 46, 44, 21 |
+| `binomial-probabilitats` · Probabilitats amb la binomial | 21, 50, 53, 100, 101 |
+
+Les variants d'identificar demanen dir quines variables són binomials (una extracció sense
+reemplaçament no ho és, i en un institut molt gran, triar alumnes gairebé sí), el valor més probable
+(a les bombetes és 0, tot i que la mitjana és 0,8) i una taula simètrica amb dos valors més probables.
+Les de probabilitats treballen el contrari («més de dues», «com a mínim»), la negació i una
+$B(6;\,0{,}8)$ en abstracte, com la del 100. La q002 de probabilitats hi posa a propòsit la trampa de la
+negació: que 2 persones **no** responguin «No ho sé» és $P(X=6)$, no $P(X=2)$.
+
+**Tries**, amb el criteri de la regla 16:
+
+| Tema | Què demana l'alternativa |
+|---|---|
+| `binomial-identificar` | q001, la probabilitat de la variable que no és binomial, comparada amb la que donaria amb reemplaçament (`sense-reemplacament`); q002, $n$ i $p$ a partir de la mitjana i la variància (`parametres-inversos`); q003, comparar dos esdeveniments compostos, «tots del mateix sexe» i «tres i dues» (`comparar-esdeveniments`) |
+| `binomial-probabilitats` | q001, la $p$ màxima perquè el 90\,\% dels paquets no tinguin cap pila descarregada (`p-maxima`); q002, la $p$ surt d'una probabilitat total i després es fa servir en una binomial, com a la PAU 24i (`binomial-i-arbre`); q003, inventar una situació real que segueixi la binomial donada (`inventa-context`) |
+
+**El solucionari s'equivoca al 53b.** Es demana la probabilitat que exactament 3 enquestats **no**
+responguin «NS/NC», que és $P(X=12)\approx7\cdot10^{-9}$, i el llibre calcula $P(X=3)=0{,}188$.
+
+**Verificació.** Totes les probabilitats es van calcular de manera exacta abans d'escriure-les. Les sis
+preguntes tenen el defecte idèntic i 2,50 punts amb cada ítem, i compilen de debò a una pàgina. La llista
+de variables i la taula de probabilitats es van revisar a ull. Les bateries (38/19/77) i la integració
+amb jsdom passen, i el banc complet escriu 1.080 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -945,6 +987,7 @@ integració amb jsdom passen, i el banc complet escriu 1.008 PDF.
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
 | Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
 | El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
+| La u14 del banc és la distribució binomial: dos temes, perquè els 8 exercicis practicats en són tots; la normal en queda fora | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
 | La u13 té quatre temes, un per a cada grup dels 16 exercicis practicats (setmanes 13 i 14) | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
 | El professor aixeca la congelació d'`estudi-trossos` i el tema passa a tenir tres variants (sessió 24) | Professor | Les preguntes queden al banc; qui fa l'examen decideix quan les fa servir |
 | `estudi-trossos` es queda com està (la q001, sense tria) i no s'amplia fins que s'hagi fet la setmana 17 | Professor | Cap exercici practicat abans de l'examen no el sosté |
@@ -1329,6 +1372,21 @@ tema té tres variants, totes amb tria. Els punts de la taula són els del defec
 | Probabilitat total i teorema de Bayes | `q002` | Un dau tria l'urna: probabilitat total, Bayes i dues extraccions | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 35, 36, 107, 108 |
 | Probabilitat total i teorema de Bayes | `q003` | Socis d'una botiga en línia: probabilitat total, Bayes i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 35, 36, 107, 108 |
 
+
+### 6.8 Unitat 14 · La distribució binomial (6 preguntes)
+
+Dos temes, perquè els 8 exercicis practicats són tots de la binomial (2.26). La normal i les
+variables contínues en queden fora. Cada tema té tres variants, totes amb tria.
+
+| Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
+|---|---|---|---|---|---|---|---|
+| Identificar una binomial: paràmetres, mitjana i moda | `q001` | Quines variables són binomials, mitjana, desviació típica i valor més probable | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 44, 46, 21 |
+| Identificar una binomial: paràmetres, mitjana i moda | `q002` | Bombetes defectuoses: justificar la binomial, mitjana, variància i moda | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 44, 46, 21 |
+| Identificar una binomial: paràmetres, mitjana i moda | `q003` | Nombre de nenes en una família de cinc criatures: taula, simetria i paràmetres | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 44, 46, 21 |
+| Probabilitats amb la binomial | `q001` | Piles descarregades: exactament, més de dues i el contrari | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 21, 50, 53, 100, 101 |
+| Probabilitats amb la binomial | `q002` | Respostes «No ho sé»: la negació, «com a mínim» i «com a molt» | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●●○ | 21, 50, 53, 100, 101 |
+| Probabilitats amb la binomial | `q003` | Una B(6; 0,8) en abstracte: probabilitats puntuals, acumulades i d'un interval | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 21, 50, 53, 100, 101 |
+
 ## 7. Feina pendent
 
 ### 7.1 Com s'apliquen els lliuraments
@@ -1412,7 +1470,7 @@ l'ordre numèric.
 | u9 Aplicacions de les derivades | 8–10 | 22 de novembre de 2026 · **feta** |
 | u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema (les de funcions a trossos, per després de la setmana 17) |
 | u13 Probabilitat | 13–14 | 20 de desembre de 2026 · **completa**: quatre temes amb tres variants, totes amb tria |
-| u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 |
+| u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 · **binomial feta** (2.26); la normal, sense exercicis practicats |
 | u1 Matrius | 18–19 | 24 de gener de 2027 |
 | u2 Determinants | 20–22 | 14 de febrer de 2027 |
 | u3 Sistemes d'equacions | 23–25 | 7 de març de 2027 |
@@ -1454,7 +1512,7 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 24, també la u10 sencera, i des de la 25, la u13.
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 24, també la u10 sencera, des de la 25, la u13, i des de la 26, la u14.
   Per a les unitats que vinguin, el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
@@ -1589,18 +1647,16 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 25. Parteix del de la sessió 24, que ja és al repositori.
+És el lliurament de la sessió 26. Parteix del de la sessió 25, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `temes.json` | Els quatre temes de la u13 |
-| `u13/espai-mostral/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
-| `u13/operacions-esdeveniments/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
-| `u13/taules-contingencia/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
-| `u13/probabilitat-total-bayes/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `temes.json` | Els dos temes de la u14 |
+| `u14/binomial-identificar/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `u14/binomial-probabilitats/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.25, la 6.7 nova, i les seccions 3, 6.4, 7.4, 7.5 i 11 |
+| `handout.md` | Secció 2.26, la 6.8 nova, i les seccions 3, 7.4, 7.5 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
-memòria, només es compilaran les 12 preguntes noves: el resum hauria de dir «144 PDF desats · 864
+memòria, només es compilaran les 6 preguntes noves: el resum hauria de dir «72 PDF desats · 1008
 reutilitzats».

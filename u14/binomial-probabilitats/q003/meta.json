@@ -1,0 +1,18 @@
+{
+  "titol": "Una B(6; 0,8) en abstracte: probabilitats puntuals, acumulades i d'un interval",
+  "dificultat": "●○○",
+  "temes_secundaris": [],
+  "origen": [
+    21,
+    50,
+    53,
+    100,
+    101
+  ],
+  "minuts": 18,
+  "minuts_curt": 11,
+  "etiquetes": [
+    "binomial",
+    "probabilitats"
+  ]
+}

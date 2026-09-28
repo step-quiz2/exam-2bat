@@ -1,0 +1,45 @@
+Sigui $X$ una variable aleatòria que segueix una distribució binomial $B(6;\,0{,}8)$.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Calcula $P(X=6)$ i $P(X\ge5)$.
+
+\begin{solucio}
+$P(X=6)=0{,}8^6\approx0{,}262$ i $P(X=5)=6\cdot0{,}8^5\cdot0{,}2\approx0{,}393$, i per tant
+$P(X\ge5)\approx0{,}655$.
+\end{solucio}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{1}{1,25}
+Calcula $P(X>1)$ i $P(2\le X\le4)$.
+
+\begin{solucio}
+$P(X=0)=0{,}2^6=0{,}000064$ i $P(X=1)=6\cdot0{,}8\cdot0{,}2^5=0{,}001536$.\\
+$P(X>1)=1-P(X\le1)=1-0{,}0016=0{,}9984$.\\
+$P(2\le X\le4)=1-P(X\le1)-P(X\ge5)\approx1-0{,}0016-0{,}6554\approx0{,}343$.
+\end{solucio}
+
+\itemtria{inventa-context}{1}{1,25}
+Inventa una situació real en què una variable segueixi aquesta distribució $B(6;\,0{,}8)$, i explica què
+vol dir, en aquesta situació, el resultat de $P(X\ge5)$.
+
+\begin{solucio}
+Resposta oberta. Cal que hi hagi 6 proves independents, i a cada una, la mateixa probabilitat d'èxit,
+$0{,}8$. Per exemple: una jugadora encerta el 80\,\% dels tirs lliures i en fa 6, i $X$ és el nombre
+d'encerts.\\
+Aleshores, $P(X\ge5)\approx0{,}655$ vol dir que, en un 65,5\,\% de les sèries de 6 tirs, n'encerta com a
+mínim 5.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula la mitjana i la variància de $X$.
+
+\begin{solucio}
+$\mu=6\cdot0{,}8=4{,}8$ i $\sigma^2=6\cdot0{,}8\cdot0{,}2=0{,}96$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

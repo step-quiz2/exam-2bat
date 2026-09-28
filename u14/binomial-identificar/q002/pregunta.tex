@@ -1,0 +1,47 @@
+En una fàbrica, el 4\,\% de les bombetes surten defectuoses. En cada control s'agafen 20 bombetes a l'atzar
+i es compten les defectuoses ($X$).
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Justifica que $X$ segueix una distribució binomial i indica'n els paràmetres.
+
+\begin{solucio}
+Cada bombeta és defectuosa o no ho és (dos resultats), en cada control n'hi ha un nombre fix, 20, i la
+producció és tan gran que la probabilitat de ser defectuosa és sempre $0{,}04$, independentment de les
+altres bombetes. Per tant, $X\sim B(20;\,0{,}04)$.
+\end{solucio}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{1}{1,25}
+Calcula la mitjana i la variància de $X$, i la probabilitat que en un control no hi hagi cap bombeta
+defectuosa.
+
+\begin{solucio}
+$\mu=20\cdot0{,}04=0{,}8$ i $\sigma^2=20\cdot0{,}04\cdot0{,}96=0{,}768$.\\
+$P(X=0)=0{,}96^{20}\approx0{,}442$.
+\end{solucio}
+
+\itemtria{parametres-inversos}{1}{1,25}
+En una altra fàbrica, el nombre de bombetes defectuoses de cada control segueix una distribució binomial
+de mitjana $1{,}2$ i variància $1{,}14$. Quantes bombetes s'agafen en cada control, i quin percentatge de
+bombetes surten defectuoses?
+
+\begin{solucio}
+$np=1{,}2$ i $np(1-p)=1{,}14$. Dividint: $1-p=\dfrac{1{,}14}{1{,}2}=0{,}95$, i per tant $p=0{,}05$: surten
+defectuoses el 5\,\% de les bombetes.\\
+$n=\dfrac{1{,}2}{0{,}05}=24$ bombetes en cada control.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Quin és el nombre de bombetes defectuoses més probable en un control? Justifica-ho.
+
+\begin{solucio}
+$P(X=0)\approx0{,}442$ i $P(X=1)=20\cdot0{,}04\cdot0{,}96^{19}\approx0{,}368$, i les següents són més
+petites. El més probable és \textbf{cap}, tot i que la mitjana és $0{,}8$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

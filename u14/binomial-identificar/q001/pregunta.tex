@@ -1,0 +1,57 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Digues quines d'aquestes variables segueixen una distribució binomial i, en aquest cas, indica'n els
+paràmetres.
+\begin{itemize}
+\item[i)] Es llança una moneda 8 vegades i es compta el nombre de cares.
+\item[ii)] D'una bossa amb 4 boles blanques i 6 de negres se'n treuen 3, sense reemplaçament, i es
+compten les blanques.
+\item[iii)] El 15\,\% dels alumnes d'un institut molt gran porta ulleres. Es trien 10 alumnes a l'atzar i
+es compten els que en porten.
+\end{itemize}
+
+\begin{solucio}
+i) \textbf{Sí}: $B(8;\,0{,}5)$. Hi ha 8 proves independents, i a cada una la probabilitat de cara és
+$0{,}5$.\\
+ii) \textbf{No}: sense reemplaçament, la probabilitat de treure una blanca canvia d'una extracció a
+l'altra (després d'una blanca, en queden 3 de 9), i les extraccions no són independents.\\
+iii) \textbf{Sí}, aproximadament: $B(10;\,0{,}15)$. L'institut és tan gran que triar 10 alumnes gairebé
+no canvia la proporció dels que queden, i a cada tria es pot prendre $p=0{,}15$.
+\end{solucio}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{1}{1,25}
+Per a la variable iii), calcula la mitjana, la desviació típica i la probabilitat que exactament 2 alumnes
+portin ulleres.
+
+\begin{solucio}
+$\mu=np=10\cdot0{,}15=1{,}5$ i $\sigma=\sqrt{np(1-p)}=\sqrt{10\cdot0{,}15\cdot0{,}85}=\sqrt{1{,}275}\approx1{,}129$.\\
+$P(X=2)=\dbinom{10}{2}\,0{,}15^2\cdot0{,}85^8\approx45\cdot0{,}0225\cdot0{,}2725\approx0{,}276$.
+\end{solucio}
+
+\itemtria{sense-reemplacament}{1}{1,25}
+La variable ii) no és binomial. Calcula'n igualment la probabilitat de treure exactament una bola blanca,
+i compara-la amb la que donaria la binomial si les boles es tornessin a la bossa.
+
+\begin{solucio}
+Sense reemplaçament, comptant grups de 3 boles:
+$P=\dfrac{\binom41\binom62}{\binom{10}3}=\dfrac{4\cdot15}{120}=0{,}5$. També amb un arbre:
+$3\cdot\dfrac4{10}\cdot\dfrac69\cdot\dfrac58=0{,}5$.\\
+Amb reemplaçament seria $B(3;\,0{,}4)$: $P(X=1)=\dbinom31\,0{,}4\cdot0{,}6^2=0{,}432$. Són diferents perquè,
+sense reemplaçament, les extraccions no són independents.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Quin és el nombre d'alumnes amb ulleres més probable, en el grup de 10? Justifica-ho.
+
+\begin{solucio}
+$P(X=0)=0{,}85^{10}\approx0{,}197$, $P(X=1)=10\cdot0{,}15\cdot0{,}85^9\approx0{,}347$ i
+$P(X=2)\approx0{,}276$, i a partir d'aquí les probabilitats disminueixen. El valor més probable és
+$\mathbf{1}$, al costat de la mitjana, $1{,}5$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

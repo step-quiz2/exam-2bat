@@ -1,0 +1,50 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Una família té 5 criatures. Suposant que la probabilitat de ser nena és la mateixa que la de ser nen, i
+que el sexe de cada criatura no depèn del de les altres, justifica que el nombre de nenes, $X$, segueix
+una distribució binomial i fes-ne la taula de probabilitats.
+
+\begin{solucio}
+Hi ha 5 proves amb dos resultats, independents, i a cada una la probabilitat de nena és $\frac12$:
+$X\sim B\left(5;\,\tfrac12\right)$, amb $P(X=k)=\dbinom5k\dfrac1{32}$.
+\begin{center}
+\begin{tabular}{c|cccccc}
+$k$ & 0 & 1 & 2 & 3 & 4 & 5\\ \hline
+$P(X=k)$ & $\frac1{32}$ & $\frac5{32}$ & $\frac{10}{32}$ & $\frac{10}{32}$ & $\frac5{32}$ & $\frac1{32}$
+\end{tabular}
+\end{center}
+\end{solucio}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{1}{1,25}
+Quina és la probabilitat que hi hagi més nenes que nens? Quin és el nombre de nenes més probable?
+
+\begin{solucio}
+Més nenes que nens vol dir $X\ge3$: $\dfrac{10+5+1}{32}=\dfrac{16}{32}=\dfrac12$, com era d'esperar per
+simetria.\\
+Els valors més probables són \textbf{2 i 3}, amb $\frac{10}{32}$ cadascun.
+\end{solucio}
+
+\itemtria{comparar-esdeveniments}{1}{1,25}
+Què és més probable: que les cinc criatures siguin del mateix sexe, o que n'hi hagi tres d'un sexe i dues
+de l'altre? Quantes vegades més?
+
+\begin{solucio}
+\textbf{Mateix sexe}: $P(X=0)+P(X=5)=\dfrac2{32}=\dfrac1{16}$.\\
+\textbf{Tres i dues}: $P(X=2)+P(X=3)=\dfrac{20}{32}=\dfrac58$.\\
+El segon és \textbf{10 vegades} més probable: un repartiment més igualat pot passar de moltes més
+maneres.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula la mitjana i la desviació típica de $X$.
+
+\begin{solucio}
+$\mu=5\cdot\frac12=2{,}5$ i $\sigma=\sqrt{5\cdot\frac12\cdot\frac12}=\sqrt{1{,}25}\approx1{,}118$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

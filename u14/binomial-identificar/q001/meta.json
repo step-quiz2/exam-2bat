@@ -1,0 +1,17 @@
+{
+  "titol": "Quines variables són binomials, mitjana, desviació típica i valor més probable",
+  "dificultat": "●○○",
+  "temes_secundaris": [],
+  "origen": [
+    43,
+    46,
+    44,
+    21
+  ],
+  "minuts": 18,
+  "minuts_curt": 11,
+  "etiquetes": [
+    "binomial",
+    "paràmetres"
+  ]
+}

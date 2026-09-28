@@ -1,0 +1,48 @@
+En una enquesta, el 20\,\% de les persones responen «No ho sé». Es trien a l'atzar 8 persones enquestades, i
+$X$ és el nombre de les que responen «No ho sé».
+
+\begin{apartats}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{0,75}{1,25}
+Quina és la probabilitat que exactament 2 responguin «No ho sé»? I que exactament 2 no ho responguin?
+
+\begin{solucio}
+$X\sim B(8;\,0{,}2)$. $P(X=2)=\dbinom82\,0{,}2^2\cdot0{,}8^6=28\cdot0{,}04\cdot0{,}2621\approx0{,}294$.\\
+Que exactament 2 \textbf{no} ho responguin vol dir que les altres 6 sí:
+$P(X=6)=\dbinom86\,0{,}2^6\cdot0{,}8^2=28\cdot0{,}000064\cdot0{,}64\approx0{,}0011$. Compte amb la negació:
+no és $P(X=2)$.
+\end{solucio}
+
+\itemtria{binomial-i-arbre}{0,75}{1,25}
+L'enquesta es fa per telèfon al 60\,\% de les persones i per internet a la resta. Per telèfon, el 25\,\%
+respon «No ho sé», i per internet, el 12,5\,\%. Comprova que la probabilitat que una persona qualsevol
+respongui «No ho sé» és $0{,}2$, i calcula la probabilitat que, de 8 persones, exactament 2 ho responguin.
+
+\begin{solucio}
+Per la probabilitat total: $0{,}6\cdot0{,}25+0{,}4\cdot0{,}125=0{,}15+0{,}05=0{,}2$.\\
+Com que cada persona respon «No ho sé» amb probabilitat $0{,}2$, independentment de les altres,
+$X\sim B(8;\,0{,}2)$ i $P(X=2)=\dbinom82\,0{,}2^2\cdot0{,}8^6\approx0{,}294$.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Quina és la probabilitat que com a mínim 2 responguin «No ho sé»? I que com a molt 2?
+
+\begin{solucio}
+$P(X=0)=0{,}8^8\approx0{,}1678$ i $P(X=1)=8\cdot0{,}2\cdot0{,}8^7\approx0{,}3355$.\\
+\textbf{Com a mínim 2}, pel contrari: $P(X\ge2)=1-0{,}1678-0{,}3355\approx0{,}497$.\\
+\textbf{Com a molt 2}: $P(X\le2)\approx0{,}1678+0{,}3355+0{,}2936\approx0{,}797$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Calcula la mitjana i la desviació típica de $X$, i interpreta la mitjana.
+
+\begin{solucio}
+$\mu=8\cdot0{,}2=1{,}6$ i $\sigma=\sqrt{8\cdot0{,}2\cdot0{,}8}=\sqrt{1{,}28}\approx1{,}131$. De mitjana, en cada
+grup de 8 persones, 1,6 responen «No ho sé».
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

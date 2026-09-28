@@ -1,0 +1,45 @@
+El 3\,\% de les piles d'una marca arriben descarregades. Es compra un paquet de 10 piles, i $X$ és el nombre
+de piles descarregades.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que no n'hi hagi cap de descarregada? I que n'hi hagi exactament una?
+
+\begin{solucio}
+$X\sim B(10;\,0{,}03)$. $P(X=0)=0{,}97^{10}\approx0{,}737$ i
+$P(X=1)=10\cdot0{,}03\cdot0{,}97^{9}\approx0{,}228$.
+\end{solucio}
+
+\begin{tria}{binomial-tasca}
+\itemtria{original}{1}{1,25}
+Quina és la probabilitat que n'hi hagi més de dues de descarregades?
+
+\begin{solucio}
+$P(X=2)=\dbinom{10}2\,0{,}03^2\cdot0{,}97^8\approx45\cdot0{,}0009\cdot0{,}7837\approx0{,}0317$.\\
+Pel contrari: $P(X>2)=1-P(X\le2)\approx1-(0{,}7374+0{,}2281+0{,}0317)\approx0{,}0028$.
+\end{solucio}
+
+\itemtria{p-maxima}{1}{1,25}
+La marca vol que el 90\,\% dels paquets de 10 piles no en tinguin cap de descarregada. Quin és el
+percentatge màxim de piles descarregades que pot admetre?
+
+\begin{solucio}
+Si la proporció de piles descarregades és $p$, $P(X=0)=(1-p)^{10}$. Cal $(1-p)^{10}\ge0{,}9$, és a dir
+$1-p\ge0{,}9^{1/10}\approx0{,}9895$, i per tant $p\le0{,}0105$.\\
+La marca pot admetre com a molt un 1,05\,\% de piles descarregades, aproximadament la tercera part de
+l'actual.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+La marca assegura que en un paquet «gairebé mai» hi ha més d'una pila descarregada. Té raó? Justifica-ho.
+
+\begin{solucio}
+$P(X\ge2)=1-P(X=0)-P(X=1)\approx1-0{,}7374-0{,}2281\approx0{,}0345$: passa en un 3,5\,\% dels paquets,
+aproximadament un de cada 29. És poc freqüent, i l'afirmació és raonable.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}
