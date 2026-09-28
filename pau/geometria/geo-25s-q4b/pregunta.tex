@@ -1,0 +1,55 @@
+Considereu el pla $\pi\colon2x-y+z=5$ i el punt $P=(0,1,3)$.
+
+\begin{apartats}
+
+\apartat{0,5}
+Comproveu que la distància del punt $P$ al pla $\pi$ és $\dfrac{\sqrt6}{2}$.
+
+\begin{solucio}
+Només cal aplicar la fórmula de la distància punt-pla per comprovar que
+\[
+d(P,\pi)=\frac{|2\cdot0-1+3-5|}{\sqrt{2^2+(-1)^2+1^2}}=\frac{3}{\sqrt6}=\frac{3\sqrt6}{6}=\frac{\sqrt6}{2}.
+\]
+
+\textit{Pauta oficial:} 0,5 per la comprovació que la distància és la que diu l'enunciat (inclosa la
+simplificació de la fracció amb arrels).
+\end{solucio}
+
+\apartat{0,75}
+Trobeu l'equació general d'un pla $\pi_1$ paral·lel a $\pi$ i que passi pel punt $P$. Quina és la distància entre
+$\pi_1$ i $\pi$?
+
+\begin{solucio}
+Tot pla paral·lel a $\pi$ és de la forma $2x-y+z=D$ per a algun $D$ real. Com que volem que passi pel punt $P$,
+tenim $2\cdot0-1+3=D$ i, per tant, $D=2$. El pla buscat és $\pi_1\colon2x-y+z=2$. Clarament, la distància entre
+$\pi_1$ i $\pi$ és $d(\pi_1,\pi)=d(P,\pi)=\dfrac{\sqrt6}{2}$.
+
+\textit{Pauta oficial:} 0,5 per l'equació del pla paral·lel i 0,25 per argumentar que la distància és la
+mateixa.
+\end{solucio}
+
+\apartat{1,25}
+Trobeu l'equació general d'un segon pla $\pi_2$, diferent de $\pi_1$, que sigui paral·lel a $\pi$ i que estigui a
+una distància $\dfrac{\sqrt6}{2}$ de $\pi$.
+
+\begin{solucio}
+Per trobar un segon pla $\pi_2$, també paral·lel a $\pi$ i també a distància $\frac{\sqrt6}{2}$ de $\pi$,
+buscarem el punt simètric, $P'$, de $P$ respecte del pla $\pi$. Busquem la recta perpendicular a $\pi$ que passa
+pel punt $P$. L'equació paramètrica d'aquesta recta és
+\[
+r\colon(x,y,z)=(0,1,3)+\lambda\cdot(2,-1,1)=(2\lambda,\,1-\lambda,\,3+\lambda).
+\]
+Busquem el punt d'intersecció $M$ de la recta $r$ amb el pla $\pi$: $2\cdot(2\lambda)-(1-\lambda)+3+\lambda=5$,
+d'on $6\lambda=3$ i $\lambda=\frac12$. Per tant, $M=\left(1,\frac12,\frac72\right)$. Ara ens cal trobar el punt
+simètric $P'$ de $P$ respecte de $\pi$, fent, per exemple,
+$P'=P+2\overrightarrow{PM}=(0,1,3)+2\cdot\left(1,-\frac12,\frac12\right)=(2,0,4)$.\\
+Finalment, el pla buscat és de la forma $2x-y+z=E$ per a algun $E$ real i passa per $P'$; així doncs,
+$2\cdot2-0+4=E$, i $E=8$. Tenim, doncs, que $\pi_2$ és el pla d'equació $2x-y+z=8$.
+
+\textit{Pauta oficial:} 0,5 pel càlcul de la projecció, 0,5 pel càlcul del punt simètric, i 0,25 per l'equació
+final del pla. Alternativament, també poden plantejar l'equació de la distància d'un pla paral·lel genèric a un
+punt qualsevol de $\pi$ i demanar que sigui $\frac{\sqrt6}{2}$: una solució serà $\pi_1$, i l'altra, el pla
+buscat, $\pi_2$. Compteu bé aquesta manera alternativa si està ben justificada i calculada.
+\end{solucio}
+
+\end{apartats}

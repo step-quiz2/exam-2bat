@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 102 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 15 de la PAU), 87 amb tries · 1.956 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 107 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 20 de la PAU), 87 amb tries · 2.066 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -47,7 +47,7 @@ tema de funcions a trossos, i amb ell la u10. La vint-i-cinquena va fer la u13, 
 temes, amb tres variants cadascun i una tria a cada pregunta. La vint-i-sisena va fer la
 u14, de la qual els alumnes practiquen la distribució binomial. La vint-i-setena va afegir a la u10 els
 exercicis de la setmana 17 i va importar la sèrie 5 de la PAU de juny de 2026. La vint-i-vuitena va importar la sèrie 1 de
-juny de 2025. La màquina
+juny de 2025, i la vint-i-novena, setembre de 2025, amb l'exercici 3 sencer com a `pro-25s-q3`. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -997,6 +997,30 @@ queda com a decisió oberta (7.6).
 **Verificació.** Les bateries (38/19/77) i la integració amb jsdom passen, i el banc complet escriu
 1.108 PDF.
 
+### 2.29 Sessió 29 · Setembre de 2025, i l'exercici 3 sencer
+
+**L'exercici 3.** A l'examen real és un sol exercici de 2,5 punts: a) i b) de probabilitat (la
+sesamoïditis, amb probabilitat total i Bayes) i c) d'anàlisi (una cúbica de beneficis determinada per un
+màxim i una inflexió). El repositori `pau` el té partit en dues entrades, `pro-25s-q3ab` i
+`ana-25s-q3c`, però els PDF de totes dues contenen l'enunciat sencer i el criteri sencer. El professor
+va triar importar-lo **una sola vegada, sencer, amb el codi `pro-25s-q3`**, al bloc de probabilitat i
+amb les unitats u9 i u13. És l'única excepció a la regla que el codi és el del repositori `pau`, i el
+README ho diu.
+
+**La resta de la convocatòria.** `ana-25s-q1`, un terreny triangular d'àrea mínima (u9); `alg-25s-q2`,
+un sistema amb paràmetre; `ana-25s-q4a`, el vitrall de la Sagrada Família, amb sinus, cosinus i àrea
+(u12); i `geo-25s-q4b`, plans paral·lels i punt simètric. Dues figures refetes en TikZ: el terreny, amb
+el triangle ratllat a mà, i el vitrall. Tot va compilar a la primera, sense cap *Overfull*. Hi ha un PDF
+de revisió del lot (`revisio-pau-setembre2025-serie3.pdf`).
+
+**Una errada del criteri oficial.** Al 4A escriu $4{,}97\cdot750=3\,725{,}5$ €, però
+$4{,}97\cdot750=3\,727{,}5$, i el valor exacte és $9\,000\left(\sqrt2-1\right)\approx3\,727{,}92$ €. Es
+corregeix a $3\,727{,}5$ € i s'hi afegeix una *Nota del banc*. La resta de resultats oficials es van
+verificar amb SymPy, i són correctes.
+
+**Verificació.** La prova de paritat corregida a la sessió 28 s'hi va adaptar sola. Les bateries
+(38/19/77) i la integració amb jsdom passen, i el banc complet escriu 1.118 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -1054,6 +1078,7 @@ queda com a decisió oberta (7.6).
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
 | Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
 | El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
+| L'exercici 3 de setembre de 2025 s'importa una sola vegada, sencer, com a `pro-25s-q3` | Professor (el codi) | Les dues entrades del repositori `pau` són el mateix exercici; un examen no el pot portar dues vegades |
 | Els exercicis de la setmana 17 de la u10 (84, 108, 123 i 124) són practicats: poden sostenir preguntes i alternatives | Professor | L'alumnat també els fa |
 | Si una dada d'un enunciat PAU no quadra amb el dibuix, es manté la resposta oficial i s'hi afegeix una *Nota del banc* | Disseny (2.27) | L'enunciat és literal, i l'examen esperava aquella resposta |
 | La u14 del banc és la distribució binomial: dos temes, perquè els 8 exercicis practicats en són tots; la normal en queda fora | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
@@ -1370,12 +1395,12 @@ Ordenades de la més recent a la més antiga, que és l'ordre d'importació reco
 | `pro-25j-q3` | juny 2025 · s1 | Probabilitat | Peces ferro/acer: prob. total, binomial i màxim f(p) | ✅ importada (sessió 28) |
 | `ana-25j-q4a` | juny 2025 · s1 | Anàlisi | Vela semiparabòlica: cost del material | ✅ importada (sessió 28) |
 | `geo-25j-q4b` | juny 2025 · s1 | Geometria | Pla perpendicular a x+y=0 i recta mediadora | ✅ importada (sessió 28) |
-| `ana-25s-q1` | setembre 2025 · s3 | Anàlisi | Optimització: terreny triangular A(m) mínim | pendent |
-| `alg-25s-q2` | setembre 2025 · s3 | Àlgebra | Sistema lineal amb paràmetre m | pendent |
-| `pro-25s-q3ab` | setembre 2025 · s3 | Probabilitat | Sesamoïditis: probabilitat total i Bayes | pendent · **mateix exercici que `ana-25s-q3c`** (7.6) |
-| `ana-25s-q3c` | setembre 2025 · s3 | Anàlisi | Trobar a, b, c de f(x)=ax³+bx²+cx per condicions | pendent · **mateix exercici que `pro-25s-q3ab`** (7.6) |
-| `ana-25s-q4a` | setembre 2025 · s3 | Anàlisi | Vitrall Sagrada Família: sin(x/4) i cos(x/4) | pendent |
-| `geo-25s-q4b` | setembre 2025 · s3 | Geometria | Plans paral·lels a 2x−y+z=5 i distàncies | pendent |
+| `ana-25s-q1` | setembre 2025 · s3 | Anàlisi | Optimització: terreny triangular A(m) mínim | ✅ importada (sessió 29) |
+| `alg-25s-q2` | setembre 2025 · s3 | Àlgebra | Sistema lineal amb paràmetre m | ✅ importada (sessió 29) |
+| `pro-25s-q3ab` | setembre 2025 · s3 | Probabilitat | Sesamoïditis: probabilitat total i Bayes | ✅ importada, juntament amb `ana-25s-q3c`, com a `pro-25s-q3` (sessió 29) |
+| `ana-25s-q3c` | setembre 2025 · s3 | Anàlisi | Trobar a, b, c de f(x)=ax³+bx²+cx per condicions | ✅ importada, juntament amb `pro-25s-q3ab`, com a `pro-25s-q3` (sessió 29) |
+| `ana-25s-q4a` | setembre 2025 · s3 | Anàlisi | Vitrall Sagrada Família: sin(x/4) i cos(x/4) | ✅ importada (sessió 29) |
+| `geo-25s-q4b` | setembre 2025 · s3 | Geometria | Plans paral·lels a 2x−y+z=5 i distàncies | ✅ importada (sessió 29) |
 | `ana-25i-q1` | juny 2025 · s4 | Anàlisi | f(x)=√(1+x³): domini, derivada, tangent | pendent |
 | `alg-25i-q2` | juny 2025 · s4 | Àlgebra | Sistema amb plans π₁,π₂,π₃ (paràmetre a) | pendent |
 | `pro-25i-q3` | juny 2025 · s4 | Probabilitat | Filtre de correu brossa: prob. total, Bayes i integral | pendent |
@@ -1502,7 +1527,7 @@ lliurament de la sessió és l'apartat 11.
 - Opcionalment, **confirmar amb els originals** les sèries de `23s` (2) i `24j` (1), que avui
   provenen d'una rèplica pública.
 
-### 7.3 Importació PAU: 46 exercicis en 8 convocatòries
+### 7.3 Importació PAU: 41 exercicis en 7 convocatòries
 
 Es fa després de la u8 (decisió de la sessió 5).
 
@@ -1510,7 +1535,7 @@ Es fa després de la u8 (decisió de la sessió 5).
 |---|---|---|
 | `26j2` juny 2026 | 5 | ✅ importada (sessió 27) |
 | `25j` juny 2025 | 1 | ✅ importada (sessió 28) |
-| `25s` setembre 2025 | 3 | 5 exercicis (6 entrades al repositori `pau`; vegeu 7.6) |
+| `25s` setembre 2025 | 3 | ✅ importada (sessió 29): 5 exercicis, el 3 com a `pro-25s-q3` |
 | `25i` juny 2025 | 4 | 5 |
 | `24s` setembre 2024 | 3 | 6 |
 | `24j` juny 2024 | 1 | 6 |
@@ -1600,7 +1625,8 @@ l'ordre numèric.
 
 ### 7.6 Decisions obertes
 
-- **Com s'importa l'exercici 3 de setembre de 2025.** El repositori `pau` el té dues vegades,
+- **Com s'importa l'exercici 3 de setembre de 2025.** ✅ Decidit a la sessió 29 (2.29): una sola
+  vegada, sencer, amb el codi `pro-25s-q3`. Text original: el repositori `pau` el té dues vegades,
   com a `pro-25s-q3ab` i com a `ana-25s-q3c`. És un sol exercici de 2,5 punts: a) i b) de
   probabilitat, i c) de derivades. Si s'importen totes dues entrades, un examen el podria
   portar dues vegades. Si només s'importen a) i b), sumen 1,5 punts i el build les rebutja.
@@ -1721,15 +1747,14 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 28. Parteix del de la sessió 27, que ja és al repositori.
+És el lliurament de la sessió 29. Parteix del de la sessió 28, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `pau/analisi/ana-25j-q1/`, `pau/algebra/alg-25j-q2/`, `pau/probabilitat/pro-25j-q3/`, `pau/analisi/ana-25j-q4a/`, `pau/geometria/geo-25j-q4b/` | **Noves**: la sèrie 1 de juny de 2025, `pregunta.tex` i `meta.json` |
-| `build/prova_paritat.py` | La primera pregunta de cada bloc PAU es calcula del catàleg |
-| `README.md` | Estat |
-| `handout.md` | Secció 2.28, i les seccions 6.6, 7.3, 7.6 i 11 |
+| `pau/analisi/ana-25s-q1/`, `pau/algebra/alg-25s-q2/`, `pau/probabilitat/pro-25s-q3/`, `pau/analisi/ana-25s-q4a/`, `pau/geometria/geo-25s-q4b/` | **Noves**: setembre de 2025, `pregunta.tex` i `meta.json` |
+| `README.md` | Estat, i l'excepció de `pro-25s-q3` a «Afegir una pregunta PAU» |
+| `handout.md` | Secció 2.29, i les seccions 3, 6.6, 7.3, 7.6 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
-memòria, el resum hauria de dir «10 PDF desats · 1098 reutilitzats». El PDF de revisió del lot va a
+memòria, el resum hauria de dir «10 PDF desats · 1108 reutilitzats». El PDF de revisió del lot va a
 part: no s'ha de pujar al repositori.

@@ -8,12 +8,12 @@ veus l'enunciat i la solució en PDF, i en baixes el codi `.tex`, sol o muntat e
 complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva procedència
 («PAU juny 2026, sèrie 1»).
 
-> **Estat a 28 de setembre de 2026:** 102 preguntes. N'hi ha 24 de la unitat 7 (Límits i
+> **Estat a 28 de setembre de 2026:** 107 preguntes. N'hi ha 24 de la unitat 7 (Límits i
 > continuïtat) en 8 temes i 18 de la unitat 8 (Derivades) en 6 temes, totes amb tres variants
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
 > variants; 15 de la unitat 10 (Representació de funcions) en 5 temes, també amb tres variants; 12 de la unitat 13 (Probabilitat) en 4 temes, també amb tres
-> variants; 6 de la unitat 14 (la distribució binomial) en 2 temes, també amb tres variants; i 15 de la PAU (les dues
-> sèries de juny de 2026 i la sèrie 1 de juny de 2025). **Les 87 preguntes de les unitats 7 a 10, 13 i 14 ofereixen una tria** en algun
+> variants; 6 de la unitat 14 (la distribució binomial) en 2 temes, també amb tres variants; i 20 de la PAU (les dues
+> sèries de juny de 2026, la sèrie 1 de juny de 2025 i setembre de 2025). **Les 87 preguntes de les unitats 7 a 10, 13 i 14 ofereixen una tria** en algun
 > apartat: un altre cas, una altra tècnica o una tasca diferent de la del defecte, amb el seu
 > propi Enunciat i Solució, triable des de la mateixa carta. El detall
 > de la feina feta i pendent és a [`handout.md`](handout.md).
@@ -188,6 +188,10 @@ Les preguntes PAU viuen a `pau/<bloc>/<codi>/`, on el bloc és `algebra`, `geome
 ```
 pau/analisi/ana-26j-q1/     →  bloc ana · convocatòria 26j · exercici q1
 ```
+
+Hi ha una sola excepció: `pro-25s-q3`. El repositori `pau` té l'exercici 3 de setembre de 2025
+partit en dues entrades, `pro-25s-q3ab` i `ana-25s-q3c`; al banc és una sola pregunta, sencera,
+amb els tres apartats.
 
 Del codi, el build en treu la convocatòria (`26j`). A `pau/convocatories.json` hi busca la
 sèrie, i escriu la procedència just sota la capçalera de la pregunta:

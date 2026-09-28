@@ -1,0 +1,68 @@
+La lesió per sesamoïditis (inflamació de l'os sesamoide del peu) és relativament habitual entre la població que
+practica esports d'impacte (atletisme, bàsquet, tennis\ldots). En una població d'esportistes, s'ha fet un estudi
+diferenciant entre els que practiquen esports d'impacte i els que practiquen esports sense impacte brusc (com
+ara natació, pilates, senderisme\ldots). S'ha pogut determinar que el 45\,\% practiquen esports d'impacte. Entre
+aquests, un 10\,\% pateixen lesions per sesamoïditis, mentre que entre els que no practiquen esports d'impacte
+només un 3\,\% presenten aquesta lesió. Escollim un esportista a l'atzar.
+
+\begin{apartats}
+
+\apartat{0,75}
+Quina és la probabilitat que pateixi sesamoïditis?
+
+\begin{solucio}
+Considerem els esdeveniments aleatoris $I$ = «practicar un esport d'impacte» i $S$ = «patir sesamoïditis». De
+les dades de l'enunciat sabem que $P(I)=0{,}45$, $P\bigl(\overline{I}\bigr)=1-0{,}45=0{,}55$, $P(S\mid I)=0{,}1$ i
+$P\bigl(S\mid\overline{I}\bigr)=0{,}03$. Per la llei de les probabilitats totals, tenim
+\[
+P(S)=P(S\mid I)\,P(I)+P\bigl(S\mid\overline{I}\bigr)\,P\bigl(\overline{I}\bigr)=0{,}1\cdot0{,}45+0{,}03\cdot0{,}55=0{,}0615 .
+\]
+
+\textit{Pauta oficial:} 0,25 per plantejar la llei de la probabilitat total (o fer un arbre de decisió o
+similar); 0,25 per identificar correctament les dades del problema, i 0,25 pel càlcul.
+\end{solucio}
+
+\apartat{0,75}
+Si l'esportista escollit té una lesió per sesamoïditis, quina és la probabilitat que practiqui esports
+d'impacte?
+
+\begin{solucio}
+Per la fórmula de Bayes,
+\[
+P(I\mid S)=\frac{P(S\mid I)\,P(I)}{P(S)}=\frac{0{,}1\cdot0{,}45}{0{,}0615}\approx0{,}7317\ldots
+\]
+
+\textit{Pauta oficial:} 0,25 per plantejar correctament la fórmula de Bayes (o la fórmula de la probabilitat
+condicionada) i 0,5 pel càlcul.
+\end{solucio}
+
+\apartat{1}
+Una empresa de calçat esportiu ha creat una sabatilla amb amortiment per a minimitzar les lesions per
+sesamoïditis. Els beneficis generats per la venda d'aquest producte, en milers d'euros, segueixen una funció
+de la forma $f(x)=ax^3+bx^2+cx$, on $x$ són els anys transcorreguts des que la sabatilla va sortir a la venda i
+$a$, $b$ i $c$ són constants reals.
+
+Calculeu els valors de $a$, $b$ i $c$ sabent que el primer any es va obtenir el màxim de beneficis, amb un
+valor de 8\,000 euros, i que el segon any va haver-hi un punt d'inflexió en els beneficis.
+
+\begin{solucio}
+El primer any s'obté el màxim de beneficis; per tant, $x=1$ és un màxim de la funció i $f'(1)=0$. Aquests
+beneficis són de 8\,000 €; per tant, $f(1)=8$. També ens diuen que el segon any hi va haver un punt d'inflexió
+en els beneficis; per tant, $f''(2)=0$. Calculem la primera i la segona derivades de $f(x)=ax^3+bx^2+cx$,
+$f'(x)=3ax^2+2bx+c$ i $f''(x)=6ax+2b$, i imposem aquestes tres condicions:
+\[
+\left.\begin{aligned}f'(1)=0&\Rightarrow3a+2b+c=0\\f(1)=8&\Rightarrow a+b+c=8\\f''(2)=0&\Rightarrow12a+2b=0\end{aligned}\right\}
+\]
+Restant les dues primeres equacions, obtenim $2a+b=-8$ i, combinant-ho amb la tercera,
+\[
+\left.\begin{aligned}12a+2b&=0\\2a+b&=-8\end{aligned}\right\}\;\Rightarrow\;
+\left.\begin{aligned}12a+2b&=0\\-4a-2b&=16\end{aligned}\right\}\;\Rightarrow\;8a=16\;\Rightarrow\;a=\frac{16}{8}=2 .
+\]
+Per tant, $2\cdot2+b=-8$, d'on $b=-12$. Finalment, $a+b+c=8\Rightarrow c=8-a-b=8-2+12=18$. La funció que
+compta els beneficis d'aquesta empresa és, doncs, $f(x)=2x^3-12x^2+18x$.
+
+\textit{Pauta oficial:} 0,25 per imposar $f'(1)=0$, 0,25 per imposar $f(1)=8$, 0,25 per imposar $f''(2)=0$ i
+0,25 pel càlcul final.
+\end{solucio}
+
+\end{apartats}

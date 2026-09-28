@@ -1,0 +1,71 @@
+Considereu el sistema d'equacions lineals següent:
+\[
+\left.\begin{aligned}
+x+3y+z&=5\\
+mx+2z&=0\\
+my-z&=m
+\end{aligned}\right\}
+\]
+
+\begin{apartats}
+
+\apartat{1,25}
+Discutiu el sistema per als diferents valors del paràmetre $m$.
+
+\begin{solucio}
+Calculem el determinant de la matriu de coeficients:
+\[
+|A|=\begin{vmatrix}1&3&1\\m&0&2\\0&m&-1\end{vmatrix}=m^2-(2m-3m)=m^2+m=m(m+1),
+\]
+i observem que s'anul·la quan $m=0$ i $m=-1$. Per tant:\\
+Si $m\neq0$ i $m\neq-1$, el rang de la matriu de coeficients és $\operatorname{rang}(A)=3$, el rang de la
+matriu ampliada també i, com que també coincideix amb el nombre d'incògnites, 3, el sistema és compatible
+determinat; té, per tant, solució única.\\
+Si $m=0$, la matriu de coeficients té determinant zero i rang 2 (per exemple, gràcies al menor
+$\begin{vmatrix}3&1\\0&2\end{vmatrix}=6\neq0$). Com que la matriu ampliada
+\[
+\begin{pmatrix}1&3&1&5\\0&0&2&0\\0&0&-1&0\end{pmatrix}
+\]
+també té rang 2, el sistema és compatible indeterminat i té infinites solucions, que dependran d'un
+paràmetre.\\
+Si $m=-1$, la matriu de coeficients també té rang 2, mentre que el rang de l'ampliada
+\[
+\begin{pmatrix}1&3&1&5\\-1&0&2&0\\0&-1&-1&-1\end{pmatrix}
+\]
+és 3 (desenvolupant, per exemple, el determinant de les tres darreres columnes per la segona fila). Per tant,
+el sistema és incompatible i no té solució.
+
+\textit{Pauta oficial:} 0,25 pel càlcul del determinant; 0,25 per la determinació dels valors crítics de $m$, i
+0,25 per l'anàlisi de cadascun dels tres casos.
+\end{solucio}
+
+\apartat{0,5}
+Resoleu el sistema per a $m=1$.
+
+\begin{solucio}
+Si $m=1$, el sistema queda
+\[
+\left.\begin{aligned}x+3y+z&=5\\x+2z&=0\\y-z&=1\end{aligned}\right\}
+\]
+i sabem que és compatible determinat. Substituint $x=-2z$ i $y=1+z$ a la primera equació, obtenim
+$-2z+3(1+z)+z=5$, d'on resulta $2z=2$ i $z=1$. Per tant, la solució és $(x,y,z)=(-2,2,1)$.
+
+\textit{Pauta oficial:} 0,5 per la resolució del sistema.
+\end{solucio}
+
+\apartat{0,75}
+Resoleu el sistema quan aquest tingui infinites solucions.
+
+\begin{solucio}
+El sistema té infinites solucions quan és compatible indeterminat, és a dir, quan $m=0$. En aquest cas, de les
+dues últimes equacions en resulta $z=0$, i la primera ens diu $x+3y=5$. Per tant, les solucions del sistema
+són les de la forma
+\[
+\left.\begin{aligned}x&=5-3k\\y&=k\in\mathbb{R}\\z&=0\end{aligned}\right\}
+\]
+
+\textit{Pauta oficial:} 0,25 per reconèixer el valor de $m$ a què es refereix l'enunciat, i 0,5 pel càlcul de
+l'expressió paramètrica de la solució.
+\end{solucio}
+
+\end{apartats}
