@@ -700,6 +700,25 @@ def construeix(provisional: Path) -> int:
         desti.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(pdf, desti)
 
+    # out/ és generat (regla 1) i ha de reflectir exactament les fonts. Un build
+    # complet, i només si no hi ha hagut cap error, esborra els PDF que ja no
+    # genera cap font: els d'un ítem de tria retirat, per exemple. Sense això,
+    # prova_sortida.py veu PDF que el build no ha escrit i falla. Amb --pregunta
+    # o --nomes-cataleg no se n'esborra cap: aquell build no les ha compilades totes.
+    orfes: list[Path] = []
+    if not args.nomes_cataleg and args.pregunta is None:
+        claus = ("pdf", "pdf_solucio", "pdf_curt", "pdf_solucio_curt")
+        vius = {q[c] for q in preguntes for c in claus}
+        vius |= {it[c] for q in preguntes for t in q.get("tries", []) for it in t["items"] for c in claus}
+        orfes = [f for f in sorted(ARREL.glob("*/*/*/out/**/*.pdf"))
+                 if f.relative_to(ARREL).as_posix() not in vius]
+        for f in orfes:
+            f.unlink()
+            carpeta = f.parent                  # i les carpetes que hagin quedat buides,
+            while carpeta.name != "out" and not any(carpeta.iterdir()):   # mai out/ mateixa
+                carpeta.rmdir()
+                carpeta = carpeta.parent
+
     banc = {
         "generat": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "unitats": temes_doc["unitats"],
@@ -719,7 +738,9 @@ def construeix(provisional: Path) -> int:
     minuts = sum(q["minuts"] for q in preguntes)
     n = len(preguntes)
     print(f"\n✓ {n} {'pregunta' if n == 1 else 'preguntes'} · {len(slugs)} temes · "
-          f"{minuts} min de banc · {len(pdfs)} PDF desats · cataleg.js {len(sortida)//1024} kB")
+          f"{minuts} min de banc · {len(pdfs)} PDF desats"
+          + (f" · {len(orfes)} PDF orfes esborrats" if orfes else "")
+          + f" · cataleg.js {len(sortida)//1024} kB")
     return 0
 
 

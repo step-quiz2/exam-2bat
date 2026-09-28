@@ -17,7 +17,8 @@ $\mathrm{TVM}[3,5]=\dfrac{f(5)-f(3)}{5-3}=\dfrac{6-(-2)}{2}=4$: en aquest interv
 creix, en mitjana, $4$ unitats per cada unitat de $x$.
 \end{solucio}
 
-\apartat[1,25]{1}
+\begin{tria}{derivada-tasca}
+\itemtria{original}{1}{1,25}
 Calcula $f'(3)$ aplicant la definició de derivada.
 
 \begin{solucio}
@@ -27,6 +28,20 @@ f'(3)=\lim_{h\to0}\frac{f(3+h)-f(3)}{h}
 =\lim_{h\to0}\frac{h^2+2h}{h}=\lim_{h\to0}(h+2)=2 .
 \]
 \end{solucio}
+
+\itemtria{derivada-general}{1}{1,25}
+Calcula $f'(a)$ en un punt qualsevol $a$ aplicant la definició de derivada. En quin punt de la
+gràfica de $f$ la recta tangent és horitzontal?
+
+\begin{solucio}
+$f(a+h)-f(a)=(a+h)^2-4(a+h)+1-\left(a^2-4a+1\right)=2ah+h^2-4h$, i per tant
+\[
+f'(a)=\lim_{h\to0}\frac{2ah+h^2-4h}{h}=\lim_{h\to0}(2a+h-4)=2a-4 .
+\]
+La tangent és horitzontal on el pendent és zero: $2a-4=0$, és a dir $a=2$. El punt és
+$(2,f(2))=(2,-3)$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

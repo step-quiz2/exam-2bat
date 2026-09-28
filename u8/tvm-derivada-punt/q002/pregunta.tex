@@ -5,7 +5,8 @@ f(x)=\frac{6}{x+1} .
 
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{tvm-tasca}
+\itemtria{original}{0,75}{1,25}
 Calcula la taxa de variació mitjana de $f$ als intervals $[0,2]$ i $[1,5]$, i interpreta'n el
 resultat.
 
@@ -15,6 +16,18 @@ $\mathrm{TVM}[0,2]=\dfrac{2-6}{2}=-2$ \quad i \quad $\mathrm{TVM}[1,5]=\dfrac{1-
 Les dues són negatives: la funció decreix als dos intervals. A més, decreix molt més de pressa
 a prop de $x=0$ que no pas entre $x=1$ i $x=5$.
 \end{solucio}
+
+\itemtria{tvm-inversa}{0,75}{1,25}
+Troba $b>0$ perquè la taxa de variació mitjana de $f$ a l'interval $[0,b]$ valgui $-1$, i
+interpreta'n el resultat.
+
+\begin{solucio}
+$\mathrm{TVM}[0,b]=\dfrac{f(b)-f(0)}{b}=\dfrac{\frac{6}{b+1}-6}{b}=\dfrac{6-6(b+1)}{b\,(b+1)}=\dfrac{-6}{b+1}$.\\
+Cal $\dfrac{-6}{b+1}=-1$, és a dir $b+1=6$: $\boxed{b=5}$.\\
+Entre $x=0$ i $x=5$ la funció baixa, de mitjana, una unitat per cada unitat que avança $x$: la
+recta secant que uneix $(0,6)$ i $(5,1)$ té pendent $-1$.
+\end{solucio}
+\end{tria}
 
 \apartat[1,25]{1}
 Calcula $f'(1)$ aplicant la definició de derivada.

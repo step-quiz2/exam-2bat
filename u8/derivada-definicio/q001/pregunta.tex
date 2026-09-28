@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{definicio-tasca}
+\itemtria{original}{1}{1,25}
 Aplicant la definició de derivada, calcula la funció derivada de
 \[
 f(x)=2x^2-3x .
@@ -12,6 +13,21 @@ f'(x)=\lim_{h\to0}\frac{2(x+h)^2-3(x+h)-\left(2x^2-3x\right)}{h}
 =\lim_{h\to0}\frac{4xh+2h^2-3h}{h}=\lim_{h\to0}(4x+2h-3)=4x-3 .
 \]
 \end{solucio}
+
+\itemtria{reconeix-limit}{1}{1,25}
+Cadascun dels límits següents és la derivada d'una funció en un punt. Digues de quina funció
+i en quin punt, i calcula'l:
+\begin{graella}{2}
+  \sa \lim_{h\to0}\frac{(2+h)^3-8}{h} & \sa \lim_{h\to0}\frac{e^{h}-1}{h}
+\end{graella}
+
+\begin{solucio}
+La definició és $f'(a)=\lim_{h\to0}\dfrac{f(a+h)-f(a)}{h}$.\\
+i) És $f'(2)$ amb $f(x)=x^3$, perquè $2^3=8$. Com que $f'(x)=3x^2$, el límit val $f'(2)=12$.
+També es pot desenvolupar: $\dfrac{12h+6h^2+h^3}{h}=12+6h+h^2\to12$.\\
+ii) És $f'(0)$ amb $f(x)=e^{x}$, perquè $e^0=1$. Com que $f'(x)=e^{x}$, el límit val $f'(0)=1$.
+\end{solucio}
+\end{tria}
 
 \apartat[1,25]{0,75}
 Aplicant la definició de derivada, calcula la funció derivada de

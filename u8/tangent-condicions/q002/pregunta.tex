@@ -14,13 +14,26 @@ $f'(3)=-1$.\\
 Tangent: $y-3=-(x-3)$, és a dir $y=-x+6$.
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{condicions-tasca}
+\itemtria{original}{0,75}{1,25}
 Calcula l'àrea del triangle que aquesta recta tangent forma amb els eixos de coordenades.
 
 \begin{solucio}
 La recta $y=-x+6$ talla els eixos en $(6,0)$ i $(0,6)$. El triangle és rectangle, amb catets
 de longitud $6$: l'àrea és $\dfrac{6\cdot6}{2}=\boxed{18}$ unitats quadrades.
 \end{solucio}
+
+\itemtria{pendent-negatiu}{0,75}{1,25}
+Justifica que cap recta tangent a la gràfica de $f$ no té pendent positiu, i que tampoc no n'hi ha
+cap d'horitzontal.
+
+\begin{solucio}
+$f'(x)=\dfrac{(x-1)-(x+3)}{(x-1)^2}=\dfrac{-4}{(x-1)^2}$. El denominador és un quadrat, positiu a
+tot el domini ($x\ne1$), i el numerador és $-4$: $f'(x)<0$ per a tota $x$ del domini.\\
+Per tant, totes les tangents tenen pendent negatiu: cap no en té de positiu, i cap no és
+horitzontal, perquè $f'(x)$ no s'anul·la mai.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

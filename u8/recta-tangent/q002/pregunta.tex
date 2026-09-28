@@ -22,7 +22,8 @@ Pendent de la normal: $-\dfrac{1}{1/4}=-4$. Normal: $y=-4(x-3)$, és a dir $y=-4
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{0,75}
+\begin{tria}{tangent-tasca}
+\itemtria{original}{0,75}{1,25}
 Troba l'equació de la recta tangent a la gràfica de $g(x)=x\ln x$ en el punt d'abscissa
 $x=e$.
 
@@ -30,5 +31,17 @@ $x=e$.
 $g(e)=e\ln e=e$. $g'(x)=\ln x+x\cdot\dfrac1x=\ln x+1$, d'on $g'(e)=2$.\\
 Tangent: $y-e=2(x-e)$, és a dir $y=2x-e$.
 \end{solucio}
+
+\itemtria{tangent-per-punt}{0,75}{1,25}
+Troba el punt de la gràfica de $g(x)=x\ln x$ en què la recta tangent passa pel punt $(0,-1)$, i
+escriu l'equació d'aquesta tangent.
+
+\begin{solucio}
+$g'(x)=\ln x+1$. La tangent en el punt d'abscissa $a$ és $y=a\ln a+(\ln a+1)(x-a)$, i en $x=0$
+val $a\ln a-a\ln a-a=-a$.\\
+Perquè passi per $(0,-1)$, cal $-a=-1$: $a=1$. El punt és $(1,g(1))=(1,0)$ i, com que $g'(1)=1$,
+la tangent és $\boxed{y=x-1}$.
+\end{solucio}
+\end{tria}
 
 \end{apartats}

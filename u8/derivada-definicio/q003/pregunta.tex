@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{definicio-tasca}
+\itemtria{original}{1}{1,25}
 Aplicant la definició de derivada, calcula la funció derivada de
 \[
 f(x)=x^3 .
@@ -14,6 +15,22 @@ f'(x)=\lim_{h\to0}\frac{(x+h)^3-x^3}{h}
 =\lim_{h\to0}\left(3x^2+3xh+h^2\right)=3x^2 .
 \]
 \end{solucio}
+
+\itemtria{trossos-derivable}{1}{1,25}
+Estudia, aplicant la definició, si la funció
+\[
+f(x)=\begin{cases} x^2 & \si{x\le 1},\\[3pt] 2x-1 & \si{x>1},\end{cases}
+\]
+és derivable en $x=1$. Si ho és, quant val $f'(1)$?
+
+\begin{solucio}
+$f(1)=1$. Cal calcular les dues derivades laterals, cadascuna amb la branca que hi actua.\\
+Per l'esquerra: $\lim_{h\to0^-}\dfrac{(1+h)^2-1}{h}=\lim_{h\to0^-}\dfrac{2h+h^2}{h}=\lim_{h\to0^-}(2+h)=2$.\\
+Per la dreta: $\lim_{h\to0^+}\dfrac{\bigl(2(1+h)-1\bigr)-1}{h}=\lim_{h\to0^+}\dfrac{2h}{h}=2$.\\
+Les dues coincideixen: $f$ \textbf{és derivable} en $x=1$ i $f'(1)=2$. Les dues branques s'hi
+enganxen sense fer cap pic.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

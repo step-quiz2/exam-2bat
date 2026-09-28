@@ -13,7 +13,8 @@ f'(x)=\lim_{h\to0}\frac{3(x+h)^2+(x+h)-\left(3x^2+x\right)}{h}
 \]
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{definicio-tasca}
+\itemtria{original}{0,75}{1,25}
 Aplicant la definició de derivada, calcula la funció derivada de
 \[
 g(x)=\sqrt{5-x} .
@@ -30,6 +31,22 @@ g'(x)&=\lim_{h\to0}\frac{\sqrt{5-x-h}-\sqrt{5-x}}{h}
 \]
 per a $x<5$. La derivada és negativa: la funció decreix a tot el domini.
 \end{solucio}
+
+\itemtria{no-derivable}{0,75}{1,25}
+Estudia, aplicant la definició, si la funció
+\[
+g(x)=|x-3|
+\]
+és derivable en $x=3$. És contínua en aquest punt?
+
+\begin{solucio}
+$g(3)=0$ i $\dfrac{g(3+h)-g(3)}{h}=\dfrac{|h|}{h}$, que val $-1$ si $h<0$ i $1$ si $h>0$.\\
+Les derivades laterals són $g'(3^-)=-1$ i $g'(3^+)=1$: són diferents, i per tant $g$
+\textbf{no és derivable} en $x=3$ (la gràfica hi fa un pic).\\
+En canvi, sí que és contínua: $\lim_{x\to3}|x-3|=0=g(3)$. Una funció contínua en un punt no
+hi ha de ser necessàriament derivable.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

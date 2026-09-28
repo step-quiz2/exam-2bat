@@ -14,7 +14,8 @@ $f'(x)=3x^2-12x+9=3\left(x^2-4x+3\right)=0\iff x=1$ o $x=3$.\\
 $f(1)=1-6+9=4$ i $f(3)=27-54+27=0$: els punts són $\boxed{(1,4)}$ i $\boxed{(3,0)}$.
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{condicions-tasca}
+\itemtria{original}{0,75}{1,25}
 Troba els punts en què la recta tangent és paral·lela a la recta $y=9x$ i escriu-ne les
 equacions.
 
@@ -23,6 +24,21 @@ Cal $f'(x)=9$: $3x^2-12x+9=9\iff3x^2-12x=0\iff 3x(x-4)=0$, és a dir $x=0$ o $x=
 $f(0)=0$ i $f(4)=64-96+36=4$.\\
 En $(0,0)$: $y=9x$. \quad En $(4,4)$: $y-4=9(x-4)$, és a dir $y=9x-32$.
 \end{solucio}
+
+\itemtria{tangents-per-origen}{0,75}{1,25}
+Troba els punts de la gràfica de $f$ en què la recta tangent passa per l'origen de coordenades, i
+escriu-ne les equacions.
+
+\begin{solucio}
+La tangent en el punt d'abscissa $a$ és $y=f(a)+f'(a)(x-a)$, amb $f'(x)=3x^2-12x+9$. Passa per
+l'origen si $0=f(a)-a\,f'(a)$:
+\[
+a^3-6a^2+9a=3a^3-12a^2+9a\quad\Longrightarrow\quad 2a^3-6a^2=0\quad\Longrightarrow\quad 2a^2(a-3)=0 .
+\]
+$a=0$: el punt és $(0,0)$ i la tangent, $y=9x$. $a=3$: el punt és $(3,0)$ i, com que $f'(3)=0$, la
+tangent és l'eix d'abscisses, $y=0$, que també passa per l'origen.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

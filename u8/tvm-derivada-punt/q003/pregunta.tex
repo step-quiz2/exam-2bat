@@ -6,7 +6,8 @@ on $t$ és el temps en segons.
 
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{tvm-tasca}
+\itemtria{original}{0,75}{1,25}
 Calcula la velocitat mitjana entre $t=1$ i $t=4$, i entre $t=1$ i $t=2$.
 
 \begin{solucio}
@@ -15,6 +16,22 @@ Entre $t=1$ i $t=4$: $\dfrac{24-3}{3}=7$ m/s. \quad Entre $t=1$ i $t=2$:
 $\dfrac{8-3}{1}=5$ m/s.\\
 La velocitat mitjana és la taxa de variació mitjana de la posició.
 \end{solucio}
+
+\itemtria{aproximacio-numerica}{0,75}{1,25}
+Calcula la velocitat mitjana entre $t=1$ i $t=1{,}1$, entre $t=1$ i $t=1{,}01$, i entre $t=1$ i
+$t=1{,}001$. Cap a quin valor sembla que s'acosten? Què representa aquest valor?
+
+\begin{solucio}
+$v_m=\dfrac{s(1+\Delta t)-s(1)}{\Delta t}$, amb $s(1)=3$:
+\[
+\frac{s(1{,}1)-3}{0{,}1}=\frac{3{,}41-3}{0{,}1}=4{,}1,\qquad
+\frac{s(1{,}01)-3}{0{,}01}=4{,}01,\qquad
+\frac{s(1{,}001)-3}{0{,}001}=4{,}001 .
+\]
+S'acosten a $4$ m/s: és la \textbf{velocitat instantània} en $t=1$, el límit de les velocitats
+mitjanes quan l'interval es fa cada vegada més petit.
+\end{solucio}
+\end{tria}
 
 \apartat[1,25]{1}
 Calcula la velocitat instantània en $t=1$ aplicant la definició de derivada.

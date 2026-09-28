@@ -52,6 +52,17 @@ def edita(fitxer: Path, vell: str, nou: str) -> None:
     fitxer.write_text(text.replace(vell, nou, 1), encoding="utf-8")
 
 
+ORFE = "u7/limits-punt/q001/out/tries/limits-tipus/retirat/enunciat.pdf"   # un ítem que ja no existeix
+
+
+def posa_orfe(banc: Path, ruta: str = ORFE) -> Path:
+    """Un PDF que cap font no genera: el que queda al repositori quan es retira un ítem."""
+    f = banc / ruta
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text("%PDF-vell\n", encoding="utf-8")
+    return f
+
+
 def empremta(banc: Path) -> dict[str, str]:
     """Hash de cada fitxer que el build pot escriure: els PDF (també les
     previsualitzacions de tria, dins de out/tries/) i el catàleg."""
@@ -91,6 +102,7 @@ def main() -> int:
             banc = copia_banc(Path(t1))
             edita(banc / "u7/parametres-ab/q001/pregunta.tex",
                   r"\itemtria{original}{1,5}{2,5}", r"\itemtria{original}{1,25}{2,5}")
+            orfe = posa_orfe(banc)
             abans = empremta(banc)
             r = build(banc, fals)
             tocats = sorted(k for k, v in empremta(banc).items() if abans.get(k) != v)
@@ -98,6 +110,7 @@ def main() -> int:
                      r.returncode == 1 and "han de sumar 2,50" in r.stderr, r.stderr[-300:])
             comprova("i el build fallit no toca cap PDF ni el catàleg",
                      not tocats, f"{len(tocats)} fitxers tocats, p. ex. {tocats[:3]}")
+            comprova("i tampoc no esborra cap PDF orfe", orfe.exists())
 
         # 2. Una pregunta l'enunciat de la qual compila però la solució no.
         with tempfile.TemporaryDirectory() as t2:
@@ -115,25 +128,33 @@ def main() -> int:
         # 3. Un build correcte escriu tots els PDF (control positiu).
         with tempfile.TemporaryDirectory() as t3:
             banc = copia_banc(Path(t3))
+            orfes = [posa_orfe(banc), posa_orfe(banc, "u9/monotonia-extrems/q001/out/vell.pdf")]
             r = build(banc, fals)
             pdfs = sorted(banc.glob("*/*/*/out/**/*.pdf"))
             escrits = [p for p in pdfs if p.read_text(encoding="utf-8", errors="replace").startswith("%PDF-fals")]
             comprova(f"un build correcte escriu els {len(pdfs)} PDF",
                      r.returncode == 0 and pdfs and len(escrits) == len(pdfs),
                      f"codi {r.returncode}; {len(escrits)} de {len(pdfs)} escrits\n{r.stderr[-300:]}")
+            retirat = banc / ORFE
+            comprova("i esborra els PDF que ja no genera cap font, amb les carpetes que queden buides",
+                     not any(f.exists() for f in orfes) and not retirat.parent.exists()
+                     and retirat.parent.parent.is_dir() and (banc / "u9/monotonia-extrems/q001/out").is_dir(),
+                     f"orfes que queden: {[str(f.relative_to(banc)) for f in orfes if f.exists()]}")
 
         # 4. --pregunta només escriu els PDF de la pregunta demanada.
         with tempfile.TemporaryDirectory() as t4:
             banc = copia_banc(Path(t4))
+            orfe = posa_orfe(banc)
             abans = empremta(banc)
-            r = build(banc, fals, "--pregunta", "u8/derivada-definicio/q001")
+            r = build(banc, fals, "--pregunta", "u9/monotonia-extrems/q001")
             tocats = sorted(k for k, v in empremta(banc).items()
                             if abans.get(k) != v and k.endswith(".pdf"))
             # La pregunta té versió de 50 min: quatre PDF.
-            esperats = sorted(f"u8/derivada-definicio/q001/out/{nom}.pdf"
+            esperats = sorted(f"u9/monotonia-extrems/q001/out/{nom}.pdf"
                               for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt"))
             comprova("--pregunta només escriu els PDF d'aquella pregunta, també els de 50 min",
                      r.returncode == 0 and tocats == esperats, f"codi {r.returncode}; tocats {tocats}")
+            comprova("i no esborra cap PDF orfe: no ha mirat totes les fonts", orfe.exists())
 
         # 4b. --pregunta amb una pregunta amb tries escriu també la
         #     previsualització de cada ítem, amb la versió de 50 min només on

@@ -12,7 +12,7 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 > continuïtat) en 8 temes i 18 de la unitat 8 (Derivades) en 6 temes, totes amb tres variants
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
 > variants; 5 de la unitat 10 (Representació de funcions) en 5 temes, i 5 de la PAU (l'examen
-> sencer de juny de 2026). **Les 24 preguntes de la unitat 7 ofereixen una tria** en algun
+> sencer de juny de 2026). **Les 42 preguntes de les unitats 7 i 8 ofereixen una tria** en algun
 > apartat: un altre cas, una altra tècnica o una tasca diferent de la del defecte, amb el seu
 > propi Enunciat i Solució, triable des de la mateixa carta. El detall
 > de la feina feta i pendent és a [`handout.md`](handout.md).
@@ -211,7 +211,7 @@ El procediment complet per importar una convocatòria és a `handout.md`.
 
 | # | Regla | Qui la fa complir |
 |---|---|---|
-| 1 | Les fonts són `pregunta.tex` i `meta.json`. `out/` i `cataleg.js` són **generats**: no s'editen mai. | l'Action els sobreescriu |
+| 1 | Les fonts són `pregunta.tex` i `meta.json`. `out/` i `cataleg.js` són **generats**: no s'editen mai. Un build complet n'esborra els PDF que ja no genera cap font. | l'Action els sobreescriu |
 | 2 | Tota pregunta val **2,50 punts**. Cada apartat és múltiple de **0,25**. | `build.py` |
 | 3 | La puntuació s'escriu **només** a `\apartat{...}`. Enlloc més. L'opcional és la de 50 min: `\apartat[1,25]{0,75}`. Les dues puntuacions sumen 2,50. | `build.py` la llegeix del `.tex` |
 | 4 | Una pregunta és **només el cos**: sense `\documentclass`, `\usepackage` ni `\begin{document}`. | `build.py` |

@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
 **Data:** 27 de setembre de 2026 · **Estat:** 64 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 24 de la u7 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 11 de sortida del build i 77 de
+8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 42 de la u7 i la u8 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -34,10 +34,13 @@ compilats, com qualsevol pregunta. La setzena hi va afegir contingut nou i verif
 les 24 preguntes de la u7**, a més de treure dues coses que el professor ja no necessitava (la
 nota de la tria i el botó «amb solucions»). La dissetena, arran d'una crítica del professor
 (setze d'aquelles alternatives només canviaven els nombres) i dels enunciats PAU de 2023 a 2026,
-les va substituir per alternatives que canvien el cas, la tècnica o el sentit del raonament. La màquina
+les va substituir per alternatives que canvien el cas, la tècnica o el sentit del raonament. La divuitena
+va fer que el build esborri els PDF que ja no genera cap font, perquè els 60 orfes que havia deixat
+la dissetena feien fallar l'Action, i va posar tries a les 18 preguntes de la u8, amb el mateix
+criteri. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
-resta d'unitats, i estendre les tries a la resta del banc (u8, u9, u10).
+resta d'unitats, i estendre les tries a la resta del banc (u9 i u10).
 
 ---
 
@@ -552,9 +555,61 @@ cada ítem triat. Tot el banc es va compilar amb el preàmbul reduït: 464 PDF, 
 
 **PDF orfes.** Aquesta és la primera sessió que retira ítems d'una tria. El build copia els PDF
 a `out/`, però no n'esborra mai cap, i l'Action només fa `git add` dels que existeixen. Per tant,
-les previsualitzacions dels 16 ítems retirats es quedarien al repositori. No fan cap mal, perquè
-el catàleg no hi apunta, i es poden treure una sola vegada des del Codespace (secció 11).
-Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads` (secció 10).
+les previsualitzacions dels 16 ítems retirats es quedarien al repositori. Es van donar per
+inofensius, perquè el catàleg no hi apunta, i la neteja es va proposar com a opcional. No ho eren:
+van fer fallar l'Action (secció 2.18).
+
+### 2.18 Sessió 18 · El build ja no deixa PDF orfes, i tries a tota la unitat 8
+
+**La fallada.** El primer Run workflow després de la sessió 17 es va aturar al pas «Un build que
+falla no escriu res», amb el missatge «un build correcte escriu els 524 PDF: 464 de 524 escrits».
+La prova fa un build complet sobre una còpia del repositori i comprova que s'han reescrit tots
+els PDF de `out/`. Al repositori hi havia els 60 PDF de previsualització dels 16 ítems retirats a
+la sessió 17 (2 o 4 per ítem), que ja no genera cap font: $524-464=60$. Es va reproduir aquí
+afegint-hi aquests 60 fitxers, i va sortir el mateix missatge. La sessió 17 els havia donat per
+inofensius, i n'havia proposat la neteja com a opcional i per després del Run workflow. A la
+màquina de treball la prova passava perquè no hi havia els PDF de la sessió 16. En aquell moment,
+la neteja manual amb `git rm` ho va resoldre.
+
+**L'arranjament permanent.** Un build complet, i només si no hi ha hagut cap error, esborra de
+`out/` els PDF que no surten al catàleg que acaba de generar, i també les carpetes que hi queden
+buides. Amb `--pregunta` o `--nomes-cataleg` no n'esborra cap, perquè aquell build no ha mirat
+totes les fonts. `prova_sortida.py` en té tres comprovacions noves (14 en total): un build fallit
+no esborra cap orfe, un build complet sí (i també les carpetes buides), i `--pregunta` no. Es van
+fer dos controls: amb els 60 orfes reals, la prova passa; i amb l'esborrat desactivat, la
+comprovació nova falla.
+
+Queda una limitació. El pas «Desa» de l'Action només fa `git add` dels fitxers que existeixen, de
+manera que un esborrat fet a la màquina de l'Action no arriba al repositori. L'Action ja no falla,
+però els orfes s'hi quedarien. Es resol amb una línia de `compila.yml` (secció 11), que cal
+canviar a mà perquè el bot no pot escriure a `.github/workflows/`. La línia nova es va provar en
+un repositori simulat: registra els canvis, els PDF nous i els esborrats, i deixa fora les fonts.
+
+**Tries a la u8.** Les 18 preguntes, amb el criteri de la regla 16 des del principi: cap
+alternativa no és un canvi de nombres.
+
+| Tema | Què demana l'alternativa |
+|---|---|
+| `derivada-definicio` | q001, reconèixer un límit com la derivada d'una funció en un punt (`reconeix-limit`); q002, una funció contínua i no derivable, $\lvert x-3\rvert$ (`no-derivable`); q003, la derivabilitat d'una funció a trossos per la definició, que aquesta vegada sí que ho és (`trossos-derivable`) |
+| `tvm-derivada-punt` | q001, $f'(a)$ en un punt qualsevol per la definició, i on la tangent és horitzontal (`derivada-general`); q002, la TVM a la inversa, trobant l'interval (`tvm-inversa`); q003, velocitats mitjanes en intervals cada vegada més petits, com a aproximació de la instantània (`aproximacio-numerica`) |
+| `regles-derivacio` | q001, les regles amb valors, sense fórmules (`regles-amb-valors`); q002, reescriure com a suma de potències per no fer servir el quocient (`simplifica-abans`); q003, trobar l'error d'un alumne (`troba-error`) |
+| `regla-cadena` | q001, la cadena amb valors (`composicio-amb-valors`); q002, les propietats dels logaritmes abans de derivar (`log-propietats`); q003, descompondre una composició de tres funcions (`composicio-triple`) |
+| `recta-tangent` | q001, les tangents en $x=a$ i $x=-a$ són paral·leles, i per què (`tangents-simetriques`); q002, el punt on la tangent passa per un punt donat (`tangent-per-punt`); q003, les dues tangents des d'un punt exterior (`punt-exterior`) |
+| `tangent-condicions` | q001, quins pendents són possibles (`pendents-possibles`); q002, cap tangent de pendent positiu (`pendent-negatiu`); q003, les tangents que passen per l'origen (`tangents-per-origen`) |
+
+Les de `recta-tangent` i `tangent-condicions` segueixen patrons de la PAU: la tangent en un punt
+genèric (23s-q2), la que passa per un punt donat (24i-q3) i el punt on té un pendent donat
+(25j-q1, 26j-q1). Abans d'escriure-les, es va llegir cada pregunta sencera, per no repetir cap
+altre apartat i per no fer servir un nom de funció que ja designés una altra funció a la mateixa
+pregunta. Per això `regles-derivacio/q001` i `regla-cadena/q001` parlen de $u$ i $v$, i
+`derivada-definicio/q002` de $g$.
+
+**Verificació.** Totes les matemàtiques es van comprovar amb SymPy abans d'escriure-les. Cada
+fitxer té el defecte idèntic byte a byte i suma 2,50 punts amb cada ítem, a totes dues durades.
+Tot el banc es va compilar amb el preàmbul reduït: 608 PDF (144 de nous), cap error ni
+*Overfull*, i cinc previsualitzacions de la u8 revisades a ull. Les bateries (38/14/77) i la
+integració amb jsdom passen. Dues proves depenien d'una pregunta de la u8 sense tria (el cas 4 de
+`prova_sortida.py` i el cas 7 de la prova amb jsdom), i ara fan servir `u9/monotonia-extrems/q001`.
 
 ---
 
@@ -611,7 +666,7 @@ Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads`
 | Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 | Una alternativa ha de canviar el cas, la tècnica o el sentit del raonament, no només els nombres (regla 16) | Professor | Una tria amb la mateixa pregunta i altres xifres no aporta res a l'examen |
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
-| Els PDF dels ítems retirats s'esborren a mà, no des de l'Action | Disseny | Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads` |
+| Un build complet esborra de `out/` els PDF que ja no genera cap font; un build amb `--pregunta`, no | Disseny, arran d'una fallada (2.18) | `out/` és generat i ha de reflectir les fonts; un build parcial no les ha mirades totes |
 
 ---
 
@@ -642,6 +697,7 @@ Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads`
 | Un `\itemtria` amb l'identificador mal format no feia `match` i el seu contingut desapareixia en silenci, en lloc de fer fallar el build | `build.py` | Comptatge laxa (`\itemtria\b`) contra el comptatge estricte: si no coincideixen, error |
 | Una tria sense cap `\itemtria` ja registrava l'error, però petava amb un `IndexError` en construir el catàleg (`t.ordre[0]` d'una llista buida) | `build.py` | Es descarten del catàleg les tries sense ítems; l'error ja enviat atura el build igualment |
 | `prova_sortida.py` comptava els PDF amb un patró de quatre nivells fixos (`*/*/*/out/*.pdf`): no veia mai els de `out/tries/…`, i per tant no en provava res | `prova_sortida.py` | Patró recursiu (`*/*/*/out/**/*.pdf`) als dos llocs on apareixia |
+| Els PDF orfes dels ítems retirats es van donar per inofensius, i en feien fallar `prova_sortida.py` (464 de 524) | `build.py` | Un build complet esborra els PDF que ja no genera cap font (2.18) |
 
 ---
 
@@ -654,9 +710,9 @@ Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads`
 - 32 resultats dels criteris oficials de juny de 2026, per un mètode independent.
 - `prova_validacio.py`: 38 avaries provocades, cadascuna rebutjada pel build. Les 8 de la
   sessió 6 són de les modalitats, i les 9 de la sessió 14 són de les tries.
-- `prova_sortida.py`: 11 comprovacions, sense TeX (un `pdflatex` fals al PATH). Un build que
-  falla, per validació o per compilació, no toca cap fitxer. Un de correcte els escriu tots
-  (268, comptats amb un patró recursiu que ara arriba a `out/tries/…`),
+- `prova_sortida.py`: 14 comprovacions, sense TeX (un `pdflatex` fals al PATH). Un build que
+  falla, per validació o per compilació, no toca cap fitxer. Un de correcte els escriu tots, i esborra els
+  que ja no genera cap font (608, comptats amb un patró recursiu que ara arriba a `out/tries/…`),
   `--pregunta` només escriu els de la pregunta indicada —també les previsualitzacions de tria,
   quan n'hi ha— i `--preambul` no arriba al catàleg. També s'ha confirmat amb el `pdflatex` real.
 - `prova_paritat.py`: 77 comprovacions. El lloc (executant l'`app.js` real) i el build
@@ -672,6 +728,9 @@ Automatitzar-ho demanaria tocar `compila.yml`, que no pot arribar per `_uploads`
   a 390 px d'amplada. El seu `main.tex` compila en 2 pàgines, i el de solucions en 5, sense cap
   *Overfull*. També un examen combinat (Límits en un punt, Anàlisi, Bolzano, Probabilitat i
   Geometria), amb ✕ i ▲ entremig: 2 pàgines i 4 amb solucions, sense cap *Overfull*.
+- Sessió 18: les 18 tries de la u8, comprovades amb SymPy abans d'escriure-les, amb el defecte
+  idèntic byte a byte i 2,50 punts amb cada ítem. Tot el banc compilat (608 PDF, cap error ni
+  *Overfull*). L'esborrat dels orfes, amb el cas real (60 orfes) i un control negatiu.
 - Sessió 17: les 16 alternatives noves, comprovades amb SymPy abans d'escriure-les. Un cop
   escrites, cadascuna té el defecte idèntic byte a byte i suma 2,50 punts amb cada ítem triat,
   a totes dues durades. Tot el banc compilat amb el preàmbul reduït (464 PDF, cap error ni
@@ -789,6 +848,9 @@ hi canvia res mentre no es toqui des de la carta.
 | Paràmetres per a la continuïtat | `q003` | Paràmetres de continuïtat: un sistema de dues equacions i un cas amb dues solucions | 1,50 + 1,00 | 2,50 | 20 · 12 | ●●○ | 40, 102, 106 |
 
 ### 6.2 Unitat 8 · Derivades (18 preguntes)
+
+Les 18 preguntes ofereixen una tria en algun apartat (sessió 18, secció 2.18). Els punts de la
+taula són els del defecte.
 
 Sis temes, de les tres seccions del llibre amb exercicis assignats a les setmanes 5 a 7, amb
 tres variants cadascun. La secció de derivabilitat no en té cap d'assignat, i per això el banc
@@ -1063,7 +1125,8 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Queden la u8 (18), la u9 (12) i la u10 (5), amb el mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8. Queden la u9 (12) i la u10 (5), amb el
+  mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1190,48 +1253,36 @@ del primer exercici.
 | Un retoc fet a mà en un fitxer baixat es perd a la descàrrega següent | Si val la pena, ha de pujar al banc: `\colorgrafica` en va sortir |
 | Una fórmula destacada després d'una línia curta queda enganxada (TeX hi posa l'espai «curt») | El preàmbul iguala `\abovedisplayshortskip` a l'espai normal |
 | En un Chromium sense pantalla, obrir un PDF el descarrega | Una prova que baixa el `.tex` no ha d'obrir cap visor abans |
-| El build copia els PDF a `out/` però no n'esborra mai cap, i l'Action només fa `git add` dels que existeixen | Retirar un ítem en deixa la carpeta de `out/tries/` òrfena; el catàleg no hi apunta, però s'ha d'esborrar a mà amb `git rm -r` (secció 11) |
+| Un PDF que ja no genera cap font (el d'un ítem retirat) fa fallar `prova_sortida.py` | Un build complet l'esborra (2.18); perquè l'esborrat arribi al repositori, el pas «Desa» ha de fer `git add -A` (secció 11) |
 
 ---
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 17. Parteix del de la sessió 16, que ja és al repositori. Només
-porta preguntes i documentació: no canvia cap fitxer de codi ni de proves.
+És el lliurament de la sessió 18. Parteix del de la sessió 17, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u7/limits-punt/{q001,q002,q003}/pregunta.tex` | Alternatives noves: `quocient-k-zero`, `valor-absolut` i `conjugat` |
-| `u7/limits-trossos/{q001,q002,q003}/pregunta.tex` | Alternativa nova: `altra-branca` |
-| `u7/bolzano-biseccio/{q001,q002,q003}/pregunta.tex` | Alternatives noves: `troba-interval`, `tres-arrels` i `hipotesis` |
-| `u7/domini-discontinuitats/{q001,q002,q003}/pregunta.tex` | Alternativa nova, `factor-doble`, i una tria nova a l'apartat de domini (`domini-funcions`, amb l'ítem `signes-i-condicions`) |
-| `u7/continuitat-trossos/q002/pregunta.tex` | Alternativa nova: `branca-interna` |
-| `u7/parametres-ab/{q001,q002,q003}/pregunta.tex` | Alternatives noves: `un-parametre`, `incompatible` i `discussio-k` |
-| `README.md` | Regla 16 i estat |
-| `handout.md` | Secció 2.17, decisions, seccions 5, 7.5 i 10, i aquest lliurament |
+| `build/build.py` | Un build complet i correcte esborra de `out/` els PDF que ja no genera cap font, i les carpetes que hi queden buides; el resum ho diu («N PDF orfes esborrats») |
+| `build/prova_sortida.py` | Tres comprovacions noves sobre els orfes (14 en total); els casos que feien servir `u8/derivada-definicio/q001` com a pregunta sense tria fan servir `u9/monotonia-extrems/q001` |
+| `u8/*/q00{1,2,3}/pregunta.tex` | **Tries noves** a les 18 preguntes de la u8 (secció 2.18) |
+| `README.md` | Regla 1 i estat |
+| `handout.md` | Secció 2.18, la correcció de 2.17, i les seccions 3, 4, 5, 6.2, 7.5, 10 i 11 |
 
-No porta cap PDF ni `cataleg.js`, i no toca cap workflow. Després de pujar-lo a `_uploads`, cal
-fer **Run workflow**, que recompilarà les 64 preguntes (464 PDF). Com sempre en aquest entorn,
-la compilació real s'ha fet amb el preàmbul reduït, i val la pena mirar el resultat del Run
-workflow.
+No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**: si
+encara hi hagués PDF orfes al repositori, el build ara els esborra i la prova passa.
 
-**Neteja opcional dels PDF orfes.** Un cop el Run workflow hagi acabat bé, des del Codespace:
+**Canvi recomanat a `compila.yml`, a mà.** Perquè els esborrats també arribin al repositori, cal
+canviar una línia del pas «Desa els PDF i el catàleg». No pot arribar per `_uploads`, perquè el bot
+no pot escriure a `.github/workflows/`:
 
-```bash
-git pull
-git rm -r -q --ignore-unmatch \
-  u7/limits-punt/q001/out/tries/limits-tipus/dos-limits \
-  u7/limits-punt/q003/out/tries/limits-tipus/dos-limits \
-  u7/limits-punt/q002/out/tries/limits-parell/alternativa \
-  u7/limits-trossos/q00{1,2,3}/out/tries/trossos-punts/alternativa \
-  u7/bolzano-biseccio/q00{1,2,3}/out/tries/bolzano-existencia/alternativa \
-  u7/domini-discontinuitats/q00{1,2,3}/out/tries/discontinuitats-racional/alternativa \
-  u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/alternativa \
-  u7/parametres-ab/q00{1,2,3}/out/tries/parametres-tasca-a/alternativa
-git commit -m "Treu les previsualitzacions dels ítems retirats"
-git push
-```
-
-Aquest push no dispara «Compila el banc», perquè el filtre de camins de l'Action no inclou
-`out/`. Les alternatives de `continuitat-trossos` q001 i q003 també es diuen `alternativa`, però
-continuen vives i no surten a la llista.
+1. A GitHub, obre `.github/workflows/compila.yml` i clica el llapis (**Edit this file**).
+2. Busca aquesta línia:
+   ```
+   git add cataleg.js $(find . -path './*/*/*/out/*.pdf' -not -path './.git/*')
+   ```
+3. Substitueix-la per aquesta, deixant igual els espais del començament:
+   ```
+   git add -A -- cataleg.js ':(glob)*/*/*/out/**/*.pdf'
+   ```
+4. **Commit changes**, directament a `main`. Aquest commit no dispara l'Action.

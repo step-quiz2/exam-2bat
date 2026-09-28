@@ -12,7 +12,8 @@ $f'(x)=20x^3-\dfrac{1}{\sqrt{x}}-\dfrac{21}{x^4}$.\\
 ii) $g'(x)=\dfrac{4}{x}-3e^{x}+1$.
 \end{solucio}
 
-\apartat[1,25]{1}
+\begin{tria}{regles-tasca}
+\itemtria{original}{1}{1,25}
 Deriva les funcions següents:
 \begin{graella}{2}
   \sa h(x)=\left(x^2-3\right)\cos x & \sa k(x)=\frac{2x+1}{x^2+1}
@@ -25,6 +26,23 @@ ii) Derivada d'un quocient:
 $k'(x)=\dfrac{2\left(x^2+1\right)-(2x+1)\cdot2x}{\left(x^2+1\right)^2}
 =\dfrac{-2x^2-2x+2}{\left(x^2+1\right)^2}$.
 \end{solucio}
+
+\itemtria{troba-error}{1}{1,25}
+Un alumne ha derivat així dues funcions:
+\[
+\bigl(x\ln x\bigr)'=1\cdot\frac1x=\frac1x
+\qquad\qquad
+\left(\frac{e^{x}}{x}\right)'=\frac{e^{x}\,x+e^{x}}{x^2}
+\]
+Explica quin error ha fet en cada cas i escriu les derivades correctes.
+
+\begin{solucio}
+i) Ha derivat el producte com el producte de les derivades. La regla del producte dona
+$\bigl(x\ln x\bigr)'=1\cdot\ln x+x\cdot\dfrac1x=\ln x+1$.\\
+ii) A la regla del quocient, el numerador és una resta, no una suma:
+$\left(\dfrac{e^{x}}{x}\right)'=\dfrac{e^{x}\,x-e^{x}\cdot1}{x^2}=\dfrac{e^{x}(x-1)}{x^2}$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

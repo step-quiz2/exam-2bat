@@ -22,7 +22,8 @@ Normal: $y-1=-\dfrac12(x-1)$, és a dir $y=-\dfrac{x}{2}+\dfrac32$.
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{0,75}
+\begin{tria}{tangent-tasca}
+\itemtria{original}{0,75}{1,25}
 La recta tangent a la gràfica de $g(x)=ax^2+3$ en el punt d'abscissa $x=2$ té pendent $8$.
 Troba $a$ i l'equació d'aquesta tangent.
 
@@ -30,5 +31,19 @@ Troba $a$ i l'equació d'aquesta tangent.
 $g'(x)=2ax$ i $g'(2)=4a=8$, d'on $\boxed{a=2}$.\\
 Aleshores $g(2)=2\cdot4+3=11$, i la tangent és $y-11=8(x-2)$, és a dir $y=8x-5$.
 \end{solucio}
+
+\itemtria{punt-exterior}{0,75}{1,25}
+Troba les rectes tangents a la paràbola $y=x^2$ que passen pel punt $(1,-3)$, que no és de la
+paràbola.
+
+\begin{solucio}
+El punt de tangència és desconegut: sigui $(a,a^2)$. Com que la derivada és $2x$, la tangent en
+aquest punt és $y=a^2+2a(x-a)$. Perquè passi per $(1,-3)$:
+\[
+-3=a^2+2a(1-a)=2a-a^2\quad\Longrightarrow\quad a^2-2a-3=0\quad\Longrightarrow\quad a=3\ \text{o}\ a=-1 .
+\]
+Hi ha \textbf{dues} tangents: en $(3,9)$, $y=6x-9$, i en $(-1,1)$, $y=-2x-1$.
+\end{solucio}
+\end{tria}
 
 \end{apartats}

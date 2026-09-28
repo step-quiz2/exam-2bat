@@ -23,7 +23,8 @@ Normal: $y-0=-(x-1)$, és a dir $y=-x+1$.
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{0,75}
+\begin{tria}{tangent-tasca}
+\itemtria{original}{0,75}{1,25}
 La gràfica de $g(x)=x^2+ax-4$ passa pel punt $P(2,6)$. Troba $a$ i l'equació de la recta
 tangent a la gràfica de $g$ en $P$.
 
@@ -31,5 +32,18 @@ tangent a la gràfica de $g$ en $P$.
 $g(2)=4+2a-4=2a=6$, d'on $\boxed{a=3}$.\\
 $g'(x)=2x+3$ i $g'(2)=7$. Tangent: $y-6=7(x-2)$, és a dir $y=7x-8$.
 \end{solucio}
+
+\itemtria{tangents-simetriques}{0,75}{1,25}
+Troba les rectes tangents a la gràfica de $f$ en els punts d'abscissa $x=2$ i $x=-2$, i comprova
+que són paral·leles. Passa el mateix en $x=a$ i $x=-a$, sigui quin sigui $a$? Justifica-ho.
+
+\begin{solucio}
+$f'(x)=3x^2-2$, i per tant $f'(2)=f'(-2)=10$. Com que $f(2)=5$ i $f(-2)=-3$, les tangents són
+$y=10x-15$ i $y=10x+17$: tenen el mateix pendent i no són la mateixa recta, i per tant són
+paral·leles.\\
+Sí, passa sempre: $f'(-a)=3(-a)^2-2=3a^2-2=f'(a)$. Les tangents en $x=a$ i $x=-a$ tenen el
+mateix pendent, i són paral·leles (o la mateixa recta, si $a=0$).
+\end{solucio}
+\end{tria}
 
 \end{apartats}

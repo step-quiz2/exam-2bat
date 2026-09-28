@@ -11,7 +11,8 @@ i) $f(x)=4x^{1/2}-3x^{-1}+2$, i per tant $f'(x)=\dfrac{2}{\sqrt{x}}+\dfrac{3}{x^
 ii) $g'(x)=3x^2-\dfrac{5}{x}+e^{x}$.
 \end{solucio}
 
-\apartat[1,25]{1}
+\begin{tria}{regles-tasca}
+\itemtria{original}{1}{1,25}
 Deriva les funcions següents:
 \begin{graella}{2}
   \sa h(x)=x^2e^{x} & \sa k(x)=\frac{x^2+1}{x-2}
@@ -22,6 +23,20 @@ i) Derivada d'un producte: $h'(x)=2x\,e^{x}+x^2e^{x}=\left(x^2+2x\right)e^{x}$.\
 ii) Derivada d'un quocient:
 $k'(x)=\dfrac{2x(x-2)-\left(x^2+1\right)}{(x-2)^2}=\dfrac{x^2-4x-1}{(x-2)^2}$.
 \end{solucio}
+
+\itemtria{regles-amb-valors}{1}{1,25}
+De dues funcions derivables $u$ i $v$ se sap que
+\[
+u(2)=3,\qquad u'(2)=-1,\qquad v(2)=5,\qquad v'(2)=4 .
+\]
+Calcula $(u\cdot v)'(2)$ i $\left(\dfrac uv\right)'(2)$.
+
+\begin{solucio}
+Per la regla del producte, $(u\cdot v)'(2)=u'(2)\,v(2)+u(2)\,v'(2)=(-1)\cdot5+3\cdot4=7$.\\
+Per la regla del quocient,
+$\left(\dfrac uv\right)'(2)=\dfrac{u'(2)\,v(2)-u(2)\,v'(2)}{v(2)^2}=\dfrac{-5-12}{25}=-\dfrac{17}{25}$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

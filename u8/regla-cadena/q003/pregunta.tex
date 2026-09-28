@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{cadena-tasca}
+\itemtria{original}{0,75}{1,25}
 Deriva les funcions següents:
 \begin{graella}{2}
   \sa f(x)=\left(1-x^2\right)^3 & \sa g(x)=2^{x^2}
@@ -10,6 +11,20 @@ Deriva les funcions següents:
 i) $f'(x)=3\left(1-x^2\right)^2\cdot(-2x)=-6x\left(1-x^2\right)^2$.\\
 ii) $g'(x)=2^{x^2}\ln2\cdot2x=2x\ln2\cdot2^{x^2}$.
 \end{solucio}
+
+\itemtria{composicio-triple}{0,75}{1,25}
+Cada funció següent és una composició de tres funcions. Escriu-les per ordre i deriva:
+\begin{graella}{2}
+  \sa f(x)=e^{\sin\left(x^2\right)} & \sa g(x)=\bigl(\ln\left(x^2+1\right)\bigr)^4
+\end{graella}
+
+\begin{solucio}
+i) $x\mapsto x^2\mapsto\sin\left(x^2\right)\mapsto e^{\sin\left(x^2\right)}$. Es deriva de fora
+cap a dins: $f'(x)=e^{\sin\left(x^2\right)}\cdot\cos\left(x^2\right)\cdot2x$.\\
+ii) $x\mapsto x^2+1\mapsto\ln\left(x^2+1\right)\mapsto\bigl(\ln\left(x^2+1\right)\bigr)^4$:
+$g'(x)=4\bigl(\ln\left(x^2+1\right)\bigr)^3\cdot\dfrac{2x}{x^2+1}=\dfrac{8x\bigl(\ln\left(x^2+1\right)\bigr)^3}{x^2+1}$.
+\end{solucio}
+\end{tria}
 
 \apartat[1,25]{1}
 Deriva les funcions següents:
