@@ -66,7 +66,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cataleg.js $(find . -path './*/*/*/out/*.pdf' -not -path './.git/*')
+          git add -A -- cataleg.js ':(glob)*/*/*/out/**/*.pdf'          
           if git diff --cached --quiet; then
             echo "Cap canvi als fitxers generats."
             exit 0
