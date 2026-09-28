@@ -13,8 +13,8 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
 > variants; 5 de la unitat 10 (Representació de funcions) en 5 temes, i 5 de la PAU (l'examen
 > sencer de juny de 2026). **Les 24 preguntes de la unitat 7 ofereixen una tria** en algun
-> apartat: un cop d'ull a les alternatives (quants ítems calculadors dur, o una tasca sencera
-> diferent), amb el seu propi Enunciat i Solució, triable des de la mateixa carta. El detall
+> apartat: un altre cas, una altra tècnica o una tasca diferent de la del defecte, amb el seu
+> propi Enunciat i Solució, triable des de la mateixa carta. El detall
 > de la feina feta i pendent és a [`handout.md`](handout.md).
 
 ---
@@ -227,6 +227,7 @@ El procediment complet per importar una convocatòria és a `handout.md`.
 | 13 | Els identificadors d'una tria i dels seus ítems són **permanents**, com `q001`: mai es renumeren ni es reaprofiten. | tu |
 | 14 | Sense selecció, es materialitza el **primer ítem declarat** (o el de `[defecte-curt=id]` a 50 min, si n'hi ha). Aquest defecte és l'únic que `build.py` garanteix que sumi 2,50 a cada modalitat; una combinació que el professor triï lliurement al lloc es valida allà, en viu, no en temps de build. | `build.py` i `app.js` |
 | 15 | Una tria no pot ser dins d'un `nomesllarg`. | `build.py` |
+| 16 | Una alternativa ha de canviar el que l'alumne decideix (un altre cas, una altra tècnica o el raonament a la inversa), no només els nombres de l'enunciat. Canviar un nombre val si canvia el cas: un 0/0 que passa a ser 3/0. | tu |
 
 A més, el build comprova: que els slugs de `temes.json` siguin únics; que cada tema sigui a
 la carpeta de la seva unitat; que el format dels codis sigui correcte (`q001` al banc,

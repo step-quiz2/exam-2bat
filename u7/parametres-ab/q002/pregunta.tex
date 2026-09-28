@@ -20,23 +20,26 @@ En $x=2$: $f(2)=2b+2$ i $\lim_{x\to2^+}f(x)=2a+b$, d'on $2b+2=2a+b$, és a dir $
 Igualant: $a+1=2a-2\Rightarrow \boxed{a=3}$ i $\boxed{b=4}$.
 \end{solucio}
 
-\itemtria{alternativa}{1,5}{2,5}
-Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els
-punts de $\mathbb{R}$.
+\itemtria{incompatible}{1,5}{2,5}
+Estudia si existeixen valors de $a$ i $b$ que facin contínua a tot $\mathbb{R}$ la funció
+següent.
 \[
-g(x)=\begin{cases}
-  x^2-a & \si{x<-1},\\[3pt]
-  bx+4  & \si{-1\le x\le 2},\\[3pt]
-  ax+b  & \si{x>2}.
+h(x)=\begin{cases}
+  x+a & \si{x<0},\\[3pt]
+  x^2+b & \si{0\le x\le 1},\\[3pt]
+  2x+a & \si{x>1}.
 \end{cases}
 \]
+Si tries $a$ i $b$ perquè sigui contínua en $x=0$, quin tipus de discontinuïtat té en $x=1$?
 
 \begin{solucio}
-Cada branca és contínua al seu tros, de manera que només cal imposar la continuïtat
-als enganxaments.\\
-En $x=-1$: $\lim_{x\to-1^-}g(x)=1-a$ i $g(-1)=-b+4$, d'on $1-a=-b+4$, és a dir $b=a+3$.\\
-En $x=2$: $g(2)=2b+4$ i $\lim_{x\to2^+}g(x)=2a+b$, d'on $2b+4=2a+b$, és a dir $b=2a-4$.\\
-Igualant: $a+3=2a-4\Rightarrow \boxed{a=7}$ i $\boxed{b=10}$.
+Les tres branques són polinòmiques: només cal estudiar els enganxaments.\\
+En $x=0$: $\lim_{x\to0^-}h(x)=a$ i $h(0)=b$. Cal $b=a$.\\
+En $x=1$: $h(1)=1+b$ i $\lim_{x\to1^+}h(x)=2+a$. Cal $1+b=2+a$, és a dir $b=a+1$.\\
+Les dues condicions són incompatibles ($b$ no pot ser alhora $a$ i $a+1$): \textbf{no hi ha
+cap valor} de $a$ i $b$ que faci $h$ contínua a tot $\mathbb{R}$.\\
+Si $b=a$, és contínua en $x=0$, i en $x=1$ els laterals valen $1+a$ i $2+a$: finits i
+diferents, \textbf{salt finit} (de salt $1$), sigui quin sigui $a$.
 \end{solucio}
 \end{tria}
 

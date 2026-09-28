@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{domini-funcions}
+\itemtria{original}{0,75}{1,25}
 Determina el domini i estudia la continuïtat de les funcions següents:
 \begin{graella}{2}
   \sa y=\sqrt{4-x^2} & \sa y=\ln\left(x^2-1\right)
@@ -12,6 +13,22 @@ l'arrel i el polinomi de dins.\\
 ii) Cal $x^2-1>0$: el domini és $(-\infty,-1)\cup(1,+\infty)$. Hi és contínua, perquè ho són
 el logaritme i el polinomi de dins.
 \end{solucio}
+
+\itemtria{signes-i-condicions}{0,75}{1,25}
+Determina el domini i estudia la continuïtat de les funcions següents:
+\begin{graella}{2}
+  \sa y=\sqrt{\frac{3-x}{x+1}} & \sa y=\frac{1}{\sqrt{x}-2}
+\end{graella}
+
+\begin{solucio}
+i) Cal $\dfrac{3-x}{x+1}\ge0$, amb $x\ne-1$. El quocient és negatiu a $(-\infty,-1)$, positiu
+a $(-1,3)$, nul en $x=3$ i negatiu a $(3,+\infty)$: $\mathrm{Dom}=(-1,3]$. És contínua a tot
+el domini.\\
+ii) Cal $x\ge0$ (arrel) i $\sqrt{x}\ne2$, és a dir $x\ne4$: $\mathrm{Dom}=[0,4)\cup(4,+\infty)$.
+És contínua a tot el domini. En $x=4$ els laterals valen $-\infty$ i $+\infty$:
+\textbf{salt infinit}.
+\end{solucio}
+\end{tria}
 
 \begin{tria}{discontinuitats-racional}
 \itemtria{original}{1}{1,25}
@@ -29,19 +46,19 @@ En $x=-3$ el denominador s'anul·la i el numerador no ($f$ tendeix a $\pm\infty$
 costat): \textbf{salt infinit}, amb asímptota vertical $x=-3$.
 \end{solucio}
 
-\itemtria{alternativa}{1}{1,25}
+\itemtria{factor-doble}{1}{1,25}
 Troba els punts en què la funció
 \[
-k(x)=\frac{x^2-9}{x^2-x-12}
+k(x)=\frac{x^2-4}{x^2-4x+4}
 \]
 és discontínua i classifica'n la discontinuïtat.
 
 \begin{solucio}
-$k(x)=\dfrac{(x-3)(x+3)}{(x-4)(x+3)}$: el denominador s'anul·la en $x=4$ i en $x=-3$.\\
-En $x=-3$ el factor $(x+3)$ es cancel·la i queda $\dfrac{x-3}{x-4}\to\dfrac67$: el límit
-existeix i la funció no hi està definida, per tant la \textbf{discontinuïtat és evitable}.\\
-En $x=4$ el denominador s'anul·la i el numerador no ($k$ tendeix a $\pm\infty$ segons el
-costat): \textbf{salt infinit}, amb asímptota vertical $x=4$.
+$k(x)=\dfrac{(x-2)(x+2)}{(x-2)^2}$: el domini és $\mathbb{R}\setminus\{2\}$.\\
+El factor $(x-2)$ és comú, però en simplificar encara en queda un al denominador:
+$k(x)=\dfrac{x+2}{x-2}$ per a $x\ne2$. En $x=2$ el numerador tendeix a $4$ i el denominador a
+$0$: els laterals valen $-\infty$ (per l'esquerra) i $+\infty$ (per la dreta).
+\textbf{Salt infinit}, no evitable.
 \end{solucio}
 \end{tria}
 

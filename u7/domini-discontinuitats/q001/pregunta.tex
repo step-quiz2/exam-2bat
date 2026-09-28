@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{domini-funcions}
+\itemtria{original}{0,75}{1,25}
 Determina el domini i estudia la continuïtat de les funcions següents:
 \begin{graella}{2}
   \sa y=\sqrt{x^2-9} & \sa y=\ln(4-x)
@@ -11,6 +12,22 @@ i) Cal $x^2-9\ge0$, és a dir $|x|\ge3$: $\mathrm{Dom}=(-\infty,-3]\cup[3,+\inft
 És contínua a tot el domini (composició de contínues).\\
 ii) Cal $4-x>0$: $\mathrm{Dom}=(-\infty,4)$. És contínua a tot el domini.
 \end{solucio}
+
+\itemtria{signes-i-condicions}{0,75}{1,25}
+Determina el domini i estudia la continuïtat de les funcions següents:
+\begin{graella}{2}
+  \sa y=\sqrt{\frac{x-1}{x+2}} & \sa y=\frac{x+1}{\ln x}
+\end{graella}
+
+\begin{solucio}
+i) Cal $\dfrac{x-1}{x+2}\ge0$, amb $x\ne-2$. Taula de signes: el quocient és positiu a
+$(-\infty,-2)$, negatiu a $(-2,1)$, nul en $x=1$ i positiu a $(1,+\infty)$:
+$\mathrm{Dom}=(-\infty,-2)\cup[1,+\infty)$. És contínua a tot el domini.\\
+ii) Cal $x>0$ (logaritme) i $\ln x\ne0$, és a dir $x\ne1$: $\mathrm{Dom}=(0,1)\cup(1,+\infty)$.
+És contínua a tot el domini. En $x=1$ els laterals valen $-\infty$ i $+\infty$:
+\textbf{salt infinit}.
+\end{solucio}
+\end{tria}
 
 \begin{tria}{discontinuitats-racional}
 \itemtria{original}{1}{1,25}
@@ -27,18 +44,20 @@ $x=3$: $\lim_{x\to3}f(x)=\dfrac54$ existeix però $f(3)$ no. \textbf{Discontinu�
 $x=-1$: els laterals valen $-\infty$ i $+\infty$. \textbf{Salt infinit} (asímptota vertical $x=-1$).
 \end{solucio}
 
-\itemtria{alternativa}{1}{1,25}
+\itemtria{factor-doble}{1}{1,25}
 Troba els punts en què la funció
 \[
-g(x)=\frac{x^2+x-2}{x^2-4}
+h(x)=\frac{x^2-x-6}{x^2-6x+9}
 \]
 és discontínua i classifica'n la discontinuïtat.
 
 \begin{solucio}
-$g(x)=\dfrac{(x-1)(x+2)}{(x-2)(x+2)}=\dfrac{x-1}{x-2}$ per a $x\ne-2$.
-El domini és $\mathbb{R}\setminus\{-2,2\}$.\\
-$x=-2$: $\lim_{x\to-2}g(x)=\dfrac34$ existeix però $g(-2)$ no. \textbf{Discontinuïtat evitable.}\\
-$x=2$: els laterals valen $-\infty$ i $+\infty$. \textbf{Salt infinit} (asímptota vertical $x=2$).
+$h(x)=\dfrac{(x-3)(x+2)}{(x-3)^2}$: el domini és $\mathbb{R}\setminus\{3\}$.\\
+El factor $(x-3)$ és comú, però en simplificar encara en queda un al denominador:
+$h(x)=\dfrac{x+2}{x-3}$ per a $x\ne3$. En $x=3$ el numerador tendeix a $5$ i el denominador a
+$0$: els laterals valen $-\infty$ (per l'esquerra) i $+\infty$ (per la dreta).
+\textbf{Salt infinit}, no evitable: un factor comú no fa evitable la discontinuïtat si el
+denominador encara s'hi anul·la després de simplificar.
 \end{solucio}
 \end{tria}
 
