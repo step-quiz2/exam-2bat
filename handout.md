@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 27 de setembre de 2026 · **Estat:** 68 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 9 de la unitat 10 i 5 de la PAU), 60 amb tries · 1.276 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
+**Data:** 27 de setembre de 2026 · **Estat:** 72 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 13 de la unitat 10 i 5 de la PAU), 66 amb tries · 1.360 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -40,7 +40,8 @@ la dissetena feien fallar l'Action, i va posar tries a les 18 preguntes de la u8
 criteri. La dinovena va fer el mateix amb les 12 de la u9, i va fer plegables les unitats de la
 llista de temes. La vintena va començar a completar la u10, a partir del solucionari del llibre i
 del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La vint-i-unena hi va afegir les asímptotes, i va deixar congelat el tema de
-funcions a trossos fins que s'hagi fet la setmana 17. La màquina
+funcions a trossos fins que s'hagi fet la setmana 17. La vint-i-dosena va acabar els estudis complets de funcions
+racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -732,6 +733,33 @@ gràfiques surten del marc. Les tres preguntes tenen el defecte idèntic i 2,50 
 compilen de debò a una pàgina, també les solucions amb gràfica. Les bateries (38/14/77) i la
 integració amb jsdom passen, i el banc complet escriu 768 PDF.
 
+### 2.22 Sessió 22 · Els estudis complets de funcions racionals i polinòmiques
+
+Dues variants noves de cada estudi, amb l'estructura de la q001 (l'apartat inicial, la curvatura al
+`nomesllarg` i un apartat final que inclou la gràfica) i funcions dels tipus dels exercicis
+practicats. Racionals (41, 63, 75 i 91): $\frac{x^2}{x^2-4}$, que és parella, amb dues asímptotes
+verticals, una d'horitzontal, un màxim i cap inflexió, i $\frac{x^2+4}{x}$, que és senar, sense talls,
+amb l'eix $OY$ d'asímptota vertical, l'obliqua $y=x$, un màxim per sota del mínim i cap inflexió.
+Polinòmiques (75, 78 i 88): $x^2(x-2)^2$, una W amb dos mínims sobre l'eix, un màxim i dues inflexions
+en $x=1\pm\frac{\sqrt3}{3}$, i $-x^3+6x^2-9x+4$, amb una arrel doble, extrems en $(1,0)$ i $(3,4)$, i la
+inflexió en $(2,2)$. Cap no repeteix la funció d'un exercici del llibre ni d'una altra pregunta del banc.
+
+**On va la tria.** L'apartat final depèn de l'inicial, perquè per dibuixar cal saber les asímptotes o
+els extrems. Per això les sis tries van a l'apartat final, i les alternatives aprofiten l'estudi fet i
+canvien la tasca. Racionals: el recorregut i per a quins $k$ l'equació $f(x)=k$ no té solució (q001,
+`recorregut-i-equacions`); la posició de la corba respecte de l'asímptota horitzontal, que no talla
+mai (q002, `posicio-asimptota`); i per què cap tangent no és paral·lela a l'asímptota obliqua (q003,
+`tangent-i-obliqua`). Polinòmiques: quantes solucions té $f(x)=k$ segons $k$, a partir dels extrems
+(q001, `solucions-f-igual-k`); els extrems absoluts en un interval tancat i el recorregut (q002,
+`extrems-absoluts`); i la tangent en el punt d'inflexió, que la corba travessa (q003,
+`tangent-inflexio`).
+
+**Verificació.** Els sis estudis i les sis alternatives es van comprovar amb SymPy: els extrems, les
+inflexions, els límits als extrems del dibuix i el nombre de solucions de $f(x)=k$ per a diversos
+valors de $k$. Les sis preguntes tenen el defecte idèntic i 2,50 punts amb cada ítem, i compilen de
+debò; cada solució, amb la gràfica, cap en una pàgina. Les quatre gràfiques noves es van revisar a
+ull. Les bateries (38/14/77) i la integració amb jsdom passen, i el banc complet escriu 832 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -1040,9 +1068,8 @@ per això el banc no hi té tema. Tres variants per tema.
 Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 11 i 12 (2.20):
 domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
 gràfica de $f'$ (37). El tema de funcions a trossos no en té cap: el seu únic exercici, el 108, és de
-la setmana 17. Domini i punts de tall i asímptotes ja tenen tres variants, totes amb tria. Els estudis de racionals i
-de polinòmiques en tenen una (vegeu 7.4), i el de funcions a trossos es queda com està fins que s'hagi
-fet la setmana 17 (2.21).
+la setmana 17. Quatre dels cinc temes tenen tres variants, totes amb tria (sessions 20 a 22). El de funcions a trossos
+es queda com està fins que s'hagi fet la setmana 17 (2.21).
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
@@ -1054,7 +1081,11 @@ fet la setmana 17 (2.21).
 | Domini i punts de tall | `q003` | Domini amb exponencials i radicals, i talls d'una funció amb radical | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Estudi i gràfica d'una funció a trossos | `q001` | Estudi i gràfica d'una funció a trossos amb asímptota horitzontal | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108, 37 |
 | Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
+| Estudi i gràfica d'una funció polinòmica | `q002` | Estudi i gràfica de x⁴−4x³+4x²: dos mínims, un màxim i dues inflexions | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 75, 78, 88 |
+| Estudi i gràfica d'una funció polinòmica | `q003` | Estudi i gràfica de −x³+6x²−9x+4: arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
 | Estudi i gràfica d'una funció racional | `q001` | Estudi i gràfica de x²/(x−1): asímptota obliqua, extrems i curvatura | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91 |
+| Estudi i gràfica d'una funció racional | `q002` | Estudi i gràfica de x²/(x²−4): funció parella, dues asímptotes verticals i un màxim | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●○ | 41, 63, 75, 91 |
+| Estudi i gràfica d'una funció racional | `q003` | Estudi i gràfica de (x²+4)/x: asímptota obliqua, un màxim i un mínim, sense talls | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91 |
 
 ### 6.5 Registre de convocatòries PAU
 
@@ -1224,7 +1255,7 @@ l'ordre numèric.
 | u7 Límits i continuïtat | 1–4 | 11 d'octubre de 2026 · **feta**, reescrita a la sessió 6 |
 | u8 Derivades | 5–7 | 1 de novembre de 2026 · **feta** |
 | u9 Aplicacions de les derivades | 8–10 | 22 de novembre de 2026 · **feta** |
-| u10 Representació de funcions | 11–12 i 17 | 6 de desembre de 2026 i 10 de gener de 2027 · **oberta**, una variant per tema |
+| u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema, llevat de funcions a trossos, congelat fins a la setmana 17 |
 | u13 Probabilitat | 13–14 | 20 de desembre de 2026 |
 | u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 |
 | u1 Matrius | 18–19 | 24 de gener de 2027 |
@@ -1237,7 +1268,7 @@ l'ordre numèric.
 
 - **Calibrar els minuts** amb dades reals, a partir del primer examen de la u7. Ara són
   estimacions: uns 16–20 minuts per pregunta a 1 h 30 i uns 10–12 a 50 min.
-- **Segona i tercera variant dels cinc temes de la u10**, que ara en tenen una.
+- **Segona i tercera variant de funcions a trossos (u10)**, quan s'hagi fet la setmana 17 (2.21).
 - **Temes i preguntes de la u13**, la següent per calendari (20 de desembre). Després, les
   unitats en l'ordre de la taula.
 - **Versions de 50 min per a les preguntes PAU**, on tingui sentit: quin apartat es treu i com es
@@ -1267,9 +1298,8 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10: des de la 20, domini i punts de tall ja en té, i des de la 21, les
-  asímptotes. Falten els estudis de racionals i de polinòmiques (el de funcions a trossos és congelat
-  fins després de la setmana 17), amb el mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 22, també la u10, llevat del tema de funcions a trossos, congelat fins
+  després de la setmana 17. Per a les unitats que vinguin, el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1402,13 +1432,14 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 21. Parteix del de la sessió 20, que ja és al repositori.
+És el lliurament de la sessió 22. Parteix del de la sessió 21, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u10/asimptotes/q002/`, `u10/asimptotes/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
-| `u10/asimptotes/q001/pregunta.tex` | Tria nova, `forat-no-asimptota` |
+| `u10/estudi-racional/q002/`, `q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
+| `u10/estudi-polinomica/q002/`, `q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
+| `u10/estudi-racional/q001/pregunta.tex`, `u10/estudi-polinomica/q001/pregunta.tex` | Tries noves: `recorregut-i-equacions` i `solucions-f-igual-k` |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.21, i les seccions 3, 6.4, 7.5 i 11 |
+| `handout.md` | Secció 2.22, i les seccions 6.4, 7.4, 7.5 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**.
