@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 18:12 UTC",
+ "generat": "2026-09-28 18:54 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -284,6 +284,43 @@ const BANC = {
    "pdf_solucio_curt": "pau/algebra/alg-26j-q2/out/solucio.pdf"
   },
   {
+   "id": "pau/algebra/alg-26j2-q2",
+   "unitat": "pau",
+   "tema": "algebra",
+   "codi": "alg-26j2-q2",
+   "titol": "Matrius M i N: invertibilitat de MN i de NM, i un sistema compatible indeterminat",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "producte de matrius",
+    "determinant",
+    "rang"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2026, sèrie 5",
+   "unitats": [],
+   "tries": [],
+   "tex": "Considereu les matrius\n\\[\nM=\\begin{pmatrix}3&3&0\\\\k-1&-1&-1\\end{pmatrix}\\quad\\text{i}\\quad\nN=\\begin{pmatrix}3&1\\\\k-1&0\\\\0&2\\end{pmatrix},\n\\]\non $k$ és un nombre real qualsevol.\n\n\\begin{apartats}\n\n\\apartat{0,75}\nCalculeu els valors de $k$ per als quals $MN$ és invertible.\n\n\\begin{solucio}\nEl producte $MN$ i el seu determinant donen\n\\[\nMN=\\begin{pmatrix}3&3&0\\\\k-1&-1&-1\\end{pmatrix}\\begin{pmatrix}3&1\\\\k-1&0\\\\0&2\\end{pmatrix}\n=\\begin{pmatrix}9+3k-3&3\\\\3k-3-k+1&k-1-2\\end{pmatrix}=\\begin{pmatrix}3k+6&3\\\\2k-2&k-3\\end{pmatrix},\n\\]\n\\[\n\\begin{vmatrix}3k+6&3\\\\2k-2&k-3\\end{vmatrix}=3k^2+6k-9k-18-6k+6=3\\left(k^2-3k-4\\right),\n\\]\nque és zero per als valors $k=\\dfrac{3\\pm\\sqrt{9-4(-4)}}{2}=\\dfrac{3\\pm5}{2}=4,\\,-1$. Per tant, la matriu $MN$\nés invertible per a tot $k$ excepte $k=4$ i $k=-1$.\n\n\\textit{Pauta oficial:} 0,25 pel producte matricial, 0,25 pel càlcul del determinant i 0,25 per donar la\nresposta correcta.\n\\end{solucio}\n\n\\apartat{0,75}\nCalculeu els valors de $k$ per als quals $NM$ és invertible.\n\n\\begin{solucio}\nEl producte $NM$ dona\n\\[\nNM=\\begin{pmatrix}3&1\\\\k-1&0\\\\0&2\\end{pmatrix}\\begin{pmatrix}3&3&0\\\\k-1&-1&-1\\end{pmatrix}\n=\\begin{pmatrix}k+8&8&-1\\\\3k-3&3k-3&0\\\\2k-2&-2&-2\\end{pmatrix}.\n\\]\nCom que la primera columna és igual a la segona menys $k$ vegades la tercera, el determinant és sempre zero,\ni la matriu $NM$ no és invertible per a cap valor de $k$. Alternativament, es pot calcular el determinant, i\nveiem que dona zero independentment de $k$:\n\\[\n\\begin{vmatrix}k+8&8&-1\\\\3k-3&3k-3&0\\\\2k-2&-2&-2\\end{vmatrix}\n=2(3k-3)\\begin{vmatrix}k+8&8&-1\\\\1&1&0\\\\k-1&-1&-1\\end{vmatrix}=2(3k-3)(-k-8+1+k-1+8)=0 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 pel producte matricial, 0,25 per argumentar que el determinant és sempre zero\ni 0,25 per deduir la resposta correcta.\n\\end{solucio}\n\n\\apartat{1}\nEstudieu per a quins valors reals de $m$, $n$ i $k$ el sistema\n\\[\nM\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=\\begin{pmatrix}m\\\\n\\end{pmatrix}\n\\]\nés compatible indeterminat.\n\n\\begin{solucio}\nEn forma matricial, es tracta del sistema d'equacions\n$\\left(\\begin{array}{ccc|c}3&3&0&m\\\\k-1&-1&-1&n\\end{array}\\right)$.\nCom que $\\begin{vmatrix}3&0\\\\-1&-1\\end{vmatrix}=-3\\neq0$, el rang de la matriu de coeficients és 2, i el de\nl'ampliada també, independentment dels tres paràmetres. I com que hi ha 3 incògnites, aquest sistema és\ncompatible indeterminat per a qualssevol valors de $m$, de $n$ i de $k$.\n\n\\textit{Pauta oficial:} 0,25 per interpretar el sistema d'equacions demanat, 0,5 per calcular els rangs i\n0,25 per donar la resposta correcta.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/algebra/alg-26j2-q2/out/enunciat.pdf",
+   "pdf_solucio": "pau/algebra/alg-26j2-q2/out/solucio.pdf",
+   "pdf_curt": "pau/algebra/alg-26j2-q2/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/algebra/alg-26j2-q2/out/solucio.pdf"
+  },
+  {
    "id": "pau/analisi/ana-26j-q1",
    "unitat": "pau",
    "tema": "analisi",
@@ -359,6 +396,86 @@ const BANC = {
    "pdf_solucio_curt": "pau/analisi/ana-26j-q4a/out/solucio.pdf"
   },
   {
+   "id": "pau/analisi/ana-26j2-q1",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-26j2-q1",
+   "titol": "Paràbola i hipèrbola: punts de tall, àrea entre corbes i una paràbola per les arrels i el vèrtex",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    1.0,
+    0.75
+   ],
+   "apartats_curt": [
+    0.75,
+    1.0,
+    0.75
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "punts de tall",
+    "àrea entre corbes",
+    "paràbola"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2026, sèrie 5",
+   "unitats": [
+    "u12"
+   ],
+   "tries": [],
+   "tex": "Considereu la paràbola $y=f(x)$, amb $f(x)=-x^2+5x$, i la hipèrbola $y=g(x)$, amb\n$g(x)=8-\\dfrac{8}{x+1}$.\n\n\\begin{apartats}\n\n\\apartat{0,75}\nEn quants punts es tallen les gràfiques d'aquestes dues funcions? Calculeu-los tots.\n\n\\begin{solucio}\nPer trobar els punts de tall entre paràbola i hipèrbola, resolem l'equació $f(x)=g(x)$:\n\\[\n-x^2+5x=8-\\frac{8}{x+1}\\;\\Rightarrow\\;(x+1)\\left(-x^2+5x\\right)=8x+8-8\\;\\Rightarrow\\;-x^3+4x^2+5x=8x\n\\;\\Rightarrow\\;x\\left(-x^2+4x-3\\right)=0 .\n\\]\nLes solucions són $x=0$ i $x=\\dfrac{-4\\pm\\sqrt{16-12}}{-2}=\\dfrac{-4\\pm2}{-2}$, és a dir, $x=1$ i $x=3$. Per\ntant, es tallen exactament en tres punts. Calculant-ne les imatges, es tracta de $(0,f(0))=(0,0)$,\n$(1,f(1))=(1,4)$ i $(3,f(3))=(3,6)$.\n\n\\textit{Pauta oficial:} 0,5 per plantejar i desenvolupar l'equació, i 0,25 pels punts de tall.\n\\end{solucio}\n\n\\apartat{1}\nCalculeu l'àrea de la regió situada entre les dues corbes des de $x=1$ fins a $x=3$.\n\n\\begin{solucio}\nCom que no hi ha més punts de tall que els tres calculats a l'apartat anterior, entre 1 i 3 les gràfiques\nno es toquen (de fet, $f$ està per damunt de $g$), i l'àrea demanada és\n\\[\nA=\\int_1^3\\bigl(f(x)-g(x)\\bigr)\\,dx=\\int_1^3\\left(-x^2+5x-8+\\frac{8}{x+1}\\right)dx\n=\\left[-\\frac{x^3}{3}+\\frac{5x^2}{2}-8x+8\\ln(x+1)\\right]_1^3 ,\n\\]\n\\[\nA=\\left(-\\frac{27}{3}+\\frac{45}{2}-24+8\\ln4\\right)-\\left(-\\frac13+\\frac52-8+8\\ln2\\right)\n=-\\frac{26}{3}+4+8\\ln2=0{,}878\\ldots\\ \\text{u}^2 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 pel plantejament correcte de l'àrea, 0,5 pel càlcul de la primitiva i 0,25\npel resultat final. Penalitzeu 0,25 si resten les funcions al revés i/o donen com a bona una àrea\nnegativa.\n\\end{solucio}\n\n\\apartat{0,75}\nComproveu que $f(x)$ té les arrels als punts d'abscissa $x=0$ i $x=5$, i que l'ordenada del vèrtex de la\nparàbola $y=f(x)$ és $y=6{,}25$. Justifiqueu que $y=f(x)$ és l'única paràbola que existeix amb aquestes dues\npropietats.\n\n\\begin{solucio}\nEfectivament, $f(x)$ té arrels als punts d'abscisses 0 i 5: $f(0)=-0^2+0=0$ i $f(5)=-5^2+25=0$. La paràbola\n$y=f(x)$ té el vèrtex situat al punt $-2x+5=0\\rightarrow x=\\frac52$, que efectivament té per imatge\n$f\\!\\left(\\frac52\\right)=-\\frac{25}{4}+\\frac{25}{2}=\\frac{25}{4}=6{,}25$.\\\\\nA més, $y=f(x)$ és l'única paràbola amb aquestes dues propietats, ja que qualsevol que les compleixi haurà\nde ser de la forma $f(x)=ax(x-5)$; i com que el vèrtex ha d'estar al punt mig de les dues arrels,\n$x=\\frac{0+5}{2}=\\frac52$, i hi ha de tenir imatge 6,25, tindrem\n\\[\n6{,}25=f\\!\\left(\\tfrac52\\right)=a\\cdot\\tfrac52\\left(\\tfrac52-5\\right)=a\\cdot\\left(-\\tfrac{25}{4}\\right)=-6{,}25\\,a .\n\\]\nPer tant, $a=-1$, i l'única paràbola és $f(x)=-1\\cdot x(x-5)=-x^2+5x$.\n\n\\textit{Pauta oficial:} 0,25 per la comprovació de les dues propietats demanades i 0,5 per la justificació\nque és l'única paràbola que les compleix.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-26j2-q1/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-26j2-q1/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-26j2-q1/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-26j2-q1/out/solucio.pdf"
+  },
+  {
+   "id": "pau/analisi/ana-26j2-q4a",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-26j2-q4a",
+   "titol": "f(x) a partir de la gràfica de f'(x): tangent, punts crítics i àrea",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    1.0,
+    0.5
+   ],
+   "apartats_curt": [
+    1.0,
+    1.0,
+    0.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "gràfica de la derivada",
+    "recta tangent",
+    "regla de Barrow"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2026, sèrie 5",
+   "unitats": [
+    "u8",
+    "u9",
+    "u12"
+   ],
+   "tries": [],
+   "tex": "D'una funció $f(x)$, sabem que passa pel punt $(-1,-1)$ i que la gràfica de la seva funció derivada és la\nsegüent:\n\\begin{center}\n\\begin{tikzpicture}[x=0.55cm,y=0.55cm]\n  \\draw[gray!55,very thin,step=1] (-4,-4) grid (4,4);\n  \\draw[->] (-4.3,0) -- (4.4,0);\n  \\draw[->] (0,-4.3) -- (0,4.4);\n  \\foreach \\i in {-4,-3,-2,-1,1,2,3,4} \\node[below,font=\\tiny] at (\\i,0) {$\\i$};\n  \\foreach \\j in {-4,-3,-2,-1,1,2,3,4} \\node[left,font=\\tiny] at (0,\\j) {$\\j$};\n  \\begin{scope}\n    \\clip (-4,-4.2) rectangle (4,4);\n    \\draw[\\colorgrafica,thick,domain=-2.27:1.53,samples=160,smooth]\n      plot (\\x,{-(\\x)*(\\x)*((\\x)+2)*((\\x)-1)});\n  \\end{scope}\n  \\node[font=\\small] at (-2.95,2.85) {$f'(x)$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{apartats}\n\n\\apartat{1}\nCalculeu l'equació de la recta tangent a la gràfica de la funció $f(x)$ en el punt $(-1,-1)$.\n\n\\begin{solucio}\nUsarem l'expressió de la recta punt-pendent, $y-f(x_0)=m(x-x_0)$. Com que la recta buscada ha de passar pel\npunt $x_0=-1$, $f(x_0)=-1$, hi ha de tenir pendent $f'(x_0)=f'(-1)=2$ (tal com es veu al gràfic), i\nl'equació de la recta tangent a la funció $f(x)$ en el punt $x_0=-1$ serà\n\\[\ny-(-1)=2\\cdot\\bigl(x-(-1)\\bigr)\\;\\rightarrow\\;y+1=2\\cdot(x+1)\\;\\rightarrow\\;y=2x+1 .\n\\]\n\n\\textit{Pauta oficial:} 0,5 per determinar el pendent de la recta tangent a partir del gràfic, i 0,5 per\nl'equació de la recta.\n\\end{solucio}\n\n\\apartat{1}\nEstudieu si $f(x)$ té punts crítics (punts on $f'(x)=0$) i, en cas que en tingui, determineu-ne les\nabscisses i classifiqueu-los segons si són màxims, mínims o punts d'inflexió de $f(x)$.\n\n\\begin{solucio}\nEls punts crítics de $f(x)$ són aquells que satisfan $f'(x)=0$. Del gràfic es veu clarament que són els\npunts $x=-2$, $x=0$ i $x=1$: aquestes abscisses són possibles extrems relatius de la funció $f(x)$.\\\\\nCom que $f'(x)$ és creixent en $x=-2$, la seva derivada en aquest punt serà positiva, $f''(-2)>0$, i això\nvol dir que $x=-2$ és un mínim local de $f(x)$.\\\\\nAnàlogament, com que $f'(x)$ és positiva immediatament abans de $x=1$ i negativa immediatament després, la\nfunció $f(x)$ és creixent abans de $x=1$ i decreixent després; per tant, $x=1$ és un màxim local de\n$f(x)$.\\\\\nEl punt $x=0$ és diferent. Tant abans com després, $f'(x)$ és positiva, i per tant $f(x)$ és creixent en el\npunt $x=0$. Però, a més, $f'(x)$ és decreixent abans de $x=0$, i per tant la seva derivada (és a dir,\n$f''(x)$) és negativa, mentre que és creixent després de $x=0$, i per tant $f''(x)$ és positiva. Això vol\ndir que la funció $f(x)$ és còncava abans de $x=0$ i convexa després. Per tant, el punt $x=0$ és un punt\nd'inflexió de $f(x)$.\n\n\\textit{Pauta oficial:} 0,25 per la llista de punts crítics, 0,25 per deduir que $x=-2$ és un mínim, 0,25\nper deduir que $x=1$ és un màxim i 0,25 per deduir que $x=0$ és un punt d'inflexió.\n\\end{solucio}\n\n\\apartat{0,5}\nSabent, a més, que $f(0)=-0{,}2$, calculeu l'àrea entre la gràfica de $f'(x)$ i l'eix de les abscisses, des\nde $x=-1$ fins a $x=0$.\n\n\\begin{solucio}\nCom que $f(x)$ és una primitiva de $f'(x)$, l'àrea que ens demanen és fàcil de calcular usant la regla de\nBarrow (i usant les dades $f(0)=-0{,}2$ i $f(-1)=-1$):\n\\[\nA=\\int_{-1}^{0}f'(x)\\,dx=\\bigl[f(x)\\bigr]_{-1}^{0}=f(0)-f(-1)=-0{,}2-(-1)=0{,}8\\ \\text{u}^2 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 per reconèixer que $f(x)$ és una primitiva de $f'(x)$ i 0,25 pel càlcul de\nl'àrea.\n\n\\textit{Nota del banc:} la corba dibuixada coincideix amb $f'(x)=-x^2(x+2)(x-1)$ (els zeros, $f'(-1)=2$ i\nels extrems locals de $f'$). Amb aquesta expressió, l'àrea exacta seria $\\int_{-1}^{0}f'(x)\\,dx=\\frac{43}{60}\n\\approx0{,}72\\ \\text{u}^2$, i no 0,8: la dada $f(0)=-0{,}2$ de l'enunciat no és del tot coherent amb el dibuix.\nL'exercici, però, demana fer servir aquesta dada, i la resposta esperada és 0,8.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-26j2-q4a/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-26j2-q4a/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-26j2-q4a/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-26j2-q4a/out/solucio.pdf"
+  },
+  {
    "id": "pau/geometria/geo-26j-q4b",
    "unitat": "pau",
    "tema": "geometria",
@@ -394,6 +511,43 @@ const BANC = {
    "pdf_solucio": "pau/geometria/geo-26j-q4b/out/solucio.pdf",
    "pdf_curt": "pau/geometria/geo-26j-q4b/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/geometria/geo-26j-q4b/out/solucio.pdf"
+  },
+  {
+   "id": "pau/geometria/geo-26j2-q4b",
+   "unitat": "pau",
+   "tema": "geometria",
+   "codi": "geo-26j2-q4b",
+   "titol": "Braç robòtic: distància recorreguda, distància a un pla i punt de xoc",
+   "punts": 2.5,
+   "apartats": [
+    0.5,
+    1.0,
+    1.0
+   ],
+   "apartats_curt": [
+    0.5,
+    1.0,
+    1.0
+   ],
+   "te_curt": false,
+   "dificultat": "●○○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "distància entre punts",
+    "distància punt-pla",
+    "intersecció recta-pla"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2026, sèrie 5",
+   "unitats": [],
+   "tries": [],
+   "tex": "En una indústria es fan servir braços robòtics amb sensors per a mesurar amb precisió determinades peces\nmetàl·liques i comprovar si tenen irregularitats. Les peces es col·loquen sobre la superfície determinada\npel pla $\\pi\\colon(x,y,z)=(6,1,1)+\\lambda(1,1,0)+\\mu(0,0,1)$ i, per damunt seu, un braç robòtic desplaça un\nsensor des del punt $A=(1,2,3)$ fins al punt $B=(5,3,7)$ en línia recta (les unitats dels tres eixos de\ncoordenades estan expressades en centímetres).\n\n\\begin{apartats}\n\n\\apartat{0,5}\nQuina distància ha recorregut el sensor?\n\n\\begin{solucio}\nCalculem la distància entre els punts $A(1,2,3)$ i $B(5,3,7)$:\n\\[\nd(A,B)=\\bigl\\|\\overrightarrow{AB}\\bigr\\|=\\|(4,1,4)\\|=\\sqrt{4^2+1^2+4^2}=\\sqrt{33}\\approx5{,}74\\ \\text{cm}.\n\\]\nPer tant, el sensor ha recorregut 5,74 cm.\n\n\\textit{Pauta oficial:} 0,5 pel càlcul de la distància entre els dos punts.\n\\end{solucio}\n\n\\apartat{1}\nEn acabar el moviment, a quina distància de la superfície es troba el sensor?\n\n\\begin{solucio}\nHem de calcular la distància del punt $B$ al pla $\\pi$, $d(B,\\pi)$. Per fer-ho, necessitem l'equació general\ndel pla:\n\\[\n\\begin{vmatrix}x-6&y-1&z-1\\\\1&1&0\\\\0&0&1\\end{vmatrix}=0\\iff x-6-(y-1)=0\\iff x-y-5=0 .\n\\]\nAplicant la fórmula de la distància punt-pla, obtenim\n\\[\nd(B,\\pi)=\\frac{|1\\cdot5-1\\cdot3+0-5|}{\\sqrt{1^2+(-1)^2+0^2}}=\\frac{3}{\\sqrt2}\\approx2{,}12\\ \\text{cm}.\n\\]\n\n\\textit{Pauta oficial:} 0,5 per trobar l'equació general del pla i 0,5 pel càlcul de la distància.\n\\end{solucio}\n\n\\apartat{1}\nSi el sensor seguís movent-se en la mateixa línia recta i en el mateix sentit, en quin punt xocaria amb la\nsuperfície?\n\n\\begin{solucio}\nPer trobar el punt de xoc, hem de buscar el punt de tall del pla $\\pi$ amb la recta que passa per $A$ i per\n$B$. Primer expliquem l'equació d'aquesta recta:\n\\[\n(x,y,z)=(1,2,3)+\\lambda(4,1,4)=(1+4\\lambda,\\,2+\\lambda,\\,3+4\\lambda),\n\\]\ni ara busquem el punt en comú imposant l'equació del pla: $1+4\\lambda-(2+\\lambda)-5=0$, d'on $3\\lambda-6=0$ i\n$\\lambda=2$. Això vol dir que el punt de xoc és $(x,y,z)=(1,2,3)+2(4,1,4)=(9,4,11)$.\n\n\\textit{Pauta oficial:} 0,5 per l'equació de la recta i 0,5 pel càlcul del punt d'intersecció.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/geometria/geo-26j2-q4b/out/enunciat.pdf",
+   "pdf_solucio": "pau/geometria/geo-26j2-q4b/out/solucio.pdf",
+   "pdf_curt": "pau/geometria/geo-26j2-q4b/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/geometria/geo-26j2-q4b/out/solucio.pdf"
   },
   {
    "id": "pau/probabilitat/pro-26j-q3",
@@ -434,6 +588,46 @@ const BANC = {
    "pdf_solucio": "pau/probabilitat/pro-26j-q3/out/solucio.pdf",
    "pdf_curt": "pau/probabilitat/pro-26j-q3/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/probabilitat/pro-26j-q3/out/solucio.pdf"
+  },
+  {
+   "id": "pau/probabilitat/pro-26j2-q3",
+   "unitat": "pau",
+   "tema": "probabilitat",
+   "codi": "pro-26j2-q3",
+   "titol": "Lectura i esport: probabilitat total, Bayes i extrems absoluts d'un model",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "probabilitat total",
+    "Bayes",
+    "extrems absoluts"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2026, sèrie 5",
+   "unitats": [
+    "u9",
+    "u13"
+   ],
+   "tries": [],
+   "tex": "En una ciutat s'ha estudiat la relació entre els hàbits de lectura i la pràctica d'esport en l'alumnat de\nbatxillerat. Per a fer-ho, s'han formulat les dues preguntes següents a l'alumnat d'aquesta etapa\neducativa: «Llegeixes com a mínim dos llibres al mes?» i «Practiques algun esport almenys quatre hores a\nla setmana?»\n\nDels resultats de l'enquesta, es desprèn que el 60\\,\\% llegeixen com a mínim dos llibres al mes, dels quals\nel 70\\,\\% practiquen algun esport un mínim de quatre hores a la setmana. També s'observa que, d'entre els que\nno llegeixen un mínim de dos llibres al mes, el 50\\,\\% fan menys de quatre hores setmanals d'esport.\n\nSi escollim a l'atzar un alumne/a de batxillerat d'aquesta ciutat:\n\n\\begin{apartats}\n\n\\apartat{0,75}\nQuina és la probabilitat que faci esport almenys quatre hores setmanals?\n\n\\begin{solucio}\nConsiderem els successos aleatoris següents: $Ll$ = «llegir almenys dos llibres al mes» i $E$ = «fer un\nmínim de quatre hores setmanals d'esport». Les dades del problema ens diuen que $P(Ll)=0{,}6$,\n$P(E\\mid Ll)=0{,}7$ i $P\\bigl(\\overline{E}\\mid\\overline{Ll}\\bigr)=0{,}5$. Podem visualitzar-les en el diagrama\nd'arbre adjunt:\n\\begin{center}\n\\begin{tikzpicture}[x=1cm,y=1cm,font=\\small]\n  \\coordinate (o) at (0,0);\n  \\node (L) at (2.2,0.9) {$Ll$};\n  \\node (N) at (2.2,-0.9) {$\\overline{Ll}$};\n  \\draw (o) -- node[above left]{$0{,}6$} (L.west);\n  \\draw (o) -- node[below left]{$0{,}4$} (N.west);\n  \\node (LE) at (4.4,1.4) {$E$};  \\node (LN) at (4.4,0.4) {$\\overline{E}$};\n  \\node (NE) at (4.4,-0.4) {$E$}; \\node (NN) at (4.4,-1.4) {$\\overline{E}$};\n  \\draw (L.east) -- node[above]{$0{,}7$} (LE.west); \\draw (L.east) -- node[below]{$0{,}3$} (LN.west);\n  \\draw (N.east) -- node[above]{$0{,}5$} (NE.west); \\draw (N.east) -- node[below]{$0{,}5$} (NN.west);\n\\end{tikzpicture}\n\\end{center}\nPel teorema de la probabilitat total,\n\\[\nP(E)=P(Ll)\\cdot P(E\\mid Ll)+P\\bigl(\\overline{Ll}\\bigr)\\cdot P\\bigl(E\\mid\\overline{Ll}\\bigr)\n=0{,}6\\cdot0{,}7+0{,}4\\cdot0{,}5=0{,}42+0{,}20=0{,}62 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 per plantejar la llei de la probabilitat total, 0,25 per identificar les dades\ndel problema i 0,25 pel càlcul.\n\\end{solucio}\n\n\\apartat{0,75}\nSi sabem que aquest alumne/a fa esport menys de quatre hores setmanals, quina probabilitat hi ha que llegeixi\nalmenys dos llibres al mes?\n\n\\begin{solucio}\nPer la fórmula de Bayes,\n\\[\nP\\bigl(Ll\\mid\\overline{E}\\bigr)=\\frac{P\\bigl(Ll\\cap\\overline{E}\\bigr)}{P\\bigl(\\overline{E}\\bigr)}\n=\\frac{P\\bigl(\\overline{E}\\mid Ll\\bigr)\\cdot P(Ll)}{1-P(E)}=\\frac{0{,}3\\cdot0{,}6}{1-0{,}62}=0{,}47\\ldots\n\\]\n\n\\textit{Pauta oficial:} 0,25 per plantejar la fórmula de Bayes (o la fórmula de la probabilitat\ncondicionada) i 0,5 pel càlcul.\n\\end{solucio}\n\n\\apartat{1}\nL'Alba és una estudiant de batxillerat que ha anat anotant durant tot el curs quantes hores dedicava a la\nsetmana a llegir i quantes a fer esport. Per a cada setmana té apuntat un nombre real $x$ que correspon a la\nquantitat d'hores de lectura i que oscil·la entre 1 i 6, i un nombre real $y$ que correspon a la quantitat\nd'hores de pràctica esportiva. Ha observat que la relació $y=7-x+\\ln(2x-1)$ s'ajusta força bé a les dades\nque ha anotat.\n\nCalculeu, segons aquest model, quin és el màxim i el mínim d'hores per setmana que l'Alba ha dedicat a\npracticar esport.\n\n\\begin{solucio}\nCal trobar els valors màxim i mínim absoluts de la funció $f(x)=7-x+\\ln(2x-1)$ a l'interval $[1,6]$. La\nderivada de $f(x)$ és $f'(x)=-1+\\dfrac{2}{2x-1}$, que s'anul·la només per a $x=\\frac32$. Aquest punt crític\nes correspon amb un màxim local, ja que la funció (a la vista del signe de la derivada) creix per a\n$x<\\frac32$ i decreix per a $x>\\frac32$. Com que $f(1)=7-1+\\ln1=6$, $f\\!\\left(\\frac32\\right)=7-\\frac32+\\ln2\n\\approx6{,}19$ i $f(6)=7-6+\\ln11\\approx3{,}4$, deduïm que el màxim i el mínim absoluts de la funció a\nl'interval $[1,6]$ són els punts $f\\!\\left(\\frac32\\right)\\approx6{,}19$ i $f(6)\\approx3{,}4$, respectivament.\nPer tant, segons aquest model, l'Alba ha practicat entre un mínim de 3,4 i un màxim de 6,19 hores per\nsetmana d'esport.\n\n\\textit{Pauta oficial:} 0,25 per la derivada i per detectar que $\\frac32$ és l'únic punt crític, 0,25 per\nles zones de creixement i decreixement, 0,25 per argumentar el màxim global i 0,25 per argumentar el mínim\nglobal.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/probabilitat/pro-26j2-q3/out/enunciat.pdf",
+   "pdf_solucio": "pau/probabilitat/pro-26j2-q3/out/solucio.pdf",
+   "pdf_curt": "pau/probabilitat/pro-26j2-q3/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/probabilitat/pro-26j2-q3/out/solucio.pdf"
   },
   {
    "id": "u10/asimptotes/q001",
@@ -852,6 +1046,7 @@ const BANC = {
    "origen": [
     75,
     78,
+    84,
     88
    ],
    "minuts": 20,
@@ -920,6 +1115,7 @@ const BANC = {
    "origen": [
     75,
     78,
+    84,
     88
    ],
    "minuts": 20,
@@ -986,7 +1182,9 @@ const BANC = {
    "origen": [
     75,
     78,
-    88
+    84,
+    88,
+    124
    ],
    "minuts": 20,
    "minuts_curt": 12,
@@ -1021,11 +1219,20 @@ const BANC = {
        "pdf_solucio": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/solucio.pdf",
        "pdf_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/enunciat-curt.pdf",
        "pdf_solucio_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/solucio-curt.pdf"
+      },
+      {
+       "id": "context-embassament",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/context-embassament/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/context-embassament/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/context-embassament/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/context-embassament/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\nf(x)=-x^3+6x^2-9x+4 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(0)=4$, el punt $(0,4)$. Per a l'eix $OX$, $x=1$ és arrel ($f(1)=-1+6-9+4=0$) i,\ndividint, $f(x)=-(x-1)^2(x-4)$: els talls són $(1,0)$, amb arrel doble, i $(4,0)$.\\\\\n\\textbf{Monotonia}: $f'(x)=-3x^2+12x-9=-3(x-1)(x-3)$, que s'anul·la en $x=1$ i $x=3$.\\\\\n$f$ \\textbf{decreix} a $(-\\infty,1)$, \\textbf{creix} a $(1,3)$ i \\textbf{decreix} a $(3,+\\infty)$.\\\\\n\\textbf{Mínim relatiu} $(1,0)$ i \\textbf{màxim relatiu} $(3,4)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n el punt d'inflexió.\n\n\\begin{solucio}\n$f''(x)=-6x+12$, que s'anul·la en $x=2$.\\\\\n$f''>0$ a $(-\\infty,2)$: \\textbf{convexa}. \\quad $f''<0$ a $(2,+\\infty)$: \\textbf{còncava}.\\\\\nCom que la curvatura hi canvia i $f(2)=2$, el punt d'inflexió és $(2,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica ve de $+\\infty$, baixa fins a tocar l'eix en el mínim $(1,0)$, puja fins al màxim $(3,4)$ i\nbaixa cap a $-\\infty$, tallant l'eix en $(4,0)$. Com que el coeficient de $x^3$ és negatiu, les\nbranques van al revés que les de $x^3$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.45cm]\n  \\draw[gray!55,very thin,step=1] (-1,-3) grid (5,7);\n  \\draw[->] (-1.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-3.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {1,2,3,4} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-2,2,4,6} \\draw (0.08,\\j) -- (-0.08,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-1,-3) rectangle (5,7);\n    \\draw[\\colorgrafica,very thick,domain=-0.4:4.5,samples=120,smooth] plot (\\x,{-(\\x)*(\\x)*(\\x)+6*(\\x)*(\\x)-9*(\\x)+4});\n  \\end{scope}\n  \\fill (1,0) circle (2.2pt); \\fill (3,4) circle (2.2pt);\n  \\draw[fill=white,thick] (2,2) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-inflexio}{0,75}{1,25}\nTroba la recta tangent a la gràfica en el punt d'inflexió, i digues a quina banda de la tangent\nqueda la gràfica a cada costat d'aquest punt.\n\n\\begin{solucio}\n$f''(x)=-6x+12$ s'anul·la i canvia de signe en $x=2$, i $f(2)=2$: el punt d'inflexió és $(2,2)$.\\\\\n$f'(2)=-12+24-9=3$, i la tangent és $y=2+3(x-2)$, és a dir $\\boxed{y=3x-4}$.\\\\\n$f(x)-(3x-4)=-x^3+6x^2-12x+8=-(x-2)^3$, que és positiu si $x<2$ i negatiu si $x>2$. La gràfica queda\n\\textbf{per sobre} de la tangent a l'esquerra i \\textbf{per sota} a la dreta: en un punt d'inflexió,\nla corba \\textbf{travessa} la tangent.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\nf(x)=-x^3+6x^2-9x+4 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(0)=4$, el punt $(0,4)$. Per a l'eix $OX$, $x=1$ és arrel ($f(1)=-1+6-9+4=0$) i,\ndividint, $f(x)=-(x-1)^2(x-4)$: els talls són $(1,0)$, amb arrel doble, i $(4,0)$.\\\\\n\\textbf{Monotonia}: $f'(x)=-3x^2+12x-9=-3(x-1)(x-3)$, que s'anul·la en $x=1$ i $x=3$.\\\\\n$f$ \\textbf{decreix} a $(-\\infty,1)$, \\textbf{creix} a $(1,3)$ i \\textbf{decreix} a $(3,+\\infty)$.\\\\\n\\textbf{Mínim relatiu} $(1,0)$ i \\textbf{màxim relatiu} $(3,4)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n el punt d'inflexió.\n\n\\begin{solucio}\n$f''(x)=-6x+12$, que s'anul·la en $x=2$.\\\\\n$f''>0$ a $(-\\infty,2)$: \\textbf{convexa}. \\quad $f''<0$ a $(2,+\\infty)$: \\textbf{còncava}.\\\\\nCom que la curvatura hi canvia i $f(2)=2$, el punt d'inflexió és $(2,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica ve de $+\\infty$, baixa fins a tocar l'eix en el mínim $(1,0)$, puja fins al màxim $(3,4)$ i\nbaixa cap a $-\\infty$, tallant l'eix en $(4,0)$. Com que el coeficient de $x^3$ és negatiu, les\nbranques van al revés que les de $x^3$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.45cm]\n  \\draw[gray!55,very thin,step=1] (-1,-3) grid (5,7);\n  \\draw[->] (-1.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-3.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {1,2,3,4} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-2,2,4,6} \\draw (0.08,\\j) -- (-0.08,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-1,-3) rectangle (5,7);\n    \\draw[\\colorgrafica,very thick,domain=-0.4:4.5,samples=120,smooth] plot (\\x,{-(\\x)*(\\x)*(\\x)+6*(\\x)*(\\x)-9*(\\x)+4});\n  \\end{scope}\n  \\fill (1,0) circle (2.2pt); \\fill (3,4) circle (2.2pt);\n  \\draw[fill=white,thick] (2,2) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-inflexio}{0,75}{1,25}\nTroba la recta tangent a la gràfica en el punt d'inflexió, i digues a quina banda de la tangent\nqueda la gràfica a cada costat d'aquest punt.\n\n\\begin{solucio}\n$f''(x)=-6x+12$ s'anul·la i canvia de signe en $x=2$, i $f(2)=2$: el punt d'inflexió és $(2,2)$.\\\\\n$f'(2)=-12+24-9=3$, i la tangent és $y=2+3(x-2)$, és a dir $\\boxed{y=3x-4}$.\\\\\n$f(x)-(3x-4)=-x^3+6x^2-12x+8=-(x-2)^3$, que és positiu si $x<2$ i negatiu si $x>2$. La gràfica queda\n\\textbf{per sobre} de la tangent a l'esquerra i \\textbf{per sota} a la dreta: en un punt d'inflexió,\nla corba \\textbf{travessa} la tangent.\n\\end{solucio}\n\n\\itemtria{context-embassament}{0,75}{1,25}\nSuposa que $f(t)$ és el nivell de l'aigua d'un embassament, en metres per sobre d'una marca de referència,\ndurant els quatre primers mesos de l'any ($t\\in[0,4]$, en mesos). En quins moments canvia de tendència el\nnivell? Quan puja més de pressa, i a quina velocitat?\n\n\\begin{solucio}\nCanvia de tendència als extrems: baixa fins a $t=1$, on arriba al mínim, $f(1)=0$ (just a la marca); puja\nfins a $t=3$, on arriba al màxim, $f(3)=4$ m; i després torna a baixar, fins a $f(4)=0$.\\\\\nPuja més de pressa on la derivada és màxima: $f'(t)=-3t^2+12t-9$ és una paràbola cap avall amb el vèrtex\non $f''(t)=-6t+12=0$, és a dir en $t=2$, el punt d'inflexió. En aquell moment puja a $f'(2)=3$ metres per mes.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u10/estudi-polinomica/q003/out/enunciat.pdf",
    "pdf_solucio": "u10/estudi-polinomica/q003/out/solucio.pdf",
    "pdf_curt": "u10/estudi-polinomica/q003/out/enunciat-curt.pdf",
@@ -1053,7 +1260,8 @@ const BANC = {
     41,
     63,
     75,
-    91
+    91,
+    123
    ],
    "minuts": 22,
    "minuts_curt": 13,
@@ -1123,7 +1331,8 @@ const BANC = {
     41,
     63,
     75,
-    91
+    91,
+    123
    ],
    "minuts": 22,
    "minuts_curt": 13,
@@ -1190,7 +1399,9 @@ const BANC = {
     41,
     63,
     75,
-    91
+    91,
+    123,
+    124
    ],
    "minuts": 22,
    "minuts_curt": 13,
@@ -1225,11 +1436,20 @@ const BANC = {
        "pdf_solucio": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/solucio.pdf",
        "pdf_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/enunciat-curt.pdf",
        "pdf_solucio_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/solucio-curt.pdf"
+      },
+      {
+       "id": "context-cost",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q003/out/tries/estudi-tasca/context-cost/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q003/out/tries/estudi-tasca/context-cost/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/context-cost/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/context-cost/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2+4}{x} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $\\mathbb{R}\\setminus\\{0\\}$. Com que $f(-x)=-f(x)$, la gràfica és simètrica respecte\nde l'origen.\\\\\n\\textbf{Talls}: cap. $x^2+4$ no s'anul·la mai, i $x=0$ no és del domini.\\\\\n\\textbf{Vertical}: en $x=0$ el numerador val $4\\neq0$, i els laterals valen $-\\infty$ (per l'esquerra)\ni $+\\infty$ (per la dreta): asímptota $\\boxed{x=0}$, l'eix $OY$.\\\\\n\\textbf{Obliqua}: $f(x)=x+\\dfrac4x$, i el segon terme tendeix a $0$: asímptota $\\boxed{y=x}$. No hi ha\nasímptota horitzontal.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}$ i $f''(x)=\\dfrac{8}{x^3}$.\\\\\nEl signe és el de $x^3$: $f''<0$ a $(-\\infty,0)$, on la funció és \\textbf{còncava}, i $f''>0$ a\n$(0,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió: $f''$ no s'anul·la mai, i en $x=0$ la funció no està definida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}=\\dfrac{x^2-4}{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$. El denominador és positiu:\n$f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$, i \\textbf{decreix} a $(-2,0)$ i a $(0,2)$.\\\\\n\\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu} $(2,4)$. Que el màxim quedi per sota del\nmínim no és cap contradicció: són a branques diferents.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.32cm]\n  \\draw[gray!55,very thin,step=1] (-6,-10) grid (6,10);\n  \\draw[->] (-6.4,0) -- (6.4,0) node[below right] {$x$};\n  \\draw[->] (0,-10.4) -- (0,10.6) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.2) -- (\\i,-0.2) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-8,-4,4,8} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-6,-6) -- (6,6);\n  \\begin{scope}\n    \\clip (-6,-10) rectangle (6,10);\n    \\draw[\\colorgrafica,very thick,domain=-6:-0.38,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n    \\draw[\\colorgrafica,very thick,domain=0.38:6,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n  \\end{scope}\n  \\fill (-2,-4) circle (2pt); \\fill (2,4) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-i-obliqua}{0,75}{1,25}\nEstudia'n la monotonia i els extrems. Hi ha cap punt en què la recta tangent sigui paral·lela a\nl'asímptota obliqua? La gràfica talla mai aquesta asímptota?\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac4{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$: $f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$,\ni \\textbf{decreix} a $(-2,0)$ i a $(0,2)$. \\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu}\n$(2,4)$.\\\\\nL'asímptota és $y=x$, de pendent $1$. Caldria que $f'(x)=1$, és a dir $\\dfrac4{x^2}=0$, cosa que no\npassa mai: \\textbf{cap} tangent no hi és paral·lela, tot i que el pendent s'hi acosta quan\n$x\\to\\pm\\infty$.\\\\\n$f(x)-x=\\dfrac4x\\neq0$: la gràfica \\textbf{no talla} l'asímptota. En queda per sobre si $x>0$, i per\nsota si $x<0$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2+4}{x} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $\\mathbb{R}\\setminus\\{0\\}$. Com que $f(-x)=-f(x)$, la gràfica és simètrica respecte\nde l'origen.\\\\\n\\textbf{Talls}: cap. $x^2+4$ no s'anul·la mai, i $x=0$ no és del domini.\\\\\n\\textbf{Vertical}: en $x=0$ el numerador val $4\\neq0$, i els laterals valen $-\\infty$ (per l'esquerra)\ni $+\\infty$ (per la dreta): asímptota $\\boxed{x=0}$, l'eix $OY$.\\\\\n\\textbf{Obliqua}: $f(x)=x+\\dfrac4x$, i el segon terme tendeix a $0$: asímptota $\\boxed{y=x}$. No hi ha\nasímptota horitzontal.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}$ i $f''(x)=\\dfrac{8}{x^3}$.\\\\\nEl signe és el de $x^3$: $f''<0$ a $(-\\infty,0)$, on la funció és \\textbf{còncava}, i $f''>0$ a\n$(0,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió: $f''$ no s'anul·la mai, i en $x=0$ la funció no està definida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}=\\dfrac{x^2-4}{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$. El denominador és positiu:\n$f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$, i \\textbf{decreix} a $(-2,0)$ i a $(0,2)$.\\\\\n\\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu} $(2,4)$. Que el màxim quedi per sota del\nmínim no és cap contradicció: són a branques diferents.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.32cm]\n  \\draw[gray!55,very thin,step=1] (-6,-10) grid (6,10);\n  \\draw[->] (-6.4,0) -- (6.4,0) node[below right] {$x$};\n  \\draw[->] (0,-10.4) -- (0,10.6) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.2) -- (\\i,-0.2) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-8,-4,4,8} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-6,-6) -- (6,6);\n  \\begin{scope}\n    \\clip (-6,-10) rectangle (6,10);\n    \\draw[\\colorgrafica,very thick,domain=-6:-0.38,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n    \\draw[\\colorgrafica,very thick,domain=0.38:6,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n  \\end{scope}\n  \\fill (-2,-4) circle (2pt); \\fill (2,4) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-i-obliqua}{0,75}{1,25}\nEstudia'n la monotonia i els extrems. Hi ha cap punt en què la recta tangent sigui paral·lela a\nl'asímptota obliqua? La gràfica talla mai aquesta asímptota?\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac4{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$: $f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$,\ni \\textbf{decreix} a $(-2,0)$ i a $(0,2)$. \\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu}\n$(2,4)$.\\\\\nL'asímptota és $y=x$, de pendent $1$. Caldria que $f'(x)=1$, és a dir $\\dfrac4{x^2}=0$, cosa que no\npassa mai: \\textbf{cap} tangent no hi és paral·lela, tot i que el pendent s'hi acosta quan\n$x\\to\\pm\\infty$.\\\\\n$f(x)-x=\\dfrac4x\\neq0$: la gràfica \\textbf{no talla} l'asímptota. En queda per sobre si $x>0$, i per\nsota si $x<0$.\n\\end{solucio}\n\n\\itemtria{context-cost}{0,75}{1,25}\nUna empresa fabrica $x$ centenars de peces al dia, i el cost mitjà de cada peça, en euros, és\n$C(x)=\\dfrac{x^2+4}{x}$, amb $x>0$. Quina producció fa mínim el cost mitjà, i quin és aquest cost? Què passa\namb el cost mitjà quan la producció és molt petita? I quan és molt gran?\n\n\\begin{solucio}\nÉs la funció de l'enunciat, per a $x>0$. $C'(x)=1-\\dfrac4{x^2}=\\dfrac{x^2-4}{x^2}$, que a $x>0$ només s'anul·la\nen $x=2$: $C$ decreix a $(0,2)$ i creix a $(2,+\\infty)$. El cost mitjà mínim és $C(2)=\\mathbf{4}$ \\textbf{euros}\nper peça, fabricant \\textbf{200 peces} al dia.\\\\\nQuan $x\\to0^+$, $C(x)\\to+\\infty$: amb molt poca producció, els costos fixos es reparteixen entre molt poques\npeces, i cada una surt molt cara.\\\\\nQuan $x\\to+\\infty$, $C(x)$ s'acosta a l'asímptota obliqua $y=x$: la part fixa, $\\dfrac4x$, es fa insignificant,\ni el cost mitjà creix gairebé com la producció.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u10/estudi-racional/q003/out/enunciat.pdf",
    "pdf_solucio": "u10/estudi-racional/q003/out/solucio.pdf",
    "pdf_curt": "u10/estudi-racional/q003/out/enunciat-curt.pdf",
