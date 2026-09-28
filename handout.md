@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 27 de setembre de 2026 · **Estat:** 64 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 54 de la u7, la u8 i la u9 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
+**Data:** 27 de setembre de 2026 · **Estat:** 66 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 7 de la unitat 10 i 5 de la PAU), 57 amb tries · 1.236 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -38,7 +38,8 @@ les va substituir per alternatives que canvien el cas, la tècnica o el sentit d
 va fer que el build esborri els PDF que ja no genera cap font, perquè els 60 orfes que havia deixat
 la dissetena feien fallar l'Action, i va posar tries a les 18 preguntes de la u8, amb el mateix
 criteri. La dinovena va fer el mateix amb les 12 de la u9, i va fer plegables les unitats de la
-llista de temes. La màquina
+llista de temes. La vintena va començar a completar la u10, a partir del solucionari del llibre i
+del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -661,6 +662,50 @@ l'entorn de treball, però la u7 i la u8 no han canviat des de la compilació co
 704 PDF. Les bateries (38/14/77) i la integració amb jsdom passen, i el cas 4 reescrit té la seva
 prova de control: si `--pregunta` escrivís PDF d'altres preguntes, fallaria.
 
+### 2.20 Sessió 20 · La u10 amb els exercicis practicats de debò, i domini i punts de tall
+
+**El material.** El professor va passar dos recursos. El primer és el solucionari de Santillana de
+la unitat 10 sencera: pàgines 377–460 del llibre, exercicis 1 a 124, amb enunciats, solucions i
+gràfiques. El segon és el full de feina de Classroom, on les caselles D12 i D13 diuen quins
+exercicis hauran practicat els alumnes abans de l'examen. Es va mantenir la regla de sempre (el
+banc no surt dels exercicis practicats), i el solucionari s'usa com a font de tipus d'exercici i de
+funcions, no per copiar-ne els enunciats.
+
+**Els exercicis practicats, corregits.** La sessió 13 comptava 16 exercicis assignats, de les
+setmanes 11, 12 i 17. El full diu que la setmana 17 (84, 108, 123 i 124) cau al gener, després de
+l'examen, i que els practicats abans són **12**: el 37, el 38, el 43, el 45, el 62 i el 63 (setmana
+11), i el 41, el 75, el 78, el 88, el 91 i el 100 (setmana 12). Llegits al solucionari:
+
+| Tema | Exercicis practicats |
+|---|---|
+| `domini-talls` | 43 (dominis de totes les famílies), 45 (domini i talls), 100 (funcions amb radicals) |
+| `asimptotes` | 62 (branques infinites de polinomis), 63 (asímptotes verticals, horitzontals i obliqües), 38 (dibuixar una funció a partir de propietats) |
+| `estudi-racional` | 41 i 91 (estudis complets), 63, 75, 78 |
+| `estudi-polinomica` | 75, 78, 88 (coeficients a partir d'un extrem, una inflexió i un punt), 62 |
+| `estudi-trossos` | **cap** |
+
+Tres conseqüències. `estudi-polinomica/q001` citava el 84 i ara cita el 75, el 78 i el 88. El tema
+`estudi-trossos` no té cap exercici practicat al darrere: la seva q001 cita el 108 (setmana 17) i
+el 37, però el 37 no és de funcions a trossos, sinó que demana llegir les característiques de $f$ a
+la gràfica de $f'$. Queda pendent de decidir què se'n fa (7.4). La proposta de la sessió anterior
+d'aprofitar el 123 i el 124 com a models de context queda retirada, perquè són de la setmana 17.
+
+**El solucionari té errors.** Al 41 diu que $f'(x)<0$ fa la funció creixent; al 75a, $y'>0$ on ha
+de dir $y'<0$; al 75d li falta el punt crític $x=18$; i al 78b dona $\mathrm{Dom}=\mathbb{R}$ per a
+$\frac{x-2}{x+2}$. Serveix de referència, però tot es continua verificant amb SymPy.
+
+**Domini i punts de tall, complet.** Dues variants noves, q002 i q003, amb l'estructura de la
+q001 i funcions dels tipus del 43, el 45 i el 100: un denominador sense zeros, un logaritme d'un
+polinomi de segon grau, una exponencial amb exponent fraccionari i els talls d'una funció amb
+radical. Hi ha una tria a cadascuna de les tres preguntes: un zero del numerador que **no** és un
+tall, perquè no és del domini (q001, `tall-fals`); jutjar l'error d'un alumne que simplifica abans
+de trobar el domini (q002, `error-simplificar`); i el domini segons un paràmetre, amb la diferència
+entre $<$ i $\le$ per a una arrel (q003, `domini-parametre`).
+
+**Verificació.** Totes les matemàtiques es van comprovar amb SymPy. Les tres preguntes tenen el
+defecte idèntic, 2,50 punts amb cada ítem, i compilen de debò a una pàgina, sense errors. Les
+bateries (38/14/77) i la integració amb jsdom passen, i el banc complet escriu 736 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -716,6 +761,8 @@ prova de control: si `--pregunta` escrivís PDF d'altres preguntes, fallaria.
 | Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 | Una alternativa ha de canviar el cas, la tècnica o el sentit del raonament, no només els nombres (regla 16) | Professor | Una tria amb la mateixa pregunta i altres xifres no aporta res a l'examen |
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
+| Per a la u10, els exercicis practicats són els de les setmanes 11 i 12 del full de Classroom; la setmana 17 és posterior a l'examen | Professor | El banc no surt dels exercicis que els alumnes hauran practicat |
+| El solucionari del llibre és una referència, no la veritat: tot es verifica amb SymPy | Disseny | S'hi han trobat quatre errors (2.20) |
 | Les unitats de la llista de temes es pleguen des del seu títol, i l'estat es desa al navegador, no a l'adreça | Professor (el plegat) i disseny (on es desa) | És una preferència de qui fa els exàmens, no part de l'examen |
 | A optimització, la tria va al pas d'optimitzar i no al model, i el valor trobat continua sent un màxim en un punt crític | Disseny | Els apartats hi van encadenats, i el `nomesllarg` justifica el màxim amb la derivada |
 | El cas 4 de `prova_sortida.py` no depèn de si la pregunta té tries | Disseny | Si no, calia moure'l cada vegada que una unitat rebia tries |
@@ -751,6 +798,8 @@ prova de control: si `--pregunta` escrivís PDF d'altres preguntes, fallaria.
 | Una tria sense cap `\itemtria` ja registrava l'error, però petava amb un `IndexError` en construir el catàleg (`t.ordre[0]` d'una llista buida) | `build.py` | Es descarten del catàleg les tries sense ítems; l'error ja enviat atura el build igualment |
 | `prova_sortida.py` comptava els PDF amb un patró de quatre nivells fixos (`*/*/*/out/*.pdf`): no veia mai els de `out/tries/…`, i per tant no en provava res | `prova_sortida.py` | Patró recursiu (`*/*/*/out/**/*.pdf`) als dos llocs on apareixia |
 | Els PDF orfes dels ítems retirats es van donar per inofensius, i en feien fallar `prova_sortida.py` (464 de 524) | `build.py` | Un build complet esborra els PDF que ja no genera cap font (2.18) |
+
+| La u10 comptava com a practicats els exercicis de la setmana 17 (84, 108, 123 i 124), posterior a l'examen, i `estudi-polinomica/q001` citava el 84 | `meta.json`, handout | Corregit amb el full de Classroom; `estudi-trossos` queda pendent (7.4) |
 
 ---
 
@@ -961,18 +1010,20 @@ per això el banc no hi té tema. Tres variants per tema.
 
 ### 6.4 Unitat 10 · Representació de funcions (5 preguntes)
 
-Cinc temes, de les cinc seccions del llibre amb exercicis assignats a les setmanes 11, 12 i 17:
-domini i recorregut (43, 45, 100), asímptotes (62, 63, 38), representació (41, 84, 88, 91),
-funcions a trossos (108, 37) i els problemes de context (123, 124). La secció de simetries i
-periodicitat no en té cap d'assignat, i per això el banc no hi té tema. Una variant per tema;
-en falten dues (vegeu 7.4).
+Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 11 i 12 (2.20):
+domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
+gràfica de $f'$ (37). El tema de funcions a trossos no en té cap: el seu únic exercici, el 108, és de
+la setmana 17. Domini i punts de tall ja té tres variants, totes amb tria; els altres temes en
+tenen una (vegeu 7.4).
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
 | Asímptotes i branques infinites | `q001` | Asímptotes de funcions racionals i gràfica a partir d'unes asímptotes donades | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 62, 63, 38 |
 | Domini i punts de tall | `q001` | Domini de racionals, radicals i logaritmes, i punts de tall | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
+| Domini i punts de tall | `q002` | Domini de racionals, radicals i logaritmes, i talls d'una racional amb denominador sense zeros | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
+| Domini i punts de tall | `q003` | Domini amb exponencials i radicals, i talls d'una funció amb radical | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Estudi i gràfica d'una funció a trossos | `q001` | Estudi i gràfica d'una funció a trossos amb asímptota horitzontal | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108, 37 |
-| Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 84, 88 |
+| Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
 | Estudi i gràfica d'una funció racional | `q001` | Estudi i gràfica de x²/(x−1): asímptota obliqua, extrems i curvatura | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91 |
 
 ### 6.5 Registre de convocatòries PAU
@@ -1186,8 +1237,8 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10 (5),
-  amb el mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10: des de la 20, domini i punts de tall ja en té;
+  falten els altres quatre temes, amb el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1320,17 +1371,14 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 19. Parteix del de la sessió 18, que ja és al repositori.
+És el lliurament de la sessió 20. Parteix del de la sessió 19, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `assets/app.js` | Unitats plegables: el títol de cada unitat és un botó; l'estat es desa a la memòria del navegador |
-| `assets/style.css` | L'estil del títol plegable, que es continua llegint com una etiqueta |
-| `build/prova_sortida.py` | El cas 4 ja no depèn de si la pregunta té tries |
-| `u9/*/q00{1,2,3}/pregunta.tex` | **Tries noves** a les 12 preguntes de la u9 (secció 2.19) |
-| `README.md` | Estat, i el punt 2 de «Ús» (unitats plegables) |
-| `handout.md` | Secció 2.19 i les seccions 3, 5, 6.3, 7.5 i 11 |
+| `u10/domini-talls/q002/`, `u10/domini-talls/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json` |
+| `u10/domini-talls/q001/pregunta.tex` | Tria nova, `tall-fals` |
+| `u10/estudi-polinomica/q001/meta.json` | L'`origen` ja no cita el 84, que és de la setmana 17 |
+| `README.md` | Estat |
+| `handout.md` | Secció 2.20, i les seccions 3, 4, 6.4, 7.5 i 11 |
 
-No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**, que
-ara compila 704 PDF i triga uns minuts més que abans. Si encara no has fet el canvi de
-`compila.yml` que proposava la sessió 18 (la línia de `git add -A`), continua sent recomanable.
+No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**.

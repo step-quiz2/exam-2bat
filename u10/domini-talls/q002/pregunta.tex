@@ -1,0 +1,59 @@
+\begin{apartats}
+
+\begin{tria}{domini-tasca}
+\itemtria{original}{0,75}{1,25}
+Determina el domini de les funcions següents:
+\begin{graella}{3}
+  \sa f(x)=\frac{2x-1}{x^2-5x+6} & \sa g(x)=\sqrt{9-x^2} & \sa h(x)=\ln\left(x^2-4x\right)
+\end{graella}
+
+\begin{solucio}
+i) Cal que el denominador no s'anul·li: $x^2-5x+6=(x-2)(x-3)=0$ en $x=2$ i $x=3$. Domini:
+$\mathbb{R}\setminus\{2,3\}$.\\
+ii) Cal $9-x^2\ge0$, és a dir $x^2\le9$: domini $[-3,3]$.\\
+iii) Cal $x^2-4x=x(x-4)>0$: domini $(-\infty,0)\cup(4,+\infty)$.
+\end{solucio}
+
+\itemtria{error-simplificar}{0,75}{1,25}
+Un alumne afirma que el domini de $f(x)=\dfrac{x^2-1}{x-1}$ és $\mathbb{R}$, perquè simplificant queda
+$x+1$, i que $g(x)=\ln\left(x^2\right)$ té el mateix domini que $2\ln x$, perquè
+$\ln\left(x^2\right)=2\ln x$. Té raó en algun dels dos casos? Justifica-ho.
+
+\begin{solucio}
+En \textbf{cap} dels dos: el domini és el de la funció tal com està escrita, abans de transformar-la.\\
+i) $f$ no està definida en $x=1$, perquè hi divideix per zero: $\mathrm{Dom}\,f=\mathbb{R}\setminus\{1\}$.
+La simplificació només val per a $x\neq1$.\\
+ii) $\ln\left(x^2\right)$ existeix sempre que $x^2>0$, és a dir per a $x\neq0$:
+$\mathrm{Dom}\,g=\mathbb{R}\setminus\{0\}$. En canvi, $2\ln x$ només existeix per a $x>0$. La igualtat
+$\ln\left(x^2\right)=2\ln x$ només és certa per a $x>0$; en general, $\ln\left(x^2\right)=2\ln|x|$.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Determina el domini i els punts de tall amb els eixos de
+\[
+f(x)=\frac{x^3-4x}{x^2+1} .
+\]
+
+\begin{solucio}
+\textbf{Domini}: el denominador, $x^2+1$, no s'anul·la mai, i per tant el domini és tot $\mathbb{R}$.\\
+\textbf{Tall amb l'eix $OY$}: $f(0)=0$, el punt $(0,0)$.\\
+\textbf{Talls amb l'eix $OX$}: el numerador és $x^3-4x=x(x-2)(x+2)$, que s'anul·la en $x=0$, $x=2$ i
+$x=-2$. Els punts són $(-2,0)$, $(0,0)$ i $(2,0)$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Determina el domini de
+\[
+k(x)=\frac{\sqrt{x-1}}{\ln x} .
+\]
+
+\begin{solucio}
+Cal complir tres condicions alhora: $x-1\ge0$ (l'arrel), $x>0$ (el logaritme) i $\ln x\neq0$, és a dir
+$x\neq1$ (el denominador).\\
+Domini: $(1,+\infty)$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

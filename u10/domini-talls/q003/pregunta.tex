@@ -1,0 +1,58 @@
+\begin{apartats}
+
+\begin{tria}{domini-tasca}
+\itemtria{original}{0,75}{1,25}
+Determina el domini de les funcions següents:
+\begin{graella}{3}
+  \sa f(x)=\frac{x+3}{x^2+4} & \sa g(x)=\sqrt{2x+6} & \sa h(x)=e^{1/x}
+\end{graella}
+
+\begin{solucio}
+i) El denominador, $x^2+4$, no s'anul·la mai: domini $\mathbb{R}$.\\
+ii) Cal $2x+6\ge0$: domini $[-3,+\infty)$.\\
+iii) L'exponencial existeix per a qualsevol exponent, però cal que existeixi $\frac1x$: domini
+$\mathbb{R}\setminus\{0\}$.
+\end{solucio}
+
+\itemtria{domini-parametre}{0,75}{1,25}
+Per a quins valors de $k$ el domini de $f(x)=\dfrac{x+1}{x^2+kx+4}$ és tot $\mathbb{R}$? I el de
+$g(x)=\sqrt{x^2+kx+4}$?
+
+\begin{solucio}
+i) El denominador no s'ha d'anul·lar mai: $x^2+kx+4=0$ no pot tenir solucions reals, i el
+discriminant ha de ser negatiu, $k^2-16<0$. És a dir, $-4<k<4$.\\
+ii) Cal $x^2+kx+4\ge0$ per a tota $x$. Com que la paràbola s'obre cap amunt, n'hi ha prou que no
+talli l'eix en dos punts: $k^2-16\le0$, és a dir $-4\le k\le4$. Amb $k=4$, per exemple,
+$x^2+4x+4=(x+2)^2\ge0$: l'arrel existeix a tot arreu, però $f$ no, perquè el denominador s'anul·la
+en $x=-2$.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Determina el domini i els punts de tall amb els eixos de
+\[
+f(x)=\sqrt{x^2-4x} .
+\]
+
+\begin{solucio}
+\textbf{Domini}: cal $x^2-4x=x(x-4)\ge0$, és a dir $(-\infty,0]\cup[4,+\infty)$.\\
+\textbf{Tall amb l'eix $OY$}: $f(0)=0$, el punt $(0,0)$.\\
+\textbf{Talls amb l'eix $OX$}: $x^2-4x=0$ en $x=0$ i en $x=4$, que són tots dos del domini. Els punts
+són $(0,0)$ i $(4,0)$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Determina el domini de
+\[
+k(x)=\frac{x-1}{\ln(x+3)} .
+\]
+
+\begin{solucio}
+Cal $x+3>0$ (el logaritme), és a dir $x>-3$, i $\ln(x+3)\neq0$ (el denominador), és a dir $x+3\neq1$,
+$x\neq-2$.\\
+Domini: $(-3,-2)\cup(-2,+\infty)$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}
