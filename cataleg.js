@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 15:58 UTC",
+ "generat": "2026-09-28 16:59 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -177,6 +177,30 @@ const BANC = {
    "unitat": "u10",
    "nom": "Estudi i gràfica d'una funció a trossos",
    "descripcio": "Continuïtat, asímptotes, monotonia i representació d'una funció definida a trossos."
+  },
+  {
+   "slug": "espai-mostral",
+   "unitat": "u13",
+   "nom": "Espai mostral i comptatge",
+   "descripcio": "Espai mostral d'experiments compostos, esdeveniments i recomptes amb variacions, permutacions i combinacions."
+  },
+  {
+   "slug": "operacions-esdeveniments",
+   "unitat": "u13",
+   "nom": "Unió, intersecció i contrari",
+   "descripcio": "Probabilitat de la unió, la intersecció i el contrari, lleis de De Morgan, «cap», «només un» i independència."
+  },
+  {
+   "slug": "taules-contingencia",
+   "unitat": "u13",
+   "nom": "Taules de contingència i probabilitat condicionada",
+   "descripcio": "Probabilitats a partir d'una taula de contingència, condicionades en les dues direccions i independència."
+  },
+  {
+   "slug": "probabilitat-total-bayes",
+   "unitat": "u13",
+   "nom": "Probabilitat total i teorema de Bayes",
+   "descripcio": "Diagrames d'arbre, probabilitat total i teorema de Bayes en contextos d'urnes, màquines i proves."
   },
   {
    "slug": "algebra",
@@ -1397,6 +1421,801 @@ const BANC = {
    "pdf_solucio": "u10/estudi-trossos/q003/out/solucio.pdf",
    "pdf_curt": "u10/estudi-trossos/q003/out/enunciat-curt.pdf",
    "pdf_solucio_curt": "u10/estudi-trossos/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/espai-mostral/q001",
+   "unitat": "u13",
+   "tema": "espai-mostral",
+   "codi": "q001",
+   "titol": "Espai mostral d'un experiment compost, nombres de xifres diferents i equips",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    28,
+    29,
+    40
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "espai mostral",
+    "combinatòria"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "espai-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q001/out/tries/espai-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q001/out/tries/espai-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q001/out/tries/espai-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q001/out/tries/espai-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "principi-multiplicacio",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q001/out/tries/espai-tasca/principi-multiplicacio/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q001/out/tries/espai-tasca/principi-multiplicacio/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q001/out/tries/espai-tasca/principi-multiplicacio/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q001/out/tries/espai-tasca/principi-multiplicacio/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{espai-tasca}\n\\itemtria{original}{0,75}{1,25}\nUna urna conté tres boles numerades de l'1 al 3. Se'n treu una a l'atzar i, a continuació, es llança una\nmoneda. Descriu l'espai mostral i l'esdeveniment $A=$ «surt un nombre senar i cara».\n\n\\begin{solucio}\nCada resultat és un nombre i una cara ($C$) o una creu ($X$): $E=\\{1C,\\,1X,\\,2C,\\,2X,\\,3C,\\,3X\\}$, amb\n$3\\cdot2=6$ elements.\\\\\n$A=\\{1C,\\,3C\\}$.\n\\end{solucio}\n\n\\itemtria{principi-multiplicacio}{0,75}{1,25}\nEs llancen tres monedes i un dau. Quants elements té l'espai mostral? Escriu l'esdeveniment «surten\nexactament dues cares i un 6», i digues quants elements té.\n\n\\begin{solucio}\nCada moneda té 2 resultats, i el dau, 6. Pel principi de multiplicació, l'espai mostral té\n$2\\cdot2\\cdot2\\cdot6=48$ elements, i no cal escriure'ls tots per saber-ho.\\\\\nL'esdeveniment és $\\{CCX6,\\,CXC6,\\,XCC6\\}$: té 3 elements, un per a cada moneda on pot sortir la creu.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nAmb els dígits 1, 2, 3, 4 i 5, quants nombres de quatre xifres diferents es poden formar? Quants són\nparells? Quants comencen per 5?\n\n\\begin{solucio}\nL'ordre importa i no es repeteix cap xifra: variacions sense repetició,\n$V_{5,4}=5\\cdot4\\cdot3\\cdot2=120$.\\\\\n\\textbf{Parells}: l'última xifra ha de ser 2 o 4 (2 opcions), i les altres tres són una variació de les\n4 xifres que queden: $2\\cdot V_{4,3}=2\\cdot24=48$.\\\\\n\\textbf{Comencen per 5}: la primera xifra és fixa, i les altres tres són $V_{4,3}=24$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDe quantes maneres es pot triar un equip de 3 persones d'un grup de 7? I si una persona concreta hi ha\nde ser?\n\n\\begin{solucio}\nL'ordre no importa: combinacions, $C_{7,3}=\\dbinom73=35$.\\\\\nSi una persona hi ha de ser, només cal triar les altres dues entre les 6 que queden:\n$C_{6,2}=\\dbinom62=15$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/espai-mostral/q001/out/enunciat.pdf",
+   "pdf_solucio": "u13/espai-mostral/q001/out/solucio.pdf",
+   "pdf_curt": "u13/espai-mostral/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/espai-mostral/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/espai-mostral/q002",
+   "unitat": "u13",
+   "tema": "espai-mostral",
+   "codi": "q002",
+   "titol": "Espai mostral sense reemplaçament, paraules amb unes lletres donades, i càrrecs o comissions",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    28,
+    29,
+    40
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "espai mostral",
+    "combinatòria"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "espai-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q002/out/tries/espai-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q002/out/tries/espai-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q002/out/tries/espai-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q002/out/tries/espai-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "troba-error",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q002/out/tries/espai-tasca/troba-error/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q002/out/tries/espai-tasca/troba-error/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q002/out/tries/espai-tasca/troba-error/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q002/out/tries/espai-tasca/troba-error/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nEn una bossa hi ha 2 boles blanques i 1 de negra. Se'n treuen dues, una darrere l'altra, sense retornar la\nprimera, i se n'anoten els colors. Descriu l'espai mostral i l'esdeveniment «les dues boles són del mateix\ncolor».\n\n\\begin{solucio}\nAnotant $B$ (blanca) i $N$ (negra) en l'ordre en què surten: $E=\\{BB,\\,BN,\\,NB\\}$. El resultat $NN$ no és\npossible, perquè només hi ha una bola negra.\\\\\n«Mateix color» $=\\{BB\\}$.\n\\end{solucio}\n\n\\begin{tria}{espai-tasca}\n\\itemtria{original}{1}{1,25}\nQuantes paraules, amb sentit o sense, de 5 lletres diferents es poden formar amb les lletres de la\nparaula LIBRE? I de 3 lletres? Quantes de 5 lletres comencen i acaben en vocal?\n\n\\begin{solucio}\n\\textbf{5 lletres}: s'ordenen totes, permutacions, $P_5=5!=120$.\\\\\n\\textbf{3 lletres}: variacions sense repetició, $V_{5,3}=5\\cdot4\\cdot3=60$.\\\\\n\\textbf{Vocal al principi i al final}: les vocals són la I i la E. Hi ha 2 maneres de posar-les als\nextrems, i $3!=6$ d'ordenar les tres consonants al mig: $2\\cdot6=12$.\n\\end{solucio}\n\n\\itemtria{troba-error}{1}{1,25}\nUn alumne diu que hi ha $8\\cdot7\\cdot6=336$ maneres de triar 3 llibres d'una llista de 8 per llegir-los\naquest estiu. Té raó? Si no en té, quin és el nombre correcte, i quin error ha fet?\n\n\\begin{solucio}\n\\textbf{No}. $8\\cdot7\\cdot6=V_{8,3}$ compta els trios ordenats: triar A, B i C hi compta diferent de triar\nC, B i A. Però per llegir-los aquest estiu l'ordre no importa: són combinacions,\n$C_{8,3}=\\dfrac{336}{3!}=\\dfrac{336}{6}=56$. Cada trio l'havia comptat $3!=6$ vegades.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEn una classe de 20 alumnes, de quantes maneres es poden triar un delegat i un sotsdelegat? I una comissió\nde dues persones?\n\n\\begin{solucio}\n\\textbf{Delegat i sotsdelegat}: l'ordre importa, perquè són càrrecs diferents: $V_{20,2}=20\\cdot19=380$.\\\\\n\\textbf{Comissió}: l'ordre no importa: $C_{20,2}=190$, la meitat, perquè en les variacions cada parella\nes compta dues vegades.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/espai-mostral/q002/out/enunciat.pdf",
+   "pdf_solucio": "u13/espai-mostral/q002/out/solucio.pdf",
+   "pdf_curt": "u13/espai-mostral/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/espai-mostral/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/espai-mostral/q003",
+   "unitat": "u13",
+   "tema": "espai-mostral",
+   "codi": "q003",
+   "titol": "Suma de dos daus, contrasenyes i persones en una fila",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    28,
+    29,
+    40
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "espai mostral",
+    "combinatòria"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "espai-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q003/out/tries/espai-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q003/out/tries/espai-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q003/out/tries/espai-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q003/out/tries/espai-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "espai-no-producte",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/espai-mostral/q003/out/tries/espai-tasca/espai-no-producte/enunciat.pdf",
+       "pdf_solucio": "u13/espai-mostral/q003/out/tries/espai-tasca/espai-no-producte/solucio.pdf",
+       "pdf_curt": "u13/espai-mostral/q003/out/tries/espai-tasca/espai-no-producte/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/espai-mostral/q003/out/tries/espai-tasca/espai-no-producte/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{espai-tasca}\n\\itemtria{original}{0,75}{1,25}\nEs llancen dos daus i se n'anota la suma. Descriu l'espai mostral. Tots els seus elements tenen la\nmateixa probabilitat?\n\n\\begin{solucio}\n$E=\\{2,3,4,\\dots,12\\}$, amb 11 elements.\\\\\n\\textbf{No} són equiprobables. Dels $6\\cdot6=36$ resultats dels dos daus, la suma 7 surt de 6 maneres, però\nla suma 2 només d'una, $(1,1)$, i la 12 també, $(6,6)$. Per exemple, $P(7)=\\dfrac{6}{36}=\\dfrac16$ i\n$P(2)=\\dfrac{1}{36}$.\n\\end{solucio}\n\n\\itemtria{espai-no-producte}{0,75}{1,25}\nEs llança una moneda fins que surt cara, amb un màxim de tres llançaments. Descriu l'espai mostral. Per\nquè no té $2\\cdot2\\cdot2=8$ elements?\n\n\\begin{solucio}\n$E=\\{C,\\,XC,\\,XXC,\\,XXX\\}$, amb 4 elements.\\\\\nNo en té 8 perquè l'experiment s'acaba quan surt la primera cara: després d'una $C$ ja no es llança cap\nmés moneda. En un diagrama d'arbre, només continua la branca de les creus. Tampoc no són equiprobables:\n$P(C)=\\dfrac12$, però $P(XXX)=\\dfrac18$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nUna contrasenya està formada per dues lletres, d'un alfabet de 26, seguides de dues xifres. Quantes\ncontrasenyes diferents hi ha? I si no es pot repetir cap caràcter?\n\n\\begin{solucio}\n\\textbf{Amb repetició}, cada posició és independent de les altres:\n$26\\cdot26\\cdot10\\cdot10=67\\,600$.\\\\\n\\textbf{Sense repetició}: $26\\cdot25\\cdot10\\cdot9=58\\,500$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDe quantes maneres es poden asseure 5 persones en una fila de 5 cadires? I si dues d'elles volen seure\nl'una al costat de l'altra?\n\n\\begin{solucio}\n$P_5=5!=120$.\\\\\nSi dues han de seure juntes, es compten com un sol bloc: hi ha $4!=24$ maneres d'ordenar el bloc i les\naltres tres persones, i 2 d'ordenar les dues persones dins del bloc: $24\\cdot2=48$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/espai-mostral/q003/out/enunciat.pdf",
+   "pdf_solucio": "u13/espai-mostral/q003/out/solucio.pdf",
+   "pdf_curt": "u13/espai-mostral/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/espai-mostral/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/operacions-esdeveniments/q001",
+   "unitat": "u13",
+   "tema": "operacions-esdeveniments",
+   "codi": "q001",
+   "titol": "Unió, intersecció i contrari amb percentatges, i independència",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    60,
+    62,
+    103,
+    104,
+    105,
+    106
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "unió i intersecció",
+    "independència"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "operacions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "a-la-inversa",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/a-la-inversa/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/a-la-inversa/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/a-la-inversa/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q001/out/tries/operacions-tasca/a-la-inversa/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "En un institut, el 60\\,\\% de l'alumnat practica algun esport ($E$), el 45\\,\\% toca algun instrument ($M$)\ni el 25\\,\\% fa totes dues coses. Es tria un alumne a l'atzar.\n\n\\begin{apartats}\n\n\\begin{tria}{operacions-tasca}\n\\itemtria{original}{0,75}{1,25}\nQuina és la probabilitat que faci almenys una de les dues activitats? I que no en faci cap?\n\n\\begin{solucio}\n$P(E\\cup M)=P(E)+P(M)-P(E\\cap M)=0{,}6+0{,}45-0{,}25=0{,}8$.\\\\\nNo fer-ne cap és el contrari: $P\\left(\\overline{E}\\cap\\overline{M}\\right)=P\\left(\\overline{E\\cup M}\\right)\n=1-0{,}8=0{,}2$.\n\\end{solucio}\n\n\\itemtria{a-la-inversa}{0,75}{1,25}\nEn un altre institut, el 70\\,\\% de l'alumnat practica algun esport, el 50\\,\\% toca algun instrument i el\n10\\,\\% no fa cap de les dues coses. Quina és la probabilitat que un alumne d'aquest institut, triat a\nl'atzar, faci totes dues activitats?\n\n\\begin{solucio}\n«No fer-ne cap» és el contrari de la unió: $P(E\\cup M)=1-0{,}1=0{,}9$.\\\\\nDe $P(E\\cup M)=P(E)+P(M)-P(E\\cap M)$ resulta $P(E\\cap M)=0{,}7+0{,}5-0{,}9=0{,}3$. La fórmula de la unió\ntambé serveix a la inversa.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nQuina és la probabilitat que faci només una de les dues activitats? I que practiqui esport, però no toqui\ncap instrument?\n\n\\begin{solucio}\n\\textbf{Només una}: la unió sense la intersecció, $P(E\\cup M)-P(E\\cap M)=0{,}8-0{,}25=0{,}55$.\\\\\n\\textbf{Esport i no instrument}: $P\\left(E\\cap\\overline{M}\\right)=P(E)-P(E\\cap M)=0{,}6-0{,}25=0{,}35$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSón independents els esdeveniments «practicar esport» i «tocar un instrument»? Justifica-ho.\n\n\\begin{solucio}\n$P(E)\\cdot P(M)=0{,}6\\cdot0{,}45=0{,}27$, però $P(E\\cap M)=0{,}25$. Com que no coincideixen, \\textbf{no}\nsón independents.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/operacions-esdeveniments/q001/out/enunciat.pdf",
+   "pdf_solucio": "u13/operacions-esdeveniments/q001/out/solucio.pdf",
+   "pdf_curt": "u13/operacions-esdeveniments/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/operacions-esdeveniments/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/operacions-esdeveniments/q002",
+   "unitat": "u13",
+   "tema": "operacions-esdeveniments",
+   "codi": "q002",
+   "titol": "Lleis de De Morgan, incompatibilitat i independència",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    60,
+    62,
+    103,
+    104,
+    105,
+    106
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "unió i intersecció",
+    "independència"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "operacions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "fites",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/fites/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/fites/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/fites/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q002/out/tries/operacions-tasca/fites/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Dels esdeveniments $A$ i $B$ d'un experiment aleatori se sap que $P(A)=0{,}5$, $P(B)=0{,}4$ i\n$P\\left(\\overline{A}\\cup\\overline{B}\\right)=0{,}8$.\n\n\\begin{apartats}\n\n\\begin{tria}{operacions-tasca}\n\\itemtria{original}{0,75}{1,25}\nCalcula $P(A\\cap B)$ i $P(A\\cup B)$.\n\n\\begin{solucio}\nPer la llei de De Morgan, $\\overline{A}\\cup\\overline{B}=\\overline{A\\cap B}$, i per tant\n$P(A\\cap B)=1-0{,}8=0{,}2$.\\\\\n$P(A\\cup B)=0{,}5+0{,}4-0{,}2=0{,}7$.\n\\end{solucio}\n\n\\itemtria{fites}{0,75}{1,25}\nPoden ser incompatibles dos esdeveniments $C$ i $D$ amb $P(C)=0{,}7$ i $P(D)=0{,}6$? Quin és el valor més\npetit que pot tenir $P(C\\cap D)$?\n\n\\begin{solucio}\nSi fossin incompatibles, seria $P(C\\cup D)=0{,}7+0{,}6=1{,}3>1$, cosa impossible: \\textbf{no} ho poden\nser.\\\\\nCom que $P(C\\cup D)\\le1$, $P(C\\cap D)=P(C)+P(D)-P(C\\cup D)\\ge0{,}7+0{,}6-1=0{,}3$. El valor més petit és\n$0{,}3$, quan $C\\cup D$ és l'esdeveniment segur.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nCalcula $P\\left(A\\cap\\overline{B}\\right)$ i $P\\left(\\overline{A}\\cap\\overline{B}\\right)$.\n\n\\begin{solucio}\n$P\\left(A\\cap\\overline{B}\\right)=P(A)-P(A\\cap B)=0{,}5-0{,}2=0{,}3$.\\\\\n$P\\left(\\overline{A}\\cap\\overline{B}\\right)=P\\left(\\overline{A\\cup B}\\right)=1-0{,}7=0{,}3$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSón incompatibles $A$ i $B$? I independents? Justifica-ho.\n\n\\begin{solucio}\n\\textbf{No} són incompatibles: $P(A\\cap B)=0{,}2\\neq0$.\\\\\n\\textbf{Sí} que són independents: $P(A)\\cdot P(B)=0{,}5\\cdot0{,}4=0{,}2=P(A\\cap B)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/operacions-esdeveniments/q002/out/enunciat.pdf",
+   "pdf_solucio": "u13/operacions-esdeveniments/q002/out/solucio.pdf",
+   "pdf_curt": "u13/operacions-esdeveniments/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/operacions-esdeveniments/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/operacions-esdeveniments/q003",
+   "unitat": "u13",
+   "tema": "operacions-esdeveniments",
+   "codi": "q003",
+   "titol": "Unió i intersecció a partir de «cap de les dues», i una probabilitat condicionada",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    60,
+    62,
+    103,
+    104,
+    105,
+    106
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "unió i intersecció",
+    "independència"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "operacions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "dades-impossibles",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/dades-impossibles/enunciat.pdf",
+       "pdf_solucio": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/dades-impossibles/solucio.pdf",
+       "pdf_curt": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/dades-impossibles/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/operacions-esdeveniments/q003/out/tries/operacions-tasca/dades-impossibles/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "En una ciutat, el 70\\,\\% de les persones llegeix el diari digital ($D$), el 40\\,\\% escolta la ràdio ($R$) i\nel 20\\,\\% no fa cap de les dues coses. Es tria una persona a l'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que faci totes dues coses?\n\n\\begin{solucio}\n$P(D\\cup R)=1-0{,}2=0{,}8$, perquè «no fer-ne cap» és el contrari de la unió.\\\\\n$P(D\\cap R)=P(D)+P(R)-P(D\\cup R)=0{,}7+0{,}4-0{,}8=0{,}3$.\n\\end{solucio}\n\n\\begin{tria}{operacions-tasca}\n\\itemtria{original}{1}{1,25}\nQuina és la probabilitat que només escolti la ràdio? I que faci només una de les dues coses?\n\n\\begin{solucio}\n\\textbf{Només ràdio}: $P\\left(R\\cap\\overline{D}\\right)=P(R)-P(D\\cap R)=0{,}4-0{,}3=0{,}1$.\\\\\n\\textbf{Només una}: $P(D\\cup R)-P(D\\cap R)=0{,}8-0{,}3=0{,}5$.\n\\end{solucio}\n\n\\itemtria{dades-impossibles}{1}{1,25}\nUna altra enquesta diu que el 70\\,\\% de les persones llegeix el diari digital, el 40\\,\\% escolta la ràdio\ni només el 5\\,\\% fa totes dues coses. Són possibles aquestes dades? Justifica-ho.\n\n\\begin{solucio}\n\\textbf{No}: donarien $P(D\\cup R)=0{,}7+0{,}4-0{,}05=1{,}05>1$.\\\\\nCom que $P(D\\cup R)\\le1$, ha de ser $P(D\\cap R)\\ge0{,}7+0{,}4-1=0{,}1$: com a mínim, el 10\\,\\% hauria de\nfer totes dues coses.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSi una persona escolta la ràdio, quina és la probabilitat que també llegeixi el diari digital?\n\n\\begin{solucio}\n$P(D\\mid R)=\\dfrac{P(D\\cap R)}{P(R)}=\\dfrac{0{,}3}{0{,}4}=0{,}75$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/operacions-esdeveniments/q003/out/enunciat.pdf",
+   "pdf_solucio": "u13/operacions-esdeveniments/q003/out/solucio.pdf",
+   "pdf_curt": "u13/operacions-esdeveniments/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/operacions-esdeveniments/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/probabilitat-total-bayes/q001",
+   "unitat": "u13",
+   "tema": "probabilitat-total-bayes",
+   "codi": "q001",
+   "titol": "Dues màquines: probabilitat total, Bayes i «almenys una»",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    35,
+    36,
+    107,
+    108
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "probabilitat total",
+    "teorema de Bayes"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "bayes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "control-qualitat",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/control-qualitat/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/control-qualitat/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/control-qualitat/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q001/out/tries/bayes-tasca/control-qualitat/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Una fàbrica té dues màquines. La màquina $M_1$ fa el 60\\,\\% de les peces, i la $M_2$, la resta. El 4\\,\\% de les\npeces de $M_1$ i el 6\\,\\% de les de $M_2$ són defectuoses ($D$). Es tria una peça a l'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que sigui defectuosa?\n\n\\begin{solucio}\nPer la probabilitat total, $P(D)=P(M_1)\\,P(D\\mid M_1)+P(M_2)\\,P(D\\mid M_2)=0{,}6\\cdot0{,}04+0{,}4\\cdot0{,}06\n=0{,}024+0{,}024=0{,}048$.\n\\end{solucio}\n\n\\begin{tria}{bayes-tasca}\n\\itemtria{original}{1}{1,25}\nSi la peça és defectuosa, quina és la probabilitat que l'hagi feta $M_1$? I si no ho és?\n\n\\begin{solucio}\nPel teorema de Bayes, $P(M_1\\mid D)=\\dfrac{P(M_1)\\,P(D\\mid M_1)}{P(D)}=\\dfrac{0{,}024}{0{,}048}=0{,}5$.\\\\\n$P\\left(M_1\\mid\\overline{D}\\right)=\\dfrac{0{,}6\\cdot0{,}96}{1-0{,}048}=\\dfrac{0{,}576}{0{,}952}\\approx0{,}605$.\n\\end{solucio}\n\n\\itemtria{control-qualitat}{1}{1,25}\nUn control de qualitat detecta el 90\\,\\% de les peces defectuoses, però també rebutja per error el 2\\,\\%\nde les que són bones. Si el control rebutja una peça, quina és la probabilitat que sigui realment\ndefectuosa?\n\n\\begin{solucio}\nSigui $R$ = «el control rebutja la peça». Amb $P(D)=0{,}048$,\n$P(R)=0{,}048\\cdot0{,}9+0{,}952\\cdot0{,}02=0{,}0432+0{,}01904=0{,}06224$.\\\\\n$P(D\\mid R)=\\dfrac{0{,}0432}{0{,}06224}\\approx0{,}694$. Gairebé 3 de cada 10 peces rebutjades són bones:\nel 2\\,\\% d'errors pesa molt perquè les peces bones són moltes més que les defectuoses.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEs trien dues peces a l'atzar, de manera independent. Quina és la probabilitat que almenys una sigui\ndefectuosa?\n\n\\begin{solucio}\nEl contrari de «almenys una» és «cap»: $1-P\\left(\\overline{D}\\right)^2=1-0{,}952^2\\approx0{,}094$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/probabilitat-total-bayes/q001/out/enunciat.pdf",
+   "pdf_solucio": "u13/probabilitat-total-bayes/q001/out/solucio.pdf",
+   "pdf_curt": "u13/probabilitat-total-bayes/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/probabilitat-total-bayes/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/probabilitat-total-bayes/q002",
+   "unitat": "u13",
+   "tema": "probabilitat-total-bayes",
+   "codi": "q002",
+   "titol": "Un dau tria l'urna: probabilitat total, Bayes i dues extraccions",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    35,
+    36,
+    107,
+    108
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "probabilitat total",
+    "teorema de Bayes"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "bayes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "composicio-urna",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/composicio-urna/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/composicio-urna/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/composicio-urna/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q002/out/tries/bayes-tasca/composicio-urna/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Es llança un dau. Si surt 1 o 2, es treu una bola de l'urna $U_1$, que té 3 boles blanques i 2 de negres; si\nno, es treu de l'urna $U_2$, que té 1 bola blanca i 4 de negres.\n\n\\begin{apartats}\n\n\\begin{tria}{bayes-tasca}\n\\itemtria{original}{0,75}{1,25}\nQuina és la probabilitat que la bola sigui blanca?\n\n\\begin{solucio}\n$P(U_1)=\\dfrac26=\\dfrac13$ i $P(U_2)=\\dfrac23$. Per la probabilitat total,\n$P(B)=\\dfrac13\\cdot\\dfrac35+\\dfrac23\\cdot\\dfrac15=\\dfrac3{15}+\\dfrac2{15}=\\dfrac13$.\n\\end{solucio}\n\n\\itemtria{composicio-urna}{0,75}{1,25}\nQuantes boles blanques hauria de tenir l'urna $U_2$, si continués tenint 5 boles en total, perquè la\nprobabilitat de treure una bola blanca fos $\\dfrac7{15}$?\n\n\\begin{solucio}\nSi $U_2$ tingués $b$ boles blanques, seria\n$P(B)=\\dfrac13\\cdot\\dfrac35+\\dfrac23\\cdot\\dfrac b5=\\dfrac15+\\dfrac{2b}{15}$.\\\\\nCal $\\dfrac15+\\dfrac{2b}{15}=\\dfrac7{15}$, és a dir $3+2b=7$: $\\boxed{b=2}$ boles blanques (i 3 de\nnegres).\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nSi la bola és blanca, quina és la probabilitat que sigui de $U_1$? I si és negra, quina és la probabilitat\nque sigui de $U_2$?\n\n\\begin{solucio}\n$P(U_1\\mid B)=\\dfrac{\\frac13\\cdot\\frac35}{\\frac13}=\\dfrac35$.\\\\\n$P(N)=1-\\dfrac13=\\dfrac23$, i $P(U_2\\mid N)=\\dfrac{\\frac23\\cdot\\frac45}{\\frac23}=\\dfrac45$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAra, després de llançar el dau, es treuen dues boles de l'urna que toqui, sense reemplaçament. Quina és la\nprobabilitat que totes dues siguin blanques?\n\n\\begin{solucio}\nDe $U_1$: $\\dfrac35\\cdot\\dfrac24=\\dfrac3{10}$. De $U_2$ és impossible, perquè només hi ha una bola blanca.\nPer tant, $P=\\dfrac13\\cdot\\dfrac3{10}+\\dfrac23\\cdot0=\\dfrac1{10}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/probabilitat-total-bayes/q002/out/enunciat.pdf",
+   "pdf_solucio": "u13/probabilitat-total-bayes/q002/out/solucio.pdf",
+   "pdf_curt": "u13/probabilitat-total-bayes/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/probabilitat-total-bayes/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/probabilitat-total-bayes/q003",
+   "unitat": "u13",
+   "tema": "probabilitat-total-bayes",
+   "codi": "q003",
+   "titol": "Socis d'una botiga en línia: probabilitat total, Bayes i independència",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    35,
+    36,
+    107,
+    108
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "probabilitat total",
+    "teorema de Bayes"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "bayes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "arbre-invers",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/arbre-invers/enunciat.pdf",
+       "pdf_solucio": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/arbre-invers/solucio.pdf",
+       "pdf_curt": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/arbre-invers/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/probabilitat-total-bayes/q003/out/tries/bayes-tasca/arbre-invers/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "El 30\\,\\% dels clients d'una botiga en línia són socis del seu club ($S$). El 70\\,\\% dels socis fan més d'una\ncompra al mes ($M$), mentre que, entre els que no en són socis, només ho fa el 20\\,\\%. Es tria un client a\nl'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que faci més d'una compra al mes?\n\n\\begin{solucio}\n$P(M)=P(S)\\,P(M\\mid S)+P\\left(\\overline{S}\\right)P\\left(M\\mid\\overline{S}\\right)=0{,}3\\cdot0{,}7+0{,}7\\cdot0{,}2\n=0{,}21+0{,}14=0{,}35$.\n\\end{solucio}\n\n\\begin{tria}{bayes-tasca}\n\\itemtria{original}{1}{1,25}\nSi fa més d'una compra al mes, quina és la probabilitat que sigui soci? I si no en fa més d'una?\n\n\\begin{solucio}\n$P(S\\mid M)=\\dfrac{0{,}21}{0{,}35}=0{,}6$.\\\\\n$P\\left(S\\mid\\overline{M}\\right)=\\dfrac{0{,}3\\cdot0{,}3}{1-0{,}35}=\\dfrac{0{,}09}{0{,}65}\\approx0{,}138$.\n\\end{solucio}\n\n\\itemtria{arbre-invers}{1}{1,25}\nConstrueix l'arbre en l'ordre invers: primer, si el client fa més d'una compra al mes, i després, si és\nsoci. Calcula totes les probabilitats de les branques.\n\n\\begin{solucio}\nPrimer nivell: $P(M)=0{,}35$ i $P\\left(\\overline{M}\\right)=0{,}65$.\\\\\nSegon nivell, amb el teorema de Bayes: $P(S\\mid M)=\\dfrac{0{,}21}{0{,}35}=0{,}6$ i\n$P\\left(\\overline{S}\\mid M\\right)=0{,}4$; $P\\left(S\\mid\\overline{M}\\right)=\\dfrac{0{,}09}{0{,}65}\\approx0{,}138$\ni $P\\left(\\overline{S}\\mid\\overline{M}\\right)=\\dfrac{0{,}56}{0{,}65}\\approx0{,}862$.\\\\\nComprovació: els camins donen les mateixes interseccions que l'arbre original; per exemple,\n$0{,}35\\cdot0{,}6=0{,}21=P(S\\cap M)$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSón independents «ser soci» i «fer més d'una compra al mes»? Justifica-ho.\n\n\\begin{solucio}\n$P(M\\mid S)=0{,}7$, però $P(M)=0{,}35$. Com que saber que és soci canvia la probabilitat, \\textbf{no} són\nindependents. (També: $P(S\\cap M)=0{,}21\\neq P(S)\\cdot P(M)=0{,}105$.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/probabilitat-total-bayes/q003/out/enunciat.pdf",
+   "pdf_solucio": "u13/probabilitat-total-bayes/q003/out/solucio.pdf",
+   "pdf_curt": "u13/probabilitat-total-bayes/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/probabilitat-total-bayes/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/taules-contingencia/q001",
+   "unitat": "u13",
+   "tema": "taules-contingencia",
+   "codi": "q001",
+   "titol": "Taula d'una escola de música: condicionades en les dues direccions i independència",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    33,
+    96,
+    32,
+    60
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "taules de contingència",
+    "probabilitat condicionada"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "taula-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q001/out/tries/taula-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q001/out/tries/taula-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q001/out/tries/taula-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q001/out/tries/taula-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "dos-alumnes",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q001/out/tries/taula-tasca/dos-alumnes/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q001/out/tries/taula-tasca/dos-alumnes/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q001/out/tries/taula-tasca/dos-alumnes/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q001/out/tries/taula-tasca/dos-alumnes/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Una escola de música té 120 alumnes, distribuïts així:\n\\begin{center}\n\\begin{tabular}{l|ccc|c}\n & Piano & Guitarra & Violí & Total\\\\ \\hline\nElemental & 35 & 19 & 18 & 72\\\\\nMitjà & 15 & 21 & 12 & 48\\\\ \\hline\nTotal & 50 & 40 & 30 & 120\n\\end{tabular}\n\\end{center}\nEs tria un alumne a l'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que toqui el piano? I que sigui de nivell mitjà i toqui la guitarra?\n\n\\begin{solucio}\n$P(\\text{piano})=\\dfrac{50}{120}=\\dfrac5{12}\\approx0{,}417$.\\\\\n$P(\\text{mitjà}\\cap\\text{guitarra})=\\dfrac{21}{120}=0{,}175$.\n\\end{solucio}\n\n\\begin{tria}{taula-tasca}\n\\itemtria{original}{1}{1,25}\nSi l'alumne és de nivell mitjà, quina és la probabilitat que toqui el violí? I si toca el violí, quina\nés la probabilitat que sigui de nivell mitjà?\n\n\\begin{solucio}\n$P(\\text{violí}\\mid\\text{mitjà})=\\dfrac{12}{48}=0{,}25$: el total de referència és la fila del nivell\nmitjà.\\\\\n$P(\\text{mitjà}\\mid\\text{violí})=\\dfrac{12}{30}=0{,}4$: ara el total de referència és la columna del\nviolí. Les dues probabilitats condicionades no són iguals.\n\\end{solucio}\n\n\\itemtria{dos-alumnes}{1}{1,25}\nEs trien dos alumnes a l'atzar, un darrere l'altre (no es pot triar dues vegades el mateix). Quina és la\nprobabilitat que tots dos toquin el violí? I que cap dels dos no el toqui?\n\n\\begin{solucio}\nA la segona tria hi ha un alumne menys, i si el primer tocava el violí, també un violinista menys:\\\\\n$P(\\text{tots dos violí})=\\dfrac{30}{120}\\cdot\\dfrac{29}{119}=\\dfrac{29}{476}\\approx0{,}061$.\\\\\n$P(\\text{cap violí})=\\dfrac{90}{120}\\cdot\\dfrac{89}{119}=\\dfrac{267}{476}\\approx0{,}561$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSón independents «tocar el violí» i «ser de nivell elemental»? I «tocar el piano» i «ser de nivell\nelemental»?\n\n\\begin{solucio}\n$P(\\text{violí}\\cap\\text{elemental})=\\dfrac{18}{120}=0{,}15$ i\n$P(\\text{violí})\\cdot P(\\text{elemental})=0{,}25\\cdot0{,}6=0{,}15$: \\textbf{sí} que són independents.\\\\\n$P(\\text{piano}\\cap\\text{elemental})=\\dfrac{35}{120}\\approx0{,}292$, però\n$P(\\text{piano})\\cdot P(\\text{elemental})=\\dfrac5{12}\\cdot0{,}6=0{,}25$: \\textbf{no} ho són.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/taules-contingencia/q001/out/enunciat.pdf",
+   "pdf_solucio": "u13/taules-contingencia/q001/out/solucio.pdf",
+   "pdf_curt": "u13/taules-contingencia/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/taules-contingencia/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/taules-contingencia/q002",
+   "unitat": "u13",
+   "tema": "taules-contingencia",
+   "codi": "q002",
+   "titol": "Construir una taula de contingència a partir d'un text",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    33,
+    96,
+    32,
+    60
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "taules de contingència",
+    "probabilitat condicionada"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "taula-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q002/out/tries/taula-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q002/out/tries/taula-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q002/out/tries/taula-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q002/out/tries/taula-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "dos-titulars",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q002/out/tries/taula-tasca/dos-titulars/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q002/out/tries/taula-tasca/dos-titulars/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q002/out/tries/taula-tasca/dos-titulars/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q002/out/tries/taula-tasca/dos-titulars/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "S'ha preguntat a 200 persones si fan servir el transport públic habitualment ($T$) i si tenen cotxe ($C$).\nEn fan servir 120, i d'aquestes, 45 tenen cotxe. De les que no fan servir el transport públic, 60 tenen\ncotxe. Es tria una persona a l'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nConstrueix la taula de contingència.\n\n\\begin{solucio}\n\\begin{center}\n\\begin{tabular}{l|cc|c}\n & Cotxe & Sense cotxe & Total\\\\ \\hline\nTransport públic & 45 & 75 & 120\\\\\nNo & 60 & 20 & 80\\\\ \\hline\nTotal & 105 & 95 & 200\n\\end{tabular}\n\\end{center}\n\\end{solucio}\n\n\\begin{tria}{taula-tasca}\n\\itemtria{original}{1}{1,25}\nQuina és la probabilitat que tingui cotxe? I si té cotxe, quina és la probabilitat que faci servir el\ntransport públic?\n\n\\begin{solucio}\n$P(C)=\\dfrac{105}{200}=0{,}525$.\\\\\n$P(T\\mid C)=\\dfrac{45}{105}=\\dfrac37\\approx0{,}429$.\n\\end{solucio}\n\n\\itemtria{dos-titulars}{1}{1,25}\nUn diari titula «El 43\\,\\% dels que tenen cotxe fan servir el transport públic», i un altre, «El 37,5\\,\\%\ndels usuaris del transport públic tenen cotxe». Segons aquesta enquesta, té raó algun dels dos? O tots\ndos?\n\n\\begin{solucio}\n\\textbf{Tots dos}: parlen de dues probabilitats condicionades diferents.\\\\\nEl primer és $P(T\\mid C)=\\dfrac{45}{105}\\approx0{,}43$: el total de referència són els 105 que tenen\ncotxe. El segon és $P(C\\mid T)=\\dfrac{45}{120}=0{,}375$: el total són els 120 usuaris del transport\npúblic. En general, $P(T\\mid C)\\neq P(C\\mid T)$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nQuina és la probabilitat que no faci servir el transport públic ni tingui cotxe? Són independents $T$ i\n$C$?\n\n\\begin{solucio}\n$P\\left(\\overline{T}\\cap\\overline{C}\\right)=\\dfrac{20}{200}=0{,}1$.\\\\\n$P(T)\\cdot P(C)=0{,}6\\cdot0{,}525=0{,}315$, però $P(T\\cap C)=\\dfrac{45}{200}=0{,}225$: \\textbf{no} són\nindependents.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/taules-contingencia/q002/out/enunciat.pdf",
+   "pdf_solucio": "u13/taules-contingencia/q002/out/solucio.pdf",
+   "pdf_curt": "u13/taules-contingencia/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/taules-contingencia/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u13/taules-contingencia/q003",
+   "unitat": "u13",
+   "tema": "taules-contingencia",
+   "codi": "q003",
+   "titol": "Taula de modalitats de batxillerat: unió, condicionades i independència",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    33,
+    96,
+    32,
+    60
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "taules de contingència",
+    "probabilitat condicionada"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "taula-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q003/out/tries/taula-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q003/out/tries/taula-tasca/original/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q003/out/tries/taula-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q003/out/tries/taula-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "taula-i-bayes",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u13/taules-contingencia/q003/out/tries/taula-tasca/taula-i-bayes/enunciat.pdf",
+       "pdf_solucio": "u13/taules-contingencia/q003/out/tries/taula-tasca/taula-i-bayes/solucio.pdf",
+       "pdf_curt": "u13/taules-contingencia/q003/out/tries/taula-tasca/taula-i-bayes/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u13/taules-contingencia/q003/out/tries/taula-tasca/taula-i-bayes/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Un institut ha preguntat als 300 alumnes de batxillerat quina modalitat fan i si pensen estudiar una\ncarrera científica ($CC$):\n\\begin{center}\n\\begin{tabular}{l|ccc|c}\n & Ciències & Humanitats & Arts & Total\\\\ \\hline\nCarrera científica & 90 & 20 & 10 & 120\\\\\nNo & 60 & 80 & 40 & 180\\\\ \\hline\nTotal & 150 & 100 & 50 & 300\n\\end{tabular}\n\\end{center}\nEs tria un alumne a l'atzar.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que faci Ciències? I que faci Humanitats o que pensi estudiar una carrera\ncientífica?\n\n\\begin{solucio}\n$P(\\text{Ciències})=\\dfrac{150}{300}=0{,}5$.\\\\\n$P(\\text{Humanitats}\\cup CC)=\\dfrac{100+120-20}{300}=\\dfrac{200}{300}=\\dfrac23\\approx0{,}667$: els 20\nalumnes d'Humanitats que pensen estudiar una carrera científica no s'han de comptar dues vegades.\n\\end{solucio}\n\n\\begin{tria}{taula-tasca}\n\\itemtria{original}{1}{1,25}\nSi pensa estudiar una carrera científica, quina és la probabilitat que faci Arts? I si fa Ciències, quina\nés la probabilitat que no pensi estudiar-ne cap?\n\n\\begin{solucio}\n$P(\\text{Arts}\\mid CC)=\\dfrac{10}{120}=\\dfrac1{12}\\approx0{,}083$.\\\\\n$P\\left(\\overline{CC}\\mid\\text{Ciències}\\right)=\\dfrac{60}{150}=0{,}4$.\n\\end{solucio}\n\n\\itemtria{taula-i-bayes}{1}{1,25}\nComprova amb la taula que $P(CC\\mid\\text{Ciències})=0{,}6$ i que\n$P\\left(CC\\mid\\overline{\\text{Ciències}}\\right)=0{,}2$. Calcula després $P(\\text{Ciències}\\mid CC)$ amb el\nteorema de Bayes, a partir només de $P(\\text{Ciències})$ i d'aquestes dues probabilitats, i comprova que\ncoincideix amb el que dona la taula.\n\n\\begin{solucio}\n$P(CC\\mid\\text{Ciències})=\\dfrac{90}{150}=0{,}6$ i\n$P\\left(CC\\mid\\overline{\\text{Ciències}}\\right)=\\dfrac{20+10}{150}=0{,}2$.\\\\\nBayes: $P(\\text{Ciències}\\mid CC)=\\dfrac{0{,}5\\cdot0{,}6}{0{,}5\\cdot0{,}6+0{,}5\\cdot0{,}2}\n=\\dfrac{0{,}3}{0{,}4}=0{,}75$.\\\\\nA la taula, $\\dfrac{90}{120}=0{,}75$. Coincideixen: el teorema de Bayes fa el mateix que llegir la taula a\nla fila de $CC$, dividir els 90 alumnes de Ciències que la volen estudiar pels 120 que la volen estudiar\nen total.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nSón independents «fer Arts» i «pensar estudiar una carrera científica»?\n\n\\begin{solucio}\n$P(\\text{Arts}\\cap CC)=\\dfrac{10}{300}\\approx0{,}033$, però\n$P(\\text{Arts})\\cdot P(CC)=\\dfrac16\\cdot0{,}4\\approx0{,}067$: \\textbf{no} són independents.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u13/taules-contingencia/q003/out/enunciat.pdf",
+   "pdf_solucio": "u13/taules-contingencia/q003/out/solucio.pdf",
+   "pdf_curt": "u13/taules-contingencia/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u13/taules-contingencia/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u7/bolzano-biseccio/q001",
