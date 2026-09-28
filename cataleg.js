@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 16:59 UTC",
+ "generat": "2026-09-28 18:12 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -201,6 +201,18 @@ const BANC = {
    "unitat": "u13",
    "nom": "Probabilitat total i teorema de Bayes",
    "descripcio": "Diagrames d'arbre, probabilitat total i teorema de Bayes en contextos d'urnes, màquines i proves."
+  },
+  {
+   "slug": "binomial-identificar",
+   "unitat": "u14",
+   "nom": "Identificar una binomial: paràmetres, mitjana i moda",
+   "descripcio": "Decidir si una variable segueix una distribució binomial i trobar-ne els paràmetres, la mitjana, la desviació típica i el valor més probable."
+  },
+  {
+   "slug": "binomial-probabilitats",
+   "unitat": "u14",
+   "nom": "Probabilitats amb la binomial",
+   "descripcio": "Probabilitats d'una binomial: exactament, «almenys», «com a molt» i el contrari, en abstracte i en context."
   },
   {
    "slug": "algebra",
@@ -2216,6 +2228,405 @@ const BANC = {
    "pdf_solucio": "u13/taules-contingencia/q003/out/solucio.pdf",
    "pdf_curt": "u13/taules-contingencia/q003/out/enunciat-curt.pdf",
    "pdf_solucio_curt": "u13/taules-contingencia/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-identificar/q001",
+   "unitat": "u14",
+   "tema": "binomial-identificar",
+   "codi": "q001",
+   "titol": "Quines variables són binomials, mitjana, desviació típica i valor més probable",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    43,
+    46,
+    44,
+    21
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "paràmetres"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q001/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q001/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q001/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q001/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "sense-reemplacament",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q001/out/tries/binomial-tasca/sense-reemplacament/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q001/out/tries/binomial-tasca/sense-reemplacament/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q001/out/tries/binomial-tasca/sense-reemplacament/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q001/out/tries/binomial-tasca/sense-reemplacament/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDigues quines d'aquestes variables segueixen una distribució binomial i, en aquest cas, indica'n els\nparàmetres.\n\\begin{itemize}\n\\item[i)] Es llança una moneda 8 vegades i es compta el nombre de cares.\n\\item[ii)] D'una bossa amb 4 boles blanques i 6 de negres se'n treuen 3, sense reemplaçament, i es\ncompten les blanques.\n\\item[iii)] El 15\\,\\% dels alumnes d'un institut molt gran porta ulleres. Es trien 10 alumnes a l'atzar i\nes compten els que en porten.\n\\end{itemize}\n\n\\begin{solucio}\ni) \\textbf{Sí}: $B(8;\\,0{,}5)$. Hi ha 8 proves independents, i a cada una la probabilitat de cara és\n$0{,}5$.\\\\\nii) \\textbf{No}: sense reemplaçament, la probabilitat de treure una blanca canvia d'una extracció a\nl'altra (després d'una blanca, en queden 3 de 9), i les extraccions no són independents.\\\\\niii) \\textbf{Sí}, aproximadament: $B(10;\\,0{,}15)$. L'institut és tan gran que triar 10 alumnes gairebé\nno canvia la proporció dels que queden, i a cada tria es pot prendre $p=0{,}15$.\n\\end{solucio}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{1}{1,25}\nPer a la variable iii), calcula la mitjana, la desviació típica i la probabilitat que exactament 2 alumnes\nportin ulleres.\n\n\\begin{solucio}\n$\\mu=np=10\\cdot0{,}15=1{,}5$ i $\\sigma=\\sqrt{np(1-p)}=\\sqrt{10\\cdot0{,}15\\cdot0{,}85}=\\sqrt{1{,}275}\\approx1{,}129$.\\\\\n$P(X=2)=\\dbinom{10}{2}\\,0{,}15^2\\cdot0{,}85^8\\approx45\\cdot0{,}0225\\cdot0{,}2725\\approx0{,}276$.\n\\end{solucio}\n\n\\itemtria{sense-reemplacament}{1}{1,25}\nLa variable ii) no és binomial. Calcula'n igualment la probabilitat de treure exactament una bola blanca,\ni compara-la amb la que donaria la binomial si les boles es tornessin a la bossa.\n\n\\begin{solucio}\nSense reemplaçament, comptant grups de 3 boles:\n$P=\\dfrac{\\binom41\\binom62}{\\binom{10}3}=\\dfrac{4\\cdot15}{120}=0{,}5$. També amb un arbre:\n$3\\cdot\\dfrac4{10}\\cdot\\dfrac69\\cdot\\dfrac58=0{,}5$.\\\\\nAmb reemplaçament seria $B(3;\\,0{,}4)$: $P(X=1)=\\dbinom31\\,0{,}4\\cdot0{,}6^2=0{,}432$. Són diferents perquè,\nsense reemplaçament, les extraccions no són independents.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nQuin és el nombre d'alumnes amb ulleres més probable, en el grup de 10? Justifica-ho.\n\n\\begin{solucio}\n$P(X=0)=0{,}85^{10}\\approx0{,}197$, $P(X=1)=10\\cdot0{,}15\\cdot0{,}85^9\\approx0{,}347$ i\n$P(X=2)\\approx0{,}276$, i a partir d'aquí les probabilitats disminueixen. El valor més probable és\n$\\mathbf{1}$, al costat de la mitjana, $1{,}5$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-identificar/q001/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-identificar/q001/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-identificar/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-identificar/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-identificar/q002",
+   "unitat": "u14",
+   "tema": "binomial-identificar",
+   "codi": "q002",
+   "titol": "Bombetes defectuoses: justificar la binomial, mitjana, variància i moda",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    43,
+    46,
+    44,
+    21
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "paràmetres"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q002/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q002/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q002/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q002/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "parametres-inversos",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q002/out/tries/binomial-tasca/parametres-inversos/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q002/out/tries/binomial-tasca/parametres-inversos/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q002/out/tries/binomial-tasca/parametres-inversos/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q002/out/tries/binomial-tasca/parametres-inversos/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "En una fàbrica, el 4\\,\\% de les bombetes surten defectuoses. En cada control s'agafen 20 bombetes a l'atzar\ni es compten les defectuoses ($X$).\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nJustifica que $X$ segueix una distribució binomial i indica'n els paràmetres.\n\n\\begin{solucio}\nCada bombeta és defectuosa o no ho és (dos resultats), en cada control n'hi ha un nombre fix, 20, i la\nproducció és tan gran que la probabilitat de ser defectuosa és sempre $0{,}04$, independentment de les\naltres bombetes. Per tant, $X\\sim B(20;\\,0{,}04)$.\n\\end{solucio}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{1}{1,25}\nCalcula la mitjana i la variància de $X$, i la probabilitat que en un control no hi hagi cap bombeta\ndefectuosa.\n\n\\begin{solucio}\n$\\mu=20\\cdot0{,}04=0{,}8$ i $\\sigma^2=20\\cdot0{,}04\\cdot0{,}96=0{,}768$.\\\\\n$P(X=0)=0{,}96^{20}\\approx0{,}442$.\n\\end{solucio}\n\n\\itemtria{parametres-inversos}{1}{1,25}\nEn una altra fàbrica, el nombre de bombetes defectuoses de cada control segueix una distribució binomial\nde mitjana $1{,}2$ i variància $1{,}14$. Quantes bombetes s'agafen en cada control, i quin percentatge de\nbombetes surten defectuoses?\n\n\\begin{solucio}\n$np=1{,}2$ i $np(1-p)=1{,}14$. Dividint: $1-p=\\dfrac{1{,}14}{1{,}2}=0{,}95$, i per tant $p=0{,}05$: surten\ndefectuoses el 5\\,\\% de les bombetes.\\\\\n$n=\\dfrac{1{,}2}{0{,}05}=24$ bombetes en cada control.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nQuin és el nombre de bombetes defectuoses més probable en un control? Justifica-ho.\n\n\\begin{solucio}\n$P(X=0)\\approx0{,}442$ i $P(X=1)=20\\cdot0{,}04\\cdot0{,}96^{19}\\approx0{,}368$, i les següents són més\npetites. El més probable és \\textbf{cap}, tot i que la mitjana és $0{,}8$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-identificar/q002/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-identificar/q002/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-identificar/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-identificar/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-identificar/q003",
+   "unitat": "u14",
+   "tema": "binomial-identificar",
+   "codi": "q003",
+   "titol": "Nombre de nenes en una família de cinc criatures: taula, simetria i paràmetres",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    43,
+    46,
+    44,
+    21
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "paràmetres"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q003/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q003/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q003/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q003/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "comparar-esdeveniments",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-identificar/q003/out/tries/binomial-tasca/comparar-esdeveniments/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-identificar/q003/out/tries/binomial-tasca/comparar-esdeveniments/solucio.pdf",
+       "pdf_curt": "u14/binomial-identificar/q003/out/tries/binomial-tasca/comparar-esdeveniments/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-identificar/q003/out/tries/binomial-tasca/comparar-esdeveniments/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nUna família té 5 criatures. Suposant que la probabilitat de ser nena és la mateixa que la de ser nen, i\nque el sexe de cada criatura no depèn del de les altres, justifica que el nombre de nenes, $X$, segueix\nuna distribució binomial i fes-ne la taula de probabilitats.\n\n\\begin{solucio}\nHi ha 5 proves amb dos resultats, independents, i a cada una la probabilitat de nena és $\\frac12$:\n$X\\sim B\\left(5;\\,\\tfrac12\\right)$, amb $P(X=k)=\\dbinom5k\\dfrac1{32}$.\n\\begin{center}\n\\begin{tabular}{c|cccccc}\n$k$ & 0 & 1 & 2 & 3 & 4 & 5\\\\ \\hline\n$P(X=k)$ & $\\frac1{32}$ & $\\frac5{32}$ & $\\frac{10}{32}$ & $\\frac{10}{32}$ & $\\frac5{32}$ & $\\frac1{32}$\n\\end{tabular}\n\\end{center}\n\\end{solucio}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{1}{1,25}\nQuina és la probabilitat que hi hagi més nenes que nens? Quin és el nombre de nenes més probable?\n\n\\begin{solucio}\nMés nenes que nens vol dir $X\\ge3$: $\\dfrac{10+5+1}{32}=\\dfrac{16}{32}=\\dfrac12$, com era d'esperar per\nsimetria.\\\\\nEls valors més probables són \\textbf{2 i 3}, amb $\\frac{10}{32}$ cadascun.\n\\end{solucio}\n\n\\itemtria{comparar-esdeveniments}{1}{1,25}\nQuè és més probable: que les cinc criatures siguin del mateix sexe, o que n'hi hagi tres d'un sexe i dues\nde l'altre? Quantes vegades més?\n\n\\begin{solucio}\n\\textbf{Mateix sexe}: $P(X=0)+P(X=5)=\\dfrac2{32}=\\dfrac1{16}$.\\\\\n\\textbf{Tres i dues}: $P(X=2)+P(X=3)=\\dfrac{20}{32}=\\dfrac58$.\\\\\nEl segon és \\textbf{10 vegades} més probable: un repartiment més igualat pot passar de moltes més\nmaneres.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la mitjana i la desviació típica de $X$.\n\n\\begin{solucio}\n$\\mu=5\\cdot\\frac12=2{,}5$ i $\\sigma=\\sqrt{5\\cdot\\frac12\\cdot\\frac12}=\\sqrt{1{,}25}\\approx1{,}118$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-identificar/q003/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-identificar/q003/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-identificar/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-identificar/q003/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-probabilitats/q001",
+   "unitat": "u14",
+   "tema": "binomial-probabilitats",
+   "codi": "q001",
+   "titol": "Piles descarregades: exactament, més de dues i el contrari",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    21,
+    50,
+    53,
+    100,
+    101
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "probabilitats"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "p-maxima",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/p-maxima/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/p-maxima/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/p-maxima/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q001/out/tries/binomial-tasca/p-maxima/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "El 3\\,\\% de les piles d'una marca arriben descarregades. Es compra un paquet de 10 piles, i $X$ és el nombre\nde piles descarregades.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nQuina és la probabilitat que no n'hi hagi cap de descarregada? I que n'hi hagi exactament una?\n\n\\begin{solucio}\n$X\\sim B(10;\\,0{,}03)$. $P(X=0)=0{,}97^{10}\\approx0{,}737$ i\n$P(X=1)=10\\cdot0{,}03\\cdot0{,}97^{9}\\approx0{,}228$.\n\\end{solucio}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{1}{1,25}\nQuina és la probabilitat que n'hi hagi més de dues de descarregades?\n\n\\begin{solucio}\n$P(X=2)=\\dbinom{10}2\\,0{,}03^2\\cdot0{,}97^8\\approx45\\cdot0{,}0009\\cdot0{,}7837\\approx0{,}0317$.\\\\\nPel contrari: $P(X>2)=1-P(X\\le2)\\approx1-(0{,}7374+0{,}2281+0{,}0317)\\approx0{,}0028$.\n\\end{solucio}\n\n\\itemtria{p-maxima}{1}{1,25}\nLa marca vol que el 90\\,\\% dels paquets de 10 piles no en tinguin cap de descarregada. Quin és el\npercentatge màxim de piles descarregades que pot admetre?\n\n\\begin{solucio}\nSi la proporció de piles descarregades és $p$, $P(X=0)=(1-p)^{10}$. Cal $(1-p)^{10}\\ge0{,}9$, és a dir\n$1-p\\ge0{,}9^{1/10}\\approx0{,}9895$, i per tant $p\\le0{,}0105$.\\\\\nLa marca pot admetre com a molt un 1,05\\,\\% de piles descarregades, aproximadament la tercera part de\nl'actual.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nLa marca assegura que en un paquet «gairebé mai» hi ha més d'una pila descarregada. Té raó? Justifica-ho.\n\n\\begin{solucio}\n$P(X\\ge2)=1-P(X=0)-P(X=1)\\approx1-0{,}7374-0{,}2281\\approx0{,}0345$: passa en un 3,5\\,\\% dels paquets,\naproximadament un de cada 29. És poc freqüent, i l'afirmació és raonable.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-probabilitats/q001/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-probabilitats/q001/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-probabilitats/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-probabilitats/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-probabilitats/q002",
+   "unitat": "u14",
+   "tema": "binomial-probabilitats",
+   "codi": "q002",
+   "titol": "Respostes «No ho sé»: la negació, «com a mínim» i «com a molt»",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    21,
+    50,
+    53,
+    100,
+    101
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "probabilitats"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "binomial-i-arbre",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/binomial-i-arbre/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/binomial-i-arbre/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/binomial-i-arbre/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q002/out/tries/binomial-tasca/binomial-i-arbre/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "En una enquesta, el 20\\,\\% de les persones responen «No ho sé». Es trien a l'atzar 8 persones enquestades, i\n$X$ és el nombre de les que responen «No ho sé».\n\n\\begin{apartats}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{0,75}{1,25}\nQuina és la probabilitat que exactament 2 responguin «No ho sé»? I que exactament 2 no ho responguin?\n\n\\begin{solucio}\n$X\\sim B(8;\\,0{,}2)$. $P(X=2)=\\dbinom82\\,0{,}2^2\\cdot0{,}8^6=28\\cdot0{,}04\\cdot0{,}2621\\approx0{,}294$.\\\\\nQue exactament 2 \\textbf{no} ho responguin vol dir que les altres 6 sí:\n$P(X=6)=\\dbinom86\\,0{,}2^6\\cdot0{,}8^2=28\\cdot0{,}000064\\cdot0{,}64\\approx0{,}0011$. Compte amb la negació:\nno és $P(X=2)$.\n\\end{solucio}\n\n\\itemtria{binomial-i-arbre}{0,75}{1,25}\nL'enquesta es fa per telèfon al 60\\,\\% de les persones i per internet a la resta. Per telèfon, el 25\\,\\%\nrespon «No ho sé», i per internet, el 12,5\\,\\%. Comprova que la probabilitat que una persona qualsevol\nrespongui «No ho sé» és $0{,}2$, i calcula la probabilitat que, de 8 persones, exactament 2 ho responguin.\n\n\\begin{solucio}\nPer la probabilitat total: $0{,}6\\cdot0{,}25+0{,}4\\cdot0{,}125=0{,}15+0{,}05=0{,}2$.\\\\\nCom que cada persona respon «No ho sé» amb probabilitat $0{,}2$, independentment de les altres,\n$X\\sim B(8;\\,0{,}2)$ i $P(X=2)=\\dbinom82\\,0{,}2^2\\cdot0{,}8^6\\approx0{,}294$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nQuina és la probabilitat que com a mínim 2 responguin «No ho sé»? I que com a molt 2?\n\n\\begin{solucio}\n$P(X=0)=0{,}8^8\\approx0{,}1678$ i $P(X=1)=8\\cdot0{,}2\\cdot0{,}8^7\\approx0{,}3355$.\\\\\n\\textbf{Com a mínim 2}, pel contrari: $P(X\\ge2)=1-0{,}1678-0{,}3355\\approx0{,}497$.\\\\\n\\textbf{Com a molt 2}: $P(X\\le2)\\approx0{,}1678+0{,}3355+0{,}2936\\approx0{,}797$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la mitjana i la desviació típica de $X$, i interpreta la mitjana.\n\n\\begin{solucio}\n$\\mu=8\\cdot0{,}2=1{,}6$ i $\\sigma=\\sqrt{8\\cdot0{,}2\\cdot0{,}8}=\\sqrt{1{,}28}\\approx1{,}131$. De mitjana, en cada\ngrup de 8 persones, 1,6 responen «No ho sé».\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-probabilitats/q002/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-probabilitats/q002/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-probabilitats/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-probabilitats/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u14/binomial-probabilitats/q003",
+   "unitat": "u14",
+   "tema": "binomial-probabilitats",
+   "codi": "q003",
+   "titol": "Una B(6; 0,8) en abstracte: probabilitats puntuals, acumulades i d'un interval",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    21,
+    50,
+    53,
+    100,
+    101
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "binomial",
+    "probabilitats"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "binomial-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/original/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "inventa-context",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/inventa-context/enunciat.pdf",
+       "pdf_solucio": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/inventa-context/solucio.pdf",
+       "pdf_curt": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/inventa-context/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u14/binomial-probabilitats/q003/out/tries/binomial-tasca/inventa-context/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Sigui $X$ una variable aleatòria que segueix una distribució binomial $B(6;\\,0{,}8)$.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nCalcula $P(X=6)$ i $P(X\\ge5)$.\n\n\\begin{solucio}\n$P(X=6)=0{,}8^6\\approx0{,}262$ i $P(X=5)=6\\cdot0{,}8^5\\cdot0{,}2\\approx0{,}393$, i per tant\n$P(X\\ge5)\\approx0{,}655$.\n\\end{solucio}\n\n\\begin{tria}{binomial-tasca}\n\\itemtria{original}{1}{1,25}\nCalcula $P(X>1)$ i $P(2\\le X\\le4)$.\n\n\\begin{solucio}\n$P(X=0)=0{,}2^6=0{,}000064$ i $P(X=1)=6\\cdot0{,}8\\cdot0{,}2^5=0{,}001536$.\\\\\n$P(X>1)=1-P(X\\le1)=1-0{,}0016=0{,}9984$.\\\\\n$P(2\\le X\\le4)=1-P(X\\le1)-P(X\\ge5)\\approx1-0{,}0016-0{,}6554\\approx0{,}343$.\n\\end{solucio}\n\n\\itemtria{inventa-context}{1}{1,25}\nInventa una situació real en què una variable segueixi aquesta distribució $B(6;\\,0{,}8)$, i explica què\nvol dir, en aquesta situació, el resultat de $P(X\\ge5)$.\n\n\\begin{solucio}\nResposta oberta. Cal que hi hagi 6 proves independents, i a cada una, la mateixa probabilitat d'èxit,\n$0{,}8$. Per exemple: una jugadora encerta el 80\\,\\% dels tirs lliures i en fa 6, i $X$ és el nombre\nd'encerts.\\\\\nAleshores, $P(X\\ge5)\\approx0{,}655$ vol dir que, en un 65,5\\,\\% de les sèries de 6 tirs, n'encerta com a\nmínim 5.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la mitjana i la variància de $X$.\n\n\\begin{solucio}\n$\\mu=6\\cdot0{,}8=4{,}8$ i $\\sigma^2=6\\cdot0{,}8\\cdot0{,}2=0{,}96$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u14/binomial-probabilitats/q003/out/enunciat.pdf",
+   "pdf_solucio": "u14/binomial-probabilitats/q003/out/solucio.pdf",
+   "pdf_curt": "u14/binomial-probabilitats/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u14/binomial-probabilitats/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u7/bolzano-biseccio/q001",
