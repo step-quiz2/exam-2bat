@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[2,5]{1,5}
+\begin{tria}{parametres-tasca-a}
+\itemtria{original}{1,5}{2,5}
 Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els
 punts de $\mathbb{R}$.
 \[
@@ -18,6 +19,26 @@ En $x=-1$: $\lim_{x\to-1^-}f(x)=1-a$ i $f(-1)=-b+2$, d'on $1-a=-b+2$, és a dir 
 En $x=2$: $f(2)=2b+2$ i $\lim_{x\to2^+}f(x)=2a+b$, d'on $2b+2=2a+b$, és a dir $b=2a-2$.\\
 Igualant: $a+1=2a-2\Rightarrow \boxed{a=3}$ i $\boxed{b=4}$.
 \end{solucio}
+
+\itemtria{alternativa}{1,5}{2,5}
+Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els
+punts de $\mathbb{R}$.
+\[
+g(x)=\begin{cases}
+  x^2-a & \si{x<-1},\\[3pt]
+  bx+4  & \si{-1\le x\le 2},\\[3pt]
+  ax+b  & \si{x>2}.
+\end{cases}
+\]
+
+\begin{solucio}
+Cada branca és contínua al seu tros, de manera que només cal imposar la continuïtat
+als enganxaments.\\
+En $x=-1$: $\lim_{x\to-1^-}g(x)=1-a$ i $g(-1)=-b+4$, d'on $1-a=-b+4$, és a dir $b=a+3$.\\
+En $x=2$: $g(2)=2b+4$ i $\lim_{x\to2^+}g(x)=2a+b$, d'on $2b+4=2a+b$, és a dir $b=2a-4$.\\
+Igualant: $a+3=2a-4\Rightarrow \boxed{a=7}$ i $\boxed{b=10}$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{1}

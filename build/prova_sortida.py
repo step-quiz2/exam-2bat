@@ -89,7 +89,8 @@ def main() -> int:
         #    s'han compilat bé quan el build descobreix l'error.
         with tempfile.TemporaryDirectory() as t1:
             banc = copia_banc(Path(t1))
-            edita(banc / "u7/parametres-ab/q001/pregunta.tex", r"\apartat[2,5]{1,5}", r"\apartat[2,5]{1,25}")
+            edita(banc / "u7/parametres-ab/q001/pregunta.tex",
+                  r"\itemtria{original}{1,5}{2,5}", r"\itemtria{original}{1,25}{2,5}")
             abans = empremta(banc)
             r = build(banc, fals)
             tocats = sorted(k for k, v in empremta(banc).items() if abans.get(k) != v)
@@ -125,11 +126,11 @@ def main() -> int:
         with tempfile.TemporaryDirectory() as t4:
             banc = copia_banc(Path(t4))
             abans = empremta(banc)
-            r = build(banc, fals, "--pregunta", "u7/limits-punt/q001")
+            r = build(banc, fals, "--pregunta", "u8/derivada-definicio/q001")
             tocats = sorted(k for k, v in empremta(banc).items()
                             if abans.get(k) != v and k.endswith(".pdf"))
             # La pregunta té versió de 50 min: quatre PDF.
-            esperats = sorted(f"u7/limits-punt/q001/out/{nom}.pdf"
+            esperats = sorted(f"u8/derivada-definicio/q001/out/{nom}.pdf"
                               for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt"))
             comprova("--pregunta només escriu els PDF d'aquella pregunta, també els de 50 min",
                      r.returncode == 0 and tocats == esperats, f"codi {r.returncode}; tocats {tocats}")

@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[2,5]{1,5}
+\begin{tria}{parametres-tasca-a}
+\itemtria{original}{1,5}{2,5}
 Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
 \[
 f(x)=\begin{cases}
@@ -17,6 +18,25 @@ En $x=2$: $f(2)=4+b=5$ i $\lim_{x\to2^+}f(x)=2b-a=2-a$. Cal $2-a=5$, és a dir
 $\boxed{a=-3}$.\\
 Comprovació: amb $a=-3$ i $b=1$, en $x=0$ totes dues branques valen $1$, i en $x=2$ valen $5$.
 \end{solucio}
+
+\itemtria{alternativa}{1,5}{2,5}
+Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
+\[
+g(x)=\begin{cases}
+  ax+2 & \si{x<0},\\[3pt]
+  x^2+b & \si{0\le x\le 3},\\[3pt]
+  bx-a & \si{x>3}.
+\end{cases}
+\]
+
+\begin{solucio}
+Cada branca és contínua al seu tros: només cal mirar $x=0$ i $x=3$.\\
+En $x=0$: $\lim_{x\to0^-}g(x)=2$ i $g(0)=b$, d'on $\boxed{b=2}$.\\
+En $x=3$: $g(3)=9+b=11$ i $\lim_{x\to3^+}g(x)=3b-a=6-a$. Cal $6-a=11$, és a dir
+$\boxed{a=-5}$.\\
+Comprovació: amb $a=-5$ i $b=2$, en $x=0$ totes dues branques valen $2$, i en $x=3$ valen $11$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{1}

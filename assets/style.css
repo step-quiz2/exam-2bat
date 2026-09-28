@@ -84,7 +84,6 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;}
 .tria-apartat select:focus-visible{outline:2px solid var(--acc);outline-offset:1px;}
 .tria-visor-botons{display:flex;gap:6px;}
 .tria-visor-botons button{padding:3px 9px;min-height:26px;font-size:.62rem;}
-.tria-nota{font-size:.64rem;color:var(--alerta);}
 .visor-tria iframe{height:min(40vh,460px);}
 
 .meta{font-family:'Source Code Pro',monospace;font-size:.66rem;color:var(--muted);

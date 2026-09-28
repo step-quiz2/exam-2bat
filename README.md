@@ -12,10 +12,10 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 > continuïtat) en 8 temes i 18 de la unitat 8 (Derivades) en 6 temes, totes amb tres variants
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
 > variants; 5 de la unitat 10 (Representació de funcions) en 5 temes, i 5 de la PAU (l'examen
-> sencer de juny de 2026). Dues preguntes de la u7 (`limits-infinit/q002` i
-> `limits-grafica/q001`) ofereixen també una **tria**: un apartat amb més d'una alternativa,
-> triable des de la mateixa carta. El detall de la feina feta i pendent és a
-> [`handout.md`](handout.md).
+> sencer de juny de 2026). **Les 24 preguntes de la unitat 7 ofereixen una tria** en algun
+> apartat: un cop d'ull a les alternatives (quants ítems calculadors dur, o una tasca sencera
+> diferent), amb el seu propi Enunciat i Solució, triable des de la mateixa carta. El detall
+> de la feina feta i pendent és a [`handout.md`](handout.md).
 
 ---
 
@@ -57,8 +57,8 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 9. A baix: **prova-N.tex** baixa el cos de l'examen per a la carpeta d'exàmens (vegeu més
    avall). Cada pregunta hi porta la seva etiqueta: `\encapcalament{Q4a}`. Les solucions hi
    van a dins, i les fa sortir l'interruptor `\solucionstrue` del teu `main.tex`. **Tot en
-   un** i **amb solucions** baixen l'examen en un sol fitxer, preàmbul inclòs, per si no vols
-   carpeta. El comptador es posa verd quan l'examen fa 10 punts.
+   un** baixa l'examen en un sol fitxer, preàmbul inclòs, per si no vols carpeta —sempre sense
+   solucions—. El comptador es posa verd quan l'examen fa 10 punts.
 
 ### La carpeta d'exàmens
 

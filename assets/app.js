@@ -380,10 +380,8 @@ function pintaCarta(k, etiqueta) {
   // cegues. Sense cap tria (la immensa majoria de preguntes), això no pinta
   // res i la targeta queda exactament com abans.
   const tries = q.tries || [];
-  let personalitzada = false;
   const triesHtml = tries.map(t => {
     const actual = itemTriat(t, p.seleccio);
-    if (actual.id !== (curt ? t.defecte_curt : t.defecte_llarg)) personalitzada = true;
     const opcions = t.items.map(it =>
       `<option value="${esc(it.id)}"${it.id === actual.id ? ' selected' : ''}>`
       + `${esc(it.id.replace(/-/g, ' '))} (${num(curt ? it.curt : it.llarg)} punts)</option>`).join('');
@@ -423,9 +421,7 @@ function pintaCarta(k, etiqueta) {
       </span>
     </div>
     <div class="carta-titol">${esc(q.titol)}</div>
-    ${tries.length ? `<div class="tries">${triesHtml}
-      ${personalitzada ? '<div class="tria-nota">L\u2019Enunciat i la Solució d\u2019aquí sota (a «Alternativa») ja mostren la selecció feta. Els de la pregunta sencera, més avall, continuen mostrant el defecte; el .tex que en baixis reflecteix aquesta selecció.</div>' : ''}
-      </div>` : ''}
+    ${tries.length ? `<div class="tries">${triesHtml}</div>` : ''}
     <div class="meta">
       <span>${punts.map(num).join(' + ')} = ${num(punts.reduce((s, a) => s + a, 0))} punts</span>
       <span>${esc(q.dificultat)}</span>
@@ -509,7 +505,6 @@ function pinta() {
   $('#baixa-prova').disabled = !qs.length;
   $('#baixa-prova').textContent = `prova-${numProva()}.tex`;
   $('#baixa-tex').disabled = !qs.length;
-  $('#baixa-sol').disabled = !qs.length;
   escriuHash();
 }
 
@@ -531,7 +526,6 @@ $('.durada').querySelectorAll('button[data-durada]').forEach(b => {
 });
 $('#baixa-prova').onclick = () => baixa(`prova-${numProva()}.tex`, pecesExamen().join('\n\n') + '\n');
 $('#baixa-tex').onclick = () => baixa('examen-sencer.tex', munta(pecesExamen(), false));
-$('#baixa-sol').onclick = () => baixa('examen-sencer-solucions.tex', munta(pecesExamen(), true));
 $('#numprova').oninput = () => { $('#baixa-prova').textContent = `prova-${numProva()}.tex`; };
 $('.botons-entorn').querySelectorAll('button[data-entorn]').forEach(b => {
   b.onclick = () => baixa(`${b.dataset.entorn}.tex`, BANC[b.dataset.entorn]);

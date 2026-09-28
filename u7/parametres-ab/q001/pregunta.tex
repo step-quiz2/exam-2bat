@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[2,5]{1,5}
+\begin{tria}{parametres-tasca-a}
+\itemtria{original}{1,5}{2,5}
 Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
 \[
 f(x)=\begin{cases}
@@ -18,6 +19,26 @@ En $x=0$: $f(0)=e^0+a=1+a$ i $\lim_{x\to0^+}f(x)=b$. Cal $b=1+a$.\\
 En $x=2$: $\lim_{x\to2^-}f(x)=2a+b$ i $f(2)=4+\ln1=4$. Cal $2a+b=4$.\\
 Substituint: $2a+1+a=4$, d'on $\boxed{a=1}$ i $\boxed{b=2}$.
 \end{solucio}
+
+\itemtria{alternativa}{1,5}{2,5}
+Determina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\mathbb{R}$.
+\[
+g(x)=\begin{cases}
+  2^{x}+a & \si{x\le 0},\\[3pt]
+  ax+b & \si{0<x<3},\\[3pt]
+  5+\ln(x-2) & \si{x\ge 3}.
+\end{cases}
+\]
+
+\begin{solucio}
+Cada branca és contínua al seu interval: $2^x+a$ i $ax+b$ ho són a tot $\mathbb{R}$, i
+$5+\ln(x-2)$ ho és per a $x>2$, en particular a $[3,+\infty)$. Només cal estudiar els
+enganxaments.\\
+En $x=0$: $g(0)=2^0+a=1+a$ i $\lim_{x\to0^+}g(x)=b$. Cal $b=1+a$.\\
+En $x=3$: $\lim_{x\to3^-}g(x)=3a+b$ i $g(3)=5+\ln1=5$. Cal $3a+b=5$.\\
+Substituint: $3a+1+a=5$, d'on $\boxed{a=1}$ i $\boxed{b=2}$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{1}

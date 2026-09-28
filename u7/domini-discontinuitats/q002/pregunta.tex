@@ -14,7 +14,8 @@ ii) Cal $|x-2|>0$, és a dir $x\ne2$: $\mathrm{Dom}=\mathbb{R}\setminus\{2\}$.
 \textbf{salt infinit} (asímptota vertical $x=2$).
 \end{solucio}
 
-\apartat[1,25]{1}
+\begin{tria}{discontinuitats-racional}
+\itemtria{original}{1}{1,25}
 Troba els punts de discontinuïtat de la funció
 \[
 f(x)=\frac{x-1}{x^3+3x^2-4}
@@ -28,6 +29,22 @@ $x=1$: $\lim_{x\to1}f(x)=\dfrac19$, però $f(1)$ no existeix: \textbf{evitable}.
 $x=-2$: $(x+2)^2>0$ als dos costats, així que els dos laterals valen $+\infty$:
 \textbf{salt infinit}, amb $\lim_{x\to-2}f(x)=+\infty$.
 \end{solucio}
+
+\itemtria{alternativa}{1}{1,25}
+Troba els punts de discontinuïtat de la funció
+\[
+h(x)=\frac{x+1}{x^3-5x^2+3x+9}
+\]
+i classifica'ls.
+
+\begin{solucio}
+$x=-1$ anul·la el denominador. Per Ruffini, $x^3-5x^2+3x+9=(x+1)(x^2-6x+9)=(x+1)(x-3)^2$.
+El domini és $\mathbb{R}\setminus\{-1,3\}$ i, per a $x\neq-1$, $h(x)=\dfrac{1}{(x-3)^2}$.\\
+$x=-1$: $\lim_{x\to-1}h(x)=\dfrac1{16}$, però $h(-1)$ no existeix: \textbf{evitable}.\\
+$x=3$: $(x-3)^2>0$ als dos costats, així que els dos laterals valen $+\infty$:
+\textbf{salt infinit}, amb $\lim_{x\to3}h(x)=+\infty$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

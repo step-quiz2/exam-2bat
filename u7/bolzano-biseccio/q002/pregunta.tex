@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{0,75}
+\begin{tria}{bolzano-existencia}
+\itemtria{original}{0,75}{1,25}
 Demostra que la funció
 \[
 f(x)=3^{x-1}+x
@@ -14,6 +15,22 @@ $g$ és contínua a $\mathbb{R}$ (suma d'una exponencial i un polinomi), en part
 $[1,2]$, i $g(1)=1+1-4=-2<0$, $g(2)=3+2-4=1>0$.\\
 Pel teorema de Bolzano, existeix $c\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=4$.
 \end{solucio}
+
+\itemtria{alternativa}{0,75}{1,25}
+Demostra que la funció
+\[
+f(x)=2^{x}+2x
+\]
+pren el valor $7$ en algun punt de l'interval $(1,2)$.
+
+\begin{solucio}
+Considerem $g(x)=f(x)-7=2^{x}+2x-7$. Demostrar que $f$ pren el valor $7$ equival a
+demostrar que $g$ s'anul·la.\\
+$g$ és contínua a $\mathbb{R}$ (suma d'una exponencial i un polinomi), en particular a
+$[1,2]$, i $g(1)=2+2-7=-3<0$, $g(2)=4+4-7=1>0$.\\
+Pel teorema de Bolzano, existeix $c\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=7$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{1}

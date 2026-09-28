@@ -27,7 +27,8 @@ ii) Si $x\to-\infty$, aleshores $-x\to+\infty$ i $2^{-x}\to+\infty$.
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{1}
+\begin{tria}{determina-k}
+\itemtria{amb-reflexio}{1}{1,25}
 Considera la funció
 \[
 f(x)=\frac{kx^2-3x}{2x^2+5},
@@ -45,5 +46,21 @@ Si $k=0$, el numerador té grau $1$ i el límit val $0$. Per tant, el límit és
 ($\tfrac k2$ o $0$) i \textbf{no hi ha cap valor} de $k$ que el faci $+\infty$: el grau del
 numerador no pot superar mai el del denominador.
 \end{solucio}
+
+\itemtria{sense-reflexio}{0,75}
+Considera la funció
+\[
+f(x)=\frac{kx^2-3x}{2x^2+5},
+\]
+on $k$ és un nombre real. Determina $k$ perquè
+\[
+\lim_{x\to+\infty}f(x)=-2 .
+\]
+
+\begin{solucio}
+Numerador i denominador tenen grau $2$ i el límit val $\dfrac{k}{2}$.
+Imposant $\dfrac{k}{2}=-2$ s'obté $\boxed{k=-4}$.
+\end{solucio}
+\end{tria}
 
 \end{apartats}

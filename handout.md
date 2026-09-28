@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
 **Data:** 27 de setembre de 2026 · **Estat:** 64 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), dues amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 11 de sortida del build i 77 de
+8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 24 de la u7 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 11 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -30,10 +30,12 @@ un apartat pot oferir més d'una alternativa, triable des de la carta, sense dei
 mateix apartat de sempre quan no se'n toca res. La quinzena, arran d'una captura de pantalla
 del professor, va tancar el forat més gros que havien deixat les tries: es triava una
 alternativa sense poder-la llegir. Ara cada ítem té el seu propi Enunciat i Solució
-compilats, com qualsevol pregunta. La màquina
+compilats, com qualsevol pregunta. La setzena hi va afegir contingut nou i verificat a **totes
+les 24 preguntes de la u7**, a més de treure dues coses que el professor ja no necessitava (la
+nota de la tria i el botó «amb solucions»). La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
-resta d'unitats, i estendre les tries a més preguntes del banc.
+resta d'unitats, i estendre les tries a la resta del banc (u8, u9, u10).
 
 ---
 
@@ -442,6 +444,57 @@ build. Corregit als dos llocs on hi apareixia el patró, i afegit un cas nou, pa
 `--pregunta` que ja hi havia, que demostra que també escriu les previsualitzacions de cada
 ítem.
 
+### 2.16 Sessió 16 · Tries a tota la unitat 7, i dues supressions
+
+El professor va confirmar que la sessió 15 funcionava «perfecte» i va demanar estendre les
+tries a tota la u7 —no unes quantes preguntes més, totes—, més dues supressions: la frase de
+la nota de sota del selector («ja mostren la selecció feta…»), que li semblava soroll, i el
+botó «amb solucions» del peu de pàgina, que no feia servir.
+
+**Les supressions**, primer perquè eren ràpides i no interferien amb la resta: la nota es
+treu sencera d'`app.js` (i la variable `personalitzada`, que només servia per decidir-la, ja
+no cal); el botó, d'`index.html` i de les tres línies d'`app.js` que hi feien referència (el
+`disabled` en pintar i els dos `onclick`). Cap altre lloc en depenia.
+
+**Contingut nou a les 22 preguntes que encara no en tenien** (`bolzano-biseccio`,
+`continuitat-trossos`, `domini-discontinuitats`, `limits-grafica/q002-q003`,
+`limits-infinit/q001,q003`, `limits-punt`, `limits-trossos` i `parametres-ab`; les altres
+dues ja en tenien des de la 14). Cada tria hi és nova —no és el mateix mecanisme repetit amb
+un altre nom—: quantes tasques de límits o continuïtat calculadores dur, quin punt de
+substitució directa preguntar dins la mateixa branca d'una funció a trossos, quina funció
+(polinòmica, exponencial, logarítmica) fer servir per a la mateixa demostració de Bolzano o
+el mateix estudi de continuïtat amb paràmetres, o quina lectura fer sobre la mateixa gràfica.
+Cada funció, límit i solució nova es va verificar numèricament amb Python (i amb SymPy els
+casos amb factoritzacions) **abans** d'escriure-la al `.tex`, mai després.
+
+**Mètode.** Amb 22 preguntes per davant, calia una disciplina que aguantés l'escala: per a
+cada pregunta, es desa l'original, s'escriu la migració, i es passa **immediatament** per
+`materialitza()` a totes dues modalitats (comparació byte a byte amb l'original) i per
+`punts_del_tex()`, abans de tocar la següent. Aquesta disciplina —no la vista, ni la
+intuïció— és la que va detectar els dos errors propis d'aquesta sessió, tots dos en el primer
+tema (`bolzano-biseccio` i `continuitat-trossos`) i cap als dos temes següents: primer, una
+edició mal feta a `continuitat-trossos/q001` que va barrejar l'enunciat d'un apartat amb la
+solució d'un altre (es va refer el fitxer sencer, no pedaçar-lo); després, l'ordre dels
+arguments de `\itemtria{id}{1h30}{50min}` invertit a `continuitat-trossos/q002` (havia
+transcrit l'ordre literal del claudàtor `[50min]{1h30}` sense capgirar-lo). Els 22 fitxers
+migrats després ja no en van tenir cap.
+
+En acabar-ho tot, dues bateries pròpies van necessitar-se al dia, no perquè fallessin sinó
+perquè dues de les seves fixtures assumien un contingut que ja no hi era: `prova_sortida.py`
+trencava la puntuació d'una pregunta injectant-hi `\apartat[2,5]{1,5}`, que ja no existeix a
+`parametres-ab/q001` (ara hi ha `\itemtria{original}{1,5}{2,5}`), i el cas de `--pregunta`
+esperava exactament 4 PDF de `limits-punt/q001`, que ara en té 10 perquè ja té una tria; s'ha
+mogut aquest segon cas a una pregunta de la u8 encara sense tries (`derivada-definicio/q001`),
+per no barrejar-lo amb el cas ja existent que prova `--pregunta` amb tries. La prova
+d'integració amb jsdom (no formal al repositori) tenia el mateix problema en dos llocs
+(assumia que `limits-infinit/q003` i el tema «Límits en un punt» no tenien tries), corregits
+de la mateixa manera.
+
+**Verificació.** Les 24 preguntes, validades i compilades de debò amb el preàmbul reduït
+d'aquest entorn: 436 PDF (abans, 268), cap error, cap *Overfull*, totes a una pàgina, els
+mateixos punts per defecte d'abans de tocar-les. Les tres bateries formals (38/11/77) i la
+integració amb jsdom, totes en verd després de posar-les al dia.
+
 ---
 
 ## 3. Decisions preses
@@ -555,6 +608,14 @@ build. Corregit als dos llocs on hi apareixia el patró, i afegit un cas nou, pa
   a 390 px d'amplada. El seu `main.tex` compila en 2 pàgines, i el de solucions en 5, sense cap
   *Overfull*. També un examen combinat (Límits en un punt, Anàlisi, Bolzano, Probabilitat i
   Geometria), amb ✕ i ▲ entremig: 2 pàgines i 4 amb solucions, sense cap *Overfull*.
+- Sessió 16: les 24 preguntes de la u7 amb tries, compilades amb el preàmbul reduït (436 PDF,
+  168 de nous respecte de la sessió 15): cap error, cap *Overfull*, totes a una pàgina, els
+  mateixos punts de defecte d'abans de migrar-les. Cada funció, límit i solució nous, verificats
+  numèricament amb Python (i SymPy per a les factoritzacions) abans d'escriure'ls. Dues
+  fixtures pròpies (`prova_sortida.py`) i dos supòsits de la prova d'integració amb jsdom
+  necessitaven posar-se al dia perquè dues preguntes que fins ara servien de referència
+  (`parametres-ab/q001`, `limits-punt/q001`) havien canviat de forma; corregits sense canviar
+  què comprovaven.
 - Sessió 15: les previsualitzacions de `limits-grafica/q001` i `limits-infinit/q002`
   compilades amb el preàmbul reduït i revisades visualment («avalua imatges» hi surt amb
   l'enunciat i la solució senceres, en blau). Quatre casos nous a la prova d'integració amb
@@ -627,9 +688,9 @@ build. Corregit als dos llocs on hi apareixia el patró, i afegit un cas nou, pa
 
 Tres variants per tema: se'n poden muntar tres exàmens diferents. Totes a mida PAU, amb la
 versió de 50 min. Els minuts són estimacions (1 h 30 · 50 min) i s'han de calibrar amb dades
-reals (vegeu 7.4). Els punts de la taula són sempre els del defecte: `limits-infinit/q002` i
-`limits-grafica/q001` ofereixen, a més, una tria (sessió 14, secció 2.14), que no hi canvia res
-mentre no es toqui des de la carta.
+reals (vegeu 7.4). Els punts de la taula són sempre els del defecte: **les 24 preguntes**
+ofereixen, a més, una tria en algun apartat (sessions 14 i 16, seccions 2.14 i 2.16), que no
+hi canvia res mentre no es toqui des de la carta.
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
@@ -931,10 +992,10 @@ l'ordre numèric.
 - Al mòbil, llista de temes plegable. Ara la llista queda sencera abans de l'examen.
 - Els noms de les unitats apareixen en passar el ratolí per sobre, i això no funciona en
   pantalles tàctils. Cal mostrar-los d'una altra manera.
-- **Estendre les tries a més preguntes.** Ara mateix només en tenen `limits-infinit/q002` i
-  `limits-grafica/q001`. El «material reservat» de la sessió 6 (7.4) —les lectures de límits a
-  l'infinit i en $x=4$ de `limits-grafica/q001` i `q002`— és exactament la mena de contingut que
-  hi encaixaria com a ítem nou, sense haver-lo de reescriure de zero.
+- **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
+  ja en tenen. Queden la u8 (18), la u9 (12) i la u10 (5): el mateix mètode (una alternativa
+  nova, verificada numèricament abans d'escriure-la, un fitxer verificat just després de
+  migrar-lo) hi val igual.
 - **PDF de la pregunta sencera amb una combinació concreta.** Des de la sessió 15, cada ítem
   ja té el seu propi PDF (2.15); el que encara falta és un PDF de tota la pregunta muntada amb
   una combinació concreta de totes les seves tries alhora, útil per a preguntes amb més d'una
@@ -1062,28 +1123,38 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 15. Parteix del de la sessió 14, que ja és al repositori (i ja
-compilat amb els paquets oficials: vegeu la confirmació a l'apartat anterior). Aquesta vegada
-**no torna a incloure** `u7/limits-infinit/q002/pregunta.tex`, `u7/limits-grafica/q001/pregunta.tex`,
-`build/prova_paritat.py` ni `build/prova_validacio.py`: cap dels quatre canvia en aquesta
-sessió, i ja tens la versió correcta de la 14.
+És el lliurament de la sessió 16. Parteix del de la sessió 15, que ja és al repositori.
+Aquesta vegada **no torna a incloure** `build/build.py`, `build/prova_paritat.py` ni
+`build/prova_validacio.py`: cap dels tres canvia en aquesta sessió.
 
 | Fitxer | Canvi |
 |---|---|
-| `build/build.py` | **Nou**: `cos_dun_item()` n'aïlla el cos i els punts d'un ítem concret; `construeix()` el compila com una pregunta d'un sol apartat a `out/tries/<id-tria>/<id-item>/` (enunciat i solució, amb la versió de 50 min deduplicada quan no hi difereix); el catàleg hi porta les rutes de cada ítem |
-| `assets/app.js` | `pdfDeItem()`; cada tria de la carta té ara els seus propis botons Enunciat/Solució, de l'ítem **triat**, reaprofitant `mostra()` amb la clau composta `pregunta:tria`; si el visor és obert i es canvia l'ítem, s'actualitza sol |
-| `assets/style.css` | `.tria-apartat` reestructurat en columna (selector, botons, visor); `.tria-visor-botons`; `.visor-tria` |
-| `build/prova_sortida.py` | **Corregit**: el patró de comptatge de PDF (`*/*/*/out/*.pdf` → `*/*/*/out/**/*.pdf`, als dos llocs) no arribava a `out/tries/…`; afegit un cas nou (`--pregunta` amb tries); 11 comprovacions en total |
-| `README.md` | Punt 5 de «Ús» i apartat de tries actualitzats: cada tria ja té el seu Enunciat/Solució, no només el defecte |
-| `handout.md` | Aquest mateix lliurament: secció 2.15, l'entrada nova a «Errors trobats i corregits», la decisió presa, els comptatges actualitzats, i 7.5 i 5 posades al dia |
+| `index.html` | Treu el botó «amb solucions» |
+| `assets/app.js` | Treu la nota de sota del selector de tria (i la variable `personalitzada`, que només hi servia) i les tres línies del botó «amb solucions» |
+| `assets/style.css` | Treu la regla `.tria-nota` |
+| `build/prova_sortida.py` | **Dues fixtures corregides**: la injecció que trencava la puntuació apuntava a `\apartat[2,5]{1,5}`, que ja no existeix a `parametres-ab/q001` (ara és una tria); el cas de `--pregunta` esperava 4 PDF de `limits-punt/q001`, que ara en té 10 perquè ja té una tria, i s'ha mogut a `u8/derivada-definicio/q001` |
+| `u7/bolzano-biseccio/{q001,q002,q003}/pregunta.tex` | **Tria nova**: una funció alternativa per a la demostració de Bolzano |
+| `u7/continuitat-trossos/{q001,q002,q003}/pregunta.tex` | **Tria nova**: a q001 i q003, avaluar la funció en quatre punts en lloc de classificar una discontinuïtat; a q002, una funció a trossos alternativa a l'apartat gran |
+| `u7/domini-discontinuitats/{q001,q002,q003}/pregunta.tex` | **Tria nova**: una funció racional alternativa per a l'apartat de domini i discontinuïtats |
+| `u7/limits-grafica/{q002,q003}/pregunta.tex` | **Tria nova**: avaluar la funció en quatre punts llegits de la mateixa gràfica, en lloc de classificar la discontinuïtat (q001 ja en tenia una, de la sessió 14) |
+| `u7/limits-infinit/{q001,q003}/pregunta.tex` | **Tria nova**: a q001, «determina k» sense la reflexió; a q003, un segon límit al primer apartat (q002 ja en tenia, de la sessió 14) |
+| `u7/limits-punt/{q001,q002,q003}/pregunta.tex` | **Tria nova**: un segon límit (q001, q003) o un parell alternatiu (q002) al primer apartat |
+| `u7/limits-trossos/{q001,q002,q003}/pregunta.tex` | **Tria nova**: un punt de substitució directa alternatiu, dins la mateixa branca |
+| `u7/parametres-ab/{q001,q002,q003}/pregunta.tex` | **Tria nova**: una funció a trossos amb paràmetres alternativa a l'apartat gran |
+| `README.md` | Estat: les 24 preguntes de la u7 ja tenen tria, no només dues |
+| `handout.md` | Aquest mateix lliurament: secció 2.16, comptatges, 6.1, 7.5 i 5 posades al dia |
+
+**Les 24 preguntes de la unitat 7 ofereixen ara una tria.** Cap contingut es repeteix d'una
+pregunta a una altra: cada alternativa és nova i es va verificar numèricament (Python, i
+SymPy per a les factoritzacions) abans d'escriure-la. El defecte de cada pregunta és idèntic,
+byte a byte, al d'abans de migrar-la.
 
 No porta cap PDF ni `cataleg.js`, i no toca cap workflow. Després de pujar-lo a `_uploads`,
-cal fer **Run workflow**: recompilarà les 64 preguntes —ara amb 268 PDF, 22 més que abans,
-per les previsualitzacions noves— i passarà totes tres bateries, amb `prova_sortida.py` ja
-comptant-los tots.
+cal fer **Run workflow**: recompilarà les 64 preguntes —ara amb 436 PDF, 168 més que abans,
+per les 22 preguntes noves amb tria— i passarà totes tres bateries.
 
-Com a la sessió 14, tota la compilació real d'aquesta sessió s'ha fet amb el preàmbul reduït
-d'aquest entorn (sense `lmodern` ni `babel`-català), així que els PDF que se'n van generar no
-són definitius. La sessió 14 ja va confirmar que aquest contingut compila net amb els paquets
-oficials; val la pena mirar igualment aquest primer **Run workflow**, perquè és la primera
-vegada que compilen les previsualitzacions de cada ítem amb aquests paquets.
+Com a les sessions 14 i 15, tota la compilació real d'aquesta sessió s'ha fet amb el preàmbul
+reduït d'aquest entorn (sense `lmodern` ni `babel`-català): sense cap error ni «Overfull» en
+cap de les 64 preguntes, però no són els PDF definitius. Val la pena mirar aquest **Run
+workflow** amb atenció, perquè és la primera vegada que aquest contingut compila amb els
+paquets oficials.

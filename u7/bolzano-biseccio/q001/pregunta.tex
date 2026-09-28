@@ -5,7 +5,8 @@ f(x)=x^3+x^2+x-1 .
 
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{bolzano-existencia}
+\itemtria{original}{1}{1,25}
 Enuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució
 a l'interval $[0,1]$.
 
@@ -15,6 +16,21 @@ oposats, aleshores existeix almenys un $c\in(a,b)$ tal que $f(c)=0$.\\
 $f$ és polinòmica, per tant contínua a $\mathbb{R}$ i en particular a $[0,1]$.
 Com que $f(0)=-1<0$ i $f(1)=2>0$, hi ha almenys una arrel a $(0,1)$.
 \end{solucio}
+
+\itemtria{alternativa}{1}{1,25}
+Enuncia el teorema de Bolzano i demostra que l'equació
+\[
+x^3-4x+1=0
+\]
+té almenys una solució a l'interval $[0,1]$.
+
+\begin{solucio}
+\emph{Teorema de Bolzano.} Si $g$ és contínua a $[a,b]$ i $g(a)$ i $g(b)$ tenen signes
+oposats, aleshores existeix almenys un $c\in(a,b)$ tal que $g(c)=0$.\\
+Sigui $g(x)=x^3-4x+1$: és polinòmica, per tant contínua a $\mathbb{R}$ i en particular a
+$[0,1]$. Com que $g(0)=1>0$ i $g(1)=1-4+1=-2<0$, hi ha almenys una arrel a $(0,1)$.
+\end{solucio}
+\end{tria}
 
 \apartat[1,25]{0,75}
 Aplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui
