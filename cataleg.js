@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 10:53 UTC",
+ "generat": "2026-09-28 13:51 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -448,7 +448,139 @@ const BANC = {
    "punts": 2.5,
    "apartats": [
     0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    43,
+    45,
+    100
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "domini",
+    "punts de tall",
+    "radicals"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "domini-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q001/out/tries/domini-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q001/out/tries/domini-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q001/out/tries/domini-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q001/out/tries/domini-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tall-fals",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q001/out/tries/domini-tasca/tall-fals/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q001/out/tries/domini-tasca/tall-fals/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q001/out/tries/domini-tasca/tall-fals/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q001/out/tries/domini-tasca/tall-fals/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDetermina el domini de les funcions següents:\n\\begin{graella}{3}\n  \\sa f(x)=\\frac{x+1}{x^2-4} & \\sa g(x)=\\sqrt{x^2-x-6} & \\sa h(x)=\\ln(3-x)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal que el denominador no s'anul·li: $x^2-4=0$ en $x=\\pm2$. Domini:\n$\\mathbb{R}\\setminus\\{-2,2\\}$.\\\\\nii) Cal $x^2-x-6=(x-3)(x+2)\\ge0$: domini $(-\\infty,-2]\\cup[3,+\\infty)$.\\\\\niii) Cal $3-x>0$: domini $(-\\infty,3)$.\n\\end{solucio}\n\n\\begin{tria}{domini-tasca}\n\\itemtria{original}{1}{1,25}\nDetermina el domini i els punts de tall amb els eixos de\n\\[\nf(x)=\\frac{x^2-9}{x+2} .\n\\]\n\n\\begin{solucio}\n\\textbf{Domini}: $x+2\\neq0$, és a dir $\\mathbb{R}\\setminus\\{-2\\}$.\\\\\n\\textbf{Tall amb l'eix $OY$}: $f(0)=\\dfrac{-9}{2}$, el punt $\\left(0,-\\tfrac92\\right)$.\\\\\n\\textbf{Talls amb l'eix $OX$}: $f(x)=0$ quan el numerador s'anul·la i el denominador no:\n$x^2-9=0$ dona $x=3$ i $x=-3$. Els punts són $(3,0)$ i $(-3,0)$.\n\\end{solucio}\n\n\\itemtria{tall-fals}{1}{1,25}\nDetermina el domini i els punts de tall amb els eixos de\n\\[\nf(x)=\\frac{x^2-9}{x^2-x-6} .\n\\]\n\n\\begin{solucio}\n\\textbf{Domini}: $x^2-x-6=(x-3)(x+2)\\neq0$, és a dir $\\mathbb{R}\\setminus\\{-2,3\\}$.\\\\\n\\textbf{Tall amb l'eix $OY$}: $f(0)=\\dfrac{-9}{-6}=\\dfrac32$, el punt $\\left(0,\\tfrac32\\right)$.\\\\\n\\textbf{Talls amb l'eix $OX$}: el numerador, $x^2-9$, s'anul·la en $x=3$ i en $x=-3$. Però $x=3$ no és\ndel domini, i allà no hi ha cap tall: l'únic és $(-3,0)$. No n'hi ha prou que el numerador s'anul·li;\nel punt ha de ser del domini.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDetermina el domini de\n\\[\nk(x)=\\frac{\\sqrt{x+1}}{x-2} .\n\\]\n\n\\begin{solucio}\nCal complir dues condicions alhora: $x+1\\ge0$, és a dir $x\\ge-1$, i $x-2\\neq0$.\\\\\nDomini: $[-1,+\\infty)\\setminus\\{2\\}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u10/domini-talls/q001/out/enunciat.pdf",
+   "pdf_solucio": "u10/domini-talls/q001/out/solucio.pdf",
+   "pdf_curt": "u10/domini-talls/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/domini-talls/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/domini-talls/q002",
+   "unitat": "u10",
+   "tema": "domini-talls",
+   "codi": "q002",
+   "titol": "Domini de racionals, radicals i logaritmes, i talls d'una racional amb denominador sense zeros",
+   "punts": 2.5,
+   "apartats": [
     1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●○○",
+   "origen": [
+    43,
+    45,
+    100
+   ],
+   "minuts": 18,
+   "minuts_curt": 11,
+   "etiquetes": [
+    "domini",
+    "punts de tall",
+    "logaritmes"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "domini-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q002/out/tries/domini-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q002/out/tries/domini-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q002/out/tries/domini-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q002/out/tries/domini-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "error-simplificar",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q002/out/tries/domini-tasca/error-simplificar/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q002/out/tries/domini-tasca/error-simplificar/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q002/out/tries/domini-tasca/error-simplificar/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q002/out/tries/domini-tasca/error-simplificar/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{domini-tasca}\n\\itemtria{original}{0,75}{1,25}\nDetermina el domini de les funcions següents:\n\\begin{graella}{3}\n  \\sa f(x)=\\frac{2x-1}{x^2-5x+6} & \\sa g(x)=\\sqrt{9-x^2} & \\sa h(x)=\\ln\\left(x^2-4x\\right)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal que el denominador no s'anul·li: $x^2-5x+6=(x-2)(x-3)=0$ en $x=2$ i $x=3$. Domini:\n$\\mathbb{R}\\setminus\\{2,3\\}$.\\\\\nii) Cal $9-x^2\\ge0$, és a dir $x^2\\le9$: domini $[-3,3]$.\\\\\niii) Cal $x^2-4x=x(x-4)>0$: domini $(-\\infty,0)\\cup(4,+\\infty)$.\n\\end{solucio}\n\n\\itemtria{error-simplificar}{0,75}{1,25}\nUn alumne afirma que el domini de $f(x)=\\dfrac{x^2-1}{x-1}$ és $\\mathbb{R}$, perquè simplificant queda\n$x+1$, i que $g(x)=\\ln\\left(x^2\\right)$ té el mateix domini que $2\\ln x$, perquè\n$\\ln\\left(x^2\\right)=2\\ln x$. Té raó en algun dels dos casos? Justifica-ho.\n\n\\begin{solucio}\nEn \\textbf{cap} dels dos: el domini és el de la funció tal com està escrita, abans de transformar-la.\\\\\ni) $f$ no està definida en $x=1$, perquè hi divideix per zero: $\\mathrm{Dom}\\,f=\\mathbb{R}\\setminus\\{1\\}$.\nLa simplificació només val per a $x\\neq1$.\\\\\nii) $\\ln\\left(x^2\\right)$ existeix sempre que $x^2>0$, és a dir per a $x\\neq0$:\n$\\mathrm{Dom}\\,g=\\mathbb{R}\\setminus\\{0\\}$. En canvi, $2\\ln x$ només existeix per a $x>0$. La igualtat\n$\\ln\\left(x^2\\right)=2\\ln x$ només és certa per a $x>0$; en general, $\\ln\\left(x^2\\right)=2\\ln|x|$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nDetermina el domini i els punts de tall amb els eixos de\n\\[\nf(x)=\\frac{x^3-4x}{x^2+1} .\n\\]\n\n\\begin{solucio}\n\\textbf{Domini}: el denominador, $x^2+1$, no s'anul·la mai, i per tant el domini és tot $\\mathbb{R}$.\\\\\n\\textbf{Tall amb l'eix $OY$}: $f(0)=0$, el punt $(0,0)$.\\\\\n\\textbf{Talls amb l'eix $OX$}: el numerador és $x^3-4x=x(x-2)(x+2)$, que s'anul·la en $x=0$, $x=2$ i\n$x=-2$. Els punts són $(-2,0)$, $(0,0)$ i $(2,0)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDetermina el domini de\n\\[\nk(x)=\\frac{\\sqrt{x-1}}{\\ln x} .\n\\]\n\n\\begin{solucio}\nCal complir tres condicions alhora: $x-1\\ge0$ (l'arrel), $x>0$ (el logaritme) i $\\ln x\\neq0$, és a dir\n$x\\neq1$ (el denominador).\\\\\nDomini: $(1,+\\infty)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u10/domini-talls/q002/out/enunciat.pdf",
+   "pdf_solucio": "u10/domini-talls/q002/out/solucio.pdf",
+   "pdf_curt": "u10/domini-talls/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/domini-talls/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/domini-talls/q003",
+   "unitat": "u10",
+   "tema": "domini-talls",
+   "codi": "q003",
+   "titol": "Domini amb exponencials i radicals, i talls d'una funció amb radical",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -472,12 +604,38 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDetermina el domini de les funcions següents:\n\\begin{graella}{3}\n  \\sa f(x)=\\frac{x+1}{x^2-4} & \\sa g(x)=\\sqrt{x^2-x-6} & \\sa h(x)=\\ln(3-x)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal que el denominador no s'anul·li: $x^2-4=0$ en $x=\\pm2$. Domini:\n$\\mathbb{R}\\setminus\\{-2,2\\}$.\\\\\nii) Cal $x^2-x-6=(x-3)(x+2)\\ge0$: domini $(-\\infty,-2]\\cup[3,+\\infty)$.\\\\\niii) Cal $3-x>0$: domini $(-\\infty,3)$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDetermina el domini i els punts de tall amb els eixos de\n\\[\nf(x)=\\frac{x^2-9}{x+2} .\n\\]\n\n\\begin{solucio}\n\\textbf{Domini}: $x+2\\neq0$, és a dir $\\mathbb{R}\\setminus\\{-2\\}$.\\\\\n\\textbf{Tall amb l'eix $OY$}: $f(0)=\\dfrac{-9}{2}$, el punt $\\left(0,-\\tfrac92\\right)$.\\\\\n\\textbf{Talls amb l'eix $OX$}: $f(x)=0$ quan el numerador s'anul·la i el denominador no:\n$x^2-9=0$ dona $x=3$ i $x=-3$. Els punts són $(3,0)$ i $(-3,0)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDetermina el domini de\n\\[\nk(x)=\\frac{\\sqrt{x+1}}{x-2} .\n\\]\n\n\\begin{solucio}\nCal complir dues condicions alhora: $x+1\\ge0$, és a dir $x\\ge-1$, i $x-2\\neq0$.\\\\\nDomini: $[-1,+\\infty)\\setminus\\{2\\}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
-   "pdf": "u10/domini-talls/q001/out/enunciat.pdf",
-   "pdf_solucio": "u10/domini-talls/q001/out/solucio.pdf",
-   "pdf_curt": "u10/domini-talls/q001/out/enunciat-curt.pdf",
-   "pdf_solucio_curt": "u10/domini-talls/q001/out/solucio-curt.pdf"
+   "tries": [
+    {
+     "id": "domini-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q003/out/tries/domini-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q003/out/tries/domini-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q003/out/tries/domini-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q003/out/tries/domini-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "domini-parametre",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/domini-talls/q003/out/tries/domini-tasca/domini-parametre/enunciat.pdf",
+       "pdf_solucio": "u10/domini-talls/q003/out/tries/domini-tasca/domini-parametre/solucio.pdf",
+       "pdf_curt": "u10/domini-talls/q003/out/tries/domini-tasca/domini-parametre/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/domini-talls/q003/out/tries/domini-tasca/domini-parametre/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{domini-tasca}\n\\itemtria{original}{0,75}{1,25}\nDetermina el domini de les funcions següents:\n\\begin{graella}{3}\n  \\sa f(x)=\\frac{x+3}{x^2+4} & \\sa g(x)=\\sqrt{2x+6} & \\sa h(x)=e^{1/x}\n\\end{graella}\n\n\\begin{solucio}\ni) El denominador, $x^2+4$, no s'anul·la mai: domini $\\mathbb{R}$.\\\\\nii) Cal $2x+6\\ge0$: domini $[-3,+\\infty)$.\\\\\niii) L'exponencial existeix per a qualsevol exponent, però cal que existeixi $\\frac1x$: domini\n$\\mathbb{R}\\setminus\\{0\\}$.\n\\end{solucio}\n\n\\itemtria{domini-parametre}{0,75}{1,25}\nPer a quins valors de $k$ el domini de $f(x)=\\dfrac{x+1}{x^2+kx+4}$ és tot $\\mathbb{R}$? I el de\n$g(x)=\\sqrt{x^2+kx+4}$?\n\n\\begin{solucio}\ni) El denominador no s'ha d'anul·lar mai: $x^2+kx+4=0$ no pot tenir solucions reals, i el\ndiscriminant ha de ser negatiu, $k^2-16<0$. És a dir, $-4<k<4$.\\\\\nii) Cal $x^2+kx+4\\ge0$ per a tota $x$. Com que la paràbola s'obre cap amunt, n'hi ha prou que no\ntalli l'eix en dos punts: $k^2-16\\le0$, és a dir $-4\\le k\\le4$. Amb $k=4$, per exemple,\n$x^2+4x+4=(x+2)^2\\ge0$: l'arrel existeix a tot arreu, però $f$ no, perquè el denominador s'anul·la\nen $x=-2$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nDetermina el domini i els punts de tall amb els eixos de\n\\[\nf(x)=\\sqrt{x^2-4x} .\n\\]\n\n\\begin{solucio}\n\\textbf{Domini}: cal $x^2-4x=x(x-4)\\ge0$, és a dir $(-\\infty,0]\\cup[4,+\\infty)$.\\\\\n\\textbf{Tall amb l'eix $OY$}: $f(0)=0$, el punt $(0,0)$.\\\\\n\\textbf{Talls amb l'eix $OX$}: $x^2-4x=0$ en $x=0$ i en $x=4$, que són tots dos del domini. Els punts\nsón $(0,0)$ i $(4,0)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDetermina el domini de\n\\[\nk(x)=\\frac{x-1}{\\ln(x+3)} .\n\\]\n\n\\begin{solucio}\nCal $x+3>0$ (el logaritme), és a dir $x>-3$, i $\\ln(x+3)\\neq0$ (el denominador), és a dir $x+3\\neq1$,\n$x\\neq-2$.\\\\\nDomini: $(-3,-2)\\cup(-2,+\\infty)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "pdf": "u10/domini-talls/q003/out/enunciat.pdf",
+   "pdf_solucio": "u10/domini-talls/q003/out/solucio.pdf",
+   "pdf_curt": "u10/domini-talls/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/domini-talls/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u10/estudi-polinomica/q001",
@@ -500,7 +658,6 @@ const BANC = {
    "origen": [
     75,
     78,
-    84,
     88
    ],
    "minuts": 20,
