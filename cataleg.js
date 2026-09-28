@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 15:43 UTC",
+ "generat": "2026-09-28 15:58 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -1233,12 +1233,170 @@ const BANC = {
    ],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=\\begin{cases}\n  x^2 & \\si{x\\le 1},\\\\[4pt]\n  2-\\dfrac{1}{x} & \\si{x>1}.\n\\end{cases}\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nEstudia'n la continuïtat i troba'n les asímptotes.\n\n\\begin{solucio}\nCada branca és contínua al seu tros, i en $x=1$: $f(1)=1$, $\\lim_{x\\to1^-}f(x)=1$ i\n$\\lim_{x\\to1^+}f(x)=2-1=1$. La funció és \\textbf{contínua a tot $\\mathbb{R}$}.\\\\\n\\textbf{Asímptotes verticals}: no n'hi ha. L'únic punt problemàtic de la segona branca seria\n$x=0$, que no és al seu tros.\\\\\n\\textbf{Horitzontals}: $\\lim_{x\\to+\\infty}f(x)=2$, i per tant $y=2$ és asímptota horitzontal\nper la dreta. Per l'esquerra, $\\lim_{x\\to-\\infty}x^2=+\\infty$: no n'hi ha.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la monotonia i troba'n els extrems.\n\n\\begin{solucio}\nPer a $x<1$: $f'(x)=2x$, negativa a $(-\\infty,0)$ i positiva a $(0,1)$.\\\\\nPer a $x>1$: $f'(x)=\\dfrac{1}{x^2}>0$, sempre creixent.\\\\\nAixí, $f$ \\textbf{decreix} a $(-\\infty,0)$ i \\textbf{creix} a $(0,+\\infty)$: hi ha un\n\\textbf{mínim} en $(0,0)$, que a més és el mínim absolut.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nRepresenta la funció.\n\n\\begin{solucio}\nA l'esquerra de $x=1$ és la paràbola $y=x^2$; a la dreta, una branca creixent que s'acosta a\n$y=2$ sense arribar-hi. Les dues branques s'enganxen en $(1,1)$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.75cm]\n  \\draw[gray!55,very thin,step=1] (-2,-1) grid (7,4);\n  \\draw[->] (-2.4,0) -- (7.4,0) node[below right] {$x$};\n  \\draw[->] (0,-1.4) -- (0,4.4) node[above left] {$y$};\n  \\foreach \\i in {-1,1,2,4,6} \\draw (\\i,0.1) -- (\\i,-0.1) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {1,2,3} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-2,2) -- (7,2);\n  \\begin{scope}\n    \\clip (-2,-1) rectangle (7,4);\n    \\draw[\\colorgrafica,very thick,domain=-2:1,samples=60,smooth] plot (\\x,{\\x*\\x});\n    \\draw[\\colorgrafica,very thick,domain=1:7,samples=100,smooth] plot (\\x,{2-1/\\x});\n  \\end{scope}\n  \\fill (1,1) circle (2.2pt); \\fill (0,0) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "trossos-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q001/out/tries/trossos-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q001/out/tries/trossos-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q001/out/tries/trossos-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q001/out/tries/trossos-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "derivable-enganxament",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q001/out/tries/trossos-tasca/derivable-enganxament/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q001/out/tries/trossos-tasca/derivable-enganxament/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q001/out/tries/trossos-tasca/derivable-enganxament/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q001/out/tries/trossos-tasca/derivable-enganxament/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\begin{cases}\n  x^2 & \\si{x\\le 1},\\\\[4pt]\n  2-\\dfrac{1}{x} & \\si{x>1}.\n\\end{cases}\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nEstudia'n la continuïtat i troba'n les asímptotes.\n\n\\begin{solucio}\nCada branca és contínua al seu tros, i en $x=1$: $f(1)=1$, $\\lim_{x\\to1^-}f(x)=1$ i\n$\\lim_{x\\to1^+}f(x)=2-1=1$. La funció és \\textbf{contínua a tot $\\mathbb{R}$}.\\\\\n\\textbf{Asímptotes verticals}: no n'hi ha. L'únic punt problemàtic de la segona branca seria\n$x=0$, que no és al seu tros.\\\\\n\\textbf{Horitzontals}: $\\lim_{x\\to+\\infty}f(x)=2$, i per tant $y=2$ és asímptota horitzontal\nper la dreta. Per l'esquerra, $\\lim_{x\\to-\\infty}x^2=+\\infty$: no n'hi ha.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la monotonia i troba'n els extrems.\n\n\\begin{solucio}\nPer a $x<1$: $f'(x)=2x$, negativa a $(-\\infty,0)$ i positiva a $(0,1)$.\\\\\nPer a $x>1$: $f'(x)=\\dfrac{1}{x^2}>0$, sempre creixent.\\\\\nAixí, $f$ \\textbf{decreix} a $(-\\infty,0)$ i \\textbf{creix} a $(0,+\\infty)$: hi ha un\n\\textbf{mínim} en $(0,0)$, que a més és el mínim absolut.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{trossos-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció.\n\n\\begin{solucio}\nA l'esquerra de $x=1$ és la paràbola $y=x^2$; a la dreta, una branca creixent que s'acosta a\n$y=2$ sense arribar-hi. Les dues branques s'enganxen en $(1,1)$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.75cm]\n  \\draw[gray!55,very thin,step=1] (-2,-1) grid (7,4);\n  \\draw[->] (-2.4,0) -- (7.4,0) node[below right] {$x$};\n  \\draw[->] (0,-1.4) -- (0,4.4) node[above left] {$y$};\n  \\foreach \\i in {-1,1,2,4,6} \\draw (\\i,0.1) -- (\\i,-0.1) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {1,2,3} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-2,2) -- (7,2);\n  \\begin{scope}\n    \\clip (-2,-1) rectangle (7,4);\n    \\draw[\\colorgrafica,very thick,domain=-2:1,samples=60,smooth] plot (\\x,{\\x*\\x});\n    \\draw[\\colorgrafica,very thick,domain=1:7,samples=100,smooth] plot (\\x,{2-1/\\x});\n  \\end{scope}\n  \\fill (1,1) circle (2.2pt); \\fill (0,0) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{derivable-enganxament}{0,75}{1,25}\nEstudia si $f$ és derivable en $x=1$ a partir de les derivades laterals. Què vol dir el resultat a\nla gràfica?\n\n\\begin{solucio}\n$f$ és contínua en $x=1$: $f(1)=1$, i els dos laterals valen $1$.\\\\\nPer l'esquerra actua $x^2$, amb derivada $2x$: $f'\\!\\left(1^-\\right)=2$. Per la dreta actua\n$2-\\dfrac1x$, amb derivada $\\dfrac{1}{x^2}$: $f'\\!\\left(1^+\\right)=1$.\\\\\nLes derivades laterals són diferents, i per tant $f$ \\textbf{no és derivable} en $x=1$. A la gràfica,\nles dues branques s'enganxen sense trencar-se, però amb pendents diferents: hi fan un\n\\textbf{angle}. Ser contínua no n'hi ha prou per ser derivable.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u10/estudi-trossos/q001/out/enunciat.pdf",
    "pdf_solucio": "u10/estudi-trossos/q001/out/solucio.pdf",
    "pdf_curt": "u10/estudi-trossos/q001/out/enunciat-curt.pdf",
    "pdf_solucio_curt": "u10/estudi-trossos/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-trossos/q002",
+   "unitat": "u10",
+   "tema": "estudi-trossos",
+   "codi": "q002",
+   "titol": "Estudi i gràfica d'una funció a trossos amb un salt i una asímptota vertical dins d'una branca",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    108
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "a trossos",
+    "representació",
+    "asímptotes"
+   ],
+   "temes_secundaris": [
+    "estudi-racional"
+   ],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "trossos-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q002/out/tries/trossos-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q002/out/tries/trossos-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q002/out/tries/trossos-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q002/out/tries/trossos-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "recorregut",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q002/out/tries/trossos-tasca/recorregut/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q002/out/tries/trossos-tasca/recorregut/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q002/out/tries/trossos-tasca/recorregut/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q002/out/tries/trossos-tasca/recorregut/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\begin{cases}\n  (x+1)^2 & \\si{x\\le 0},\\\\[4pt]\n  \\dfrac{1}{x-1} & \\si{x>0}.\n\\end{cases}\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nEstudia'n la continuïtat i troba'n les asímptotes.\n\n\\begin{solucio}\nCada branca és contínua al seu tros, excepte en $x=1$, que és \\textbf{dins} del segon i hi anul·la el\ndenominador.\\\\\nEn $x=0$: $f(0)=1$ i $\\lim_{x\\to0^-}f(x)=1$, però $\\lim_{x\\to0^+}f(x)=\\dfrac{1}{0-1}=-1$. Laterals finits\ni diferents: \\textbf{salt finit} (de salt $2$).\\\\\nEn $x=1$: la funció no hi està definida, i els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$\n(per la dreta): \\textbf{salt infinit}. La funció és contínua a $\\mathbb{R}\\setminus\\{0,1\\}$.\\\\\n\\textbf{Asímptotes}: vertical $x=1$. Per la dreta, $\\lim_{x\\to+\\infty}f(x)=0$: asímptota horitzontal\n$y=0$. Per l'esquerra, $\\lim_{x\\to-\\infty}(x+1)^2=+\\infty$: branca parabòlica, sense asímptota.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la monotonia i troba'n els extrems.\n\n\\begin{solucio}\nPer a $x<0$: $f'(x)=2(x+1)$, negativa a $(-\\infty,-1)$ i positiva a $(-1,0)$.\\\\\nPer a $x>0$: $f'(x)=\\dfrac{-1}{(x-1)^2}<0$: decreix a $(0,1)$ i a $(1,+\\infty)$.\\\\\n\\textbf{Mínim relatiu} $(-1,0)$. En $x=0$, $f(0)=1$ és més gran que tots els valors del voltant: per\nl'esquerra s'hi arriba creixent, i per la dreta la funció val prop de $-1$. És un \\textbf{màxim\nrelatiu}, tot i que la funció no hi és contínua.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{trossos-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció.\n\n\\begin{solucio}\nA l'esquerra, la paràbola $y=(x+1)^2$ fins al punt $(0,1)$, amb el vèrtex en $(-1,0)$. A la dreta,\nles dues branques de la hipèrbola $y=\\frac{1}{x-1}$: la primera surt de prop de $(0,-1)$, punt que no\nés de la gràfica, i baixa cap a $-\\infty$; la segona baixa des de $+\\infty$ i s'acosta a l'eix $OX$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.6cm,y=0.5cm]\n  \\draw[gray!55,very thin,step=1] (-4,-5) grid (5,5);\n  \\draw[->] (-4.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-5.4) -- (0,5.4) node[above left] {$y$};\n  \\foreach \\i in {-3,-2,-1,2,3,4} \\draw (\\i,0.12) -- (\\i,-0.12) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-4,-2,2,4} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (1,-5) -- (1,5);\n  \\begin{scope}\n    \\clip (-4,-5) rectangle (5,5);\n    \\draw[\\colorgrafica,very thick,domain=-3.4:0,samples=80,smooth] plot (\\x,{(\\x+1)*(\\x+1)});\n    \\draw[\\colorgrafica,very thick,domain=0:0.83,samples=80,smooth] plot (\\x,{1/(\\x-1)});\n    \\draw[\\colorgrafica,very thick,domain=1.17:5,samples=80,smooth] plot (\\x,{1/(\\x-1)});\n  \\end{scope}\n  \\fill (0,1) circle (2.2pt); \\fill (-1,0) circle (2.2pt);\n  \\draw[fill=white,thick] (0,-1) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{recorregut}{0,75}{1,25}\nTroba el recorregut de $f$. Hi ha cap valor de $k$ per al qual l'equació $f(x)=k$ no tingui cap\nsolució?\n\n\\begin{solucio}\nPer a $x\\le0$, la paràbola baixa des de $+\\infty$ fins al vèrtex, $(-1,0)$, i puja fins a $f(0)=1$:\nhi pren tots els valors de $[0,+\\infty)$.\\\\\nA $(0,1)$, $\\dfrac{1}{x-1}$ decreix des de prop de $-1$ fins a $-\\infty$: hi pren els de\n$(-\\infty,-1)$. El valor $-1$ no s'assoleix, perquè $\\dfrac{1}{x-1}=-1$ només si $x=0$, que és de\nl'altra branca.\\\\\nA $(1,+\\infty)$, decreix des de $+\\infty$ i s'acosta a $0$ sense arribar-hi: hi pren els de\n$(0,+\\infty)$.\\\\\nRecorregut: $(-\\infty,-1)\\cup[0,+\\infty)$. L'equació $f(x)=k$ \\textbf{no té cap solució} si\n$-1\\le k<0$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-trossos/q002/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-trossos/q002/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-trossos/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-trossos/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-trossos/q003",
+   "unitat": "u10",
+   "tema": "estudi-trossos",
+   "codi": "q003",
+   "titol": "Estudi i gràfica d'una funció de tres trossos amb dues asímptotes horitzontals diferents",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●●",
+   "origen": [
+    108
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "a trossos",
+    "representació",
+    "asímptotes"
+   ],
+   "temes_secundaris": [
+    "estudi-racional"
+   ],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "trossos-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q003/out/tries/trossos-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q003/out/tries/trossos-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q003/out/tries/trossos-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q003/out/tries/trossos-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "extrems-absoluts",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-trossos/q003/out/tries/trossos-tasca/extrems-absoluts/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-trossos/q003/out/tries/trossos-tasca/extrems-absoluts/solucio.pdf",
+       "pdf_curt": "u10/estudi-trossos/q003/out/tries/trossos-tasca/extrems-absoluts/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-trossos/q003/out/tries/trossos-tasca/extrems-absoluts/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\begin{cases}\n  e^{x+1}+1 & \\si{x<-1},\\\\[4pt]\n  x^2+1 & \\si{-1\\le x\\le 1},\\\\[4pt]\n  \\dfrac{4}{x+1} & \\si{x>1}.\n\\end{cases}\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nEstudia'n la continuïtat i troba'n les asímptotes.\n\n\\begin{solucio}\nCada branca és contínua al seu tros: el denominador de la tercera s'anul·la en $x=-1$, que no és al\nseu tros.\\\\\nEn $x=-1$: $\\lim_{x\\to-1^-}f(x)=e^0+1=2$ i $f(-1)=2$. En $x=1$: $f(1)=2$ i\n$\\lim_{x\\to1^+}f(x)=\\dfrac42=2$. La funció és \\textbf{contínua a tot $\\mathbb{R}$}.\\\\\n\\textbf{Asímptotes verticals}: cap. \\textbf{Horitzontals}: per l'esquerra,\n$\\lim_{x\\to-\\infty}f(x)=0+1=1$, i per la dreta, $\\lim_{x\\to+\\infty}f(x)=0$. Té \\textbf{dues}\nasímptotes horitzontals diferents: $y=1$ per l'esquerra i $y=0$ per la dreta.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la monotonia i troba'n els extrems.\n\n\\begin{solucio}\nPer a $x<-1$: $f'(x)=e^{x+1}>0$, creix. Per a $-1<x<1$: $f'(x)=2x$, decreix a $(-1,0)$ i creix a\n$(0,1)$. Per a $x>1$: $f'(x)=\\dfrac{-4}{(x+1)^2}<0$, decreix.\\\\\n\\textbf{Màxims relatius} $(-1,2)$ i $(1,2)$, i \\textbf{mínim relatiu} $(0,1)$. En $x=\\pm1$ la funció\nno és derivable (les derivades laterals hi valen $1$ i $-2$, i $2$ i $-1$), però sí que hi té un\nmàxim: la gràfica hi fa un angle.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{trossos-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció.\n\n\\begin{solucio}\nVe de prop de $y=1$, puja fins al màxim $(-1,2)$, baixa fins al mínim $(0,1)$, torna a pujar fins al\nmàxim $(1,2)$ i, des d'allà, baixa cap a l'eix $OX$ sense arribar-hi mai. No talla l'eix $OX$, i\ntalla l'eix $OY$ en $(0,1)$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.55cm,y=1cm]\n  \\draw[gray!55,very thin,step=1] (-5,-1) grid (6,3);\n  \\draw[->] (-5.4,0) -- (6.4,0) node[below right] {$x$};\n  \\draw[->] (0,-1.3) -- (0,3.4) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.08) -- (\\i,-0.08) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {1,2} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-5,1) -- (-1,1);\n  \\begin{scope}\n    \\clip (-5,-1) rectangle (6,3);\n    \\draw[\\colorgrafica,very thick,domain=-5:-1,samples=80,smooth] plot (\\x,{exp(\\x+1)+1});\n    \\draw[\\colorgrafica,very thick,domain=-1:1,samples=60,smooth] plot (\\x,{\\x*\\x+1});\n    \\draw[\\colorgrafica,very thick,domain=1:6,samples=80,smooth] plot (\\x,{4/(\\x+1)});\n  \\end{scope}\n  \\fill (-1,2) circle (2.2pt); \\fill (0,1) circle (2.2pt); \\fill (1,2) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{extrems-absoluts}{0,75}{1,25}\nTé $f$ un màxim absolut? I un mínim absolut? Justifica-ho a partir de la monotonia i de les\nasímptotes.\n\n\\begin{solucio}\n$f$ creix a $(-\\infty,-1)$, decreix a $(-1,0)$, creix a $(0,1)$ i decreix a $(1,+\\infty)$, amb\n$f(-1)=f(1)=2$ i $f(0)=1$.\\\\\nA l'esquerra, els valors són de $(1,2)$, perquè s'acosten a l'asímptota $y=1$; al mig, de $[1,2]$; i a\nla dreta, de $(0,2)$, perquè s'acosten a $y=0$. Per tant, $f(x)\\le2$ sempre: el \\textbf{màxim absolut}\nés $2$, i s'assoleix dues vegades, en $x=-1$ i en $x=1$.\\\\\n\\textbf{Mínim absolut}: no n'hi ha. $f(x)>0$ sempre, però s'acosta a $0$ tant com es vulgui quan\n$x\\to+\\infty$, sense arribar-hi mai. El mínim relatiu, $(0,1)$, no és l'absolut: per a $x>3$, la\ntercera branca val menys d'$1$. El recorregut és $(0,2]$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-trossos/q003/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-trossos/q003/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-trossos/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-trossos/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u7/bolzano-biseccio/q001",
