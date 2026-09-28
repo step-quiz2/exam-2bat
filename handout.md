@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 72 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 13 de la unitat 10 i 5 de la PAU), 66 amb tries · 1.360 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 74 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10 i 5 de la PAU), 69 amb tries · 1.400 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -42,7 +42,8 @@ llista de temes. La vintena va començar a completar la u10, a partir del soluci
 del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La vint-i-unena hi va afegir les asímptotes, i va deixar congelat el tema de
 funcions a trossos fins que s'hagi fet la setmana 17. La vint-i-dosena va acabar els estudis complets de funcions
 racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La vint-i-tresena va fer que el Run workflow deixés de
-trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La màquina
+trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La vint-i-quatrena, a petició del professor, va completar el
+tema de funcions a trossos, i amb ell la u10. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -806,6 +807,39 @@ partir d'aleshores, un lliurament normal compila només els PDF de les preguntes
 en desa aquests. Els megues que ja s'han acumulat a l'historial s'hi queden: treure'ls obligaria a
 reescriure l'historial de Git, i no val la pena.
 
+### 2.24 Sessió 24 · Funcions a trossos: d’una variant a tres
+
+**La decisió.** A la sessió 21, el professor havia decidit no ampliar aquest tema fins que s'hagués
+fet la setmana 17, perquè el seu únic exercici, el 108, és d'aquella setmana, posterior a l'examen de
+la u10. Ara va demanar completar-lo. Les preguntes queden al banc, i és qui fa l'examen qui decideix
+quan les fa servir: si és abans de la setmana 17, els alumnes no hauran practicat encara aquest
+tipus d'exercici.
+
+**El tipus d'exercici.** El 108 demana estudiar les característiques de quatre funcions a trossos i
+representar-les: continuïtat, talls, asímptotes o branques, monotonia tros a tros, curvatura i
+gràfica. Les branques combinen polinomis, arrels, racionals, exponencials i trigonomètriques.
+
+**Dues variants noves**, amb l'estructura de la q001 (continuïtat i asímptotes, la monotonia al
+`nomesllarg`, i la gràfica):
+
+- **q002:** $(x+1)^2$ i $\frac{1}{x-1}$. Té un salt finit a l'enganxament, una asímptota vertical *dins*
+  d'una branca, una asímptota horitzontal per la dreta i una branca parabòlica per l'esquerra. En
+  $x=0$ hi ha un màxim relatiu, tot i que la funció no hi és contínua.
+- **q003:** $e^{x+1}+1$, $x^2+1$ i $\frac{4}{x+1}$. Té tres trossos, és contínua a tot arreu, té dues
+  asímptotes horitzontals diferents ($y=1$ per l'esquerra i $y=0$ per la dreta) i dos màxims en
+  angle, on no és derivable.
+
+**Tries**, a l'apartat de la gràfica com a la resta d'estudis: la derivabilitat a l'enganxament, que
+no ho és perquè fa angle (q001, `derivable-enganxament`); el recorregut i per a quins $k$ l'equació
+$f(x)=k$ no té solució, amb el detall que $-1$ no s'assoleix perquè l'única $x$ que el donaria és de
+l'altra branca (q002, `recorregut`); i els extrems absoluts, amb un màxim assolit dues vegades i cap
+mínim, perquè la funció s'acosta a $0$ sense arribar-hi (q003, `extrems-absoluts`).
+
+**Verificació.** Totes les matemàtiques es van comprovar amb SymPy. Les tres preguntes tenen el
+defecte idèntic i 2,50 punts amb cada ítem, i compilen de debò; les solucions, amb la gràfica,
+caben en una pàgina. Les dues gràfiques noves es van revisar a ull. Les bateries (38/19/77) i la
+integració amb jsdom passen, i el banc complet escriu 864 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -863,6 +897,7 @@ reescriure l'historial de Git, i no val la pena.
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
 | Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
 | El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
+| El professor aixeca la congelació d'`estudi-trossos` i el tema passa a tenir tres variants (sessió 24) | Professor | Les preguntes queden al banc; qui fa l'examen decideix quan les fa servir |
 | `estudi-trossos` es queda com està (la q001, sense tria) i no s'amplia fins que s'hagi fet la setmana 17 | Professor | Cap exercici practicat abans de l'examen no el sosté |
 | Per a la u10, els exercicis practicats són els de les setmanes 11 i 12 del full de Classroom; la setmana 17 és posterior a l'examen | Professor | El banc no surt dels exercicis que els alumnes hauran practicat |
 | El solucionari del llibre és una referència, no la veritat: tot es verifica amb SymPy | Disseny | S'hi han trobat quatre errors (2.20) |
@@ -1116,8 +1151,8 @@ per això el banc no hi té tema. Tres variants per tema.
 Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 11 i 12 (2.20):
 domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
 gràfica de $f'$ (37). El tema de funcions a trossos no en té cap: el seu únic exercici, el 108, és de
-la setmana 17. Quatre dels cinc temes tenen tres variants, totes amb tria (sessions 20 a 22). El de funcions a trossos
-es queda com està fins que s'hagi fet la setmana 17 (2.21).
+la setmana 17. Els cinc temes tenen tres variants, totes amb tria (sessions 20 a 24). Les de funcions a trossos
+es basen en el 108, de la setmana 17: convé fer-les servir després d'aquella setmana (2.24).
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
@@ -1128,6 +1163,8 @@ es queda com està fins que s'hagi fet la setmana 17 (2.21).
 | Domini i punts de tall | `q002` | Domini de racionals, radicals i logaritmes, i talls d'una racional amb denominador sense zeros | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Domini i punts de tall | `q003` | Domini amb exponencials i radicals, i talls d'una funció amb radical | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Estudi i gràfica d'una funció a trossos | `q001` | Estudi i gràfica d'una funció a trossos amb asímptota horitzontal | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108, 37 |
+| Estudi i gràfica d'una funció a trossos | `q002` | Estudi i gràfica d'una funció a trossos amb un salt i una asímptota vertical dins d'una branca | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108 |
+| Estudi i gràfica d'una funció a trossos | `q003` | Estudi i gràfica d'una funció de tres trossos amb dues asímptotes horitzontals diferents | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 108 |
 | Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
 | Estudi i gràfica d'una funció polinòmica | `q002` | Estudi i gràfica de x⁴−4x³+4x²: dos mínims, un màxim i dues inflexions | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 75, 78, 88 |
 | Estudi i gràfica d'una funció polinòmica | `q003` | Estudi i gràfica de −x³+6x²−9x+4: arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
@@ -1303,7 +1340,7 @@ l'ordre numèric.
 | u7 Límits i continuïtat | 1–4 | 11 d'octubre de 2026 · **feta**, reescrita a la sessió 6 |
 | u8 Derivades | 5–7 | 1 de novembre de 2026 · **feta** |
 | u9 Aplicacions de les derivades | 8–10 | 22 de novembre de 2026 · **feta** |
-| u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema, llevat de funcions a trossos, congelat fins a la setmana 17 |
+| u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema (les de funcions a trossos, per després de la setmana 17) |
 | u13 Probabilitat | 13–14 | 20 de desembre de 2026 |
 | u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 |
 | u1 Matrius | 18–19 | 24 de gener de 2027 |
@@ -1316,7 +1353,7 @@ l'ordre numèric.
 
 - **Calibrar els minuts** amb dades reals, a partir del primer examen de la u7. Ara són
   estimacions: uns 16–20 minuts per pregunta a 1 h 30 i uns 10–12 a 50 min.
-- **Segona i tercera variant de funcions a trossos (u10)**, quan s'hagi fet la setmana 17 (2.21).
+- **Funcions a trossos (u10)**: fet a la sessió 24 (2.24).
 - **Temes i preguntes de la u13**, la següent per calendari (20 de desembre). Després, les
   unitats en l'ordre de la taula.
 - **Versions de 50 min per a les preguntes PAU**, on tingui sentit: quin apartat es treu i com es
@@ -1346,8 +1383,8 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 22, també la u10, llevat del tema de funcions a trossos, congelat fins
-  després de la setmana 17. Per a les unitats que vinguin, el mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 24, també la u10 sencera.
+  Per a les unitats que vinguin, el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1481,15 +1518,14 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 23. Parteix del de la sessió 22, que ja és al repositori.
+És el lliurament de la sessió 24. Parteix del de la sessió 23, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `build/build.py` | PDF reproduïbles, memòria amb l'empremta a les metadades de cada PDF, compilació en paral·lel per pregunta i l'opció `--tot` |
-| `build/prova_sortida.py` | Cinc comprovacions noves de la memòria (19 en total); el `pdflatex` fals respon a `--version` i marca cada compilació |
-| `README.md` | L'opció `--tot` i com funciona la memòria |
-| `handout.md` | Secció 2.23, i les seccions 3, 5, 10 i 11 |
+| `u10/estudi-trossos/q002/`, `u10/estudi-trossos/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
+| `u10/estudi-trossos/q001/pregunta.tex` | Tria nova, `derivable-enganxament` |
+| `README.md` | Estat |
+| `handout.md` | Secció 2.24, i les seccions 3, 6.4, 7.4, 7.5 i 11 |
 
-No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Aquest
-primer ho recompilarà tot una última vegada (els PDF del repositori encara no porten l'empremta); a
-partir del següent, només es compilaran les preguntes que canviïn.
+No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
+memòria de la sessió 23, només es compilaran les tres preguntes d'aquest tema.
