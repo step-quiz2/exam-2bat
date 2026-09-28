@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 27 de setembre de 2026 · **Estat:** 72 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 13 de la unitat 10 i 5 de la PAU), 66 amb tries · 1.360 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 72 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 13 de la unitat 10 i 5 de la PAU), 66 amb tries · 1.360 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -41,7 +41,8 @@ criteri. La dinovena va fer el mateix amb les 12 de la u9, i va fer plegables le
 llista de temes. La vintena va començar a completar la u10, a partir del solucionari del llibre i
 del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La vint-i-unena hi va afegir les asímptotes, i va deixar congelat el tema de
 funcions a trossos fins que s'hagi fet la setmana 17. La vint-i-dosena va acabar els estudis complets de funcions
-racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La màquina
+racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La vint-i-tresena va fer que el Run workflow deixés de
+trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -760,6 +761,51 @@ valors de $k$. Les sis preguntes tenen el defecte idèntic i 2,50 punts amb cada
 debò; cada solució, amb la gràfica, cap en una pàgina. Les quatre gràfiques noves es van revisar a
 ull. Les bateries (38/14/77) i la integració amb jsdom passen, i el banc complet escriu 832 PDF.
 
+### 2.23 Sessió 23 · Un Run workflow que ja no creix a cada execució
+
+**La pregunta del professor.** Per què el Run workflow triga cada vegada més? Havia passat de 3 minuts
+i mig (sessió 14) a més de 7. Es van trobar tres causes. (1) El build recompilava **tots** els PDF a
+cada execució, un rere l'altre, i en quatre sessions n'havien passat de 246 a 832, perquè cada
+alternativa d'una tria n'afegeix entre 2 i 4. A uns 0,4 segons per PDF, només aquell pas ja
+trigava 5 o 6 minuts. (2) `prova_sortida.py` copia el banc sencer diverses vegades. (3) I la més
+seriosa: **dos PDF de la mateixa font no eren idèntics**, perquè cada un porta la data de
+compilació i un identificador aleatori. Git els veia tots canviats, i cada Run workflow tornava a
+desar els ~830 PDF, uns 70 MB (83 KB de mitjana). El repositori creixia uns 70 MB a cada execució.
+El workflow, a més, té un límit de 20 minuts.
+
+**La solució**, tota a `build.py`, sense tocar el workflow:
+
+1. **PDF reproduïbles.** Els PDF es compilen amb `SOURCE_DATE_EPOCH` fixat (l'1 de gener de 2026) i
+   amb `\pdftrailerid{}`. La mateixa font dona el mateix PDF, byte a byte, i Git només desa els que
+   canvien de debò.
+2. **Memòria.** Cada PDF porta a les metadades (`/Keywords`) l'empremta SHA-256 del document LaTeX
+   exacte que l'ha produït, de la versió de `pdflatex` i d'un número de versió de la memòria.
+   També hi porta, a `/Subject`, les pàgines. Si el PDF publicat ja porta l'empremta del document que
+   es compilaria, el build el reutilitza. Davant de qualsevol dubte (el PDF no hi és, no porta
+   empremta o en porta una altra), recompila: el pitjor cas és el d'abans. Com que el document
+   inclou `headers.tex` i `defs.tex`, canviar el format ho recompila tot sol. `--tot` ho força.
+   L'empremta viu dins del PDF, i per això no calen fitxers nous ni cap canvi al pas «Desa».
+3. **En paral·lel.** Els PDF d'una mateixa pregunta es compilen alhora, un per nucli. Se n'espera
+   el final abans d'escriure'n la línia d'estat, de manera que la sortida, l'ordre i l'atribució
+   dels errors són els d'abans.
+
+**Verificació.** Amb `pdflatex` real, una pregunta compilada dues vegades: la primera en compila
+12, i la segona els reutilitza tots sense compilar-ne cap. Les metadades hi són llegibles, i amb
+`--tot` els 12 PDF surten idèntics byte a byte. `prova_sortida.py` en té cinc comprovacions noves
+(19 en total): un segon build sense canvis no en recompila cap; si canvia una pregunta, només es
+recompilen els seus; un PDF sense empremta o que no hi és es recompila, i només ell; canviar
+`defs.tex` ho recompila tot; i `--tot` també. El `pdflatex` fals de les proves deixa ara una marca
+única a cada compilació, perquè es pugui distingir un PDF recompilat d'un de reutilitzat. Dos
+controls: si l'empremta no tingués en compte el document (l'error perillós, reutilitzar un PDF
+antic), dues d'aquestes proves fallarien; i un build complet amb 4 fils dona els mateixos 832 PDF i
+les mateixes línies d'estat que amb 1. Les altres bateries (38/77) i jsdom passen.
+
+**Què esperar.** El primer Run workflow després d'aquest canvi ho recompila tot una última vegada,
+perquè cap PDF del repositori no porta encara l'empremta, i els desa tots una última vegada. A
+partir d'aleshores, un lliurament normal compila només els PDF de les preguntes tocades, i Git només
+en desa aquests. Els megues que ja s'han acumulat a l'historial s'hi queden: treure'ls obligaria a
+reescriure l'historial de Git, i no val la pena.
+
 ---
 
 ## 3. Decisions preses
@@ -815,6 +861,8 @@ ull. Les bateries (38/14/77) i la integració amb jsdom passen, i el banc comple
 | Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 | Una alternativa ha de canviar el cas, la tècnica o el sentit del raonament, no només els nombres (regla 16) | Professor | Una tria amb la mateixa pregunta i altres xifres no aporta res a l'examen |
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
+| Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
+| El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
 | `estudi-trossos` es queda com està (la q001, sense tria) i no s'amplia fins que s'hagi fet la setmana 17 | Professor | Cap exercici practicat abans de l'examen no el sosté |
 | Per a la u10, els exercicis practicats són els de les setmanes 11 i 12 del full de Classroom; la setmana 17 és posterior a l'examen | Professor | El banc no surt dels exercicis que els alumnes hauran practicat |
 | El solucionari del llibre és una referència, no la veritat: tot es verifica amb SymPy | Disseny | S'hi han trobat quatre errors (2.20) |
@@ -867,7 +915,7 @@ ull. Les bateries (38/14/77) i la integració amb jsdom passen, i el banc comple
 - 32 resultats dels criteris oficials de juny de 2026, per un mètode independent.
 - `prova_validacio.py`: 38 avaries provocades, cadascuna rebutjada pel build. Les 8 de la
   sessió 6 són de les modalitats, i les 9 de la sessió 14 són de les tries.
-- `prova_sortida.py`: 14 comprovacions, sense TeX (un `pdflatex` fals al PATH). Un build que
+- `prova_sortida.py`: 19 comprovacions (cinc de la memòria del build, sessió 23), sense TeX (un `pdflatex` fals al PATH). Un build que
   falla, per validació o per compilació, no toca cap fitxer. Un de correcte els escriu tots, i esborra els
   que ja no genera cap font (608, comptats amb un patró recursiu que ara arriba a `out/tries/…`),
   `--pregunta` només escriu els de la pregunta indicada —també les previsualitzacions de tria,
@@ -1426,20 +1474,22 @@ del primer exercici.
 | Un retoc fet a mà en un fitxer baixat es perd a la descàrrega següent | Si val la pena, ha de pujar al banc: `\colorgrafica` en va sortir |
 | Una fórmula destacada després d'una línia curta queda enganxada (TeX hi posa l'espai «curt») | El preàmbul iguala `\abovedisplayshortskip` a l'espai normal |
 | En un Chromium sense pantalla, obrir un PDF el descarrega | Una prova que baixa el `.tex` no ha d'obrir cap visor abans |
+| Dos PDF de la mateixa font no eren idèntics (data i identificador aleatori), i Git els desava tots a cada execució | PDF reproduïbles i memòria (2.23) |
 | Un PDF que ja no genera cap font (el d'un ítem retirat) fa fallar `prova_sortida.py` | Un build complet l'esborra (2.18); perquè l'esborrat arribi al repositori, el pas «Desa» ha de fer `git add -A` (secció 11) |
 
 ---
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 22. Parteix del de la sessió 21, que ja és al repositori.
+És el lliurament de la sessió 23. Parteix del de la sessió 22, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u10/estudi-racional/q002/`, `q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
-| `u10/estudi-polinomica/q002/`, `q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
-| `u10/estudi-racional/q001/pregunta.tex`, `u10/estudi-polinomica/q001/pregunta.tex` | Tries noves: `recorregut-i-equacions` i `solucions-f-igual-k` |
-| `README.md` | Estat |
-| `handout.md` | Secció 2.22, i les seccions 6.4, 7.4, 7.5 i 11 |
+| `build/build.py` | PDF reproduïbles, memòria amb l'empremta a les metadades de cada PDF, compilació en paral·lel per pregunta i l'opció `--tot` |
+| `build/prova_sortida.py` | Cinc comprovacions noves de la memòria (19 en total); el `pdflatex` fals respon a `--version` i marca cada compilació |
+| `README.md` | L'opció `--tot` i com funciona la memòria |
+| `handout.md` | Secció 2.23, i les seccions 3, 5, 10 i 11 |
 
-No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**.
+No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Aquest
+primer ho recompilarà tot una última vegada (els PDF del repositori encara no porten l'empremta); a
+partir del següent, només es compilaran les preguntes que canviïn.

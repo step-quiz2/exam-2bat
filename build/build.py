@@ -26,11 +26,14 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import NamedTuple
@@ -417,16 +420,69 @@ def valida_meta(meta: dict, on: str, slugs: set[str], esquema: dict = CLAUS_META
 
 
 # ── compilació ─────────────────────────────────────────────────────────
+# ── compilació: reproduïble, amb memòria i en paral·lel ───────────────
+# Tres coses eviten que el Run workflow trigui cada vegada més:
+#  1. Reproduïble: la data i l'identificador del PDF són fixos. La mateixa font dona el mateix
+#     PDF, byte a byte, i Git no hi veu cap canvi si no n'hi ha.
+#  2. Memòria: cada PDF porta dins l'empremta del document exacte que l'ha produït, i la de la
+#     versió de pdflatex. Si el PDF publicat ja porta l'empremta d'aquest document, no es
+#     recompila. Davant de qualsevol dubte (el PDF no hi és, no porta empremta o en porta una
+#     altra) es recompila: el pitjor cas és el d'abans. Canviar headers.tex o defs.tex canvia el
+#     document de tots els PDF, i ho recompila tot. --tot ho força.
+#  3. En paral·lel: els PDF d'una mateixa pregunta es compilen alhora, un per nucli.
+VERSIO_MEMORIA = "1"        # canviar-la obliga a recompilar-ho tot
+DATA_FIXA = "1767225600"    # 1 de gener de 2026: la data que porten tots els PDF
+RE_EMPREMTA = re.compile(rb"banc-empremta:([0-9a-f]{64})")
+RE_PAGINES = re.compile(rb"banc-pagines:(\d+)")
+PROVISIONAL: Path | None = None             # la fixa construeix()
+TOT = False                                 # --tot; també el fixa construeix()
+POOL = ThreadPoolExecutor(max_workers=max(1, min(8, os.cpu_count() or 1)))
+comptador = {"compilats": 0, "reutilitzats": 0}
+_pany = threading.Lock()
+_entorn: list[str] = []
+
+
+def entorn_tex() -> str:
+    """La primera línia de `pdflatex --version`. Si canvia, canvien totes les empremtes."""
+    with _pany:
+        if not _entorn:
+            try:
+                with tempfile.TemporaryDirectory() as tmp:
+                    r = subprocess.run(["pdflatex", "--version"], cwd=tmp, capture_output=True, timeout=60)
+                primera = r.stdout.decode("utf-8", errors="replace").strip().splitlines()[:1]
+                _entorn.append(primera[0] if r.returncode == 0 and primera else "desconeguda")
+            except (OSError, subprocess.SubprocessError):
+                _entorn.append("desconeguda")
+        return _entorn[0]
+
+
 def compila(document: str, desti: Path, on: str) -> int | None:
-    """Compila un .tex complet i desa el PDF a `desti`. Retorna les pàgines."""
+    """Compila un .tex complet i desa el PDF a `desti`. Retorna les pàgines, si se saben. Si el PDF
+    publicat ja porta l'empremta d'aquest mateix document, el reutilitza: no compila ni escriu res."""
+    empremta = hashlib.sha256(f"{VERSIO_MEMORIA}\n{entorn_tex()}\n{document}".encode("utf-8")).hexdigest()
+    if not TOT and PROVISIONAL is not None:
+        publicat = ARREL / desti.relative_to(PROVISIONAL)
+        if publicat.is_file():
+            dades = publicat.read_bytes()
+            m = RE_EMPREMTA.search(dades)
+            if m and m.group(1).decode("ascii") == empremta:
+                with _pany:
+                    comptador["reutilitzats"] += 1
+                p = RE_PAGINES.search(dades)
+                return int(p.group(1)) if p else None
+    # L'empremta i les pàgines van a les metadades del PDF (/Keywords i /Subject). \pdftrailerid{}
+    # i SOURCE_DATE_EPOCH fan el PDF reproduïble.
+    marcat = ("\\pdftrailerid{}\\pdfinfo{/Keywords (banc-empremta:" + empremta + ")}"
+              "\\AtEndDocument{\\pdfinfo{/Subject (banc-pagines:\\arabic{page})}}\n" + document)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        (tmp / "main.tex").write_text(document, encoding="utf-8")
+        (tmp / "main.tex").write_text(marcat, encoding="utf-8")
         # Sense text=True: pdflatex escriu els caràcters accentuats en la
         # codificació de la font (T1), no en UTF-8. Descodifiquem tolerant.
         r = subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"],
-            cwd=tmp, capture_output=True)
+            cwd=tmp, capture_output=True,
+            env={**os.environ, "SOURCE_DATE_EPOCH": DATA_FIXA, "FORCE_SOURCE_DATE": "1"})
         sortida = r.stdout.decode("utf-8", errors="replace")
         log = (tmp / "main.log").read_text(encoding="utf-8", errors="replace") \
             if (tmp / "main.log").exists() else sortida
@@ -439,19 +495,26 @@ def compila(document: str, desti: Path, on: str) -> int | None:
                 avis(on, l.strip()[:90])
         desti.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(tmp / "main.pdf", desti)
+        with _pany:
+            comptador["compilats"] += 1
         m = re.search(r"main\.pdf \((\d+) pages?", log)
         return int(m.group(1)) if m else None
 
 
 # ── programa ───────────────────────────────────────────────────────────
 def construeix(provisional: Path) -> int:
+    global PROVISIONAL, TOT
+    PROVISIONAL = provisional
     """Valida, compila els PDF dins de `provisional` i, només si no hi ha
     cap error, els copia a out/ i escriu el catàleg."""
     p = argparse.ArgumentParser()
     p.add_argument("--nomes-cataleg", action="store_true")
     p.add_argument("--headers", default=None, metavar="FITXER")
     p.add_argument("--pregunta", default=None, metavar="RUTA")
+    p.add_argument("--tot", action="store_true",
+                   help="recompila tots els PDF, encara que ja portin l'empremta del seu document")
     args = p.parse_args()
+    TOT = args.tot
 
     temes_doc = json.loads((ARREL / "temes.json").read_text(encoding="utf-8"))
     slugs = {t["slug"] for t in temes_doc["temes"]}
@@ -591,21 +654,27 @@ def construeix(provisional: Path) -> int:
         if compilar:
             # Els PDF van a la carpeta provisional, amb la mateixa estructura que
             # el banc. Només es copien a out/ al final, si no hi ha cap error.
+            # Totes les compilacions d'aquesta pregunta es llancen alhora, i
+            # s'espera que acabin abans d'escriure'n la línia.
+            feina = []
+
+            def en_marxa(document, desti, on=on):
+                f = POOL.submit(compila, document, desti, on)
+                feina.append(f)
+                return f
+
             cos = cos_amb_capcalera(materialitza(tex, False), "Pregunta", procedencia)
-            pagines = compila(munta(plantilla, preambul_compila, [cos], False),
-                              provisional / ident / "out" / "enunciat.pdf", on)
-            compila(munta(plantilla, preambul_compila, [cos], True),
-                    provisional / ident / "out" / "solucio.pdf", on)
-            if pagines and pagines > 1:
-                avis(on, f"l'enunciat ocupa {pagines} pàgines")
+            f_enunciat = en_marxa(munta(plantilla, preambul_compila, [cos], False),
+                                  provisional / ident / "out" / "enunciat.pdf")
+            en_marxa(munta(plantilla, preambul_compila, [cos], True),
+                     provisional / ident / "out" / "solucio.pdf")
+            f_curt = None
             if te_curt:
                 cos_curt = cos_amb_capcalera(materialitza(tex, True), "Pregunta", procedencia)
-                pagines_curt = compila(munta(plantilla, preambul_compila, [cos_curt], False),
-                                       provisional / ident / "out" / "enunciat-curt.pdf", on)
-                compila(munta(plantilla, preambul_compila, [cos_curt], True),
-                        provisional / ident / "out" / "solucio-curt.pdf", on)
-                if pagines_curt and pagines_curt > 1:
-                    avis(on, f"l'enunciat de 50 min ocupa {pagines_curt} pàgines")
+                f_curt = en_marxa(munta(plantilla, preambul_compila, [cos_curt], False),
+                                  provisional / ident / "out" / "enunciat-curt.pdf")
+                en_marxa(munta(plantilla, preambul_compila, [cos_curt], True),
+                         provisional / ident / "out" / "solucio-curt.pdf")
             # Una previsualització per ítem: el mateix cos que tindria la
             # pregunta si es triés, tot sol, perquè el professor el pugui
             # llegir abans de decidir-se, no només veure'n l'identificador i
@@ -620,17 +689,26 @@ def construeix(provisional: Path) -> int:
                         f"\\begin{{apartats}}\n\\apartat{{{punts_ll}}}\n{cos_ll}\n\\end{{apartats}}",
                         "Alternativa")
                     desti = provisional / ident / "out" / "tries" / t.id / iid
-                    compila(munta(plantilla, preambul_compila, [cos_prev], False), desti / "enunciat.pdf", on)
-                    compila(munta(plantilla, preambul_compila, [cos_prev], True), desti / "solucio.pdf", on)
+                    en_marxa(munta(plantilla, preambul_compila, [cos_prev], False), desti / "enunciat.pdf")
+                    en_marxa(munta(plantilla, preambul_compila, [cos_prev], True), desti / "solucio.pdf")
                     if previews_curt[(t.id, iid)]:
                         punts_c, cos_c = cos_dun_item(tex, t.id, iid, True)
                         cos_prev_curt = cos_amb_capcalera(
                             f"\\begin{{apartats}}\n\\apartat{{{punts_c}}}\n{cos_c}\n\\end{{apartats}}",
                             "Alternativa")
-                        compila(munta(plantilla, preambul_compila, [cos_prev_curt], False),
-                                desti / "enunciat-curt.pdf", on)
-                        compila(munta(plantilla, preambul_compila, [cos_prev_curt], True),
-                                desti / "solucio-curt.pdf", on)
+                        en_marxa(munta(plantilla, preambul_compila, [cos_prev_curt], False),
+                                 desti / "enunciat-curt.pdf")
+                        en_marxa(munta(plantilla, preambul_compila, [cos_prev_curt], True),
+                                 desti / "solucio-curt.pdf")
+            for f in feina:
+                f.result()
+            pagines = f_enunciat.result()
+            if pagines and pagines > 1:
+                avis(on, f"l'enunciat ocupa {pagines} pàgines")
+            if f_curt is not None:
+                pagines_curt = f_curt.result()
+                if pagines_curt and pagines_curt > 1:
+                    avis(on, f"l'enunciat de 50 min ocupa {pagines_curt} pàgines")
             estat = "✓" if not any(e.startswith(on + ":") for e in errors) else "✗"
             print(f"  {estat} {ident:<40} {' + '.join(f'{a/100:.2f}' for a in apartats):<22}"
                   f" {pagines or '?'} pàg."
@@ -739,6 +817,7 @@ def construeix(provisional: Path) -> int:
     n = len(preguntes)
     print(f"\n✓ {n} {'pregunta' if n == 1 else 'preguntes'} · {len(slugs)} temes · "
           f"{minuts} min de banc · {len(pdfs)} PDF desats"
+          + (f" · {comptador['reutilitzats']} reutilitzats" if comptador["reutilitzats"] else "")
           + (f" · {len(orfes)} PDF orfes esborrats" if orfes else "")
           + f" · cataleg.js {len(sortida)//1024} kB")
     return 0

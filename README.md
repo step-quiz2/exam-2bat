@@ -338,6 +338,11 @@ Opcions de `build.py`:
 - `--headers FITXER` compila amb uns altres paquets, per exemple si a l'entorn en falten.
   Aquests PDF no són definitius i el build ho avisa. El catàleg porta sempre
   `build/headers.tex` i `build/defs.tex`, que són els que el lloc posa als `.tex`.
+- `--tot` recompila tots els PDF. Sense aquesta opció, el build només recompila els PDF el
+  document dels quals ha canviat: cada PDF porta a les metadades l'empremta del document que
+  l'ha produït i de la versió de `pdflatex`, i si coincideix, el reutilitza. Canviar
+  `headers.tex` o `defs.tex` ho recompila tot. Els PDF són reproduïbles (data i identificador
+  fixos): la mateixa font dona el mateix fitxer, byte a byte.
 
 ## GitHub i compilació
 
