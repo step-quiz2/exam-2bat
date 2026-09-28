@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 13:51 UTC",
+ "generat": "2026-09-28 14:00 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -407,6 +407,138 @@ const BANC = {
    "titol": "Asímptotes de funcions racionals i gràfica a partir d'unes asímptotes donades",
    "punts": 2.5,
    "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    62,
+    63,
+    38
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "asímptotes",
+    "obliqua",
+    "inventa"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "asimptotes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q001/out/tries/asimptotes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q001/out/tries/asimptotes-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q001/out/tries/asimptotes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q001/out/tries/asimptotes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "forat-no-asimptota",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q001/out/tries/asimptotes-tasca/forat-no-asimptota/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q001/out/tries/asimptotes-tasca/forat-no-asimptota/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q001/out/tries/asimptotes-tasca/forat-no-asimptota/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q001/out/tries/asimptotes-tasca/forat-no-asimptota/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{asimptotes-tasca}\n\\itemtria{original}{1}{1,25}\nTroba totes les asímptotes de la funció\n\\[\nf(x)=\\frac{2x-1}{x+3} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: el denominador s'anul·la en $x=-3$ i el numerador no ($-7\\neq0$), i\n$\\lim_{x\\to-3^-}f(x)=+\\infty$ i $\\lim_{x\\to-3^+}f(x)=-\\infty$: asímptota vertical\n$\\boxed{x=-3}$.\\\\\n\\textbf{Horitzontal}: numerador i denominador tenen el mateix grau, i\n$\\lim_{x\\to\\pm\\infty}f(x)=\\dfrac21=2$: asímptota horitzontal $\\boxed{y=2}$.\\\\\nCom que hi ha asímptota horitzontal, no n'hi pot haver cap d'obliqua.\n\\end{solucio}\n\n\\itemtria{forat-no-asimptota}{1}{1,25}\nTroba totes les asímptotes de la funció\n\\[\nf(x)=\\frac{x^2-1}{x^2+x-2} .\n\\]\nN'hi ha prou que el denominador s'anul·li en un punt perquè hi hagi una asímptota vertical?\n\n\\begin{solucio}\nEl denominador és $(x-1)(x+2)$, que s'anul·la en $x=1$ i en $x=-2$.\\\\\nEn $x=1$ també s'anul·la el numerador, $(x-1)(x+1)$. Per a $x\\neq1$ és $f(x)=\\dfrac{x+1}{x+2}$, que\ntendeix a $\\dfrac23$: el límit és finit, i \\textbf{no} hi ha asímptota, sinó una discontinuïtat\nevitable.\\\\\nEn $x=-2$ el numerador val $3\\neq0$, i els laterals valen $+\\infty$ (per l'esquerra) i $-\\infty$ (per\nla dreta): asímptota vertical $\\boxed{x=-2}$.\\\\\n\\textbf{Horitzontal}: mateix grau, i $\\lim_{x\\to\\pm\\infty}f(x)=1$: $\\boxed{y=1}$.\\\\\nNo n'hi ha prou: cal que el límit sigui infinit. Quan el numerador també s'anul·la, cal simplificar\nabans de decidir.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba totes les asímptotes de la funció\n\\[\ng(x)=\\frac{x^2+1}{x-1} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: $x=1$, perquè el denominador s'hi anul·la i el numerador val $2\\neq0$.\\\\\n\\textbf{Obliqua}: el grau del numerador supera en $1$ el del denominador. Dividint,\n$\\dfrac{x^2+1}{x-1}=x+1+\\dfrac{2}{x-1}$, i el terme que sobra tendeix a $0$: asímptota\nobliqua $\\boxed{y=x+1}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nDibuixa la gràfica d'una funció que tingui domini $\\mathbb{R}\\setminus\\{2\\}$, asímptota\nvertical $x=2$ i asímptota horitzontal $y=-1$, i escriu-ne una expressió.\n\n\\begin{solucio}\nPer exemple, $f(x)=-1+\\dfrac{1}{x-2}$: el domini és $\\mathbb{R}\\setminus\\{2\\}$, en $x=2$ els\nlímits laterals són $\\mp\\infty$ i $\\lim_{x\\to\\pm\\infty}f(x)=-1$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.5cm]\n  \\draw[gray!55,very thin,step=1] (-3,-5) grid (7,3);\n  \\draw[->] (-3.4,0) -- (7.4,0) node[below right] {$x$};\n  \\draw[->] (0,-5.4) -- (0,3.4) node[above left] {$y$};\n  \\foreach \\i in {-2,2,4,6} \\draw (\\i,0.12) -- (\\i,-0.12) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-4,-2,2} \\draw (0.12,\\j) -- (-0.12,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (2,-5) -- (2,3);\n  \\draw[dashed,thick] (-3,-1) -- (7,-1);\n  \\begin{scope}\n    \\clip (-3,-5) rectangle (7,3);\n    \\draw[\\colorgrafica,very thick,domain=-3:1.75,samples=100,smooth] plot (\\x,{-1+1/(\\x-2)});\n    \\draw[\\colorgrafica,very thick,domain=2.25:7,samples=100,smooth] plot (\\x,{-1+1/(\\x-2)});\n  \\end{scope}\n\\end{tikzpicture}\n\\end{center}\nQualsevol altra funció amb aquestes asímptotes també val.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "u10/asimptotes/q001/out/enunciat.pdf",
+   "pdf_solucio": "u10/asimptotes/q001/out/solucio.pdf",
+   "pdf_curt": "u10/asimptotes/q001/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/asimptotes/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/asimptotes/q002",
+   "unitat": "u10",
+   "tema": "asimptotes",
+   "codi": "q002",
+   "titol": "Dues asímptotes verticals, una obliqua i una gràfica amb els dos laterals a +∞",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    62,
+    63,
+    38
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "asímptotes",
+    "obliqua",
+    "inventa"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "asimptotes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q002/out/tries/asimptotes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q002/out/tries/asimptotes-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q002/out/tries/asimptotes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q002/out/tries/asimptotes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "talla-asimptota",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q002/out/tries/asimptotes-tasca/talla-asimptota/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q002/out/tries/asimptotes-tasca/talla-asimptota/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q002/out/tries/asimptotes-tasca/talla-asimptota/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q002/out/tries/asimptotes-tasca/talla-asimptota/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{asimptotes-tasca}\n\\itemtria{original}{1}{1,25}\nTroba totes les asímptotes de la funció\n\\[\nf(x)=\\frac{x^2+2}{x^2-x-2} .\n\\]\n\n\\begin{solucio}\n\\textbf{Verticals}: el denominador és $(x-2)(x+1)$, que s'anul·la en $x=2$ i en $x=-1$, i el numerador\nno s'hi anul·la ($6$ i $3$). En $x=2$ els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per\nla dreta), i en $x=-1$, $+\\infty$ i $-\\infty$: asímptotes verticals $\\boxed{x=2}$ i $\\boxed{x=-1}$.\\\\\n\\textbf{Horitzontal}: numerador i denominador tenen el mateix grau, i\n$\\lim_{x\\to\\pm\\infty}f(x)=\\dfrac11=1$: asímptota horitzontal $\\boxed{y=1}$. Per tant, no n'hi ha\ncap d'obliqua.\n\\end{solucio}\n\n\\itemtria{talla-asimptota}{1}{1,25}\nTroba les asímptotes de la funció\n\\[\nf(x)=\\frac{x^2+2x}{x^2+1} ,\n\\]\ni estudia si la gràfica talla l'asímptota horitzontal. Una gràfica pot tallar una asímptota vertical?\n\n\\begin{solucio}\n\\textbf{Verticals}: cap, perquè el denominador, $x^2+1$, no s'anul·la mai.\\\\\n\\textbf{Horitzontal}: mateix grau, i $\\lim_{x\\to\\pm\\infty}f(x)=1$: $\\boxed{y=1}$. Per tant, no n'hi ha\ncap d'obliqua.\\\\\n\\textbf{Tall amb l'asímptota}: $f(x)=1$ si $x^2+2x=x^2+1$, és a dir si $x=\\tfrac12$. La gràfica talla\nl'asímptota horitzontal en $\\left(\\tfrac12,1\\right)$: una asímptota horitzontal descriu el\ncomportament a l'infinit, i la gràfica la pot tallar en punts concrets.\\\\\nUna asímptota vertical $x=a$ d'una funció racional, en canvi, no es pot tallar, perquè la funció no\nestà definida en $x=a$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba totes les asímptotes de la funció\n\\[\ng(x)=\\frac{2x^2-3x}{x+1} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: $x=-1$, perquè el denominador s'hi anul·la i el numerador val $5\\neq0$.\\\\\n\\textbf{Obliqua}: el grau del numerador supera en $1$ el del denominador. Dividint,\n$\\dfrac{2x^2-3x}{x+1}=2x-5+\\dfrac{5}{x+1}$, i el terme que sobra tendeix a $0$: asímptota obliqua\n$\\boxed{y=2x-5}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nDibuixa la gràfica d'una funció que tingui domini $\\mathbb{R}\\setminus\\{0\\}$, asímptota horitzontal\n$y=1$ i asímptota vertical $x=0$, amb $\\lim_{x\\to0}f(x)=+\\infty$ pels dos costats, i escriu-ne una\nexpressió.\n\n\\begin{solucio}\nPer exemple, $f(x)=1+\\dfrac{1}{x^2}$: el domini és $\\mathbb{R}\\setminus\\{0\\}$; com que $x^2>0$, els\ndos laterals en $x=0$ valen $+\\infty$ (l'asímptota vertical és l'eix $OY$); i\n$\\lim_{x\\to\\pm\\infty}f(x)=1$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.5cm]\n  \\draw[gray!55,very thin,step=1] (-5,-2) grid (5,7);\n  \\draw[->] (-5.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-2.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.12) -- (\\i,-0.12) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {2,4,6} \\draw (0.12,\\j) -- (-0.12,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-5,1) -- (5,1);\n  \\begin{scope}\n    \\clip (-5,-2) rectangle (5,7);\n    \\draw[\\colorgrafica,very thick,domain=-5:-0.37,samples=100,smooth] plot (\\x,{1+1/(\\x*\\x)});\n    \\draw[\\colorgrafica,very thick,domain=0.37:5,samples=100,smooth] plot (\\x,{1+1/(\\x*\\x)});\n  \\end{scope}\n\\end{tikzpicture}\n\\end{center}\nQualsevol altra funció amb aquestes propietats també val.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "u10/asimptotes/q002/out/enunciat.pdf",
+   "pdf_solucio": "u10/asimptotes/q002/out/solucio.pdf",
+   "pdf_curt": "u10/asimptotes/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/asimptotes/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/asimptotes/q003",
+   "unitat": "u10",
+   "tema": "asimptotes",
+   "codi": "q003",
+   "titol": "Asímptota horitzontal y = 0, una obliqua i una gràfica a partir d'una asímptota obliqua",
+   "punts": 2.5,
+   "apartats": [
     1.0,
     0.75,
     0.75
@@ -432,12 +564,38 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba totes les asímptotes de la funció\n\\[\nf(x)=\\frac{2x-1}{x+3} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: el denominador s'anul·la en $x=-3$ i el numerador no ($-7\\neq0$), i\n$\\lim_{x\\to-3^-}f(x)=+\\infty$ i $\\lim_{x\\to-3^+}f(x)=-\\infty$: asímptota vertical\n$\\boxed{x=-3}$.\\\\\n\\textbf{Horitzontal}: numerador i denominador tenen el mateix grau, i\n$\\lim_{x\\to\\pm\\infty}f(x)=\\dfrac21=2$: asímptota horitzontal $\\boxed{y=2}$.\\\\\nCom que hi ha asímptota horitzontal, no n'hi pot haver cap d'obliqua.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba totes les asímptotes de la funció\n\\[\ng(x)=\\frac{x^2+1}{x-1} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: $x=1$, perquè el denominador s'hi anul·la i el numerador val $2\\neq0$.\\\\\n\\textbf{Obliqua}: el grau del numerador supera en $1$ el del denominador. Dividint,\n$\\dfrac{x^2+1}{x-1}=x+1+\\dfrac{2}{x-1}$, i el terme que sobra tendeix a $0$: asímptota\nobliqua $\\boxed{y=x+1}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nDibuixa la gràfica d'una funció que tingui domini $\\mathbb{R}\\setminus\\{2\\}$, asímptota\nvertical $x=2$ i asímptota horitzontal $y=-1$, i escriu-ne una expressió.\n\n\\begin{solucio}\nPer exemple, $f(x)=-1+\\dfrac{1}{x-2}$: el domini és $\\mathbb{R}\\setminus\\{2\\}$, en $x=2$ els\nlímits laterals són $\\mp\\infty$ i $\\lim_{x\\to\\pm\\infty}f(x)=-1$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.5cm]\n  \\draw[gray!55,very thin,step=1] (-3,-5) grid (7,3);\n  \\draw[->] (-3.4,0) -- (7.4,0) node[below right] {$x$};\n  \\draw[->] (0,-5.4) -- (0,3.4) node[above left] {$y$};\n  \\foreach \\i in {-2,2,4,6} \\draw (\\i,0.12) -- (\\i,-0.12) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-4,-2,2} \\draw (0.12,\\j) -- (-0.12,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (2,-5) -- (2,3);\n  \\draw[dashed,thick] (-3,-1) -- (7,-1);\n  \\begin{scope}\n    \\clip (-3,-5) rectangle (7,3);\n    \\draw[\\colorgrafica,very thick,domain=-3:1.75,samples=100,smooth] plot (\\x,{-1+1/(\\x-2)});\n    \\draw[\\colorgrafica,very thick,domain=2.25:7,samples=100,smooth] plot (\\x,{-1+1/(\\x-2)});\n  \\end{scope}\n\\end{tikzpicture}\n\\end{center}\nQualsevol altra funció amb aquestes asímptotes també val.\n\\end{solucio}\n\n\\end{apartats}\n",
-   "pdf": "u10/asimptotes/q001/out/enunciat.pdf",
-   "pdf_solucio": "u10/asimptotes/q001/out/solucio.pdf",
-   "pdf_curt": "u10/asimptotes/q001/out/enunciat-curt.pdf",
-   "pdf_solucio_curt": "u10/asimptotes/q001/out/solucio-curt.pdf"
+   "tries": [
+    {
+     "id": "asimptotes-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q003/out/tries/asimptotes-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q003/out/tries/asimptotes-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q003/out/tries/asimptotes-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q003/out/tries/asimptotes-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "branques-polinomi",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/asimptotes/q003/out/tries/asimptotes-tasca/branques-polinomi/enunciat.pdf",
+       "pdf_solucio": "u10/asimptotes/q003/out/tries/asimptotes-tasca/branques-polinomi/solucio.pdf",
+       "pdf_curt": "u10/asimptotes/q003/out/tries/asimptotes-tasca/branques-polinomi/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/asimptotes/q003/out/tries/asimptotes-tasca/branques-polinomi/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba totes les asímptotes de la funció\n\\[\nf(x)=\\frac{x+2}{x^2-2x-3} .\n\\]\n\n\\begin{solucio}\n\\textbf{Verticals}: el denominador és $(x-3)(x+1)$, que s'anul·la en $x=3$ i en $x=-1$, i el numerador\nno s'hi anul·la ($5$ i $1$). En $x=3$ els laterals valen $-\\infty$ i $+\\infty$, i en $x=-1$, $+\\infty$\ni $-\\infty$: asímptotes verticals $\\boxed{x=3}$ i $\\boxed{x=-1}$.\\\\\n\\textbf{Horitzontal}: el grau del numerador és més petit que el del denominador, i\n$\\lim_{x\\to\\pm\\infty}f(x)=0$: asímptota horitzontal $\\boxed{y=0}$. Per tant, no n'hi ha cap d'obliqua.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba totes les asímptotes de la funció\n\\[\ng(x)=\\frac{x^2-4x+5}{x-2} .\n\\]\n\n\\begin{solucio}\n\\textbf{Vertical}: $x=2$, perquè el denominador s'hi anul·la i el numerador val $1\\neq0$.\\\\\n\\textbf{Obliqua}: dividint, $\\dfrac{x^2-4x+5}{x-2}=x-2+\\dfrac{1}{x-2}$, i el terme que sobra tendeix a\n$0$: asímptota obliqua $\\boxed{y=x-2}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{asimptotes-tasca}\n\\itemtria{original}{0,75}{1,25}\nDibuixa la gràfica d'una funció que tingui domini $\\mathbb{R}\\setminus\\{-1\\}$, asímptota vertical\n$x=-1$ i asímptota obliqua $y=x$, i escriu-ne una expressió.\n\n\\begin{solucio}\nPer exemple, $f(x)=x+\\dfrac{1}{x+1}$: el domini és $\\mathbb{R}\\setminus\\{-1\\}$; en $x=-1$ els laterals\nvalen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la dreta); i $f(x)-x=\\dfrac{1}{x+1}\\to0$ quan\n$x\\to\\pm\\infty$, de manera que $y=x$ és asímptota obliqua pels dos costats.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.5cm]\n  \\draw[gray!55,very thin,step=1] (-6,-7) grid (5,6);\n  \\draw[->] (-6.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-7.4) -- (0,6.4) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.12) -- (\\i,-0.12) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-6,-4,-2,2,4} \\draw (0.12,\\j) -- (-0.12,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-1,-7) -- (-1,6);\n  \\draw[dashed,thick] (-6,-6) -- (5,5);\n  \\begin{scope}\n    \\clip (-6,-7) rectangle (5,6);\n    \\draw[\\colorgrafica,very thick,domain=-6:-1.14,samples=100,smooth] plot (\\x,{\\x+1/(\\x+1)});\n    \\draw[\\colorgrafica,very thick,domain=-0.86:5,samples=100,smooth] plot (\\x,{\\x+1/(\\x+1)});\n  \\end{scope}\n\\end{tikzpicture}\n\\end{center}\nQualsevol altra funció amb aquestes propietats també val.\n\\end{solucio}\n\n\\itemtria{branques-polinomi}{0,75}{1,25}\nEstudia les branques infinites de la funció polinòmica\n\\[\np(x)=-x^3+2x^2+5 ,\n\\]\ni justifica que no té cap asímptota. Passa el mateix amb qualsevol polinomi de grau més gran que $1$?\n\n\\begin{solucio}\n$\\lim_{x\\to-\\infty}p(x)=+\\infty$ i $\\lim_{x\\to+\\infty}p(x)=-\\infty$: hi mana el terme de grau màxim,\n$-x^3$.\\\\\n\\textbf{Verticals}: cap, perquè $p$ està definida i és contínua a tot $\\mathbb{R}$.\n\\textbf{Horitzontals}: cap, perquè els límits a l'infinit no són finits. \\textbf{Obliqües}: cap,\nperquè $\\dfrac{p(x)}{x}=-x^2+2x+\\dfrac5x\\to-\\infty$ als dos costats, i el pendent no pot ser finit.\\\\\nPassa el mateix amb qualsevol polinomi de grau $n\\ge2$: $\\dfrac{p(x)}{x}$ és de grau $n-1\\ge1$ i\ntendeix a $\\pm\\infty$. Les seves branques infinites són \\textbf{parabòliques}, sense asímptota.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/asimptotes/q003/out/enunciat.pdf",
+   "pdf_solucio": "u10/asimptotes/q003/out/solucio.pdf",
+   "pdf_curt": "u10/asimptotes/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/asimptotes/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u10/domini-talls/q001",
