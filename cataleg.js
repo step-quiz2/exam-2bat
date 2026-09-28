@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 18:54 UTC",
+ "generat": "2026-09-28 19:18 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -247,6 +247,43 @@ const BANC = {
  "versio": "920aa212",
  "preguntes": [
   {
+   "id": "pau/algebra/alg-25j-q2",
+   "unitat": "pau",
+   "tema": "algebra",
+   "codi": "alg-25j-q2",
+   "titol": "Sistema lineal amb paràmetre p: discussió, resolució i solucions amb xy = 10",
+   "punts": 2.5,
+   "apartats": [
+    1.25,
+    0.5,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    0.5,
+    0.75
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "Rouché-Frobenius",
+    "paràmetre",
+    "sistema indeterminat"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2025, sèrie 1",
+   "unitats": [],
+   "tries": [],
+   "tex": "Considereu el sistema d'equacions lineals següent:\n\\[\n\\left.\\begin{aligned}\ny-z&=p+3\\\\\np^2x-z&=5\\\\\nx-y&=3\n\\end{aligned}\\right\\}\n\\]\n\n\\begin{apartats}\n\n\\apartat{1,25}\nDiscutiu el sistema per als diferents valors del paràmetre $p$.\n\n\\begin{solucio}\nLa matriu de coeficients i l'ampliada, $A$ i $A'$ respectivament, són les següents:\n\\[\n\\left(\\begin{array}{ccc|c}0&1&-1&p+3\\\\p^2&0&-1&5\\\\1&-1&0&3\\end{array}\\right).\n\\]\nEn primer lloc, calculem el determinant de $A$:\n\\[\n|A|=\\begin{vmatrix}0&1&-1\\\\p^2&0&-1\\\\1&-1&0\\end{vmatrix}=0+p^2-1=p^2-1 .\n\\]\nIgualant-lo a zero, en resulten els valors $p=1$ i $p=-1$. Per tant, distingim els casos següents:\\\\\nSi $p\\neq1,\\,-1$, el determinant de $A$ és diferent de zero i, per tant, $\\operatorname{rang}(A)=\\operatorname{rang}(A')=3$,\nque és igual al nombre d'incògnites. Per tant, es tracta d'un sistema compatible determinat.\\\\\nSi $p=1$, el determinant de la matriu de coeficients és zero; com que tenim el menor\n$\\begin{vmatrix}0&1\\\\1&0\\end{vmatrix}=-1\\neq0$, aleshores $\\operatorname{rang}(A)=2$. Però la matriu ampliada té\n$\\operatorname{rang}(A')=3$ gràcies, per exemple, al menor\n\\[\n\\begin{vmatrix}0&1&4\\\\1&0&5\\\\1&-1&3\\end{vmatrix}=5-4-3=-2\\neq0 .\n\\]\nPer tant, el sistema és incompatible.\\\\\nSi $p=-1$, tenim el sistema $y-z=2$, $x-z=5$, $x-y=3$. Eliminant la segona equació (per ser suma de la\nprimera i la tercera), i com que la matriu\n\\[\n\\begin{pmatrix}0&1&-1&2\\\\1&-1&0&3\\end{pmatrix}\n\\]\nté rang 2, el sistema és compatible indeterminat amb un grau de llibertat.\n\n\\textit{Pauta oficial:} 0,25 pel càlcul del determinant; 0,25 per determinar els valors crítics de $p$, i 0,25\nper la discussió de cadascun dels tres casos. Hi ha altres maneres de discutir i resoldre el sistema\nd'equacions: compteu-les bé en la mesura que ho facin correctament i de manera justificada.\n\\end{solucio}\n\n\\apartat{0,5}\nResoleu el sistema per al cas $p=-1$.\n\n\\begin{solucio}\nPer al cas $p=-1$, es tracta del sistema $y-z=2$, $x-y=3$, que és compatible indeterminat. Fent $y=\\lambda$,\ns'obté $x=\\lambda+3$ i $z=\\lambda-2$. Per tant, la solució del sistema és, en aquest cas,\n$(x,y,z)=(\\lambda+3,\\,\\lambda,\\,\\lambda-2)$, amb $\\lambda$ real.\n\n\\textit{Pauta oficial:} 0,5 pel càlcul correcte del conjunt de solucions (evidentment, poden triar qualsevol\nde les variables com a lliure).\n\\end{solucio}\n\n\\apartat{0,75}\nPer al cas $p=-1$, hi ha alguna solució que compleixi, a més, $xy=10$? En cas afirmatiu, indiqueu quantes\nn'hi ha i trobeu-les totes.\n\n\\begin{solucio}\nPer al cas $p=-1$, el sistema té les infinites solucions obtingudes a l'apartat anterior. Imposant, a més,\nque $xy=10$, resulta $(\\lambda+3)\\lambda=10$, és a dir, $\\lambda^2+3\\lambda-10=0$; d'aquí obtenim\n\\[\n\\lambda=\\frac{-3\\pm\\sqrt{9-4(-10)}}{2}=\\frac{-3\\pm7}{2}=-5,\\ 2 .\n\\]\nPer tant, el sistema té exactament dues solucions que compleixen $xy=10$, que són les corresponents a\n$\\lambda=-5$ i $\\lambda=2$. Es tracta de $(x,y,z)=(-2,-5,-7)$ i $(x,y,z)=(5,2,0)$, respectivament.\n\n\\textit{Pauta oficial:} 0,25 pel plantejament de l'equació quadràtica; 0,25 per la seva resolució, i 0,25 pel\ncàlcul dels dos punts resultants.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/algebra/alg-25j-q2/out/enunciat.pdf",
+   "pdf_solucio": "pau/algebra/alg-25j-q2/out/solucio.pdf",
+   "pdf_curt": "pau/algebra/alg-25j-q2/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/algebra/alg-25j-q2/out/solucio.pdf"
+  },
+  {
    "id": "pau/algebra/alg-26j-q2",
    "unitat": "pau",
    "tema": "algebra",
@@ -319,6 +356,81 @@ const BANC = {
    "pdf_solucio": "pau/algebra/alg-26j2-q2/out/solucio.pdf",
    "pdf_curt": "pau/algebra/alg-26j2-q2/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/algebra/alg-26j2-q2/out/solucio.pdf"
+  },
+  {
+   "id": "pau/analisi/ana-25j-q1",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-25j-q1",
+   "titol": "f(x) = (x²−2x)/(x−1): talls, asímptotes, tangents paral·leles i pendent 1",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    1.0,
+    0.5
+   ],
+   "apartats_curt": [
+    1.0,
+    1.0,
+    0.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "asímptota obliqua",
+    "recta tangent",
+    "derivada"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2025, sèrie 1",
+   "unitats": [
+    "u8",
+    "u10"
+   ],
+   "tries": [],
+   "tex": "Considereu la funció $f(x)=\\dfrac{x^2-2x}{x-1}$.\n\n\\begin{apartats}\n\n\\apartat{1}\nDetermineu els talls de la corba $y=f(x)$ amb els eixos de coordenades, i les equacions de les seves\npossibles asímptotes verticals, horitzontals i obliqües.\n\n\\begin{solucio}\nCom que $f(0)=\\frac{0}{-1}=0$, el tall amb l'eix d'ordenades és al punt $(0,0)$. Per als talls amb l'eix\nd'abscisses, hem de resoldre l'equació $\\frac{x^2-2x}{x-1}=0$, que té com a solucions $x=0$ i $x=2$; per\ntant, els talls amb l'eix d'abscisses són $(0,0)$ i $(2,0)$.\\\\\nAquesta funció té una asímptota vertical a $x=1$, ja que aquest punt és fora del domini i\n$\\lim_{x\\to1}\\frac{x^2-2x}{x-1}=\\frac{-1}{0}=\\pm\\infty$ (més precisament,\n$\\lim_{x\\to1^+}\\frac{x^2-2x}{x-1}=\\frac{-1}{+0}=-\\infty$ i $\\lim_{x\\to1^-}\\frac{x^2-2x}{x-1}=\\frac{-1}{-0}=+\\infty$).\nA més a més, aquesta funció té una asímptota obliqua, ja que\n\\[\n\\lim_{x\\to\\infty}\\frac{f(x)}{x}=\\lim_{x\\to\\infty}\\frac{x^2-2x}{x(x-1)}=\\lim_{x\\to\\infty}\\frac{x^2-2x}{x^2-x}=\\frac11=1 .\n\\]\nCom que\n\\[\n\\lim_{x\\to\\infty}\\bigl(f(x)-x\\bigr)=\\lim_{x\\to\\infty}\\left(\\frac{x^2-2x}{x-1}-x\\right)\n=\\lim_{x\\to\\infty}\\frac{x^2-2x-x^2+x}{x-1}=\\lim_{x\\to\\infty}\\frac{-x}{x-1}=-1,\n\\]\nes tracta de la recta $y=x-1$.\n\n\\textit{Pauta oficial:} 0,25 pels punts de tall; 0,25 per l'asímptota vertical (encara que no distingeixin el\nlímit per la dreta i per l'esquerra), i 0,5 per l'equació de l'asímptota obliqua.\n\\end{solucio}\n\n\\apartat{1}\nCalculeu les equacions de les rectes tangents a la corba $y=f(x)$ en els punts $x=0$ i $x=2$. Aquestes dues\nrectes són paral·leles? Justifiqueu la resposta.\n\n\\begin{solucio}\nLa derivada d'aquesta funció és\n\\[\nf'(x)=\\frac{(2x-2)(x-1)-\\left(x^2-2x\\right)}{(x-1)^2}=\\frac{2x^2-2x-2x+2-x^2+2x}{(x-1)^2}=\\frac{x^2-2x+2}{(x-1)^2}.\n\\]\nCom que $f(0)=0$ i $f'(0)=2$, la recta tangent al punt $(0,0)$ tindrà per equació $y-0=2(x-0)\\rightarrow y=2x$.\\\\\nAnàlogament, com que $f(2)=\\frac{4-4}{1}=0$ i $f'(2)=\\frac{4-4+2}{1}=2$, la recta tangent al punt $(2,0)$\ntindrà per equació $y-0=2(x-2)\\rightarrow y=2x-4$.\\\\\nAquestes dues rectes són paral·leles, ja que tenen el mateix pendent: $f'(0)=f'(2)=2$.\n\n\\textit{Pauta oficial:} 0,25 pel càlcul de la derivada; 0,25 per cadascuna de les rectes tangents, i 0,25 per\njustificar correctament que són paral·leles.\n\\end{solucio}\n\n\\apartat{0,5}\nHi ha algun punt on la recta tangent a $f(x)$ tingui pendent 1? En cas afirmatiu, trobeu-lo.\n\n\\begin{solucio}\nIgualant la derivada a 1, ens queda una equació sense solució:\n\\[\n\\frac{x^2-2x+2}{(x-1)^2}=1\\;\\rightarrow\\;x^2-2x+2=(x-1)^2\\;\\rightarrow\\;2=1 .\n\\]\nPer tant, no hi ha cap punt on la recta tangent tingui pendent 1.\n\n\\textit{Pauta oficial:} 0,25 per plantejar l'equació i 0,25 per veure que no té solució i respondre que la\ngràfica no té cap recta tangent amb pendent 1.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-25j-q1/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-25j-q1/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-25j-q1/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-25j-q1/out/solucio.pdf"
+  },
+  {
+   "id": "pau/analisi/ana-25j-q4a",
+   "unitat": "pau",
+   "tema": "analisi",
+   "codi": "ana-25j-q4a",
+   "titol": "Vela semiparabòlica: àrees de dues regions i cost del material",
+   "punts": 2.5,
+   "apartats": [
+    2.5
+   ],
+   "apartats_curt": [
+    2.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "àrea",
+    "integral definida",
+    "problema en context"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2025, sèrie 1",
+   "unitats": [
+    "u12"
+   ],
+   "tries": [],
+   "tex": "La vela major d'un veler té forma semiparabòlica i està delimitada per les gràfiques de $f(x)=-x^2+25$, $y=0$\ni $x=0$, tal com s'indica a la figura següent:\n\\begin{center}\n\\begin{tikzpicture}[x=0.28cm,y=0.2cm]\n  \\begin{scope}\n    \\clip (0,9) -- (0,25) -- plot[domain=0:4,samples=40,smooth] (\\x,{25-(\\x)*(\\x)}) -- (4,9) -- cycle;\n    \\foreach \\t in {-12,-11.4,...,4.2} \\draw[very thin] (\\t,9) -- ++(12,16.8);\n  \\end{scope}\n  \\begin{scope}\n    \\clip (0,0) -- (0,9) -- (4,9) -- plot[domain=4:5,samples=20,smooth] (\\x,{25-(\\x)*(\\x)}) -- (5,0) -- cycle;\n    \\foreach \\t in {-7,-6.4,...,6} \\draw[very thin] (\\t,0) -- ++(7,9.8);\n    \\foreach \\t in {0,0.6,...,12} \\draw[very thin] (\\t,0) -- ++(-7,9.8);\n  \\end{scope}\n  \\draw (-11,0) -- (11,0);\n  \\draw (0,-3) -- (0,28);\n  \\foreach \\i in {-10,-5,5,10} \\draw (\\i,0.5) -- (\\i,-0.5) node[below,font=\\tiny] {$\\i$};\n  \\node[below left,font=\\tiny] at (0,0) {$0$};\n  \\foreach \\j in {5,10,15,20,25} \\draw (0.25,\\j) -- (-0.25,\\j) node[left,font=\\tiny] {$\\j$};\n  \\draw (-11,9) -- (11,9);\n  \\draw[\\colorgrafica,thick,domain=-5.3:5.3,samples=80,smooth] plot (\\x,{25-(\\x)*(\\x)});\n  \\node[right,font=\\scriptsize] at (2.5,22.5) {$f(x)=-x^2+25$};\n  \\node[right,font=\\scriptsize] at (3.4,15) {Regió$_{\\text{superior}}$};\n  \\node[font=\\scriptsize] at (6.5,10.8) {$y=9$};\n  \\node[right,font=\\scriptsize] at (5.1,5) {Regió$_{\\text{inferior}}$};\n\\end{tikzpicture}\n\\end{center}\nLa vela té dues parts separades per la recta $y=9$. Per a construir-la, s'empra un teixit de niló a la part\nsuperior, que costa $50\\ \\text{€}/\\text{u}^2$, i un teixit de polièster a la part inferior, que costa\n$70\\ \\text{€}/\\text{u}^2$.\n\n\\begin{apartats}\n\n\\apartat{2,5}\nCalculeu el cost total del material que es necessita per a construir aquesta vela.\n\n\\begin{solucio}\nLa vela ocupa la regió compresa entre les corbes $y=0$, $x=0$ i $y=-x^2+25$. Per calcular el cost total,\ncaldrà calcular separadament l'àrea de la regió superior i l'àrea de la regió inferior, i multiplicar-les\ncadascuna pel preu del material respectiu (niló o polièster).\\\\\nTrobem primer els punts de tall entre les funcions involucrades. El punt de tall de $y=-x^2+25$ amb la part\npositiva de l'eix d'abscisses és $y=0\\rightarrow-x^2+25=0\\rightarrow x=5$. L'abscissa positiva del punt de\ntall entre les corbes $y=-x^2+25$ i $y=9$ és $-x^2+25=9\\rightarrow-x^2=-16\\rightarrow x=4$.\\\\\nL'àrea total sota la corba $y=-x^2+25$ entre els extrems $x=0$ i $x=5$ és\n\\[\nA_{\\text{total}}=\\int_0^5\\left(-x^2+25\\right)dx=\\left[-\\frac{x^3}{3}+25x\\right]_0^5=-\\frac{125}{3}+125-0\n=\\frac{250}{3}\\ \\text{u}^2 .\n\\]\nL'àrea de la regió inferior és\n\\begin{align*}\nA_{\\text{inf}}&=\\int_0^4 9\\,dx+\\int_4^5\\left(-x^2+25\\right)dx=9\\cdot4+\\left[-\\frac{x^3}{3}+25x\\right]_4^5\\\\\n&=36+\\left(-\\frac{125}{3}+125\\right)-\\left(-\\frac{64}{3}+100\\right)=36+\\frac{14}{3}=\\frac{122}{3}\\ \\text{u}^2 .\n\\end{align*}\nFinalment, l'àrea de la regió superior és la diferència:\n$A_{\\text{sup}}=A_{\\text{total}}-A_{\\text{inf}}=\\frac{250}{3}-\\frac{122}{3}=\\frac{128}{3}\\ \\text{u}^2$.\\\\\nAixí doncs, el cost total de la vela serà\n\\begin{align*}\n&\\frac{128}{3}\\ \\text{u}^2\\cdot50\\ \\text{€}/\\text{u}^2+\\frac{122}{3}\\ \\text{u}^2\\cdot70\\ \\text{€}/\\text{u}^2\\\\\n&\\qquad=\\frac{6\\,400+8\\,540}{3}\\ \\text{€}=4\\,980\\ \\text{€}.\n\\end{align*}\n\n\\textit{Pauta oficial:} 0,25 pels punts de tall; 0,5 pel plantejament de l'àrea de la regió inferior, i 0,5\npel càlcul; 0,5 pel plantejament de l'àrea de la regió superior, i 0,5 pel càlcul, i, finalment, 0,25 pel\ncàlcul del cost final. Hi ha altres maneres de plantejar el càlcul de les dues àrees: compteu-les bé si ho\nfan correctament i de manera justificada.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/analisi/ana-25j-q4a/out/enunciat.pdf",
+   "pdf_solucio": "pau/analisi/ana-25j-q4a/out/solucio.pdf",
+   "pdf_curt": "pau/analisi/ana-25j-q4a/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/analisi/ana-25j-q4a/out/solucio.pdf"
   },
   {
    "id": "pau/analisi/ana-26j-q1",
@@ -476,6 +588,41 @@ const BANC = {
    "pdf_solucio_curt": "pau/analisi/ana-26j2-q4a/out/solucio.pdf"
   },
   {
+   "id": "pau/geometria/geo-25j-q4b",
+   "unitat": "pau",
+   "tema": "geometria",
+   "codi": "geo-25j-q4b",
+   "titol": "Pla perpendicular a x + y = 0 per dos punts, i la recta dels punts equidistants",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    1.5
+   ],
+   "apartats_curt": [
+    1.0,
+    1.5
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "pla perpendicular",
+    "pla mediador",
+    "intersecció de plans"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2025, sèrie 1",
+   "unitats": [],
+   "tries": [],
+   "tex": "Considereu el pla $\\pi$ d'equació $x+y=0$.\n\n\\begin{apartats}\n\n\\apartat{1}\nCalculeu l'equació del pla $\\pi'$ que és perpendicular a $\\pi$ i conté els punts $P=(1,-1,2)$ i\n$Q=(3,-3,6)$.\n\n\\begin{solucio}\nEl pla $\\pi'$ que busquem té vectors directors $(1,1,0)$ i\n$\\overrightarrow{PQ}=(3,-3,6)-(1,-1,2)=(2,-2,4)\\sim(1,-1,2)$. Fent-lo passar pel punt $P$, serà el pla d'equació\n\\[\n\\begin{vmatrix}x-1&y+1&z-2\\\\1&1&0\\\\1&-1&2\\end{vmatrix}=2x-2-z+2-z+2-2y-2=0,\n\\]\nés a dir, $2x-2y-2z=0$; o, simplificant, $x-y-z=0$.\n\n\\textit{Pauta oficial:} 0,5 per plantejar correctament el problema i 0,5 pel càlcul de l'equació.\n\\end{solucio}\n\n\\apartat{1,5}\nCalculeu l'equació paramètrica de la recta continguda en $\\pi'$ i que conté els punts de $\\pi'$ a la mateixa\ndistància de $P$ que de $Q$.\n\n\\begin{solucio}\nLa recta que ens demanen és la intersecció del pla $\\pi'$ amb el pla perpendicular a\n$\\overrightarrow{PQ}\\sim(1,-1,2)$ que passa pel punt mig\n\\[\nM=\\frac{P+Q}{2}=\\frac12(4,-4,8)=(2,-2,4).\n\\]\nAquest pla té equació $x-y+2z=D$, amb $D=2-(-2)+2\\cdot4=12$; és a dir, $x-y+2z=12$. Per tant, la recta\ndemanada és\n\\[\n\\left.\\begin{aligned}x-y-z&=0\\\\x-y+2z&=12\\end{aligned}\\right\\}.\n\\]\nCom que, restant, obtenim $z=4$, es tracta de la recta $(x,y,z)=(k+4,\\,k,\\,4)=(4,0,4)+k(1,1,0)$.\n\n\\textit{Pauta oficial:} 0,75 per calcular l'equació del pla perpendicular a $\\overrightarrow{PQ}$ passant pel punt\nmig, i 0,75 per l'equació paramètrica de la recta intersecció amb $\\pi'$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/geometria/geo-25j-q4b/out/enunciat.pdf",
+   "pdf_solucio": "pau/geometria/geo-25j-q4b/out/solucio.pdf",
+   "pdf_curt": "pau/geometria/geo-25j-q4b/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/geometria/geo-25j-q4b/out/solucio.pdf"
+  },
+  {
    "id": "pau/geometria/geo-26j-q4b",
    "unitat": "pau",
    "tema": "geometria",
@@ -548,6 +695,47 @@ const BANC = {
    "pdf_solucio": "pau/geometria/geo-26j2-q4b/out/solucio.pdf",
    "pdf_curt": "pau/geometria/geo-26j2-q4b/out/enunciat.pdf",
    "pdf_solucio_curt": "pau/geometria/geo-26j2-q4b/out/solucio.pdf"
+  },
+  {
+   "id": "pau/probabilitat/pro-25j-q3",
+   "unitat": "pau",
+   "tema": "probabilitat",
+   "codi": "pro-25j-q3",
+   "titol": "Peces de ferro i d'acer: probabilitat total, binomial i màxim de f(p)",
+   "punts": 2.5,
+   "apartats": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "apartats_curt": [
+    0.75,
+    0.75,
+    1.0
+   ],
+   "te_curt": false,
+   "dificultat": "●●○",
+   "origen": [],
+   "minuts": 22,
+   "minuts_curt": 22,
+   "etiquetes": [
+    "probabilitat total",
+    "binomial",
+    "optimització"
+   ],
+   "temes_secundaris": [],
+   "procedencia": "PAU juny 2025, sèrie 1",
+   "unitats": [
+    "u9",
+    "u13",
+    "u14"
+   ],
+   "tries": [],
+   "tex": "Una empresa produeix dos tipus de peces, de ferro i d'acer. El 60\\,\\% de la producció total correspon a peces\nde ferro i la resta són d'acer. Sabem que el 95\\,\\% de les peces de ferro produïdes no tenen cap defecte,\nmentre que el 3\\,\\% de les peces d'acer són defectuoses.\n\n\\begin{apartats}\n\n\\apartat{0,75}\nSi agafem una peça a l'atzar, quina és la probabilitat que sigui defectuosa?\n\n\\begin{solucio}\nConsiderem els successos aleatoris següents: $A$ = «la peça escollida és d'acer», $F$ = «la peça escollida és\nde ferro» i $D$ = «la peça escollida és defectuosa». De les dades de l'enunciat tenim $P(F)=0{,}6$,\n$P(A)=1-0{,}6=0{,}4$, $P(D\\mid F)=0{,}05$ i $P(D\\mid A)=0{,}03$. Per la llei de probabilitats totals, la\nprobabilitat que una peça sigui defectuosa és\n\\[\nP(D)=P(D\\mid F)\\,P(F)+P(D\\mid A)\\,P(A)=0{,}05\\cdot0{,}6+0{,}03\\cdot0{,}4=0{,}042 .\n\\]\n\n\\textit{Pauta oficial:} 0,25 per plantejar la llei de la probabilitat total (o fer l'arbre de decisió o\nsimilar); 0,25 per identificar correctament les dades del problema, i 0,25 pel càlcul concret.\n\\end{solucio}\n\n\\apartat{0,75}\nL'empresa aviat diversificarà la producció i començarà a produir també peces de titani, que es vendran en\npaquets de 5. Si la probabilitat que una peça de titani sigui defectuosa és un valor desconegut $p$, i cada\npeça és defectuosa independentment de les altres, comproveu que l'expressió que ens dona la probabilitat que\nen un paquet de 5 peces n'hi hagi exactament 4 de defectuoses (en funció de $p$) és $f(p)=5\\left(p^4-p^5\\right)$.\n\n\\begin{solucio}\nAnomenem $X$ el nombre de peces defectuoses en un paquet. De l'enunciat deduïm que $X$ segueix una llei\nbinomial amb $n=5$ i probabilitat $p$. Per tant, la probabilitat que en un paquet hi hagi exactament quatre\npeces defectuoses és\n\\[\nP(X=4)=\\binom54p^4(1-p)=\\frac{5!}{4!}\\,p^4(1-p)=5p^4(1-p)=5\\left(p^4-p^5\\right).\n\\]\nTambé podem argumentar directament, sense fer servir la llei binomial. Com que hi ha quatre peces\ndefectuoses, n'hi haurà exactament una que no ho és. La probabilitat que una en concret (per exemple, la\nprimera) sigui bona i les altres quatre defectuoses és $(1-p)p^4$. Com que hi ha cinc possibilitats per\nescollir quina és la peça bona, $P(X=4)=5(1-p)p^4=5\\left(p^4-p^5\\right)$.\n\n\\textit{Pauta oficial:} 0,5 pel plantejament i 0,25 pel càlcul.\n\\end{solucio}\n\n\\apartat{1}\nConsidereu la funció $f(p)$ de l'apartat anterior. Determineu el valor màxim que pren $f(p)$ quan $p\\ge0$.\n\n\\begin{solucio}\nBusquem els extrems relatius de la funció $f(p)=5\\left(p^4-p^5\\right)$:\n$f'(p)=5\\left(4p^3-5p^4\\right)=0\\rightarrow p=0,\\ p=\\frac45$. Observem que $f(0)=0$ i que\n$f\\!\\left(\\frac45\\right)>0$. Mirem el signe de la segona derivada:\n\\[\nf''(p)=5\\left(12p^2-20p^3\\right)\\;\\rightarrow\\;f''\\!\\left(\\tfrac45\\right)\n=5\\left(12\\left(\\tfrac45\\right)^2-20\\left(\\tfrac45\\right)^3\\right)<0,\n\\]\ni deduïm que a $p=\\frac45$ la funció $f(p)$ assoleix un màxim local. Com que per a $p\\in\\left(0,\\frac45\\right)$\nla funció creix i per a $p>\\frac45$ la funció decreix, es tracta d'un màxim absolut quan $p$ és no negativa.\nI el valor màxim serà $f\\!\\left(\\frac45\\right)=5\\left(\\left(\\frac45\\right)^4-\\left(\\frac45\\right)^5\\right)=0{,}41$.\n\n\\textit{Pauta oficial:} 0,25 pel càlcul de la derivada i els punts crítics, 0,5 per argumentar que el màxim\nabsolut en $p>0$ es troba a $p=\\frac45$, i 0,25 per trobar el valor d'aquest màxim.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "pdf": "pau/probabilitat/pro-25j-q3/out/enunciat.pdf",
+   "pdf_solucio": "pau/probabilitat/pro-25j-q3/out/solucio.pdf",
+   "pdf_curt": "pau/probabilitat/pro-25j-q3/out/enunciat.pdf",
+   "pdf_solucio_curt": "pau/probabilitat/pro-25j-q3/out/solucio.pdf"
   },
   {
    "id": "pau/probabilitat/pro-26j-q3",
