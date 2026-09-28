@@ -8,12 +8,12 @@ veus l'enunciat i la solució en PDF, i en baixes el codi `.tex`, sol o muntat e
 complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva procedència
 («PAU juny 2026, sèrie 1»).
 
-> **Estat a 28 de setembre de 2026:** 66 preguntes. N'hi ha 24 de la unitat 7 (Límits i
+> **Estat a 28 de setembre de 2026:** 68 preguntes. N'hi ha 24 de la unitat 7 (Límits i
 > continuïtat) en 8 temes i 18 de la unitat 8 (Derivades) en 6 temes, totes amb tres variants
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
-> variants; 7 de la unitat 10 (Representació de funcions) en 5 temes, tres de les quals de domini i
-> punts de tall, i 5 de la PAU (l'examen
-> sencer de juny de 2026). **Les 54 preguntes de les unitats 7, 8 i 9, i les 3 de domini i punts de tall, ofereixen una tria** en algun
+> variants; 9 de la unitat 10 (Representació de funcions) en 5 temes, amb tres variants de domini i
+> punts de tall i tres d'asímptotes, i 5 de la PAU (l'examen
+> sencer de juny de 2026). **Les 54 preguntes de les unitats 7, 8 i 9, i les 6 de domini i d'asímptotes de la u10, ofereixen una tria** en algun
 > apartat: un altre cas, una altra tècnica o una tasca diferent de la del defecte, amb el seu
 > propi Enunciat i Solució, triable des de la mateixa carta. El detall
 > de la feina feta i pendent és a [`handout.md`](handout.md).

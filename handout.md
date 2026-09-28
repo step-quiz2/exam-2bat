@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 27 de setembre de 2026 · **Estat:** 66 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 7 de la unitat 10 i 5 de la PAU), 57 amb tries · 1.236 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
+**Data:** 27 de setembre de 2026 · **Estat:** 68 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 9 de la unitat 10 i 5 de la PAU), 60 amb tries · 1.276 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -39,7 +39,8 @@ va fer que el build esborri els PDF que ja no genera cap font, perquè els 60 or
 la dissetena feien fallar l'Action, i va posar tries a les 18 preguntes de la u8, amb el mateix
 criteri. La dinovena va fer el mateix amb les 12 de la u9, i va fer plegables les unitats de la
 llista de temes. La vintena va començar a completar la u10, a partir del solucionari del llibre i
-del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La màquina
+del full de feina de Classroom, amb els exercicis que els alumnes hauran practicat de debò. La vint-i-unena hi va afegir les asímptotes, i va deixar congelat el tema de
+funcions a trossos fins que s'hagi fet la setmana 17. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -706,6 +707,31 @@ entre $<$ i $\le$ per a una arrel (q003, `domini-parametre`).
 defecte idèntic, 2,50 punts amb cada ítem, i compilen de debò a una pàgina, sense errors. Les
 bateries (38/14/77) i la integració amb jsdom passen, i el banc complet escriu 736 PDF.
 
+### 2.21 Sessió 21 · Asímptotes, i el tema de funcions a trossos, congelat
+
+**La decisió sobre les funcions a trossos.** El professor va decidir deixar
+`estudi-trossos/q001` tal com és (sense tria i amb el seu `origen`) i no ampliar el tema fins que
+s'hagi fet la setmana 17. La pregunta es pot continuar fent servir, però cap exercici practicat abans
+de l'examen no la sosté (2.20).
+
+**Asímptotes, complet.** Dues variants noves, q002 i q003, amb l'estructura de la q001 i funcions
+dels tipus del 62, el 63 i el 38: dues asímptotes verticals i una d'horitzontal (una de les dues
+variants amb $y=0$), una obliqua trobada dividint, i dibuixar una funció a partir de propietats
+donades. En una de les funcions els dos laterals de l'asímptota vertical valen $+\infty$; l'altra té
+una asímptota obliqua. Les dues gràfiques noves es van revisar a ull: els extrems, $(-2,-3)$ i
+$(0,1)$, i les branques que s'acosten a les asímptotes hi són on toca.
+
+Hi ha una tria a cadascuna de les tres preguntes. A la q001 (`forat-no-asimptota`), un zero del
+denominador que **no** és una asímptota, perquè el factor es cancel·la i el límit és finit. A la q002
+(`talla-asimptota`), una gràfica que talla la seva asímptota horitzontal, i per què una vertical no es
+pot tallar. A la q003 (`branques-polinomi`), les branques infinites d'un polinomi, i per què cap
+polinomi de grau 2 o més no té asímptotes, com a l'exercici 62.
+
+**Verificació.** Totes les matemàtiques es van comprovar amb SymPy, inclosos els punts on les
+gràfiques surten del marc. Les tres preguntes tenen el defecte idèntic i 2,50 punts amb cada ítem, i
+compilen de debò a una pàgina, també les solucions amb gràfica. Les bateries (38/14/77) i la
+integració amb jsdom passen, i el banc complet escriu 768 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -761,6 +787,7 @@ bateries (38/14/77) i la integració amb jsdom passen, i el banc complet escriu 
 | Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 | Una alternativa ha de canviar el cas, la tècnica o el sentit del raonament, no només els nombres (regla 16) | Professor | Una tria amb la mateixa pregunta i altres xifres no aporta res a l'examen |
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
+| `estudi-trossos` es queda com està (la q001, sense tria) i no s'amplia fins que s'hagi fet la setmana 17 | Professor | Cap exercici practicat abans de l'examen no el sosté |
 | Per a la u10, els exercicis practicats són els de les setmanes 11 i 12 del full de Classroom; la setmana 17 és posterior a l'examen | Professor | El banc no surt dels exercicis que els alumnes hauran practicat |
 | El solucionari del llibre és una referència, no la veritat: tot es verifica amb SymPy | Disseny | S'hi han trobat quatre errors (2.20) |
 | Les unitats de la llista de temes es pleguen des del seu títol, i l'estat es desa al navegador, no a l'adreça | Professor (el plegat) i disseny (on es desa) | És una preferència de qui fa els exàmens, no part de l'examen |
@@ -1013,12 +1040,15 @@ per això el banc no hi té tema. Tres variants per tema.
 Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 11 i 12 (2.20):
 domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
 gràfica de $f'$ (37). El tema de funcions a trossos no en té cap: el seu únic exercici, el 108, és de
-la setmana 17. Domini i punts de tall ja té tres variants, totes amb tria; els altres temes en
-tenen una (vegeu 7.4).
+la setmana 17. Domini i punts de tall i asímptotes ja tenen tres variants, totes amb tria. Els estudis de racionals i
+de polinòmiques en tenen una (vegeu 7.4), i el de funcions a trossos es queda com està fins que s'hagi
+fet la setmana 17 (2.21).
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
 | Asímptotes i branques infinites | `q001` | Asímptotes de funcions racionals i gràfica a partir d'unes asímptotes donades | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 62, 63, 38 |
+| Asímptotes i branques infinites | `q002` | Dues asímptotes verticals, una obliqua i una gràfica amb els dos laterals a +∞ | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 62, 63, 38 |
+| Asímptotes i branques infinites | `q003` | Asímptota horitzontal y = 0, una obliqua i una gràfica a partir d'una asímptota obliqua | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 62, 63, 38 |
 | Domini i punts de tall | `q001` | Domini de racionals, radicals i logaritmes, i punts de tall | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Domini i punts de tall | `q002` | Domini de racionals, radicals i logaritmes, i talls d'una racional amb denominador sense zeros | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
 | Domini i punts de tall | `q003` | Domini amb exponencials i radicals, i talls d'una funció amb radical | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 43, 45, 100 |
@@ -1237,8 +1267,9 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10: des de la 20, domini i punts de tall ja en té;
-  falten els altres quatre temes, amb el mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10: des de la 20, domini i punts de tall ja en té, i des de la 21, les
+  asímptotes. Falten els estudis de racionals i de polinòmiques (el de funcions a trossos és congelat
+  fins després de la setmana 17), amb el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1371,14 +1402,13 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 20. Parteix del de la sessió 19, que ja és al repositori.
+És el lliurament de la sessió 21. Parteix del de la sessió 20, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u10/domini-talls/q002/`, `u10/domini-talls/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json` |
-| `u10/domini-talls/q001/pregunta.tex` | Tria nova, `tall-fals` |
-| `u10/estudi-polinomica/q001/meta.json` | L'`origen` ja no cita el 84, que és de la setmana 17 |
+| `u10/asimptotes/q002/`, `u10/asimptotes/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
+| `u10/asimptotes/q001/pregunta.tex` | Tria nova, `forat-no-asimptota` |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.20, i les seccions 3, 4, 6.4, 7.5 i 11 |
+| `handout.md` | Secció 2.21, i les seccions 3, 6.4, 7.5 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**.

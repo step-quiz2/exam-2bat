@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{asimptotes-tasca}
+\itemtria{original}{1}{1,25}
 Troba totes les asímptotes de la funció
 \[
 f(x)=\frac{2x-1}{x+3} .
@@ -14,6 +15,26 @@ $\boxed{x=-3}$.\\
 $\lim_{x\to\pm\infty}f(x)=\dfrac21=2$: asímptota horitzontal $\boxed{y=2}$.\\
 Com que hi ha asímptota horitzontal, no n'hi pot haver cap d'obliqua.
 \end{solucio}
+
+\itemtria{forat-no-asimptota}{1}{1,25}
+Troba totes les asímptotes de la funció
+\[
+f(x)=\frac{x^2-1}{x^2+x-2} .
+\]
+N'hi ha prou que el denominador s'anul·li en un punt perquè hi hagi una asímptota vertical?
+
+\begin{solucio}
+El denominador és $(x-1)(x+2)$, que s'anul·la en $x=1$ i en $x=-2$.\\
+En $x=1$ també s'anul·la el numerador, $(x-1)(x+1)$. Per a $x\neq1$ és $f(x)=\dfrac{x+1}{x+2}$, que
+tendeix a $\dfrac23$: el límit és finit, i \textbf{no} hi ha asímptota, sinó una discontinuïtat
+evitable.\\
+En $x=-2$ el numerador val $3\neq0$, i els laterals valen $+\infty$ (per l'esquerra) i $-\infty$ (per
+la dreta): asímptota vertical $\boxed{x=-2}$.\\
+\textbf{Horitzontal}: mateix grau, i $\lim_{x\to\pm\infty}f(x)=1$: $\boxed{y=1}$.\\
+No n'hi ha prou: cal que el límit sigui infinit. Quan el numerador també s'anul·la, cal simplificar
+abans de decidir.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}
