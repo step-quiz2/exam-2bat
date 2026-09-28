@@ -328,17 +328,46 @@ function mostra(id, quin) {
 }
 
 // ── pintat ───────────────────────────────────────────────────────────
+// Unitats plegades a la llista de temes. És una preferència de qui fa els exàmens, no part de
+// l'examen: no va a l'adreça, sinó a la memòria del navegador, si la hi deixa (obert com a
+// fitxer local, alguns navegadors no la hi deixen; aleshores tot surt desplegat, com abans).
+const plegades = new Set();
+try { JSON.parse(localStorage.getItem('banc-plegades') || '[]').forEach(u => plegades.add(u)); }
+catch { /* sense memòria del navegador: tot desplegat */ }
+const desaPlegades = () => {
+  try { localStorage.setItem('banc-plegades', JSON.stringify([...plegades])); } catch { /* res */ }
+};
+
 function pintaTemes() {
   const ul = $('#temes');
   ul.innerHTML = '';
   Object.entries(BANC.unitats).forEach(([u, info]) => {
     const temes = BANC.temes.filter(t => t.unitat === u);
     if (!temes.length) return;
+    const plegada = plegades.has(u);
+    // Plegada, la unitat encara diu quantes preguntes seves hi ha a l'examen.
+    const triades = examen.filter(p => temes.some(t => t.slug === p.slug)).length;
     const cap = document.createElement('li');
     cap.className = 'grup' + (u === 'pau' ? ' grup-pau' : '');
-    cap.innerHTML = `<span>${esc(info.nom)}</span> ${esc(info.subtitol)}`;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'grup-boto';
+    b.setAttribute('data-unitat', u);
+    b.setAttribute('aria-expanded', String(!plegada));
+    b.title = plegada ? 'Desplega la unitat' : 'Plega la unitat';
+    b.innerHTML = `<span class="fletxa" aria-hidden="true">${plegada ? '▸' : '▾'}</span>
+      <span class="grup-text"><span class="grup-nom">${esc(info.nom)}</span> ${esc(info.subtitol)}</span>
+      ${plegada && triades ? `<span class="grup-n">${triades} a l'examen</span>` : ''}`;
+    b.onclick = () => {
+      if (plegada) plegades.delete(u); else plegades.add(u);
+      desaPlegades();
+      pintaTemes();
+      // El botó s'ha tornat a crear: el focus hi torna, per a qui navega amb el teclat.
+      document.querySelector(`#temes .grup-boto[data-unitat="${u}"]`)?.focus();
+    };
+    cap.appendChild(b);
     ul.appendChild(cap);
-    temes.forEach(t => pintaTema(ul, t));
+    if (!plegada) temes.forEach(t => pintaTema(ul, t));
   });
 }
 

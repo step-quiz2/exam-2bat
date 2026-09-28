@@ -30,12 +30,29 @@ $x=-1$.
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{0,75}
+\begin{tria}{monotonia-tasca}
+\itemtria{original}{0,75}{1,25}
 Demostra que la funció $h(x)=-x^3-x+4$ és decreixent a tot $\mathbb{R}$.
 
 \begin{solucio}
 $h'(x)=-3x^2-1$. Com que $-3x^2\le0$, es compleix $h'(x)\le-1<0$ per a tot $x$.\\
 La derivada és sempre negativa, i per tant $h$ \textbf{decreix a tot $\mathbb{R}$}.
 \end{solucio}
+
+\itemtria{sense-derivar}{0,75}{1,25}
+Sense calcular cap derivada, justifica que la funció
+\[
+h(x)=-x^3-2x+e^{-x}
+\]
+és decreixent a tot $\mathbb{R}$. Per què aquest raonament no serveix per a $p(x)=x^3-x$?
+
+\begin{solucio}
+$-x^3$, $-2x$ i $e^{-x}$ són decreixents a tot $\mathbb{R}$, i la suma de funcions decreixents és
+decreixent: si $x_1<x_2$, cada sumand és més petit en $x_2$, i la suma també. Per tant, $h$ és
+decreixent.\\
+A $p(x)=x^3-x$ se sumen una funció creixent ($x^3$) i una de decreixent ($-x$), i d'aquí no se'n
+pot concloure res. De fet, $p$ no és monòtona: $p(-1)=p(0)=p(1)=0$.
+\end{solucio}
+\end{tria}
 
 \end{apartats}

@@ -136,18 +136,26 @@ button:disabled{opacity:.4;cursor:not-allowed;filter:none;}
   }
 }
 /* Text damunt de l'accent: blanc en clar, verd molt fosc en fosc. */
-button:not(.secundari):not(.tema),
+button:not(.secundari):not(.tema):not(.grup-boto),
 button.secundari:hover,
 .num,
 .tema.tria .marca,
 .opcio-btn[aria-pressed="true"]{color:var(--sobre-acc);}
 
 /* ── grups d'unitat a la llista de temes ───────────────────────────── */
-#temes .grup{list-style:none;margin:12px 0 2px;font-family:'Source Code Pro',monospace;
-  font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+#temes .grup{list-style:none;margin:12px 0 2px;}
 #temes .grup:first-child{margin-top:0;}
-#temes .grup span{font-weight:600;color:var(--txt);}
-#temes .grup-pau span{color:var(--pau);}
+/* La capçalera plega i desplega la unitat: és un botó, però s'ha de llegir com una etiqueta. */
+.grup-boto{display:flex;align-items:baseline;gap:7px;width:100%;min-height:32px;padding:4px 2px;
+  background:none;border:0;border-radius:5px;text-align:left;
+  font-family:'Source Code Pro',monospace;font-size:.64rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;}
+.grup-boto:hover{filter:none;background:var(--acc-tint);}
+.grup-text{flex:1;}
+.grup-nom{font-weight:600;color:var(--txt);}
+.grup-pau .grup-nom{color:var(--pau);}
+.fletxa{width:.9em;color:var(--acc);font-size:.8rem;}
+.grup-n{text-transform:none;letter-spacing:0;color:var(--acc);white-space:nowrap;}
 
 /* ── preguntes PAU: accent propi i procedència visible ─────────────── */
 :root{--pau:#b45309;}

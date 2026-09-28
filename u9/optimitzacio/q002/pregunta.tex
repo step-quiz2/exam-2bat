@@ -16,7 +16,8 @@ Cal que el costat retallat sigui positiu i que en quedi base: $x>0$ i $12-2x>0$,
 $x\in(0,6)$.
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{optim-tasca}
+\itemtria{original}{0,75}{1,25}
 Troba el valor de $x$ que fa màxim el volum i calcula aquest volum.
 
 \begin{solucio}
@@ -28,6 +29,20 @@ S'anul·la en $x=6$ (fora del domini) i en $x=2$.\\
 $V(2)=2\cdot8^2=128$: cal retallar quadrats de $\boxed{2}$ cm i el volum màxim és
 $\boxed{128}$ cm$^3$.
 \end{solucio}
+
+\itemtria{volums-possibles}{0,75}{1,25}
+Es pot fer una capsa de $150\ \text{cm}^3$ amb aquest cartró? I una de $100\ \text{cm}^3$? En aquest
+cas, de quantes maneres? Justifica-ho a partir del volum màxim.
+
+\begin{solucio}
+$V'(x)=(12-2x)^2-4x(12-2x)=(12-2x)(12-6x)$, que a $(0,6)$ només s'anul·la en $x=2$. $V$ creix a
+$(0,2)$ i decreix a $(2,6)$, amb $V(0)=V(6)=0$: el volum màxim és $V(2)=128\ \text{cm}^3$.\\
+$150\ \text{cm}^3$: \textbf{impossible}, perquè és més que el màxim.\\
+$100\ \text{cm}^3$: sí, i de \textbf{dues} maneres, una a cada costat de $x=2$, perquè $V$ és
+contínua i estrictament monòtona a $(0,2)$ i a $(2,6)$. Per exemple, $x=1$ dona
+$V(1)=1\cdot10^2=100$; l'altra és $x=\dfrac{11-\sqrt{21}}{2}\approx3{,}21$.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{extrems-tasca}
+\itemtria{original}{1}{1,25}
 La funció
 \[
 f(x)=ax^3+bx^2
@@ -17,6 +18,24 @@ Amb $f(x)=-x^3+3x^2$: $f'(x)=-3x^2+6x=-3x(x-2)$, que s'anul·la en $x=0$ i $x=2$
 $f$ decreix a $(-\infty,0)$, creix a $(0,2)$ i decreix a $(2,+\infty)$: en $(2,4)$ hi ha un
 \textbf{màxim relatiu} i en $(0,0)$, un \textbf{mínim relatiu}.
 \end{solucio}
+
+\itemtria{beneficis-context}{1}{1,25}
+Els beneficis d'una empresa, en milers d'euros, $t$ anys després d'obrir, són
+\[
+B(t)=at^3+bt^2+ct .
+\]
+El primer any els beneficis van ser màxims, de $8$ milers d'euros, i el segon any la corba va
+tenir un punt d'inflexió. Troba $a$, $b$ i $c$. Quan tornen a ser nuls els beneficis?
+
+\begin{solucio}
+$B'(t)=3at^2+2bt+c$ i $B''(t)=6at+2b$. Les tres dades són tres equacions: inflexió en $t=2$,
+$12a+2b=0$; màxim en $t=1$, $3a+2b+c=0$; i valor màxim, $a+b+c=8$.\\
+De la primera, $b=-6a$; de la segona, $c=9a$; i la tercera dona $4a=8$. Per tant,
+$\boxed{a=2}$, $\boxed{b=-12}$ i $\boxed{c=18}$: $B(t)=2t^3-12t^2+18t=2t(t-3)^2$.\\
+Comprovació: $B''(1)=-12<0$, i en $t=1$ hi ha un màxim. Els beneficis tornen a ser nuls al cap
+de $\boxed{t=3}$ anys.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

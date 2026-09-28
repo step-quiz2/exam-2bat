@@ -27,7 +27,8 @@ A(x)=2x\left(12-x^2\right)=24x-2x^3 .
 Perquè el rectangle existeixi cal $x>0$ i $12-x^2>0$: $x\in\left(0,\sqrt{12}\right)$.
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{optim-tasca}
+\itemtria{original}{0,75}{1,25}
 Troba el valor de $x$ que fa màxima l'àrea i calcula aquesta àrea.
 
 \begin{solucio}
@@ -35,6 +36,19 @@ $A'(x)=24-6x^2=0\iff x^2=4\iff x=2$ (l'altra solució, $x=-2$, no és al domini)
 $A(2)=48-16=32$: el rectangle fa $4$ de base i $8$ d'altura, i l'àrea màxima és
 $\boxed{32}$ unitats quadrades.
 \end{solucio}
+
+\itemtria{perimetre-maxim}{0,75}{1,25}
+Troba el valor de $x$ que fa màxim el \textbf{perímetre} del rectangle, i calcula aquest
+perímetre.
+
+\begin{solucio}
+La base fa $2x$ i l'altura, $12-x^2$, i per tant $P(x)=2\cdot2x+2\left(12-x^2\right)=24+4x-2x^2$,
+amb $0<x<\sqrt{12}$.\\
+$P'(x)=4-4x=0$ en $x=1$. Com que $P'>0$ si $x<1$ i $P'<0$ si $x>1$, hi ha un màxim.\\
+El rectangle de perímetre màxim té base $2$ i altura $11$, i el seu perímetre és $P(1)=26$. (El
+d'àrea màxima és el de $x=2$: l'objectiu decideix el resultat.)
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

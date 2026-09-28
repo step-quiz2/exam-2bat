@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
 **Data:** 27 de setembre de 2026 · **Estat:** 64 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 42 de la u7 i la u8 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
+8, 12 de la unitat 9, 5 de la unitat 10 i 5 de la PAU), les 54 de la u7, la u8 i la u9 amb tries · 1.200 minuts d'examen al banc · 38 comprovacions del validador, 14 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -37,10 +37,11 @@ nota de la tria i el botó «amb solucions»). La dissetena, arran d'una crític
 les va substituir per alternatives que canvien el cas, la tècnica o el sentit del raonament. La divuitena
 va fer que el build esborri els PDF que ja no genera cap font, perquè els 60 orfes que havia deixat
 la dissetena feien fallar l'Action, i va posar tries a les 18 preguntes de la u8, amb el mateix
-criteri. La màquina
+criteri. La dinovena va fer el mateix amb les 12 de la u9, i va fer plegables les unitats de la
+llista de temes. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
-resta d'unitats, i estendre les tries a la resta del banc (u9 i u10).
+resta d'unitats, i estendre les tries a la u10.
 
 ---
 
@@ -611,6 +612,55 @@ Tot el banc es va compilar amb el preàmbul reduït: 608 PDF (144 de nous), cap 
 integració amb jsdom passen. Dues proves depenien d'una pregunta de la u8 sense tria (el cas 4 de
 `prova_sortida.py` i el cas 7 de la prova amb jsdom), i ara fan servir `u9/monotonia-extrems/q001`.
 
+### 2.19 Sessió 19 · Tries a la unitat 9, i unitats plegables
+
+**Unitats plegables.** El professor va demanar que la llista de temes es pogués plegar i
+desplegar per unitats. El títol de cada unitat és ara un botó que plega o desplega els seus temes
+(amb `aria-expanded`). Plegada, la unitat diu quantes preguntes seves hi ha a l'examen, perquè no
+es perdin de vista. L'estat es desa a la memòria del navegador (`localStorage`), i no a l'adreça,
+perquè és una preferència de qui fa els exàmens, no part de l'examen. Si el navegador no la deixa
+fer servir, com fan alguns amb un fitxer local, tot surt desplegat com abans, i una memòria mal
+formada tampoc no trenca res. En tornar a pintar la llista, el focus torna al títol clicat, per a
+qui navega amb el teclat. La prova amb jsdom en té dotze comprovacions noves.
+
+**La u9 a la PAU.** De 2023 a 2026, la u9 és el bloc que més hi surt. Hi ha optimització en nou
+exercicis, sovint amb el model donat («comproveu que el cost ve donat per…»); paràmetres a partir
+de condicions (23j-q1, 23j2-q6, 25s-q3c); monotonia i extrems d'una funció donada (24j-q1,
+25i-q1), o raonats sense calcular els punts crítics (24i-q1); i els punts crítics d'una funció
+llegits a la gràfica de la seva derivada (26j2-q4a).
+
+**Tries a la u9**, amb el criteri de la regla 16:
+
+| Tema | Què demana l'alternativa |
+|---|---|
+| `curvatura-inflexio` | q001, una $f''$ que s'anul·la sense canviar de signe: cap inflexió (`falsa-inflexio`); q002, els coeficients a partir de la recta tangent en el punt d'inflexió, com a la 23j-q1 (`tangent-inflexio`); q003, creuar les taules de $f'$ i $f''$: on és alhora creixent i còncava (`creix-i-corba`) |
+| `extrems-parametres` | q001, per a quins valors del paràmetre no hi ha cap extrem (`sense-extrems`); q002, la curvatura de $f$ llegida a la gràfica de $f'$ (`curvatura-de-fprima`); q003, els paràmetres a partir d'un context de beneficis, amb un màxim i una inflexió, com a la 25s-q3c (`beneficis-context`) |
+| `monotonia-extrems` | q001, exactament una solució: Bolzano per a l'existència i monotonia per a la unicitat, com a la 24s-q1 (`una-sola-arrel`); q002, monotonia sense derivar, i per què l'argument no sempre serveix, com a la 24i-q1 (`sense-derivar`); q003, un quocient amb logaritme, com a la 24j-q1 (`quocient-logaritme`) |
+| `optimitzacio` | q001, un altre objectiu, el perímetre en lloc de l'àrea (`perimetre-maxim`); q002, quins volums són possibles, i de quantes maneres (`volums-possibles`); q003, un costat de tanca més car, que fa que el prat òptim sigui quadrat (`tanca-mes-cara`) |
+
+**El parany de l'optimització.** Els apartats hi van encadenats: el model, l'optimització i, al
+`nomesllarg`, «justifica que el valor trobat és un màxim». Una alternativa que canviés el model
+trencaria la cadena. Per això la tria va al pas d'optimitzar, i a totes tres el valor que es troba
+continua sent un màxim en un punt on s'anul·la la derivada, perquè el `nomesllarg` hi continuï
+tenint sentit. Es va descartar, per exemple, un màxim a la frontera del domini, que hauria deixat
+sense sentit la justificació amb la derivada segona. Pel mateix motiu, l'alternativa de
+`curvatura-inflexio/q002` dona una funció que també té un extrem en $x=3$, que és el que demana
+el seu `nomesllarg`.
+
+**Una prova que ja no depèn de les tries.** El cas 4 de `prova_sortida.py` esperava exactament 4
+PDF d'una pregunta concreta, i cada vegada que aquella pregunta rebia una tria calia moure'l a una
+altra (de la u7 a la u8, i de la u8 a la u9). Ara comprova que `--pregunta` només escriu PDF
+d'aquella pregunta i que hi són els quatre de base, tant si té tries com si no.
+
+**Verificació.** Totes les matemàtiques es van comprovar amb SymPy abans d'escriure-les, i cada
+fitxer té el defecte idèntic byte a byte i 2,50 punts amb cada ítem, a totes dues durades. Les 12
+preguntes de la u9 es van compilar de debò, una per una, amb el preàmbul reduït: 144 PDF (96 de
+nous), cap error ni *Overfull*. El build complet ja no cap en el límit de cinc minuts per ordre de
+l'entorn de treball, però la u7 i la u8 no han canviat des de la compilació completa de la sessió
+18, i el build complet de `prova_sortida.py`, amb el `pdflatex` fals, confirma que el banc escriu
+704 PDF. Les bateries (38/14/77) i la integració amb jsdom passen, i el cas 4 reescrit té la seva
+prova de control: si `--pregunta` escrivís PDF d'altres preguntes, fallaria.
+
 ---
 
 ## 3. Decisions preses
@@ -666,6 +716,9 @@ integració amb jsdom passen. Dues proves depenien d'una pregunta de la u8 sense
 | Cada ítem d'una tria té la seva previsualització compilada pel build, no compilada en directe al navegador | Disseny | Compilar LaTeX al navegador exigiria un motor nou (una dependència grossa) o un servidor; el build ja sap compilar-ne el cos |
 | Una alternativa ha de canviar el cas, la tècnica o el sentit del raonament, no només els nombres (regla 16) | Professor | Una tria amb la mateixa pregunta i altres xifres no aporta res a l'examen |
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
+| Les unitats de la llista de temes es pleguen des del seu títol, i l'estat es desa al navegador, no a l'adreça | Professor (el plegat) i disseny (on es desa) | És una preferència de qui fa els exàmens, no part de l'examen |
+| A optimització, la tria va al pas d'optimitzar i no al model, i el valor trobat continua sent un màxim en un punt crític | Disseny | Els apartats hi van encadenats, i el `nomesllarg` justifica el màxim amb la derivada |
+| El cas 4 de `prova_sortida.py` no depèn de si la pregunta té tries | Disseny | Si no, calia moure'l cada vegada que una unitat rebia tries |
 | Un build complet esborra de `out/` els PDF que ja no genera cap font; un build amb `--pregunta`, no | Disseny, arran d'una fallada (2.18) | `out/` és generat i ha de reflectir les fonts; un build parcial no les ha mirades totes |
 
 ---
@@ -728,6 +781,10 @@ integració amb jsdom passen. Dues proves depenien d'una pregunta de la u8 sense
   a 390 px d'amplada. El seu `main.tex` compila en 2 pàgines, i el de solucions en 5, sense cap
   *Overfull*. També un examen combinat (Límits en un punt, Anàlisi, Bolzano, Probabilitat i
   Geometria), amb ✕ i ▲ entremig: 2 pàgines i 4 amb solucions, sense cap *Overfull*.
+- Sessió 19: les 12 tries de la u9, comprovades amb SymPy abans d'escriure-les, amb el defecte
+  idèntic byte a byte i 2,50 punts amb cada ítem. Les 12 preguntes de la u9 compilades de debò
+  (144 PDF, cap error ni *Overfull*), i el banc sencer amb el `pdflatex` fals (704 PDF). Les
+  unitats plegables, amb dotze comprovacions noves a jsdom.
 - Sessió 18: les 18 tries de la u8, comprovades amb SymPy abans d'escriure-les, amb el defecte
   idèntic byte a byte i 2,50 punts amb cada ítem. Tot el banc compilat (608 PDF, cap error ni
   *Overfull*). L'esborrat dels orfes, amb el cas real (60 orfes) i un control negatiu.
@@ -878,6 +935,9 @@ no hi té tema.
 | Tangents amb condicions | `q003` | Tangents horitzontals i tangents paral·leles a rectes donades | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●●○ | 54 |
 
 ### 6.3 Unitat 9 · Aplicacions de les derivades (12 preguntes)
+
+Les 12 preguntes ofereixen una tria en algun apartat (sessió 19, secció 2.19). Els punts de la
+taula són els del defecte.
 
 Quatre temes, de les tres seccions del llibre amb exercicis assignats a les setmanes 8 a 10:
 creixement i extrems (39, 41, 42, 44, 50, 51, 58), concavitat (66, 67, 70) i optimització (77,
@@ -1120,13 +1180,14 @@ l'ordre numèric.
   cop existeixi, la u1 i les altres unitats noves s'hi afegeixen en l'ordre del curs.
 - **Conservar els visors PDF oberts.** Ara cada clic torna a pintar totes les targetes: els
   `iframe` es recreen i els PDF es tornen a carregar. Amb molts visors oberts es notarà.
-- Al mòbil, llista de temes plegable. Ara la llista queda sencera abans de l'examen.
+- Llista de temes plegable: **fet** a la sessió 19, per unitats (2.19). Al mòbil, encara es
+  podria plegar tota la llista d'un sol cop.
 - Els noms de les unitats apareixen en passar el ratolí per sobre, i això no funciona en
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8. Queden la u9 (12) i la u10 (5), amb el
-  mateix mètode: llegir la
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Queda la u10 (5),
+  amb el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
   a la PAU ($\frac{\ln x}{x}$, o $(x-1)\ln x$ a $0^+$) o una gràfica a la inversa: «dibuixa una
@@ -1259,30 +1320,17 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 18. Parteix del de la sessió 17, que ja és al repositori.
+És el lliurament de la sessió 19. Parteix del de la sessió 18, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `build/build.py` | Un build complet i correcte esborra de `out/` els PDF que ja no genera cap font, i les carpetes que hi queden buides; el resum ho diu («N PDF orfes esborrats») |
-| `build/prova_sortida.py` | Tres comprovacions noves sobre els orfes (14 en total); els casos que feien servir `u8/derivada-definicio/q001` com a pregunta sense tria fan servir `u9/monotonia-extrems/q001` |
-| `u8/*/q00{1,2,3}/pregunta.tex` | **Tries noves** a les 18 preguntes de la u8 (secció 2.18) |
-| `README.md` | Regla 1 i estat |
-| `handout.md` | Secció 2.18, la correcció de 2.17, i les seccions 3, 4, 5, 6.2, 7.5, 10 i 11 |
+| `assets/app.js` | Unitats plegables: el títol de cada unitat és un botó; l'estat es desa a la memòria del navegador |
+| `assets/style.css` | L'estil del títol plegable, que es continua llegint com una etiqueta |
+| `build/prova_sortida.py` | El cas 4 ja no depèn de si la pregunta té tries |
+| `u9/*/q00{1,2,3}/pregunta.tex` | **Tries noves** a les 12 preguntes de la u9 (secció 2.19) |
+| `README.md` | Estat, i el punt 2 de «Ús» (unitats plegables) |
+| `handout.md` | Secció 2.19 i les seccions 3, 5, 6.3, 7.5 i 11 |
 
-No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**: si
-encara hi hagués PDF orfes al repositori, el build ara els esborra i la prova passa.
-
-**Canvi recomanat a `compila.yml`, a mà.** Perquè els esborrats també arribin al repositori, cal
-canviar una línia del pas «Desa els PDF i el catàleg». No pot arribar per `_uploads`, perquè el bot
-no pot escriure a `.github/workflows/`:
-
-1. A GitHub, obre `.github/workflows/compila.yml` i clica el llapis (**Edit this file**).
-2. Busca aquesta línia:
-   ```
-   git add cataleg.js $(find . -path './*/*/*/out/*.pdf' -not -path './.git/*')
-   ```
-3. Substitueix-la per aquesta, deixant igual els espais del començament:
-   ```
-   git add -A -- cataleg.js ':(glob)*/*/*/out/**/*.pdf'
-   ```
-4. **Commit changes**, directament a `main`. Aquest commit no dispara l'Action.
+No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**, que
+ara compila 704 PDF i triga uns minuts més que abans. Si encara no has fet el canvi de
+`compila.yml` que proposava la sessió 18 (la línia de `git add -A`), continua sent recomanable.

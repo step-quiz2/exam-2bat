@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[2,5]{1,5}
+\begin{tria}{curvatura-tasca}
+\itemtria{original}{1,5}{2,5}
 Determina $a$, $b$ i $c$ perquè la funció
 \[
 f(x)=x^3+ax^2+bx+c
@@ -14,6 +15,25 @@ Derivades: $f'(x)=3x^2+2ax+b$ i $f''(x)=6x+2a$.\\
 \textbf{Extrem en $x=3$}: $f'(3)=27+2(-3)(3)+b=27-18+b=0$, d'on $\boxed{b=-9}$.\\
 La funció és $f(x)=x^3-3x^2-9x+2$. Comprovació: $f''(1)=0$ i $f'(3)=27-18-9=0$.
 \end{solucio}
+
+\itemtria{tangent-inflexio}{1,5}{2,5}
+Determina $a$, $b$ i $c$ perquè la funció
+\[
+f(x)=x^3+ax^2+bx+c
+\]
+tingui un punt d'inflexió en $x=1$ i perquè la recta tangent a la seva gràfica en aquest punt
+sigui $y=-12x+13$.
+
+\begin{solucio}
+$f'(x)=3x^2+2ax+b$ i $f''(x)=6x+2a$. La recta tangent dona dues condicions: el pendent és
+$f'(1)=-12$, i el punt de tangència és $(1,f(1))$, amb $f(1)=-12+13=1$.\\
+Inflexió en $x=1$: $f''(1)=6+2a=0$, i per tant $\boxed{a=-3}$.\\
+Pendent: $f'(1)=3-6+b=-12$, i per tant $\boxed{b=-9}$.\\
+Punt: $f(1)=1-3-9+c=1$, i per tant $\boxed{c=12}$.\\
+És a dir, $f(x)=x^3-3x^2-9x+12$. Com que $f''(x)=6x-6$ canvia de signe en $x=1$, hi ha
+efectivament un punt d'inflexió.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{1}

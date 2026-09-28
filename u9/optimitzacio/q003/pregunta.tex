@@ -16,7 +16,8 @@ A(y)=y\,(400-2y)=400y-2y^2 .
 Perquè el prat existeixi cal $y>0$ i $400-2y>0$: $y\in(0,200)$.
 \end{solucio}
 
-\apartat[1,25]{0,75}
+\begin{tria}{optim-tasca}
+\itemtria{original}{0,75}{1,25}
 Troba les dimensions del prat de més àrea i calcula aquesta àrea.
 
 \begin{solucio}
@@ -24,6 +25,21 @@ $A'(y)=400-4y=0\iff y=100$.\\
 Aleshores el costat paral·lel al riu fa $400-200=200$ metres: el prat fa
 $\boxed{100\times200}$ metres i l'àrea màxima és $\boxed{20\,000}$ m$^2$.
 \end{solucio}
+
+\itemtria{tanca-mes-cara}{0,75}{1,25}
+Suposa ara que el costat paral·lel al riu, que dona al camí, s'ha de fer amb una tanca que costa
+el doble per metre, i que el pressupost dona per l'equivalent de $400$ metres de tanca normal.
+Quines dimensions fan màxima l'àrea del prat, i quina és aquesta àrea?
+
+\begin{solucio}
+Els dos costats perpendiculars, de longitud $y$, gasten $2y$ metres de tanca normal, i el
+paral·lel, de longitud $x$, en costa com $2x$. Per tant, $2y+2x=400$, és a dir $x=200-y$, i
+l'àrea és $A(y)=y\,(200-y)=200y-y^2$, amb $0<y<200$.\\
+$A'(y)=200-2y=0$ en $y=100$, i $A''(y)=-2<0$: és un màxim. Les dimensions són $y=100$ m i
+$x=100$ m: el prat òptim és un quadrat de $10\,000\ \text{m}^2$. Amb la tanca normal a tot arreu,
+en canvi, el costat paral·lel al riu seria el doble de llarg que els altres.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

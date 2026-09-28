@@ -1,6 +1,7 @@
 \begin{apartats}
 
-\apartat[1,25]{1}
+\begin{tria}{extrems-tasca}
+\itemtria{original}{1}{1,25}
 La funció
 \[
 f(x)=x^3+ax^2+3
@@ -15,6 +16,22 @@ $f$ creix a $(-\infty,0)$, decreix a $(0,2)$ i creix a $(2,+\infty)$: en $x=0$ h
 \textbf{màxim relatiu} i en $x=2$, un \textbf{mínim relatiu}.\\
 Comprovació: $f''(x)=6x-6$ i $f''(2)=6>0$, que confirma el mínim.
 \end{solucio}
+
+\itemtria{sense-extrems}{1}{1,25}
+Per a quins valors de $a$ la funció
+\[
+f(x)=x^3+ax^2+3x
+\]
+\textbf{no} té cap extrem relatiu? Justifica-ho.
+
+\begin{solucio}
+$f'(x)=3x^2+2ax+3$ és una paràbola cap amunt. Si té dues arrels diferents, hi canvia de signe,
+i $f$ té un màxim i un mínim. Si no en té cap, o només en té una de doble, $f'(x)\ge0$ a tot
+arreu, i $f$ és creixent i no té cap extrem.\\
+Discriminant: $4a^2-36\le0$, és a dir $\boxed{-3\le a\le3}$. Per exemple, amb $a=3$ és
+$f'(x)=3(x+1)^2\ge0$: s'anul·la en $x=-1$, però no hi canvia de signe i no hi ha cap extrem.
+\end{solucio}
+\end{tria}
 
 \begin{nomesllarg}
 \apartat{0,75}

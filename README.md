@@ -12,7 +12,7 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 > continuïtat) en 8 temes i 18 de la unitat 8 (Derivades) en 6 temes, totes amb tres variants
 > per tema; 12 de la unitat 9 (Aplicacions de les derivades) en 4 temes, també amb tres
 > variants; 5 de la unitat 10 (Representació de funcions) en 5 temes, i 5 de la PAU (l'examen
-> sencer de juny de 2026). **Les 42 preguntes de les unitats 7 i 8 ofereixen una tria** en algun
+> sencer de juny de 2026). **Les 54 preguntes de les unitats 7, 8 i 9 ofereixen una tria** en algun
 > apartat: un altre cas, una altra tècnica o una tasca diferent de la del defecte, amb el seu
 > propi Enunciat i Solució, triable des de la mateixa carta. El detall
 > de la feina feta i pendent és a [`handout.md`](handout.md).
@@ -23,7 +23,9 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
 
 1. Obre `index.html` amb doble clic. No cal servidor ni connexió.
 2. A l'esquerra hi ha els temes, agrupats per unitat. La PAU hi té el seu grup propi, amb
-   quatre blocs: Àlgebra, Geometria, Anàlisi i Probabilitat.
+   quatre blocs: Àlgebra, Geometria, Anàlisi i Probabilitat. Cada unitat es plega i es desplega
+   clicant-ne el títol. Plegada, diu quantes preguntes seves hi ha a l'examen, i el navegador
+   recorda quines has plegat.
 3. **Cada clic a un tema hi afegeix una pregunta** d'aquell tema. Un segon clic n'afegeix una
    altra, si n'hi ha. El quadret diu quantes n'hi ha a l'examen, i el número de la dreta,
    quantes en té el tema.

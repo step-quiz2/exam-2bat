@@ -149,11 +149,15 @@ def main() -> int:
             r = build(banc, fals, "--pregunta", "u9/monotonia-extrems/q001")
             tocats = sorted(k for k, v in empremta(banc).items()
                             if abans.get(k) != v and k.endswith(".pdf"))
-            # La pregunta té versió de 50 min: quatre PDF.
-            esperats = sorted(f"u9/monotonia-extrems/q001/out/{nom}.pdf"
-                              for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt"))
+            # Tots els PDF tocats són d'aquella pregunta, i hi ha els quatre de base (té versió de
+            # 50 min). Si la pregunta té tries, també hi ha els de cada ítem (el cas 4b els compta):
+            # així aquesta prova no depèn de si la pregunta en té o no.
+            base = [f"u9/monotonia-extrems/q001/out/{nom}.pdf"
+                    for nom in ("enunciat", "enunciat-curt", "solucio", "solucio-curt")]
+            aliens = [k for k in tocats if not k.startswith("u9/monotonia-extrems/q001/out/")]
             comprova("--pregunta només escriu els PDF d'aquella pregunta, també els de 50 min",
-                     r.returncode == 0 and tocats == esperats, f"codi {r.returncode}; tocats {tocats}")
+                     r.returncode == 0 and not aliens and all(b in tocats for b in base),
+                     f"codi {r.returncode}; d'altres preguntes: {aliens[:3]}; falten: {[b for b in base if b not in tocats]}")
             comprova("i no esborra cap PDF orfe: no ha mirat totes les fonts", orfe.exists())
 
         # 4b. --pregunta amb una pregunta amb tries escriu també la

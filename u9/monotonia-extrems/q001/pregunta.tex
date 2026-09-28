@@ -28,7 +28,8 @@ l'estudi del signe de $f'$.
 \end{solucio}
 \end{nomesllarg}
 
-\apartat[1,25]{0,75}
+\begin{tria}{monotonia-tasca}
+\itemtria{original}{0,75}{1,25}
 Demostra que la funció $g(x)=x^3+2x+7$ és creixent a tot $\mathbb{R}$.
 
 \begin{solucio}
@@ -36,5 +37,21 @@ $g'(x)=3x^2+2$. Com que $3x^2\ge0$, es compleix $g'(x)\ge2>0$ per a tot $x$.\\
 La derivada és sempre positiva, i per tant $g$ \textbf{creix a tot $\mathbb{R}$} i no té cap
 extrem relatiu.
 \end{solucio}
+
+\itemtria{una-sola-arrel}{0,75}{1,25}
+Demostra que l'equació
+\[
+x^3+2x+7=0
+\]
+té \textbf{exactament una} solució real.
+
+\begin{solucio}
+Sigui $g(x)=x^3+2x+7$. \emph{Almenys una}: $g$ és contínua, i $g(-2)=-5<0$ i $g(-1)=4>0$. Pel
+teorema de Bolzano, hi ha una solució a $(-2,-1)$.\\
+\emph{Com a molt una}: $g'(x)=3x^2+2>0$ a tot $\mathbb{R}$, i per tant $g$ és estrictament
+creixent. Una funció estrictament creixent no pot valer $0$ en dos punts diferents.\\
+Per tant, l'equació té exactament una solució real, que és a $(-2,-1)$.
+\end{solucio}
+\end{tria}
 
 \end{apartats}
