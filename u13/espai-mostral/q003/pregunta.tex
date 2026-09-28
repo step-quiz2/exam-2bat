@@ -1,0 +1,49 @@
+\begin{apartats}
+
+\begin{tria}{espai-tasca}
+\itemtria{original}{0,75}{1,25}
+Es llancen dos daus i se n'anota la suma. Descriu l'espai mostral. Tots els seus elements tenen la
+mateixa probabilitat?
+
+\begin{solucio}
+$E=\{2,3,4,\dots,12\}$, amb 11 elements.\\
+\textbf{No} són equiprobables. Dels $6\cdot6=36$ resultats dels dos daus, la suma 7 surt de 6 maneres, però
+la suma 2 només d'una, $(1,1)$, i la 12 també, $(6,6)$. Per exemple, $P(7)=\dfrac{6}{36}=\dfrac16$ i
+$P(2)=\dfrac{1}{36}$.
+\end{solucio}
+
+\itemtria{espai-no-producte}{0,75}{1,25}
+Es llança una moneda fins que surt cara, amb un màxim de tres llançaments. Descriu l'espai mostral. Per
+què no té $2\cdot2\cdot2=8$ elements?
+
+\begin{solucio}
+$E=\{C,\,XC,\,XXC,\,XXX\}$, amb 4 elements.\\
+No en té 8 perquè l'experiment s'acaba quan surt la primera cara: després d'una $C$ ja no es llança cap
+més moneda. En un diagrama d'arbre, només continua la branca de les creus. Tampoc no són equiprobables:
+$P(C)=\dfrac12$, però $P(XXX)=\dfrac18$.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Una contrasenya està formada per dues lletres, d'un alfabet de 26, seguides de dues xifres. Quantes
+contrasenyes diferents hi ha? I si no es pot repetir cap caràcter?
+
+\begin{solucio}
+\textbf{Amb repetició}, cada posició és independent de les altres:
+$26\cdot26\cdot10\cdot10=67\,600$.\\
+\textbf{Sense repetició}: $26\cdot25\cdot10\cdot9=58\,500$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+De quantes maneres es poden asseure 5 persones en una fila de 5 cadires? I si dues d'elles volen seure
+l'una al costat de l'altra?
+
+\begin{solucio}
+$P_5=5!=120$.\\
+Si dues han de seure juntes, es compten com un sol bloc: hi ha $4!=24$ maneres d'ordenar el bloc i les
+altres tres persones, i 2 d'ordenar les dues persones dins del bloc: $24\cdot2=48$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 74 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 15 de la unitat 10 i 5 de la PAU), 69 amb tries · 1.400 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 86 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13 i 5 de la PAU), 81 amb tries · 1.628 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -43,7 +43,8 @@ del full de feina de Classroom, amb els exercicis que els alumnes hauran practic
 funcions a trossos fins que s'hagi fet la setmana 17. La vint-i-dosena va acabar els estudis complets de funcions
 racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La vint-i-tresena va fer que el Run workflow deixés de
 trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La vint-i-quatrena, a petició del professor, va completar el
-tema de funcions a trossos, i amb ell la u10. La màquina
+tema de funcions a trossos, i amb ell la u10. La vint-i-cinquena va fer la u13, Probabilitat: quatre
+temes, amb tres variants cadascun i una tria a cada pregunta. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -840,6 +841,53 @@ defecte idèntic i 2,50 punts amb cada ítem, i compilen de debò; les solucions
 caben en una pàgina. Les dues gràfiques noves es van revisar a ull. Les bateries (38/19/77) i la
 integració amb jsdom passen, i el banc complet escriu 864 PDF.
 
+### 2.25 Sessió 25 · La unitat 13, Probabilitat
+
+**El material.** El professor va passar el solucionari de la unitat 13 (pàgines 547–570) i la llista
+dels 16 exercicis que els alumnes hauran practicat, de les setmanes 13 i 14: el 28, el 29, el 32, el
+33, el 35, el 36, el 40, el 60, el 62, el 96 i del 103 al 108. El llibre hi fa parelles del mateix
+càlcul, un en abstracte i un en context («problemes aparentment diferents»): el 103 amb el 104, el
+105 amb el 106, i el 107 amb el 108.
+
+**La PAU.** De 2024 a 2026 hi ha vuit exercicis de probabilitat. Set són de probabilitat total i
+Bayes, sovint amb una prova que dona falsos positius (el Holter de la 24s, el filtre de correu brossa
+de la 25i). També hi surten «almenys un» amb repeticions independents (24i, 24s) i extraccions sense
+reemplaçament (24j).
+
+**Quatre temes**, un per a cada grup d'exercicis practicats:
+
+| Tema | Exercicis |
+|---|---|
+| `espai-mostral` · Espai mostral i comptatge | 28, 29, 40 |
+| `operacions-esdeveniments` · Unió, intersecció i contrari | 60, 62, 103, 104, 105, 106 |
+| `taules-contingencia` · Taules de contingència i probabilitat condicionada | 33, 96, 32, 60 |
+| `probabilitat-total-bayes` · Probabilitat total i teorema de Bayes | 35, 36, 107, 108 |
+
+Cada tema té tres variants, amb contextos i dades propis, i cap no reprodueix un enunciat del llibre.
+Totes tenen la mateixa estructura: dos apartats de 0,75 i 1 punt, i un tercer de 0,75 al
+`nomesllarg`. N'hi ha que amaguen detalls que cal saber veure. A la taula de l'escola de música,
+«tocar el violí» i «ser de nivell elemental» són independents, però «tocar el piano» i «ser de nivell
+elemental» no ho són. A la q002 d'unió i intersecció, $A$ i $B$ són independents sense ser
+incompatibles. A la q002 d'espai mostral, el resultat $NN$ no és possible.
+
+**Tries**, amb el criteri de la regla 16:
+
+| Tema | Què demana l'alternativa |
+|---|---|
+| `espai-mostral` | q001, el principi de multiplicació, sense escriure l'espai mostral (`principi-multiplicacio`); q002, l'error de comptar amb ordre una tria sense ordre (`troba-error`); q003, un espai mostral que no és un producte, perquè l'experiment s'atura (`espai-no-producte`) |
+| `operacions-esdeveniments` | q001, la fórmula de la unió a la inversa, a partir de «cap de les dues» (`a-la-inversa`); q002, per què dos esdeveniments no poden ser incompatibles i el mínim de la intersecció (`fites`); q003, unes dades que són impossibles (`dades-impossibles`) |
+| `taules-contingencia` | q001, dues extraccions sense reemplaçament a partir de la taula (`dos-alumnes`); q002, dos titulars de diari que diuen coses diferents i que tenen raó tots dos, perquè $P(T\mid C)\neq P(C\mid T)$ (`dos-titulars`); q003, el teorema de Bayes, comparat amb la lectura directa de la taula (`taula-i-bayes`) |
+| `probabilitat-total-bayes` | q001, un control de qualitat amb falsos positius, com a la PAU (`control-qualitat`); q002, trobar la composició d'una urna a partir d'una probabilitat (`composicio-urna`); q003, l'arbre en l'ordre invers (`arbre-invers`) |
+
+**El solucionari també té errors aquí.** Al 40a compta $5^6=15\,625$ nombres de sis xifres amb dígits
+parells, però un nombre de sis xifres no pot començar per 0, i en són $4\cdot5^5=12\,500$. Al 60a escriu
+$P(A\cap B)=1-P\left(\overline{A}\cap\overline{B}\right)$ on hauria de dir $P(A\cup B)$.
+
+**Verificació.** Totes les dades es van comprovar amb fraccions exactes abans d'escriure-les, incloses
+les de les alternatives. Les dotze preguntes tenen el defecte idèntic i 2,50 punts amb cada ítem, i
+compilen de debò a una pàgina. Les taules es van revisar a ull. Les bateries (38/19/77) i la
+integració amb jsdom passen, i el banc complet escriu 1.008 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -897,6 +945,7 @@ integració amb jsdom passen, i el banc complet escriu 864 PDF.
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
 | Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
 | El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
+| La u13 té quatre temes, un per a cada grup dels 16 exercicis practicats (setmanes 13 i 14) | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
 | El professor aixeca la congelació d'`estudi-trossos` i el tema passa a tenir tres variants (sessió 24) | Professor | Les preguntes queden al banc; qui fa l'examen decideix quan les fa servir |
 | `estudi-trossos` es queda com està (la q001, sense tria) i no s'amplia fins que s'hagi fet la setmana 17 | Professor | Cap exercici practicat abans de l'examen no el sosté |
 | Per a la u10, els exercicis practicats són els de les setmanes 11 i 12 del full de Classroom; la setmana 17 és posterior a l'examen | Professor | El banc no surt dels exercicis que els alumnes hauran practicat |
@@ -1146,7 +1195,7 @@ per això el banc no hi té tema. Tres variants per tema.
 | Optimització | `q002` | Optimització: capsa sense tapa a partir d'un cartró quadrat | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 77, 79 |
 | Optimització | `q003` | Optimització: prat rectangular amb un costat al riu | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 77, 86 |
 
-### 6.4 Unitat 10 · Representació de funcions (5 preguntes)
+### 6.4 Unitat 10 · Representació de funcions (15 preguntes)
 
 Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 11 i 12 (2.20):
 domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
@@ -1259,6 +1308,27 @@ Ordenades de la més recent a la més antiga, que és l'ordre d'importació reco
 
 ---
 
+
+### 6.7 Unitat 13 · Probabilitat (12 preguntes)
+
+Quatre temes, un per a cada grup dels 16 exercicis practicats a les setmanes 13 i 14 (2.25). Cada
+tema té tres variants, totes amb tria. Els punts de la taula són els del defecte.
+
+| Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
+|---|---|---|---|---|---|---|---|
+| Espai mostral i comptatge | `q001` | Espai mostral d'un experiment compost, nombres de xifres diferents i equips | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 28, 29, 40 |
+| Espai mostral i comptatge | `q002` | Espai mostral sense reemplaçament, paraules amb unes lletres donades, i càrrecs o comissions | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 28, 29, 40 |
+| Espai mostral i comptatge | `q003` | Suma de dos daus, contrasenyes i persones en una fila | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●●○ | 28, 29, 40 |
+| Unió, intersecció i contrari | `q001` | Unió, intersecció i contrari amb percentatges, i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●○○ | 60, 62, 103–106 |
+| Unió, intersecció i contrari | `q002` | Lleis de De Morgan, incompatibilitat i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●●○ | 60, 62, 103–106 |
+| Unió, intersecció i contrari | `q003` | Unió i intersecció a partir de «cap de les dues», i una probabilitat condicionada | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 18 · 11 | ●●○ | 60, 62, 103–106 |
+| Taules de contingència i probabilitat condicionada | `q001` | Taula d'una escola de música: condicionades en les dues direccions i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 33, 96, 32, 60 |
+| Taules de contingència i probabilitat condicionada | `q002` | Construir una taula de contingència a partir d'un text | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●○○ | 33, 96, 32, 60 |
+| Taules de contingència i probabilitat condicionada | `q003` | Taula de modalitats de batxillerat: unió, condicionades i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 33, 96, 32, 60 |
+| Probabilitat total i teorema de Bayes | `q001` | Dues màquines: probabilitat total, Bayes i «almenys una» | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 35, 36, 107, 108 |
+| Probabilitat total i teorema de Bayes | `q002` | Un dau tria l'urna: probabilitat total, Bayes i dues extraccions | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 35, 36, 107, 108 |
+| Probabilitat total i teorema de Bayes | `q003` | Socis d'una botiga en línia: probabilitat total, Bayes i independència | 0,75 + 1,00 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 35, 36, 107, 108 |
+
 ## 7. Feina pendent
 
 ### 7.1 Com s'apliquen els lliuraments
@@ -1341,7 +1411,7 @@ l'ordre numèric.
 | u8 Derivades | 5–7 | 1 de novembre de 2026 · **feta** |
 | u9 Aplicacions de les derivades | 8–10 | 22 de novembre de 2026 · **feta** |
 | u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema (les de funcions a trossos, per després de la setmana 17) |
-| u13 Probabilitat | 13–14 | 20 de desembre de 2026 |
+| u13 Probabilitat | 13–14 | 20 de desembre de 2026 · **completa**: quatre temes amb tres variants, totes amb tria |
 | u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 |
 | u1 Matrius | 18–19 | 24 de gener de 2027 |
 | u2 Determinants | 20–22 | 14 de febrer de 2027 |
@@ -1354,7 +1424,8 @@ l'ordre numèric.
 - **Calibrar els minuts** amb dades reals, a partir del primer examen de la u7. Ara són
   estimacions: uns 16–20 minuts per pregunta a 1 h 30 i uns 10–12 a 50 min.
 - **Funcions a trossos (u10)**: fet a la sessió 24 (2.24).
-- **Temes i preguntes de la u13**, la següent per calendari (20 de desembre). Després, les
+- **Temes i preguntes de la u13**: fet a la sessió 25 (2.25), amb els 16 exercicis practicats de les
+  setmanes 13 i 14. Després, les
   unitats en l'ordre de la taula.
 - **Versions de 50 min per a les preguntes PAU**, on tingui sentit: quin apartat es treu i com es
   reparteixen els punts.
@@ -1383,7 +1454,7 @@ l'ordre numèric.
   pantalles tàctils. Cal mostrar-los d'una altra manera.
 - **Estendre les tries a la resta del banc.** Des de la sessió 16, les 24 preguntes de la u7
   ja en tenen, i des de la 17 totes canvien el cas, la tècnica o el sentit del raonament
-  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 24, també la u10 sencera.
+  (regla 16). Des de la 18, també les 18 de la u8, i des de la 19, les 12 de la u9. Des de la 24, també la u10 sencera, i des de la 25, la u13.
   Per a les unitats que vinguin, el mateix mètode: llegir la
   pregunta sencera, verificar l'alternativa abans d'escriure-la i verificar el fitxer just
   després. A la u7 encara s'hi podrien afegir, com a ítems nous, els límits no racionals que surten
@@ -1518,14 +1589,18 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 24. Parteix del de la sessió 23, que ja és al repositori.
+És el lliurament de la sessió 25. Parteix del de la sessió 24, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u10/estudi-trossos/q002/`, `u10/estudi-trossos/q003/` | **Noves**: dues variants, `pregunta.tex` i `meta.json`, amb la gràfica a la solució |
-| `u10/estudi-trossos/q001/pregunta.tex` | Tria nova, `derivable-enganxament` |
+| `temes.json` | Els quatre temes de la u13 |
+| `u13/espai-mostral/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `u13/operacions-esdeveniments/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `u13/taules-contingencia/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `u13/probabilitat-total-bayes/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.24, i les seccions 3, 6.4, 7.4, 7.5 i 11 |
+| `handout.md` | Secció 2.25, la 6.7 nova, i les seccions 3, 6.4, 7.4, 7.5 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
-memòria de la sessió 23, només es compilaran les tres preguntes d'aquest tema.
+memòria, només es compilaran les 12 preguntes noves: el resum hauria de dir «144 PDF desats · 864
+reutilitzats».

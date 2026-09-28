@@ -1,0 +1,49 @@
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+En una bossa hi ha 2 boles blanques i 1 de negra. Se'n treuen dues, una darrere l'altra, sense retornar la
+primera, i se n'anoten els colors. Descriu l'espai mostral i l'esdeveniment «les dues boles són del mateix
+color».
+
+\begin{solucio}
+Anotant $B$ (blanca) i $N$ (negra) en l'ordre en què surten: $E=\{BB,\,BN,\,NB\}$. El resultat $NN$ no és
+possible, perquè només hi ha una bola negra.\\
+«Mateix color» $=\{BB\}$.
+\end{solucio}
+
+\begin{tria}{espai-tasca}
+\itemtria{original}{1}{1,25}
+Quantes paraules, amb sentit o sense, de 5 lletres diferents es poden formar amb les lletres de la
+paraula LIBRE? I de 3 lletres? Quantes de 5 lletres comencen i acaben en vocal?
+
+\begin{solucio}
+\textbf{5 lletres}: s'ordenen totes, permutacions, $P_5=5!=120$.\\
+\textbf{3 lletres}: variacions sense repetició, $V_{5,3}=5\cdot4\cdot3=60$.\\
+\textbf{Vocal al principi i al final}: les vocals són la I i la E. Hi ha 2 maneres de posar-les als
+extrems, i $3!=6$ d'ordenar les tres consonants al mig: $2\cdot6=12$.
+\end{solucio}
+
+\itemtria{troba-error}{1}{1,25}
+Un alumne diu que hi ha $8\cdot7\cdot6=336$ maneres de triar 3 llibres d'una llista de 8 per llegir-los
+aquest estiu. Té raó? Si no en té, quin és el nombre correcte, i quin error ha fet?
+
+\begin{solucio}
+\textbf{No}. $8\cdot7\cdot6=V_{8,3}$ compta els trios ordenats: triar A, B i C hi compta diferent de triar
+C, B i A. Però per llegir-los aquest estiu l'ordre no importa: són combinacions,
+$C_{8,3}=\dfrac{336}{3!}=\dfrac{336}{6}=56$. Cada trio l'havia comptat $3!=6$ vegades.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+En una classe de 20 alumnes, de quantes maneres es poden triar un delegat i un sotsdelegat? I una comissió
+de dues persones?
+
+\begin{solucio}
+\textbf{Delegat i sotsdelegat}: l'ordre importa, perquè són càrrecs diferents: $V_{20,2}=20\cdot19=380$.\\
+\textbf{Comissió}: l'ordre no importa: $C_{20,2}=190$, la meitat, perquè en les variacions cada parella
+es compta dues vegades.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

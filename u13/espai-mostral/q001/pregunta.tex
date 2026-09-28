@@ -1,0 +1,49 @@
+\begin{apartats}
+
+\begin{tria}{espai-tasca}
+\itemtria{original}{0,75}{1,25}
+Una urna conté tres boles numerades de l'1 al 3. Se'n treu una a l'atzar i, a continuació, es llança una
+moneda. Descriu l'espai mostral i l'esdeveniment $A=$ «surt un nombre senar i cara».
+
+\begin{solucio}
+Cada resultat és un nombre i una cara ($C$) o una creu ($X$): $E=\{1C,\,1X,\,2C,\,2X,\,3C,\,3X\}$, amb
+$3\cdot2=6$ elements.\\
+$A=\{1C,\,3C\}$.
+\end{solucio}
+
+\itemtria{principi-multiplicacio}{0,75}{1,25}
+Es llancen tres monedes i un dau. Quants elements té l'espai mostral? Escriu l'esdeveniment «surten
+exactament dues cares i un 6», i digues quants elements té.
+
+\begin{solucio}
+Cada moneda té 2 resultats, i el dau, 6. Pel principi de multiplicació, l'espai mostral té
+$2\cdot2\cdot2\cdot6=48$ elements, i no cal escriure'ls tots per saber-ho.\\
+L'esdeveniment és $\{CCX6,\,CXC6,\,XCC6\}$: té 3 elements, un per a cada moneda on pot sortir la creu.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Amb els dígits 1, 2, 3, 4 i 5, quants nombres de quatre xifres diferents es poden formar? Quants són
+parells? Quants comencen per 5?
+
+\begin{solucio}
+L'ordre importa i no es repeteix cap xifra: variacions sense repetició,
+$V_{5,4}=5\cdot4\cdot3\cdot2=120$.\\
+\textbf{Parells}: l'última xifra ha de ser 2 o 4 (2 opcions), i les altres tres són una variació de les
+4 xifres que queden: $2\cdot V_{4,3}=2\cdot24=48$.\\
+\textbf{Comencen per 5}: la primera xifra és fixa, i les altres tres són $V_{4,3}=24$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+De quantes maneres es pot triar un equip de 3 persones d'un grup de 7? I si una persona concreta hi ha
+de ser?
+
+\begin{solucio}
+L'ordre no importa: combinacions, $C_{7,3}=\dbinom73=35$.\\
+Si una persona hi ha de ser, només cal triar les altres dues entre les 6 que queden:
+$C_{6,2}=\dbinom62=15$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

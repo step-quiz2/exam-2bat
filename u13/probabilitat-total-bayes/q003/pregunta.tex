@@ -1,0 +1,48 @@
+El 30\,\% dels clients d'una botiga en línia són socis del seu club ($S$). El 70\,\% dels socis fan més d'una
+compra al mes ($M$), mentre que, entre els que no en són socis, només ho fa el 20\,\%. Es tria un client a
+l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que faci més d'una compra al mes?
+
+\begin{solucio}
+$P(M)=P(S)\,P(M\mid S)+P\left(\overline{S}\right)P\left(M\mid\overline{S}\right)=0{,}3\cdot0{,}7+0{,}7\cdot0{,}2
+=0{,}21+0{,}14=0{,}35$.
+\end{solucio}
+
+\begin{tria}{bayes-tasca}
+\itemtria{original}{1}{1,25}
+Si fa més d'una compra al mes, quina és la probabilitat que sigui soci? I si no en fa més d'una?
+
+\begin{solucio}
+$P(S\mid M)=\dfrac{0{,}21}{0{,}35}=0{,}6$.\\
+$P\left(S\mid\overline{M}\right)=\dfrac{0{,}3\cdot0{,}3}{1-0{,}35}=\dfrac{0{,}09}{0{,}65}\approx0{,}138$.
+\end{solucio}
+
+\itemtria{arbre-invers}{1}{1,25}
+Construeix l'arbre en l'ordre invers: primer, si el client fa més d'una compra al mes, i després, si és
+soci. Calcula totes les probabilitats de les branques.
+
+\begin{solucio}
+Primer nivell: $P(M)=0{,}35$ i $P\left(\overline{M}\right)=0{,}65$.\\
+Segon nivell, amb el teorema de Bayes: $P(S\mid M)=\dfrac{0{,}21}{0{,}35}=0{,}6$ i
+$P\left(\overline{S}\mid M\right)=0{,}4$; $P\left(S\mid\overline{M}\right)=\dfrac{0{,}09}{0{,}65}\approx0{,}138$
+i $P\left(\overline{S}\mid\overline{M}\right)=\dfrac{0{,}56}{0{,}65}\approx0{,}862$.\\
+Comprovació: els camins donen les mateixes interseccions que l'arbre original; per exemple,
+$0{,}35\cdot0{,}6=0{,}21=P(S\cap M)$.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Són independents «ser soci» i «fer més d'una compra al mes»? Justifica-ho.
+
+\begin{solucio}
+$P(M\mid S)=0{,}7$, però $P(M)=0{,}35$. Com que saber que és soci canvia la probabilitat, \textbf{no} són
+independents. (També: $P(S\cap M)=0{,}21\neq P(S)\cdot P(M)=0{,}105$.)
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

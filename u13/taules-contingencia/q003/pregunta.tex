@@ -1,0 +1,62 @@
+Un institut ha preguntat als 300 alumnes de batxillerat quina modalitat fan i si pensen estudiar una
+carrera científica ($CC$):
+\begin{center}
+\begin{tabular}{l|ccc|c}
+ & Ciències & Humanitats & Arts & Total\\ \hline
+Carrera científica & 90 & 20 & 10 & 120\\
+No & 60 & 80 & 40 & 180\\ \hline
+Total & 150 & 100 & 50 & 300
+\end{tabular}
+\end{center}
+Es tria un alumne a l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que faci Ciències? I que faci Humanitats o que pensi estudiar una carrera
+científica?
+
+\begin{solucio}
+$P(\text{Ciències})=\dfrac{150}{300}=0{,}5$.\\
+$P(\text{Humanitats}\cup CC)=\dfrac{100+120-20}{300}=\dfrac{200}{300}=\dfrac23\approx0{,}667$: els 20
+alumnes d'Humanitats que pensen estudiar una carrera científica no s'han de comptar dues vegades.
+\end{solucio}
+
+\begin{tria}{taula-tasca}
+\itemtria{original}{1}{1,25}
+Si pensa estudiar una carrera científica, quina és la probabilitat que faci Arts? I si fa Ciències, quina
+és la probabilitat que no pensi estudiar-ne cap?
+
+\begin{solucio}
+$P(\text{Arts}\mid CC)=\dfrac{10}{120}=\dfrac1{12}\approx0{,}083$.\\
+$P\left(\overline{CC}\mid\text{Ciències}\right)=\dfrac{60}{150}=0{,}4$.
+\end{solucio}
+
+\itemtria{taula-i-bayes}{1}{1,25}
+Comprova amb la taula que $P(CC\mid\text{Ciències})=0{,}6$ i que
+$P\left(CC\mid\overline{\text{Ciències}}\right)=0{,}2$. Calcula després $P(\text{Ciències}\mid CC)$ amb el
+teorema de Bayes, a partir només de $P(\text{Ciències})$ i d'aquestes dues probabilitats, i comprova que
+coincideix amb el que dona la taula.
+
+\begin{solucio}
+$P(CC\mid\text{Ciències})=\dfrac{90}{150}=0{,}6$ i
+$P\left(CC\mid\overline{\text{Ciències}}\right)=\dfrac{20+10}{150}=0{,}2$.\\
+Bayes: $P(\text{Ciències}\mid CC)=\dfrac{0{,}5\cdot0{,}6}{0{,}5\cdot0{,}6+0{,}5\cdot0{,}2}
+=\dfrac{0{,}3}{0{,}4}=0{,}75$.\\
+A la taula, $\dfrac{90}{120}=0{,}75$. Coincideixen: el teorema de Bayes fa el mateix que llegir la taula a
+la fila de $CC$, dividir els 90 alumnes de Ciències que la volen estudiar pels 120 que la volen estudiar
+en total.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Són independents «fer Arts» i «pensar estudiar una carrera científica»?
+
+\begin{solucio}
+$P(\text{Arts}\cap CC)=\dfrac{10}{300}\approx0{,}033$, però
+$P(\text{Arts})\cdot P(CC)=\dfrac16\cdot0{,}4\approx0{,}067$: \textbf{no} són independents.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

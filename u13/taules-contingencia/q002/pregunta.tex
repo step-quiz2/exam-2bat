@@ -1,0 +1,56 @@
+S'ha preguntat a 200 persones si fan servir el transport públic habitualment ($T$) i si tenen cotxe ($C$).
+En fan servir 120, i d'aquestes, 45 tenen cotxe. De les que no fan servir el transport públic, 60 tenen
+cotxe. Es tria una persona a l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Construeix la taula de contingència.
+
+\begin{solucio}
+\begin{center}
+\begin{tabular}{l|cc|c}
+ & Cotxe & Sense cotxe & Total\\ \hline
+Transport públic & 45 & 75 & 120\\
+No & 60 & 20 & 80\\ \hline
+Total & 105 & 95 & 200
+\end{tabular}
+\end{center}
+\end{solucio}
+
+\begin{tria}{taula-tasca}
+\itemtria{original}{1}{1,25}
+Quina és la probabilitat que tingui cotxe? I si té cotxe, quina és la probabilitat que faci servir el
+transport públic?
+
+\begin{solucio}
+$P(C)=\dfrac{105}{200}=0{,}525$.\\
+$P(T\mid C)=\dfrac{45}{105}=\dfrac37\approx0{,}429$.
+\end{solucio}
+
+\itemtria{dos-titulars}{1}{1,25}
+Un diari titula «El 43\,\% dels que tenen cotxe fan servir el transport públic», i un altre, «El 37,5\,\%
+dels usuaris del transport públic tenen cotxe». Segons aquesta enquesta, té raó algun dels dos? O tots
+dos?
+
+\begin{solucio}
+\textbf{Tots dos}: parlen de dues probabilitats condicionades diferents.\\
+El primer és $P(T\mid C)=\dfrac{45}{105}\approx0{,}43$: el total de referència són els 105 que tenen
+cotxe. El segon és $P(C\mid T)=\dfrac{45}{120}=0{,}375$: el total són els 120 usuaris del transport
+públic. En general, $P(T\mid C)\neq P(C\mid T)$.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Quina és la probabilitat que no faci servir el transport públic ni tingui cotxe? Són independents $T$ i
+$C$?
+
+\begin{solucio}
+$P\left(\overline{T}\cap\overline{C}\right)=\dfrac{20}{200}=0{,}1$.\\
+$P(T)\cdot P(C)=0{,}6\cdot0{,}525=0{,}315$, però $P(T\cap C)=\dfrac{45}{200}=0{,}225$: \textbf{no} són
+independents.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

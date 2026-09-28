@@ -177,6 +177,30 @@
       "descripcio": "Continuïtat, asímptotes, monotonia i representació d'una funció definida a trossos."
     },
     {
+      "slug": "espai-mostral",
+      "unitat": "u13",
+      "nom": "Espai mostral i comptatge",
+      "descripcio": "Espai mostral d'experiments compostos, esdeveniments i recomptes amb variacions, permutacions i combinacions."
+    },
+    {
+      "slug": "operacions-esdeveniments",
+      "unitat": "u13",
+      "nom": "Unió, intersecció i contrari",
+      "descripcio": "Probabilitat de la unió, la intersecció i el contrari, lleis de De Morgan, «cap», «només un» i independència."
+    },
+    {
+      "slug": "taules-contingencia",
+      "unitat": "u13",
+      "nom": "Taules de contingència i probabilitat condicionada",
+      "descripcio": "Probabilitats a partir d'una taula de contingència, condicionades en les dues direccions i independència."
+    },
+    {
+      "slug": "probabilitat-total-bayes",
+      "unitat": "u13",
+      "nom": "Probabilitat total i teorema de Bayes",
+      "descripcio": "Diagrames d'arbre, probabilitat total i teorema de Bayes en contextos d'urnes, màquines i proves."
+    },
+    {
       "slug": "algebra",
       "unitat": "pau",
       "nom": "Àlgebra",

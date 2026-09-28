@@ -1,0 +1,17 @@
+{
+  "titol": "Dues màquines: probabilitat total, Bayes i «almenys una»",
+  "dificultat": "●●○",
+  "temes_secundaris": [],
+  "origen": [
+    35,
+    36,
+    107,
+    108
+  ],
+  "minuts": 20,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "probabilitat total",
+    "teorema de Bayes"
+  ]
+}

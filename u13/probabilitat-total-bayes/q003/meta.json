@@ -1,0 +1,17 @@
+{
+  "titol": "Socis d'una botiga en línia: probabilitat total, Bayes i independència",
+  "dificultat": "●●○",
+  "temes_secundaris": [],
+  "origen": [
+    35,
+    36,
+    107,
+    108
+  ],
+  "minuts": 20,
+  "minuts_curt": 12,
+  "etiquetes": [
+    "probabilitat total",
+    "teorema de Bayes"
+  ]
+}

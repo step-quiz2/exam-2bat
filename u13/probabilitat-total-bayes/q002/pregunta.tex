@@ -1,0 +1,47 @@
+Es llança un dau. Si surt 1 o 2, es treu una bola de l'urna $U_1$, que té 3 boles blanques i 2 de negres; si
+no, es treu de l'urna $U_2$, que té 1 bola blanca i 4 de negres.
+
+\begin{apartats}
+
+\begin{tria}{bayes-tasca}
+\itemtria{original}{0,75}{1,25}
+Quina és la probabilitat que la bola sigui blanca?
+
+\begin{solucio}
+$P(U_1)=\dfrac26=\dfrac13$ i $P(U_2)=\dfrac23$. Per la probabilitat total,
+$P(B)=\dfrac13\cdot\dfrac35+\dfrac23\cdot\dfrac15=\dfrac3{15}+\dfrac2{15}=\dfrac13$.
+\end{solucio}
+
+\itemtria{composicio-urna}{0,75}{1,25}
+Quantes boles blanques hauria de tenir l'urna $U_2$, si continués tenint 5 boles en total, perquè la
+probabilitat de treure una bola blanca fos $\dfrac7{15}$?
+
+\begin{solucio}
+Si $U_2$ tingués $b$ boles blanques, seria
+$P(B)=\dfrac13\cdot\dfrac35+\dfrac23\cdot\dfrac b5=\dfrac15+\dfrac{2b}{15}$.\\
+Cal $\dfrac15+\dfrac{2b}{15}=\dfrac7{15}$, és a dir $3+2b=7$: $\boxed{b=2}$ boles blanques (i 3 de
+negres).
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Si la bola és blanca, quina és la probabilitat que sigui de $U_1$? I si és negra, quina és la probabilitat
+que sigui de $U_2$?
+
+\begin{solucio}
+$P(U_1\mid B)=\dfrac{\frac13\cdot\frac35}{\frac13}=\dfrac35$.\\
+$P(N)=1-\dfrac13=\dfrac23$, i $P(U_2\mid N)=\dfrac{\frac23\cdot\frac45}{\frac23}=\dfrac45$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Ara, després de llançar el dau, es treuen dues boles de l'urna que toqui, sense reemplaçament. Quina és la
+probabilitat que totes dues siguin blanques?
+
+\begin{solucio}
+De $U_1$: $\dfrac35\cdot\dfrac24=\dfrac3{10}$. De $U_2$ és impossible, perquè només hi ha una bola blanca.
+Per tant, $P=\dfrac13\cdot\dfrac3{10}+\dfrac23\cdot0=\dfrac1{10}$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

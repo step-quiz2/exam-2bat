@@ -1,0 +1,43 @@
+En una ciutat, el 70\,\% de les persones llegeix el diari digital ($D$), el 40\,\% escolta la ràdio ($R$) i
+el 20\,\% no fa cap de les dues coses. Es tria una persona a l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que faci totes dues coses?
+
+\begin{solucio}
+$P(D\cup R)=1-0{,}2=0{,}8$, perquè «no fer-ne cap» és el contrari de la unió.\\
+$P(D\cap R)=P(D)+P(R)-P(D\cup R)=0{,}7+0{,}4-0{,}8=0{,}3$.
+\end{solucio}
+
+\begin{tria}{operacions-tasca}
+\itemtria{original}{1}{1,25}
+Quina és la probabilitat que només escolti la ràdio? I que faci només una de les dues coses?
+
+\begin{solucio}
+\textbf{Només ràdio}: $P\left(R\cap\overline{D}\right)=P(R)-P(D\cap R)=0{,}4-0{,}3=0{,}1$.\\
+\textbf{Només una}: $P(D\cup R)-P(D\cap R)=0{,}8-0{,}3=0{,}5$.
+\end{solucio}
+
+\itemtria{dades-impossibles}{1}{1,25}
+Una altra enquesta diu que el 70\,\% de les persones llegeix el diari digital, el 40\,\% escolta la ràdio
+i només el 5\,\% fa totes dues coses. Són possibles aquestes dades? Justifica-ho.
+
+\begin{solucio}
+\textbf{No}: donarien $P(D\cup R)=0{,}7+0{,}4-0{,}05=1{,}05>1$.\\
+Com que $P(D\cup R)\le1$, ha de ser $P(D\cap R)\ge0{,}7+0{,}4-1=0{,}1$: com a mínim, el 10\,\% hauria de
+fer totes dues coses.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Si una persona escolta la ràdio, quina és la probabilitat que també llegeixi el diari digital?
+
+\begin{solucio}
+$P(D\mid R)=\dfrac{P(D\cap R)}{P(R)}=\dfrac{0{,}3}{0{,}4}=0{,}75$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

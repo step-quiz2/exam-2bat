@@ -1,0 +1,58 @@
+Una escola de música té 120 alumnes, distribuïts així:
+\begin{center}
+\begin{tabular}{l|ccc|c}
+ & Piano & Guitarra & Violí & Total\\ \hline
+Elemental & 35 & 19 & 18 & 72\\
+Mitjà & 15 & 21 & 12 & 48\\ \hline
+Total & 50 & 40 & 30 & 120
+\end{tabular}
+\end{center}
+Es tria un alumne a l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que toqui el piano? I que sigui de nivell mitjà i toqui la guitarra?
+
+\begin{solucio}
+$P(\text{piano})=\dfrac{50}{120}=\dfrac5{12}\approx0{,}417$.\\
+$P(\text{mitjà}\cap\text{guitarra})=\dfrac{21}{120}=0{,}175$.
+\end{solucio}
+
+\begin{tria}{taula-tasca}
+\itemtria{original}{1}{1,25}
+Si l'alumne és de nivell mitjà, quina és la probabilitat que toqui el violí? I si toca el violí, quina
+és la probabilitat que sigui de nivell mitjà?
+
+\begin{solucio}
+$P(\text{violí}\mid\text{mitjà})=\dfrac{12}{48}=0{,}25$: el total de referència és la fila del nivell
+mitjà.\\
+$P(\text{mitjà}\mid\text{violí})=\dfrac{12}{30}=0{,}4$: ara el total de referència és la columna del
+violí. Les dues probabilitats condicionades no són iguals.
+\end{solucio}
+
+\itemtria{dos-alumnes}{1}{1,25}
+Es trien dos alumnes a l'atzar, un darrere l'altre (no es pot triar dues vegades el mateix). Quina és la
+probabilitat que tots dos toquin el violí? I que cap dels dos no el toqui?
+
+\begin{solucio}
+A la segona tria hi ha un alumne menys, i si el primer tocava el violí, també un violinista menys:\\
+$P(\text{tots dos violí})=\dfrac{30}{120}\cdot\dfrac{29}{119}=\dfrac{29}{476}\approx0{,}061$.\\
+$P(\text{cap violí})=\dfrac{90}{120}\cdot\dfrac{89}{119}=\dfrac{267}{476}\approx0{,}561$.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Són independents «tocar el violí» i «ser de nivell elemental»? I «tocar el piano» i «ser de nivell
+elemental»?
+
+\begin{solucio}
+$P(\text{violí}\cap\text{elemental})=\dfrac{18}{120}=0{,}15$ i
+$P(\text{violí})\cdot P(\text{elemental})=0{,}25\cdot0{,}6=0{,}15$: \textbf{sí} que són independents.\\
+$P(\text{piano}\cap\text{elemental})=\dfrac{35}{120}\approx0{,}292$, però
+$P(\text{piano})\cdot P(\text{elemental})=\dfrac5{12}\cdot0{,}6=0{,}25$: \textbf{no} ho són.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

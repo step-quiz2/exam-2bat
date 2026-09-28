@@ -1,0 +1,47 @@
+En un institut, el 60\,\% de l'alumnat practica algun esport ($E$), el 45\,\% toca algun instrument ($M$)
+i el 25\,\% fa totes dues coses. Es tria un alumne a l'atzar.
+
+\begin{apartats}
+
+\begin{tria}{operacions-tasca}
+\itemtria{original}{0,75}{1,25}
+Quina és la probabilitat que faci almenys una de les dues activitats? I que no en faci cap?
+
+\begin{solucio}
+$P(E\cup M)=P(E)+P(M)-P(E\cap M)=0{,}6+0{,}45-0{,}25=0{,}8$.\\
+No fer-ne cap és el contrari: $P\left(\overline{E}\cap\overline{M}\right)=P\left(\overline{E\cup M}\right)
+=1-0{,}8=0{,}2$.
+\end{solucio}
+
+\itemtria{a-la-inversa}{0,75}{1,25}
+En un altre institut, el 70\,\% de l'alumnat practica algun esport, el 50\,\% toca algun instrument i el
+10\,\% no fa cap de les dues coses. Quina és la probabilitat que un alumne d'aquest institut, triat a
+l'atzar, faci totes dues activitats?
+
+\begin{solucio}
+«No fer-ne cap» és el contrari de la unió: $P(E\cup M)=1-0{,}1=0{,}9$.\\
+De $P(E\cup M)=P(E)+P(M)-P(E\cap M)$ resulta $P(E\cap M)=0{,}7+0{,}5-0{,}9=0{,}3$. La fórmula de la unió
+també serveix a la inversa.
+\end{solucio}
+\end{tria}
+
+\apartat[1,25]{1}
+Quina és la probabilitat que faci només una de les dues activitats? I que practiqui esport, però no toqui
+cap instrument?
+
+\begin{solucio}
+\textbf{Només una}: la unió sense la intersecció, $P(E\cup M)-P(E\cap M)=0{,}8-0{,}25=0{,}55$.\\
+\textbf{Esport i no instrument}: $P\left(E\cap\overline{M}\right)=P(E)-P(E\cap M)=0{,}6-0{,}25=0{,}35$.
+\end{solucio}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Són independents els esdeveniments «practicar esport» i «tocar un instrument»? Justifica-ho.
+
+\begin{solucio}
+$P(E)\cdot P(M)=0{,}6\cdot0{,}45=0{,}27$, però $P(E\cap M)=0{,}25$. Com que no coincideixen, \textbf{no}
+són independents.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}

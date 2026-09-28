@@ -1,0 +1,46 @@
+Una fàbrica té dues màquines. La màquina $M_1$ fa el 60\,\% de les peces, i la $M_2$, la resta. El 4\,\% de les
+peces de $M_1$ i el 6\,\% de les de $M_2$ són defectuoses ($D$). Es tria una peça a l'atzar.
+
+\begin{apartats}
+
+\apartat[1,25]{0,75}
+Quina és la probabilitat que sigui defectuosa?
+
+\begin{solucio}
+Per la probabilitat total, $P(D)=P(M_1)\,P(D\mid M_1)+P(M_2)\,P(D\mid M_2)=0{,}6\cdot0{,}04+0{,}4\cdot0{,}06
+=0{,}024+0{,}024=0{,}048$.
+\end{solucio}
+
+\begin{tria}{bayes-tasca}
+\itemtria{original}{1}{1,25}
+Si la peça és defectuosa, quina és la probabilitat que l'hagi feta $M_1$? I si no ho és?
+
+\begin{solucio}
+Pel teorema de Bayes, $P(M_1\mid D)=\dfrac{P(M_1)\,P(D\mid M_1)}{P(D)}=\dfrac{0{,}024}{0{,}048}=0{,}5$.\\
+$P\left(M_1\mid\overline{D}\right)=\dfrac{0{,}6\cdot0{,}96}{1-0{,}048}=\dfrac{0{,}576}{0{,}952}\approx0{,}605$.
+\end{solucio}
+
+\itemtria{control-qualitat}{1}{1,25}
+Un control de qualitat detecta el 90\,\% de les peces defectuoses, però també rebutja per error el 2\,\%
+de les que són bones. Si el control rebutja una peça, quina és la probabilitat que sigui realment
+defectuosa?
+
+\begin{solucio}
+Sigui $R$ = «el control rebutja la peça». Amb $P(D)=0{,}048$,
+$P(R)=0{,}048\cdot0{,}9+0{,}952\cdot0{,}02=0{,}0432+0{,}01904=0{,}06224$.\\
+$P(D\mid R)=\dfrac{0{,}0432}{0{,}06224}\approx0{,}694$. Gairebé 3 de cada 10 peces rebutjades són bones:
+el 2\,\% d'errors pesa molt perquè les peces bones són moltes més que les defectuoses.
+\end{solucio}
+\end{tria}
+
+\begin{nomesllarg}
+\apartat{0,75}
+Es trien dues peces a l'atzar, de manera independent. Quina és la probabilitat que almenys una sigui
+defectuosa?
+
+\begin{solucio}
+El contrari de «almenys una» és «cap»: $1-P\left(\overline{D}\right)^2=1-0{,}952^2\approx0{,}094$.
+\end{solucio}
+\end{nomesllarg}
+
+\end{apartats}
