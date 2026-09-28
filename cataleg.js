@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 14:00 UTC",
+ "generat": "2026-09-28 14:15 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -830,12 +830,170 @@ const BANC = {
    ],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3-3x^2+4 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(0)=4$, el punt $(0,4)$. Per a l'eix $OX$, $x=-1$ és arrel\n($f(-1)=-1-3+4=0$) i, dividint, $f(x)=(x+1)(x-2)^2$: els talls són $(-1,0)$ i $(2,0)$, aquest\núltim amb arrel doble.\\\\\n\\textbf{Monotonia}: $f'(x)=3x^2-6x=3x(x-2)$, que s'anul·la en $x=0$ i $x=2$.\\\\\n$f$ \\textbf{creix} a $(-\\infty,0)$, \\textbf{decreix} a $(0,2)$ i \\textbf{creix} a\n$(2,+\\infty)$.\\\\\n\\textbf{Màxim relatiu} $(0,4)$ i \\textbf{mínim relatiu} $(2,0)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n el punt d'inflexió.\n\n\\begin{solucio}\n$f''(x)=6x-6$, que s'anul·la en $x=1$.\\\\\n$f''<0$ a $(-\\infty,1)$: \\textbf{còncava}. \\quad $f''>0$ a $(1,+\\infty)$: \\textbf{convexa}.\\\\\nCom que la curvatura hi canvia i $f(1)=2$, el punt d'inflexió és $(1,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica puja fins al màxim $(0,4)$, baixa fins a tocar l'eix en el mínim $(2,0)$ i torna a\npujar. Les branques infinites van cap a $-\\infty$ i $+\\infty$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.45cm]\n  \\draw[gray!55,very thin,step=1] (-2,-2) grid (4,7);\n  \\draw[->] (-2.4,0) -- (4.4,0) node[below right] {$x$};\n  \\draw[->] (0,-2.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {-1,1,2,3} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {2,4,6} \\draw (0.08,\\j) -- (-0.08,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-2,-2) rectangle (4,7);\n    \\draw[\\colorgrafica,very thick,domain=-1.25:3.2,samples=120,smooth] plot (\\x,{\\x*\\x*\\x-3*\\x*\\x+4});\n  \\end{scope}\n  \\fill (0,4) circle (2.2pt); \\fill (2,0) circle (2.2pt);\n  \\draw[fill=white,thick] (1,2) circle (2.2pt);\n  \\node[font=\\scriptsize] at (1.75,2.6) {inflexió};\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "solucions-f-igual-k",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/solucions-f-igual-k/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/solucions-f-igual-k/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/solucions-f-igual-k/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q001/out/tries/estudi-tasca/solucions-f-igual-k/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^3-3x^2+4 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(0)=4$, el punt $(0,4)$. Per a l'eix $OX$, $x=-1$ és arrel\n($f(-1)=-1-3+4=0$) i, dividint, $f(x)=(x+1)(x-2)^2$: els talls són $(-1,0)$ i $(2,0)$, aquest\núltim amb arrel doble.\\\\\n\\textbf{Monotonia}: $f'(x)=3x^2-6x=3x(x-2)$, que s'anul·la en $x=0$ i $x=2$.\\\\\n$f$ \\textbf{creix} a $(-\\infty,0)$, \\textbf{decreix} a $(0,2)$ i \\textbf{creix} a\n$(2,+\\infty)$.\\\\\n\\textbf{Màxim relatiu} $(0,4)$ i \\textbf{mínim relatiu} $(2,0)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n el punt d'inflexió.\n\n\\begin{solucio}\n$f''(x)=6x-6$, que s'anul·la en $x=1$.\\\\\n$f''<0$ a $(-\\infty,1)$: \\textbf{còncava}. \\quad $f''>0$ a $(1,+\\infty)$: \\textbf{convexa}.\\\\\nCom que la curvatura hi canvia i $f(1)=2$, el punt d'inflexió és $(1,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica puja fins al màxim $(0,4)$, baixa fins a tocar l'eix en el mínim $(2,0)$ i torna a\npujar. Les branques infinites van cap a $-\\infty$ i $+\\infty$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.45cm]\n  \\draw[gray!55,very thin,step=1] (-2,-2) grid (4,7);\n  \\draw[->] (-2.4,0) -- (4.4,0) node[below right] {$x$};\n  \\draw[->] (0,-2.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {-1,1,2,3} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {2,4,6} \\draw (0.08,\\j) -- (-0.08,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-2,-2) rectangle (4,7);\n    \\draw[\\colorgrafica,very thick,domain=-1.25:3.2,samples=120,smooth] plot (\\x,{\\x*\\x*\\x-3*\\x*\\x+4});\n  \\end{scope}\n  \\fill (0,4) circle (2.2pt); \\fill (2,0) circle (2.2pt);\n  \\draw[fill=white,thick] (1,2) circle (2.2pt);\n  \\node[font=\\scriptsize] at (1.75,2.6) {inflexió};\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{solucions-f-igual-k}{0,75}{1,25}\nSense representar la funció, digues quantes solucions té l'equació $f(x)=k$ segons el valor de\n$k$. Justifica-ho a partir dels extrems.\n\n\\begin{solucio}\n$f'(x)=3x(x-2)$: $f$ creix a $(-\\infty,0)$, des de $-\\infty$ fins al \\textbf{màxim} $(0,4)$; decreix\nfins al \\textbf{mínim} $(2,0)$; i torna a créixer cap a $+\\infty$. Cada tram monòton pren cada valor\ncom a molt una vegada.\\\\\n$k<0$ o $k>4$: \\textbf{una} solució. \\quad $k=0$ o $k=4$: \\textbf{dues}, una de les quals és l'extrem.\n\\quad $0<k<4$: \\textbf{tres}, una a cada tram.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u10/estudi-polinomica/q001/out/enunciat.pdf",
    "pdf_solucio": "u10/estudi-polinomica/q001/out/solucio.pdf",
    "pdf_curt": "u10/estudi-polinomica/q001/out/enunciat-curt.pdf",
    "pdf_solucio_curt": "u10/estudi-polinomica/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-polinomica/q002",
+   "unitat": "u10",
+   "tema": "estudi-polinomica",
+   "codi": "q002",
+   "titol": "Estudi i gràfica de x⁴−4x³+4x²: dos mínims, un màxim i dues inflexions",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●●",
+   "origen": [
+    75,
+    78,
+    88
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "polinòmiques",
+    "representació",
+    "punt d'inflexió"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "extrems-absoluts",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/extrems-absoluts/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/extrems-absoluts/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/extrems-absoluts/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q002/out/tries/estudi-tasca/extrems-absoluts/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^4-4x^3+4x^2 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(x)=x^2\\left(x^2-4x+4\\right)=x^2(x-2)^2$. Els talls són $(0,0)$ i $(2,0)$, tots dos\namb arrel doble; $(0,0)$ és també el tall amb l'eix $OY$.\\\\\n\\textbf{Monotonia}: $f'(x)=4x^3-12x^2+8x=4x(x-1)(x-2)$, que s'anul·la en $x=0$, $x=1$ i $x=2$.\\\\\n$f$ \\textbf{decreix} a $(-\\infty,0)$, \\textbf{creix} a $(0,1)$, \\textbf{decreix} a $(1,2)$ i\n\\textbf{creix} a $(2,+\\infty)$.\\\\\n\\textbf{Mínims relatius} $(0,0)$ i $(2,0)$, i \\textbf{màxim relatiu} $(1,1)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n els punts d'inflexió.\n\n\\begin{solucio}\n$f''(x)=12x^2-24x+8=4\\left(3x^2-6x+2\\right)$, que s'anul·la en $x=1\\pm\\dfrac{\\sqrt3}{3}$ (és a dir,\n$x\\approx0{,}42$ i $x\\approx1{,}58$).\\\\\n$f''>0$ fora de l'interval que formen, on la funció és \\textbf{convexa}, i $f''<0$ a dins, on és\n\\textbf{còncava}.\\\\\nCom que la curvatura hi canvia, hi ha dos punts d'inflexió, i tots dos tenen $y=\\dfrac49$:\n$\\left(1-\\tfrac{\\sqrt3}{3},\\tfrac49\\right)$ i $\\left(1+\\tfrac{\\sqrt3}{3},\\tfrac49\\right)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica baixa fins al mínim $(0,0)$, puja fins al màxim $(1,1)$, torna a baixar fins al mínim\n$(2,0)$ i torna a pujar: té forma de W, simètrica respecte de la recta $x=1$. Les dues branques\ninfinites van cap a $+\\infty$.\n\\begin{center}\n\\begin{tikzpicture}[x=1.2cm,y=0.8cm]\n  \\draw[gray!55,very thin,step=1] (-1,-1) grid (3,5);\n  \\draw[->] (-1.3,0) -- (3.3,0) node[below right] {$x$};\n  \\draw[->] (0,-1.3) -- (0,5.4) node[above left] {$y$};\n  \\foreach \\i in {-1,1,2} \\draw (\\i,0.1) -- (\\i,-0.1) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {1,2,3,4} \\draw (0.06,\\j) -- (-0.06,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-1,-1) rectangle (3,5);\n    \\draw[\\colorgrafica,very thick,domain=-0.8:2.8,samples=150,smooth] plot (\\x,{\\x*\\x*(\\x-2)*(\\x-2)});\n  \\end{scope}\n  \\fill (0,0) circle (2.2pt); \\fill (1,1) circle (2.2pt); \\fill (2,0) circle (2.2pt);\n  \\draw[fill=white,thick] (0.4226,0.4444) circle (2.2pt);\n  \\draw[fill=white,thick] (1.5774,0.4444) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{extrems-absoluts}{0,75}{1,25}\nTroba els valors màxim i mínim absoluts de $f$ a l'interval $[-1,3]$, i el recorregut de $f$ a tot\n$\\mathbb{R}$.\n\n\\begin{solucio}\nA $[-1,3]$, els candidats són els punts crítics de dins, $x=0$, $x=1$ i $x=2$, i els extrems de\nl'interval: $f(0)=0$, $f(1)=1$, $f(2)=0$, $f(-1)=9$ i $f(3)=9$.\\\\\n\\textbf{Màxim absolut}: $9$, als dos extrems de l'interval, $x=-1$ i $x=3$. \\textbf{Mínim absolut}:\n$0$, en $x=0$ i en $x=2$. El màxim relatiu, $(1,1)$, no és l'absolut.\\\\\nA tot $\\mathbb{R}$, $f(x)=x^2(x-2)^2\\ge0$, el valor $0$ s'assoleix en els mínims, i $f\\to+\\infty$ pels\ndos costats: el recorregut és $[0,+\\infty)$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-polinomica/q002/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-polinomica/q002/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-polinomica/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-polinomica/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-polinomica/q003",
+   "unitat": "u10",
+   "tema": "estudi-polinomica",
+   "codi": "q003",
+   "titol": "Estudi i gràfica de −x³+6x²−9x+4: arrel doble, extrems i inflexió",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    75,
+    78,
+    88
+   ],
+   "minuts": 20,
+   "minuts_curt": 12,
+   "etiquetes": [
+    "polinòmiques",
+    "representació",
+    "punt d'inflexió"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tangent-inflexio",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/solucio.pdf",
+       "pdf_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-polinomica/q003/out/tries/estudi-tasca/tangent-inflexio/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=-x^3+6x^2-9x+4 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n els punts de tall amb els eixos, estudia'n la monotonia i troba'n els extrems\nrelatius.\n\n\\begin{solucio}\n\\textbf{Talls}: $f(0)=4$, el punt $(0,4)$. Per a l'eix $OX$, $x=1$ és arrel ($f(1)=-1+6-9+4=0$) i,\ndividint, $f(x)=-(x-1)^2(x-4)$: els talls són $(1,0)$, amb arrel doble, i $(4,0)$.\\\\\n\\textbf{Monotonia}: $f'(x)=-3x^2+12x-9=-3(x-1)(x-3)$, que s'anul·la en $x=1$ i $x=3$.\\\\\n$f$ \\textbf{decreix} a $(-\\infty,1)$, \\textbf{creix} a $(1,3)$ i \\textbf{decreix} a $(3,+\\infty)$.\\\\\n\\textbf{Mínim relatiu} $(1,0)$ i \\textbf{màxim relatiu} $(3,4)$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura i troba'n el punt d'inflexió.\n\n\\begin{solucio}\n$f''(x)=-6x+12$, que s'anul·la en $x=2$.\\\\\n$f''>0$ a $(-\\infty,2)$: \\textbf{convexa}. \\quad $f''<0$ a $(2,+\\infty)$: \\textbf{còncava}.\\\\\nCom que la curvatura hi canvia i $f(2)=2$, el punt d'inflexió és $(2,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nRepresenta la funció amb tota la informació anterior.\n\n\\begin{solucio}\nLa gràfica ve de $+\\infty$, baixa fins a tocar l'eix en el mínim $(1,0)$, puja fins al màxim $(3,4)$ i\nbaixa cap a $-\\infty$, tallant l'eix en $(4,0)$. Com que el coeficient de $x^3$ és negatiu, les\nbranques van al revés que les de $x^3$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.75cm,y=0.45cm]\n  \\draw[gray!55,very thin,step=1] (-1,-3) grid (5,7);\n  \\draw[->] (-1.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-3.4) -- (0,7.4) node[above left] {$y$};\n  \\foreach \\i in {1,2,3,4} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-2,2,4,6} \\draw (0.08,\\j) -- (-0.08,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\begin{scope}\n    \\clip (-1,-3) rectangle (5,7);\n    \\draw[\\colorgrafica,very thick,domain=-0.4:4.5,samples=120,smooth] plot (\\x,{-(\\x)*(\\x)*(\\x)+6*(\\x)*(\\x)-9*(\\x)+4});\n  \\end{scope}\n  \\fill (1,0) circle (2.2pt); \\fill (3,4) circle (2.2pt);\n  \\draw[fill=white,thick] (2,2) circle (2.2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-inflexio}{0,75}{1,25}\nTroba la recta tangent a la gràfica en el punt d'inflexió, i digues a quina banda de la tangent\nqueda la gràfica a cada costat d'aquest punt.\n\n\\begin{solucio}\n$f''(x)=-6x+12$ s'anul·la i canvia de signe en $x=2$, i $f(2)=2$: el punt d'inflexió és $(2,2)$.\\\\\n$f'(2)=-12+24-9=3$, i la tangent és $y=2+3(x-2)$, és a dir $\\boxed{y=3x-4}$.\\\\\n$f(x)-(3x-4)=-x^3+6x^2-12x+8=-(x-2)^3$, que és positiu si $x<2$ i negatiu si $x>2$. La gràfica queda\n\\textbf{per sobre} de la tangent a l'esquerra i \\textbf{per sota} a la dreta: en un punt d'inflexió,\nla corba \\textbf{travessa} la tangent.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-polinomica/q003/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-polinomica/q003/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-polinomica/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-polinomica/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u10/estudi-racional/q001",
@@ -874,12 +1032,172 @@ const BANC = {
    ],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2}{x-1} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $\\mathbb{R}\\setminus\\{1\\}$.\\\\\n\\textbf{Talls}: $f(x)=0$ només si $x^2=0$, i $f(0)=0$: la gràfica passa per l'origen\n$(0,0)$, que és alhora el tall amb els dos eixos.\\\\\n\\textbf{Vertical}: en $x=1$ el numerador val $1\\neq0$, i els laterals valen $-\\infty$ (per\nl'esquerra) i $+\\infty$ (per la dreta): asímptota $\\boxed{x=1}$.\\\\\n\\textbf{Obliqua}: dividint, $\\dfrac{x^2}{x-1}=x+1+\\dfrac{1}{x-1}$, i el residu tendeix a $0$:\nasímptota $\\boxed{y=x+1}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{x^2-2x}{(x-1)^2}$ i, derivant un altre cop i simplificant,\n$f''(x)=\\dfrac{2}{(x-1)^3}$.\\\\\nEl signe és el de $(x-1)^3$: $f''<0$ a $(-\\infty,1)$, on la funció és \\textbf{còncava}, i\n$f''>0$ a $(1,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió, perquè $f''$ no s'anul·la mai i en $x=1$ la funció no està\ndefinida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{2x(x-1)-x^2}{(x-1)^2}=\\dfrac{x^2-2x}{(x-1)^2}=\\dfrac{x(x-2)}{(x-1)^2}$.\\\\\nEl denominador és positiu, així que el signe és el de $x(x-2)$: $f$ \\textbf{creix} a\n$(-\\infty,0)$, \\textbf{decreix} a $(0,1)$ i a $(1,2)$, i \\textbf{creix} a $(2,+\\infty)$.\\\\\n\\textbf{Màxim relatiu} $(0,0)$ i \\textbf{mínim relatiu} $(2,4)$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.55cm,y=0.32cm]\n  \\draw[gray!55,very thin,step=1] (-3,-8) grid (5,10);\n  \\draw[->] (-3.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-8.4) -- (0,10.6) node[above left] {$y$};\n  \\foreach \\i in {-2,2,4} \\draw (\\i,0.2) -- (\\i,-0.2) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-6,-2,4,8} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (1,-8) -- (1,10);\n  \\draw[dashed,thick] (-3,-2) -- (5,6);\n  \\begin{scope}\n    \\clip (-3,-8) rectangle (5,10);\n    \\draw[\\colorgrafica,very thick,domain=-3:0.88,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x-1)});\n    \\draw[\\colorgrafica,very thick,domain=1.11:5,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x-1)});\n  \\end{scope}\n  \\fill (0,0) circle (2pt); \\fill (2,4) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q001/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q001/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q001/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q001/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "recorregut-i-equacions",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q001/out/tries/estudi-tasca/recorregut-i-equacions/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q001/out/tries/estudi-tasca/recorregut-i-equacions/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q001/out/tries/estudi-tasca/recorregut-i-equacions/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q001/out/tries/estudi-tasca/recorregut-i-equacions/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2}{x-1} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $\\mathbb{R}\\setminus\\{1\\}$.\\\\\n\\textbf{Talls}: $f(x)=0$ només si $x^2=0$, i $f(0)=0$: la gràfica passa per l'origen\n$(0,0)$, que és alhora el tall amb els dos eixos.\\\\\n\\textbf{Vertical}: en $x=1$ el numerador val $1\\neq0$, i els laterals valen $-\\infty$ (per\nl'esquerra) i $+\\infty$ (per la dreta): asímptota $\\boxed{x=1}$.\\\\\n\\textbf{Obliqua}: dividint, $\\dfrac{x^2}{x-1}=x+1+\\dfrac{1}{x-1}$, i el residu tendeix a $0$:\nasímptota $\\boxed{y=x+1}$. No hi ha asímptota horitzontal.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{x^2-2x}{(x-1)^2}$ i, derivant un altre cop i simplificant,\n$f''(x)=\\dfrac{2}{(x-1)^3}$.\\\\\nEl signe és el de $(x-1)^3$: $f''<0$ a $(-\\infty,1)$, on la funció és \\textbf{còncava}, i\n$f''>0$ a $(1,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió, perquè $f''$ no s'anul·la mai i en $x=1$ la funció no està\ndefinida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{2x(x-1)-x^2}{(x-1)^2}=\\dfrac{x^2-2x}{(x-1)^2}=\\dfrac{x(x-2)}{(x-1)^2}$.\\\\\nEl denominador és positiu, així que el signe és el de $x(x-2)$: $f$ \\textbf{creix} a\n$(-\\infty,0)$, \\textbf{decreix} a $(0,1)$ i a $(1,2)$, i \\textbf{creix} a $(2,+\\infty)$.\\\\\n\\textbf{Màxim relatiu} $(0,0)$ i \\textbf{mínim relatiu} $(2,4)$.\n\\begin{center}\n\\begin{tikzpicture}[x=0.55cm,y=0.32cm]\n  \\draw[gray!55,very thin,step=1] (-3,-8) grid (5,10);\n  \\draw[->] (-3.4,0) -- (5.4,0) node[below right] {$x$};\n  \\draw[->] (0,-8.4) -- (0,10.6) node[above left] {$y$};\n  \\foreach \\i in {-2,2,4} \\draw (\\i,0.2) -- (\\i,-0.2) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-6,-2,4,8} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (1,-8) -- (1,10);\n  \\draw[dashed,thick] (-3,-2) -- (5,6);\n  \\begin{scope}\n    \\clip (-3,-8) rectangle (5,10);\n    \\draw[\\colorgrafica,very thick,domain=-3:0.88,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x-1)});\n    \\draw[\\colorgrafica,very thick,domain=1.11:5,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x-1)});\n  \\end{scope}\n  \\fill (0,0) circle (2pt); \\fill (2,4) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{recorregut-i-equacions}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i dedueix-ne el recorregut de $f$. Per a quins valors de $k$\nl'equació $f(x)=k$ no té cap solució?\n\n\\begin{solucio}\n$f'(x)=\\dfrac{x(x-2)}{(x-1)^2}$: $f$ \\textbf{creix} a $(-\\infty,0)$, \\textbf{decreix} a $(0,1)$ i a\n$(1,2)$, i \\textbf{creix} a $(2,+\\infty)$. \\textbf{Màxim relatiu} $(0,0)$ i \\textbf{mínim relatiu}\n$(2,4)$.\\\\\nA l'esquerra de l'asímptota ($x<1$), $f$ ve de $-\\infty$, puja fins al màxim, $0$, i torna a baixar\ncap a $-\\infty$: hi pren tots els valors de $(-\\infty,0]$. A la dreta ($x>1$), baixa des de $+\\infty$\nfins al mínim, $4$, i torna a pujar: hi pren tots els de $[4,+\\infty)$.\\\\\nRecorregut: $(-\\infty,0]\\cup[4,+\\infty)$. L'equació $f(x)=k$ \\textbf{no té cap solució} si $0<k<4$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u10/estudi-racional/q001/out/enunciat.pdf",
    "pdf_solucio": "u10/estudi-racional/q001/out/solucio.pdf",
    "pdf_curt": "u10/estudi-racional/q001/out/enunciat-curt.pdf",
    "pdf_solucio_curt": "u10/estudi-racional/q001/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-racional/q002",
+   "unitat": "u10",
+   "tema": "estudi-racional",
+   "codi": "q002",
+   "titol": "Estudi i gràfica de x²/(x²−4): funció parella, dues asímptotes verticals i un màxim",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●○",
+   "origen": [
+    41,
+    63,
+    75,
+    91
+   ],
+   "minuts": 22,
+   "minuts_curt": 13,
+   "etiquetes": [
+    "racionals",
+    "asímptotes",
+    "representació"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q002/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q002/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q002/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q002/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "posicio-asimptota",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q002/out/tries/estudi-tasca/posicio-asimptota/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q002/out/tries/estudi-tasca/posicio-asimptota/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q002/out/tries/estudi-tasca/posicio-asimptota/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q002/out/tries/estudi-tasca/posicio-asimptota/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2}{x^2-4} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $x^2-4=(x-2)(x+2)\\neq0$, és a dir $\\mathbb{R}\\setminus\\{-2,2\\}$. Com que\n$f(-x)=f(x)$, la gràfica és simètrica respecte de l'eix $OY$.\\\\\n\\textbf{Talls}: $f(x)=0$ només si $x=0$, i $f(0)=0$: la gràfica passa per l'origen $(0,0)$.\\\\\n\\textbf{Verticals}: en $x=2$ i en $x=-2$ el numerador val $4\\neq0$. En $x=2$ els laterals valen $-\\infty$\n(per l'esquerra) i $+\\infty$ (per la dreta), i en $x=-2$, $+\\infty$ i $-\\infty$: asímptotes\n$\\boxed{x=2}$ i $\\boxed{x=-2}$.\\\\\n\\textbf{Horitzontal}: mateix grau, i $\\lim_{x\\to\\pm\\infty}f(x)=1$: asímptota $\\boxed{y=1}$. Per tant,\nno n'hi ha cap d'obliqua.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{-8x}{\\left(x^2-4\\right)^2}$ i, derivant un altre cop i simplificant,\n$f''(x)=\\dfrac{8\\left(3x^2+4\\right)}{\\left(x^2-4\\right)^3}$.\\\\\nEl numerador és sempre positiu, i el signe és el de $\\left(x^2-4\\right)^3$: $f''<0$ a $(-2,2)$, on la\nfunció és \\textbf{còncava}, i $f''>0$ a $(-\\infty,-2)$ i a $(2,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió: $f''$ no s'anul·la mai, i en $x=\\pm2$ la funció no està definida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{2x\\left(x^2-4\\right)-x^2\\cdot2x}{\\left(x^2-4\\right)^2}=\\dfrac{-8x}{\\left(x^2-4\\right)^2}$. El\ndenominador és positiu, i el signe és el de $-8x$: $f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(-2,0)$, i\n\\textbf{decreix} a $(0,2)$ i a $(2,+\\infty)$.\\\\\n\\textbf{Màxim relatiu} $(0,0)$. No hi ha cap mínim.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.4cm]\n  \\draw[gray!55,very thin,step=1] (-6,-6) grid (6,6);\n  \\draw[->] (-6.4,0) -- (6.4,0) node[below right] {$x$};\n  \\draw[->] (0,-6.4) -- (0,6.4) node[above left] {$y$};\n  \\foreach \\i in {-4,4} \\draw (\\i,0.15) -- (\\i,-0.15) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-4,-2,2,4} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-2,-6) -- (-2,6);\n  \\draw[dashed,thick] (2,-6) -- (2,6);\n  \\draw[dashed,thick] (-6,1) -- (6,1);\n  \\begin{scope}\n    \\clip (-6,-6) rectangle (6,6);\n    \\draw[\\colorgrafica,very thick,domain=-6:-2.1,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x*\\x-4)});\n    \\draw[\\colorgrafica,very thick,domain=-1.9:1.9,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x*\\x-4)});\n    \\draw[\\colorgrafica,very thick,domain=2.1:6,samples=120,smooth] plot (\\x,{(\\x*\\x)/(\\x*\\x-4)});\n  \\end{scope}\n  \\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{posicio-asimptota}{0,75}{1,25}\nEstudia'n la monotonia i els extrems. La gràfica talla mai l'asímptota horitzontal? A quina banda\nen queda?\n\n\\begin{solucio}\n$f'(x)=\\dfrac{-8x}{\\left(x^2-4\\right)^2}$: $f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(-2,0)$, i\n\\textbf{decreix} a $(0,2)$ i a $(2,+\\infty)$. \\textbf{Màxim relatiu} $(0,0)$.\\\\\n$f(x)-1=\\dfrac{x^2-\\left(x^2-4\\right)}{x^2-4}=\\dfrac{4}{x^2-4}$, que no s'anul·la mai: la gràfica\n\\textbf{no talla} l'asímptota $y=1$.\\\\\nSi $|x|>2$, $f(x)-1>0$, i la gràfica queda \\textbf{per sobre} de l'asímptota; si $|x|<2$, queda\n\\textbf{per sota}.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-racional/q002/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-racional/q002/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-racional/q002/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-racional/q002/out/solucio-curt.pdf"
+  },
+  {
+   "id": "u10/estudi-racional/q003",
+   "unitat": "u10",
+   "tema": "estudi-racional",
+   "codi": "q003",
+   "titol": "Estudi i gràfica de (x²+4)/x: asímptota obliqua, un màxim i un mínim, sense talls",
+   "punts": 2.5,
+   "apartats": [
+    1.0,
+    0.75,
+    0.75
+   ],
+   "apartats_curt": [
+    1.25,
+    1.25
+   ],
+   "te_curt": true,
+   "dificultat": "●●●",
+   "origen": [
+    41,
+    63,
+    75,
+    91
+   ],
+   "minuts": 22,
+   "minuts_curt": 13,
+   "etiquetes": [
+    "racionals",
+    "asímptota obliqua",
+    "representació"
+   ],
+   "temes_secundaris": [],
+   "procedencia": null,
+   "unitats": [],
+   "tries": [
+    {
+     "id": "estudi-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q003/out/tries/estudi-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q003/out/tries/estudi-tasca/original/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tangent-i-obliqua",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/enunciat.pdf",
+       "pdf_solucio": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/solucio.pdf",
+       "pdf_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u10/estudi-racional/q003/out/tries/estudi-tasca/tangent-i-obliqua/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x^2+4}{x} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba'n el domini, els punts de tall amb els eixos i totes les asímptotes.\n\n\\begin{solucio}\n\\textbf{Domini}: $\\mathbb{R}\\setminus\\{0\\}$. Com que $f(-x)=-f(x)$, la gràfica és simètrica respecte\nde l'origen.\\\\\n\\textbf{Talls}: cap. $x^2+4$ no s'anul·la mai, i $x=0$ no és del domini.\\\\\n\\textbf{Vertical}: en $x=0$ el numerador val $4\\neq0$, i els laterals valen $-\\infty$ (per l'esquerra)\ni $+\\infty$ (per la dreta): asímptota $\\boxed{x=0}$, l'eix $OY$.\\\\\n\\textbf{Obliqua}: $f(x)=x+\\dfrac4x$, i el segon terme tendeix a $0$: asímptota $\\boxed{y=x}$. No hi ha\nasímptota horitzontal.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia'n la curvatura.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}$ i $f''(x)=\\dfrac{8}{x^3}$.\\\\\nEl signe és el de $x^3$: $f''<0$ a $(-\\infty,0)$, on la funció és \\textbf{còncava}, i $f''>0$ a\n$(0,+\\infty)$, on és \\textbf{convexa}.\\\\\nNo hi ha punts d'inflexió: $f''$ no s'anul·la mai, i en $x=0$ la funció no està definida.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{estudi-tasca}\n\\itemtria{original}{0,75}{1,25}\nEstudia'n la monotonia i els extrems, i representa la funció.\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac{4}{x^2}=\\dfrac{x^2-4}{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$. El denominador és positiu:\n$f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$, i \\textbf{decreix} a $(-2,0)$ i a $(0,2)$.\\\\\n\\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu} $(2,4)$. Que el màxim quedi per sota del\nmínim no és cap contradicció: són a branques diferents.\n\\begin{center}\n\\begin{tikzpicture}[x=0.5cm,y=0.32cm]\n  \\draw[gray!55,very thin,step=1] (-6,-10) grid (6,10);\n  \\draw[->] (-6.4,0) -- (6.4,0) node[below right] {$x$};\n  \\draw[->] (0,-10.4) -- (0,10.6) node[above left] {$y$};\n  \\foreach \\i in {-4,-2,2,4} \\draw (\\i,0.2) -- (\\i,-0.2) node[below,font=\\scriptsize] {$\\i$};\n  \\foreach \\j in {-8,-4,4,8} \\draw (0.1,\\j) -- (-0.1,\\j) node[left,font=\\scriptsize] {$\\j$};\n  \\draw[dashed,thick] (-6,-6) -- (6,6);\n  \\begin{scope}\n    \\clip (-6,-10) rectangle (6,10);\n    \\draw[\\colorgrafica,very thick,domain=-6:-0.38,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n    \\draw[\\colorgrafica,very thick,domain=0.38:6,samples=120,smooth] plot (\\x,{\\x+4/\\x});\n  \\end{scope}\n  \\fill (-2,-4) circle (2pt); \\fill (2,4) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\end{solucio}\n\n\\itemtria{tangent-i-obliqua}{0,75}{1,25}\nEstudia'n la monotonia i els extrems. Hi ha cap punt en què la recta tangent sigui paral·lela a\nl'asímptota obliqua? La gràfica talla mai aquesta asímptota?\n\n\\begin{solucio}\n$f'(x)=1-\\dfrac4{x^2}=\\dfrac{(x-2)(x+2)}{x^2}$: $f$ \\textbf{creix} a $(-\\infty,-2)$ i a $(2,+\\infty)$,\ni \\textbf{decreix} a $(-2,0)$ i a $(0,2)$. \\textbf{Màxim relatiu} $(-2,-4)$ i \\textbf{mínim relatiu}\n$(2,4)$.\\\\\nL'asímptota és $y=x$, de pendent $1$. Caldria que $f'(x)=1$, és a dir $\\dfrac4{x^2}=0$, cosa que no\npassa mai: \\textbf{cap} tangent no hi és paral·lela, tot i que el pendent s'hi acosta quan\n$x\\to\\pm\\infty$.\\\\\n$f(x)-x=\\dfrac4x\\neq0$: la gràfica \\textbf{no talla} l'asímptota. En queda per sobre si $x>0$, i per\nsota si $x<0$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
+   "pdf": "u10/estudi-racional/q003/out/enunciat.pdf",
+   "pdf_solucio": "u10/estudi-racional/q003/out/solucio.pdf",
+   "pdf_curt": "u10/estudi-racional/q003/out/enunciat-curt.pdf",
+   "pdf_solucio_curt": "u10/estudi-racional/q003/out/solucio-curt.pdf"
   },
   {
    "id": "u10/estudi-trossos/q001",
