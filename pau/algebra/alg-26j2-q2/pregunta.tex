@@ -1,0 +1,68 @@
+Considereu les matrius
+\[
+M=\begin{pmatrix}3&3&0\\k-1&-1&-1\end{pmatrix}\quad\text{i}\quad
+N=\begin{pmatrix}3&1\\k-1&0\\0&2\end{pmatrix},
+\]
+on $k$ és un nombre real qualsevol.
+
+\begin{apartats}
+
+\apartat{0,75}
+Calculeu els valors de $k$ per als quals $MN$ és invertible.
+
+\begin{solucio}
+El producte $MN$ i el seu determinant donen
+\[
+MN=\begin{pmatrix}3&3&0\\k-1&-1&-1\end{pmatrix}\begin{pmatrix}3&1\\k-1&0\\0&2\end{pmatrix}
+=\begin{pmatrix}9+3k-3&3\\3k-3-k+1&k-1-2\end{pmatrix}=\begin{pmatrix}3k+6&3\\2k-2&k-3\end{pmatrix},
+\]
+\[
+\begin{vmatrix}3k+6&3\\2k-2&k-3\end{vmatrix}=3k^2+6k-9k-18-6k+6=3\left(k^2-3k-4\right),
+\]
+que és zero per als valors $k=\dfrac{3\pm\sqrt{9-4(-4)}}{2}=\dfrac{3\pm5}{2}=4,\,-1$. Per tant, la matriu $MN$
+és invertible per a tot $k$ excepte $k=4$ i $k=-1$.
+
+\textit{Pauta oficial:} 0,25 pel producte matricial, 0,25 pel càlcul del determinant i 0,25 per donar la
+resposta correcta.
+\end{solucio}
+
+\apartat{0,75}
+Calculeu els valors de $k$ per als quals $NM$ és invertible.
+
+\begin{solucio}
+El producte $NM$ dona
+\[
+NM=\begin{pmatrix}3&1\\k-1&0\\0&2\end{pmatrix}\begin{pmatrix}3&3&0\\k-1&-1&-1\end{pmatrix}
+=\begin{pmatrix}k+8&8&-1\\3k-3&3k-3&0\\2k-2&-2&-2\end{pmatrix}.
+\]
+Com que la primera columna és igual a la segona menys $k$ vegades la tercera, el determinant és sempre zero,
+i la matriu $NM$ no és invertible per a cap valor de $k$. Alternativament, es pot calcular el determinant, i
+veiem que dona zero independentment de $k$:
+\[
+\begin{vmatrix}k+8&8&-1\\3k-3&3k-3&0\\2k-2&-2&-2\end{vmatrix}
+=2(3k-3)\begin{vmatrix}k+8&8&-1\\1&1&0\\k-1&-1&-1\end{vmatrix}=2(3k-3)(-k-8+1+k-1+8)=0 .
+\]
+
+\textit{Pauta oficial:} 0,25 pel producte matricial, 0,25 per argumentar que el determinant és sempre zero
+i 0,25 per deduir la resposta correcta.
+\end{solucio}
+
+\apartat{1}
+Estudieu per a quins valors reals de $m$, $n$ i $k$ el sistema
+\[
+M\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}m\\n\end{pmatrix}
+\]
+és compatible indeterminat.
+
+\begin{solucio}
+En forma matricial, es tracta del sistema d'equacions
+$\left(\begin{array}{ccc|c}3&3&0&m\\k-1&-1&-1&n\end{array}\right)$.
+Com que $\begin{vmatrix}3&0\\-1&-1\end{vmatrix}=-3\neq0$, el rang de la matriu de coeficients és 2, i el de
+l'ampliada també, independentment dels tres paràmetres. I com que hi ha 3 incògnites, aquest sistema és
+compatible indeterminat per a qualssevol valors de $m$, de $n$ i de $k$.
+
+\textit{Pauta oficial:} 0,25 per interpretar el sistema d'equacions demanat, 0,5 per calcular els rangs i
+0,25 per donar la resposta correcta.
+\end{solucio}
+
+\end{apartats}

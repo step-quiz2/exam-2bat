@@ -1,0 +1,63 @@
+Considereu la paràbola $y=f(x)$, amb $f(x)=-x^2+5x$, i la hipèrbola $y=g(x)$, amb
+$g(x)=8-\dfrac{8}{x+1}$.
+
+\begin{apartats}
+
+\apartat{0,75}
+En quants punts es tallen les gràfiques d'aquestes dues funcions? Calculeu-los tots.
+
+\begin{solucio}
+Per trobar els punts de tall entre paràbola i hipèrbola, resolem l'equació $f(x)=g(x)$:
+\[
+-x^2+5x=8-\frac{8}{x+1}\;\Rightarrow\;(x+1)\left(-x^2+5x\right)=8x+8-8\;\Rightarrow\;-x^3+4x^2+5x=8x
+\;\Rightarrow\;x\left(-x^2+4x-3\right)=0 .
+\]
+Les solucions són $x=0$ i $x=\dfrac{-4\pm\sqrt{16-12}}{-2}=\dfrac{-4\pm2}{-2}$, és a dir, $x=1$ i $x=3$. Per
+tant, es tallen exactament en tres punts. Calculant-ne les imatges, es tracta de $(0,f(0))=(0,0)$,
+$(1,f(1))=(1,4)$ i $(3,f(3))=(3,6)$.
+
+\textit{Pauta oficial:} 0,5 per plantejar i desenvolupar l'equació, i 0,25 pels punts de tall.
+\end{solucio}
+
+\apartat{1}
+Calculeu l'àrea de la regió situada entre les dues corbes des de $x=1$ fins a $x=3$.
+
+\begin{solucio}
+Com que no hi ha més punts de tall que els tres calculats a l'apartat anterior, entre 1 i 3 les gràfiques
+no es toquen (de fet, $f$ està per damunt de $g$), i l'àrea demanada és
+\[
+A=\int_1^3\bigl(f(x)-g(x)\bigr)\,dx=\int_1^3\left(-x^2+5x-8+\frac{8}{x+1}\right)dx
+=\left[-\frac{x^3}{3}+\frac{5x^2}{2}-8x+8\ln(x+1)\right]_1^3 ,
+\]
+\[
+A=\left(-\frac{27}{3}+\frac{45}{2}-24+8\ln4\right)-\left(-\frac13+\frac52-8+8\ln2\right)
+=-\frac{26}{3}+4+8\ln2=0{,}878\ldots\ \text{u}^2 .
+\]
+
+\textit{Pauta oficial:} 0,25 pel plantejament correcte de l'àrea, 0,5 pel càlcul de la primitiva i 0,25
+pel resultat final. Penalitzeu 0,25 si resten les funcions al revés i/o donen com a bona una àrea
+negativa.
+\end{solucio}
+
+\apartat{0,75}
+Comproveu que $f(x)$ té les arrels als punts d'abscissa $x=0$ i $x=5$, i que l'ordenada del vèrtex de la
+paràbola $y=f(x)$ és $y=6{,}25$. Justifiqueu que $y=f(x)$ és l'única paràbola que existeix amb aquestes dues
+propietats.
+
+\begin{solucio}
+Efectivament, $f(x)$ té arrels als punts d'abscisses 0 i 5: $f(0)=-0^2+0=0$ i $f(5)=-5^2+25=0$. La paràbola
+$y=f(x)$ té el vèrtex situat al punt $-2x+5=0\rightarrow x=\frac52$, que efectivament té per imatge
+$f\!\left(\frac52\right)=-\frac{25}{4}+\frac{25}{2}=\frac{25}{4}=6{,}25$.\\
+A més, $y=f(x)$ és l'única paràbola amb aquestes dues propietats, ja que qualsevol que les compleixi haurà
+de ser de la forma $f(x)=ax(x-5)$; i com que el vèrtex ha d'estar al punt mig de les dues arrels,
+$x=\frac{0+5}{2}=\frac52$, i hi ha de tenir imatge 6,25, tindrem
+\[
+6{,}25=f\!\left(\tfrac52\right)=a\cdot\tfrac52\left(\tfrac52-5\right)=a\cdot\left(-\tfrac{25}{4}\right)=-6{,}25\,a .
+\]
+Per tant, $a=-1$, i l'única paràbola és $f(x)=-1\cdot x(x-5)=-x^2+5x$.
+
+\textit{Pauta oficial:} 0,25 per la comprovació de les dues propietats demanades i 0,5 per la justificació
+que és l'única paràbola que les compleix.
+\end{solucio}
+
+\end{apartats}

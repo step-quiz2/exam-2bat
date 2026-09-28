@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 92 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 5 de la PAU), 87 amb tries · 1.736 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 97 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 10 de la PAU), 87 amb tries · 1.846 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -45,7 +45,8 @@ racionals i polinòmiques: la u10 és completa, llevat del tema congelat. La vin
 trigar cada vegada més: els PDF són reproduïbles i el build només recompila els que han canviat. La vint-i-quatrena, a petició del professor, va completar el
 tema de funcions a trossos, i amb ell la u10. La vint-i-cinquena va fer la u13, Probabilitat: quatre
 temes, amb tres variants cadascun i una tria a cada pregunta. La vint-i-sisena va fer la
-u14, de la qual els alumnes practiquen la distribució binomial. La màquina
+u14, de la qual els alumnes practiquen la distribució binomial. La vint-i-setena va afegir a la u10 els
+exercicis de la setmana 17 i va importar la sèrie 5 de la PAU de juny de 2026. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -930,6 +931,45 @@ preguntes tenen el defecte idèntic i 2,50 punts amb cada ítem, i compilen de d
 de variables i la taula de probabilitats es van revisar a ull. Les bateries (38/19/77) i la integració
 amb jsdom passen, i el banc complet escriu 1.080 PDF.
 
+### 2.27 Sessió 27 · La setmana 17 a la u10, i la sèrie 5 de juny de 2026
+
+**La setmana 17.** El professor va recordar que l'alumnat també fa els exercicis 84, 108, 123 i 124 de
+la u10. El 84 és «Estudia i representa» set polinomis, l'exercici central de les polinòmiques. El 108
+és el de funcions a trossos. El 123 i el 124 són la mateixa funció racional,
+$f(x)=20+\frac{5x-15}{x^2-6x+10}$: el 123 l'estudia (talls, signe, creixement, extrems i recorregut) i
+el 124 la interpreta com la temperatura d'una peça, que comença a 18,5 °C, canvia de tendència als 2 i
+als 4 segons, i s'estabilitza a 20 °C, l'asímptota. Quatre canvis, sense tocar cap variant ni cap
+alternativa existent:
+
+1. El 84 torna a l'`origen` de les tres preguntes de polinòmiques.
+2. El 123 entra a l'`origen` de les tres de racionals. Reforça, a més, dues alternatives que ja hi eren:
+   la del recorregut (`estudi-racional/q001`) i la de la gràfica que talla la seva asímptota
+   horitzontal (`asimptotes/q002`), perquè la funció del 123 talla $y=20$ en $x=3$.
+3. Les funcions a trossos deixen de ser una excepció: el 108 és a la llista.
+4. Dues tries tenen una tercera opció **en context**, com el 124, amb la mateixa funció de la pregunta:
+   `estudi-racional/q003` (`context-cost`), $C(x)=\frac{x^2+4}{x}$ com a cost mitjà per unitat, amb el
+   mínim, els costos fixos i l'asímptota obliqua; i `estudi-polinomica/q003` (`context-embassament`),
+   el nivell d'un embassament, amb els canvis de tendència i el moment en què puja més de pressa, la
+   inflexió. El 124 també entra a l'`origen` de totes dues.
+
+**La sèrie 5 de juny de 2026 (`26j2`)**, importada amb el procediment de la secció 9: originals llegits
+com a imatge, enunciats literals, criteris oficials com a solucions, tots els resultats verificats amb
+SymPy, compilació d'una pàgina per enunciat sense cap *Overfull*, i un PDF de revisió del lot
+(`revisio-pau-juny2026-serie5.pdf`) per contrastar amb els originals. Les unitats de cada pregunta:
+`ana-26j2-q1` u12; `alg-26j2-q2` cap (àlgebra); `pro-26j2-q3` u9 i u13; `ana-26j2-q4a` u8, u9 i u12;
+`geo-26j2-q4b` cap (geometria). Hi ha dues figures refetes en TikZ: la gràfica de $f'(x)$ de l'enunciat
+del 4A i l'arbre de la solució del 3.
+
+**Una inconsistència de l'examen oficial.** La corba de $f'(x)$ del 4A coincideix exactament amb
+$f'(x)=-x^2(x+2)(x-1)$: els zeros, $f'(-1)=2$, el màxim de 2,83 en $x\approx-1{,}44$ i el bony de 0,40 en
+$x\approx0{,}69$. Amb aquesta corba, $\int_{-1}^{0}f'(x)\,dx=\frac{43}{60}\approx0{,}72$, però l'enunciat dona
+$f(0)=-0{,}2$ i $f(-1)=-1$, que per Barrow donen 0,8. Es manté la resposta oficial, que és la que
+l'exercici espera, i s'hi afegeix una *Nota del banc*.
+
+**Verificació.** Les dues alternatives noves, amb SymPy; defecte idèntic i 2,50 punts amb cada ítem; les
+dues preguntes compilen de debò. Les bateries (38/19/77) i la integració amb jsdom passen, i el banc
+complet escriu 1.098 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -987,6 +1027,8 @@ amb jsdom passen, i el banc complet escriu 1.080 PDF.
 | Les alternatives noves porten identificadors nous; els retirats no es reaprofiten | Regla 13 | Una adreça desada que en porti un de vell cau al defecte, i no a un contingut diferent |
 | Els PDF són reproduïbles (data i identificador fixos) | Disseny, arran d'una pregunta del professor (2.23) | Si no, Git desava tots els PDF a cada execució, i el repositori creixia uns 70 MB cada vegada |
 | El build només recompila un PDF si l'empremta del seu document ha canviat; l'empremta viu a les metadades del PDF | Disseny (2.23) | Un lliurament normal compila només les preguntes tocades, sense fitxers nous ni cap canvi al workflow |
+| Els exercicis de la setmana 17 de la u10 (84, 108, 123 i 124) són practicats: poden sostenir preguntes i alternatives | Professor | L'alumnat també els fa |
+| Si una dada d'un enunciat PAU no quadra amb el dibuix, es manté la resposta oficial i s'hi afegeix una *Nota del banc* | Disseny (2.27) | L'enunciat és literal, i l'examen esperava aquella resposta |
 | La u14 del banc és la distribució binomial: dos temes, perquè els 8 exercicis practicats en són tots; la normal en queda fora | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
 | La u13 té quatre temes, un per a cada grup dels 16 exercicis practicats (setmanes 13 i 14) | Professor (la llista) i disseny (els temes) | El banc no surt dels exercicis practicats |
 | El professor aixeca la congelació d'`estudi-trossos` i el tema passa a tenir tres variants (sessió 24) | Professor | Les preguntes queden al banc; qui fa l'examen decideix quan les fa servir |
@@ -1244,7 +1286,7 @@ Cinc temes. Els exercicis practicats abans de l'examen són els de les setmanes 
 domini (43, 45, 100), asímptotes (62, 63, 38), representació (41, 75, 78, 88, 91) i llegir $f$ a la
 gràfica de $f'$ (37). El tema de funcions a trossos no en té cap: el seu únic exercici, el 108, és de
 la setmana 17. Els cinc temes tenen tres variants, totes amb tria (sessions 20 a 24). Les de funcions a trossos
-es basen en el 108, de la setmana 17: convé fer-les servir després d'aquella setmana (2.24).
+es basen en el 108, de la setmana 17, que l'alumnat també fa (2.27).
 
 | Tema | Codi | Títol | 1 h 30 | 50 min | Minuts | Dif. | Llibre |
 |---|---|---|---|---|---|---|---|
@@ -1257,12 +1299,12 @@ es basen en el 108, de la setmana 17: convé fer-les servir després d'aquella s
 | Estudi i gràfica d'una funció a trossos | `q001` | Estudi i gràfica d'una funció a trossos amb asímptota horitzontal | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108, 37 |
 | Estudi i gràfica d'una funció a trossos | `q002` | Estudi i gràfica d'una funció a trossos amb un salt i una asímptota vertical dins d'una branca | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 108 |
 | Estudi i gràfica d'una funció a trossos | `q003` | Estudi i gràfica d'una funció de tres trossos amb dues asímptotes horitzontals diferents | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 108 |
-| Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
-| Estudi i gràfica d'una funció polinòmica | `q002` | Estudi i gràfica de x⁴−4x³+4x²: dos mínims, un màxim i dues inflexions | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 75, 78, 88 |
-| Estudi i gràfica d'una funció polinòmica | `q003` | Estudi i gràfica de −x³+6x²−9x+4: arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 88 |
-| Estudi i gràfica d'una funció racional | `q001` | Estudi i gràfica de x²/(x−1): asímptota obliqua, extrems i curvatura | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91 |
-| Estudi i gràfica d'una funció racional | `q002` | Estudi i gràfica de x²/(x²−4): funció parella, dues asímptotes verticals i un màxim | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●○ | 41, 63, 75, 91 |
-| Estudi i gràfica d'una funció racional | `q003` | Estudi i gràfica de (x²+4)/x: asímptota obliqua, un màxim i un mínim, sense talls | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91 |
+| Estudi i gràfica d'una funció polinòmica | `q001` | Estudi i gràfica de x³−3x²+4: talls amb arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 84, 88 |
+| Estudi i gràfica d'una funció polinòmica | `q002` | Estudi i gràfica de x⁴−4x³+4x²: dos mínims, un màxim i dues inflexions | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●● | 75, 78, 84, 88 |
+| Estudi i gràfica d'una funció polinòmica | `q003` | Estudi i gràfica de −x³+6x²−9x+4: arrel doble, extrems i inflexió | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 20 · 12 | ●●○ | 75, 78, 84, 88, 124 |
+| Estudi i gràfica d'una funció racional | `q001` | Estudi i gràfica de x²/(x−1): asímptota obliqua, extrems i curvatura | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91, 123 |
+| Estudi i gràfica d'una funció racional | `q002` | Estudi i gràfica de x²/(x²−4): funció parella, dues asímptotes verticals i un màxim | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●○ | 41, 63, 75, 91, 123 |
+| Estudi i gràfica d'una funció racional | `q003` | Estudi i gràfica de (x²+4)/x: asímptota obliqua, un màxim i un mínim, sense talls | 1,00 + 0,75 + 0,75 | 1,25 + 1,25 | 22 · 13 | ●●● | 41, 63, 75, 91, 123, 124 |
 
 ### 6.5 Registre de convocatòries PAU
 
@@ -1286,11 +1328,11 @@ Ordenades de la més recent a la més antiga, que és l'ordre d'importació reco
 
 | Codi | Convocatòria | Bloc | Títol (catàleg del repositori `pau`) | Estat |
 |---|---|---|---|---|
-| `ana-26j2-q1` | juny 2026 · s5 | Anàlisi | Paràbola i hipèrbola: punts de tall i àrea entre corbes | pendent |
-| `alg-26j2-q2` | juny 2026 · s5 | Àlgebra | Matrius M, N: invertibilitat de MN i NM | pendent |
-| `pro-26j2-q3` | juny 2026 · s5 | Probabilitat | Lectura i esport: prob. total, Bayes i extrems de f(x) | pendent |
-| `ana-26j2-q4a` | juny 2026 · s5 | Anàlisi | f(x) a partir de la gràfica de f'(x): tangent, extrems, àrea | pendent |
-| `geo-26j2-q4b` | juny 2026 · s5 | Geometria | Braç robòtic: distància, pla i punt de xoc | pendent |
+| `ana-26j2-q1` | juny 2026 · s5 | Anàlisi | Paràbola i hipèrbola: punts de tall i àrea entre corbes | ✅ importada (sessió 27) |
+| `alg-26j2-q2` | juny 2026 · s5 | Àlgebra | Matrius M, N: invertibilitat de MN i NM | ✅ importada (sessió 27) |
+| `pro-26j2-q3` | juny 2026 · s5 | Probabilitat | Lectura i esport: prob. total, Bayes i extrems de f(x) | ✅ importada (sessió 27) |
+| `ana-26j2-q4a` | juny 2026 · s5 | Anàlisi | f(x) a partir de la gràfica de f'(x): tangent, extrems, àrea | ✅ importada (sessió 27) |
+| `geo-26j2-q4b` | juny 2026 · s5 | Geometria | Braç robòtic: distància, pla i punt de xoc | ✅ importada (sessió 27) |
 | `ana-26j-q1` | juny 2026 · s1 | Anàlisi | Funció a trossos amb exponencial i paràbola: continuïtat i àrea | ✅ importada |
 | `alg-26j-q2` | juny 2026 · s1 | Àlgebra | Sistema de tres plans amb paràmetre m | ✅ importada |
 | `pro-26j-q3` | juny 2026 · s1 | Probabilitat | Entrades de concert: sorteig i web; Bolzano amb decibels | ✅ importada |
@@ -1433,13 +1475,13 @@ lliurament de la sessió és l'apartat 11.
 - Opcionalment, **confirmar amb els originals** les sèries de `23s` (2) i `24j` (1), que avui
   provenen d'una rèplica pública.
 
-### 7.3 Importació PAU: 56 exercicis en 10 convocatòries
+### 7.3 Importació PAU: 51 exercicis en 9 convocatòries
 
 Es fa després de la u8 (decisió de la sessió 5).
 
 | Convocatòria | Sèrie | Pendents |
 |---|---|---|
-| `26j2` juny 2026 | 5 | 5 |
+| `26j2` juny 2026 | 5 | ✅ importada (sessió 27) |
 | `25j` juny 2025 | 1 | 5 |
 | `25s` setembre 2025 | 3 | 5 exercicis (6 entrades al repositori `pau`; vegeu 7.6) |
 | `25i` juny 2025 | 4 | 5 |
@@ -1468,7 +1510,7 @@ l'ordre numèric.
 | u7 Límits i continuïtat | 1–4 | 11 d'octubre de 2026 · **feta**, reescrita a la sessió 6 |
 | u8 Derivades | 5–7 | 1 de novembre de 2026 · **feta** |
 | u9 Aplicacions de les derivades | 8–10 | 22 de novembre de 2026 · **feta** |
-| u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema (les de funcions a trossos, per després de la setmana 17) |
+| u10 Representació de funcions | 11–12 (i 17, després de l'examen) | 6 de desembre de 2026 · **completa**: tres variants per tema; també els exercicis de la setmana 17 (84, 108, 123 i 124), sessió 27 |
 | u13 Probabilitat | 13–14 | 20 de desembre de 2026 · **completa**: quatre temes amb tres variants, totes amb tria |
 | u14 Distribucions de probabilitat | 15–16 | 3 de gener de 2027 · **binomial feta** (2.26); la normal, sense exercicis practicats |
 | u1 Matrius | 18–19 | 24 de gener de 2027 |
@@ -1647,16 +1689,17 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 26. Parteix del de la sessió 25, que ja és al repositori.
+És el lliurament de la sessió 27. Parteix del de la sessió 26, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `temes.json` | Els dos temes de la u14 |
-| `u14/binomial-identificar/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
-| `u14/binomial-probabilitats/q00{1,2,3}/` | **Noves**: `pregunta.tex` i `meta.json`, amb tria |
+| `u10/estudi-polinomica/q00{1,2,3}/meta.json` | El 84 a l'`origen` (i el 124 a la q003) |
+| `u10/estudi-racional/q00{1,2,3}/meta.json` | El 123 a l'`origen` (i el 124 a la q003) |
+| `u10/estudi-polinomica/q003/pregunta.tex`, `u10/estudi-racional/q003/pregunta.tex` | Tercera opció a la tria: `context-embassament` i `context-cost` |
+| `pau/analisi/ana-26j2-q1/`, `pau/algebra/alg-26j2-q2/`, `pau/probabilitat/pro-26j2-q3/`, `pau/analisi/ana-26j2-q4a/`, `pau/geometria/geo-26j2-q4b/` | **Noves**: la sèrie 5 de juny de 2026, `pregunta.tex` i `meta.json` |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.26, la 6.8 nova, i les seccions 3, 7.4, 7.5 i 11 |
+| `handout.md` | Secció 2.27, i les seccions 3, 6.4, 6.6, 7.3, 7.4 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
-memòria, només es compilaran les 6 preguntes noves: el resum hauria de dir «72 PDF desats · 1008
-reutilitzats».
+memòria, el resum hauria de dir «18 PDF desats · 1080 reutilitzats»: 8 de les dues opcions noves, 10 de
+les cinc preguntes PAU. El PDF de revisió del lot va a part: no s'ha de pujar al repositori.

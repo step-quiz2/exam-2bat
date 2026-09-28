@@ -1,0 +1,11 @@
+{
+  "titol": "Braç robòtic: distància recorreguda, distància a un pla i punt de xoc",
+  "unitats": [],
+  "dificultat": "●○○",
+  "minuts": 22,
+  "etiquetes": [
+    "distància entre punts",
+    "distància punt-pla",
+    "intersecció recta-pla"
+  ]
+}

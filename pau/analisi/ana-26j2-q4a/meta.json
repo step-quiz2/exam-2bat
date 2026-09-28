@@ -1,0 +1,15 @@
+{
+  "titol": "f(x) a partir de la gràfica de f'(x): tangent, punts crítics i àrea",
+  "unitats": [
+    "u8",
+    "u9",
+    "u12"
+  ],
+  "dificultat": "●●○",
+  "minuts": 22,
+  "etiquetes": [
+    "gràfica de la derivada",
+    "recta tangent",
+    "regla de Barrow"
+  ]
+}

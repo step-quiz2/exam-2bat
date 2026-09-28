@@ -1,0 +1,55 @@
+En una indústria es fan servir braços robòtics amb sensors per a mesurar amb precisió determinades peces
+metàl·liques i comprovar si tenen irregularitats. Les peces es col·loquen sobre la superfície determinada
+pel pla $\pi\colon(x,y,z)=(6,1,1)+\lambda(1,1,0)+\mu(0,0,1)$ i, per damunt seu, un braç robòtic desplaça un
+sensor des del punt $A=(1,2,3)$ fins al punt $B=(5,3,7)$ en línia recta (les unitats dels tres eixos de
+coordenades estan expressades en centímetres).
+
+\begin{apartats}
+
+\apartat{0,5}
+Quina distància ha recorregut el sensor?
+
+\begin{solucio}
+Calculem la distància entre els punts $A(1,2,3)$ i $B(5,3,7)$:
+\[
+d(A,B)=\bigl\|\overrightarrow{AB}\bigr\|=\|(4,1,4)\|=\sqrt{4^2+1^2+4^2}=\sqrt{33}\approx5{,}74\ \text{cm}.
+\]
+Per tant, el sensor ha recorregut 5,74 cm.
+
+\textit{Pauta oficial:} 0,5 pel càlcul de la distància entre els dos punts.
+\end{solucio}
+
+\apartat{1}
+En acabar el moviment, a quina distància de la superfície es troba el sensor?
+
+\begin{solucio}
+Hem de calcular la distància del punt $B$ al pla $\pi$, $d(B,\pi)$. Per fer-ho, necessitem l'equació general
+del pla:
+\[
+\begin{vmatrix}x-6&y-1&z-1\\1&1&0\\0&0&1\end{vmatrix}=0\iff x-6-(y-1)=0\iff x-y-5=0 .
+\]
+Aplicant la fórmula de la distància punt-pla, obtenim
+\[
+d(B,\pi)=\frac{|1\cdot5-1\cdot3+0-5|}{\sqrt{1^2+(-1)^2+0^2}}=\frac{3}{\sqrt2}\approx2{,}12\ \text{cm}.
+\]
+
+\textit{Pauta oficial:} 0,5 per trobar l'equació general del pla i 0,5 pel càlcul de la distància.
+\end{solucio}
+
+\apartat{1}
+Si el sensor seguís movent-se en la mateixa línia recta i en el mateix sentit, en quin punt xocaria amb la
+superfície?
+
+\begin{solucio}
+Per trobar el punt de xoc, hem de buscar el punt de tall del pla $\pi$ amb la recta que passa per $A$ i per
+$B$. Primer expliquem l'equació d'aquesta recta:
+\[
+(x,y,z)=(1,2,3)+\lambda(4,1,4)=(1+4\lambda,\,2+\lambda,\,3+4\lambda),
+\]
+i ara busquem el punt en comú imposant l'equació del pla: $1+4\lambda-(2+\lambda)-5=0$, d'on $3\lambda-6=0$ i
+$\lambda=2$. Això vol dir que el punt de xoc és $(x,y,z)=(1,2,3)+2(4,1,4)=(9,4,11)$.
+
+\textit{Pauta oficial:} 0,5 per l'equació de la recta i 0,5 pel càlcul del punt d'intersecció.
+\end{solucio}
+
+\end{apartats}
