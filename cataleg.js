@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 07:52 UTC",
+ "generat": "2026-09-28 08:15 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -2339,9 +2339,9 @@ const BANC = {
    "titol": "Funció derivada per definició: un polinomi, una arrel i una racional",
    "punts": 2.5,
    "apartats": [
-    1.0,
     0.75,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2363,8 +2363,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=2x^2-3x .\n\\]\n\n\\begin{solucio}\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{2(x+h)^2-3(x+h)-\\left(2x^2-3x\\right)}{h}\n=\\lim_{h\\to0}\\frac{4xh+2h^2-3h}{h}=\\lim_{h\\to0}(4x+2h-3)=4x-3 .\n\\]\n\\end{solucio}\n\n\\apartat[1,25]{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=\\sqrt{x+3} .\n\\]\n\n\\begin{solucio}\nMultipliquem i dividim pel conjugat:\n\\[\n\\begin{aligned}\ng'(x)&=\\lim_{h\\to0}\\frac{\\sqrt{x+h+3}-\\sqrt{x+3}}{h}\n=\\lim_{h\\to0}\\frac{(x+h+3)-(x+3)}{h\\left(\\sqrt{x+h+3}+\\sqrt{x+3}\\right)}\\\\\n&=\\lim_{h\\to0}\\frac{1}{\\sqrt{x+h+3}+\\sqrt{x+3}}=\\frac{1}{2\\sqrt{x+3}} ,\n\\end{aligned}\n\\]\nper a $x>-3$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=\\frac{4}{x} .\n\\]\n\n\\begin{solucio}\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{\\frac{4}{x+h}-\\frac{4}{x}}{h}\n=\\lim_{h\\to0}\\frac{4x-4(x+h)}{h\\,x(x+h)}\n=\\lim_{h\\to0}\\frac{-4}{x(x+h)}=-\\frac{4}{x^2} ,\n\\]\nper a $x\\neq0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "definicio-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q001/out/tries/definicio-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q001/out/tries/definicio-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q001/out/tries/definicio-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q001/out/tries/definicio-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "reconeix-limit",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q001/out/tries/definicio-tasca/reconeix-limit/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q001/out/tries/definicio-tasca/reconeix-limit/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q001/out/tries/definicio-tasca/reconeix-limit/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q001/out/tries/definicio-tasca/reconeix-limit/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{definicio-tasca}\n\\itemtria{original}{1}{1,25}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=2x^2-3x .\n\\]\n\n\\begin{solucio}\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{2(x+h)^2-3(x+h)-\\left(2x^2-3x\\right)}{h}\n=\\lim_{h\\to0}\\frac{4xh+2h^2-3h}{h}=\\lim_{h\\to0}(4x+2h-3)=4x-3 .\n\\]\n\\end{solucio}\n\n\\itemtria{reconeix-limit}{1}{1,25}\nCadascun dels límits següents és la derivada d'una funció en un punt. Digues de quina funció\ni en quin punt, i calcula'l:\n\\begin{graella}{2}\n  \\sa \\lim_{h\\to0}\\frac{(2+h)^3-8}{h} & \\sa \\lim_{h\\to0}\\frac{e^{h}-1}{h}\n\\end{graella}\n\n\\begin{solucio}\nLa definició és $f'(a)=\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}{h}$.\\\\\ni) És $f'(2)$ amb $f(x)=x^3$, perquè $2^3=8$. Com que $f'(x)=3x^2$, el límit val $f'(2)=12$.\nTambé es pot desenvolupar: $\\dfrac{12h+6h^2+h^3}{h}=12+6h+h^2\\to12$.\\\\\nii) És $f'(0)$ amb $f(x)=e^{x}$, perquè $e^0=1$. Com que $f'(x)=e^{x}$, el límit val $f'(0)=1$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=\\sqrt{x+3} .\n\\]\n\n\\begin{solucio}\nMultipliquem i dividim pel conjugat:\n\\[\n\\begin{aligned}\ng'(x)&=\\lim_{h\\to0}\\frac{\\sqrt{x+h+3}-\\sqrt{x+3}}{h}\n=\\lim_{h\\to0}\\frac{(x+h+3)-(x+3)}{h\\left(\\sqrt{x+h+3}+\\sqrt{x+3}\\right)}\\\\\n&=\\lim_{h\\to0}\\frac{1}{\\sqrt{x+h+3}+\\sqrt{x+3}}=\\frac{1}{2\\sqrt{x+3}} ,\n\\end{aligned}\n\\]\nper a $x>-3$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=\\frac{4}{x} .\n\\]\n\n\\begin{solucio}\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{\\frac{4}{x+h}-\\frac{4}{x}}{h}\n=\\lim_{h\\to0}\\frac{4x-4(x+h)}{h\\,x(x+h)}\n=\\lim_{h\\to0}\\frac{-4}{x(x+h)}=-\\frac{4}{x^2} ,\n\\]\nper a $x\\neq0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/derivada-definicio/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/derivada-definicio/q001/out/solucio.pdf",
    "pdf_curt": "u8/derivada-definicio/q001/out/enunciat-curt.pdf",
@@ -2402,8 +2428,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=3x^2+x .\n\\]\n\n\\begin{solucio}\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{3(x+h)^2+(x+h)-\\left(3x^2+x\\right)}{h}\n=\\lim_{h\\to0}\\frac{6xh+3h^2+h}{h}=\\lim_{h\\to0}(6x+3h+1)=6x+1 .\n\\]\n\\end{solucio}\n\n\\apartat[1,25]{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=\\sqrt{5-x} .\n\\]\n\n\\begin{solucio}\nMultipliquem i dividim pel conjugat:\n\\[\n\\begin{aligned}\ng'(x)&=\\lim_{h\\to0}\\frac{\\sqrt{5-x-h}-\\sqrt{5-x}}{h}\n=\\lim_{h\\to0}\\frac{(5-x-h)-(5-x)}{h\\left(\\sqrt{5-x-h}+\\sqrt{5-x}\\right)}\\\\\n&=\\lim_{h\\to0}\\frac{-1}{\\sqrt{5-x-h}+\\sqrt{5-x}}=-\\frac{1}{2\\sqrt{5-x}} ,\n\\end{aligned}\n\\]\nper a $x<5$. La derivada és negativa: la funció decreix a tot el domini.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=\\frac{1}{x+2} .\n\\]\n\n\\begin{solucio}\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{\\frac{1}{x+h+2}-\\frac{1}{x+2}}{h}\n=\\lim_{h\\to0}\\frac{(x+2)-(x+h+2)}{h(x+h+2)(x+2)}\n=\\lim_{h\\to0}\\frac{-1}{(x+h+2)(x+2)}=-\\frac{1}{(x+2)^2} ,\n\\]\nper a $x\\neq-2$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "definicio-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q002/out/tries/definicio-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q002/out/tries/definicio-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q002/out/tries/definicio-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q002/out/tries/definicio-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "no-derivable",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q002/out/tries/definicio-tasca/no-derivable/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q002/out/tries/definicio-tasca/no-derivable/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q002/out/tries/definicio-tasca/no-derivable/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q002/out/tries/definicio-tasca/no-derivable/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=3x^2+x .\n\\]\n\n\\begin{solucio}\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{3(x+h)^2+(x+h)-\\left(3x^2+x\\right)}{h}\n=\\lim_{h\\to0}\\frac{6xh+3h^2+h}{h}=\\lim_{h\\to0}(6x+3h+1)=6x+1 .\n\\]\n\\end{solucio}\n\n\\begin{tria}{definicio-tasca}\n\\itemtria{original}{0,75}{1,25}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=\\sqrt{5-x} .\n\\]\n\n\\begin{solucio}\nMultipliquem i dividim pel conjugat:\n\\[\n\\begin{aligned}\ng'(x)&=\\lim_{h\\to0}\\frac{\\sqrt{5-x-h}-\\sqrt{5-x}}{h}\n=\\lim_{h\\to0}\\frac{(5-x-h)-(5-x)}{h\\left(\\sqrt{5-x-h}+\\sqrt{5-x}\\right)}\\\\\n&=\\lim_{h\\to0}\\frac{-1}{\\sqrt{5-x-h}+\\sqrt{5-x}}=-\\frac{1}{2\\sqrt{5-x}} ,\n\\end{aligned}\n\\]\nper a $x<5$. La derivada és negativa: la funció decreix a tot el domini.\n\\end{solucio}\n\n\\itemtria{no-derivable}{0,75}{1,25}\nEstudia, aplicant la definició, si la funció\n\\[\ng(x)=|x-3|\n\\]\nés derivable en $x=3$. És contínua en aquest punt?\n\n\\begin{solucio}\n$g(3)=0$ i $\\dfrac{g(3+h)-g(3)}{h}=\\dfrac{|h|}{h}$, que val $-1$ si $h<0$ i $1$ si $h>0$.\\\\\nLes derivades laterals són $g'(3^-)=-1$ i $g'(3^+)=1$: són diferents, i per tant $g$\n\\textbf{no és derivable} en $x=3$ (la gràfica hi fa un pic).\\\\\nEn canvi, sí que és contínua: $\\lim_{x\\to3}|x-3|=0=g(3)$. Una funció contínua en un punt no\nhi ha de ser necessàriament derivable.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=\\frac{1}{x+2} .\n\\]\n\n\\begin{solucio}\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{\\frac{1}{x+h+2}-\\frac{1}{x+2}}{h}\n=\\lim_{h\\to0}\\frac{(x+2)-(x+h+2)}{h(x+h+2)(x+2)}\n=\\lim_{h\\to0}\\frac{-1}{(x+h+2)(x+2)}=-\\frac{1}{(x+2)^2} ,\n\\]\nper a $x\\neq-2$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/derivada-definicio/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/derivada-definicio/q002/out/solucio.pdf",
    "pdf_curt": "u8/derivada-definicio/q002/out/enunciat-curt.pdf",
@@ -2417,9 +2469,9 @@ const BANC = {
    "titol": "Funció derivada per definició: cub, racional i arrel",
    "punts": 2.5,
    "apartats": [
-    1.0,
     0.75,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2441,8 +2493,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=x^3 .\n\\]\n\n\\begin{solucio}\nCom que $(x+h)^3=x^3+3x^2h+3xh^2+h^3$,\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{(x+h)^3-x^3}{h}\n=\\lim_{h\\to0}\\frac{3x^2h+3xh^2+h^3}{h}\n=\\lim_{h\\to0}\\left(3x^2+3xh+h^2\\right)=3x^2 .\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=-\\frac{3}{x} .\n\\]\n\n\\begin{solucio}\n\\[\ng'(x)=\\lim_{h\\to0}\\frac{-\\frac{3}{x+h}+\\frac{3}{x}}{h}\n=\\lim_{h\\to0}\\frac{-3x+3(x+h)}{h\\,x(x+h)}\n=\\lim_{h\\to0}\\frac{3}{x(x+h)}=\\frac{3}{x^2} ,\n\\]\nper a $x\\neq0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=2\\sqrt{x} .\n\\]\n\n\\begin{solucio}\nAmb el conjugat:\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{2\\sqrt{x+h}-2\\sqrt{x}}{h}\n=\\lim_{h\\to0}\\frac{2\\left((x+h)-x\\right)}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)}\n=\\lim_{h\\to0}\\frac{2}{\\sqrt{x+h}+\\sqrt{x}}=\\frac{1}{\\sqrt{x}} ,\n\\]\nper a $x>0$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "definicio-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q003/out/tries/definicio-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q003/out/tries/definicio-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q003/out/tries/definicio-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q003/out/tries/definicio-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "trossos-derivable",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/derivada-definicio/q003/out/tries/definicio-tasca/trossos-derivable/enunciat.pdf",
+       "pdf_solucio": "u8/derivada-definicio/q003/out/tries/definicio-tasca/trossos-derivable/solucio.pdf",
+       "pdf_curt": "u8/derivada-definicio/q003/out/tries/definicio-tasca/trossos-derivable/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/derivada-definicio/q003/out/tries/definicio-tasca/trossos-derivable/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{definicio-tasca}\n\\itemtria{original}{1}{1,25}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nf(x)=x^3 .\n\\]\n\n\\begin{solucio}\nCom que $(x+h)^3=x^3+3x^2h+3xh^2+h^3$,\n\\[\nf'(x)=\\lim_{h\\to0}\\frac{(x+h)^3-x^3}{h}\n=\\lim_{h\\to0}\\frac{3x^2h+3xh^2+h^3}{h}\n=\\lim_{h\\to0}\\left(3x^2+3xh+h^2\\right)=3x^2 .\n\\]\n\\end{solucio}\n\n\\itemtria{trossos-derivable}{1}{1,25}\nEstudia, aplicant la definició, si la funció\n\\[\nf(x)=\\begin{cases} x^2 & \\si{x\\le 1},\\\\[3pt] 2x-1 & \\si{x>1},\\end{cases}\n\\]\nés derivable en $x=1$. Si ho és, quant val $f'(1)$?\n\n\\begin{solucio}\n$f(1)=1$. Cal calcular les dues derivades laterals, cadascuna amb la branca que hi actua.\\\\\nPer l'esquerra: $\\lim_{h\\to0^-}\\dfrac{(1+h)^2-1}{h}=\\lim_{h\\to0^-}\\dfrac{2h+h^2}{h}=\\lim_{h\\to0^-}(2+h)=2$.\\\\\nPer la dreta: $\\lim_{h\\to0^+}\\dfrac{\\bigl(2(1+h)-1\\bigr)-1}{h}=\\lim_{h\\to0^+}\\dfrac{2h}{h}=2$.\\\\\nLes dues coincideixen: $f$ \\textbf{és derivable} en $x=1$ i $f'(1)=2$. Les dues branques s'hi\nenganxen sense fer cap pic.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\ng(x)=-\\frac{3}{x} .\n\\]\n\n\\begin{solucio}\n\\[\ng'(x)=\\lim_{h\\to0}\\frac{-\\frac{3}{x+h}+\\frac{3}{x}}{h}\n=\\lim_{h\\to0}\\frac{-3x+3(x+h)}{h\\,x(x+h)}\n=\\lim_{h\\to0}\\frac{3}{x(x+h)}=\\frac{3}{x^2} ,\n\\]\nper a $x\\neq0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nAplicant la definició de derivada, calcula la funció derivada de\n\\[\nk(x)=2\\sqrt{x} .\n\\]\n\n\\begin{solucio}\nAmb el conjugat:\n\\[\nk'(x)=\\lim_{h\\to0}\\frac{2\\sqrt{x+h}-2\\sqrt{x}}{h}\n=\\lim_{h\\to0}\\frac{2\\left((x+h)-x\\right)}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)}\n=\\lim_{h\\to0}\\frac{2}{\\sqrt{x+h}+\\sqrt{x}}=\\frac{1}{\\sqrt{x}} ,\n\\]\nper a $x>0$.\n\\end{solucio}\n\n\\end{apartats}\n",
    "pdf": "u8/derivada-definicio/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/derivada-definicio/q003/out/solucio.pdf",
    "pdf_curt": "u8/derivada-definicio/q003/out/enunciat-curt.pdf",
@@ -2480,8 +2558,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3-2x+1 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de $f$ en el punt d'abscissa $x=1$.\n\n\\begin{solucio}\n$f(1)=1-2+1=0$ i $f'(x)=3x^2-2$, d'on $f'(1)=1$.\\\\\nTangent: $y-f(1)=f'(1)(x-1)$, és a dir $y=x-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en el mateix punt.\n\n\\begin{solucio}\nLa normal és perpendicular a la tangent: el seu pendent és $-\\dfrac{1}{f'(1)}=-1$.\\\\\nNormal: $y-0=-(x-1)$, és a dir $y=-x+1$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nLa gràfica de $g(x)=x^2+ax-4$ passa pel punt $P(2,6)$. Troba $a$ i l'equació de la recta\ntangent a la gràfica de $g$ en $P$.\n\n\\begin{solucio}\n$g(2)=4+2a-4=2a=6$, d'on $\\boxed{a=3}$.\\\\\n$g'(x)=2x+3$ i $g'(2)=7$. Tangent: $y-6=7(x-2)$, és a dir $y=7x-8$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "tangent-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q001/out/tries/tangent-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q001/out/tries/tangent-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q001/out/tries/tangent-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q001/out/tries/tangent-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tangents-simetriques",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q001/out/tries/tangent-tasca/tangents-simetriques/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q001/out/tries/tangent-tasca/tangents-simetriques/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q001/out/tries/tangent-tasca/tangents-simetriques/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q001/out/tries/tangent-tasca/tangents-simetriques/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^3-2x+1 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de $f$ en el punt d'abscissa $x=1$.\n\n\\begin{solucio}\n$f(1)=1-2+1=0$ i $f'(x)=3x^2-2$, d'on $f'(1)=1$.\\\\\nTangent: $y-f(1)=f'(1)(x-1)$, és a dir $y=x-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en el mateix punt.\n\n\\begin{solucio}\nLa normal és perpendicular a la tangent: el seu pendent és $-\\dfrac{1}{f'(1)}=-1$.\\\\\nNormal: $y-0=-(x-1)$, és a dir $y=-x+1$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{tangent-tasca}\n\\itemtria{original}{0,75}{1,25}\nLa gràfica de $g(x)=x^2+ax-4$ passa pel punt $P(2,6)$. Troba $a$ i l'equació de la recta\ntangent a la gràfica de $g$ en $P$.\n\n\\begin{solucio}\n$g(2)=4+2a-4=2a=6$, d'on $\\boxed{a=3}$.\\\\\n$g'(x)=2x+3$ i $g'(2)=7$. Tangent: $y-6=7(x-2)$, és a dir $y=7x-8$.\n\\end{solucio}\n\n\\itemtria{tangents-simetriques}{0,75}{1,25}\nTroba les rectes tangents a la gràfica de $f$ en els punts d'abscissa $x=2$ i $x=-2$, i comprova\nque són paral·leles. Passa el mateix en $x=a$ i $x=-a$, sigui quin sigui $a$? Justifica-ho.\n\n\\begin{solucio}\n$f'(x)=3x^2-2$, i per tant $f'(2)=f'(-2)=10$. Com que $f(2)=5$ i $f(-2)=-3$, les tangents són\n$y=10x-15$ i $y=10x+17$: tenen el mateix pendent i no són la mateixa recta, i per tant són\nparal·leles.\\\\\nSí, passa sempre: $f'(-a)=3(-a)^2-2=3a^2-2=f'(a)$. Les tangents en $x=a$ i $x=-a$ tenen el\nmateix pendent, i són paral·leles (o la mateixa recta, si $a=0$).\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u8/recta-tangent/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/recta-tangent/q001/out/solucio.pdf",
    "pdf_curt": "u8/recta-tangent/q001/out/enunciat-curt.pdf",
@@ -2519,8 +2623,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de\n\\[\nf(x)=\\frac{x-3}{x+1}\n\\]\nen el punt on talla l'eix d'abscisses.\n\n\\begin{solucio}\n$f(x)=0\\iff x=3$: el punt és $(3,0)$.\\\\\n$f'(x)=\\dfrac{(x+1)-(x-3)}{(x+1)^2}=\\dfrac{4}{(x+1)^2}$, d'on $f'(3)=\\dfrac{4}{16}=\\dfrac14$.\\\\\nTangent: $y=\\dfrac14(x-3)$, és a dir $y=\\dfrac{x}{4}-\\dfrac34$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en aquest mateix punt.\n\n\\begin{solucio}\nPendent de la normal: $-\\dfrac{1}{1/4}=-4$. Normal: $y=-4(x-3)$, és a dir $y=-4x+12$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nTroba l'equació de la recta tangent a la gràfica de $g(x)=x\\ln x$ en el punt d'abscissa\n$x=e$.\n\n\\begin{solucio}\n$g(e)=e\\ln e=e$. $g'(x)=\\ln x+x\\cdot\\dfrac1x=\\ln x+1$, d'on $g'(e)=2$.\\\\\nTangent: $y-e=2(x-e)$, és a dir $y=2x-e$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "tangent-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q002/out/tries/tangent-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q002/out/tries/tangent-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q002/out/tries/tangent-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q002/out/tries/tangent-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tangent-per-punt",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q002/out/tries/tangent-tasca/tangent-per-punt/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q002/out/tries/tangent-tasca/tangent-per-punt/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q002/out/tries/tangent-tasca/tangent-per-punt/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q002/out/tries/tangent-tasca/tangent-per-punt/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de\n\\[\nf(x)=\\frac{x-3}{x+1}\n\\]\nen el punt on talla l'eix d'abscisses.\n\n\\begin{solucio}\n$f(x)=0\\iff x=3$: el punt és $(3,0)$.\\\\\n$f'(x)=\\dfrac{(x+1)-(x-3)}{(x+1)^2}=\\dfrac{4}{(x+1)^2}$, d'on $f'(3)=\\dfrac{4}{16}=\\dfrac14$.\\\\\nTangent: $y=\\dfrac14(x-3)$, és a dir $y=\\dfrac{x}{4}-\\dfrac34$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en aquest mateix punt.\n\n\\begin{solucio}\nPendent de la normal: $-\\dfrac{1}{1/4}=-4$. Normal: $y=-4(x-3)$, és a dir $y=-4x+12$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{tangent-tasca}\n\\itemtria{original}{0,75}{1,25}\nTroba l'equació de la recta tangent a la gràfica de $g(x)=x\\ln x$ en el punt d'abscissa\n$x=e$.\n\n\\begin{solucio}\n$g(e)=e\\ln e=e$. $g'(x)=\\ln x+x\\cdot\\dfrac1x=\\ln x+1$, d'on $g'(e)=2$.\\\\\nTangent: $y-e=2(x-e)$, és a dir $y=2x-e$.\n\\end{solucio}\n\n\\itemtria{tangent-per-punt}{0,75}{1,25}\nTroba el punt de la gràfica de $g(x)=x\\ln x$ en què la recta tangent passa pel punt $(0,-1)$, i\nescriu l'equació d'aquesta tangent.\n\n\\begin{solucio}\n$g'(x)=\\ln x+1$. La tangent en el punt d'abscissa $a$ és $y=a\\ln a+(\\ln a+1)(x-a)$, i en $x=0$\nval $a\\ln a-a\\ln a-a=-a$.\\\\\nPerquè passi per $(0,-1)$, cal $-a=-1$: $a=1$. El punt és $(1,g(1))=(1,0)$ i, com que $g'(1)=1$,\nla tangent és $\\boxed{y=x-1}$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u8/recta-tangent/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/recta-tangent/q002/out/solucio.pdf",
    "pdf_curt": "u8/recta-tangent/q002/out/enunciat-curt.pdf",
@@ -2560,8 +2690,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de\n\\[\nf(x)=e^{2x-2}\n\\]\nen el punt d'abscissa $x=1$.\n\n\\begin{solucio}\n$f(1)=e^{0}=1$ i $f'(x)=2e^{2x-2}$, d'on $f'(1)=2$.\\\\\nTangent: $y-1=2(x-1)$, és a dir $y=2x-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en el mateix punt.\n\n\\begin{solucio}\nEl pendent de la normal és $-\\dfrac{1}{f'(1)}=-\\dfrac12$.\\\\\nNormal: $y-1=-\\dfrac12(x-1)$, és a dir $y=-\\dfrac{x}{2}+\\dfrac32$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nLa recta tangent a la gràfica de $g(x)=ax^2+3$ en el punt d'abscissa $x=2$ té pendent $8$.\nTroba $a$ i l'equació d'aquesta tangent.\n\n\\begin{solucio}\n$g'(x)=2ax$ i $g'(2)=4a=8$, d'on $\\boxed{a=2}$.\\\\\nAleshores $g(2)=2\\cdot4+3=11$, i la tangent és $y-11=8(x-2)$, és a dir $y=8x-5$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "tangent-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q003/out/tries/tangent-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q003/out/tries/tangent-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q003/out/tries/tangent-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q003/out/tries/tangent-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "punt-exterior",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/recta-tangent/q003/out/tries/tangent-tasca/punt-exterior/enunciat.pdf",
+       "pdf_solucio": "u8/recta-tangent/q003/out/tries/tangent-tasca/punt-exterior/solucio.pdf",
+       "pdf_curt": "u8/recta-tangent/q003/out/tries/tangent-tasca/punt-exterior/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/recta-tangent/q003/out/tries/tangent-tasca/punt-exterior/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de\n\\[\nf(x)=e^{2x-2}\n\\]\nen el punt d'abscissa $x=1$.\n\n\\begin{solucio}\n$f(1)=e^{0}=1$ i $f'(x)=2e^{2x-2}$, d'on $f'(1)=2$.\\\\\nTangent: $y-1=2(x-1)$, és a dir $y=2x-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba l'equació de la recta normal a la gràfica de $f$ en el mateix punt.\n\n\\begin{solucio}\nEl pendent de la normal és $-\\dfrac{1}{f'(1)}=-\\dfrac12$.\\\\\nNormal: $y-1=-\\dfrac12(x-1)$, és a dir $y=-\\dfrac{x}{2}+\\dfrac32$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\begin{tria}{tangent-tasca}\n\\itemtria{original}{0,75}{1,25}\nLa recta tangent a la gràfica de $g(x)=ax^2+3$ en el punt d'abscissa $x=2$ té pendent $8$.\nTroba $a$ i l'equació d'aquesta tangent.\n\n\\begin{solucio}\n$g'(x)=2ax$ i $g'(2)=4a=8$, d'on $\\boxed{a=2}$.\\\\\nAleshores $g(2)=2\\cdot4+3=11$, i la tangent és $y-11=8(x-2)$, és a dir $y=8x-5$.\n\\end{solucio}\n\n\\itemtria{punt-exterior}{0,75}{1,25}\nTroba les rectes tangents a la paràbola $y=x^2$ que passen pel punt $(1,-3)$, que no és de la\nparàbola.\n\n\\begin{solucio}\nEl punt de tangència és desconegut: sigui $(a,a^2)$. Com que la derivada és $2x$, la tangent en\naquest punt és $y=a^2+2a(x-a)$. Perquè passi per $(1,-3)$:\n\\[\n-3=a^2+2a(1-a)=2a-a^2\\quad\\Longrightarrow\\quad a^2-2a-3=0\\quad\\Longrightarrow\\quad a=3\\ \\text{o}\\ a=-1 .\n\\]\nHi ha \\textbf{dues} tangents: en $(3,9)$, $y=6x-9$, i en $(-1,1)$, $y=-2x-1$.\n\\end{solucio}\n\\end{tria}\n\n\\end{apartats}\n",
    "pdf": "u8/recta-tangent/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/recta-tangent/q003/out/solucio.pdf",
    "pdf_curt": "u8/recta-tangent/q003/out/enunciat-curt.pdf",
@@ -2575,8 +2731,8 @@ const BANC = {
    "titol": "Regla de la cadena: potències, exponencials, logaritmes i trigonomètriques",
    "punts": 2.5,
    "apartats": [
-    0.75,
     1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -2599,8 +2755,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(3x^2-1\\right)^4 & \\sa g(x)=e^{x^2+2x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=4\\left(3x^2-1\\right)^3\\cdot6x=24x\\left(3x^2-1\\right)^3$.\\\\\nii) $g'(x)=(2x+2)\\,e^{x^2+2x}$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents i simplifica'n el resultat:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln\\left(x^3+2x\\right) & \\sa k(x)=\\ln\\sqrt{2x^2+1}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{3x^2+2}{x^3+2x}$.\\\\\nii) Com que $k(x)=\\tfrac12\\ln\\left(2x^2+1\\right)$,\n$k'(x)=\\dfrac12\\cdot\\dfrac{4x}{2x^2+1}=\\dfrac{2x}{2x^2+1}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\sin^2(3x)\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{12}\\right)$.\n\n\\begin{solucio}\n$m'(x)=2\\sin(3x)\\cdot\\cos(3x)\\cdot3=6\\sin(3x)\\cos(3x)$.\\\\\nEn $x=\\frac{\\pi}{12}$, $3x=\\frac{\\pi}{4}$:\n$m'\\!\\left(\\dfrac{\\pi}{12}\\right)=6\\cdot\\dfrac{\\sqrt2}{2}\\cdot\\dfrac{\\sqrt2}{2}=3$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "cadena-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q001/out/tries/cadena-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q001/out/tries/cadena-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q001/out/tries/cadena-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q001/out/tries/cadena-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "composicio-amb-valors",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q001/out/tries/cadena-tasca/composicio-amb-valors/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q001/out/tries/cadena-tasca/composicio-amb-valors/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q001/out/tries/cadena-tasca/composicio-amb-valors/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q001/out/tries/cadena-tasca/composicio-amb-valors/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{cadena-tasca}\n\\itemtria{original}{0,75}{1,25}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(3x^2-1\\right)^4 & \\sa g(x)=e^{x^2+2x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=4\\left(3x^2-1\\right)^3\\cdot6x=24x\\left(3x^2-1\\right)^3$.\\\\\nii) $g'(x)=(2x+2)\\,e^{x^2+2x}$.\n\\end{solucio}\n\n\\itemtria{composicio-amb-valors}{0,75}{1,25}\nDe dues funcions derivables $u$ i $v$ se sap que\n\\[\nu(1)=2,\\qquad u'(1)=3,\\qquad v(2)=-1,\\qquad v'(2)=4 .\n\\]\nCalcula la derivada de $v\\bigl(u(x)\\bigr)$ i la de $\\bigl(u(x)\\bigr)^3$ en $x=1$.\n\n\\begin{solucio}\nPer la regla de la cadena, $\\bigl[v\\bigl(u(x)\\bigr)\\bigr]'=v'\\bigl(u(x)\\bigr)\\cdot u'(x)$. En $x=1$:\n$v'\\bigl(u(1)\\bigr)\\cdot u'(1)=v'(2)\\cdot3=4\\cdot3=12$.\\\\\nI $\\bigl[\\bigl(u(x)\\bigr)^3\\bigr]'=3\\bigl(u(x)\\bigr)^2\\cdot u'(x)$, que en $x=1$ val $3\\cdot2^2\\cdot3=36$.\\\\\nCompte: el valor $v(2)=-1$ no hi intervé; el que compta és la derivada de $v$ en el punt $u(1)=2$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents i simplifica'n el resultat:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln\\left(x^3+2x\\right) & \\sa k(x)=\\ln\\sqrt{2x^2+1}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{3x^2+2}{x^3+2x}$.\\\\\nii) Com que $k(x)=\\tfrac12\\ln\\left(2x^2+1\\right)$,\n$k'(x)=\\dfrac12\\cdot\\dfrac{4x}{2x^2+1}=\\dfrac{2x}{2x^2+1}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\sin^2(3x)\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{12}\\right)$.\n\n\\begin{solucio}\n$m'(x)=2\\sin(3x)\\cdot\\cos(3x)\\cdot3=6\\sin(3x)\\cos(3x)$.\\\\\nEn $x=\\frac{\\pi}{12}$, $3x=\\frac{\\pi}{4}$:\n$m'\\!\\left(\\dfrac{\\pi}{12}\\right)=6\\cdot\\dfrac{\\sqrt2}{2}\\cdot\\dfrac{\\sqrt2}{2}=3$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regla-cadena/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/regla-cadena/q001/out/solucio.pdf",
    "pdf_curt": "u8/regla-cadena/q001/out/enunciat-curt.pdf",
@@ -2615,8 +2797,8 @@ const BANC = {
    "punts": 2.5,
    "apartats": [
     0.75,
-    1.0,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2638,8 +2820,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(2x^3+5\\right)^5 & \\sa g(x)=e^{3x^2-x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=5\\left(2x^3+5\\right)^4\\cdot6x^2=30x^2\\left(2x^3+5\\right)^4$.\\\\\nii) $g'(x)=(6x-1)\\,e^{3x^2-x}$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents i simplifica'n el resultat:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln\\left(5x^2+2\\right) & \\sa k(x)=\\sqrt{x^2+9}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{10x}{5x^2+2}$.\\\\\nii) $k(x)=\\left(x^2+9\\right)^{1/2}$, i per tant\n$k'(x)=\\dfrac12\\left(x^2+9\\right)^{-1/2}\\cdot2x=\\dfrac{x}{\\sqrt{x^2+9}}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\cos^3(2x)\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{6}\\right)$.\n\n\\begin{solucio}\n$m'(x)=3\\cos^2(2x)\\cdot\\left(-\\sin(2x)\\right)\\cdot2=-6\\cos^2(2x)\\sin(2x)$.\\\\\nEn $x=\\frac{\\pi}{6}$, $2x=\\frac{\\pi}{3}$:\n$m'\\!\\left(\\dfrac{\\pi}{6}\\right)=-6\\cdot\\left(\\dfrac12\\right)^2\\cdot\\dfrac{\\sqrt3}{2}\n=-\\dfrac{3\\sqrt3}{4}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "cadena-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q002/out/tries/cadena-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q002/out/tries/cadena-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q002/out/tries/cadena-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q002/out/tries/cadena-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "log-propietats",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q002/out/tries/cadena-tasca/log-propietats/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q002/out/tries/cadena-tasca/log-propietats/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q002/out/tries/cadena-tasca/log-propietats/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q002/out/tries/cadena-tasca/log-propietats/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(2x^3+5\\right)^5 & \\sa g(x)=e^{3x^2-x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=5\\left(2x^3+5\\right)^4\\cdot6x^2=30x^2\\left(2x^3+5\\right)^4$.\\\\\nii) $g'(x)=(6x-1)\\,e^{3x^2-x}$.\n\\end{solucio}\n\n\\begin{tria}{cadena-tasca}\n\\itemtria{original}{1}{1,25}\nDeriva les funcions següents i simplifica'n el resultat:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln\\left(5x^2+2\\right) & \\sa k(x)=\\sqrt{x^2+9}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{10x}{5x^2+2}$.\\\\\nii) $k(x)=\\left(x^2+9\\right)^{1/2}$, i per tant\n$k'(x)=\\dfrac12\\left(x^2+9\\right)^{-1/2}\\cdot2x=\\dfrac{x}{\\sqrt{x^2+9}}$.\n\\end{solucio}\n\n\\itemtria{log-propietats}{1}{1,25}\nAplica les propietats dels logaritmes abans de derivar i simplifica el resultat:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln\\frac{\\left(x^2+1\\right)^3}{\\sqrt{x-2}} & \\sa k(x)=\\ln\\left(x\\,e^{x}\\right)\n\\end{graella}\n\n\\begin{solucio}\ni) $h(x)=3\\ln\\left(x^2+1\\right)-\\dfrac12\\ln(x-2)$, i per tant\n$h'(x)=\\dfrac{6x}{x^2+1}-\\dfrac{1}{2(x-2)}$. Sense les propietats, caldria derivar un quocient\namb una arrel dins d'un logaritme.\\\\\nii) $k(x)=\\ln x+x$, i per tant $k'(x)=\\dfrac1x+1=\\dfrac{x+1}{x}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\cos^3(2x)\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{6}\\right)$.\n\n\\begin{solucio}\n$m'(x)=3\\cos^2(2x)\\cdot\\left(-\\sin(2x)\\right)\\cdot2=-6\\cos^2(2x)\\sin(2x)$.\\\\\nEn $x=\\frac{\\pi}{6}$, $2x=\\frac{\\pi}{3}$:\n$m'\\!\\left(\\dfrac{\\pi}{6}\\right)=-6\\cdot\\left(\\dfrac12\\right)^2\\cdot\\dfrac{\\sqrt3}{2}\n=-\\dfrac{3\\sqrt3}{4}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regla-cadena/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/regla-cadena/q002/out/solucio.pdf",
    "pdf_curt": "u8/regla-cadena/q002/out/enunciat-curt.pdf",
@@ -2653,8 +2861,8 @@ const BANC = {
    "titol": "Regla de la cadena: potències, exponencials de base 2, logaritmes i arrels",
    "punts": 2.5,
    "apartats": [
-    0.75,
     1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -2677,8 +2885,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(1-x^2\\right)^3 & \\sa g(x)=2^{x^2}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=3\\left(1-x^2\\right)^2\\cdot(-2x)=-6x\\left(1-x^2\\right)^2$.\\\\\nii) $g'(x)=2^{x^2}\\ln2\\cdot2x=2x\\ln2\\cdot2^{x^2}$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln(\\sin x) & \\sa k(x)=e^{\\sqrt{x}}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{\\cos x}{\\sin x}$, per als $x$ on $\\sin x>0$.\\\\\nii) $k'(x)=e^{\\sqrt{x}}\\cdot\\dfrac{1}{2\\sqrt{x}}=\\dfrac{e^{\\sqrt{x}}}{2\\sqrt{x}}$, per a $x>0$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\sqrt{1+\\ln x}\n\\]\ni calcula $m'(1)$.\n\n\\begin{solucio}\n$m'(x)=\\dfrac{1}{2\\sqrt{1+\\ln x}}\\cdot\\dfrac1x=\\dfrac{1}{2x\\sqrt{1+\\ln x}}$.\\\\\nEn $x=1$: $\\ln1=0$, i per tant $m'(1)=\\dfrac{1}{2\\cdot1\\cdot1}=\\dfrac12$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "cadena-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q003/out/tries/cadena-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q003/out/tries/cadena-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q003/out/tries/cadena-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q003/out/tries/cadena-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "composicio-triple",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regla-cadena/q003/out/tries/cadena-tasca/composicio-triple/enunciat.pdf",
+       "pdf_solucio": "u8/regla-cadena/q003/out/tries/cadena-tasca/composicio-triple/solucio.pdf",
+       "pdf_curt": "u8/regla-cadena/q003/out/tries/cadena-tasca/composicio-triple/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regla-cadena/q003/out/tries/cadena-tasca/composicio-triple/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{cadena-tasca}\n\\itemtria{original}{0,75}{1,25}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=\\left(1-x^2\\right)^3 & \\sa g(x)=2^{x^2}\n\\end{graella}\n\n\\begin{solucio}\ni) $f'(x)=3\\left(1-x^2\\right)^2\\cdot(-2x)=-6x\\left(1-x^2\\right)^2$.\\\\\nii) $g'(x)=2^{x^2}\\ln2\\cdot2x=2x\\ln2\\cdot2^{x^2}$.\n\\end{solucio}\n\n\\itemtria{composicio-triple}{0,75}{1,25}\nCada funció següent és una composició de tres funcions. Escriu-les per ordre i deriva:\n\\begin{graella}{2}\n  \\sa f(x)=e^{\\sin\\left(x^2\\right)} & \\sa g(x)=\\bigl(\\ln\\left(x^2+1\\right)\\bigr)^4\n\\end{graella}\n\n\\begin{solucio}\ni) $x\\mapsto x^2\\mapsto\\sin\\left(x^2\\right)\\mapsto e^{\\sin\\left(x^2\\right)}$. Es deriva de fora\ncap a dins: $f'(x)=e^{\\sin\\left(x^2\\right)}\\cdot\\cos\\left(x^2\\right)\\cdot2x$.\\\\\nii) $x\\mapsto x^2+1\\mapsto\\ln\\left(x^2+1\\right)\\mapsto\\bigl(\\ln\\left(x^2+1\\right)\\bigr)^4$:\n$g'(x)=4\\bigl(\\ln\\left(x^2+1\\right)\\bigr)^3\\cdot\\dfrac{2x}{x^2+1}=\\dfrac{8x\\bigl(\\ln\\left(x^2+1\\right)\\bigr)^3}{x^2+1}$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=\\ln(\\sin x) & \\sa k(x)=e^{\\sqrt{x}}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=\\dfrac{\\cos x}{\\sin x}$, per als $x$ on $\\sin x>0$.\\\\\nii) $k'(x)=e^{\\sqrt{x}}\\cdot\\dfrac{1}{2\\sqrt{x}}=\\dfrac{e^{\\sqrt{x}}}{2\\sqrt{x}}$, per a $x>0$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\sqrt{1+\\ln x}\n\\]\ni calcula $m'(1)$.\n\n\\begin{solucio}\n$m'(x)=\\dfrac{1}{2\\sqrt{1+\\ln x}}\\cdot\\dfrac1x=\\dfrac{1}{2x\\sqrt{1+\\ln x}}$.\\\\\nEn $x=1$: $\\ln1=0$, i per tant $m'(1)=\\dfrac{1}{2\\cdot1\\cdot1}=\\dfrac12$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regla-cadena/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/regla-cadena/q003/out/solucio.pdf",
    "pdf_curt": "u8/regla-cadena/q003/out/enunciat-curt.pdf",
@@ -2693,8 +2927,8 @@ const BANC = {
    "punts": 2.5,
    "apartats": [
     0.75,
-    1.0,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2717,8 +2951,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=4\\sqrt{x}-\\frac{3}{x}+2 & \\sa g(x)=x^3-5\\ln x+e^{x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=4x^{1/2}-3x^{-1}+2$, i per tant $f'(x)=\\dfrac{2}{\\sqrt{x}}+\\dfrac{3}{x^2}$.\\\\\nii) $g'(x)=3x^2-\\dfrac{5}{x}+e^{x}$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=x^2e^{x} & \\sa k(x)=\\frac{x^2+1}{x-2}\n\\end{graella}\n\n\\begin{solucio}\ni) Derivada d'un producte: $h'(x)=2x\\,e^{x}+x^2e^{x}=\\left(x^2+2x\\right)e^{x}$.\\\\\nii) Derivada d'un quocient:\n$k'(x)=\\dfrac{2x(x-2)-\\left(x^2+1\\right)}{(x-2)^2}=\\dfrac{x^2-4x-1}{(x-2)^2}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=x^2\\sin x\n\\]\ni calcula $m'(\\pi)$.\n\n\\begin{solucio}\n$m'(x)=2x\\sin x+x^2\\cos x$, i $m'(\\pi)=2\\pi\\cdot0+\\pi^2\\cdot(-1)=-\\pi^2$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "regles-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q001/out/tries/regles-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q001/out/tries/regles-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q001/out/tries/regles-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q001/out/tries/regles-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "regles-amb-valors",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q001/out/tries/regles-tasca/regles-amb-valors/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q001/out/tries/regles-tasca/regles-amb-valors/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q001/out/tries/regles-tasca/regles-amb-valors/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q001/out/tries/regles-tasca/regles-amb-valors/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=4\\sqrt{x}-\\frac{3}{x}+2 & \\sa g(x)=x^3-5\\ln x+e^{x}\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=4x^{1/2}-3x^{-1}+2$, i per tant $f'(x)=\\dfrac{2}{\\sqrt{x}}+\\dfrac{3}{x^2}$.\\\\\nii) $g'(x)=3x^2-\\dfrac{5}{x}+e^{x}$.\n\\end{solucio}\n\n\\begin{tria}{regles-tasca}\n\\itemtria{original}{1}{1,25}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=x^2e^{x} & \\sa k(x)=\\frac{x^2+1}{x-2}\n\\end{graella}\n\n\\begin{solucio}\ni) Derivada d'un producte: $h'(x)=2x\\,e^{x}+x^2e^{x}=\\left(x^2+2x\\right)e^{x}$.\\\\\nii) Derivada d'un quocient:\n$k'(x)=\\dfrac{2x(x-2)-\\left(x^2+1\\right)}{(x-2)^2}=\\dfrac{x^2-4x-1}{(x-2)^2}$.\n\\end{solucio}\n\n\\itemtria{regles-amb-valors}{1}{1,25}\nDe dues funcions derivables $u$ i $v$ se sap que\n\\[\nu(2)=3,\\qquad u'(2)=-1,\\qquad v(2)=5,\\qquad v'(2)=4 .\n\\]\nCalcula $(u\\cdot v)'(2)$ i $\\left(\\dfrac uv\\right)'(2)$.\n\n\\begin{solucio}\nPer la regla del producte, $(u\\cdot v)'(2)=u'(2)\\,v(2)+u(2)\\,v'(2)=(-1)\\cdot5+3\\cdot4=7$.\\\\\nPer la regla del quocient,\n$\\left(\\dfrac uv\\right)'(2)=\\dfrac{u'(2)\\,v(2)-u(2)\\,v'(2)}{v(2)^2}=\\dfrac{-5-12}{25}=-\\dfrac{17}{25}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=x^2\\sin x\n\\]\ni calcula $m'(\\pi)$.\n\n\\begin{solucio}\n$m'(x)=2x\\sin x+x^2\\cos x$, i $m'(\\pi)=2\\pi\\cdot0+\\pi^2\\cdot(-1)=-\\pi^2$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regles-derivacio/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/regles-derivacio/q001/out/solucio.pdf",
    "pdf_curt": "u8/regles-derivacio/q001/out/enunciat-curt.pdf",
@@ -2732,8 +2992,8 @@ const BANC = {
    "titol": "Regles de derivació: arrels, exponencials, logaritmes, productes i quocients",
    "punts": 2.5,
    "apartats": [
-    0.75,
     1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -2757,8 +3017,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=2x^5-\\sqrt[3]{x} & \\sa g(x)=3\\cdot2^{x}+\\log_2 x\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=2x^5-x^{1/3}$, i per tant $f'(x)=10x^4-\\dfrac{1}{3\\sqrt[3]{x^2}}$.\\\\\nii) $g'(x)=3\\cdot2^{x}\\ln2+\\dfrac{1}{x\\ln2}$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=(3x-1)\\ln x & \\sa k(x)=\\frac{e^{x}}{x+1}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=3\\ln x+(3x-1)\\cdot\\dfrac1x=3\\ln x+3-\\dfrac1x$.\\\\\nii) $k'(x)=\\dfrac{e^{x}(x+1)-e^{x}}{(x+1)^2}=\\dfrac{x\\,e^{x}}{(x+1)^2}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\frac{\\sin x}{x}\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{2}\\right)$.\n\n\\begin{solucio}\n$m'(x)=\\dfrac{x\\cos x-\\sin x}{x^2}$, i\n$m'\\!\\left(\\dfrac{\\pi}{2}\\right)=\\dfrac{\\frac{\\pi}{2}\\cdot0-1}{\\pi^2/4}=-\\dfrac{4}{\\pi^2}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "regles-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q002/out/tries/regles-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q002/out/tries/regles-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q002/out/tries/regles-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q002/out/tries/regles-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "simplifica-abans",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q002/out/tries/regles-tasca/simplifica-abans/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q002/out/tries/regles-tasca/simplifica-abans/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q002/out/tries/regles-tasca/simplifica-abans/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q002/out/tries/regles-tasca/simplifica-abans/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{regles-tasca}\n\\itemtria{original}{0,75}{1,25}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=2x^5-\\sqrt[3]{x} & \\sa g(x)=3\\cdot2^{x}+\\log_2 x\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=2x^5-x^{1/3}$, i per tant $f'(x)=10x^4-\\dfrac{1}{3\\sqrt[3]{x^2}}$.\\\\\nii) $g'(x)=3\\cdot2^{x}\\ln2+\\dfrac{1}{x\\ln2}$.\n\\end{solucio}\n\n\\itemtria{simplifica-abans}{0,75}{1,25}\nEscriu cada funció com una suma de potències de $x$ i deriva-la, sense fer servir la regla del\nquocient:\n\\begin{graella}{2}\n  \\sa f(x)=\\frac{x^3-2\\sqrt{x}}{x} & \\sa g(x)=\\frac{(x+1)^2}{\\sqrt{x}}\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=x^2-2x^{-1/2}$, i per tant $f'(x)=2x+x^{-3/2}=2x+\\dfrac{1}{x\\sqrt{x}}$.\\\\\nii) $g(x)=\\dfrac{x^2+2x+1}{x^{1/2}}=x^{3/2}+2x^{1/2}+x^{-1/2}$, i per tant\n$g'(x)=\\dfrac32x^{1/2}+x^{-1/2}-\\dfrac12x^{-3/2}=\\dfrac32\\sqrt{x}+\\dfrac{1}{\\sqrt{x}}-\\dfrac{1}{2x\\sqrt{x}}$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=(3x-1)\\ln x & \\sa k(x)=\\frac{e^{x}}{x+1}\n\\end{graella}\n\n\\begin{solucio}\ni) $h'(x)=3\\ln x+(3x-1)\\cdot\\dfrac1x=3\\ln x+3-\\dfrac1x$.\\\\\nii) $k'(x)=\\dfrac{e^{x}(x+1)-e^{x}}{(x+1)^2}=\\dfrac{x\\,e^{x}}{(x+1)^2}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=\\frac{\\sin x}{x}\n\\]\ni calcula $m'\\!\\left(\\frac{\\pi}{2}\\right)$.\n\n\\begin{solucio}\n$m'(x)=\\dfrac{x\\cos x-\\sin x}{x^2}$, i\n$m'\\!\\left(\\dfrac{\\pi}{2}\\right)=\\dfrac{\\frac{\\pi}{2}\\cdot0-1}{\\pi^2/4}=-\\dfrac{4}{\\pi^2}$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regles-derivacio/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/regles-derivacio/q002/out/solucio.pdf",
    "pdf_curt": "u8/regles-derivacio/q002/out/enunciat-curt.pdf",
@@ -2773,8 +3059,8 @@ const BANC = {
    "punts": 2.5,
    "apartats": [
     0.75,
-    1.0,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2797,8 +3083,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=5x^4-2\\sqrt{x}+\\frac{7}{x^3} & \\sa g(x)=4\\ln x-3e^{x}+x\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=5x^4-2x^{1/2}+7x^{-3}$, i per tant\n$f'(x)=20x^3-\\dfrac{1}{\\sqrt{x}}-\\dfrac{21}{x^4}$.\\\\\nii) $g'(x)=\\dfrac{4}{x}-3e^{x}+1$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=\\left(x^2-3\\right)\\cos x & \\sa k(x)=\\frac{2x+1}{x^2+1}\n\\end{graella}\n\n\\begin{solucio}\ni) Derivada d'un producte:\n$h'(x)=2x\\cos x-\\left(x^2-3\\right)\\sin x$.\\\\\nii) Derivada d'un quocient:\n$k'(x)=\\dfrac{2\\left(x^2+1\\right)-(2x+1)\\cdot2x}{\\left(x^2+1\\right)^2}\n=\\dfrac{-2x^2-2x+2}{\\left(x^2+1\\right)^2}$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=x^3e^{x}\n\\]\ni calcula $m'(1)$.\n\n\\begin{solucio}\n$m'(x)=3x^2e^{x}+x^3e^{x}=\\left(x^3+3x^2\\right)e^{x}$, i $m'(1)=(1+3)e=4e$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "regles-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q003/out/tries/regles-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q003/out/tries/regles-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q003/out/tries/regles-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q003/out/tries/regles-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "troba-error",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/regles-derivacio/q003/out/tries/regles-tasca/troba-error/enunciat.pdf",
+       "pdf_solucio": "u8/regles-derivacio/q003/out/tries/regles-tasca/troba-error/solucio.pdf",
+       "pdf_curt": "u8/regles-derivacio/q003/out/tries/regles-tasca/troba-error/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/regles-derivacio/q003/out/tries/regles-tasca/troba-error/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa f(x)=5x^4-2\\sqrt{x}+\\frac{7}{x^3} & \\sa g(x)=4\\ln x-3e^{x}+x\n\\end{graella}\n\n\\begin{solucio}\ni) $f(x)=5x^4-2x^{1/2}+7x^{-3}$, i per tant\n$f'(x)=20x^3-\\dfrac{1}{\\sqrt{x}}-\\dfrac{21}{x^4}$.\\\\\nii) $g'(x)=\\dfrac{4}{x}-3e^{x}+1$.\n\\end{solucio}\n\n\\begin{tria}{regles-tasca}\n\\itemtria{original}{1}{1,25}\nDeriva les funcions següents:\n\\begin{graella}{2}\n  \\sa h(x)=\\left(x^2-3\\right)\\cos x & \\sa k(x)=\\frac{2x+1}{x^2+1}\n\\end{graella}\n\n\\begin{solucio}\ni) Derivada d'un producte:\n$h'(x)=2x\\cos x-\\left(x^2-3\\right)\\sin x$.\\\\\nii) Derivada d'un quocient:\n$k'(x)=\\dfrac{2\\left(x^2+1\\right)-(2x+1)\\cdot2x}{\\left(x^2+1\\right)^2}\n=\\dfrac{-2x^2-2x+2}{\\left(x^2+1\\right)^2}$.\n\\end{solucio}\n\n\\itemtria{troba-error}{1}{1,25}\nUn alumne ha derivat així dues funcions:\n\\[\n\\bigl(x\\ln x\\bigr)'=1\\cdot\\frac1x=\\frac1x\n\\qquad\\qquad\n\\left(\\frac{e^{x}}{x}\\right)'=\\frac{e^{x}\\,x+e^{x}}{x^2}\n\\]\nExplica quin error ha fet en cada cas i escriu les derivades correctes.\n\n\\begin{solucio}\ni) Ha derivat el producte com el producte de les derivades. La regla del producte dona\n$\\bigl(x\\ln x\\bigr)'=1\\cdot\\ln x+x\\cdot\\dfrac1x=\\ln x+1$.\\\\\nii) A la regla del quocient, el numerador és una resta, no una suma:\n$\\left(\\dfrac{e^{x}}{x}\\right)'=\\dfrac{e^{x}\\,x-e^{x}\\cdot1}{x^2}=\\dfrac{e^{x}(x-1)}{x^2}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDeriva la funció\n\\[\nm(x)=x^3e^{x}\n\\]\ni calcula $m'(1)$.\n\n\\begin{solucio}\n$m'(x)=3x^2e^{x}+x^3e^{x}=\\left(x^3+3x^2\\right)e^{x}$, i $m'(1)=(1+3)e=4e$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/regles-derivacio/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/regles-derivacio/q003/out/solucio.pdf",
    "pdf_curt": "u8/regles-derivacio/q003/out/enunciat-curt.pdf",
@@ -2835,8 +3147,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3-3x+2 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba els punts de la gràfica de $f$ en què la recta tangent és paral·lela a la recta\n$y=9x-4$.\n\n\\begin{solucio}\nRectes paral·leles tenen el mateix pendent: cal $f'(x)=9$.\\\\\n$f'(x)=3x^2-3=9\\iff x^2=4\\iff x=\\pm2$.\\\\\n$f(2)=8-6+2=4$ i $f(-2)=-8+6+2=0$: els punts són $\\boxed{(2,4)}$ i $\\boxed{(-2,0)}$.\n\\end{solucio}\n\n\\apartat[1,25]{0,75}\nEscriu les equacions de les rectes tangents en aquests punts.\n\n\\begin{solucio}\nEn $(2,4)$: $y-4=9(x-2)$, és a dir $y=9x-14$.\\\\\nEn $(-2,0)$: $y=9(x+2)$, és a dir $y=9x+18$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba els punts de la gràfica de $f$ en què la recta tangent és horitzontal.\n\n\\begin{solucio}\nTangent horitzontal vol dir pendent $0$: $f'(x)=3x^2-3=0\\iff x=\\pm1$.\\\\\n$f(1)=0$ i $f(-1)=4$: els punts són $(1,0)$ i $(-1,4)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "condicions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q001/out/tries/condicions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q001/out/tries/condicions-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q001/out/tries/condicions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q001/out/tries/condicions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "pendents-possibles",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q001/out/tries/condicions-tasca/pendents-possibles/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q001/out/tries/condicions-tasca/pendents-possibles/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q001/out/tries/condicions-tasca/pendents-possibles/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q001/out/tries/condicions-tasca/pendents-possibles/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^3-3x+2 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba els punts de la gràfica de $f$ en què la recta tangent és paral·lela a la recta\n$y=9x-4$.\n\n\\begin{solucio}\nRectes paral·leles tenen el mateix pendent: cal $f'(x)=9$.\\\\\n$f'(x)=3x^2-3=9\\iff x^2=4\\iff x=\\pm2$.\\\\\n$f(2)=8-6+2=4$ i $f(-2)=-8+6+2=0$: els punts són $\\boxed{(2,4)}$ i $\\boxed{(-2,0)}$.\n\\end{solucio}\n\n\\begin{tria}{condicions-tasca}\n\\itemtria{original}{0,75}{1,25}\nEscriu les equacions de les rectes tangents en aquests punts.\n\n\\begin{solucio}\nEn $(2,4)$: $y-4=9(x-2)$, és a dir $y=9x-14$.\\\\\nEn $(-2,0)$: $y=9(x+2)$, és a dir $y=9x+18$.\n\\end{solucio}\n\n\\itemtria{pendents-possibles}{0,75}{1,25}\nHi ha algun punt de la gràfica de $f$ en què la recta tangent tingui pendent $-4$? I pendent\n$-3$? Justifica les respostes i, si n'hi ha, escriu l'equació de la tangent.\n\n\\begin{solucio}\nEl pendent de la tangent en el punt d'abscissa $x$ és $f'(x)=3x^2-3$. Com que $3x^2\\ge0$,\nsempre és $f'(x)\\ge-3$.\\\\\nPendent $-4$: \\textbf{cap punt}, perquè $f'(x)$ no pot ser més petit que $-3$.\\\\\nPendent $-3$: només si $3x^2=0$, és a dir en $x=0$. El punt és $(0,2)$ i la tangent és $y=-3x+2$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nTroba els punts de la gràfica de $f$ en què la recta tangent és horitzontal.\n\n\\begin{solucio}\nTangent horitzontal vol dir pendent $0$: $f'(x)=3x^2-3=0\\iff x=\\pm1$.\\\\\n$f(1)=0$ i $f(-1)=4$: els punts són $(1,0)$ i $(-1,4)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tangent-condicions/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/tangent-condicions/q001/out/solucio.pdf",
    "pdf_curt": "u8/tangent-condicions/q001/out/enunciat-curt.pdf",
@@ -2874,8 +3212,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x+3}{x-1} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de $f$ en el punt d'abscissa $x=3$.\n\n\\begin{solucio}\n$f(3)=\\dfrac{6}{2}=3$. $f'(x)=\\dfrac{(x-1)-(x+3)}{(x-1)^2}=\\dfrac{-4}{(x-1)^2}$, d'on\n$f'(3)=-1$.\\\\\nTangent: $y-3=-(x-3)$, és a dir $y=-x+6$.\n\\end{solucio}\n\n\\apartat[1,25]{0,75}\nCalcula l'àrea del triangle que aquesta recta tangent forma amb els eixos de coordenades.\n\n\\begin{solucio}\nLa recta $y=-x+6$ talla els eixos en $(6,0)$ i $(0,6)$. El triangle és rectangle, amb catets\nde longitud $6$: l'àrea és $\\dfrac{6\\cdot6}{2}=\\boxed{18}$ unitats quadrades.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nHi ha algun altre punt de la gràfica de $f$ en què la recta tangent sigui paral·lela a\naquesta? Si n'hi ha, troba'l.\n\n\\begin{solucio}\nCal $f'(x)=-1$: $\\dfrac{-4}{(x-1)^2}=-1\\iff(x-1)^2=4\\iff x=3$ o $x=-1$.\\\\\nSí: el punt d'abscissa $x=-1$, que és $\\left(-1,f(-1)\\right)=(-1,-1)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "condicions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q002/out/tries/condicions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q002/out/tries/condicions-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q002/out/tries/condicions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q002/out/tries/condicions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "pendent-negatiu",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q002/out/tries/condicions-tasca/pendent-negatiu/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q002/out/tries/condicions-tasca/pendent-negatiu/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q002/out/tries/condicions-tasca/pendent-negatiu/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q002/out/tries/condicions-tasca/pendent-negatiu/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{x+3}{x-1} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba l'equació de la recta tangent a la gràfica de $f$ en el punt d'abscissa $x=3$.\n\n\\begin{solucio}\n$f(3)=\\dfrac{6}{2}=3$. $f'(x)=\\dfrac{(x-1)-(x+3)}{(x-1)^2}=\\dfrac{-4}{(x-1)^2}$, d'on\n$f'(3)=-1$.\\\\\nTangent: $y-3=-(x-3)$, és a dir $y=-x+6$.\n\\end{solucio}\n\n\\begin{tria}{condicions-tasca}\n\\itemtria{original}{0,75}{1,25}\nCalcula l'àrea del triangle que aquesta recta tangent forma amb els eixos de coordenades.\n\n\\begin{solucio}\nLa recta $y=-x+6$ talla els eixos en $(6,0)$ i $(0,6)$. El triangle és rectangle, amb catets\nde longitud $6$: l'àrea és $\\dfrac{6\\cdot6}{2}=\\boxed{18}$ unitats quadrades.\n\\end{solucio}\n\n\\itemtria{pendent-negatiu}{0,75}{1,25}\nJustifica que cap recta tangent a la gràfica de $f$ no té pendent positiu, i que tampoc no n'hi ha\ncap d'horitzontal.\n\n\\begin{solucio}\n$f'(x)=\\dfrac{(x-1)-(x+3)}{(x-1)^2}=\\dfrac{-4}{(x-1)^2}$. El denominador és un quadrat, positiu a\ntot el domini ($x\\ne1$), i el numerador és $-4$: $f'(x)<0$ per a tota $x$ del domini.\\\\\nPer tant, totes les tangents tenen pendent negatiu: cap no en té de positiu, i cap no és\nhoritzontal, perquè $f'(x)$ no s'anul·la mai.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nHi ha algun altre punt de la gràfica de $f$ en què la recta tangent sigui paral·lela a\naquesta? Si n'hi ha, troba'l.\n\n\\begin{solucio}\nCal $f'(x)=-1$: $\\dfrac{-4}{(x-1)^2}=-1\\iff(x-1)^2=4\\iff x=3$ o $x=-1$.\\\\\nSí: el punt d'abscissa $x=-1$, que és $\\left(-1,f(-1)\\right)=(-1,-1)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tangent-condicions/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/tangent-condicions/q002/out/solucio.pdf",
    "pdf_curt": "u8/tangent-condicions/q002/out/enunciat-curt.pdf",
@@ -2912,8 +3276,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3-6x^2+9x .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba els punts de la gràfica de $f$ en què la recta tangent és horitzontal.\n\n\\begin{solucio}\nTangent horitzontal vol dir pendent $0$:\n$f'(x)=3x^2-12x+9=3\\left(x^2-4x+3\\right)=0\\iff x=1$ o $x=3$.\\\\\n$f(1)=1-6+9=4$ i $f(3)=27-54+27=0$: els punts són $\\boxed{(1,4)}$ i $\\boxed{(3,0)}$.\n\\end{solucio}\n\n\\apartat[1,25]{0,75}\nTroba els punts en què la recta tangent és paral·lela a la recta $y=9x$ i escriu-ne les\nequacions.\n\n\\begin{solucio}\nCal $f'(x)=9$: $3x^2-12x+9=9\\iff3x^2-12x=0\\iff 3x(x-4)=0$, és a dir $x=0$ o $x=4$.\\\\\n$f(0)=0$ i $f(4)=64-96+36=4$.\\\\\nEn $(0,0)$: $y=9x$. \\quad En $(4,4)$: $y-4=9(x-4)$, és a dir $y=9x-32$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nHi ha algun punt en què la recta tangent sigui paral·lela a la recta $y=-3x+1$? Si n'hi ha,\ntroba'l.\n\n\\begin{solucio}\nCal $f'(x)=-3$: $3x^2-12x+9=-3\\iff3x^2-12x+12=0\\iff x^2-4x+4=0\\iff(x-2)^2=0$.\\\\\nL'única solució és $x=2$, i $f(2)=8-24+18=2$: el punt és $(2,2)$. Com que l'arrel és doble,\nno n'hi ha cap altre.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "condicions-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q003/out/tries/condicions-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q003/out/tries/condicions-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q003/out/tries/condicions-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q003/out/tries/condicions-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tangents-per-origen",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tangent-condicions/q003/out/tries/condicions-tasca/tangents-per-origen/enunciat.pdf",
+       "pdf_solucio": "u8/tangent-condicions/q003/out/tries/condicions-tasca/tangents-per-origen/solucio.pdf",
+       "pdf_curt": "u8/tangent-condicions/q003/out/tries/condicions-tasca/tangents-per-origen/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tangent-condicions/q003/out/tries/condicions-tasca/tangents-per-origen/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^3-6x^2+9x .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{1}\nTroba els punts de la gràfica de $f$ en què la recta tangent és horitzontal.\n\n\\begin{solucio}\nTangent horitzontal vol dir pendent $0$:\n$f'(x)=3x^2-12x+9=3\\left(x^2-4x+3\\right)=0\\iff x=1$ o $x=3$.\\\\\n$f(1)=1-6+9=4$ i $f(3)=27-54+27=0$: els punts són $\\boxed{(1,4)}$ i $\\boxed{(3,0)}$.\n\\end{solucio}\n\n\\begin{tria}{condicions-tasca}\n\\itemtria{original}{0,75}{1,25}\nTroba els punts en què la recta tangent és paral·lela a la recta $y=9x$ i escriu-ne les\nequacions.\n\n\\begin{solucio}\nCal $f'(x)=9$: $3x^2-12x+9=9\\iff3x^2-12x=0\\iff 3x(x-4)=0$, és a dir $x=0$ o $x=4$.\\\\\n$f(0)=0$ i $f(4)=64-96+36=4$.\\\\\nEn $(0,0)$: $y=9x$. \\quad En $(4,4)$: $y-4=9(x-4)$, és a dir $y=9x-32$.\n\\end{solucio}\n\n\\itemtria{tangents-per-origen}{0,75}{1,25}\nTroba els punts de la gràfica de $f$ en què la recta tangent passa per l'origen de coordenades, i\nescriu-ne les equacions.\n\n\\begin{solucio}\nLa tangent en el punt d'abscissa $a$ és $y=f(a)+f'(a)(x-a)$, amb $f'(x)=3x^2-12x+9$. Passa per\nl'origen si $0=f(a)-a\\,f'(a)$:\n\\[\na^3-6a^2+9a=3a^3-12a^2+9a\\quad\\Longrightarrow\\quad 2a^3-6a^2=0\\quad\\Longrightarrow\\quad 2a^2(a-3)=0 .\n\\]\n$a=0$: el punt és $(0,0)$ i la tangent, $y=9x$. $a=3$: el punt és $(3,0)$ i, com que $f'(3)=0$, la\ntangent és l'eix d'abscisses, $y=0$, que també passa per l'origen.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nHi ha algun punt en què la recta tangent sigui paral·lela a la recta $y=-3x+1$? Si n'hi ha,\ntroba'l.\n\n\\begin{solucio}\nCal $f'(x)=-3$: $3x^2-12x+9=-3\\iff3x^2-12x+12=0\\iff x^2-4x+4=0\\iff(x-2)^2=0$.\\\\\nL'única solució és $x=2$, i $f(2)=8-24+18=2$: el punt és $(2,2)$. Com que l'arrel és doble,\nno n'hi ha cap altre.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tangent-condicions/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/tangent-condicions/q003/out/solucio.pdf",
    "pdf_curt": "u8/tangent-condicions/q003/out/enunciat-curt.pdf",
@@ -2928,8 +3318,8 @@ const BANC = {
    "punts": 2.5,
    "apartats": [
     0.75,
-    1.0,
-    0.75
+    0.75,
+    1.0
    ],
    "apartats_curt": [
     1.25,
@@ -2952,8 +3342,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=x^2-4x+1 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nCalcula la taxa de variació mitjana de $f$ als intervals $[1,3]$ i $[3,5]$, i interpreta'n el\nresultat.\n\n\\begin{solucio}\n$f(1)=-2$, $f(3)=-2$ i $f(5)=6$.\\\\\n$\\mathrm{TVM}[1,3]=\\dfrac{f(3)-f(1)}{3-1}=\\dfrac{-2-(-2)}{2}=0$: entre $x=1$ i $x=3$ la\nfunció acaba on havia començat, i en mitjana no creix ni decreix.\\\\\n$\\mathrm{TVM}[3,5]=\\dfrac{f(5)-f(3)}{5-3}=\\dfrac{6-(-2)}{2}=4$: en aquest interval la funció\ncreix, en mitjana, $4$ unitats per cada unitat de $x$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nCalcula $f'(3)$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\nf'(3)=\\lim_{h\\to0}\\frac{f(3+h)-f(3)}{h}\n=\\lim_{h\\to0}\\frac{(3+h)^2-4(3+h)+1-(-2)}{h}\n=\\lim_{h\\to0}\\frac{h^2+2h}{h}=\\lim_{h\\to0}(h+2)=2 .\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la taxa de variació mitjana de $f$ a l'interval $[3;\\,3{,}1]$ i compara-la amb\n$f'(3)$. Com s'explica el resultat?\n\n\\begin{solucio}\n$f(3{,}1)=9{,}61-12{,}4+1=-1{,}79$, i\n$\\mathrm{TVM}[3;\\,3{,}1]=\\dfrac{-1{,}79-(-2)}{0{,}1}=\\dfrac{0{,}21}{0{,}1}=2{,}1$.\\\\\nÉs molt a prop de $f'(3)=2$: la derivada és el límit de les taxes de variació mitjanes als\nintervals $[3,3+h]$ quan $h\\to0$. Aquí, $\\mathrm{TVM}[3,3+h]=h+2$, que per a $h=0{,}1$ val\n$2{,}1$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "derivada-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "derivada-general",
+       "llarg": 1.0,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/derivada-general/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/derivada-general/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/derivada-general/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q001/out/tries/derivada-tasca/derivada-general/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=x^2-4x+1 .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nCalcula la taxa de variació mitjana de $f$ als intervals $[1,3]$ i $[3,5]$, i interpreta'n el\nresultat.\n\n\\begin{solucio}\n$f(1)=-2$, $f(3)=-2$ i $f(5)=6$.\\\\\n$\\mathrm{TVM}[1,3]=\\dfrac{f(3)-f(1)}{3-1}=\\dfrac{-2-(-2)}{2}=0$: entre $x=1$ i $x=3$ la\nfunció acaba on havia començat, i en mitjana no creix ni decreix.\\\\\n$\\mathrm{TVM}[3,5]=\\dfrac{f(5)-f(3)}{5-3}=\\dfrac{6-(-2)}{2}=4$: en aquest interval la funció\ncreix, en mitjana, $4$ unitats per cada unitat de $x$.\n\\end{solucio}\n\n\\begin{tria}{derivada-tasca}\n\\itemtria{original}{1}{1,25}\nCalcula $f'(3)$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\nf'(3)=\\lim_{h\\to0}\\frac{f(3+h)-f(3)}{h}\n=\\lim_{h\\to0}\\frac{(3+h)^2-4(3+h)+1-(-2)}{h}\n=\\lim_{h\\to0}\\frac{h^2+2h}{h}=\\lim_{h\\to0}(h+2)=2 .\n\\]\n\\end{solucio}\n\n\\itemtria{derivada-general}{1}{1,25}\nCalcula $f'(a)$ en un punt qualsevol $a$ aplicant la definició de derivada. En quin punt de la\ngràfica de $f$ la recta tangent és horitzontal?\n\n\\begin{solucio}\n$f(a+h)-f(a)=(a+h)^2-4(a+h)+1-\\left(a^2-4a+1\\right)=2ah+h^2-4h$, i per tant\n\\[\nf'(a)=\\lim_{h\\to0}\\frac{2ah+h^2-4h}{h}=\\lim_{h\\to0}(2a+h-4)=2a-4 .\n\\]\nLa tangent és horitzontal on el pendent és zero: $2a-4=0$, és a dir $a=2$. El punt és\n$(2,f(2))=(2,-3)$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la taxa de variació mitjana de $f$ a l'interval $[3;\\,3{,}1]$ i compara-la amb\n$f'(3)$. Com s'explica el resultat?\n\n\\begin{solucio}\n$f(3{,}1)=9{,}61-12{,}4+1=-1{,}79$, i\n$\\mathrm{TVM}[3;\\,3{,}1]=\\dfrac{-1{,}79-(-2)}{0{,}1}=\\dfrac{0{,}21}{0{,}1}=2{,}1$.\\\\\nÉs molt a prop de $f'(3)=2$: la derivada és el límit de les taxes de variació mitjanes als\nintervals $[3,3+h]$ quan $h\\to0$. Aquí, $\\mathrm{TVM}[3,3+h]=h+2$, que per a $h=0{,}1$ val\n$2{,}1$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tvm-derivada-punt/q001/out/enunciat.pdf",
    "pdf_solucio": "u8/tvm-derivada-punt/q001/out/solucio.pdf",
    "pdf_curt": "u8/tvm-derivada-punt/q001/out/enunciat-curt.pdf",
@@ -2967,8 +3383,8 @@ const BANC = {
    "titol": "TVM i derivada en un punt d'una funció racional",
    "punts": 2.5,
    "apartats": [
-    0.75,
     1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -2992,8 +3408,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Considera la funció\n\\[\nf(x)=\\frac{6}{x+1} .\n\\]\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nCalcula la taxa de variació mitjana de $f$ als intervals $[0,2]$ i $[1,5]$, i interpreta'n el\nresultat.\n\n\\begin{solucio}\n$f(0)=6$, $f(1)=3$, $f(2)=2$ i $f(5)=1$.\\\\\n$\\mathrm{TVM}[0,2]=\\dfrac{2-6}{2}=-2$ \\quad i \\quad $\\mathrm{TVM}[1,5]=\\dfrac{1-3}{4}=-0{,}5$.\\\\\nLes dues són negatives: la funció decreix als dos intervals. A més, decreix molt més de pressa\na prop de $x=0$ que no pas entre $x=1$ i $x=5$.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nCalcula $f'(1)$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\nf'(1)=\\lim_{h\\to0}\\frac{\\frac{6}{2+h}-3}{h}\n=\\lim_{h\\to0}\\frac{6-3(2+h)}{h(2+h)}\n=\\lim_{h\\to0}\\frac{-3h}{h(2+h)}\n=\\lim_{h\\to0}\\frac{-3}{2+h}=-\\frac32 .\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula $f'(4)$ aplicant la definició i compara'l amb $f'(1)$. Què indica sobre la gràfica?\n\n\\begin{solucio}\n\\[\nf'(4)=\\lim_{h\\to0}\\frac{\\frac{6}{5+h}-\\frac65}{h}\n=\\lim_{h\\to0}\\frac{30-6(5+h)}{5h(5+h)}\n=\\lim_{h\\to0}\\frac{-6}{5(5+h)}=-\\frac{6}{25} .\n\\]\nTotes dues derivades són negatives, però $|f'(1)|=1{,}5$ és molt més gran que\n$|f'(4)|=0{,}24$: la gràfica baixa molt més inclinada en $x=1$ que en $x=4$, on ja s'aplana.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "tvm-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "tvm-inversa",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/tvm-inversa/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/tvm-inversa/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/tvm-inversa/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q002/out/tries/tvm-tasca/tvm-inversa/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Considera la funció\n\\[\nf(x)=\\frac{6}{x+1} .\n\\]\n\n\\begin{apartats}\n\n\\begin{tria}{tvm-tasca}\n\\itemtria{original}{0,75}{1,25}\nCalcula la taxa de variació mitjana de $f$ als intervals $[0,2]$ i $[1,5]$, i interpreta'n el\nresultat.\n\n\\begin{solucio}\n$f(0)=6$, $f(1)=3$, $f(2)=2$ i $f(5)=1$.\\\\\n$\\mathrm{TVM}[0,2]=\\dfrac{2-6}{2}=-2$ \\quad i \\quad $\\mathrm{TVM}[1,5]=\\dfrac{1-3}{4}=-0{,}5$.\\\\\nLes dues són negatives: la funció decreix als dos intervals. A més, decreix molt més de pressa\na prop de $x=0$ que no pas entre $x=1$ i $x=5$.\n\\end{solucio}\n\n\\itemtria{tvm-inversa}{0,75}{1,25}\nTroba $b>0$ perquè la taxa de variació mitjana de $f$ a l'interval $[0,b]$ valgui $-1$, i\ninterpreta'n el resultat.\n\n\\begin{solucio}\n$\\mathrm{TVM}[0,b]=\\dfrac{f(b)-f(0)}{b}=\\dfrac{\\frac{6}{b+1}-6}{b}=\\dfrac{6-6(b+1)}{b\\,(b+1)}=\\dfrac{-6}{b+1}$.\\\\\nCal $\\dfrac{-6}{b+1}=-1$, és a dir $b+1=6$: $\\boxed{b=5}$.\\\\\nEntre $x=0$ i $x=5$ la funció baixa, de mitjana, una unitat per cada unitat que avança $x$: la\nrecta secant que uneix $(0,6)$ i $(5,1)$ té pendent $-1$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nCalcula $f'(1)$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\nf'(1)=\\lim_{h\\to0}\\frac{\\frac{6}{2+h}-3}{h}\n=\\lim_{h\\to0}\\frac{6-3(2+h)}{h(2+h)}\n=\\lim_{h\\to0}\\frac{-3h}{h(2+h)}\n=\\lim_{h\\to0}\\frac{-3}{2+h}=-\\frac32 .\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula $f'(4)$ aplicant la definició i compara'l amb $f'(1)$. Què indica sobre la gràfica?\n\n\\begin{solucio}\n\\[\nf'(4)=\\lim_{h\\to0}\\frac{\\frac{6}{5+h}-\\frac65}{h}\n=\\lim_{h\\to0}\\frac{30-6(5+h)}{5h(5+h)}\n=\\lim_{h\\to0}\\frac{-6}{5(5+h)}=-\\frac{6}{25} .\n\\]\nTotes dues derivades són negatives, però $|f'(1)|=1{,}5$ és molt més gran que\n$|f'(4)|=0{,}24$: la gràfica baixa molt més inclinada en $x=1$ que en $x=4$, on ja s'aplana.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tvm-derivada-punt/q002/out/enunciat.pdf",
    "pdf_solucio": "u8/tvm-derivada-punt/q002/out/solucio.pdf",
    "pdf_curt": "u8/tvm-derivada-punt/q002/out/enunciat-curt.pdf",
@@ -3007,8 +3449,8 @@ const BANC = {
    "titol": "Velocitat mitjana i velocitat instantània per definició",
    "punts": 2.5,
    "apartats": [
-    0.75,
     1.0,
+    0.75,
     0.75
    ],
    "apartats_curt": [
@@ -3032,8 +3474,34 @@ const BANC = {
    "temes_secundaris": [],
    "procedencia": null,
    "unitats": [],
-   "tries": [],
-   "tex": "Un objecte es mou en línia recta i la posició, en metres, ve donada per\n\\[\ns(t)=t^2+2t ,\n\\]\non $t$ és el temps en segons.\n\n\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nCalcula la velocitat mitjana entre $t=1$ i $t=4$, i entre $t=1$ i $t=2$.\n\n\\begin{solucio}\n$s(1)=3$, $s(2)=8$ i $s(4)=24$.\\\\\nEntre $t=1$ i $t=4$: $\\dfrac{24-3}{3}=7$ m/s. \\quad Entre $t=1$ i $t=2$:\n$\\dfrac{8-3}{1}=5$ m/s.\\\\\nLa velocitat mitjana és la taxa de variació mitjana de la posició.\n\\end{solucio}\n\n\\apartat[1,25]{1}\nCalcula la velocitat instantània en $t=1$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\ns'(1)=\\lim_{h\\to0}\\frac{s(1+h)-s(1)}{h}\n=\\lim_{h\\to0}\\frac{(1+h)^2+2(1+h)-3}{h}\n=\\lim_{h\\to0}\\frac{h^2+4h}{h}=\\lim_{h\\to0}(h+4)=4 \\ \\text{m/s}.\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la velocitat instantània en $t=4$ i compara-la amb la velocitat mitjana entre $t=1$ i\n$t=4$.\n\n\\begin{solucio}\n\\[\ns'(4)=\\lim_{h\\to0}\\frac{(4+h)^2+2(4+h)-24}{h}=\\lim_{h\\to0}\\frac{h^2+10h}{h}=10 \\ \\text{m/s}.\n\\]\nLa velocitat mitjana entre $t=1$ i $t=4$ era de $7$ m/s, just entre els $4$ m/s de l'inici i\nels $10$ m/s del final: l'objecte va accelerant.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tries": [
+    {
+     "id": "tvm-tasca",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/original/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/original/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/original/solucio-curt.pdf"
+      },
+      {
+       "id": "aproximacio-numerica",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/aproximacio-numerica/enunciat.pdf",
+       "pdf_solucio": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/aproximacio-numerica/solucio.pdf",
+       "pdf_curt": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/aproximacio-numerica/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u8/tvm-derivada-punt/q003/out/tries/tvm-tasca/aproximacio-numerica/solucio-curt.pdf"
+      }
+     ]
+    }
+   ],
+   "tex": "Un objecte es mou en línia recta i la posició, en metres, ve donada per\n\\[\ns(t)=t^2+2t ,\n\\]\non $t$ és el temps en segons.\n\n\\begin{apartats}\n\n\\begin{tria}{tvm-tasca}\n\\itemtria{original}{0,75}{1,25}\nCalcula la velocitat mitjana entre $t=1$ i $t=4$, i entre $t=1$ i $t=2$.\n\n\\begin{solucio}\n$s(1)=3$, $s(2)=8$ i $s(4)=24$.\\\\\nEntre $t=1$ i $t=4$: $\\dfrac{24-3}{3}=7$ m/s. \\quad Entre $t=1$ i $t=2$:\n$\\dfrac{8-3}{1}=5$ m/s.\\\\\nLa velocitat mitjana és la taxa de variació mitjana de la posició.\n\\end{solucio}\n\n\\itemtria{aproximacio-numerica}{0,75}{1,25}\nCalcula la velocitat mitjana entre $t=1$ i $t=1{,}1$, entre $t=1$ i $t=1{,}01$, i entre $t=1$ i\n$t=1{,}001$. Cap a quin valor sembla que s'acosten? Què representa aquest valor?\n\n\\begin{solucio}\n$v_m=\\dfrac{s(1+\\Delta t)-s(1)}{\\Delta t}$, amb $s(1)=3$:\n\\[\n\\frac{s(1{,}1)-3}{0{,}1}=\\frac{3{,}41-3}{0{,}1}=4{,}1,\\qquad\n\\frac{s(1{,}01)-3}{0{,}01}=4{,}01,\\qquad\n\\frac{s(1{,}001)-3}{0{,}001}=4{,}001 .\n\\]\nS'acosten a $4$ m/s: és la \\textbf{velocitat instantània} en $t=1$, el límit de les velocitats\nmitjanes quan l'interval es fa cada vegada més petit.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{1}\nCalcula la velocitat instantània en $t=1$ aplicant la definició de derivada.\n\n\\begin{solucio}\n\\[\ns'(1)=\\lim_{h\\to0}\\frac{s(1+h)-s(1)}{h}\n=\\lim_{h\\to0}\\frac{(1+h)^2+2(1+h)-3}{h}\n=\\lim_{h\\to0}\\frac{h^2+4h}{h}=\\lim_{h\\to0}(h+4)=4 \\ \\text{m/s}.\n\\]\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula la velocitat instantània en $t=4$ i compara-la amb la velocitat mitjana entre $t=1$ i\n$t=4$.\n\n\\begin{solucio}\n\\[\ns'(4)=\\lim_{h\\to0}\\frac{(4+h)^2+2(4+h)-24}{h}=\\lim_{h\\to0}\\frac{h^2+10h}{h}=10 \\ \\text{m/s}.\n\\]\nLa velocitat mitjana entre $t=1$ i $t=4$ era de $7$ m/s, just entre els $4$ m/s de l'inici i\nels $10$ m/s del final: l'objecte va accelerant.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u8/tvm-derivada-punt/q003/out/enunciat.pdf",
    "pdf_solucio": "u8/tvm-derivada-punt/q003/out/solucio.pdf",
    "pdf_curt": "u8/tvm-derivada-punt/q003/out/enunciat-curt.pdf",
