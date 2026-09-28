@@ -1,6 +1,6 @@
 /* FITXER GENERAT PER build/build.py — NO L'EDITIS MAI */
 const BANC = {
- "generat": "2026-09-28 05:51 UTC",
+ "generat": "2026-09-28 07:15 UTC",
  "unitats": {
   "u7": {
    "nom": "Unitat 7",
@@ -657,18 +657,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "troba-interval",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/alternativa/solucio.pdf",
-       "pdf_curt": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/alternativa/solucio-curt.pdf"
+       "pdf": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/troba-interval/enunciat.pdf",
+       "pdf_solucio": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/troba-interval/solucio.pdf",
+       "pdf_curt": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/troba-interval/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/bolzano-biseccio/q001/out/tries/bolzano-existencia/troba-interval/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3+x^2+x-1 .\n\\]\n\n\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució\na l'interval $[0,1]$.\n\n\\begin{solucio}\n\\emph{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\noposats, aleshores existeix almenys un $c\\in(a,b)$ tal que $f(c)=0$.\\\\\n$f$ és polinòmica, per tant contínua a $\\mathbb{R}$ i en particular a $[0,1]$.\nCom que $f(0)=-1<0$ i $f(1)=2>0$, hi ha almenys una arrel a $(0,1)$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació\n\\[\nx^3-4x+1=0\n\\]\nté almenys una solució a l'interval $[0,1]$.\n\n\\begin{solucio}\n\\emph{Teorema de Bolzano.} Si $g$ és contínua a $[a,b]$ i $g(a)$ i $g(b)$ tenen signes\noposats, aleshores existeix almenys un $c\\in(a,b)$ tal que $g(c)=0$.\\\\\nSigui $g(x)=x^3-4x+1$: és polinòmica, per tant contínua a $\\mathbb{R}$ i en particular a\n$[0,1]$. Com que $g(0)=1>0$ i $g(1)=1-4+1=-2<0$, hi ha almenys una arrel a $(0,1)$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{0,75}\nAplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui\nuna solució de l'equació. Justifica cada pas.\n\n\\begin{solucio}\n$f\\!\\left(\\tfrac12\\right)=\\tfrac18+\\tfrac14+\\tfrac12-1=-\\tfrac18<0$. Com que\n$f(1)>0$, l'arrel és a $\\left(\\tfrac12,1\\right)$, de longitud $\\tfrac12$.\\\\\n$f\\!\\left(\\tfrac34\\right)=\\tfrac{27}{64}+\\tfrac{9}{16}+\\tfrac34-1=\\tfrac{47}{64}>0$.\nCom que $f\\!\\left(\\tfrac12\\right)<0$, l'arrel és a\n$\\left(\\tfrac12,\\tfrac34\\right)$, de longitud $\\tfrac14=0{,}25$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDemostra que les gràfiques de les funcions $y=e^{x}$ i $y=3-x$ es tallen en algun punt\nd'abscissa $x\\in(0,1)$.\n\n\\begin{solucio}\nEs tallen on $e^x=3-x$, és a dir on $k(x)=e^x+x-3$ s'anul·la. $k$ és contínua a\n$\\mathbb{R}$ per ser suma de funcions contínues, i\n$k(0)=1-3=-2<0$, $k(1)=e-2\\approx0{,}72>0$.\nPer Bolzano existeix $c\\in(0,1)$ amb $k(c)=0$, que és l'abscissa del punt de tall.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\nf(x)=x^3+x^2+x-1 .\n\\]\n\n\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució\na l'interval $[0,1]$.\n\n\\begin{solucio}\n\\emph{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\noposats, aleshores existeix almenys un $c\\in(a,b)$ tal que $f(c)=0$.\\\\\n$f$ és polinòmica, per tant contínua a $\\mathbb{R}$ i en particular a $[0,1]$.\nCom que $f(0)=-1<0$ i $f(1)=2>0$, hi ha almenys una arrel a $(0,1)$.\n\\end{solucio}\n\n\\itemtria{troba-interval}{1}{1,25}\nEnuncia el teorema de Bolzano i troba dos nombres enters consecutius entre els quals\nl'equació $f(x)=0$ tingui una solució. Justifica-ho.\n\n\\begin{solucio}\n\\emph{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\noposats, aleshores existeix almenys un $c\\in(a,b)$ tal que $f(c)=0$.\\\\\n$f$ és polinòmica, per tant contínua a $\\mathbb{R}$. Se n'avalua el signe en alguns enters:\n$f(-2)=-7$, $f(-1)=-2$, $f(0)=-1$ i $f(1)=2$. Com que $f(0)<0<f(1)$, per Bolzano hi ha\nalmenys una solució a $(0,1)$: els enters buscats són $0$ i $1$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{0,75}\nAplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui\nuna solució de l'equació. Justifica cada pas.\n\n\\begin{solucio}\n$f\\!\\left(\\tfrac12\\right)=\\tfrac18+\\tfrac14+\\tfrac12-1=-\\tfrac18<0$. Com que\n$f(1)>0$, l'arrel és a $\\left(\\tfrac12,1\\right)$, de longitud $\\tfrac12$.\\\\\n$f\\!\\left(\\tfrac34\\right)=\\tfrac{27}{64}+\\tfrac{9}{16}+\\tfrac34-1=\\tfrac{47}{64}>0$.\nCom que $f\\!\\left(\\tfrac12\\right)<0$, l'arrel és a\n$\\left(\\tfrac12,\\tfrac34\\right)$, de longitud $\\tfrac14=0{,}25$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDemostra que les gràfiques de les funcions $y=e^{x}$ i $y=3-x$ es tallen en algun punt\nd'abscissa $x\\in(0,1)$.\n\n\\begin{solucio}\nEs tallen on $e^x=3-x$, és a dir on $k(x)=e^x+x-3$ s'anul·la. $k$ és contínua a\n$\\mathbb{R}$ per ser suma de funcions contínues, i\n$k(0)=1-3=-2<0$, $k(1)=e-2\\approx0{,}72>0$.\nPer Bolzano existeix $c\\in(0,1)$ amb $k(c)=0$, que és l'abscissa del punt de tall.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/bolzano-biseccio/q001/out/enunciat.pdf",
    "pdf_solucio": "u7/bolzano-biseccio/q001/out/solucio.pdf",
    "pdf_curt": "u7/bolzano-biseccio/q001/out/enunciat-curt.pdf",
@@ -725,18 +725,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "tres-arrels",
        "llarg": 0.75,
        "curt": 1.25,
-       "pdf": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/alternativa/solucio.pdf",
-       "pdf_curt": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/alternativa/solucio-curt.pdf"
+       "pdf": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/tres-arrels/enunciat.pdf",
+       "pdf_solucio": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/tres-arrels/solucio.pdf",
+       "pdf_curt": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/tres-arrels/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/bolzano-biseccio/q002/out/tries/bolzano-existencia/tres-arrels/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{0,75}{1,25}\nDemostra que la funció\n\\[\nf(x)=3^{x-1}+x\n\\]\npren el valor $4$ en algun punt de l'interval $(1,2)$.\n\n\\begin{solucio}\nConsiderem $g(x)=f(x)-4=3^{x-1}+x-4$. Demostrar que $f$ pren el valor $4$ equival a\ndemostrar que $g$ s'anul·la.\\\\\n$g$ és contínua a $\\mathbb{R}$ (suma d'una exponencial i un polinomi), en particular a\n$[1,2]$, i $g(1)=1+1-4=-2<0$, $g(2)=3+2-4=1>0$.\\\\\nPel teorema de Bolzano, existeix $c\\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=4$.\n\\end{solucio}\n\n\\itemtria{alternativa}{0,75}{1,25}\nDemostra que la funció\n\\[\nf(x)=2^{x}+2x\n\\]\npren el valor $7$ en algun punt de l'interval $(1,2)$.\n\n\\begin{solucio}\nConsiderem $g(x)=f(x)-7=2^{x}+2x-7$. Demostrar que $f$ pren el valor $7$ equival a\ndemostrar que $g$ s'anul·la.\\\\\n$g$ és contínua a $\\mathbb{R}$ (suma d'una exponencial i un polinomi), en particular a\n$[1,2]$, i $g(1)=2+2-7=-3<0$, $g(2)=4+4-7=1>0$.\\\\\nPel teorema de Bolzano, existeix $c\\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=7$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nDemostra que l'equació\n\\[\nx^3+2x-5=0\n\\]\nté almenys una solució a l'interval $[1,2]$ i troba un interval de longitud $0{,}1$ que la\ncontingui.\n\n\\begin{solucio}\n$p(x)=x^3+2x-5$ és polinòmica i, per tant, contínua. $p(1)=-2<0$ i $p(2)=7>0$: per\nBolzano hi ha una arrel a $(1,2)$.\\\\\n$p(1{,}5)=1{,}375>0$: l'arrel és a $(1;\\,1{,}5)$.\\\\\n$p(1{,}3)=-0{,}203<0$ i $p(1{,}4)=0{,}544>0$: l'arrel és a $(1{,}3;\\,1{,}4)$, de\nlongitud $0{,}1$. Qualsevol nombre d'aquest interval n'és una aproximació amb un error\nmenor que una dècima.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nDemostra que les gràfiques de $y=2^{x}$ i $y=3x$ es tallen en algun punt d'abscissa\n$x\\in(0,1)$.\n\n\\begin{solucio}\nEs tallen on $2^x=3x$, és a dir on s'anul·la $k(x)=2^x-3x$, que és contínua a\n$\\mathbb{R}$. $k(0)=1>0$ i $k(1)=2-3=-1<0$. Per Bolzano, existeix $c\\in(0,1)$ amb\n$k(c)=0$.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{0,75}{1,25}\nDemostra que la funció\n\\[\nf(x)=3^{x-1}+x\n\\]\npren el valor $4$ en algun punt de l'interval $(1,2)$.\n\n\\begin{solucio}\nConsiderem $g(x)=f(x)-4=3^{x-1}+x-4$. Demostrar que $f$ pren el valor $4$ equival a\ndemostrar que $g$ s'anul·la.\\\\\n$g$ és contínua a $\\mathbb{R}$ (suma d'una exponencial i un polinomi), en particular a\n$[1,2]$, i $g(1)=1+1-4=-2<0$, $g(2)=3+2-4=1>0$.\\\\\nPel teorema de Bolzano, existeix $c\\in(1,2)$ amb $g(c)=0$, és a dir, $f(c)=4$.\n\\end{solucio}\n\n\\itemtria{tres-arrels}{0,75}{1,25}\nDemostra que l'equació\n\\[\nx^3-3x+1=0\n\\]\nté almenys tres solucions reals. Quantes en té exactament? Justifica-ho.\n\n\\begin{solucio}\n$p(x)=x^3-3x+1$ és polinòmica i, per tant, contínua a $\\mathbb{R}$. Se n'avalua el signe en\nalguns enters:\n\\[\np(-2)=-1,\\qquad p(-1)=3,\\qquad p(0)=1,\\qquad p(1)=-1,\\qquad p(2)=3 .\n\\]\n$p$ canvia de signe a $(-2,-1)$, a $(0,1)$ i a $(1,2)$. Per Bolzano hi ha almenys una solució\na cadascun d'aquests intervals, i com que no se solapen, en són almenys tres de diferents.\\\\\nUn polinomi de grau $3$ té com a màxim tres arrels reals: en té \\textbf{exactament tres}.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nDemostra que l'equació\n\\[\nx^3+2x-5=0\n\\]\nté almenys una solució a l'interval $[1,2]$ i troba un interval de longitud $0{,}1$ que la\ncontingui.\n\n\\begin{solucio}\n$p(x)=x^3+2x-5$ és polinòmica i, per tant, contínua. $p(1)=-2<0$ i $p(2)=7>0$: per\nBolzano hi ha una arrel a $(1,2)$.\\\\\n$p(1{,}5)=1{,}375>0$: l'arrel és a $(1;\\,1{,}5)$.\\\\\n$p(1{,}3)=-0{,}203<0$ i $p(1{,}4)=0{,}544>0$: l'arrel és a $(1{,}3;\\,1{,}4)$, de\nlongitud $0{,}1$. Qualsevol nombre d'aquest interval n'és una aproximació amb un error\nmenor que una dècima.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nDemostra que les gràfiques de $y=2^{x}$ i $y=3x$ es tallen en algun punt d'abscissa\n$x\\in(0,1)$.\n\n\\begin{solucio}\nEs tallen on $2^x=3x$, és a dir on s'anul·la $k(x)=2^x-3x$, que és contínua a\n$\\mathbb{R}$. $k(0)=1>0$ i $k(1)=2-3=-1<0$. Per Bolzano, existeix $c\\in(0,1)$ amb\n$k(c)=0$.\n\\end{solucio}\n\n\\end{apartats}\n",
    "pdf": "u7/bolzano-biseccio/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/bolzano-biseccio/q002/out/solucio.pdf",
    "pdf_curt": "u7/bolzano-biseccio/q002/out/enunciat-curt.pdf",
@@ -792,18 +792,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "hipotesis",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/alternativa/solucio.pdf",
-       "pdf_curt": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/alternativa/solucio-curt.pdf"
+       "pdf": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/hipotesis/enunciat.pdf",
+       "pdf_solucio": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/hipotesis/solucio.pdf",
+       "pdf_curt": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/hipotesis/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/bolzano-biseccio/q003/out/tries/bolzano-existencia/hipotesis/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\nf(x)=x^3+2x^2-1 .\n\\]\n\n\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució a\nl'interval $[0,1]$.\n\n\\begin{solucio}\n\\textbf{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\ndiferents, aleshores existeix almenys un $c\\in(a,b)$ amb $f(c)=0$.\\\\\n$f$ és polinòmica i, per tant, contínua a $[0,1]$. A més, $f(0)=-1<0$ i $f(1)=1+2-1=2>0$.\nCom que canvia de signe, hi ha almenys una solució a $(0,1)$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació\n\\[\nx^3+3x-2=0\n\\]\nté almenys una solució a l'interval $[0,1]$.\n\n\\begin{solucio}\n\\textbf{Teorema de Bolzano.} Si $g$ és contínua a $[a,b]$ i $g(a)$ i $g(b)$ tenen signes\ndiferents, aleshores existeix almenys un $c\\in(a,b)$ amb $g(c)=0$.\\\\\nSigui $g(x)=x^3+3x-2$: és polinòmica i, per tant, contínua a $[0,1]$. A més, $g(0)=-2<0$\ni $g(1)=1+3-2=2>0$. Com que canvia de signe, hi ha almenys una solució a $(0,1)$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{0,75}\nAplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui una\nsolució de l'equació. Justifica cada pas.\n\n\\begin{solucio}\n$f(0{,}5)=0{,}125+0{,}5-1=-0{,}375<0$: com que $f(1)>0$, l'arrel és a\n$\\left(0{,}5;\\,1\\right)$.\\\\\n$f(0{,}75)=0{,}421875+1{,}125-1=0{,}546875>0$: com que $f(0{,}5)<0$, l'arrel és a\n$\\left(0{,}5;\\,0{,}75\\right)$, de longitud $0{,}25$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDemostra que les gràfiques de les funcions $y=\\ln x$ i $y=2-x$ es tallen en algun punt\nd'abscissa $x\\in(1,2)$.\n\n\\begin{solucio}\nEs tallen on $\\ln x=2-x$, és a dir on s'anul·la $k(x)=\\ln x+x-2$, que és contínua a $(0,+\\infty)$\ni, per tant, a $[1,2]$.\\\\\n$k(1)=0+1-2=-1<0$ i $k(2)=\\ln2+0\\approx0{,}69>0$. Per Bolzano, hi ha un punt de tall a $(1,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\nf(x)=x^3+2x^2-1 .\n\\]\n\n\\begin{apartats}\n\n\\begin{tria}{bolzano-existencia}\n\\itemtria{original}{1}{1,25}\nEnuncia el teorema de Bolzano i demostra que l'equació $f(x)=0$ té almenys una solució a\nl'interval $[0,1]$.\n\n\\begin{solucio}\n\\textbf{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\ndiferents, aleshores existeix almenys un $c\\in(a,b)$ amb $f(c)=0$.\\\\\n$f$ és polinòmica i, per tant, contínua a $[0,1]$. A més, $f(0)=-1<0$ i $f(1)=1+2-1=2>0$.\nCom que canvia de signe, hi ha almenys una solució a $(0,1)$.\n\\end{solucio}\n\n\\itemtria{hipotesis}{1}{1,25}\nEnuncia el teorema de Bolzano. Es pot aplicar a la funció $f$ a l'interval $[0,1]$? I a la\nfunció\n\\[\ng(x)=\\frac{1}{x-1}\n\\]\na l'interval $[0,2]$? Justifica les dues respostes i digues què en pots concloure.\n\n\\begin{solucio}\n\\textbf{Teorema de Bolzano.} Si $f$ és contínua a $[a,b]$ i $f(a)$ i $f(b)$ tenen signes\ndiferents, aleshores existeix almenys un $c\\in(a,b)$ amb $f(c)=0$.\\\\\n$f$: és polinòmica, i per tant contínua a $[0,1]$, i $f(0)=-1<0$, $f(1)=2>0$. \\textbf{Sí}\nque s'hi pot aplicar: l'equació $f(x)=0$ té almenys una solució a $(0,1)$.\\\\\n$g$: $g(0)=-1$ i $g(2)=1$ tenen signes diferents, però $g$ no està definida en $x=1\\in[0,2]$,\ni per tant no hi és contínua. \\textbf{No} s'hi pot aplicar: el teorema no hi garanteix res.\nDe fet, $g$ no s'anul·la mai (el numerador és $1$), i això no contradiu el teorema, perquè\nuna de les hipòtesis no es compleix.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,25]{0,75}\nAplicant el mètode de la bisecció, troba un interval de longitud $0{,}25$ que contingui una\nsolució de l'equació. Justifica cada pas.\n\n\\begin{solucio}\n$f(0{,}5)=0{,}125+0{,}5-1=-0{,}375<0$: com que $f(1)>0$, l'arrel és a\n$\\left(0{,}5;\\,1\\right)$.\\\\\n$f(0{,}75)=0{,}421875+1{,}125-1=0{,}546875>0$: com que $f(0{,}5)<0$, l'arrel és a\n$\\left(0{,}5;\\,0{,}75\\right)$, de longitud $0{,}25$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nDemostra que les gràfiques de les funcions $y=\\ln x$ i $y=2-x$ es tallen en algun punt\nd'abscissa $x\\in(1,2)$.\n\n\\begin{solucio}\nEs tallen on $\\ln x=2-x$, és a dir on s'anul·la $k(x)=\\ln x+x-2$, que és contínua a $(0,+\\infty)$\ni, per tant, a $[1,2]$.\\\\\n$k(1)=0+1-2=-1<0$ i $k(2)=\\ln2+0\\approx0{,}69>0$. Per Bolzano, hi ha un punt de tall a $(1,2)$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/bolzano-biseccio/q003/out/enunciat.pdf",
    "pdf_solucio": "u7/bolzano-biseccio/q003/out/solucio.pdf",
    "pdf_curt": "u7/bolzano-biseccio/q003/out/enunciat-curt.pdf",
@@ -922,18 +922,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "branca-interna",
        "llarg": 1.25,
        "curt": 2.5,
-       "pdf": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/alternativa/solucio.pdf",
-       "pdf_curt": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/alternativa/solucio-curt.pdf"
+       "pdf": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/branca-interna/enunciat.pdf",
+       "pdf_solucio": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/branca-interna/solucio.pdf",
+       "pdf_curt": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/branca-interna/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/continuitat-trossos/q002/out/tries/trosos-tasca-a/branca-interna/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{trosos-tasca-a}\n\\itemtria{original}{1,25}{2,5}\nEstudia la continuïtat de la funció següent i classifica'n les discontinuïtats.\n\\[\nf(x)=\\begin{cases}\n  x+2 & \\si{x<-1},\\\\[3pt]\n  x^2 & \\si{-1\\le x\\le 2},\\\\[3pt]\n  3+\\ln(x-1) & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues primeres branques són polinòmiques. La tercera és contínua per a $x>1$, i per\ntant a $(2,+\\infty)$. Cal estudiar els enganxaments.\\\\\n$x=-1$: $\\lim_{x\\to-1^-}f(x)=1$, $f(-1)=1$ i $\\lim_{x\\to-1^+}f(x)=1$. \\textbf{És contínua.}\\\\\n$x=2$: $f(2)=4=\\lim_{x\\to2^-}f(x)$, però $\\lim_{x\\to2^+}f(x)=3+\\ln1=3$.\nLaterals finits i diferents: \\textbf{salt finit} (de salt $1$).\\\\\nPer tant, $f$ és contínua a $\\mathbb{R}\\setminus\\{2\\}$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1,25}{2,5}\nEstudia la continuïtat de la funció següent i classifica'n les discontinuïtats.\n\\[\ng(x)=\\begin{cases}\n  x+1 & \\si{x<0},\\\\[3pt]\n  x^2+1 & \\si{0\\le x\\le 1},\\\\[3pt]\n  3+\\ln x & \\si{x>1}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues primeres branques són polinòmiques. La tercera és contínua per a $x>0$, i per\ntant a $(1,+\\infty)$. Cal estudiar els enganxaments.\\\\\n$x=0$: $\\lim_{x\\to0^-}g(x)=1$, $g(0)=1$ i $\\lim_{x\\to0^+}g(x)=1$. \\textbf{És contínua.}\\\\\n$x=1$: $g(1)=2=\\lim_{x\\to1^-}g(x)$, però $\\lim_{x\\to1^+}g(x)=3+\\ln1=3$.\nLaterals finits i diferents: \\textbf{salt finit} (de salt $1$).\\\\\nPer tant, $g$ és contínua a $\\mathbb{R}\\setminus\\{1\\}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1,25}\nEscriu la funció\n\\[\nh(x)=\\frac{x^2-1}{|x-1|}\n\\]\ncom una funció definida a trossos, sense valor absolut. Estudia'n la continuïtat i\nclassifica les discontinuïtats que presenti.\n\n\\begin{solucio}\n$h$ no està definida en $x=1$.\\\\\nSi $x>1$: $|x-1|=x-1$ i $h(x)=\\dfrac{(x-1)(x+1)}{x-1}=x+1$.\\\\\nSi $x<1$: $|x-1|=-(x-1)$ i $h(x)=\\dfrac{(x-1)(x+1)}{-(x-1)}=-x-1$.\n\\[\nh(x)=\\begin{cases} -x-1 & \\si{x<1},\\\\ x+1 & \\si{x>1}.\\end{cases}\n\\]\nCada branca és polinòmica, i per tant $h$ és contínua a $\\mathbb{R}\\setminus\\{1\\}$.\nEn $x=1$: $\\lim_{x\\to1^-}h(x)=-2$ i $\\lim_{x\\to1^+}h(x)=2$. Laterals finits i\ndiferents: \\textbf{salt finit}.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{trosos-tasca-a}\n\\itemtria{original}{1,25}{2,5}\nEstudia la continuïtat de la funció següent i classifica'n les discontinuïtats.\n\\[\nf(x)=\\begin{cases}\n  x+2 & \\si{x<-1},\\\\[3pt]\n  x^2 & \\si{-1\\le x\\le 2},\\\\[3pt]\n  3+\\ln(x-1) & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues primeres branques són polinòmiques. La tercera és contínua per a $x>1$, i per\ntant a $(2,+\\infty)$. Cal estudiar els enganxaments.\\\\\n$x=-1$: $\\lim_{x\\to-1^-}f(x)=1$, $f(-1)=1$ i $\\lim_{x\\to-1^+}f(x)=1$. \\textbf{És contínua.}\\\\\n$x=2$: $f(2)=4=\\lim_{x\\to2^-}f(x)$, però $\\lim_{x\\to2^+}f(x)=3+\\ln1=3$.\nLaterals finits i diferents: \\textbf{salt finit} (de salt $1$).\\\\\nPer tant, $f$ és contínua a $\\mathbb{R}\\setminus\\{2\\}$.\n\\end{solucio}\n\n\\itemtria{branca-interna}{1,25}{2,5}\nEstudia la continuïtat de la funció següent i classifica'n les discontinuïtats.\n\\[\ng(x)=\\begin{cases}\n  x+2 & \\si{x<-1},\\\\[3pt]\n  x^2 & \\si{-1\\le x\\le 2},\\\\[6pt]\n  \\dfrac{4}{x-3} & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues primeres branques són polinòmiques. La tercera és contínua a tot el seu interval\nexcepte on s'anul·la el denominador, $x=3$, que és \\textbf{dins} de $(2,+\\infty)$: cal\nestudiar els dos enganxaments i també aquest punt.\\\\\n$x=-1$: $\\lim_{x\\to-1^-}g(x)=1$, $g(-1)=1$ i $\\lim_{x\\to-1^+}g(x)=1$. \\textbf{És contínua.}\\\\\n$x=2$: $g(2)=4=\\lim_{x\\to2^-}g(x)$, però $\\lim_{x\\to2^+}g(x)=\\dfrac{4}{2-3}=-4$.\nLaterals finits i diferents: \\textbf{salt finit} (de salt $8$).\\\\\n$x=3$: $g(3)$ no existeix, i els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la\ndreta): \\textbf{salt infinit} (asímptota vertical $x=3$).\\\\\nPer tant, $g$ és contínua a $\\mathbb{R}\\setminus\\{2,3\\}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1,25}\nEscriu la funció\n\\[\nh(x)=\\frac{x^2-1}{|x-1|}\n\\]\ncom una funció definida a trossos, sense valor absolut. Estudia'n la continuïtat i\nclassifica les discontinuïtats que presenti.\n\n\\begin{solucio}\n$h$ no està definida en $x=1$.\\\\\nSi $x>1$: $|x-1|=x-1$ i $h(x)=\\dfrac{(x-1)(x+1)}{x-1}=x+1$.\\\\\nSi $x<1$: $|x-1|=-(x-1)$ i $h(x)=\\dfrac{(x-1)(x+1)}{-(x-1)}=-x-1$.\n\\[\nh(x)=\\begin{cases} -x-1 & \\si{x<1},\\\\ x+1 & \\si{x>1}.\\end{cases}\n\\]\nCada branca és polinòmica, i per tant $h$ és contínua a $\\mathbb{R}\\setminus\\{1\\}$.\nEn $x=1$: $\\lim_{x\\to1^-}h(x)=-2$ i $\\lim_{x\\to1^+}h(x)=2$. Laterals finits i\ndiferents: \\textbf{salt finit}.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/continuitat-trossos/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/continuitat-trossos/q002/out/solucio.pdf",
    "pdf_curt": "u7/continuitat-trossos/q002/out/enunciat-curt.pdf",
@@ -1041,6 +1041,31 @@ const BANC = {
    "unitats": [],
    "tries": [
     {
+     "id": "domini-funcions",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/original/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/original/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/original/solucio-curt.pdf"
+      },
+      {
+       "id": "signes-i-condicions",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/signes-i-condicions/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/signes-i-condicions/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/signes-i-condicions/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q001/out/tries/domini-funcions/signes-i-condicions/solucio-curt.pdf"
+      }
+     ]
+    },
+    {
      "id": "discontinuitats-racional",
      "defecte_llarg": "original",
      "defecte_curt": "original",
@@ -1055,18 +1080,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "factor-doble",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/alternativa/solucio.pdf",
-       "pdf_curt": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/alternativa/solucio-curt.pdf"
+       "pdf": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/factor-doble/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/factor-doble/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/factor-doble/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q001/out/tries/discontinuitats-racional/factor-doble/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{x^2-9} & \\sa y=\\ln(4-x)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $x^2-9\\ge0$, és a dir $|x|\\ge3$: $\\mathrm{Dom}=(-\\infty,-3]\\cup[3,+\\infty)$.\nÉs contínua a tot el domini (composició de contínues).\\\\\nii) Cal $4-x>0$: $\\mathrm{Dom}=(-\\infty,4)$. És contínua a tot el domini.\n\\end{solucio}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts en què la funció\n\\[\nf(x)=\\frac{x^2-x-6}{x^2-2x-3}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$f(x)=\\dfrac{(x-3)(x+2)}{(x-3)(x+1)}=\\dfrac{x+2}{x+1}$ per a $x\\ne3$.\nEl domini és $\\mathbb{R}\\setminus\\{-1,3\\}$.\\\\\n$x=3$: $\\lim_{x\\to3}f(x)=\\dfrac54$ existeix però $f(3)$ no. \\textbf{Discontinuïtat evitable.}\\\\\n$x=-1$: els laterals valen $-\\infty$ i $+\\infty$. \\textbf{Salt infinit} (asímptota vertical $x=-1$).\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nTroba els punts en què la funció\n\\[\ng(x)=\\frac{x^2+x-2}{x^2-4}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$g(x)=\\dfrac{(x-1)(x+2)}{(x-2)(x+2)}=\\dfrac{x-1}{x-2}$ per a $x\\ne-2$.\nEl domini és $\\mathbb{R}\\setminus\\{-2,2\\}$.\\\\\n$x=-2$: $\\lim_{x\\to-2}g(x)=\\dfrac34$ existeix però $g(-2)$ no. \\textbf{Discontinuïtat evitable.}\\\\\n$x=2$: els laterals valen $-\\infty$ i $+\\infty$. \\textbf{Salt infinit} (asímptota vertical $x=2$).\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció racional $g$ tal que\n\\[\n\\lim_{x\\to+\\infty}g(x)=3\n\\]\ni que tingui una discontinuïtat de salt infinit en $x=2$ i una discontinuïtat evitable en\n$x=-1$.\n\n\\begin{solucio}\nPer exemple $g(x)=\\dfrac{3(x+1)(x-5)}{(x+1)(x-2)}$.\\\\\nEl factor $(x+1)$ es cancel·la: discontinuïtat evitable en $x=-1$, amb límit\n$\\frac{3(-6)}{-3}=6$. En $x=2$ el denominador s'anul·la i el numerador no: salt infinit.\nNumerador i denominador tenen el mateix grau i el quocient dels coeficients principals\nés $3$, així que $\\lim_{x\\to+\\infty}g(x)=3$. (La resposta no és única.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{domini-funcions}\n\\itemtria{original}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{x^2-9} & \\sa y=\\ln(4-x)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $x^2-9\\ge0$, és a dir $|x|\\ge3$: $\\mathrm{Dom}=(-\\infty,-3]\\cup[3,+\\infty)$.\nÉs contínua a tot el domini (composició de contínues).\\\\\nii) Cal $4-x>0$: $\\mathrm{Dom}=(-\\infty,4)$. És contínua a tot el domini.\n\\end{solucio}\n\n\\itemtria{signes-i-condicions}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{\\frac{x-1}{x+2}} & \\sa y=\\frac{x+1}{\\ln x}\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $\\dfrac{x-1}{x+2}\\ge0$, amb $x\\ne-2$. Taula de signes: el quocient és positiu a\n$(-\\infty,-2)$, negatiu a $(-2,1)$, nul en $x=1$ i positiu a $(1,+\\infty)$:\n$\\mathrm{Dom}=(-\\infty,-2)\\cup[1,+\\infty)$. És contínua a tot el domini.\\\\\nii) Cal $x>0$ (logaritme) i $\\ln x\\ne0$, és a dir $x\\ne1$: $\\mathrm{Dom}=(0,1)\\cup(1,+\\infty)$.\nÉs contínua a tot el domini. En $x=1$ els laterals valen $-\\infty$ i $+\\infty$:\n\\textbf{salt infinit}.\n\\end{solucio}\n\\end{tria}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts en què la funció\n\\[\nf(x)=\\frac{x^2-x-6}{x^2-2x-3}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$f(x)=\\dfrac{(x-3)(x+2)}{(x-3)(x+1)}=\\dfrac{x+2}{x+1}$ per a $x\\ne3$.\nEl domini és $\\mathbb{R}\\setminus\\{-1,3\\}$.\\\\\n$x=3$: $\\lim_{x\\to3}f(x)=\\dfrac54$ existeix però $f(3)$ no. \\textbf{Discontinuïtat evitable.}\\\\\n$x=-1$: els laterals valen $-\\infty$ i $+\\infty$. \\textbf{Salt infinit} (asímptota vertical $x=-1$).\n\\end{solucio}\n\n\\itemtria{factor-doble}{1}{1,25}\nTroba els punts en què la funció\n\\[\nh(x)=\\frac{x^2-x-6}{x^2-6x+9}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$h(x)=\\dfrac{(x-3)(x+2)}{(x-3)^2}$: el domini és $\\mathbb{R}\\setminus\\{3\\}$.\\\\\nEl factor $(x-3)$ és comú, però en simplificar encara en queda un al denominador:\n$h(x)=\\dfrac{x+2}{x-3}$ per a $x\\ne3$. En $x=3$ el numerador tendeix a $5$ i el denominador a\n$0$: els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la dreta).\n\\textbf{Salt infinit}, no evitable: un factor comú no fa evitable la discontinuïtat si el\ndenominador encara s'hi anul·la després de simplificar.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció racional $g$ tal que\n\\[\n\\lim_{x\\to+\\infty}g(x)=3\n\\]\ni que tingui una discontinuïtat de salt infinit en $x=2$ i una discontinuïtat evitable en\n$x=-1$.\n\n\\begin{solucio}\nPer exemple $g(x)=\\dfrac{3(x+1)(x-5)}{(x+1)(x-2)}$.\\\\\nEl factor $(x+1)$ es cancel·la: discontinuïtat evitable en $x=-1$, amb límit\n$\\frac{3(-6)}{-3}=6$. En $x=2$ el denominador s'anul·la i el numerador no: salt infinit.\nNumerador i denominador tenen el mateix grau i el quocient dels coeficients principals\nés $3$, així que $\\lim_{x\\to+\\infty}g(x)=3$. (La resposta no és única.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/domini-discontinuitats/q001/out/enunciat.pdf",
    "pdf_solucio": "u7/domini-discontinuitats/q001/out/solucio.pdf",
    "pdf_curt": "u7/domini-discontinuitats/q001/out/enunciat-curt.pdf",
@@ -1110,6 +1135,31 @@ const BANC = {
    "unitats": [],
    "tries": [
     {
+     "id": "domini-funcions",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/original/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/original/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/original/solucio-curt.pdf"
+      },
+      {
+       "id": "signes-i-condicions",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/signes-i-condicions/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/signes-i-condicions/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/signes-i-condicions/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q002/out/tries/domini-funcions/signes-i-condicions/solucio-curt.pdf"
+      }
+     ]
+    },
+    {
      "id": "discontinuitats-racional",
      "defecte_llarg": "original",
      "defecte_curt": "original",
@@ -1124,18 +1174,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "factor-doble",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/alternativa/solucio.pdf",
-       "pdf_curt": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/alternativa/solucio-curt.pdf"
+       "pdf": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/factor-doble/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/factor-doble/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/factor-doble/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q002/out/tries/discontinuitats-racional/factor-doble/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{x^2-2x-3} & \\sa y=\\ln|x-2|\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $x^2-2x-3=(x-3)(x+1)\\ge0$: $\\mathrm{Dom}=(-\\infty,-1]\\cup[3,+\\infty)$.\nÉs contínua a tot el domini.\\\\\nii) Cal $|x-2|>0$, és a dir $x\\ne2$: $\\mathrm{Dom}=\\mathbb{R}\\setminus\\{2\\}$.\nÉs contínua a tot el domini. En $x=2$ els dos laterals valen $-\\infty$:\n\\textbf{salt infinit} (asímptota vertical $x=2$).\n\\end{solucio}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts de discontinuïtat de la funció\n\\[\nf(x)=\\frac{x-1}{x^3+3x^2-4}\n\\]\ni classifica'ls.\n\n\\begin{solucio}\n$x=1$ anul·la el denominador. Per Ruffini, $x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2$.\nEl domini és $\\mathbb{R}\\setminus\\{-2,1\\}$ i, per a $x\\neq1$, $f(x)=\\dfrac{1}{(x+2)^2}$.\\\\\n$x=1$: $\\lim_{x\\to1}f(x)=\\dfrac19$, però $f(1)$ no existeix: \\textbf{evitable}.\\\\\n$x=-2$: $(x+2)^2>0$ als dos costats, així que els dos laterals valen $+\\infty$:\n\\textbf{salt infinit}, amb $\\lim_{x\\to-2}f(x)=+\\infty$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nTroba els punts de discontinuïtat de la funció\n\\[\nh(x)=\\frac{x+1}{x^3-5x^2+3x+9}\n\\]\ni classifica'ls.\n\n\\begin{solucio}\n$x=-1$ anul·la el denominador. Per Ruffini, $x^3-5x^2+3x+9=(x+1)(x^2-6x+9)=(x+1)(x-3)^2$.\nEl domini és $\\mathbb{R}\\setminus\\{-1,3\\}$ i, per a $x\\neq-1$, $h(x)=\\dfrac{1}{(x-3)^2}$.\\\\\n$x=-1$: $\\lim_{x\\to-1}h(x)=\\dfrac1{16}$, però $h(-1)$ no existeix: \\textbf{evitable}.\\\\\n$x=3$: $(x-3)^2>0$ als dos costats, així que els dos laterals valen $+\\infty$:\n\\textbf{salt infinit}, amb $\\lim_{x\\to3}h(x)=+\\infty$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció definida a trossos que sigui contínua a tot\n$\\mathbb{R}$ excepte en $x=0$, on ha de tenir una discontinuïtat evitable, i en $x=3$, on\nha de tenir una discontinuïtat de salt finit.\n\n\\begin{solucio}\nPer exemple:\n\\[\nf(x)=\\begin{cases} x & \\si{x<3,\\ x\\ne0},\\\\ 1 & \\si{x=0},\\\\ x+1 & \\si{x\\ge3}.\\end{cases}\n\\]\nEn $x=0$: $\\lim_{x\\to0}f(x)=0\\ne f(0)=1$, evitable. En $x=3$: laterals $3$ i $4$, salt\nfinit. A la resta de punts, les branques són polinòmiques. (La resposta no és única.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{domini-funcions}\n\\itemtria{original}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{x^2-2x-3} & \\sa y=\\ln|x-2|\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $x^2-2x-3=(x-3)(x+1)\\ge0$: $\\mathrm{Dom}=(-\\infty,-1]\\cup[3,+\\infty)$.\nÉs contínua a tot el domini.\\\\\nii) Cal $|x-2|>0$, és a dir $x\\ne2$: $\\mathrm{Dom}=\\mathbb{R}\\setminus\\{2\\}$.\nÉs contínua a tot el domini. En $x=2$ els dos laterals valen $-\\infty$:\n\\textbf{salt infinit} (asímptota vertical $x=2$).\n\\end{solucio}\n\n\\itemtria{signes-i-condicions}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{1+x^3} & \\sa y=\\ln\\frac{2-x}{x+1}\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $1+x^3\\ge0$, és a dir $x^3\\ge-1$; com que $x^3$ és creixent, $x\\ge-1$:\n$\\mathrm{Dom}=[-1,+\\infty)$. (També: $1+x^3=(x+1)(x^2-x+1)$, i el segon factor és sempre\npositiu.) És contínua a tot el domini.\\\\\nii) Cal $\\dfrac{2-x}{x+1}>0$: numerador i denominador del mateix signe, cosa que només passa\nsi $-1<x<2$. $\\mathrm{Dom}=(-1,2)$, i hi és contínua.\n\\end{solucio}\n\\end{tria}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts de discontinuïtat de la funció\n\\[\nf(x)=\\frac{x-1}{x^3+3x^2-4}\n\\]\ni classifica'ls.\n\n\\begin{solucio}\n$x=1$ anul·la el denominador. Per Ruffini, $x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2$.\nEl domini és $\\mathbb{R}\\setminus\\{-2,1\\}$ i, per a $x\\neq1$, $f(x)=\\dfrac{1}{(x+2)^2}$.\\\\\n$x=1$: $\\lim_{x\\to1}f(x)=\\dfrac19$, però $f(1)$ no existeix: \\textbf{evitable}.\\\\\n$x=-2$: $(x+2)^2>0$ als dos costats, així que els dos laterals valen $+\\infty$:\n\\textbf{salt infinit}, amb $\\lim_{x\\to-2}f(x)=+\\infty$.\n\\end{solucio}\n\n\\itemtria{factor-doble}{1}{1,25}\nTroba els punts de discontinuïtat de la funció\n\\[\nh(x)=\\frac{x+2}{x^3+3x^2-4}\n\\]\ni classifica'ls.\n\n\\begin{solucio}\nPer Ruffini, $x^3+3x^2-4=(x-1)(x+2)^2$. El domini és $\\mathbb{R}\\setminus\\{-2,1\\}$ i, per a\n$x\\neq-2$, $h(x)=\\dfrac{1}{(x-1)(x+2)}$: el factor $(x+2)$ es cancel·la una vegada, però en\nqueda un altre al denominador.\\\\\n$x=-2$: els laterals valen $+\\infty$ (per l'esquerra) i $-\\infty$ (per la dreta):\n\\textbf{salt infinit}, no evitable.\\\\\n$x=1$: els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la dreta):\n\\textbf{salt infinit}.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció definida a trossos que sigui contínua a tot\n$\\mathbb{R}$ excepte en $x=0$, on ha de tenir una discontinuïtat evitable, i en $x=3$, on\nha de tenir una discontinuïtat de salt finit.\n\n\\begin{solucio}\nPer exemple:\n\\[\nf(x)=\\begin{cases} x & \\si{x<3,\\ x\\ne0},\\\\ 1 & \\si{x=0},\\\\ x+1 & \\si{x\\ge3}.\\end{cases}\n\\]\nEn $x=0$: $\\lim_{x\\to0}f(x)=0\\ne f(0)=1$, evitable. En $x=3$: laterals $3$ i $4$, salt\nfinit. A la resta de punts, les branques són polinòmiques. (La resposta no és única.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/domini-discontinuitats/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/domini-discontinuitats/q002/out/solucio.pdf",
    "pdf_curt": "u7/domini-discontinuitats/q002/out/enunciat-curt.pdf",
@@ -1177,6 +1227,31 @@ const BANC = {
    "unitats": [],
    "tries": [
     {
+     "id": "domini-funcions",
+     "defecte_llarg": "original",
+     "defecte_curt": "original",
+     "items": [
+      {
+       "id": "original",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/original/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/original/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/original/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/original/solucio-curt.pdf"
+      },
+      {
+       "id": "signes-i-condicions",
+       "llarg": 0.75,
+       "curt": 1.25,
+       "pdf": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/signes-i-condicions/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/signes-i-condicions/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/signes-i-condicions/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q003/out/tries/domini-funcions/signes-i-condicions/solucio-curt.pdf"
+      }
+     ]
+    },
+    {
      "id": "discontinuitats-racional",
      "defecte_llarg": "original",
      "defecte_curt": "original",
@@ -1191,18 +1266,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "factor-doble",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/alternativa/solucio.pdf",
-       "pdf_curt": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/alternativa/solucio-curt.pdf"
+       "pdf": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/factor-doble/enunciat.pdf",
+       "pdf_solucio": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/factor-doble/solucio.pdf",
+       "pdf_curt": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/factor-doble/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/domini-discontinuitats/q003/out/tries/discontinuitats-racional/factor-doble/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\apartat[1,25]{0,75}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{4-x^2} & \\sa y=\\ln\\left(x^2-1\\right)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $4-x^2\\ge0$, és a dir $x^2\\le4$: el domini és $[-2,2]$. Hi és contínua, perquè ho són\nl'arrel i el polinomi de dins.\\\\\nii) Cal $x^2-1>0$: el domini és $(-\\infty,-1)\\cup(1,+\\infty)$. Hi és contínua, perquè ho són\nel logaritme i el polinomi de dins.\n\\end{solucio}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts en què la funció\n\\[\nf(x)=\\frac{x^2-4}{x^2+x-6}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$f(x)=\\dfrac{(x-2)(x+2)}{(x-2)(x+3)}$: el denominador s'anul·la en $x=2$ i en $x=-3$.\\\\\nEn $x=2$ el factor $(x-2)$ es cancel·la i queda $\\dfrac{x+2}{x+3}\\to\\dfrac45$: el límit\nexisteix i la funció no hi està definida, per tant la \\textbf{discontinuïtat és evitable}.\\\\\nEn $x=-3$ el denominador s'anul·la i el numerador no ($f$ tendeix a $\\pm\\infty$ segons el\ncostat): \\textbf{salt infinit}, amb asímptota vertical $x=-3$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nTroba els punts en què la funció\n\\[\nk(x)=\\frac{x^2-9}{x^2-x-12}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$k(x)=\\dfrac{(x-3)(x+3)}{(x-4)(x+3)}$: el denominador s'anul·la en $x=4$ i en $x=-3$.\\\\\nEn $x=-3$ el factor $(x+3)$ es cancel·la i queda $\\dfrac{x-3}{x-4}\\to\\dfrac67$: el límit\nexisteix i la funció no hi està definida, per tant la \\textbf{discontinuïtat és evitable}.\\\\\nEn $x=4$ el denominador s'anul·la i el numerador no ($k$ tendeix a $\\pm\\infty$ segons el\ncostat): \\textbf{salt infinit}, amb asímptota vertical $x=4$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció racional $g$ tal que\n\\[\n\\lim_{x\\to+\\infty}g(x)=-2\n\\]\ni que tingui una discontinuïtat evitable en $x=1$ i una discontinuïtat de salt infinit en\n$x=-4$.\n\n\\begin{solucio}\nEl límit a l'infinit demana que numerador i denominador tinguin el mateix grau i que el\nquocient dels coeficients principals sigui $-2$. L'evitable en $x=1$ demana el factor $(x-1)$\na tots dos; el salt infinit en $x=-4$, el factor $(x+4)$ només al denominador. Per exemple:\n\\[\ng(x)=\\frac{-2(x-1)(x-5)}{(x-1)(x+4)} .\n\\]\nQualsevol altra amb aquests factors també val.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{domini-funcions}\n\\itemtria{original}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{4-x^2} & \\sa y=\\ln\\left(x^2-1\\right)\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $4-x^2\\ge0$, és a dir $x^2\\le4$: el domini és $[-2,2]$. Hi és contínua, perquè ho són\nl'arrel i el polinomi de dins.\\\\\nii) Cal $x^2-1>0$: el domini és $(-\\infty,-1)\\cup(1,+\\infty)$. Hi és contínua, perquè ho són\nel logaritme i el polinomi de dins.\n\\end{solucio}\n\n\\itemtria{signes-i-condicions}{0,75}{1,25}\nDetermina el domini i estudia la continuïtat de les funcions següents:\n\\begin{graella}{2}\n  \\sa y=\\sqrt{\\frac{3-x}{x+1}} & \\sa y=\\frac{1}{\\sqrt{x}-2}\n\\end{graella}\n\n\\begin{solucio}\ni) Cal $\\dfrac{3-x}{x+1}\\ge0$, amb $x\\ne-1$. El quocient és negatiu a $(-\\infty,-1)$, positiu\na $(-1,3)$, nul en $x=3$ i negatiu a $(3,+\\infty)$: $\\mathrm{Dom}=(-1,3]$. És contínua a tot\nel domini.\\\\\nii) Cal $x\\ge0$ (arrel) i $\\sqrt{x}\\ne2$, és a dir $x\\ne4$: $\\mathrm{Dom}=[0,4)\\cup(4,+\\infty)$.\nÉs contínua a tot el domini. En $x=4$ els laterals valen $-\\infty$ i $+\\infty$:\n\\textbf{salt infinit}.\n\\end{solucio}\n\\end{tria}\n\n\\begin{tria}{discontinuitats-racional}\n\\itemtria{original}{1}{1,25}\nTroba els punts en què la funció\n\\[\nf(x)=\\frac{x^2-4}{x^2+x-6}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$f(x)=\\dfrac{(x-2)(x+2)}{(x-2)(x+3)}$: el denominador s'anul·la en $x=2$ i en $x=-3$.\\\\\nEn $x=2$ el factor $(x-2)$ es cancel·la i queda $\\dfrac{x+2}{x+3}\\to\\dfrac45$: el límit\nexisteix i la funció no hi està definida, per tant la \\textbf{discontinuïtat és evitable}.\\\\\nEn $x=-3$ el denominador s'anul·la i el numerador no ($f$ tendeix a $\\pm\\infty$ segons el\ncostat): \\textbf{salt infinit}, amb asímptota vertical $x=-3$.\n\\end{solucio}\n\n\\itemtria{factor-doble}{1}{1,25}\nTroba els punts en què la funció\n\\[\nk(x)=\\frac{x^2-4}{x^2-4x+4}\n\\]\nés discontínua i classifica'n la discontinuïtat.\n\n\\begin{solucio}\n$k(x)=\\dfrac{(x-2)(x+2)}{(x-2)^2}$: el domini és $\\mathbb{R}\\setminus\\{2\\}$.\\\\\nEl factor $(x-2)$ és comú, però en simplificar encara en queda un al denominador:\n$k(x)=\\dfrac{x+2}{x-2}$ per a $x\\ne2$. En $x=2$ el numerador tendeix a $4$ i el denominador a\n$0$: els laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la dreta).\n\\textbf{Salt infinit}, no evitable.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\n\\textbf{Inventa.} Escriu una funció racional $g$ tal que\n\\[\n\\lim_{x\\to+\\infty}g(x)=-2\n\\]\ni que tingui una discontinuïtat evitable en $x=1$ i una discontinuïtat de salt infinit en\n$x=-4$.\n\n\\begin{solucio}\nEl límit a l'infinit demana que numerador i denominador tinguin el mateix grau i que el\nquocient dels coeficients principals sigui $-2$. L'evitable en $x=1$ demana el factor $(x-1)$\na tots dos; el salt infinit en $x=-4$, el factor $(x+4)$ només al denominador. Per exemple:\n\\[\ng(x)=\\frac{-2(x-1)(x-5)}{(x-1)(x+4)} .\n\\]\nQualsevol altra amb aquests factors també val.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/domini-discontinuitats/q003/out/enunciat.pdf",
    "pdf_solucio": "u7/domini-discontinuitats/q003/out/solucio.pdf",
    "pdf_curt": "u7/domini-discontinuitats/q003/out/enunciat-curt.pdf",
@@ -1699,18 +1774,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-punt/q001/out/tries/limits-tipus/un-limit/solucio-curt.pdf"
       },
       {
-       "id": "dos-limits",
-       "llarg": 1.25,
+       "id": "quocient-k-zero",
+       "llarg": 0.75,
        "curt": 1.25,
-       "pdf": "u7/limits-punt/q001/out/tries/limits-tipus/dos-limits/enunciat.pdf",
-       "pdf_solucio": "u7/limits-punt/q001/out/tries/limits-tipus/dos-limits/solucio.pdf",
-       "pdf_curt": "u7/limits-punt/q001/out/tries/limits-tipus/dos-limits/enunciat.pdf",
-       "pdf_solucio_curt": "u7/limits-punt/q001/out/tries/limits-tipus/dos-limits/solucio.pdf"
+       "pdf": "u7/limits-punt/q001/out/tries/limits-tipus/quocient-k-zero/enunciat.pdf",
+       "pdf_solucio": "u7/limits-punt/q001/out/tries/limits-tipus/quocient-k-zero/solucio.pdf",
+       "pdf_curt": "u7/limits-punt/q001/out/tries/limits-tipus/quocient-k-zero/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-punt/q001/out/tries/limits-tipus/quocient-k-zero/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-tipus}\n\\itemtria{un-limit}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to-2}\\frac{x^2+x-2}{x^2+3x+2}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$. Factoritzem i simplifiquem:\n\\[\n\\frac{(x+2)(x-1)}{(x+1)(x+2)}=\\frac{x-1}{x+1}\\;\\xrightarrow[x\\to-2]{}\\;\\frac{-3}{-1}=3.\n\\]\n\\end{solucio}\n\n\\itemtria{dos-limits}{1,25}\nCalcula els límits següents:\n\\[\n\\lim_{x\\to-2}\\frac{x^2+x-2}{x^2+3x+2}\n\\qquad\n\\lim_{x\\to3}\\frac{x^2-2x-3}{x^2-9}\n\\]\n\n\\begin{solucio}\nTots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\\\\ni) $\\dfrac{(x+2)(x-1)}{(x+1)(x+2)}=\\dfrac{x-1}{x+1}\\to\\dfrac{-3}{-1}=3$.\\\\\nii) $\\dfrac{(x-3)(x+1)}{(x-3)(x+3)}=\\dfrac{x+1}{x+3}\\to\\dfrac{4}{6}=\\dfrac23$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia si existeix el límit següent. Si no existeix, justifica-ho amb els límits laterals.\n\\[\n\\lim_{x\\to1}\\frac{x^2-1}{x^2-2x+1}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$: $\\dfrac{(x-1)(x+1)}{(x-1)^2}=\\dfrac{x+1}{x-1}$, que tendeix a\n$\\dfrac{2}{0}$. Els límits laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la\ndreta), i per tant el límit \\textbf{no existeix}.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{1}\nDonada la funció\n\\[\ng(x)=\\begin{cases} x^2+1 & \\si{x<2},\\\\[4pt] \\dfrac{12}{x+1} & \\si{x\\ge 2},\\end{cases}\n\\]\ncalcula, si existeixen, els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to2}g(x)\n\\end{graella}\n\n\\begin{solucio}\ni) Com que $-1<2$, hi actua la branca $x^2+1$: el límit val $2$. La branca\n$\\dfrac{12}{x+1}$ no hi intervé, tot i no estar definida en $x=-1$.\\\\\nii) Per l'esquerra, $x^2+1\\to5$; per la dreta, $\\dfrac{12}{x+1}\\to4$. Els laterals són\ndiferents, i per tant el límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-tipus}\n\\itemtria{un-limit}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to-2}\\frac{x^2+x-2}{x^2+3x+2}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$. Factoritzem i simplifiquem:\n\\[\n\\frac{(x+2)(x-1)}{(x+1)(x+2)}=\\frac{x-1}{x+1}\\;\\xrightarrow[x\\to-2]{}\\;\\frac{-3}{-1}=3.\n\\]\n\\end{solucio}\n\n\\itemtria{quocient-k-zero}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to2}\\frac{x+1}{x^2-4x+4}\n\\]\n\n\\begin{solucio}\nEn substituir, el numerador tendeix a $3$ i el denominador a $0$: \\textbf{no} és una\nindeterminació, i no hi ha res a simplificar. Com que $x^2-4x+4=(x-2)^2$ és positiu als dos\ncostats de $2$, tots dos laterals valen $+\\infty$, i per tant el límit és $+\\infty$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nEstudia si existeix el límit següent. Si no existeix, justifica-ho amb els límits laterals.\n\\[\n\\lim_{x\\to1}\\frac{x^2-1}{x^2-2x+1}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$: $\\dfrac{(x-1)(x+1)}{(x-1)^2}=\\dfrac{x+1}{x-1}$, que tendeix a\n$\\dfrac{2}{0}$. Els límits laterals valen $-\\infty$ (per l'esquerra) i $+\\infty$ (per la\ndreta), i per tant el límit \\textbf{no existeix}.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{1}\nDonada la funció\n\\[\ng(x)=\\begin{cases} x^2+1 & \\si{x<2},\\\\[4pt] \\dfrac{12}{x+1} & \\si{x\\ge 2},\\end{cases}\n\\]\ncalcula, si existeixen, els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to2}g(x)\n\\end{graella}\n\n\\begin{solucio}\ni) Com que $-1<2$, hi actua la branca $x^2+1$: el límit val $2$. La branca\n$\\dfrac{12}{x+1}$ no hi intervé, tot i no estar definida en $x=-1$.\\\\\nii) Per l'esquerra, $x^2+1\\to5$; per la dreta, $\\dfrac{12}{x+1}\\to4$. Els laterals són\ndiferents, i per tant el límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-punt/q001/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-punt/q001/out/solucio.pdf",
    "pdf_curt": "u7/limits-punt/q001/out/enunciat-curt.pdf",
@@ -1765,18 +1840,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-punt/q002/out/tries/limits-parell/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "valor-absolut",
        "llarg": 1.0,
        "curt": 1.25,
-       "pdf": "u7/limits-punt/q002/out/tries/limits-parell/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/limits-punt/q002/out/tries/limits-parell/alternativa/solucio.pdf",
-       "pdf_curt": "u7/limits-punt/q002/out/tries/limits-parell/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/limits-punt/q002/out/tries/limits-parell/alternativa/solucio-curt.pdf"
+       "pdf": "u7/limits-punt/q002/out/tries/limits-parell/valor-absolut/enunciat.pdf",
+       "pdf_solucio": "u7/limits-punt/q002/out/tries/limits-parell/valor-absolut/solucio.pdf",
+       "pdf_curt": "u7/limits-punt/q002/out/tries/limits-parell/valor-absolut/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-punt/q002/out/tries/limits-parell/valor-absolut/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-parell}\n\\itemtria{original}{1}{1,25}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to3}\\frac{x^2-9}{x^2-5x+6} &\n  \\sa \\lim_{x\\to-1}\\frac{x^3+1}{x^2-1}\n\\end{graella}\n\n\\begin{solucio}\nTots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\\\\ni) $\\dfrac{(x-3)(x+3)}{(x-3)(x-2)}=\\dfrac{x+3}{x-2}\\to\\dfrac{6}{1}=6$.\\\\\nii) Per Ruffini, $x^3+1=(x+1)(x^2-x+1)$:\n$\\dfrac{(x+1)(x^2-x+1)}{(x+1)(x-1)}=\\dfrac{x^2-x+1}{x-1}\\to\\dfrac{3}{-2}=-\\dfrac32$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1}{1,25}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to2}\\frac{x^2-4}{x^2-x-2} &\n  \\sa \\lim_{x\\to2}\\frac{x^3-8}{x^2-4}\n\\end{graella}\n\n\\begin{solucio}\nTots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\\\\ni) $\\dfrac{(x-2)(x+2)}{(x-2)(x+1)}=\\dfrac{x+2}{x+1}\\to\\dfrac{4}{3}$.\\\\\nii) Per Ruffini, $x^3-8=(x-2)(x^2+2x+4)$:\n$\\dfrac{(x-2)(x^2+2x+4)}{(x-2)(x+2)}=\\dfrac{x^2+2x+4}{x+2}\\to\\dfrac{12}{4}=3$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to2}\\frac{x^2-4x+4}{x^2-3x+2}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$:\n$\\dfrac{(x-2)^2}{(x-2)(x-1)}=\\dfrac{x-2}{x-1}\\to\\dfrac{0}{1}=0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nCalcula, si existeixen, els límits següents. Justifica-ho amb els límits laterals.\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to1}\\frac{x+2}{(x-1)^2} & \\sa \\lim_{x\\to1}\\frac{x+2}{x-1}\n\\end{graella}\n\n\\begin{solucio}\nEn tots dos casos el numerador tendeix a $3$ i el denominador a $0$.\\\\\ni) $(x-1)^2>0$ als dos costats de $1$: els dos laterals valen $+\\infty$ i, per tant,\nel límit és $+\\infty$.\\\\\nii) $x-1$ canvia de signe: el lateral esquerre val $-\\infty$ i el dret $+\\infty$.\nEl límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-parell}\n\\itemtria{original}{1}{1,25}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to3}\\frac{x^2-9}{x^2-5x+6} &\n  \\sa \\lim_{x\\to-1}\\frac{x^3+1}{x^2-1}\n\\end{graella}\n\n\\begin{solucio}\nTots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\\\\ni) $\\dfrac{(x-3)(x+3)}{(x-3)(x-2)}=\\dfrac{x+3}{x-2}\\to\\dfrac{6}{1}=6$.\\\\\nii) Per Ruffini, $x^3+1=(x+1)(x^2-x+1)$:\n$\\dfrac{(x+1)(x^2-x+1)}{(x+1)(x-1)}=\\dfrac{x^2-x+1}{x-1}\\to\\dfrac{3}{-2}=-\\dfrac32$.\n\\end{solucio}\n\n\\itemtria{valor-absolut}{1}{1,25}\nCalcula, si existeixen, els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to1}\\frac{|x-1|}{x-1} &\n  \\sa \\lim_{x\\to1}\\frac{(x-1)^2}{|x-1|}\n\\end{graella}\n\n\\begin{solucio}\nEn tots dos cal separar els dos costats de $1$: $|x-1|=-(x-1)$ si $x<1$, i $|x-1|=x-1$ si $x>1$.\\\\\ni) Per l'esquerra, $\\dfrac{-(x-1)}{x-1}=-1$; per la dreta, $\\dfrac{x-1}{x-1}=1$. Els laterals\nsón finits i diferents: el límit \\textbf{no existeix}.\\\\\nii) $\\dfrac{(x-1)^2}{|x-1|}=\\dfrac{|x-1|^2}{|x-1|}=|x-1|$, que tendeix a $0$ pels dos costats:\nel límit val $0$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to2}\\frac{x^2-4x+4}{x^2-3x+2}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$:\n$\\dfrac{(x-2)^2}{(x-2)(x-1)}=\\dfrac{x-2}{x-1}\\to\\dfrac{0}{1}=0$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{0,75}\nCalcula, si existeixen, els límits següents. Justifica-ho amb els límits laterals.\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to1}\\frac{x+2}{(x-1)^2} & \\sa \\lim_{x\\to1}\\frac{x+2}{x-1}\n\\end{graella}\n\n\\begin{solucio}\nEn tots dos casos el numerador tendeix a $3$ i el denominador a $0$.\\\\\ni) $(x-1)^2>0$ als dos costats de $1$: els dos laterals valen $+\\infty$ i, per tant,\nel límit és $+\\infty$.\\\\\nii) $x-1$ canvia de signe: el lateral esquerre val $-\\infty$ i el dret $+\\infty$.\nEl límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-punt/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-punt/q002/out/solucio.pdf",
    "pdf_curt": "u7/limits-punt/q002/out/enunciat-curt.pdf",
@@ -1834,18 +1909,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-punt/q003/out/tries/limits-tipus/un-limit/solucio-curt.pdf"
       },
       {
-       "id": "dos-limits",
-       "llarg": 1.25,
+       "id": "conjugat",
+       "llarg": 0.75,
        "curt": 1.25,
-       "pdf": "u7/limits-punt/q003/out/tries/limits-tipus/dos-limits/enunciat.pdf",
-       "pdf_solucio": "u7/limits-punt/q003/out/tries/limits-tipus/dos-limits/solucio.pdf",
-       "pdf_curt": "u7/limits-punt/q003/out/tries/limits-tipus/dos-limits/enunciat.pdf",
-       "pdf_solucio_curt": "u7/limits-punt/q003/out/tries/limits-tipus/dos-limits/solucio.pdf"
+       "pdf": "u7/limits-punt/q003/out/tries/limits-tipus/conjugat/enunciat.pdf",
+       "pdf_solucio": "u7/limits-punt/q003/out/tries/limits-tipus/conjugat/solucio.pdf",
+       "pdf_curt": "u7/limits-punt/q003/out/tries/limits-tipus/conjugat/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-punt/q003/out/tries/limits-tipus/conjugat/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-tipus}\n\\itemtria{un-limit}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to4}\\frac{x^2-16}{x^2-6x+8}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$. Factoritzem i simplifiquem:\n\\[\n\\frac{(x-4)(x+4)}{(x-4)(x-2)}=\\frac{x+4}{x-2}\\;\\xrightarrow[x\\to4]{}\\;\\frac{8}{2}=4 .\n\\]\n\\end{solucio}\n\n\\itemtria{dos-limits}{1,25}\nCalcula els límits següents:\n\\[\n\\lim_{x\\to4}\\frac{x^2-16}{x^2-6x+8}\n\\qquad\n\\lim_{x\\to-3}\\frac{x^2-9}{x^2+2x-3}\n\\]\n\n\\begin{solucio}\nTots dos presenten una indeterminació $0/0$: es factoritza i se simplifica.\\\\\ni) $\\dfrac{(x-4)(x+4)}{(x-4)(x-2)}=\\dfrac{x+4}{x-2}\\to\\dfrac{8}{2}=4$.\\\\\nii) $\\dfrac{(x-3)(x+3)}{(x-1)(x+3)}=\\dfrac{x-3}{x-1}\\to\\dfrac{-6}{-4}=\\dfrac32$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to-2}\\frac{x^3+8}{x+2}\n\\]\n\n\\begin{solucio}\nTambé és $0/0$. Per Ruffini, $x^3+8=(x+2)\\left(x^2-2x+4\\right)$, i per tant\n\\[\n\\frac{(x+2)\\left(x^2-2x+4\\right)}{x+2}=x^2-2x+4\\;\\xrightarrow[x\\to-2]{}\\;4+4+4=12 .\n\\]\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{1}\nDonada la funció\n\\[\nh(x)=\\begin{cases} 2x+1 & \\si{x<1},\\\\[4pt] 3-x^2 & \\si{x\\ge 1},\\end{cases}\n\\]\ncalcula, si existeixen, els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}h(x) & \\sa \\lim_{x\\to1}h(x)\n\\end{graella}\n\n\\begin{solucio}\ni) Com que $-1<1$, hi actua la branca $2x+1$: el límit val $-1$.\\\\\nii) Per l'esquerra, $2x+1\\to3$; per la dreta, $3-x^2\\to2$. Els laterals són diferents, i per\ntant el límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{limits-tipus}\n\\itemtria{un-limit}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to4}\\frac{x^2-16}{x^2-6x+8}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$. Factoritzem i simplifiquem:\n\\[\n\\frac{(x-4)(x+4)}{(x-4)(x-2)}=\\frac{x+4}{x-2}\\;\\xrightarrow[x\\to4]{}\\;\\frac{8}{2}=4 .\n\\]\n\\end{solucio}\n\n\\itemtria{conjugat}{0,75}{1,25}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to4}\\frac{\\sqrt{x}-2}{x-4}\n\\]\n\n\\begin{solucio}\nÉs una indeterminació $0/0$, però no hi ha cap polinomi per factoritzar: es multiplica i es\ndivideix pel conjugat del numerador, $\\sqrt{x}+2$:\n\\[\n\\frac{\\left(\\sqrt{x}-2\\right)\\left(\\sqrt{x}+2\\right)}{(x-4)\\left(\\sqrt{x}+2\\right)}\n=\\frac{x-4}{(x-4)\\left(\\sqrt{x}+2\\right)}=\\frac{1}{\\sqrt{x}+2}\\;\\xrightarrow[x\\to4]{}\\;\\frac14 .\n\\]\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{0,75}\nCalcula el límit següent:\n\\[\n\\lim_{x\\to-2}\\frac{x^3+8}{x+2}\n\\]\n\n\\begin{solucio}\nTambé és $0/0$. Per Ruffini, $x^3+8=(x+2)\\left(x^2-2x+4\\right)$, i per tant\n\\[\n\\frac{(x+2)\\left(x^2-2x+4\\right)}{x+2}=x^2-2x+4\\;\\xrightarrow[x\\to-2]{}\\;4+4+4=12 .\n\\]\n\\end{solucio}\n\\end{nomesllarg}\n\n\\apartat[1,25]{1}\nDonada la funció\n\\[\nh(x)=\\begin{cases} 2x+1 & \\si{x<1},\\\\[4pt] 3-x^2 & \\si{x\\ge 1},\\end{cases}\n\\]\ncalcula, si existeixen, els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}h(x) & \\sa \\lim_{x\\to1}h(x)\n\\end{graella}\n\n\\begin{solucio}\ni) Com que $-1<1$, hi actua la branca $2x+1$: el límit val $-1$.\\\\\nii) Per l'esquerra, $2x+1\\to3$; per la dreta, $3-x^2\\to2$. Els laterals són diferents, i per\ntant el límit \\textbf{no existeix}.\n\\end{solucio}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-punt/q003/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-punt/q003/out/solucio.pdf",
    "pdf_curt": "u7/limits-punt/q003/out/enunciat-curt.pdf",
@@ -1903,18 +1978,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-trossos/q001/out/tries/trossos-punts/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "altra-branca",
        "llarg": 0.75,
        "curt": 1.0,
-       "pdf": "u7/limits-trossos/q001/out/tries/trossos-punts/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/limits-trossos/q001/out/tries/trossos-punts/alternativa/solucio.pdf",
-       "pdf_curt": "u7/limits-trossos/q001/out/tries/trossos-punts/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/limits-trossos/q001/out/tries/trossos-punts/alternativa/solucio-curt.pdf"
+       "pdf": "u7/limits-trossos/q001/out/tries/trossos-punts/altra-branca/enunciat.pdf",
+       "pdf_solucio": "u7/limits-trossos/q001/out/tries/trossos-punts/altra-branca/solucio.pdf",
+       "pdf_curt": "u7/limits-trossos/q001/out/tries/trossos-punts/altra-branca/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-trossos/q001/out/tries/trossos-punts/altra-branca/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-4}{x+2} & \\si{x<1},\\\\[8pt]\n  x^2+k & \\si{x\\ge 1},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-2}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<1$.\\\\\nEn $x=-2$ hi ha una indeterminació $\\tfrac00$:\n$\\dfrac{x^2-4}{x+2}=\\dfrac{(x+2)(x-2)}{x+2}=x-2\\to-4$.\nEl límit val $-4$, tot i que $g(-2)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-4}{2}=-2$.\n\\end{solucio}\n\n\\itemtria{alternativa}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-2}g(x) & \\sa \\lim_{x\\to-3}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<1$.\\\\\nEn $x=-2$ hi ha una indeterminació $\\tfrac00$:\n$\\dfrac{x^2-4}{x+2}=\\dfrac{(x+2)(x-2)}{x+2}=x-2\\to-4$.\nEl límit val $-4$, tot i que $g(-2)$ no existeix.\\\\\nEn $x=-3$ se substitueix directament: $\\dfrac{9-4}{-3+2}=\\dfrac{5}{-1}=-5$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=1$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to1}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to1^-}g(x)=\\dfrac{1-4}{1+2}=-1$ \\quad i \\quad $\\lim_{x\\to1^+}g(x)=1+k$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $1+k=-1$, és a dir\n$\\boxed{k=-2}$. Aleshores $\\lim_{x\\to1}g(x)=-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=-2$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne-2$ és $x-2\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $x^2-2\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-4}{x+2} & \\si{x<1},\\\\[8pt]\n  x^2+k & \\si{x\\ge 1},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-2}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<1$.\\\\\nEn $x=-2$ hi ha una indeterminació $\\tfrac00$:\n$\\dfrac{x^2-4}{x+2}=\\dfrac{(x+2)(x-2)}{x+2}=x-2\\to-4$.\nEl límit val $-4$, tot i que $g(-2)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-4}{2}=-2$.\n\\end{solucio}\n\n\\itemtria{altra-branca}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-2}g(x) & \\sa \\lim_{x\\to2}g(x)\n\\end{graella}\n\n\\begin{solucio}\nEn $x=-2$ actua la branca $x<1$, i hi ha una indeterminació $\\tfrac00$:\n$\\dfrac{x^2-4}{x+2}=\\dfrac{(x+2)(x-2)}{x+2}=x-2\\to-4$.\nEl límit val $-4$, tot i que $g(-2)$ no existeix.\\\\\nEn canvi, $x=2$ és a la branca $x\\ge1$: $\\lim_{x\\to2}g(x)=4+k$. La fórmula de la primera\nbranca hi donaria $0$, però per a $x\\ge1$ no és la que actua.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=1$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to1}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to1^-}g(x)=\\dfrac{1-4}{1+2}=-1$ \\quad i \\quad $\\lim_{x\\to1^+}g(x)=1+k$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $1+k=-1$, és a dir\n$\\boxed{k=-2}$. Aleshores $\\lim_{x\\to1}g(x)=-1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=-2$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne-2$ és $x-2\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $x^2-2\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-trossos/q001/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-trossos/q001/out/solucio.pdf",
    "pdf_curt": "u7/limits-trossos/q001/out/enunciat-curt.pdf",
@@ -1972,18 +2047,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-trossos/q002/out/tries/trossos-punts/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "altra-branca",
        "llarg": 0.75,
        "curt": 1.0,
-       "pdf": "u7/limits-trossos/q002/out/tries/trossos-punts/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/limits-trossos/q002/out/tries/trossos-punts/alternativa/solucio.pdf",
-       "pdf_curt": "u7/limits-trossos/q002/out/tries/trossos-punts/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/limits-trossos/q002/out/tries/trossos-punts/alternativa/solucio-curt.pdf"
+       "pdf": "u7/limits-trossos/q002/out/tries/trossos-punts/altra-branca/enunciat.pdf",
+       "pdf_solucio": "u7/limits-trossos/q002/out/tries/trossos-punts/altra-branca/solucio.pdf",
+       "pdf_curt": "u7/limits-trossos/q002/out/tries/trossos-punts/altra-branca/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-trossos/q002/out/tries/trossos-punts/altra-branca/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-1}{x+1} & \\si{x<2},\\\\[8pt]\n  3x+k & \\si{x\\ge 2},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<2$.\\\\\nEn $x=-1$ hi ha una indeterminació $0/0$:\n$\\dfrac{x^2-1}{x+1}=\\dfrac{(x+1)(x-1)}{x+1}=x-1\\to-2$.\nEl límit val $-2$, tot i que $g(-1)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-1}{1}=-1$.\n\\end{solucio}\n\n\\itemtria{alternativa}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to-3}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<2$.\\\\\nEn $x=-1$ hi ha una indeterminació $0/0$:\n$\\dfrac{x^2-1}{x+1}=\\dfrac{(x+1)(x-1)}{x+1}=x-1\\to-2$.\nEl límit val $-2$, tot i que $g(-1)$ no existeix.\\\\\nEn $x=-3$ se substitueix directament: $\\dfrac{9-1}{-3+1}=\\dfrac{8}{-2}=-4$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=2$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to2}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to2^-}g(x)=\\dfrac{4-1}{2+1}=1$ \\quad i \\quad $\\lim_{x\\to2^+}g(x)=6+k$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $6+k=1$, és a dir\n$\\boxed{k=-5}$. Aleshores $\\lim_{x\\to2}g(x)=1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=-5$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne-1$ és $x-1\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $3x-5\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-1}{x+1} & \\si{x<2},\\\\[8pt]\n  3x+k & \\si{x\\ge 2},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<2$.\\\\\nEn $x=-1$ hi ha una indeterminació $0/0$:\n$\\dfrac{x^2-1}{x+1}=\\dfrac{(x+1)(x-1)}{x+1}=x-1\\to-2$.\nEl límit val $-2$, tot i que $g(-1)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-1}{1}=-1$.\n\\end{solucio}\n\n\\itemtria{altra-branca}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-1}g(x) & \\sa \\lim_{x\\to3}g(x)\n\\end{graella}\n\n\\begin{solucio}\nEn $x=-1$ actua la branca $x<2$, i hi ha una indeterminació $0/0$:\n$\\dfrac{x^2-1}{x+1}=\\dfrac{(x+1)(x-1)}{x+1}=x-1\\to-2$.\nEl límit val $-2$, tot i que $g(-1)$ no existeix.\\\\\nEn canvi, $x=3$ és a la branca $x\\ge2$: $\\lim_{x\\to3}g(x)=9+k$. La fórmula de la primera\nbranca hi donaria $2$, però per a $x\\ge2$ no és la que actua.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=2$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to2}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to2^-}g(x)=\\dfrac{4-1}{2+1}=1$ \\quad i \\quad $\\lim_{x\\to2^+}g(x)=6+k$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $6+k=1$, és a dir\n$\\boxed{k=-5}$. Aleshores $\\lim_{x\\to2}g(x)=1$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=-5$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne-1$ és $x-1\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $3x-5\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-trossos/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-trossos/q002/out/solucio.pdf",
    "pdf_curt": "u7/limits-trossos/q002/out/enunciat-curt.pdf",
@@ -2041,18 +2116,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/limits-trossos/q003/out/tries/trossos-punts/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "altra-branca",
        "llarg": 0.75,
        "curt": 1.0,
-       "pdf": "u7/limits-trossos/q003/out/tries/trossos-punts/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/limits-trossos/q003/out/tries/trossos-punts/alternativa/solucio.pdf",
-       "pdf_curt": "u7/limits-trossos/q003/out/tries/trossos-punts/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/limits-trossos/q003/out/tries/trossos-punts/alternativa/solucio-curt.pdf"
+       "pdf": "u7/limits-trossos/q003/out/tries/trossos-punts/altra-branca/enunciat.pdf",
+       "pdf_solucio": "u7/limits-trossos/q003/out/tries/trossos-punts/altra-branca/solucio.pdf",
+       "pdf_curt": "u7/limits-trossos/q003/out/tries/trossos-punts/altra-branca/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/limits-trossos/q003/out/tries/trossos-punts/altra-branca/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-4}{x-2} & \\si{x<3},\\\\[8pt]\n  kx-1 & \\si{x\\ge 3},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to2}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<3$.\\\\\nEn $x=2$ hi ha una indeterminació $0/0$:\n$\\dfrac{(x-2)(x+2)}{x-2}=x+2\\to4$. El límit val $4$, tot i que $g(2)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-4}{-2}=2$.\n\\end{solucio}\n\n\\itemtria{alternativa}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to2}g(x) & \\sa \\lim_{x\\to-1}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<3$.\\\\\nEn $x=2$ hi ha una indeterminació $0/0$:\n$\\dfrac{(x-2)(x+2)}{x-2}=x+2\\to4$. El límit val $4$, tot i que $g(2)$ no existeix.\\\\\nEn $x=-1$ se substitueix directament: $\\dfrac{1-4}{-1-2}=\\dfrac{-3}{-3}=1$.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=3$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to3}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to3^-}g(x)=\\dfrac{9-4}{3-2}=5$ \\quad i \\quad $\\lim_{x\\to3^+}g(x)=3k-1$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $3k-1=5$, és a dir\n$\\boxed{k=2}$. Aleshores $\\lim_{x\\to3}g(x)=5$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=2$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne2$ és $x+2\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $2x-1\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "Considera la funció\n\\[\ng(x)=\\begin{cases}\n  \\dfrac{x^2-4}{x-2} & \\si{x<3},\\\\[8pt]\n  kx-1 & \\si{x\\ge 3},\n\\end{cases}\n\\]\non $k$ és un nombre real.\n\n\\begin{apartats}\n\n\\begin{tria}{trossos-punts}\n\\itemtria{original}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to2}g(x) & \\sa \\lim_{x\\to0}g(x)\n\\end{graella}\n\n\\begin{solucio}\nTots dos punts són a la branca $x<3$.\\\\\nEn $x=2$ hi ha una indeterminació $0/0$:\n$\\dfrac{(x-2)(x+2)}{x-2}=x+2\\to4$. El límit val $4$, tot i que $g(2)$ no existeix.\\\\\nEn $x=0$ se substitueix directament: $\\dfrac{-4}{-2}=2$.\n\\end{solucio}\n\n\\itemtria{altra-branca}{0,75}{1}\nCalcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to2}g(x) & \\sa \\lim_{x\\to4}g(x)\n\\end{graella}\n\n\\begin{solucio}\nEn $x=2$ actua la branca $x<3$, i hi ha una indeterminació $0/0$:\n$\\dfrac{(x-2)(x+2)}{x-2}=x+2\\to4$.\nEl límit val $4$, tot i que $g(2)$ no existeix.\\\\\nEn canvi, $x=4$ és a la branca $x\\ge3$: $\\lim_{x\\to4}g(x)=4k-1$. La fórmula de la primera\nbranca hi donaria $6$, però per a $x\\ge3$ no és la que actua.\n\\end{solucio}\n\\end{tria}\n\n\\apartat[1,5]{1,25}\nCalcula, en funció de $k$, els límits laterals de $g$ en $x=3$. Per a quin valor de $k$\nexisteix $\\lim_{x\\to3}g(x)$? Quant val aquest límit?\n\n\\begin{solucio}\n$\\lim_{x\\to3^-}g(x)=\\dfrac{9-4}{3-2}=5$ \\quad i \\quad $\\lim_{x\\to3^+}g(x)=3k-1$.\\\\\nEl límit existeix si i només si els dos laterals coincideixen: $3k-1=5$, és a dir\n$\\boxed{k=2}$. Aleshores $\\lim_{x\\to3}g(x)=5$.\n\\end{solucio}\n\n\\begin{nomesllarg}\n\\apartat{0,5}\nPer a $k=2$, calcula els límits següents:\n\\begin{graella}{2}\n  \\sa \\lim_{x\\to-\\infty}g(x) & \\sa \\lim_{x\\to+\\infty}g(x)\n\\end{graella}\n\n\\begin{solucio}\nQuan $x\\to-\\infty$ actua la primera branca, que per a $x\\ne2$ és $x+2\\to-\\infty$.\\\\\nQuan $x\\to+\\infty$ actua la segona: $2x-1\\to+\\infty$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/limits-trossos/q003/out/enunciat.pdf",
    "pdf_solucio": "u7/limits-trossos/q003/out/solucio.pdf",
    "pdf_curt": "u7/limits-trossos/q003/out/enunciat-curt.pdf",
@@ -2108,18 +2183,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "un-parametre",
        "llarg": 1.5,
        "curt": 2.5,
-       "pdf": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/alternativa/solucio.pdf",
-       "pdf_curt": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/alternativa/solucio-curt.pdf"
+       "pdf": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/un-parametre/enunciat.pdf",
+       "pdf_solucio": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/un-parametre/solucio.pdf",
+       "pdf_curt": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/un-parametre/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/parametres-ab/q001/out/tries/parametres-tasca-a/un-parametre/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  e^{x}+a & \\si{x\\le 0},\\\\[3pt]\n  ax+b & \\si{0<x<2},\\\\[3pt]\n  4+\\ln(x-1) & \\si{x\\ge 2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu interval: $e^x+a$ i $ax+b$ ho són a tot $\\mathbb{R}$, i\n$4+\\ln(x-1)$ ho és per a $x>1$, en particular a $[2,+\\infty)$. Només cal estudiar els\nenganxaments.\\\\\nEn $x=0$: $f(0)=e^0+a=1+a$ i $\\lim_{x\\to0^+}f(x)=b$. Cal $b=1+a$.\\\\\nEn $x=2$: $\\lim_{x\\to2^-}f(x)=2a+b$ i $f(2)=4+\\ln1=4$. Cal $2a+b=4$.\\\\\nSubstituint: $2a+1+a=4$, d'on $\\boxed{a=1}$ i $\\boxed{b=2}$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  2^{x}+a & \\si{x\\le 0},\\\\[3pt]\n  ax+b & \\si{0<x<3},\\\\[3pt]\n  5+\\ln(x-2) & \\si{x\\ge 3}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu interval: $2^x+a$ i $ax+b$ ho són a tot $\\mathbb{R}$, i\n$5+\\ln(x-2)$ ho és per a $x>2$, en particular a $[3,+\\infty)$. Només cal estudiar els\nenganxaments.\\\\\nEn $x=0$: $g(0)=2^0+a=1+a$ i $\\lim_{x\\to0^+}g(x)=b$. Cal $b=1+a$.\\\\\nEn $x=3$: $\\lim_{x\\to3^-}g(x)=3a+b$ i $g(3)=5+\\ln1=5$. Cal $3a+b=5$.\\\\\nSubstituint: $3a+1+a=5$, d'on $\\boxed{a=1}$ i $\\boxed{b=2}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba \\textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot\n$\\mathbb{R}$.\n\\[\nh(x)=\\begin{cases}\n  x+m^2 & \\si{x<1},\\\\[3pt]\n  x^2+3m & \\si{x\\ge 1}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són polinòmiques, i per tant contínues: només cal estudiar $x=1$.\\\\\n$\\lim_{x\\to1^-}h(x)=1+m^2$ i $h(1)=1+3m$.\\\\\nCal $1+m^2=1+3m$, és a dir $m^2-3m=m(m-3)=0$: $\\boxed{m=0}$ o $\\boxed{m=3}$.\nHi ha \\textbf{dos} valors. (Comprovació amb $m=3$: $1+9=10$ i $1+9=10$.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  e^{x}+a & \\si{x\\le 0},\\\\[3pt]\n  ax+b & \\si{0<x<2},\\\\[3pt]\n  4+\\ln(x-1) & \\si{x\\ge 2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu interval: $e^x+a$ i $ax+b$ ho són a tot $\\mathbb{R}$, i\n$4+\\ln(x-1)$ ho és per a $x>1$, en particular a $[2,+\\infty)$. Només cal estudiar els\nenganxaments.\\\\\nEn $x=0$: $f(0)=e^0+a=1+a$ i $\\lim_{x\\to0^+}f(x)=b$. Cal $b=1+a$.\\\\\nEn $x=2$: $\\lim_{x\\to2^-}f(x)=2a+b$ i $f(2)=4+\\ln1=4$. Cal $2a+b=4$.\\\\\nSubstituint: $2a+1+a=4$, d'on $\\boxed{a=1}$ i $\\boxed{b=2}$.\n\\end{solucio}\n\n\\itemtria{un-parametre}{1,5}{2,5}\nDetermina els valors de $m$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  3e^{x}+1 & \\si{x\\le 0},\\\\[3pt]\n  (x-m)^2 & \\si{0<x<1},\\\\[6pt]\n  \\dfrac{9}{x} & \\si{x\\ge 1}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu interval: $3e^x+1$ i $(x-m)^2$ ho són a tot $\\mathbb{R}$, i\n$\\dfrac9x$ ho és per a $x\\ne0$, en particular a $[1,+\\infty)$. Només cal estudiar els\nenganxaments.\\\\\nEn $x=0$: $g(0)=3e^0+1=4$ i $\\lim_{x\\to0^+}g(x)=m^2$. Cal $m^2=4$: $m=2$ o $m=-2$.\\\\\nEn $x=1$: $\\lim_{x\\to1^-}g(x)=(1-m)^2$ i $g(1)=9$. Cal $(1-m)^2=9$: $m=-2$ o $m=4$.\\\\\nNomés $\\boxed{m=-2}$ compleix totes dues condicions. Amb $m=2$ seria contínua en $x=0$, però\nen $x=1$ tindria un salt finit ($1$ per l'esquerra i $9$ per la dreta).\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba \\textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot\n$\\mathbb{R}$.\n\\[\nh(x)=\\begin{cases}\n  x+m^2 & \\si{x<1},\\\\[3pt]\n  x^2+3m & \\si{x\\ge 1}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són polinòmiques, i per tant contínues: només cal estudiar $x=1$.\\\\\n$\\lim_{x\\to1^-}h(x)=1+m^2$ i $h(1)=1+3m$.\\\\\nCal $1+m^2=1+3m$, és a dir $m^2-3m=m(m-3)=0$: $\\boxed{m=0}$ o $\\boxed{m=3}$.\nHi ha \\textbf{dos} valors. (Comprovació amb $m=3$: $1+9=10$ i $1+9=10$.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/parametres-ab/q001/out/enunciat.pdf",
    "pdf_solucio": "u7/parametres-ab/q001/out/solucio.pdf",
    "pdf_curt": "u7/parametres-ab/q001/out/enunciat-curt.pdf",
@@ -2173,18 +2248,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "incompatible",
        "llarg": 1.5,
        "curt": 2.5,
-       "pdf": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/alternativa/solucio.pdf",
-       "pdf_curt": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/alternativa/solucio-curt.pdf"
+       "pdf": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/incompatible/enunciat.pdf",
+       "pdf_solucio": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/incompatible/solucio.pdf",
+       "pdf_curt": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/incompatible/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/parametres-ab/q002/out/tries/parametres-tasca-a/incompatible/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els\npunts de $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  x^2-a & \\si{x<-1},\\\\[3pt]\n  bx+2  & \\si{-1\\le x\\le 2},\\\\[3pt]\n  ax+b  & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros, de manera que només cal imposar la continuïtat\nals enganxaments.\\\\\nEn $x=-1$: $\\lim_{x\\to-1^-}f(x)=1-a$ i $f(-1)=-b+2$, d'on $1-a=-b+2$, és a dir $b=a+1$.\\\\\nEn $x=2$: $f(2)=2b+2$ i $\\lim_{x\\to2^+}f(x)=2a+b$, d'on $2b+2=2a+b$, és a dir $b=2a-2$.\\\\\nIgualant: $a+1=2a-2\\Rightarrow \\boxed{a=3}$ i $\\boxed{b=4}$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els\npunts de $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  x^2-a & \\si{x<-1},\\\\[3pt]\n  bx+4  & \\si{-1\\le x\\le 2},\\\\[3pt]\n  ax+b  & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros, de manera que només cal imposar la continuïtat\nals enganxaments.\\\\\nEn $x=-1$: $\\lim_{x\\to-1^-}g(x)=1-a$ i $g(-1)=-b+4$, d'on $1-a=-b+4$, és a dir $b=a+3$.\\\\\nEn $x=2$: $g(2)=2b+4$ i $\\lim_{x\\to2^+}g(x)=2a+b$, d'on $2b+4=2a+b$, és a dir $b=2a-4$.\\\\\nIgualant: $a+3=2a-4\\Rightarrow \\boxed{a=7}$ i $\\boxed{b=10}$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba el valor de $k$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  kx+1  & \\si{x\\le 2},\\\\[3pt]\n  x^2-k & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són polinòmiques: només cal estudiar $x=2$.\\\\\n$g(2)=2k+1$ i $\\lim_{x\\to2^+}g(x)=4-k$. Cal $2k+1=4-k$, és a dir $3k=3$: $\\boxed{k=1}$.\n(Comprovació: $g(2)=3$ i $4-1=3$.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tots els\npunts de $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  x^2-a & \\si{x<-1},\\\\[3pt]\n  bx+2  & \\si{-1\\le x\\le 2},\\\\[3pt]\n  ax+b  & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros, de manera que només cal imposar la continuïtat\nals enganxaments.\\\\\nEn $x=-1$: $\\lim_{x\\to-1^-}f(x)=1-a$ i $f(-1)=-b+2$, d'on $1-a=-b+2$, és a dir $b=a+1$.\\\\\nEn $x=2$: $f(2)=2b+2$ i $\\lim_{x\\to2^+}f(x)=2a+b$, d'on $2b+2=2a+b$, és a dir $b=2a-2$.\\\\\nIgualant: $a+1=2a-2\\Rightarrow \\boxed{a=3}$ i $\\boxed{b=4}$.\n\\end{solucio}\n\n\\itemtria{incompatible}{1,5}{2,5}\nEstudia si existeixen valors de $a$ i $b$ que facin contínua a tot $\\mathbb{R}$ la funció\nsegüent.\n\\[\nh(x)=\\begin{cases}\n  x+a & \\si{x<0},\\\\[3pt]\n  x^2+b & \\si{0\\le x\\le 1},\\\\[3pt]\n  2x+a & \\si{x>1}.\n\\end{cases}\n\\]\nSi tries $a$ i $b$ perquè sigui contínua en $x=0$, quin tipus de discontinuïtat té en $x=1$?\n\n\\begin{solucio}\nLes tres branques són polinòmiques: només cal estudiar els enganxaments.\\\\\nEn $x=0$: $\\lim_{x\\to0^-}h(x)=a$ i $h(0)=b$. Cal $b=a$.\\\\\nEn $x=1$: $h(1)=1+b$ i $\\lim_{x\\to1^+}h(x)=2+a$. Cal $1+b=2+a$, és a dir $b=a+1$.\\\\\nLes dues condicions són incompatibles ($b$ no pot ser alhora $a$ i $a+1$): \\textbf{no hi ha\ncap valor} de $a$ i $b$ que faci $h$ contínua a tot $\\mathbb{R}$.\\\\\nSi $b=a$, és contínua en $x=0$, i en $x=1$ els laterals valen $1+a$ i $2+a$: finits i\ndiferents, \\textbf{salt finit} (de salt $1$), sigui quin sigui $a$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba el valor de $k$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  kx+1  & \\si{x\\le 2},\\\\[3pt]\n  x^2-k & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són polinòmiques: només cal estudiar $x=2$.\\\\\n$g(2)=2k+1$ i $\\lim_{x\\to2^+}g(x)=4-k$. Cal $2k+1=4-k$, és a dir $3k=3$: $\\boxed{k=1}$.\n(Comprovació: $g(2)=3$ i $4-1=3$.)\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/parametres-ab/q002/out/enunciat.pdf",
    "pdf_solucio": "u7/parametres-ab/q002/out/solucio.pdf",
    "pdf_curt": "u7/parametres-ab/q002/out/enunciat-curt.pdf",
@@ -2239,18 +2314,18 @@ const BANC = {
        "pdf_solucio_curt": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/original/solucio-curt.pdf"
       },
       {
-       "id": "alternativa",
+       "id": "discussio-k",
        "llarg": 1.5,
        "curt": 2.5,
-       "pdf": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/alternativa/enunciat.pdf",
-       "pdf_solucio": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/alternativa/solucio.pdf",
-       "pdf_curt": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/alternativa/enunciat-curt.pdf",
-       "pdf_solucio_curt": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/alternativa/solucio-curt.pdf"
+       "pdf": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/discussio-k/enunciat.pdf",
+       "pdf_solucio": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/discussio-k/solucio.pdf",
+       "pdf_curt": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/discussio-k/enunciat-curt.pdf",
+       "pdf_solucio_curt": "u7/parametres-ab/q003/out/tries/parametres-tasca-a/discussio-k/solucio-curt.pdf"
       }
      ]
     }
    ],
-   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  ax+1 & \\si{x<0},\\\\[3pt]\n  x^2+b & \\si{0\\le x\\le 2},\\\\[3pt]\n  bx-a & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros: només cal mirar $x=0$ i $x=2$.\\\\\nEn $x=0$: $\\lim_{x\\to0^-}f(x)=1$ i $f(0)=b$, d'on $\\boxed{b=1}$.\\\\\nEn $x=2$: $f(2)=4+b=5$ i $\\lim_{x\\to2^+}f(x)=2b-a=2-a$. Cal $2-a=5$, és a dir\n$\\boxed{a=-3}$.\\\\\nComprovació: amb $a=-3$ i $b=1$, en $x=0$ totes dues branques valen $1$, i en $x=2$ valen $5$.\n\\end{solucio}\n\n\\itemtria{alternativa}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  ax+2 & \\si{x<0},\\\\[3pt]\n  x^2+b & \\si{0\\le x\\le 3},\\\\[3pt]\n  bx-a & \\si{x>3}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros: només cal mirar $x=0$ i $x=3$.\\\\\nEn $x=0$: $\\lim_{x\\to0^-}g(x)=2$ i $g(0)=b$, d'on $\\boxed{b=2}$.\\\\\nEn $x=3$: $g(3)=9+b=11$ i $\\lim_{x\\to3^+}g(x)=3b-a=6-a$. Cal $6-a=11$, és a dir\n$\\boxed{a=-5}$.\\\\\nComprovació: amb $a=-5$ i $b=2$, en $x=0$ totes dues branques valen $2$, i en $x=3$ valen $11$.\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba \\textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot\n$\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  x+m^2 & \\si{x\\le 2},\\\\[3pt]\n  5m-x  & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són contínues: només cal estudiar $x=2$.\\\\\n$g(2)=2+m^2$ i $\\lim_{x\\to2^+}g(x)=5m-2$. Cal $2+m^2=5m-2$, és a dir $m^2-5m+4=0$, que dona\n$\\boxed{m=1}$ i $\\boxed{m=4}$.\\\\\nComprovació: amb $m=1$, totes dues branques valen $3$ en $x=2$; amb $m=4$, valen $18$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
+   "tex": "\\begin{apartats}\n\n\\begin{tria}{parametres-tasca-a}\n\\itemtria{original}{1,5}{2,5}\nDetermina els valors de $a$ i $b$ perquè la funció següent sigui contínua a tot $\\mathbb{R}$.\n\\[\nf(x)=\\begin{cases}\n  ax+1 & \\si{x<0},\\\\[3pt]\n  x^2+b & \\si{0\\le x\\le 2},\\\\[3pt]\n  bx-a & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nCada branca és contínua al seu tros: només cal mirar $x=0$ i $x=2$.\\\\\nEn $x=0$: $\\lim_{x\\to0^-}f(x)=1$ i $f(0)=b$, d'on $\\boxed{b=1}$.\\\\\nEn $x=2$: $f(2)=4+b=5$ i $\\lim_{x\\to2^+}f(x)=2b-a=2-a$. Cal $2-a=5$, és a dir\n$\\boxed{a=-3}$.\\\\\nComprovació: amb $a=-3$ i $b=1$, en $x=0$ totes dues branques valen $1$, i en $x=2$ valen $5$.\n\\end{solucio}\n\n\\itemtria{discussio-k}{1,5}{2,5}\nConsidera la funció\n\\[\nh(x)=\\frac{x^2+kx-2}{x-1},\n\\]\non $k$ és un nombre real. Estudia, segons el valor de $k$, quin tipus de discontinuïtat té\n$h$ en $x=1$. En el cas en què sigui evitable, quin valor caldria donar a $h(1)$ perquè hi\nfos contínua?\n\n\\begin{solucio}\n$h$ no està definida en $x=1$, sigui quin sigui $k$. El numerador hi val $1+k-2=k-1$.\\\\\nSi $k=1$: $x^2+x-2=(x-1)(x+2)$, i per a $x\\ne1$ és $h(x)=x+2\\to3$. El límit existeix:\n\\textbf{discontinuïtat evitable}. Definint $h(1)=3$, seria contínua.\\\\\nSi $k\\ne1$: el numerador tendeix a $k-1\\ne0$ i el denominador a $0$. Els laterals són\ninfinits i de signe contrari: \\textbf{salt infinit} (asímptota vertical $x=1$).\n\\end{solucio}\n\\end{tria}\n\n\\begin{nomesllarg}\n\\apartat{1}\nTroba \\textbf{tots} els valors de $m$ per als quals la funció següent és contínua a tot\n$\\mathbb{R}$.\n\\[\ng(x)=\\begin{cases}\n  x+m^2 & \\si{x\\le 2},\\\\[3pt]\n  5m-x  & \\si{x>2}.\n\\end{cases}\n\\]\n\n\\begin{solucio}\nLes dues branques són contínues: només cal estudiar $x=2$.\\\\\n$g(2)=2+m^2$ i $\\lim_{x\\to2^+}g(x)=5m-2$. Cal $2+m^2=5m-2$, és a dir $m^2-5m+4=0$, que dona\n$\\boxed{m=1}$ i $\\boxed{m=4}$.\\\\\nComprovació: amb $m=1$, totes dues branques valen $3$ en $x=2$; amb $m=4$, valen $18$.\n\\end{solucio}\n\\end{nomesllarg}\n\n\\end{apartats}\n",
    "pdf": "u7/parametres-ab/q003/out/enunciat.pdf",
    "pdf_solucio": "u7/parametres-ab/q003/out/solucio.pdf",
    "pdf_curt": "u7/parametres-ab/q003/out/enunciat-curt.pdf",
