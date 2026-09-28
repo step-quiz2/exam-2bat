@@ -1,0 +1,41 @@
+Considereu el pla $\pi$ d'equació $x+y=0$.
+
+\begin{apartats}
+
+\apartat{1}
+Calculeu l'equació del pla $\pi'$ que és perpendicular a $\pi$ i conté els punts $P=(1,-1,2)$ i
+$Q=(3,-3,6)$.
+
+\begin{solucio}
+El pla $\pi'$ que busquem té vectors directors $(1,1,0)$ i
+$\overrightarrow{PQ}=(3,-3,6)-(1,-1,2)=(2,-2,4)\sim(1,-1,2)$. Fent-lo passar pel punt $P$, serà el pla d'equació
+\[
+\begin{vmatrix}x-1&y+1&z-2\\1&1&0\\1&-1&2\end{vmatrix}=2x-2-z+2-z+2-2y-2=0,
+\]
+és a dir, $2x-2y-2z=0$; o, simplificant, $x-y-z=0$.
+
+\textit{Pauta oficial:} 0,5 per plantejar correctament el problema i 0,5 pel càlcul de l'equació.
+\end{solucio}
+
+\apartat{1,5}
+Calculeu l'equació paramètrica de la recta continguda en $\pi'$ i que conté els punts de $\pi'$ a la mateixa
+distància de $P$ que de $Q$.
+
+\begin{solucio}
+La recta que ens demanen és la intersecció del pla $\pi'$ amb el pla perpendicular a
+$\overrightarrow{PQ}\sim(1,-1,2)$ que passa pel punt mig
+\[
+M=\frac{P+Q}{2}=\frac12(4,-4,8)=(2,-2,4).
+\]
+Aquest pla té equació $x-y+2z=D$, amb $D=2-(-2)+2\cdot4=12$; és a dir, $x-y+2z=12$. Per tant, la recta
+demanada és
+\[
+\left.\begin{aligned}x-y-z&=0\\x-y+2z&=12\end{aligned}\right\}.
+\]
+Com que, restant, obtenim $z=4$, es tracta de la recta $(x,y,z)=(k+4,\,k,\,4)=(4,0,4)+k(1,1,0)$.
+
+\textit{Pauta oficial:} 0,75 per calcular l'equació del pla perpendicular a $\overrightarrow{PQ}$ passant pel punt
+mig, i 0,75 per l'equació paramètrica de la recta intersecció amb $\pi'$.
+\end{solucio}
+
+\end{apartats}

@@ -1,7 +1,7 @@
 # Handout · Banc de preguntes de Matemàtiques II
 
-**Data:** 28 de setembre de 2026 · **Estat:** 97 preguntes (24 de la unitat 7, 18 de la unitat
-8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 10 de la PAU), 87 amb tries · 1.846 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
+**Data:** 28 de setembre de 2026 · **Estat:** 102 preguntes (24 de la unitat 7, 18 de la unitat
+8, 12 de la unitat 9, 15 de la unitat 10, 12 de la unitat 13, 6 de la unitat 14 i 15 de la PAU), 87 amb tries · 1.956 minuts d'examen al banc · 38 comprovacions del validador, 19 de sortida del build i 77 de
 paritat
 
 Aquest document explica tota la feina feta fins avui i tota la feina pendent, amb prou
@@ -46,7 +46,8 @@ trigar cada vegada més: els PDF són reproduïbles i el build només recompila 
 tema de funcions a trossos, i amb ell la u10. La vint-i-cinquena va fer la u13, Probabilitat: quatre
 temes, amb tres variants cadascun i una tria a cada pregunta. La vint-i-sisena va fer la
 u14, de la qual els alumnes practiquen la distribució binomial. La vint-i-setena va afegir a la u10 els
-exercicis de la setmana 17 i va importar la sèrie 5 de la PAU de juny de 2026. La màquina
+exercicis de la setmana 17 i va importar la sèrie 5 de la PAU de juny de 2026. La vint-i-vuitena va importar la sèrie 1 de
+juny de 2025. La màquina
 funciona de punta a punta. El que queda és
 sobretot contingut: la u9, que acaba el 22 de novembre, els 56 exercicis PAU pendents, la
 resta d'unitats, i estendre les tries a la u10.
@@ -970,6 +971,32 @@ l'exercici espera, i s'hi afegeix una *Nota del banc*.
 dues preguntes compilen de debò. Les bateries (38/19/77) i la integració amb jsdom passen, i el banc
 complet escriu 1.098 PDF.
 
+### 2.28 Sessió 28 · La sèrie 1 de juny de 2025
+
+**Importació** amb el procediment de la secció 9. Les cinc preguntes: `ana-25j-q1` (asímptotes,
+tangents paral·leles i pendent 1; u8 i u10), `alg-25j-q2` (sistema amb paràmetre i solucions amb
+$xy=10$), `pro-25j-q3` (probabilitat total, binomial i màxim de $f(p)$; u9, u13 i u14), `ana-25j-q4a`
+(la vela semiparabòlica, un sol apartat de 2,5; u12) i `geo-25j-q4b` (pla perpendicular i recta dels
+punts equidistants). Tots els resultats oficials es van verificar amb SymPy, i són correctes. Hi ha un
+PDF de revisió del lot (`revisio-pau-juny2025-serie1.pdf`).
+
+**Detalls de la importació.** Els criteris de correcció del 4A no són al PDF del 4A, sinó a dalt del
+full del 4B. La figura de la vela es va refer en TikZ; el ratllat de les dues regions es fa a mà, amb
+línies retallades, perquè el banc no carrega cap biblioteca de TikZ i afegir-n'hi una a `headers.tex`
+obligaria a recompilar tots els PDF. El símbol € funciona amb el preàmbul del banc. La primera
+compilació va donar dos *Overfull*, un menor $3\times3$ escrit en línia i una igualtat massa llarga,
+que es van passar a mode destacat.
+
+**Una prova que depenia de les dades.** `prova_paritat.py` tenia escrits a mà els codis de 2026 com a
+pregunta que afegeix el primer clic a cada bloc PAU. L'app ordena les preguntes de cada bloc pel codi,
+i `25j` va abans que `26j`: amb la convocatòria nova, el primer clic afegeix la de 2025, i tres
+comprovacions fallaven sense que hi hagués cap error. Ara la prova calcula aquestes preguntes a partir
+del catàleg, amb el mateix criteri que l'app, i passa amb les preguntes de 2025 i sense. L'ordre en si
+queda com a decisió oberta (7.6).
+
+**Verificació.** Les bateries (38/19/77) i la integració amb jsdom passen, i el banc complet escriu
+1.108 PDF.
+
 ---
 
 ## 3. Decisions preses
@@ -1338,11 +1365,11 @@ Ordenades de la més recent a la més antiga, que és l'ordre d'importació reco
 | `pro-26j-q3` | juny 2026 · s1 | Probabilitat | Entrades de concert: sorteig i web; Bolzano amb decibels | ✅ importada |
 | `ana-26j-q4a` | juny 2026 · s1 | Anàlisi | Optimització: barana circular i quadrada de 10 m | ✅ importada |
 | `geo-26j-q4b` | juny 2026 · s1 | Geometria | Pla PQR, àrea del triangle i tetraedre de volum 1 | ✅ importada |
-| `ana-25j-q1` | juny 2025 · s1 | Anàlisi | f(x)=(x²−2x)/(x−1): asímptotes, tangents, pendent | pendent |
-| `alg-25j-q2` | juny 2025 · s1 | Àlgebra | Sistema lineal amb paràmetre p | pendent |
-| `pro-25j-q3` | juny 2025 · s1 | Probabilitat | Peces ferro/acer: prob. total, binomial i màxim f(p) | pendent |
-| `ana-25j-q4a` | juny 2025 · s1 | Anàlisi | Vela semiparabòlica: cost del material | pendent |
-| `geo-25j-q4b` | juny 2025 · s1 | Geometria | Pla perpendicular a x+y=0 i recta mediadora | pendent |
+| `ana-25j-q1` | juny 2025 · s1 | Anàlisi | f(x)=(x²−2x)/(x−1): asímptotes, tangents, pendent | ✅ importada (sessió 28) |
+| `alg-25j-q2` | juny 2025 · s1 | Àlgebra | Sistema lineal amb paràmetre p | ✅ importada (sessió 28) |
+| `pro-25j-q3` | juny 2025 · s1 | Probabilitat | Peces ferro/acer: prob. total, binomial i màxim f(p) | ✅ importada (sessió 28) |
+| `ana-25j-q4a` | juny 2025 · s1 | Anàlisi | Vela semiparabòlica: cost del material | ✅ importada (sessió 28) |
+| `geo-25j-q4b` | juny 2025 · s1 | Geometria | Pla perpendicular a x+y=0 i recta mediadora | ✅ importada (sessió 28) |
 | `ana-25s-q1` | setembre 2025 · s3 | Anàlisi | Optimització: terreny triangular A(m) mínim | pendent |
 | `alg-25s-q2` | setembre 2025 · s3 | Àlgebra | Sistema lineal amb paràmetre m | pendent |
 | `pro-25s-q3ab` | setembre 2025 · s3 | Probabilitat | Sesamoïditis: probabilitat total i Bayes | pendent · **mateix exercici que `ana-25s-q3c`** (7.6) |
@@ -1475,14 +1502,14 @@ lliurament de la sessió és l'apartat 11.
 - Opcionalment, **confirmar amb els originals** les sèries de `23s` (2) i `24j` (1), que avui
   provenen d'una rèplica pública.
 
-### 7.3 Importació PAU: 51 exercicis en 9 convocatòries
+### 7.3 Importació PAU: 46 exercicis en 8 convocatòries
 
 Es fa després de la u8 (decisió de la sessió 5).
 
 | Convocatòria | Sèrie | Pendents |
 |---|---|---|
 | `26j2` juny 2026 | 5 | ✅ importada (sessió 27) |
-| `25j` juny 2025 | 1 | 5 |
+| `25j` juny 2025 | 1 | ✅ importada (sessió 28) |
 | `25s` setembre 2025 | 3 | 5 exercicis (6 entrades al repositori `pau`; vegeu 7.6) |
 | `25i` juny 2025 | 4 | 5 |
 | `24s` setembre 2024 | 3 | 6 |
@@ -1583,7 +1610,12 @@ l'ordre numèric.
     els apartats a) i b);
   - `pro-25s-q3` descriu millor l'exercici, però trenca la regla que el codi és el del
     repositori `pau`.
-- **Fer els PDF reproduïbles.** pdfTeX hi escriu la data i un identificador. Per això cada
+- **L'ordre de les preguntes PAU d'un bloc.** L'app les ordena pel codi, de manera que el primer
+  clic a un bloc afegeix la pregunta de la convocatòria més antiga importada, i les altres s'hi
+  arriben amb ◀ ▶. Quan hi hagi les onze convocatòries, el primer clic donarà la de juny de 2023.
+  Es podria ordenar de la més recent a la més antiga (2.28).
+- **Fer els PDF reproduïbles.** ✅ Fet a la sessió 23 (2.23), sense tocar l'Action. Queda el camp
+  `generat` del catàleg. Text original: pdfTeX hi escriu la data i un identificador. Per això cada
   build reescriu tots els PDF encara que no canviïn, i el commit del bot els toca tots cada
   vegada. Amb `SOURCE_DATE_EPOCH` i `FORCE_SOURCE_DATE=1` fixos a l'Action, dos builds
   idèntics no canvien cap PDF (comprovat a la sessió 5). Caldria fer el mateix amb el camp
@@ -1689,17 +1721,15 @@ del primer exercici.
 
 ## 11. Aquest lliurament
 
-És el lliurament de la sessió 27. Parteix del de la sessió 26, que ja és al repositori.
+És el lliurament de la sessió 28. Parteix del de la sessió 27, que ja és al repositori.
 
 | Fitxer | Canvi |
 |---|---|
-| `u10/estudi-polinomica/q00{1,2,3}/meta.json` | El 84 a l'`origen` (i el 124 a la q003) |
-| `u10/estudi-racional/q00{1,2,3}/meta.json` | El 123 a l'`origen` (i el 124 a la q003) |
-| `u10/estudi-polinomica/q003/pregunta.tex`, `u10/estudi-racional/q003/pregunta.tex` | Tercera opció a la tria: `context-embassament` i `context-cost` |
-| `pau/analisi/ana-26j2-q1/`, `pau/algebra/alg-26j2-q2/`, `pau/probabilitat/pro-26j2-q3/`, `pau/analisi/ana-26j2-q4a/`, `pau/geometria/geo-26j2-q4b/` | **Noves**: la sèrie 5 de juny de 2026, `pregunta.tex` i `meta.json` |
+| `pau/analisi/ana-25j-q1/`, `pau/algebra/alg-25j-q2/`, `pau/probabilitat/pro-25j-q3/`, `pau/analisi/ana-25j-q4a/`, `pau/geometria/geo-25j-q4b/` | **Noves**: la sèrie 1 de juny de 2025, `pregunta.tex` i `meta.json` |
+| `build/prova_paritat.py` | La primera pregunta de cada bloc PAU es calcula del catàleg |
 | `README.md` | Estat |
-| `handout.md` | Secció 2.27, i les seccions 3, 6.4, 6.6, 7.3, 7.4 i 11 |
+| `handout.md` | Secció 2.28, i les seccions 6.6, 7.3, 7.6 i 11 |
 
 No porta cap PDF ni `cataleg.js`. Després de pujar-lo a `_uploads`, cal fer **Run workflow**. Amb la
-memòria, el resum hauria de dir «18 PDF desats · 1080 reutilitzats»: 8 de les dues opcions noves, 10 de
-les cinc preguntes PAU. El PDF de revisió del lot va a part: no s'ha de pujar al repositori.
+memòria, el resum hauria de dir «10 PDF desats · 1098 reutilitzats». El PDF de revisió del lot va a
+part: no s'ha de pujar al repositori.

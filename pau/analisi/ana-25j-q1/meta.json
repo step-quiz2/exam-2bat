@@ -1,0 +1,14 @@
+{
+  "titol": "f(x) = (x²−2x)/(x−1): talls, asímptotes, tangents paral·leles i pendent 1",
+  "unitats": [
+    "u8",
+    "u10"
+  ],
+  "dificultat": "●●○",
+  "minuts": 22,
+  "etiquetes": [
+    "asímptota obliqua",
+    "recta tangent",
+    "derivada"
+  ]
+}

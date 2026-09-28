@@ -191,8 +191,12 @@ def main() -> int:
     #     preguntes dels temes, i es poden combinar temes i PAU en un mateix examen.
     cinc_clics = ("afegeix('limits-punt'); afegeix('analisi'); afegeix('bolzano-biseccio'); "
                   "afegeix('probabilitat'); afegeix('geometria')")
-    combinat = ["u7/limits-punt/q001", "pau/analisi/ana-26j-q1", "u7/bolzano-biseccio/q001",
-                "pau/probabilitat/pro-26j-q3", "pau/geometria/geo-26j-q4b"]
+    # La pregunta que afegeix el primer clic a un bloc PAU és la primera del bloc en l'ordre de l'app
+    # (pel codi). Es calcula del catàleg perquè no depengui de quines convocatòries hi ha importades.
+    def primera(tema):
+        return min((p for p in banc["preguntes"] if p["tema"] == tema), key=lambda p: p["codi"])
+    ana_1, pro_1, geo_1 = primera("analisi"), primera("probabilitat"), primera("geometria")
+    combinat = ["u7/limits-punt/q001", ana_1["id"], "u7/bolzano-biseccio/q001", pro_1["id"], geo_1["id"]]
     pau5 = ["1", "2", "3", "4a", "4b"]
     r = web("", cinc_clics)
     comprova("per defecte, cinc clics donen 1, 2, 3, 4a i 4b", r["etiquetes"] == pau5, r["etiquetes"])
@@ -206,8 +210,8 @@ def main() -> int:
     comprova("només les tres preguntes PAU porten la línia de procedència",
              r["tex"].split(INICI_COS, 1)[1].count("\\procedencia{") == 3)
     comprova("l'adreça el desa amb la 4a i la 4b",
-             r["hash"] == "limits-punt:q001,analisi:ana-26j-q1,bolzano-biseccio:q001,"
-                          "probabilitat:pro-26j-q3|geometria:geo-26j-q4b", r["hash"])
+             r["hash"] == f"limits-punt:q001,analisi:{ana_1['codi']},bolzano-biseccio:q001,"
+                          f"probabilitat:{pro_1['codi']}|geometria:{geo_1['codi']}", r["hash"])
     r = web("", cinc_clics + "; treu(1); afegeix('continuitat-trossos')")
     comprova("l'estructura és de les places: ✕ a la 2 i un clic nou tornen a fer 1, 2, 3, 4a, 4b",
              r["etiquetes"] == pau5 and r["ids"][-1] == "u7/continuitat-trossos/q001", r["ids"])

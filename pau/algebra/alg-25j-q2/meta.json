@@ -1,0 +1,11 @@
+{
+  "titol": "Sistema lineal amb paràmetre p: discussió, resolució i solucions amb xy = 10",
+  "unitats": [],
+  "dificultat": "●●○",
+  "minuts": 22,
+  "etiquetes": [
+    "Rouché-Frobenius",
+    "paràmetre",
+    "sistema indeterminat"
+  ]
+}

@@ -1,0 +1,75 @@
+Considereu el sistema d'equacions lineals següent:
+\[
+\left.\begin{aligned}
+y-z&=p+3\\
+p^2x-z&=5\\
+x-y&=3
+\end{aligned}\right\}
+\]
+
+\begin{apartats}
+
+\apartat{1,25}
+Discutiu el sistema per als diferents valors del paràmetre $p$.
+
+\begin{solucio}
+La matriu de coeficients i l'ampliada, $A$ i $A'$ respectivament, són les següents:
+\[
+\left(\begin{array}{ccc|c}0&1&-1&p+3\\p^2&0&-1&5\\1&-1&0&3\end{array}\right).
+\]
+En primer lloc, calculem el determinant de $A$:
+\[
+|A|=\begin{vmatrix}0&1&-1\\p^2&0&-1\\1&-1&0\end{vmatrix}=0+p^2-1=p^2-1 .
+\]
+Igualant-lo a zero, en resulten els valors $p=1$ i $p=-1$. Per tant, distingim els casos següents:\\
+Si $p\neq1,\,-1$, el determinant de $A$ és diferent de zero i, per tant, $\operatorname{rang}(A)=\operatorname{rang}(A')=3$,
+que és igual al nombre d'incògnites. Per tant, es tracta d'un sistema compatible determinat.\\
+Si $p=1$, el determinant de la matriu de coeficients és zero; com que tenim el menor
+$\begin{vmatrix}0&1\\1&0\end{vmatrix}=-1\neq0$, aleshores $\operatorname{rang}(A)=2$. Però la matriu ampliada té
+$\operatorname{rang}(A')=3$ gràcies, per exemple, al menor
+\[
+\begin{vmatrix}0&1&4\\1&0&5\\1&-1&3\end{vmatrix}=5-4-3=-2\neq0 .
+\]
+Per tant, el sistema és incompatible.\\
+Si $p=-1$, tenim el sistema $y-z=2$, $x-z=5$, $x-y=3$. Eliminant la segona equació (per ser suma de la
+primera i la tercera), i com que la matriu
+\[
+\begin{pmatrix}0&1&-1&2\\1&-1&0&3\end{pmatrix}
+\]
+té rang 2, el sistema és compatible indeterminat amb un grau de llibertat.
+
+\textit{Pauta oficial:} 0,25 pel càlcul del determinant; 0,25 per determinar els valors crítics de $p$, i 0,25
+per la discussió de cadascun dels tres casos. Hi ha altres maneres de discutir i resoldre el sistema
+d'equacions: compteu-les bé en la mesura que ho facin correctament i de manera justificada.
+\end{solucio}
+
+\apartat{0,5}
+Resoleu el sistema per al cas $p=-1$.
+
+\begin{solucio}
+Per al cas $p=-1$, es tracta del sistema $y-z=2$, $x-y=3$, que és compatible indeterminat. Fent $y=\lambda$,
+s'obté $x=\lambda+3$ i $z=\lambda-2$. Per tant, la solució del sistema és, en aquest cas,
+$(x,y,z)=(\lambda+3,\,\lambda,\,\lambda-2)$, amb $\lambda$ real.
+
+\textit{Pauta oficial:} 0,5 pel càlcul correcte del conjunt de solucions (evidentment, poden triar qualsevol
+de les variables com a lliure).
+\end{solucio}
+
+\apartat{0,75}
+Per al cas $p=-1$, hi ha alguna solució que compleixi, a més, $xy=10$? En cas afirmatiu, indiqueu quantes
+n'hi ha i trobeu-les totes.
+
+\begin{solucio}
+Per al cas $p=-1$, el sistema té les infinites solucions obtingudes a l'apartat anterior. Imposant, a més,
+que $xy=10$, resulta $(\lambda+3)\lambda=10$, és a dir, $\lambda^2+3\lambda-10=0$; d'aquí obtenim
+\[
+\lambda=\frac{-3\pm\sqrt{9-4(-10)}}{2}=\frac{-3\pm7}{2}=-5,\ 2 .
+\]
+Per tant, el sistema té exactament dues solucions que compleixen $xy=10$, que són les corresponents a
+$\lambda=-5$ i $\lambda=2$. Es tracta de $(x,y,z)=(-2,-5,-7)$ i $(x,y,z)=(5,2,0)$, respectivament.
+
+\textit{Pauta oficial:} 0,25 pel plantejament de l'equació quadràtica; 0,25 per la seva resolució, i 0,25 pel
+càlcul dels dos punts resultants.
+\end{solucio}
+
+\end{apartats}

@@ -1,0 +1,63 @@
+Considereu la funció $f(x)=\dfrac{x^2-2x}{x-1}$.
+
+\begin{apartats}
+
+\apartat{1}
+Determineu els talls de la corba $y=f(x)$ amb els eixos de coordenades, i les equacions de les seves
+possibles asímptotes verticals, horitzontals i obliqües.
+
+\begin{solucio}
+Com que $f(0)=\frac{0}{-1}=0$, el tall amb l'eix d'ordenades és al punt $(0,0)$. Per als talls amb l'eix
+d'abscisses, hem de resoldre l'equació $\frac{x^2-2x}{x-1}=0$, que té com a solucions $x=0$ i $x=2$; per
+tant, els talls amb l'eix d'abscisses són $(0,0)$ i $(2,0)$.\\
+Aquesta funció té una asímptota vertical a $x=1$, ja que aquest punt és fora del domini i
+$\lim_{x\to1}\frac{x^2-2x}{x-1}=\frac{-1}{0}=\pm\infty$ (més precisament,
+$\lim_{x\to1^+}\frac{x^2-2x}{x-1}=\frac{-1}{+0}=-\infty$ i $\lim_{x\to1^-}\frac{x^2-2x}{x-1}=\frac{-1}{-0}=+\infty$).
+A més a més, aquesta funció té una asímptota obliqua, ja que
+\[
+\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x^2-2x}{x(x-1)}=\lim_{x\to\infty}\frac{x^2-2x}{x^2-x}=\frac11=1 .
+\]
+Com que
+\[
+\lim_{x\to\infty}\bigl(f(x)-x\bigr)=\lim_{x\to\infty}\left(\frac{x^2-2x}{x-1}-x\right)
+=\lim_{x\to\infty}\frac{x^2-2x-x^2+x}{x-1}=\lim_{x\to\infty}\frac{-x}{x-1}=-1,
+\]
+es tracta de la recta $y=x-1$.
+
+\textit{Pauta oficial:} 0,25 pels punts de tall; 0,25 per l'asímptota vertical (encara que no distingeixin el
+límit per la dreta i per l'esquerra), i 0,5 per l'equació de l'asímptota obliqua.
+\end{solucio}
+
+\apartat{1}
+Calculeu les equacions de les rectes tangents a la corba $y=f(x)$ en els punts $x=0$ i $x=2$. Aquestes dues
+rectes són paral·leles? Justifiqueu la resposta.
+
+\begin{solucio}
+La derivada d'aquesta funció és
+\[
+f'(x)=\frac{(2x-2)(x-1)-\left(x^2-2x\right)}{(x-1)^2}=\frac{2x^2-2x-2x+2-x^2+2x}{(x-1)^2}=\frac{x^2-2x+2}{(x-1)^2}.
+\]
+Com que $f(0)=0$ i $f'(0)=2$, la recta tangent al punt $(0,0)$ tindrà per equació $y-0=2(x-0)\rightarrow y=2x$.\\
+Anàlogament, com que $f(2)=\frac{4-4}{1}=0$ i $f'(2)=\frac{4-4+2}{1}=2$, la recta tangent al punt $(2,0)$
+tindrà per equació $y-0=2(x-2)\rightarrow y=2x-4$.\\
+Aquestes dues rectes són paral·leles, ja que tenen el mateix pendent: $f'(0)=f'(2)=2$.
+
+\textit{Pauta oficial:} 0,25 pel càlcul de la derivada; 0,25 per cadascuna de les rectes tangents, i 0,25 per
+justificar correctament que són paral·leles.
+\end{solucio}
+
+\apartat{0,5}
+Hi ha algun punt on la recta tangent a $f(x)$ tingui pendent 1? En cas afirmatiu, trobeu-lo.
+
+\begin{solucio}
+Igualant la derivada a 1, ens queda una equació sense solució:
+\[
+\frac{x^2-2x+2}{(x-1)^2}=1\;\rightarrow\;x^2-2x+2=(x-1)^2\;\rightarrow\;2=1 .
+\]
+Per tant, no hi ha cap punt on la recta tangent tingui pendent 1.
+
+\textit{Pauta oficial:} 0,25 per plantejar l'equació i 0,25 per veure que no té solució i respondre que la
+gràfica no té cap recta tangent amb pendent 1.
+\end{solucio}
+
+\end{apartats}

@@ -1,0 +1,63 @@
+Una empresa produeix dos tipus de peces, de ferro i d'acer. El 60\,\% de la producció total correspon a peces
+de ferro i la resta són d'acer. Sabem que el 95\,\% de les peces de ferro produïdes no tenen cap defecte,
+mentre que el 3\,\% de les peces d'acer són defectuoses.
+
+\begin{apartats}
+
+\apartat{0,75}
+Si agafem una peça a l'atzar, quina és la probabilitat que sigui defectuosa?
+
+\begin{solucio}
+Considerem els successos aleatoris següents: $A$ = «la peça escollida és d'acer», $F$ = «la peça escollida és
+de ferro» i $D$ = «la peça escollida és defectuosa». De les dades de l'enunciat tenim $P(F)=0{,}6$,
+$P(A)=1-0{,}6=0{,}4$, $P(D\mid F)=0{,}05$ i $P(D\mid A)=0{,}03$. Per la llei de probabilitats totals, la
+probabilitat que una peça sigui defectuosa és
+\[
+P(D)=P(D\mid F)\,P(F)+P(D\mid A)\,P(A)=0{,}05\cdot0{,}6+0{,}03\cdot0{,}4=0{,}042 .
+\]
+
+\textit{Pauta oficial:} 0,25 per plantejar la llei de la probabilitat total (o fer l'arbre de decisió o
+similar); 0,25 per identificar correctament les dades del problema, i 0,25 pel càlcul concret.
+\end{solucio}
+
+\apartat{0,75}
+L'empresa aviat diversificarà la producció i començarà a produir també peces de titani, que es vendran en
+paquets de 5. Si la probabilitat que una peça de titani sigui defectuosa és un valor desconegut $p$, i cada
+peça és defectuosa independentment de les altres, comproveu que l'expressió que ens dona la probabilitat que
+en un paquet de 5 peces n'hi hagi exactament 4 de defectuoses (en funció de $p$) és $f(p)=5\left(p^4-p^5\right)$.
+
+\begin{solucio}
+Anomenem $X$ el nombre de peces defectuoses en un paquet. De l'enunciat deduïm que $X$ segueix una llei
+binomial amb $n=5$ i probabilitat $p$. Per tant, la probabilitat que en un paquet hi hagi exactament quatre
+peces defectuoses és
+\[
+P(X=4)=\binom54p^4(1-p)=\frac{5!}{4!}\,p^4(1-p)=5p^4(1-p)=5\left(p^4-p^5\right).
+\]
+També podem argumentar directament, sense fer servir la llei binomial. Com que hi ha quatre peces
+defectuoses, n'hi haurà exactament una que no ho és. La probabilitat que una en concret (per exemple, la
+primera) sigui bona i les altres quatre defectuoses és $(1-p)p^4$. Com que hi ha cinc possibilitats per
+escollir quina és la peça bona, $P(X=4)=5(1-p)p^4=5\left(p^4-p^5\right)$.
+
+\textit{Pauta oficial:} 0,5 pel plantejament i 0,25 pel càlcul.
+\end{solucio}
+
+\apartat{1}
+Considereu la funció $f(p)$ de l'apartat anterior. Determineu el valor màxim que pren $f(p)$ quan $p\ge0$.
+
+\begin{solucio}
+Busquem els extrems relatius de la funció $f(p)=5\left(p^4-p^5\right)$:
+$f'(p)=5\left(4p^3-5p^4\right)=0\rightarrow p=0,\ p=\frac45$. Observem que $f(0)=0$ i que
+$f\!\left(\frac45\right)>0$. Mirem el signe de la segona derivada:
+\[
+f''(p)=5\left(12p^2-20p^3\right)\;\rightarrow\;f''\!\left(\tfrac45\right)
+=5\left(12\left(\tfrac45\right)^2-20\left(\tfrac45\right)^3\right)<0,
+\]
+i deduïm que a $p=\frac45$ la funció $f(p)$ assoleix un màxim local. Com que per a $p\in\left(0,\frac45\right)$
+la funció creix i per a $p>\frac45$ la funció decreix, es tracta d'un màxim absolut quan $p$ és no negativa.
+I el valor màxim serà $f\!\left(\frac45\right)=5\left(\left(\frac45\right)^4-\left(\frac45\right)^5\right)=0{,}41$.
+
+\textit{Pauta oficial:} 0,25 pel càlcul de la derivada i els punts crítics, 0,5 per argumentar que el màxim
+absolut en $p>0$ es troba a $p=\frac45$, i 0,25 per trobar el valor d'aquest màxim.
+\end{solucio}
+
+\end{apartats}
