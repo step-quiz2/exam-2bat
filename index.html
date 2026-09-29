@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/aparenca.js"></script>
 </head>
 <body>
 
@@ -16,7 +17,14 @@
     <h1>Banc de preguntes</h1>
     <div class="hd-sub">Matemàtiques II · CT</div>
   </div>
-  <div class="site-label" id="segell"></div>
+  <div class="hd-dreta">
+    <div class="aparenca" role="group" aria-label="Aparença">
+      <button type="button" data-aparenca="clar" aria-pressed="false" title="Mode clar"><span aria-hidden="true">☀</span><span class="aparenca-nom"> Clar</span></button>
+      <button type="button" data-aparenca="fosc" aria-pressed="false" title="Mode fosc"><span aria-hidden="true">☾</span><span class="aparenca-nom"> Fosc</span></button>
+      <button type="button" data-aparenca="sistema" aria-pressed="true" title="El del sistema operatiu"><span aria-hidden="true">◐</span><span class="aparenca-nom"> Sistema</span></button>
+    </div>
+    <div class="site-label" id="segell"></div>
+  </div>
 </header>
 
 <main>
