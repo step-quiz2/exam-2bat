@@ -29,6 +29,19 @@ header h1{font-size:1rem;font-weight:700;}
 .hd-sub{font-family:'Source Code Pro',monospace;font-size:.65rem;color:rgba(255,255,255,.65);}
 .site-label{font-family:'Source Code Pro',monospace;font-size:.62rem;
   color:rgba(255,255,255,.55);text-align:right;line-height:1.5;}
+.hd-dreta{display:flex;align-items:center;gap:14px;}
+
+/* Aparença: clar, fosc o sistema. La capçalera és fosca en tots dos temes,
+   així que els botons hi van en blanc translúcid, no amb l'accent. */
+.aparenca{display:inline-flex;gap:3px;flex-shrink:0;}
+header .aparenca button{padding:3px 9px;min-height:28px;font-size:.64rem;
+  background:none;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.22);}
+header .aparenca button:hover{filter:none;background:rgba(255,255,255,.10);color:#fff;}
+header .aparenca button[aria-pressed="true"]{background:rgba(255,255,255,.18);color:#fff;
+  border-color:rgba(255,255,255,.45);}
+@media(max-width:640px){
+  .aparenca-nom{display:none;}
+}
 
 /* ── graella principal ─────────────────────────────────────────────── */
 main{max-width:1180px;margin:0 auto;padding:22px 18px;
@@ -127,6 +140,11 @@ button:disabled{opacity:.4;cursor:not-allowed;filter:none;}
   #barra button{padding:7px 10px;}
 }
 
+/* Fosc: el del sistema (sense data-theme) o triat a mà (data-theme="dark").
+   Triat «clar» a mà (data-theme="light"), mana sobre el sistema. Ho posa aparenca.js. */
+:root{color-scheme:light dark;}
+:root[data-theme="light"]{color-scheme:light;}
+:root[data-theme="dark"]{color-scheme:dark;}
 @media(prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --bg:#0f172a; --surface:#1e293b; --border:#334155;
@@ -135,8 +153,14 @@ button:disabled{opacity:.4;cursor:not-allowed;filter:none;}
     --sobre-acc:#042f2e;
   }
 }
+:root[data-theme="dark"]{
+  --bg:#0f172a; --surface:#1e293b; --border:#334155;
+  --txt:#e2e8f0; --muted:#94a3b8; --hd-bg:#020617;
+  --acc:#2dd4bf; --acc-tint:rgba(45,212,191,.10);
+  --sobre-acc:#042f2e;
+}
 /* Text damunt de l'accent: blanc en clar, verd molt fosc en fosc. */
-button:not(.secundari):not(.tema):not(.grup-boto),
+button:not(.secundari):not(.tema):not(.grup-boto):not([data-aparenca]),
 button.secundari:hover,
 .num,
 .tema.tria .marca,
@@ -160,6 +184,7 @@ button.secundari:hover,
 /* ── preguntes PAU: accent propi i procedència visible ─────────────── */
 :root{--pau:#b45309;}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pau:#fbbf24;}}
+:root[data-theme="dark"]{--pau:#fbbf24;}
 .carta.pau{box-shadow:inset 4px 0 0 var(--pau);}
 .carta.pau .num{background:var(--pau);}
 .pau-badge{font-family:'Source Code Pro',monospace;font-size:.64rem;font-weight:600;

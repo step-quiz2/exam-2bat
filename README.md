@@ -63,6 +63,11 @@ complet. El banc inclou **preguntes reals de la PAU**, i cadascuna porta la seva
    un** baixa l'examen en un sol fitxer, preàmbul inclòs, per si no vols carpeta —sempre sense
    solucions—. El comptador es posa verd quan l'examen fa 10 punts.
 
+**Aparença.** A dalt a la dreta, **☀ Clar**, **☾ Fosc** i **◐ Sistema**. Per defecte,
+«Sistema»: el lloc segueix el mode clar o fosc del sistema operatiu, i canvia sol si aquest
+canvia. El navegador recorda la tria (si obert com a fitxer local no la hi deixa, torna a
+«Sistema»). Els PDF de l'Enunciat i la Solució es veuen sempre sobre blanc.
+
 ### La carpeta d'exàmens
 
 Es prepara un sol cop. A la columna dels temes, l'apartat **Entorn** baixa els tres fitxers:
@@ -143,6 +148,7 @@ El projecte segueix cinc principis. Totes les decisions de disseny en surten.
 index.html                 la pàgina (única)
 assets/app.js              lògica del lloc: examen, opcions, variants, assemblatge, descàrregues
 assets/style.css           estil (clar i fosc)
+assets/aparenca.js         aparença: clar, fosc o la del sistema (botons de la capçalera)
 cataleg.js                 GENERAT: preguntes, format (headers i defs) i plantilles
 temes.json                 unitats i temes (slugs estables)
 build/
